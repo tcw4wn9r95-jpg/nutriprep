@@ -638,7 +638,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 23; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 24; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1273,12 +1273,13 @@ function renderWeightChart(){
 
 // ── COACH ──────────────────────────────────────────────────────────────────────
 function renderCoach(){ const wrap=document.getElementById("coach-msgs"); if(!wrap.children.length){ addCoachMsg("coach",`Hi ${identity?identity.charAt(0).toUpperCase()+identity.slice(1):"there"}! I'm Coach Léa 🌿 Ask me to swap a meal, explain a recipe, log how you feel, or check your progress. Menu changes apply to the whole household.`); } }
-function addCoachMsg(role,text){ const wrap=document.getElementById("coach-msgs"); const div=document.createElement("div"); div.className=`msg ${role}`; div.innerHTML=text.replace(/\n/g,"<br>"); wrap.appendChild(div); div.scrollIntoView({behavior:"smooth"}); }
+function coachScrollBottom(){ const c=document.querySelector('.content'); if(c) c.scrollTop=c.scrollHeight; }
+function addCoachMsg(role,text){ const wrap=document.getElementById("coach-msgs"); const div=document.createElement("div"); div.className=`msg ${role}`; div.innerHTML=text.replace(/\n/g,"<br>"); wrap.appendChild(div); coachScrollBottom(); }
 async function sendCoach(){
   const input=document.getElementById("coach-input"); const text=input.value.trim(); if(!text)return;
   const key=cfg("anthropic_key"); if(!key){ alert("Add your Anthropic API key in Settings."); showTab("settings"); return; }
   input.value=""; addCoachMsg("user",text);
-  const typing=document.createElement("div"); typing.className="msg coach"; typing.innerHTML="<em>Coach Léa is thinking…</em>"; document.getElementById("coach-msgs").appendChild(typing); typing.scrollIntoView({behavior:"smooth"});
+  const typing=document.createElement("div"); typing.className="msg coach"; typing.innerHTML="<em>Coach Léa is thinking…</em>"; document.getElementById("coach-msgs").appendChild(typing); coachScrollBottom();
   const goals=userGoals; const wlog=userWeightLog.slice(-4);
   const trend=wlog.length>=2?(wlog[wlog.length-1].weight_kg-wlog[0].weight_kg).toFixed(1)+" kg over "+wlog.length+" weigh-ins":"no data yet";
   const c=computeCompliance();
@@ -1743,7 +1744,7 @@ async function showTab(tab){
   else if(tab==="fridge")renderFridge();
   else if(tab==="prep")renderPrep();
   else if(tab==="progress")renderProgress();
-  else if(tab==="coach"){ renderCoach(); setTimeout(()=>document.getElementById("coach-input").focus(),100); }
+  else if(tab==="coach"){ renderCoach(); coachScrollBottom(); setTimeout(()=>{ coachScrollBottom(); document.getElementById("coach-input").focus(); },150); }
   else if(tab==="settings")loadSettingsUI();
 }
 
@@ -1758,6 +1759,8 @@ async function init(){
   checkForUpdate();
   // First run on this device for this identity → meet Coach Léa to set up the plan
   if(!localStorage.getItem("nutriprep_setup_done_"+identity) && cfg("anthropic_key")){ startSetup(); }
+  // Scroll coach messages to bottom when the soft keyboard opens/closes
+  if(window.visualViewport){ window.visualViewport.addEventListener("resize",()=>{ if(document.querySelector("#pane-coach.active")) coachScrollBottom(); }); }
 }
 
 if(!identity){ document.getElementById("identity-modal").classList.remove("hidden"); checkForUpdate(); }
