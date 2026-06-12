@@ -183,6 +183,17 @@
   .btn:active { opacity: .9; transform: scale(.98); }
   .btn-block { width: 100%; }
   .btn-outline { background: none; border: 1.5px solid var(--pine); color: var(--pine); }
+  .btn-sm { padding: 9px 16px; font-size: 13px; }
+  .hydration-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
+  .hydration-amount { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--hydro, #3B82C4); }
+  .water-bar { background: var(--hair); border-radius: 99px; height: 10px; overflow: hidden; margin-bottom: 12px; }
+  .water-fill { height: 100%; width: 0; background: linear-gradient(90deg, #6FB3E0, #3B82C4); border-radius: 99px; transition: width .25s ease; }
+  .water-glasses { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .water-glass { font-size: 22px; line-height: 1; cursor: pointer; opacity: .25; filter: grayscale(1); transition: opacity .15s, filter .15s, transform .1s; }
+  .water-glass.full { opacity: 1; filter: none; }
+  .water-glass:active { transform: scale(.85); }
+  .water-actions { display: flex; gap: 8px; }
+  .water-actions .btn { flex: 1; }
   .btn-ic { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
   .stat-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
   .stat-row:last-child { border-bottom: none; }
@@ -366,6 +377,18 @@
         <div class="macro-legend" id="macro-legend"></div>
       </div>
     </div>
+    <div class="card" id="hydration-card" style="display:none">
+      <div class="hydration-head">
+        <div class="card-title" style="margin:0">💧 Hydration</div>
+        <div class="hydration-amount"><span id="water-cur">0</span> / <span id="water-target">2.0</span> L</div>
+      </div>
+      <div class="water-bar"><div class="water-fill" id="water-fill"></div></div>
+      <div class="water-glasses" id="water-glasses"></div>
+      <div class="water-actions">
+        <button class="btn btn-outline btn-sm" onclick="addWater(-250)">− Glass</button>
+        <button class="btn btn-sm" onclick="addWater(250)">+ Glass (250 ml)</button>
+      </div>
+    </div>
     <div class="card">
       <div class="card-title">Today's meals — tap ✓ when eaten</div>
       <div id="today-slots"></div>
@@ -476,7 +499,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v16 · nutriprep</div>
+    <div style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v17 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -544,13 +567,14 @@ function emptyIcon(name){
 // ── State ─────────────────────────────────────────────────────────────────────
 let identity = localStorage.getItem("nutriprep_identity") || null;
 let weekMenu = null, shoppingList = null, prepPlan = null, planStatus = null, inventory = null, trainingPlan = null, sleepData = null;
-let householdData = null, priceBook = null;
+let householdData = null, priceBook = null, nutritionPlan = null;
 const SUPERMARKETS = ["Cactus","Auchan","Delhaize","Aldi","Lidl","Match","Grand Frais","Indian Supermarket","Asian Supermarket"];
 const PRICE_UNITS = ["kg","L","item"];
 let shopFilter = "all"; // active supermarket filter on the Shopping tab
 let userGoals = {}, userWeightLog = [], userCheckins = [], userMealLogs = [];
 let coachHistory = [], setupHistory = [];
 let checkedItems = JSON.parse(localStorage.getItem("nutriprep_checked") || "{}");
+let waterLog = JSON.parse(localStorage.getItem("nutriprep_water") || "{}"); // { identity: { "YYYY-MM-DD": ml } }
 let macroRingChart = null, weightChart = null;
 let pendingIdentity = null;
 
@@ -620,6 +644,7 @@ async function loadSharedData(){
   try{ planStatus=await ghFetch("plan_status.json"); }catch(_){ planStatus=null; }
   try{ inventory=await ghFetch("inventory.json"); }catch(_){ inventory=null; }
   try{ householdData=await ghFetch("household.json"); }catch(_){ householdData=null; }
+  try{ nutritionPlan=await ghFetch("nutrition_plan.json"); }catch(_){ nutritionPlan=null; }
   try{ priceBook=await ghFetch("price_book.json"); }catch(_){ priceBook={products:{}}; }
   // Cross-app reads from the training app (AthleteIQ) at the repo root
   try{ trainingPlan=await (await fetch(`${RAW_ROOT}/weekly_plan.json?t=${Date.now()}`)).json(); }catch(_){ trainingPlan=null; }
@@ -645,6 +670,39 @@ function luxMinutes(){
   const p=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Luxembourg",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
   let h=0,m=0; p.forEach(x=>{ if(x.type==="hour")h=+x.value; if(x.type==="minute")m=+x.value; }); if(h===24)h=0;
   return h*60+m;
+}
+
+// ── Hydration tracker ───────────────────────────────────────────────────────────
+const GLASS_ML = 250;
+function waterTargetMl(){ const l=(nutritionPlan&&nutritionPlan.hydration_l)?nutritionPlan.hydration_l:2.0; return Math.round(l*1000); }
+function waterTodayMl(){ return ((waterLog[identity]||{})[todayISO()])||0; }
+function setWaterMl(ml){
+  const d=todayISO(), target=waterTargetMl();
+  ml=Math.max(0, Math.min(ml, target+GLASS_ML*4)); // allow some headroom past target
+  if(!waterLog[identity]) waterLog[identity]={};
+  waterLog[identity][d]=ml;
+  localStorage.setItem("nutriprep_water", JSON.stringify(waterLog));
+  renderHydration();
+}
+function addWater(ml){ setWaterMl(waterTodayMl()+ml); }
+function renderHydration(){
+  const card=document.getElementById("hydration-card");
+  if(!card) return;
+  if(!identity){ card.style.display="none"; return; }
+  card.style.display="block";
+  const target=waterTargetMl(), cur=waterTodayMl();
+  const pct=target>0?Math.min(100,Math.round(cur/target*100)):0;
+  document.getElementById("water-cur").textContent=(cur/1000).toFixed(2).replace(/\.?0+$/,"");
+  document.getElementById("water-target").textContent=(target/1000).toFixed(1);
+  document.getElementById("water-fill").style.width=pct+"%";
+  const glasses=Math.max(1, Math.round(target/GLASS_ML));
+  const filled=Math.round(cur/GLASS_ML);
+  let html="";
+  for(let i=0;i<glasses;i++){
+    const full=i<filled;
+    html+=`<span class="water-glass${full?" full":""}" onclick="setWaterMl(${(i+1)*GLASS_ML===cur?i:(i+1)}*${GLASS_ML})" title="${(i+1)*GLASS_ML} ml">💧</span>`;
+  }
+  document.getElementById("water-glasses").innerHTML=html;
 }
 
 // ── Meal confirmation / compliance ──────────────────────────────────────────────
@@ -699,6 +757,7 @@ function renderToday(){
   renderNextAction(dayData);
   renderTodaySlots(dayData);
   renderMacroRing(dayData);
+  renderHydration();
   document.getElementById("today-date-label").textContent=new Date().toLocaleDateString("en-LU",{timeZone:"Europe/Luxembourg",weekday:"long",day:"numeric",month:"long"});
 }
 function renderHomeStats(){

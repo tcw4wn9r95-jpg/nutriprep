@@ -324,6 +324,10 @@ Tabs:
   quantities). `generate.py` subtracts pantry stock from the shopping list ("✓ in pantry" when enough).
 - **Compliance & gamification**: per-user `meal_logs.json` from the "eaten" buttons drive a compliance %,
   day-streak (🔥) and milestone badges (1/2/4 weeks) shown at the top of Home alongside the weight tracker.
+- **Hydration tracker** (v17): Home card surfaces the plan's `nutrition_plan.json → hydration_l` target as a
+  tappable row of 250 ml glasses with a progress bar. Intake is logged per-user, per-day in `localStorage`
+  (`nutriprep_water`, instant, no token/write — mirrors the shopping `checkedItems` pattern); resets daily.
+  Falls back to a 2.0 L default when no plan is uploaded.
 
 ## Open / deferred (note, don't block MVP)
 - GitHub Actions cron timing drift on snack/cook reminders (upgrade path noted in §5).
