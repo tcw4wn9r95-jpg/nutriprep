@@ -328,6 +328,15 @@ Tabs:
   tappable row of 250 ml glasses with a progress bar. Intake is logged per-user, per-day in `localStorage`
   (`nutriprep_water`, instant, no token/write — mirrors the shopping `checkedItems` pattern); resets daily.
   Falls back to a 2.0 L default when no plan is uploaded.
+- **Auto-parse on upload + detailed macros (v18)**: uploading a nutritionist plan in Settings now auto-dispatches
+  the `parse.yml` workflow (no manual Actions run) and polls for the result. `parse_plan.py` extracts a far richer
+  schema — it **translates non-English plans** (e.g. Spanish), captures the full meal-by-meal exchange structure
+  (`meals[]`: per-meal time, per-component category/portion/options, per-meal water), the `methodology`
+  (e.g. Glucose Goddess), `client_name`, and **estimates daily kcal/macros from the prescribed portions** when the
+  plan is exchange-based with no explicit numbers (`targets_estimated`). `generate.py` feeds this structure to Claude
+  so menus honour the plan's categories and portions. Settings shows a **"Your nutrition targets"** card: kcal +
+  hydration, macro grams with % of calories and g/kg, source badge, methodology, eat-regularly / avoid chips, and the
+  full translated daily meal structure.
 
 ## Open / deferred (note, don't block MVP)
 - GitHub Actions cron timing drift on snack/cook reminders (upgrade path noted in §5).

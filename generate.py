@@ -145,10 +145,27 @@ Daily targets ({macro_src}): {mt.get('kcal','?')} kcal · {mt.get('protein_g','?
 
 # ── Nutritionist guidelines ───────────────────────────────────────────────────
 plan_notes = []
+if nutrition_plan.get("client_name"):
+    plan_notes.append(f"This plan was written by a nutritionist for {nutrition_plan['client_name']} (the clinical authority — follow it).")
+if nutrition_plan.get("methodology"):
+    plan_notes.append("Methodology: " + nutrition_plan["methodology"])
 if nutrition_plan.get("prescribed_foods"):
     plan_notes.append("Prescribed: " + ", ".join(nutrition_plan["prescribed_foods"]))
 if nutrition_plan.get("restricted_foods"):
-    plan_notes.append("Restricted/avoid: " + ", ".join(nutrition_plan["restricted_foods"]))
+    plan_notes.append("Restricted/avoid (never serve): " + ", ".join(nutrition_plan["restricted_foods"]))
+# Full meal-by-meal exchange structure — the heart of the plan. Build every meal to match it.
+if nutrition_plan.get("meals"):
+    struct = ["Prescribed daily meal structure (build the SAME dishes for the household, sized per member; "
+              "each meal must honour these food categories, portions and allowed alternatives):"]
+    for m in nutrition_plan["meals"]:
+        label = m.get("label") or m.get("slot", "")
+        t = m.get("time", "")
+        water = f" · {m['water_ml']} ml water" if m.get("water_ml") else ""
+        struct.append(f"  {label} ({t}){water}:")
+        for c in m.get("components", []):
+            opts = c.get("portion") or " / ".join(c.get("options", []))
+            struct.append(f"    - {c.get('category', '')}: {opts}")
+    plan_notes.append("\n".join(struct))
 if nutrition_plan.get("nutritionist_notes"):
     plan_notes.append("Notes: " + nutrition_plan["nutritionist_notes"])
 nutrition_block = "\n".join(plan_notes) if plan_notes else "No nutritionist plan uploaded yet — use individual macro targets as authority."

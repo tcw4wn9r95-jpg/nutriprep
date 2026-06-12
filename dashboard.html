@@ -262,6 +262,29 @@
   .empty p { font-size: 14px; line-height: 1.5; }
   .section-title { font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 16px; color: var(--ink); letter-spacing: -.2px; }
   .chip { display: inline-block; background: var(--sage-pale); color: var(--pine); font-size: 12px; font-weight: 600; border-radius: 8px; padding: 3px 9px; }
+  .src-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; border-radius: 7px; padding: 3px 8px; }
+  .src-badge.plan { background: var(--sage-pale); color: var(--pine); }
+  .src-badge.est { background: #FBF0D8; color: #9A7B2E; }
+  .src-badge.derived { background: var(--hair); color: var(--muted); }
+  .kcal-hero { display: flex; gap: 10px; margin: 10px 0 14px; }
+  .kcal-hero .box { flex: 1; background: var(--sage-pale); border-radius: 12px; padding: 12px; text-align: center; }
+  .kcal-hero .box.water { background: #E8F1F8; }
+  .kcal-hero .num { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--pine); line-height: 1; }
+  .kcal-hero .box.water .num { color: #3B82C4; }
+  .kcal-hero .cap { font-size: 10px; color: var(--muted); margin-top: 5px; text-transform: uppercase; letter-spacing: .4px; font-weight: 600; }
+  .macro-detail { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--hair); }
+  .macro-detail:last-child { border-bottom: none; }
+  .macro-detail .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+  .macro-detail .nm { font-weight: 600; font-size: 14px; color: var(--ink); flex: 1; }
+  .macro-detail .gr { font-weight: 700; font-size: 14px; color: var(--ink); }
+  .macro-detail .pct { font-size: 11px; color: var(--faint); width: 64px; text-align: right; }
+  .ms-meal { border: 1px solid var(--hair); border-radius: 12px; padding: 10px 12px; margin-top: 8px; }
+  .ms-meal .ms-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .ms-meal .ms-name { font-weight: 700; font-size: 13px; color: var(--pine); }
+  .ms-meal .ms-time { font-size: 11px; color: var(--faint); }
+  .ms-comp { font-size: 12.5px; color: var(--ink); padding: 3px 0; line-height: 1.35; }
+  .ms-comp .ms-cat { font-weight: 600; color: var(--muted); }
+  .sub-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin: 16px 0 8px; }
   .row-between { display: flex; justify-content: space-between; align-items: center; }
 
   /* Coach Léa setup conversation (onboarding) */
@@ -494,12 +517,13 @@
       <input type="file" id="plan-upload-input" accept="image/*,.pdf" style="display:none" onchange="uploadPlan(this)">
       <div id="upload-status" style="font-size:13px;color:var(--muted);margin-top:8px"></div>
     </div>
+    <div class="card" id="macros-card"></div>
     <div class="card">
       <div class="card-title">Your plan & goals</div>
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v17 · nutriprep</div>
+    <div style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v18 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -571,7 +595,7 @@ let householdData = null, priceBook = null, nutritionPlan = null;
 const SUPERMARKETS = ["Cactus","Auchan","Delhaize","Aldi","Lidl","Match","Grand Frais","Indian Supermarket","Asian Supermarket"];
 const PRICE_UNITS = ["kg","L","item"];
 let shopFilter = "all"; // active supermarket filter on the Shopping tab
-let userGoals = {}, userWeightLog = [], userCheckins = [], userMealLogs = [];
+let userGoals = {}, userWeightLog = [], userCheckins = [], userMealLogs = [], userMacros = {};
 let coachHistory = [], setupHistory = [];
 let checkedItems = JSON.parse(localStorage.getItem("nutriprep_checked") || "{}");
 let waterLog = JSON.parse(localStorage.getItem("nutriprep_water") || "{}"); // { identity: { "YYYY-MM-DD": ml } }
@@ -609,12 +633,12 @@ function ytSearchBtn(name){ return `<a class="btn-yt" href="https://www.youtube.
 function cfg(k){ return localStorage.getItem("nutriprep_"+k) || ""; }
 function setCfg(k,v){ localStorage.setItem("nutriprep_"+k, v); }
 function saveSettings(){ setCfg("anthropic_key", document.getElementById("s-anthropic-key").value); setCfg("gh_token", document.getElementById("s-gh-token").value); }
-function loadSettingsUI(){ document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderIdentityPicker(); renderGoals(); }
+function loadSettingsUI(){ document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderIdentityPicker(); renderGoals(); renderMacrosCard(); }
 
 // ── Identity ──────────────────────────────────────────────────────────────────
 function pickIdentity(who, el){ pendingIdentity=who; document.querySelectorAll(".identity-choice").forEach(b=>b.classList.remove("selected")); if(el)el.classList.add("selected"); }
 function confirmIdentity(){ if(!pendingIdentity){ alert("Please choose who you are."); return; } identity=pendingIdentity; localStorage.setItem("nutriprep_identity", identity); document.getElementById("identity-modal").classList.add("hidden"); init(); }
-function renderIdentityPicker(){ const wrap=document.getElementById("settings-identity-picker"); wrap.innerHTML=""; ["diego","diana"].forEach(who=>{ const btn=document.createElement("button"); btn.className="identity-btn"+(identity===who?" active":""); btn.innerHTML=(who==="diego"?"👨 ":"👩 ")+who.charAt(0).toUpperCase()+who.slice(1); btn.onclick=()=>{ identity=who; localStorage.setItem("nutriprep_identity",who); renderIdentityPicker(); renderUserChip(); loadUserData().then(()=>{renderToday();}); }; wrap.appendChild(btn); }); }
+function renderIdentityPicker(){ const wrap=document.getElementById("settings-identity-picker"); wrap.innerHTML=""; ["diego","diana"].forEach(who=>{ const btn=document.createElement("button"); btn.className="identity-btn"+(identity===who?" active":""); btn.innerHTML=(who==="diego"?"👨 ":"👩 ")+who.charAt(0).toUpperCase()+who.slice(1); btn.onclick=()=>{ identity=who; localStorage.setItem("nutriprep_identity",who); renderIdentityPicker(); renderUserChip(); loadUserData().then(()=>{renderToday(); renderGoals(); renderMacrosCard();}); }; wrap.appendChild(btn); }); }
 function renderUserChip(){ document.getElementById("hdr-user-chip").textContent = identity?(identity==="diego"?"👨 Diego":"👩 Diana"):"—"; }
 
 // ── GitHub API ─────────────────────────────────────────────────────────────────
@@ -662,6 +686,7 @@ async function loadUserData(){
   try{ userWeightLog=await ghFetch(`users/${identity}/weight_log.json`); }catch(_){ userWeightLog=[]; }
   try{ userCheckins=await ghFetch(`users/${identity}/checkins.json`); }catch(_){ userCheckins=[]; }
   try{ userMealLogs=await ghFetch(`users/${identity}/meal_logs.json`); }catch(_){ userMealLogs=[]; }
+  try{ userMacros=await ghFetch(`users/${identity}/macro_targets.json`); }catch(_){ userMacros={}; }
   try{ coachHistory=await ghFetch(`users/${identity}/coach_history.json`); }catch(_){ coachHistory=[]; }
 }
 function todayISO(){ return new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Luxembourg"}); }
@@ -1272,12 +1297,50 @@ function urlBase64ToUint8Array(b64){ const pad="=".repeat((4-b64.length%4)%4); c
 
 // ── PLAN UPLOAD ───────────────────────────────────────────────────────────────
 async function uploadPlan(input){
-  const file=input.files[0]; if(!file)return; const status=document.getElementById("upload-status"); status.textContent="Uploading…";
+  const file=input.files[0]; if(!file)return; const status=document.getElementById("upload-status");
+  if(!cfg("gh_token")){ status.textContent="Add your GitHub token below first (needs 'workflow' scope), then upload again."; return; }
+  status.textContent="Uploading…";
   const reader=new FileReader();
   reader.onload=async e=>{ const b64=e.target.result.split(",")[1]; const ext=file.name.split(".").pop().toLowerCase(); const filename=`nutritionist_plan_upload.${ext}`;
-    try{ await ghWriteRaw(filename,b64,`Upload nutritionist plan ${todayISO()}`); status.textContent=`✓ Uploaded. Run the "Parse Nutritionist Plan" workflow on GitHub Actions to process it.`; }
+    try{
+      await ghWriteRaw(filename,b64,`Upload nutritionist plan ${todayISO()}`);
+      status.textContent="✓ Uploaded — reading your plan with Coach Léa…";
+      const res=await dispatchParse(filename);
+      if(res.ok){ status.textContent="🌿 Reading & translating your nutritionist plan… your macros and meal structure will appear here in a minute."; startPlanParsePoll(); }
+      else { status.textContent=res.error==="no_token"
+        ? "Uploaded, but add a GitHub token with 'workflow' scope to auto-process it."
+        : "Uploaded, but couldn't start parsing ("+res.error+"). Make sure your token has the 'workflow' scope."; }
+    }
     catch(e){ status.textContent="Upload failed: "+e.message; } };
   reader.readAsDataURL(file);
+}
+// Dispatch the "Parse Nutritionist Plan" workflow. Returns {ok} like dispatchGenerate.
+async function dispatchParse(filename){
+  const token=cfg("gh_token"); if(!token) return {ok:false, error:"no_token"};
+  try{
+    const r=await fetch(`https://api.github.com/repos/${GITHUB_REPO}/actions/workflows/parse.yml/dispatches`,{
+      method:"POST",headers:{Authorization:`Bearer ${token}`,Accept:"application/vnd.github+json","Content-Type":"application/json"},
+      body:JSON.stringify({ref:GITHUB_BRANCH,inputs:{filename}})});
+    if(r.status===204) return {ok:true};
+    const d=await r.json().catch(()=>({})); return {ok:false, error:d.message||("HTTP "+r.status)};
+  }catch(e){ return {ok:false, error:e.message}; }
+}
+// Poll for the freshly parsed plan and refresh the macros card when it lands.
+let _parsePollTimer=null;
+function startPlanParsePoll(){
+  if(_parsePollTimer) clearInterval(_parsePollTimer);
+  const before=(nutritionPlan&&nutritionPlan.parsed_on)||null;
+  let tries=0;
+  _parsePollTimer=setInterval(async()=>{
+    tries++;
+    try{ nutritionPlan=await ghFetch("nutrition_plan.json"); }catch(_){}
+    await loadUserData();
+    const got=nutritionPlan&&nutritionPlan.source==="nutritionist_upload"&&nutritionPlan.parsed_on!==before;
+    if(got){ clearInterval(_parsePollTimer); _parsePollTimer=null; renderMacrosCard(); renderGoals();
+      document.getElementById("upload-status").textContent="✓ Plan read! Your macros and meal structure are below."; }
+    else if(tries>=20){ clearInterval(_parsePollTimer); _parsePollTimer=null;
+      document.getElementById("upload-status").textContent="Still processing — check the Actions tab, or reopen Settings shortly."; }
+  }, 15000);
 }
 
 // ── GOALS DISPLAY ───────────────────────────────────────────────────────────────
@@ -1289,6 +1352,66 @@ function renderGoals(){
     <div class="stat-row"><span class="stat-label">Target weight</span><span class="stat-val">${userGoals.target_weight_kg} kg</span></div>
     <div class="stat-row"><span class="stat-label">Rate</span><span class="stat-val">−${userGoals.target_rate_kg_per_week} kg/wk</span></div>
     <div class="stat-row"><span class="stat-label">Target date</span><span class="stat-val">${userGoals.target_date||"—"}</span></div>`;
+}
+
+// ── DETAILED MACROS CARD (from the nutritionist plan) ───────────────────────────
+function renderMacrosCard(){
+  const el=document.getElementById("macros-card"); if(!el)return;
+  const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const m=userMacros||{};
+  const name=identity?identity.charAt(0).toUpperCase()+identity.slice(1):"You";
+  if(!m.kcal){
+    el.innerHTML=`<div class="card-title">${name}'s nutrition targets</div>
+      <div style="font-size:13px;color:var(--muted)">No targets yet. Upload your nutritionist's plan above — Coach Léa reads it (translating if needed) and your detailed macros appear here.</div>`;
+    return;
+  }
+  const src=m.source||"estimate";
+  const badge = src.startsWith("nutritionist (estimated")
+      ? {cls:"est", txt:"Estimated from plan"}
+    : src.startsWith("nutritionist")
+      ? {cls:"plan", txt:"From nutritionist"}
+    : src==="derived"
+      ? {cls:"derived", txt:"Derived from goals"}
+      : {cls:"derived", txt:esc(src)};
+  const kcal=m.kcal, P=m.protein_g||0, C=m.carbs_g||0, F=m.fat_g||0, Fib=m.fiber_g||0;
+  const wt=(userWeightLog.length?userWeightLog[userWeightLog.length-1].weight_kg:userGoals.start_weight_kg)||null;
+  const pctK=g4=>kcal?Math.round(g4/kcal*100):0;
+  const perKg=g=>wt?(g/wt).toFixed(1)+" g/kg":"";
+  const row=(color,nm,g,kcalG,extra)=>`<div class="macro-detail"><span class="dot" style="background:${color}"></span>
+    <span class="nm">${nm}</span><span class="gr">${g} g</span><span class="pct">${kcalG!=null?pctK(kcalG)+"%":(extra||"")}</span></div>`;
+  let html=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+      <div class="card-title" style="margin:0">${name}'s nutrition targets</div>
+      <span class="src-badge ${badge.cls}">${badge.txt}</span></div>`;
+  if(m.client_name) html+=`<div style="font-size:11px;color:var(--faint);margin-bottom:6px">Plan for ${esc(m.client_name)}</div>`;
+  html+=`<div class="kcal-hero">
+      <div class="box"><div class="num">${kcal}</div><div class="cap">kcal / day</div></div>
+      <div class="box water"><div class="num">${m.hydration_l!=null?m.hydration_l:2.0} L</div><div class="cap">water / day</div></div></div>`;
+  html+=row("#2C5A4E","Protein",P,P*4)
+       +row("#CFA24C","Carbs",C,C*4)
+       +row("#C26B4E","Fat",F,F*9)
+       +row("#7E9B70","Fibre",Fib,null,Fib?"goal":"");
+  if(wt) html+=`<div style="font-size:11px;color:var(--faint);margin-top:8px">≈ ${perKg(P)} protein at ${wt} kg · % = share of daily calories</div>`;
+  if(m.methodology) html+=`<div class="sub-title">Method</div><div style="font-size:13px;color:var(--ink);line-height:1.45">${esc(m.methodology)}</div>`;
+  const presc=m.prescribed_foods||[], avoid=m.restricted_foods||[];
+  if(presc.length){ html+=`<div class="sub-title">Eat regularly</div><div style="display:flex;flex-wrap:wrap;gap:6px">${presc.map(f=>`<span class="chip">${esc(f)}</span>`).join("")}</div>`; }
+  if(avoid.length){ html+=`<div class="sub-title">Avoid</div><div style="display:flex;flex-wrap:wrap;gap:6px">${avoid.map(f=>`<span class="chip" style="background:#F6E4DE;color:#B25A3E">${esc(f)}</span>`).join("")}</div>`; }
+  // Full meal-by-meal exchange structure from the shared parsed plan
+  const meals=(nutritionPlan&&nutritionPlan.meals)||[];
+  if(meals.length){
+    html+=`<div class="sub-title">Daily meal structure</div>`;
+    html+=meals.map(meal=>{
+      const comps=(meal.components||[]).map(c=>{
+        const txt=c.portion||(c.options||[]).join(" / ");
+        return `<div class="ms-comp"><span class="ms-cat">${esc(c.category||"")}:</span> ${esc(txt)}</div>`;
+      }).join("");
+      const w=meal.water_ml?` · 💧 ${meal.water_ml} ml`:"";
+      return `<div class="ms-meal"><div class="ms-head"><span class="ms-name">${esc(meal.label||meal.slot||"")}</span>
+        <span class="ms-time">${esc(meal.time||"")}${w}</span></div>${comps}</div>`;
+    }).join("");
+  }
+  if(m.nutritionist_notes) html+=`<div class="sub-title">Notes</div><div style="font-size:12.5px;color:var(--muted);line-height:1.45">${esc(m.nutritionist_notes)}</div>`;
+  if(m.updated_on) html+=`<div style="font-size:10px;color:var(--faint);text-align:right;margin-top:12px">Updated ${esc(m.updated_on)}</div>`;
+  el.innerHTML=html;
 }
 
 // ── COACH LÉA SETUP CONVERSATION (onboarding) ───────────────────────────────────

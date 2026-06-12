@@ -56,20 +56,51 @@ def extract_text_from_pdf(path: Path) -> str:
 
 def build_prompt(members: list[str]) -> str:
     member_list = " and ".join(m.capitalize() for m in members)
-    return f"""You are extracting structured nutritional data from a nutritionist's meal plan document.
+    members_json = ", ".join(
+        f'"{m}": {{"kcal": null, "protein_g": null, "carbs_g": null, "fat_g": null, "fiber_g": null}}'
+        for m in members
+    )
+    return f"""You are a clinical-nutrition data extractor. You are reading a nutritionist's meal plan
+document (a photo or PDF). It is FUNDAMENTAL that you capture this plan completely and faithfully —
+it is the clinical authority that a downstream meal-plan generator will follow exactly.
 
 The household members are: {member_list}.
 
-Extract and return ONLY a JSON object (no prose, no markdown fences) with this exact schema:
+IMPORTANT — LANGUAGE: The document may be written in Spanish (or another language). TRANSLATE every
+extracted value into clear English. When a meal name or food-category label is meaningful in the
+original language, also keep the original text in the matching `*_original` field.
+
+Return ONLY a JSON object (no prose, no markdown fences) with this exact schema:
 
 {{
   "source": "nutritionist_upload",
   "parsed_on": "{date.today().isoformat()}",
   "confidence": 0.0,
+  "language_detected": "",
+  "client_name": "",
+  "methodology": "",
+  "targets_estimated": false,
   "per_member_targets": {{
-    {", ".join(f'"{m}": {{"kcal": null, "protein_g": null, "carbs_g": null, "fat_g": null, "fiber_g": null}}' for m in members)}
+    {members_json}
   }},
   "meal_structure": ["breakfast", "am_snack", "lunch", "pm_snack", "dinner"],
+  "meals": [
+    {{
+      "slot": "breakfast",
+      "label": "Breakfast",
+      "label_original": "Desayuno",
+      "time": "09:00",
+      "water_ml": 500,
+      "components": [
+        {{
+          "category": "Protein",
+          "category_original": "Carnes",
+          "portion": "2 eggs OR 2 slices of smoked salmon OR a protein serving",
+          "options": ["2 eggs", "2 slices smoked salmon", "1 protein serving"]
+        }}
+      ]
+    }}
+  ],
   "prescribed_foods": [],
   "restricted_foods": [],
   "hydration_l": 2.0,
@@ -77,14 +108,31 @@ Extract and return ONLY a JSON object (no prose, no markdown fences) with this e
 }}
 
 Rules:
-- Set `confidence` between 0.0 (very uncertain) and 1.0 (clearly stated).
-- If the plan covers only ONE person, populate their targets and leave the other as null.
-- If macros are not explicitly stated, set them to null (do NOT estimate).
-- `prescribed_foods`: list foods/food groups the nutritionist says to eat regularly (e.g. "oily fish 2x/week").
-- `restricted_foods`: list foods the nutritionist says to limit or avoid.
-- `meal_structure`: include "am_snack" and "pm_snack" if the plan includes snacks; otherwise omit them.
-- `hydration_l`: daily water target in litres (default 2.0 if not stated).
-- `nutritionist_notes`: copy any important clinical notes verbatim (max 500 chars).
+- `language_detected`: ISO code of the document's language (e.g. "es", "en").
+- `client_name`: the person the plan is written for, exactly as printed (e.g. "Diego Casares").
+- `methodology`: if the plan references a method or philosophy (e.g. "Glucose Goddess"), name it and
+  add a one-sentence plain-English description of its core principle.
+- `meals`: capture the FULL meal-by-meal structure. For EVERY meal include its `slot`
+  (breakfast | am_snack | lunch | pm_snack | dinner), an English `label`, the original-language
+  `label_original`, the `time` as "HH:MM" 24h, any per-meal water in `water_ml`, and a `components`
+  array. Each component is one food category/row with its English `category`, the `category_original`,
+  the full `portion` text (translated, keeping quantities like grams, cups, pieces), and `options`:
+  every interchangeable alternative split into its own string. Do not summarise or drop options.
+- `meal_structure`: the ordered list of slots actually present in this plan.
+- `prescribed_foods`: foods/groups the plan tells the client to eat regularly.
+- `restricted_foods`: the "avoid / limit" list (e.g. Spanish "Evitar Consumir"), translated.
+- `hydration_l`: total daily water in litres. If per-meal water amounts are given, SUM them.
+- `nutritionist_notes`: any other clinical notes, verbatim then translated (max 600 chars).
+- `per_member_targets`: daily calorie & macro targets.
+    • If the document states explicit kcal/macro numbers, use them exactly and set
+      "targets_estimated": false.
+    • If the plan is PORTION/EXCHANGE-based with NO explicit numbers (common), ESTIMATE realistic
+      daily targets by summing a representative mid-range choice from each meal's components across
+      the whole day (kcal, protein_g, carbs_g, fat_g, fiber_g). Set "targets_estimated": true.
+      Use standard food composition values; be careful and clinically plausible.
+    • Assign the numbers to the member whose first name matches `client_name`. Leave any member not
+      covered by the plan as null (their targets are derived separately).
+- `confidence`: 0.0 (very unsure) to 1.0 (clearly legible and complete).
 - Return ONLY valid JSON. No prose. No markdown.
 """
 
@@ -138,7 +186,7 @@ def main():
             print("Extracted text from PDF, sending as text to Claude.")
             message = client.messages.create(
                 model="claude-sonnet-4-6",
-                max_tokens=2000,
+                max_tokens=4096,
                 messages=[{"role": "user", "content": prompt + "\n\nNUTRITIONIST PLAN TEXT:\n" + text}],
             )
         else:
@@ -149,7 +197,7 @@ def main():
         print(f"Sending image to Claude vision ({upload.name}, {len(b64)//1024} KB base64)...")
         message = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=2000,
+            max_tokens=4096,
             messages=[{
                 "role": "user",
                 "content": [
@@ -185,6 +233,18 @@ def main():
         json.dump(plan, f, indent=2)
     print(f"Saved {plan_path}")
 
+    # Shared plan context surfaced on every member's macro card (and to generate.py).
+    estimated = bool(plan.get("targets_estimated"))
+    shared_ctx = {
+        "hydration_l": plan.get("hydration_l", 2.0),
+        "methodology": plan.get("methodology", ""),
+        "prescribed_foods": plan.get("prescribed_foods", []),
+        "restricted_foods": plan.get("restricted_foods", []),
+        "client_name": plan.get("client_name", ""),
+        "nutritionist_notes": plan.get("nutritionist_notes", ""),
+        "updated_on": date.today().isoformat(),
+    }
+
     # Fan targets into per-user macro_targets.json
     for member in MEMBERS:
         targets = (plan.get("per_member_targets") or {}).get(member)
@@ -192,13 +252,16 @@ def main():
             print(f"  {member}: targets not in plan — deriving from goals...")
             targets = derive_macros_from_goals(member)
         else:
-            targets["source"] = "nutritionist"
+            targets = {k: v for k, v in targets.items() if v is not None}
+            targets["source"] = "nutritionist (estimated from plan)" if estimated else "nutritionist"
+            # The detailed nutritionist plan applies to the named client only.
+            targets.update(shared_ctx)
 
         if targets:
             out = BASE / "users" / member / "macro_targets.json"
             with open(out, "w") as f:
                 json.dump(targets, f, indent=2)
-            print(f"  Saved {out} ({targets.get('kcal')} kcal)")
+            print(f"  Saved {out} ({targets.get('kcal')} kcal · source: {targets.get('source')})")
 
     if confidence < 0.6:
         print(

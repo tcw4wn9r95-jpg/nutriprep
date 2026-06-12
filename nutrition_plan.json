@@ -1,14 +1,88 @@
 {
-  "source": "placeholder",
-  "parsed_on": null,
-  "confidence": null,
+  "source": "nutritionist_upload",
+  "parsed_on": "2026-06-12",
+  "confidence": 0.9,
+  "language_detected": "es",
+  "client_name": "Diego Casares",
+  "methodology": "Glucose Goddess — structure meals to blunt blood-glucose spikes: eat vegetables/fibre first, keep breakfast savoury and protein-rich, add a little vinegar or fat to carbs, and move gently after eating.",
+  "targets_estimated": true,
   "per_member_targets": {
-    "diego": null,
+    "diego": { "kcal": 1980, "protein_g": 150, "carbs_g": 180, "fat_g": 70, "fiber_g": 32 },
     "diana": null
   },
-  "meal_structure": ["breakfast", "am_snack", "lunch", "pm_snack", "dinner"],
-  "prescribed_foods": [],
-  "restricted_foods": [],
+  "meal_structure": ["breakfast", "lunch", "pm_snack", "dinner"],
+  "meals": [
+    {
+      "slot": "breakfast",
+      "label": "Breakfast",
+      "label_original": "Desayuno",
+      "time": "09:00",
+      "water_ml": 500,
+      "components": [
+        { "category": "Protein", "category_original": "Carnes", "portion": "2 eggs OR 2 slices of smoked salmon OR a protein serving", "options": ["2 eggs", "2 slices smoked salmon", "1 protein serving"] },
+        { "category": "Protein / Fat", "category_original": "Carnes", "portion": "30 g cheese OR 1/4 avocado", "options": ["30 g cheese", "1/4 avocado"] },
+        { "category": "Starch", "category_original": "Almidones", "portion": "30-40 g whole-grain or sourdough bread", "options": ["30-40 g whole-grain bread", "30-40 g sourdough bread"] },
+        { "category": "Fruit", "category_original": "Fruta", "portion": "1 cup strawberries/raspberries/blueberries OR 1 peach OR 1/2 banana OR 2 kiwis OR 1 orange OR 1 apple", "options": ["1 cup strawberries", "1 cup raspberries", "1 cup blueberries", "1 peach", "1/2 banana", "2 kiwis", "1 orange", "1 apple"] },
+        { "category": "Dairy", "category_original": "Lacteos", "portion": "1 cup kefir with skim milk OR 3/4 cup Greek yogurt", "options": ["1 cup kefir with skim milk", "3/4 cup Greek yogurt"] }
+      ]
+    },
+    {
+      "slot": "lunch",
+      "label": "Lunch",
+      "label_original": "Almuerzo",
+      "time": "13:00",
+      "water_ml": 500,
+      "components": [
+        { "category": "Vegetables", "category_original": "Verduras", "portion": "1 cup cooked vegetables OR 2 cups raw", "options": ["1 cup cooked vegetables", "2 cups raw vegetables"] },
+        { "category": "Protein (raw weight)", "category_original": "Carnes (peso en crudo)", "portion": "180 g chicken OR fish OR turkey OR pork loin OR beef (in sauce, grilled, or oven-baked)", "options": ["180 g chicken", "180 g fish", "180 g turkey", "180 g lean pork loin", "180 g beef"] },
+        { "category": "Starch (cooked measure)", "category_original": "Almidones (medida ya cocida)", "portion": "1/2 cup whole-grain pasta or quinoa OR 1 sweet potato OR 1 potato with skin OR 2 corn tortillas", "options": ["1/2 cup whole-grain pasta", "1/2 cup quinoa", "1 sweet potato", "1 potato with skin", "2 corn tortillas"] },
+        { "category": "Legume", "category_original": "Almidones", "portion": "1/3 cup lentils OR 1/4 cup hummus OR 1/3 cup chickpeas", "options": ["1/3 cup lentils", "1/4 cup hummus", "1/3 cup chickpeas"] },
+        { "category": "Fruit", "category_original": "Fruta", "portion": "1 cup strawberries/raspberries/blueberries OR 1 peach OR 1/2 banana", "options": ["1 cup strawberries", "1 cup raspberries", "1 cup blueberries", "1 peach", "1/2 banana"] },
+        { "category": "Fat", "category_original": "Grasas", "portion": "2 tsp olive oil OR 2 tsp sesame oil", "options": ["2 tsp olive oil", "2 tsp sesame oil"] }
+      ]
+    },
+    {
+      "slot": "pm_snack",
+      "label": "Mid-afternoon snack",
+      "label_original": "Media Tarde",
+      "time": "17:00",
+      "water_ml": 500,
+      "components": [
+        { "category": "Option 1", "category_original": "OP 1", "portion": "20 g almonds/walnuts/cashews/pistachios + 1 apple OR 1 pear OR 1 nectarine", "options": ["20 g almonds + 1 apple", "20 g walnuts + 1 pear", "20 g cashews + 1 nectarine", "20 g pistachios + 1 apple"] },
+        { "category": "Option 2", "category_original": "Op 2", "portion": "1 Barebells bar", "options": ["1 Barebells bar"] },
+        { "category": "Option 3", "category_original": "OP 3", "portion": "3/4 cup Greek yogurt + 1/4 cup almonds/walnuts/pistachios", "options": ["3/4 cup Greek yogurt + 1/4 cup almonds", "3/4 cup Greek yogurt + 1/4 cup walnuts", "3/4 cup Greek yogurt + 1/4 cup pistachios"] }
+      ]
+    },
+    {
+      "slot": "dinner",
+      "label": "Dinner",
+      "label_original": "Cena",
+      "time": "20:00",
+      "water_ml": 500,
+      "components": [
+        { "category": "Vegetables", "category_original": "Verduras", "portion": "1 cup vegetables - baby carrots and cherry tomatoes", "options": ["1 cup baby carrots and cherry tomatoes"] },
+        { "category": "Protein", "category_original": "Carnes", "portion": "1 can tuna OR 1 egg + 30 g cheese OR 2 slices turkey ham or chicken + 30 g cheese OR 90 g chicken + 30 g cheese", "options": ["1 can tuna", "1 egg + 30 g cheese", "2 slices turkey ham + 30 g cheese", "2 slices chicken + 30 g cheese", "90 g chicken + 30 g cheese"] },
+        { "category": "Starch", "category_original": "Almidones", "portion": "1 whole-grain pita OR 50 g whole-grain sourdough bread", "options": ["1 whole-grain pita", "50 g whole-grain sourdough bread"] },
+        { "category": "Fat", "category_original": "Grasas", "portion": "2 tsp olive oil OR 1/4 avocado", "options": ["2 tsp olive oil", "1/4 avocado"] }
+      ]
+    }
+  ],
+  "prescribed_foods": [
+    "vegetables/fibre first at each meal (Glucose Goddess)",
+    "savoury, protein-rich breakfast",
+    "lean proteins: chicken, fish, turkey, pork loin, beef",
+    "legumes: lentils, chickpeas, hummus",
+    "whole grains and sourdough over refined starches",
+    "nuts: almonds, walnuts, cashews, pistachios",
+    "Greek yogurt and kefir"
+  ],
+  "restricted_foods": [
+    "juices",
+    "soups",
+    "fried or breaded foods",
+    "chocolate or sweets",
+    "alcoholic beverages"
+  ],
   "hydration_l": 2.0,
-  "nutritionist_notes": "No nutritionist plan uploaded yet. Using individual macro targets from each user's profile."
+  "nutritionist_notes": "Portion/exchange-based plan following the Glucose Goddess approach. Daily calorie and macro figures are estimated from a mid-range choice in each meal exchange; the food categories, portions and allowed alternatives are the authority. 500 ml of water with each of the four meals (~2 L/day). Original document in Spanish (clinic: Alvear 1)."
 }
