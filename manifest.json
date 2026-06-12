@@ -1,0 +1,17 @@
+{
+  "name": "NutriPrep — Coach Léa",
+  "short_name": "NutriPrep",
+  "description": "Your personal meal-prep coach for Luxembourg",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/nutriprep/dashboard.html",
+  "scope": "/nutriprep/",
+  "id": "/nutriprep/",
+  "theme_color": "#F4EEE4",
+  "background_color": "#F4EEE4",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

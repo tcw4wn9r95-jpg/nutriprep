@@ -1,0 +1,45 @@
+name: "NutriPrep — Parse Nutritionist Plan"
+
+on:
+  workflow_dispatch:
+    inputs:
+      filename:
+        description: "Uploaded file name (e.g. nutritionist_plan_upload.jpg)"
+        required: false
+        default: "nutritionist_plan_upload.jpg"
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  parse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Parse nutritionist plan
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python parse_plan.py
+
+      - name: Commit parsed plan
+        run: |
+          git config user.name "Coach Léa"
+          git config user.email "lea@nutriprep.local"
+          git add \
+            nutrition_plan.json \
+            users/diego/macro_targets.json \
+            users/diana/macro_targets.json \
+            "nutritionist_plan_parsed.*" || true
+          git add -A 
+          git diff --staged --quiet && echo "Nothing to commit." && exit 0
+          git commit -m "Parse nutritionist plan $(date +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push

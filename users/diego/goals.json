@@ -1,0 +1,14 @@
+{
+  "name": "Diego",
+  "goal_type": "weight_loss",
+  "start_weight_kg": 94,
+  "target_weight_kg": 85,
+  "target_rate_kg_per_week": 0.5,
+  "target_date": "",
+  "notes": "Starting consistent training plan. Prefers sustainable, healthy approach over rapid loss.",
+  "set_on": "2026-06-01",
+  "sex": "male",
+  "age": 38,
+  "height_cm": 186,
+  "activity_level": "light"
+}

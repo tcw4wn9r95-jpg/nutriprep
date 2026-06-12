@@ -1,0 +1,75 @@
+name: "NutriPrep — Generate Weekly Meal Plan"
+
+on:
+  schedule:
+    # Every Sunday at 18:00 UTC = ~20:00 Luxembourg time (CEST)
+    - cron: "0 18 * * 0"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Force regeneration even if plan exists this week"
+        type: choice
+        options: ["false", "true"]
+        default: "false"
+
+# Required so the GITHUB_TOKEN can push the generated plan back to the repo.
+# Without this, repos whose default workflow permission is read-only make every
+# `git push` 403 — which silently fails the whole run.
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        # generate.py only needs the Anthropic SDK. Don't pull in pywebpush/pypdf
+        # (notify.py / parse_plan.py deps) — a build failure there must not block
+        # plan generation. Tee output so install errors land in the run log too.
+        run: |
+          set -o pipefail
+          pip install "anthropic>=0.40.0" 2>&1 | tee _run.log
+
+      - name: Generate meal plan
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FORCE_GENERATE: ${{ github.event.inputs.force || 'false' }}
+        run: |
+          set -o pipefail
+          python generate.py 2>&1 | tee -a _run.log
+
+      - name: Commit results (always)
+        if: always()
+        run: |
+          git config user.name "Coach Léa"
+          git config user.email "lea@nutriprep.local"
+          # Stage everything generate.py produced PLUS the run log / error log, so
+          # we always capture diagnostics — whether the run succeeded or failed.
+          git add -A 
+          if git diff --staged --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "NutriPrep run $(date -u +%Y-%m-%dT%H:%MZ)"
+          # main moves often (the app commits push subs / coach history), so
+          # rebase onto the latest and retry the push a few times to win races.
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main || true
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $i."
+              exit 0
+            fi
+            echo "Push attempt $i failed; retrying after sync…"
+            sleep $((i * 3))
+          done
+          echo "::error::Could not push results after 5 attempts."
+          exit 1

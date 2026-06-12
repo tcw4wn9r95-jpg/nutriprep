@@ -1,0 +1,10 @@
+{
+  "name": "Diana",
+  "goal_type": "weight_loss",
+  "start_weight_kg": 65.0,
+  "target_weight_kg": 60.0,
+  "target_rate_kg_per_week": 0.3,
+  "target_date": "2026-10-01",
+  "notes": "Gradual, sustainable weight loss. Eating with partner Diego.",
+  "set_on": "2026-06-01"
+}

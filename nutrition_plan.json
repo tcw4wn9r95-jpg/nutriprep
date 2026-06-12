@@ -1,0 +1,14 @@
+{
+  "source": "placeholder",
+  "parsed_on": null,
+  "confidence": null,
+  "per_member_targets": {
+    "diego": null,
+    "diana": null
+  },
+  "meal_structure": ["breakfast", "am_snack", "lunch", "pm_snack", "dinner"],
+  "prescribed_foods": [],
+  "restricted_foods": [],
+  "hydration_l": 2.0,
+  "nutritionist_notes": "No nutritionist plan uploaded yet. Using individual macro targets from each user's profile."
+}

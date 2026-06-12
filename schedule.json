@@ -1,0 +1,13 @@
+{
+  "prep_day": "Sunday",
+  "prep_start_time": "15:00",
+  "meal_times": {
+    "breakfast": "07:30",
+    "am_snack": "10:30",
+    "lunch": "13:00",
+    "pm_snack": "16:30",
+    "dinner": "19:30"
+  },
+  "eat_out_days": [],
+  "notes": ""
+}

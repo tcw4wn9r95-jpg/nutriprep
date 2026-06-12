@@ -1,0 +1,36 @@
+name: "NutriPrep — Update Fridge/Pantry"
+
+on:
+  schedule:
+    # 19:00 UTC = ~21:00 Luxembourg (CEST). Daily depletion after the day's meals.
+    - cron: "0 19 * * *"
+  workflow_dispatch: {}
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update inventory from confirmed meals
+        run: python inventory.py
+
+      - name: Commit inventory
+        run: |
+          git config user.name "Coach Léa"
+          git config user.email "lea@nutriprep.local"
+          git add \
+            inventory.json \
+            users/diego/meal_logs.json \
+            users/diana/meal_logs.json
+          git diff --staged --quiet && echo "No inventory changes." && exit 0
+          git commit -m "Update fridge/pantry $(date +%Y-%m-%d)"
+          git pull --rebase origin main
+          git push
