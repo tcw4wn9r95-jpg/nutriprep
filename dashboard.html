@@ -332,9 +332,69 @@
   .lib-sm:focus, .lib-unit:focus, .lib-price:focus { outline: none; border-color: var(--pine); }
   .lib-save { flex: 0 0 auto; border: none; background: var(--sage-pale); color: var(--pine); font-weight: 700; font-size: 13px; border-radius: 10px; padding: 9px 18px; cursor: pointer; }
   .lib-save.dirty { background: var(--pine); color: #fff; }
+
+  /* ── Splash screen ──────────────────────────────────────────────────────── */
+  #splash {
+    position: fixed; inset: 0; z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    background: radial-gradient(120% 120% at 50% 38%, var(--surface-warm) 0%, var(--bg) 55%, #ECE3D4 100%);
+    opacity: 1; transition: opacity .5s ease;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  #splash.hide { opacity: 0; pointer-events: none; }
+  .splash-inner { display: flex; flex-direction: column; align-items: center; transform: translateY(-2%); }
+  .splash-logo {
+    position: relative; width: 96px; height: 96px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--pine);
+    animation: splash-pop .9s cubic-bezier(.2,.9,.3,1.2) both, splash-breathe 3.2s ease-in-out 1s infinite;
+  }
+  .splash-logo svg { width: 64px; height: 64px; overflow: visible; }
+  .splash-glow {
+    position: absolute; inset: -14px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(157,179,166,.55) 0%, rgba(157,179,166,0) 70%);
+    transform: scale(.4); opacity: 0;
+    animation: splash-glow 1.4s ease-out .35s forwards;
+  }
+  .leaf-blade { stroke-dasharray: 70; stroke-dashoffset: 70; animation: leaf-draw 1.1s ease .25s forwards; }
+  .leaf-stem  { stroke-dasharray: 14; stroke-dashoffset: 14; animation: leaf-draw .7s ease .95s forwards; }
+  .splash-word {
+    font-family: var(--serif); font-optical-sizing: auto;
+    font-size: 30px; font-weight: 600; letter-spacing: -.3px; color: var(--pine);
+    margin-top: 16px; opacity: 0; animation: splash-rise .7s ease 1.05s both;
+  }
+  .splash-tag {
+    font-size: 13px; color: var(--muted); margin-top: 6px; letter-spacing: .2px;
+    opacity: 0; animation: splash-rise .7s ease 1.3s both;
+  }
+  @keyframes leaf-draw { to { stroke-dashoffset: 0; } }
+  @keyframes splash-pop { 0% { transform: scale(.55); opacity: 0; } 60% { opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+  @keyframes splash-glow { 0% { transform: scale(.4); opacity: 0; } 50% { opacity: .9; } 100% { transform: scale(1); opacity: .65; } }
+  @keyframes splash-breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+  @keyframes splash-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .splash-logo, .splash-glow, .leaf-blade, .leaf-stem, .splash-word, .splash-tag { animation: none; }
+    .leaf-blade, .leaf-stem { stroke-dashoffset: 0; }
+    .splash-glow { opacity: .6; transform: scale(1); }
+    .splash-word, .splash-tag, .splash-logo { opacity: 1; }
+  }
 </style>
 </head>
 <body>
+
+<div id="splash" aria-hidden="true">
+  <div class="splash-inner">
+    <div class="splash-logo">
+      <span class="splash-glow"></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path class="leaf-blade" d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+        <path class="leaf-stem" d="M2 21c0-3 1.85-5.36 5.08-6"/>
+      </svg>
+    </div>
+    <div class="splash-word">NutriPrep</div>
+    <div class="splash-tag">Mindful eating, together 🌿</div>
+  </div>
+</div>
 
 <div class="modal-overlay" id="identity-modal">
   <div class="modal-box">
@@ -523,7 +583,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v18 · nutriprep</div>
+    <div style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v19 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -1667,6 +1727,15 @@ async function init(){
 
 if(!identity){ document.getElementById("identity-modal").classList.remove("hidden"); }
 else { document.getElementById("identity-modal").classList.add("hidden"); init(); }
+
+// ── Splash dismissal ──────────────────────────────────────────────────────────
+// Independent of data loading so it always clears (and never blocks the app).
+(function(){
+  const splash=document.getElementById("splash"); if(!splash)return;
+  const hide=()=>{ if(splash.classList.contains("hide"))return; splash.classList.add("hide"); setTimeout(()=>splash.remove(),600); };
+  setTimeout(hide, 1900);                                   // let the logo animation play through
+  window.addEventListener("load", ()=>setTimeout(hide, 500)); // and ensure it's gone once fully loaded
+})();
 </script>
 </body>
 </html>
