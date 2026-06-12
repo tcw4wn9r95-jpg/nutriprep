@@ -146,17 +146,22 @@ Daily targets ({macro_src}): {mt.get('kcal','?')} kcal · {mt.get('protein_g','?
 # ── Nutritionist guidelines ───────────────────────────────────────────────────
 plan_notes = []
 if nutrition_plan.get("client_name"):
-    plan_notes.append(f"This plan was written by a nutritionist for {nutrition_plan['client_name']} (the clinical authority — follow it).")
+    plan_notes.append(f"A nutritionist's plan is on file for {nutrition_plan['client_name']}. Treat the MACRO TARGETS, "
+                      "the meal structure/times, and the AVOID list below as authority. The nutritionist's specific "
+                      "example foods are INSPIRATION, not a fixed menu — prioritise variety.")
 if nutrition_plan.get("methodology"):
-    plan_notes.append("Methodology: " + nutrition_plan["methodology"])
+    plan_notes.append("Methodology to respect: " + nutrition_plan["methodology"])
 if nutrition_plan.get("prescribed_foods"):
-    plan_notes.append("Prescribed: " + ", ".join(nutrition_plan["prescribed_foods"]))
+    plan_notes.append("Encouraged regularly (lean on these, but you are not limited to them): " + ", ".join(nutrition_plan["prescribed_foods"]))
 if nutrition_plan.get("restricted_foods"):
-    plan_notes.append("Restricted/avoid (never serve): " + ", ".join(nutrition_plan["restricted_foods"]))
-# Full meal-by-meal exchange structure — the heart of the plan. Build every meal to match it.
+    plan_notes.append("AVOID — never serve these (hard rule): " + ", ".join(nutrition_plan["restricted_foods"]))
+# Meal-by-meal exchange structure — used as a REFERENCE for shape & portion sizes, not a mandatory list.
 if nutrition_plan.get("meals"):
-    struct = ["Prescribed daily meal structure (build the SAME dishes for the household, sized per member; "
-              "each meal must honour these food categories, portions and allowed alternatives):"]
+    struct = ["The nutritionist's example daily structure is below. Use it ONLY as a reference for each meal's "
+              "shape, the methodology, and typical portion SIZES per slot. It is NOT a required ingredient list: "
+              "design fresh, varied, interesting dishes — you may use ANY healthy, in-season Luxembourg ingredient "
+              "and any preferred cuisine, as long as you hit each member's macro targets and never use an avoided "
+              "food. Do not simply repeat these exact items day to day:"]
     for m in nutrition_plan["meals"]:
         label = m.get("label") or m.get("slot", "")
         t = m.get("time", "")
@@ -164,7 +169,7 @@ if nutrition_plan.get("meals"):
         struct.append(f"  {label} ({t}){water}:")
         for c in m.get("components", []):
             opts = c.get("portion") or " / ".join(c.get("options", []))
-            struct.append(f"    - {c.get('category', '')}: {opts}")
+            struct.append(f"    - {c.get('category', '')} (e.g. {opts})")
     plan_notes.append("\n".join(struct))
 if nutrition_plan.get("nutritionist_notes"):
     plan_notes.append("Notes: " + nutrition_plan["nutritionist_notes"])
@@ -241,7 +246,7 @@ Max weekday cooking time: {max_cook} min
 ## MEMBER PROFILES
 {"".join(member_blocks)}
 
-## NUTRITIONIST GUIDELINES (clinical authority — follow above individual targets)
+## NUTRITIONIST GUIDELINES (macros, meal structure & the AVOID list are authority; the specific example foods are inspiration — favour variety)
 {nutrition_block}
 
 ## TRAINING FUELLING — DIEGO ONLY (shared from his AthleteIQ training plan)

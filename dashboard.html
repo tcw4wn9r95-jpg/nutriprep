@@ -614,7 +614,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v22 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v23 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -638,7 +638,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 22; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 23; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1491,6 +1491,7 @@ function renderMacrosCard(){
   const meals=(nutritionPlan&&nutritionPlan.meals)||[];
   if(meals.length){
     html+=`<div class="sub-title">Daily meal structure</div>`;
+    html+=`<div style="font-size:11.5px;color:var(--faint);line-height:1.45;margin:-2px 0 8px">Your nutritionist's reference for portions &amp; structure. Your weekly menu is generated with variety around these macros — it won't repeat these exact items.</div>`;
     html+=meals.map(meal=>{
       const comps=(meal.components||[]).map(c=>{
         const txt=c.portion||(c.options||[]).join(" / ");
