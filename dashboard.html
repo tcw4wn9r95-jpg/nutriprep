@@ -395,6 +395,18 @@
     .splash-word, .splash-tag, .splash-logo, .splash-bar, .splash-loading { opacity: 1; }
     .splash-bar-fill { width: 100%; }
   }
+
+  /* ── Update toast ──────────────────────────────────────────────────────────── */
+  #update-toast {
+    position: fixed; left: 50%; bottom: calc(var(--tab-h) + var(--nav-pb) + 16px);
+    transform: translate(-50%, 16px); z-index: 9998;
+    background: var(--pine); color: #fff; font-size: 13px; font-weight: 600;
+    padding: 11px 18px; border-radius: 999px; box-shadow: var(--shadow-lg);
+    opacity: 0; pointer-events: none; transition: opacity .3s ease, transform .3s ease;
+    max-width: calc(100% - 32px); text-align: center;
+  }
+  #update-toast.show { opacity: 1; transform: translate(-50%, 0); }
+  #update-toast.tap { pointer-events: auto; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -602,7 +614,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v20 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v21 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -626,6 +638,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
+const APP_BUILD = 21; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1739,13 +1752,44 @@ async function init(){
   document.getElementById("notif-toggle").classList.toggle("on",!!cfg("notif_enabled"));
   await Promise.all([loadSharedData(), loadUserData()]);
   renderToday();
-  if("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").catch(e=>console.warn("SW:",e)); }
+  document.getElementById("build-label").textContent=`NutriPrep · build v${APP_BUILD} · nutriprep`;
+  if("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").then(reg=>{ try{reg.update();}catch(_){} }).catch(e=>console.warn("SW:",e)); }
+  checkForUpdate();
   // First run on this device for this identity → meet Coach Léa to set up the plan
   if(!localStorage.getItem("nutriprep_setup_done_"+identity) && cfg("anthropic_key")){ startSetup(); }
 }
 
-if(!identity){ document.getElementById("identity-modal").classList.remove("hidden"); }
+if(!identity){ document.getElementById("identity-modal").classList.remove("hidden"); checkForUpdate(); }
 else { document.getElementById("identity-modal").classList.add("hidden"); init(); }
+
+// ── Auto-update ───────────────────────────────────────────────────────────────
+// Detect when a newer build is live and reload to it, so the installed PWA never
+// gets stuck on a stale cache. version.json is published alongside the app.
+function showUpdateToast(build, autoReloading){
+  let t=document.getElementById("update-toast");
+  if(!t){ t=document.createElement("div"); t.id="update-toast"; document.body.appendChild(t); }
+  if(autoReloading){ t.textContent="Updating to the latest version…"; t.onclick=null; t.classList.remove("tap"); }
+  else { t.textContent="Update available — tap to refresh"; t.classList.add("tap"); t.onclick=()=>location.reload(); }
+  requestAnimationFrame(()=>t.classList.add("show"));
+}
+async function checkForUpdate(){
+  try{
+    const r=await fetch(`./version.json?t=${Date.now()}`,{cache:"no-store"});
+    if(!r.ok) return;
+    const data=await r.json();
+    const build=Number(data.build);
+    if(!Number.isFinite(build) || build<=APP_BUILD) return;
+    // Reload at most once per target build per session, so we never loop if the
+    // fresh HTML can't be fetched (e.g. offline) — fall back to a manual prompt.
+    const tried=Number(sessionStorage.getItem("nutriprep_update_try")||0);
+    if(tried>=build){ showUpdateToast(build,false); return; }
+    sessionStorage.setItem("nutriprep_update_try", String(build));
+    showUpdateToast(build,true);
+    setTimeout(()=>location.reload(), 800);
+  }catch(_){ /* offline or no version.json — ignore */ }
+}
+// Re-check when the app is brought back to the foreground (iOS PWAs resume without reloading).
+document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="visible") checkForUpdate(); });
 
 // ── Splash dismissal ──────────────────────────────────────────────────────────
 // Hold the splash for a guaranteed minimum so the load sequence is actually seen,
