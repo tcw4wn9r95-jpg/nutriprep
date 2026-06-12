@@ -614,7 +614,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v21 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v22 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -638,12 +638,12 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 21; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 22; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
 const RAW_ROOT = `https://raw.githubusercontent.com/tcw4wn9r95-jpg/training-ai/main`; // shared channel: AthleteIQ
-const VAPID_PUBLIC_KEY = ""; // Set after: npx web-push generate-vapid-keys
+const VAPID_PUBLIC_KEY = "BIw2yxWKYJifH61zckWpCZE01VSxcfOkkrrYc9oXjSsPeQzylzfLmN75ce8I4bsnFdNKJlehQofczE9zbmxzbmk"; // matches the VAPID_PRIVATE_KEY Actions secret
 
 const SLOT_LABELS = {
   breakfast: { icon: "☀️", label: "Breakfast" },
