@@ -199,3 +199,68 @@ def validate_prep_plan(prep_batches: list) -> list:
         category = batch.get("food_category", "generic")
         batch["storage"] = get_storage(category)
     return prep_batches
+
+
+def use_within_days(food_category: str) -> int:
+    """Safe fridge lifetime (days) for a cooked item of this category."""
+    return get_storage(food_category).get("use_within_days") or 3
+
+
+def enforce_food_safety(menu: list, prep_batches: list, prep_date, week_dates: dict) -> dict:
+    """
+    Deterministic safety net (NOT LLM-trusted): never let a Sunday-prepped perishable
+    be eaten past its safe fridge window. Counting from the Sunday prep day, any
+    batch-prepped meal scheduled beyond its category's `use_within_days` is flipped to
+    "cook fresh on the day" — the always-safe action that leaves the dish and its macros
+    unchanged. The prep-tab day-of-assembly is rewritten to match so the two views agree.
+
+    Returns {"meals_fixed": int, "assembly_fixed": int, "details": [str, ...]}.
+    """
+    from datetime import date as _date
+
+    meals_fixed, assembly_fixed, details = 0, 0, []
+
+    for day in menu:
+        try:
+            eat = _date.fromisoformat(str(day.get("date", "")))
+        except (ValueError, TypeError):
+            continue
+        days_after = (eat - prep_date).days
+        for meal in day.get("meals", []):
+            cat = meal.get("food_category", "generic")
+            limit = use_within_days(cat)
+            if meal.get("prep_ahead") and days_after > limit:
+                note = (f"🥘 Cook this fresh today — food safety: a Sunday batch of "
+                        f"{cat.replace('_', ' ')} only keeps ~{limit} day(s), and this is day "
+                        f"{days_after}. (The dish is unchanged — just cooked the same day.)")
+                meal["prep_ahead"] = False
+                meal["cook_fresh_for_safety"] = True
+                meal["safety_note"] = note
+                if not meal.get("cook_minutes_day_of"):
+                    meal["cook_minutes_day_of"] = 20
+                steps = meal.get("day_of_steps") or []
+                if not (steps and isinstance(steps[0], str) and steps[0].startswith("🥘")):
+                    meal["day_of_steps"] = [note] + steps
+                meal.pop("storage_ref", None)
+                meals_fixed += 1
+                details.append(f"{day.get('day')} {meal.get('slot')} [{cat}] day {days_after}>{limit} → cook fresh")
+
+    # Keep prep-tab assembly consistent with the flips above.
+    name_to_days = {}
+    for name, iso in (week_dates or {}).items():
+        try:
+            name_to_days[name] = (_date.fromisoformat(iso) - prep_date).days
+        except (ValueError, TypeError):
+            pass
+    for batch in prep_batches:
+        cat = batch.get("food_category", "generic")
+        limit = use_within_days(cat)
+        asm = batch.get("day_of_assembly") or {}
+        for day_name in list(asm.keys()):
+            d = name_to_days.get(day_name)
+            if d is not None and d > limit:
+                asm[day_name] = (f"⚠ Cook fresh today — do NOT use the Sunday batch "
+                                 f"({cat.replace('_', ' ')} is only safe ~{limit} day(s); this is day {d}).")
+                assembly_fixed += 1
+
+    return {"meals_fixed": meals_fixed, "assembly_fixed": assembly_fixed, "details": details}

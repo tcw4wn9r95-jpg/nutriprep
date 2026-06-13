@@ -206,6 +206,19 @@ if learned_prefs.get("prefer"):
 if learned_prefs.get("notes"):
     _pref_lines.append("Notes from past manual changes (respect the spirit — don't re-suggest dishes they swapped away): " + "; ".join(learned_prefs["notes"]))
 learned_block = "\n".join(f"  {l}" for l in _pref_lines) if _pref_lines else "  Nothing learned from chat yet."
+
+# Fridge-safety windows, sourced from food_safety.py so the prompt never drifts from
+# the deterministic enforcement that runs afterwards.
+from food_safety import use_within_days as _uwd
+_safety_cats = [
+    ("poultry", "chicken / turkey"), ("red_meat", "beef / pork / lamb"),
+    ("fish_seafood", "fish / seafood"), ("rice", "cooked rice"),
+    ("grains_pasta", "quinoa / pasta / cooked grains"), ("legumes", "beans / lentils / chickpeas"),
+    ("vegetables_cooked", "roasted / cooked veg"), ("eggs_cooked", "cooked eggs"),
+    ("soup_stew", "soup / stew / curry"), ("sauce_dairy", "cream / dairy sauce"),
+]
+safety_windows_block = "\n".join(f"  {label}: safe ~{_uwd(key)} day(s) in the fridge after cooking" for key, label in _safety_cats)
+
 budget = household.get("budget_eur_per_week", 130)
 max_prep = household.get("max_prep_minutes_sunday", 150)
 max_cook = household.get("max_cook_minutes_weekday", 25)
@@ -302,6 +315,25 @@ Diego's calorie need changes day to day with training. On training days, raise h
 12. **Image prompt**: every meal MUST have an `image_prompt` — a short, vivid description of a finished plate of that meal for an AI image generator (mention key ingredients, plating, natural light; no text/words in image).
 13. **Fuel Diego's training days**: match Diego's `day_totals` to the per-day adjusted target in the TRAINING FUELLING table (extra mostly as carbohydrate around the session). On rest days use his base target. Diana's `day_totals` always track her own base target.
 14. **Adapt to sleep**: after poor-sleep nights, favour easy-to-digest, blood-sugar-stable meals, adequate protein, and avoid heavy late dinners.
+
+## FOOD SAFETY — FRIDGE WINDOWS FROM SUNDAY PREP (HARD RULES, NON-NEGOTIABLE)
+Prep is done on Sunday. Counting Monday = day 1, Tuesday = day 2 … Sunday = day 7, a Sunday-cooked
+batch must be EATEN within its safe window:
+{safety_windows_block}
+Therefore, for every meal you must respect these rules:
+  - NEVER set `prep_ahead: true` on a perishable protein/grain that is eaten past its window.
+    (e.g. Sunday-cooked chicken eaten Thursday = day 4 > 3-day poultry limit is FORBIDDEN; salmon
+    past day 2 is FORBIDDEN; cooked rice past day 1 is FORBIDDEN.)
+  - For a perishable dish scheduled LATER than its window, COOK IT FRESH that day: set
+    `prep_ahead: false`, put the real cooking in `day_of_steps`, and give a realistic
+    `cook_minutes_day_of`. The Sunday batch must not be its source.
+  - Alternatively, schedule a SECOND fresh mid-week cook (e.g. a Wednesday batch) as its own prep
+    batch to safely cover the back half of the week.
+  - Cooked RICE is day-1 only (Bacillus cereus) — cook fresh per serving (or none batched).
+  - Only long-keeping items (legumes, cooked veg, cooked eggs, soups: 4–5 days) may bridge most of
+    the week from a single Sunday batch.
+A deterministic checker runs after you and will force-convert any violation to cook-fresh, so plan
+it correctly yourself to keep weekday cooking times realistic.
 
 ## WEEK DATES
 Monday: {week_dates['Monday']} | Tuesday: {week_dates['Tuesday']} | Wednesday: {week_dates['Wednesday']}
@@ -752,9 +784,20 @@ inventory_out = {
 }
 
 # ── Post-process prep plan (food safety) ─────────────────────────────────────
-from food_safety import validate_prep_plan
+from food_safety import validate_prep_plan, enforce_food_safety
 
 prep_json = validate_prep_plan(prep_json)
+
+# Deterministic safety net: flip any Sunday-batched perishable eaten past its fridge
+# window to "cook fresh on the day". Prep happens the Sunday before the Mon–Sun week.
+prep_date = next_monday - timedelta(days=1)
+_safety = enforce_food_safety(menu_json, prep_json, prep_date, week_dates)
+if _safety["meals_fixed"] or _safety["assembly_fixed"]:
+    print(f"⚠ Food safety: flipped {_safety['meals_fixed']} meal(s) to cook-fresh, "
+          f"fixed {_safety['assembly_fixed']} assembly note(s).")
+    for d in _safety["details"]:
+        print(f"    • {d}")
+
 prep_total_min = sum(b.get("active_minutes", 0) for b in prep_json)
 
 prep_out = {
