@@ -623,7 +623,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v32 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v33 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -647,7 +647,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 32; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 33; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -698,6 +698,11 @@ const PRICE_UNITS = ["kg","L","item"];
 let shopFilter = "all"; // active supermarket filter on the Shopping tab
 let userGoals = {}, userWeightLog = [], userCheckins = [], userMealLogs = [], userMacros = {};
 let coachHistory = [], setupHistory = [];
+// After a local plan edit (coach swap/add), trust the in-memory plan for a few minutes so a
+// stale raw.githubusercontent CDN copy can't clobber the change on the next tab switch.
+let menuDirtyUntil = 0;
+function markMenuDirty(){ menuDirtyUntil = Date.now() + 180000; }
+function refreshMenuViews(){ try{renderToday();}catch(_){} try{renderMenu();}catch(_){} try{renderShopping();}catch(_){} try{renderPrep();}catch(_){} }
 let checkedItems = JSON.parse(localStorage.getItem("nutriprep_checked") || "{}");
 let waterLog = JSON.parse(localStorage.getItem("nutriprep_water") || "{}"); // { identity: { "YYYY-MM-DD": ml } }
 let macroRingChart = null, weightChart = null;
@@ -798,8 +803,11 @@ async function ghWriteRaw(apiPath, base64Content, message){
 
 // ── Data loading ──────────────────────────────────────────────────────────────
 async function loadSharedData(){
-  try{ weekMenu=await ghFetch("weekly_menu.json"); }catch(_){ weekMenu=null; }
-  try{ shoppingList=await ghFetch("shopping_list.json"); }catch(_){ shoppingList=null; }
+  // Keep a just-made local edit during its dirty window instead of overwriting it with a
+  // possibly-stale CDN copy (raw.githubusercontent can lag a few minutes behind a push).
+  const keepLocal = Date.now() < menuDirtyUntil;
+  try{ const _wm=await ghFetch("weekly_menu.json"); if(!keepLocal||!weekMenu) weekMenu=_wm; }catch(_){ if(!weekMenu) weekMenu=null; }
+  try{ const _sl=await ghFetch("shopping_list.json"); if(!keepLocal||!shoppingList) shoppingList=_sl; }catch(_){ if(!shoppingList) shoppingList=null; }
   try{ prepPlan=await ghFetch("prep_plan.json"); }catch(_){ prepPlan=null; }
   try{ planStatus=await ghFetch("plan_status.json"); }catch(_){ planStatus=null; }
   try{ inventory=await ghFetch("inventory.json"); }catch(_){ inventory=null; }
@@ -1386,13 +1394,16 @@ function addCoachMsg(role,text){ const wrap=document.getElementById("coach-msgs"
 // Anthropic rejects any history where an assistant tool_use block has no following
 // tool_result. We run tools locally (no second round-trip), so persist + replay assistant
 // turns as PLAIN TEXT only — stripping tool_use/tool_result keeps the history always valid.
+const _TOOL_PHRASE={remember_preference:"noted a preference",swap_meal:"updated a meal",add_item_to_meals:"added an item to meals",log_checkin:"logged a check-in",log_weight:"logged a weight",attach_video:"attached a video"};
 function histText(content){
   if(typeof content==="string") return content;
   if(Array.isArray(content)){
     const t=content.filter(b=>b&&b.type==="text").map(b=>b.text).join("").trim();
+    const tools=content.filter(b=>b&&b.type==="tool_use").map(b=>_TOOL_PHRASE[b.name]||b.name);
+    if(t && tools.length) return `${t}\n(Done: I ${tools.join(", ")}.)`;
     if(t) return t;
-    const tools=content.filter(b=>b&&b.type==="tool_use").map(b=>`(${b.name})`).join(" ");
-    return tools||"(action taken)";
+    if(tools.length) return `I ${tools.join(", ")} as you asked.`;
+    return "(no content)";
   }
   return content==null?"":String(content);
 }
@@ -1440,12 +1451,13 @@ ${menuText}
 - Evidence-based only (EFSA/WHO). Sustainable loss 0.25–0.75 kg/wk; never below 1200 kcal/day.
 - APPLY CHANGES NOW — never just promise. If the user wants something in their CURRENT week, you MUST call a tool THIS turn, and only then confirm. NEVER say a change is done (or "I'll update it") unless you actually called the tool:
    • Change a specific dish on a day → swap_meal. The date MUST be an exact ISO date from the menu above. To change the same thing across several days, call swap_meal once per day in this same turn.
-   • Add a recurring item to every/most days of a slot (e.g. "a 250ml kefir smoothie with every breakfast") → add_item_to_meals (you provide its macros so totals stay correct).
-   • Remove or replace a recurring dish (e.g. "no more smoked mackerel") → call swap_meal for EACH day it appears, replacing it with something on-palette.
+   • ONLY for ADDING a new component to a slot (e.g. "a 250ml kefir smoothie with every breakfast") → add_item_to_meals (you provide its macros so totals stay correct). Do NOT use this to change a protein.
+   • Rebalance proteins (e.g. "more beef, less chicken") or remove/replace a recurring dish ("no more smoked mackerel") → use swap_meal for EACH affected lunch/dinner, replacing it with a complete new dish that uses the wanted protein. Look at the menu above, pick the chicken/mackerel days, and swap them one by one in this same turn (at least 2–3). If there are too many to do at once, swap the soonest few now, say so, and offer to continue.
   Only change the meals asked about; never rebuild the whole week. Swaps apply to BOTH members (keep diego & diana portions, prep_steps, day_of_steps, image_prompt, food_category).
 - remember_preference is ONLY for shaping FUTURE auto-generated weeks (e.g. "use more beef and less chicken from now on"). If a request ALSO affects the current week, apply it now with the tools above AND record the preference — never substitute a preference for a change the user wants now.
 - LEARN FROM CORRECTIONS: when the user says they dislike/avoid a food call remember_preference(kind:"avoid"); when they love something call remember_preference(kind:"prefer").
 - Use log_checkin when they report mood/energy/adherence; log_weight when they state a weight.
+- ALWAYS reply with a short, warm sentence in plain text — even when you use tools. NEVER respond with tool calls and no words; tell the user what you just did in a friendly way.
 - Be concise (2–4 sentences). You are not a doctor — defer clinical issues to their nutritionist.`;
   const tools=[
     {name:"log_checkin",description:"Log how the user feels.",input_schema:{type:"object",properties:{note:{type:"string"},mood:{type:"string",enum:["great","good","ok","low","poor"]},energy:{type:"string",enum:["high","medium","low"]},adherence:{type:"string",enum:["full","mostly","partial","off"]}},required:["note"]}},
@@ -1457,7 +1469,7 @@ ${menuText}
   ];
   const msgs=[...coachHistory.slice(-10).map(h=>({role:h.role,content:histText(h.content)})),{role:"user",content:text}];
   try{
-    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-haiku-4-5-20251001",max_tokens:2048,system,tools,messages:msgs})});
+    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:4096,system,tools,messages:msgs})});
     const data=await res.json(); typing.remove();
     if(!res.ok){ addCoachMsg("coach",`Error: ${data.error?.message||res.status}`); return; }
     let reply="";
@@ -1506,7 +1518,7 @@ async function handleCoachTool(name,input){
       count++;
     });
     if(!count){ addCoachMsg("coach",`I couldn't find any upcoming ${slot} to add that to.`); return; }
-    try{ await ghWrite("weekly_menu.json",weekMenu,`Add ${item} to ${slot} (${identity})`); await regenerateShopping(); addCoachMsg("coach",`✓ Added ${item} to ${count} ${slot}${count>1?"s":""}. Shopping list updated.`); }
+    try{ await ghWrite("weekly_menu.json",weekMenu,`Add ${item} to ${slot} (${identity})`); await regenerateShopping(); markMenuDirty(); refreshMenuViews(); addCoachMsg("coach",`✓ Added ${item} to ${count} ${slot}${count>1?"s":""}. Shopping list updated.`); }
     catch(e){ addCoachMsg("coach",`Couldn't save that change: ${e.message}`); }
   } else if(name==="attach_video"){
     const day=weekMenu.find(d=>d.date===resolveMenuDate(input.date)); const meal=day?day.meals.find(m=>m.slot===input.slot):null;
@@ -1544,6 +1556,7 @@ async function applyMenuChange(date,slot,newMeal){
   ["diego","diana"].forEach(mem=>{ let t={kcal:0,protein_g:0,carbs_g:0,fat_g:0}; day.meals.forEach(m=>{ const mac=((m.portions||{})[mem]||{}).macros||{}; t.kcal+=mac.kcal||0; t.protein_g+=mac.protein_g||0; t.carbs_g+=mac.carbs_g||0; t.fat_g+=mac.fat_g||0; }); (day.day_totals=day.day_totals||{})[mem]=t; });
   await ghWrite("weekly_menu.json",weekMenu,`Swap ${slot} ${date} (${identity})`);
   await regenerateShopping();
+  markMenuDirty(); refreshMenuViews();
 }
 async function regenerateShopping(){
   // Re-aggregate household ingredients from the menu, subtract pantry, write shopping_list.json
