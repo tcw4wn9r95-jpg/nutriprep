@@ -97,5 +97,13 @@
         }
       }
     ]
+  },
+  {
+    "role": "user",
+    "content": "We always have 250ml kefir smoothie with fruit each every morning and want to keep that, balance out the plan with it. Also I don’t see that much meat and a lot of chicken, I said chicken is ok maybe once a week so add more beef. Finally smoked mackerel is not really a thing here but we can replace with smoked salmon. Also we love tilapia and salmon as fish sources"
+  },
+  {
+    "role": "assistant",
+    "content": "Got it—thanks for those important notes! Let me record your preferences so next week's plan respects them:"
   }
 ]
