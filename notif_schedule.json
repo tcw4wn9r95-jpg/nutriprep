@@ -1,4 +1,365 @@
 {
   "tz": "Europe/Luxembourg",
-  "events": []
+  "events": [
+    {
+      "id": "snack-2026-06-15-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-15T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Almonds & Apple \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-15-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-15T12:47:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa \u2014 8 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-15-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-15T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Greek Yogurt with Walnuts & Berries \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-15-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-15T19:20:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Baked White Fish with Lemon, Green Beans & Sweet Potato \u2014 5 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-16-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-16T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Cashews & Pear \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-16-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-16T12:49:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets \u2014 6 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-16-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-16T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Hummus with Vegetable Crudit\u00e9s \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-16-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-16T19:18:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Lean Ground Beef & Chickpea Taco Bowls (Mexican Style) \u2014 7 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-17-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-17T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Pistachios & Nectarine \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-17-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-17T12:47:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Pan-Seared Salmon with Asparagus & Wild Rice \u2014 8 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-17-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-17T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Greek Yogurt with Pistachios \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-17-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-17T19:19:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Herb-Crusted Chicken Breast with Roasted Root Vegetables & Farro \u2014 6 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-18-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-18T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Almonds & Apple \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-18-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-18T12:48:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Grilled Chicken Souvlaki with Tzatziki, Roasted Vegetables & Bulgur \u2014 7 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-18-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-18T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Greek Yogurt with Blueberries & Almonds \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-18-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-18T19:20:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Baked Cod with Fennel, Tomato Confit & Whole-Grain Couscous \u2014 5 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-19-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-19T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Walnuts & Kiwi \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-19-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-19T12:49:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Thai-Inspired Green Curry Chicken with Jasmine Rice & Bok Choy \u2014 6 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-19-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-19T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Cashews & Peach \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-19-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-19T19:17:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Lean Beef Steak with Roasted Broccoli, Cauliflower & Sweet Potato \u2014 8 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-20-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-20T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Almonds & Strawberries \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-20-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-20T12:47:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Mediterranean Seafood Pasta (Whole-Grain): Shrimp & Mussels with Tomato Basil \u2014 8 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-20-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-20T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Greek Yogurt with Walnuts & Raspberries \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-20-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-20T19:19:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Roasted Chicken Thigh with Root Vegetable Medley & Farro \u2014 6 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "weighin-2026-06-21",
+      "type": "weigh_in",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-21T08:00:00+02:00",
+      "title": "Sunday weigh-in \u2696\ufe0f",
+      "body": "Log your weight to track your progress this week.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-21-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-21T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Mixed Nuts & Orange \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-21-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-21T12:50:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Vegetable & Lentil Buddha Bowl with Tahini Dressing \u2014 5 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "prep-2026-06-21",
+      "type": "prep",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-21T15:00:00+02:00",
+      "title": "Meal prep time \ud83e\udd57",
+      "body": "~4h43 of prep sets up your whole week. Tap for the steps.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-21-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-21T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Almonds & Blueberries \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-21-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-21T19:17:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Pan-Seared Scallops with Zucchini Noodles, Cherry Tomatoes & Basil \u2014 8 min. Tap for recipe.",
+      "sent": false
+    }
+  ]
 }

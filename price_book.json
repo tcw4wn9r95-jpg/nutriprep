@@ -1,3 +1,955 @@
 {
-  "products": {}
+  "products": {
+    "greek yogurt": {
+      "name_en": "Greek yogurt",
+      "name_fr": "Yaourt grec",
+      "aisle": "Dairy / Laiterie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "cottage cheese": {
+      "name_en": "Cottage cheese",
+      "name_fr": "Fromage cottage",
+      "aisle": "Dairy / Laiterie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "cream cheese": {
+      "name_en": "Cream cheese",
+      "name_fr": "Fromage à la crème",
+      "aisle": "Dairy / Laiterie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "butter": {
+      "name_en": "Butter",
+      "name_fr": "Beurre",
+      "aisle": "Dairy / Laiterie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "eggs": {
+      "name_en": "Eggs",
+      "name_fr": "Œufs",
+      "aisle": "Dairy / Œufs",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "item",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "hummus": {
+      "name_en": "Hummus",
+      "name_fr": "Houmous",
+      "aisle": "Deli / Charcuterie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "salmon fillet": {
+      "name_en": "Salmon fillet",
+      "name_fr": "Filet de saumon",
+      "aisle": "Fish / Poissonnerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "ground turkey": {
+      "name_en": "Ground turkey",
+      "name_fr": "Viande hachée de dinde",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "chicken thighs (bone-in, skin-on)": {
+      "name_en": "Chicken thighs (bone-in, skin-on)",
+      "name_fr": "Cuisses de poulet (avec os et peau)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "lean ground beef": {
+      "name_en": "Lean ground beef",
+      "name_fr": "Viande hachée maigre",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "lean sirloin steak": {
+      "name_en": "Lean sirloin steak",
+      "name_fr": "Steak de surlonge maigre",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "white fish fillet (sea bass or dorade)": {
+      "name_en": "White fish fillet (sea bass or dorade)",
+      "name_fr": "Filet de poisson blanc (bar ou dorade)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "cod fillet": {
+      "name_en": "Cod fillet",
+      "name_fr": "Filet de morue",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "smoked salmon": {
+      "name_en": "Smoked salmon",
+      "name_fr": "Saumon fumé",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "smoked trout": {
+      "name_en": "Smoked trout",
+      "name_fr": "Truite fumée",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "shrimp (raw)": {
+      "name_en": "Shrimp (raw)",
+      "name_fr": "Crevettes (crues)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "mussels (fresh)": {
+      "name_en": "Mussels (fresh)",
+      "name_fr": "Moules (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "scallops (fresh)": {
+      "name_en": "Scallops (fresh)",
+      "name_fr": "Pétoncles (frais)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "kefir": {
+      "name_en": "Kefir",
+      "name_fr": "Kéfir",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "parmigiano-reggiano cheese": {
+      "name_en": "Parmigiano-Reggiano cheese",
+      "name_fr": "Fromage Parmigiano-Reggiano",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "quinoa (dry)": {
+      "name_en": "Quinoa (dry)",
+      "name_fr": "Quinoa (sec)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "brown rice (dry)": {
+      "name_en": "Brown rice (dry)",
+      "name_fr": "Riz brun (sec)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "wild rice (dry)": {
+      "name_en": "Wild rice (dry)",
+      "name_fr": "Riz sauvage (sec)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "jasmine rice (dry)": {
+      "name_en": "Jasmine rice (dry)",
+      "name_fr": "Riz jasmin (sec)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "farro (dry)": {
+      "name_en": "Farro (dry)",
+      "name_fr": "Épeautre (sec)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "bulgur wheat (dry)": {
+      "name_en": "Bulgur wheat (dry)",
+      "name_fr": "Blé concassé (sec)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "whole-grain couscous (dry)": {
+      "name_en": "Whole-grain couscous (dry)",
+      "name_fr": "Couscous complet (sec)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "whole-grain pasta": {
+      "name_en": "Whole-grain pasta",
+      "name_fr": "Pâtes complètes",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "sourdough bread": {
+      "name_en": "Sourdough bread",
+      "name_fr": "Pain au levain",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "whole-grain bread": {
+      "name_en": "Whole-grain bread",
+      "name_fr": "Pain complet",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "sprouted-grain bread": {
+      "name_en": "Sprouted-grain bread",
+      "name_fr": "Pain germé",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "multigrain bread": {
+      "name_en": "Multigrain bread",
+      "name_fr": "Pain multigrain",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "corn tortillas": {
+      "name_en": "Corn tortillas",
+      "name_fr": "Tortillas de maïs",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "brown lentils (dry)": {
+      "name_en": "Brown lentils (dry)",
+      "name_fr": "Lentilles brunes (sèches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "red lentils (dry)": {
+      "name_en": "Red lentils (dry)",
+      "name_fr": "Lentilles rouges (sèches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "chickpeas (dry or canned)": {
+      "name_en": "Chickpeas (dry or canned)",
+      "name_fr": "Pois chiches (secs ou en conserve)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "almonds (raw or roasted unsalted)": {
+      "name_en": "Almonds (raw or roasted unsalted)",
+      "name_fr": "Amandes (brutes ou rôties non salées)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "walnuts (raw or roasted unsalted)": {
+      "name_en": "Walnuts (raw or roasted unsalted)",
+      "name_fr": "Noix (brutes ou rôties non salées)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "cashews (raw or roasted unsalted)": {
+      "name_en": "Cashews (raw or roasted unsalted)",
+      "name_fr": "Noix de cajou (brutes ou rôties non salées)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "pistachios (shelled unsalted)": {
+      "name_en": "Pistachios (shelled unsalted)",
+      "name_fr": "Pistaches (décortiquées non salées)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "mixed nuts unsalted": {
+      "name_en": "Mixed nuts unsalted",
+      "name_fr": "Noix mélangées non salées",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "tahini (sesame paste)": {
+      "name_en": "Tahini (sesame paste)",
+      "name_fr": "Tahini (pâte de sésame)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "olive oil (extra virgin)": {
+      "name_en": "Olive oil (extra virgin)",
+      "name_fr": "Huile d'olive (extra vierge)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "spinach (fresh)": {
+      "name_en": "Spinach (fresh)",
+      "name_fr": "Épinards (frais)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "red cabbage (shredded)": {
+      "name_en": "Red cabbage (shredded)",
+      "name_fr": "Chou rouge (râpé)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "purple cabbage": {
+      "name_en": "Purple cabbage",
+      "name_fr": "Chou violet",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "item",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "zucchini (for spiralising)": {
+      "name_en": "Zucchini (for spiralising)",
+      "name_fr": "Courgette (pour spiraliser)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "carrots": {
+      "name_en": "Carrots",
+      "name_fr": "Carottes",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "broccoli florets": {
+      "name_en": "Broccoli florets",
+      "name_fr": "Fleurons de brocoli",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "cauliflower florets": {
+      "name_en": "Cauliflower florets",
+      "name_fr": "Fleurons de chou-fleur",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "bell peppers (mixed colours)": {
+      "name_en": "Bell peppers (mixed colours)",
+      "name_fr": "Poivrons (couleurs mélangées)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "tomatoes (fresh heirloom)": {
+      "name_en": "Tomatoes (fresh heirloom)",
+      "name_fr": "Tomates (fraîches anciennes variétés)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "bok choy": {
+      "name_en": "Bok choy",
+      "name_fr": "Bok choy",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "beets (fresh)": {
+      "name_en": "Beets (fresh)",
+      "name_fr": "Betteraves (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "fennel bulb": {
+      "name_en": "Fennel bulb",
+      "name_fr": "Bulbe de fenouil",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "parsnips": {
+      "name_en": "Parsnips",
+      "name_fr": "Panais",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "celery root (celeriac)": {
+      "name_en": "Celery root (celeriac)",
+      "name_fr": "Céleri-rave",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "celery stalks": {
+      "name_en": "Celery stalks",
+      "name_fr": "Tiges de céleri",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "radishes": {
+      "name_en": "Radishes",
+      "name_fr": "Radis",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "fresh herbs bundle (parsley, dill, basil, chives, thyme, rosemary)": {
+      "name_en": "Fresh herbs bundle (parsley, dill, basil, chives, thyme, rosemary)",
+      "name_fr": "Bouquet d'herbes fraîches (persil, aneth, basilic, ciboulette, thym, romarin)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "strawberries (fresh)": {
+      "name_en": "Strawberries (fresh)",
+      "name_fr": "Fraises (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "blueberries (fresh)": {
+      "name_en": "Blueberries (fresh)",
+      "name_fr": "Myrtilles (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "raspberries (fresh)": {
+      "name_en": "Raspberries (fresh)",
+      "name_fr": "Framboises (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "apples (mixed varieties)": {
+      "name_en": "Apples (mixed varieties)",
+      "name_fr": "Pommes (variétés mélangées)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "pears (ripe)": {
+      "name_en": "Pears (ripe)",
+      "name_fr": "Poires (mûres)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "peaches (fresh)": {
+      "name_en": "Peaches (fresh)",
+      "name_fr": "Pêches (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "nectarines (fresh)": {
+      "name_en": "Nectarines (fresh)",
+      "name_fr": "Nectarines (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "oranges (fresh)": {
+      "name_en": "Oranges (fresh)",
+      "name_fr": "Oranges (fraîches)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "kiwis (fresh)": {
+      "name_en": "Kiwis (fresh)",
+      "name_fr": "Kiwis (frais)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "lemons (fresh)": {
+      "name_en": "Lemons (fresh)",
+      "name_fr": "Citrons (frais)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "limes (fresh)": {
+      "name_en": "Limes (fresh)",
+      "name_fr": "Citrons verts (frais)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "garlic cloves": {
+      "name_en": "Garlic cloves",
+      "name_fr": "Gousses d'ail",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "ginger (fresh)": {
+      "name_en": "Ginger (fresh)",
+      "name_fr": "Gingembre (frais)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "coconut milk (low-fat)": {
+      "name_en": "Coconut milk (low-fat)",
+      "name_fr": "Lait de coco (allégé)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "green curry paste": {
+      "name_en": "Green curry paste",
+      "name_fr": "Pâte de curry vert",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "white vinegar": {
+      "name_en": "White vinegar",
+      "name_fr": "Vinaigre blanc",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "honey (raw)": {
+      "name_en": "Honey (raw)",
+      "name_fr": "Miel (brut)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "granola (no added sugar)": {
+      "name_en": "Granola (no added sugar)",
+      "name_fr": "Granola (sans sucre ajouté)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "sea salt": {
+      "name_en": "Sea salt",
+      "name_fr": "Sel de mer",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "black pepper (whole peppercorns)": {
+      "name_en": "Black pepper (whole peppercorns)",
+      "name_fr": "Poivre noir (grains entiers)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "ground cumin": {
+      "name_en": "Ground cumin",
+      "name_fr": "Cumin moulu",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "ground coriander": {
+      "name_en": "Ground coriander",
+      "name_fr": "Coriandre moulue",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "chili powder": {
+      "name_en": "Chili powder",
+      "name_fr": "Poudre de piment",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "dried thyme": {
+      "name_en": "Dried thyme",
+      "name_fr": "Thym séché",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "water (for cooking & drinking)": {
+      "name_en": "Water (for cooking & drinking)",
+      "name_fr": "Eau (pour la cuisine & la boisson)",
+      "aisle": "General / Général",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "chicken breast": {
+      "name_en": "Chicken breast",
+      "name_fr": "Blanc de poulet",
+      "aisle": "Meat / Boucherie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "balsamic vinegar": {
+      "name_en": "Balsamic vinegar",
+      "name_fr": "Vinaigre balsamique",
+      "aisle": "Oils / Vinaigrettes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "avocado": {
+      "name_en": "Avocado",
+      "name_fr": "Avocat",
+      "aisle": "Produce / Fruits",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "item",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "mixed salad leaves": {
+      "name_en": "Mixed salad leaves",
+      "name_fr": "Mesclun / Salade mélangée",
+      "aisle": "Produce / Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "green beans": {
+      "name_en": "Green beans",
+      "name_fr": "Haricots verts",
+      "aisle": "Produce / Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "asparagus": {
+      "name_en": "Asparagus",
+      "name_fr": "Asperges",
+      "aisle": "Produce / Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "cherry tomatoes": {
+      "name_en": "Cherry tomatoes",
+      "name_fr": "Tomates cerises",
+      "aisle": "Produce / Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "sweet potato": {
+      "name_en": "Sweet potato",
+      "name_fr": "Patate douce",
+      "aisle": "Produce / Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "cucumber": {
+      "name_en": "Cucumber",
+      "name_fr": "Concombre",
+      "aisle": "Produce / Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "dried oregano": {
+      "name_en": "Dried oregano",
+      "name_fr": "Origan séché",
+      "aisle": "Spices / Épices",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    }
+  },
+  "updated": "2026-06-13"
 }

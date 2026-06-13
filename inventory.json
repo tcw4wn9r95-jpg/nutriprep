@@ -1,5 +1,1458 @@
 {
-  "updated": null,
-  "week_of": null,
-  "items": []
+  "updated": "2026-06-13",
+  "week_of": "2026-06-15",
+  "items": [
+    {
+      "name_en": "Chicken breast",
+      "name_fr": "Blanc de poulet",
+      "aisle": "Meat / Boucherie",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "poultry",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 3200.0,
+      "display_qty": "3.2 kg"
+    },
+    {
+      "name_en": "Ground turkey",
+      "name_fr": "Viande hach\u00e9e de dinde",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "poultry",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 600.0,
+      "display_qty": "600 g"
+    },
+    {
+      "name_en": "Chicken thighs (bone-in, skin-on)",
+      "name_fr": "Cuisses de poulet (avec os et peau)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "poultry",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Lean ground beef",
+      "name_fr": "Viande hach\u00e9e maigre",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "red_meat",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 600.0,
+      "display_qty": "600 g"
+    },
+    {
+      "name_en": "Lean sirloin steak",
+      "name_fr": "Steak de surlonge maigre",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "red_meat",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1100.0,
+      "display_qty": "1.1 kg"
+    },
+    {
+      "name_en": "Salmon fillet",
+      "name_fr": "Filet de saumon",
+      "aisle": "Fish / Poissonnerie",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1200.0,
+      "display_qty": "1.2 kg"
+    },
+    {
+      "name_en": "White fish fillet (sea bass or dorade)",
+      "name_fr": "Filet de poisson blanc (bar ou dorade)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1100.0,
+      "display_qty": "1.1 kg"
+    },
+    {
+      "name_en": "Cod fillet",
+      "name_fr": "Filet de morue",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1050.0,
+      "display_qty": "1.05 kg"
+    },
+    {
+      "name_en": "Smoked salmon",
+      "name_fr": "Saumon fum\u00e9",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 400.0,
+      "display_qty": "400 g"
+    },
+    {
+      "name_en": "Smoked trout",
+      "name_fr": "Truite fum\u00e9e",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 400.0,
+      "display_qty": "400 g"
+    },
+    {
+      "name_en": "Shrimp (raw)",
+      "name_fr": "Crevettes (crues)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 550.0,
+      "display_qty": "550 g"
+    },
+    {
+      "name_en": "Mussels (fresh)",
+      "name_fr": "Moules (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 700.0,
+      "display_qty": "700 g"
+    },
+    {
+      "name_en": "Scallops (fresh)",
+      "name_fr": "P\u00e9toncles (frais)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "fish_seafood",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1050.0,
+      "display_qty": "1.05 kg"
+    },
+    {
+      "name_en": "Eggs",
+      "name_fr": "\u0152ufs",
+      "aisle": "Dairy / \u0152ufs",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl",
+        "Match"
+      ],
+      "food_category": "eggs_cooked",
+      "kind": "count",
+      "unit": "unit",
+      "amount": 20.0,
+      "display_qty": "20 units"
+    },
+    {
+      "name_en": "Greek yogurt",
+      "name_fr": "Yaourt grec",
+      "aisle": "Dairy / Laiterie",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "dairy",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 5000.0,
+      "display_qty": "5 kg"
+    },
+    {
+      "name_en": "Kefir",
+      "name_fr": "K\u00e9fir",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "dairy",
+      "kind": "volume",
+      "unit": "ml",
+      "amount": 1750.0,
+      "display_qty": "1.75 L"
+    },
+    {
+      "name_en": "Cottage cheese",
+      "name_fr": "Fromage cottage",
+      "aisle": "Dairy / Laiterie",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "dairy",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Cream cheese",
+      "name_fr": "Fromage \u00e0 la cr\u00e8me",
+      "aisle": "Dairy / Laiterie",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi"
+      ],
+      "food_category": "dairy",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 220.0,
+      "display_qty": "220 g"
+    },
+    {
+      "name_en": "Parmigiano-Reggiano cheese",
+      "name_fr": "Fromage Parmigiano-Reggiano",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "dairy",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 200.0,
+      "display_qty": "200 g"
+    },
+    {
+      "name_en": "Butter",
+      "name_fr": "Beurre",
+      "aisle": "Dairy / Laiterie",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl",
+        "Match"
+      ],
+      "food_category": "dairy",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 150.0,
+      "display_qty": "150 g"
+    },
+    {
+      "name_en": "Quinoa (dry)",
+      "name_fr": "Quinoa (sec)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "grains_pasta",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Brown rice (dry)",
+      "name_fr": "Riz brun (sec)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "rice",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Wild rice (dry)",
+      "name_fr": "Riz sauvage (sec)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "rice",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Jasmine rice (dry)",
+      "name_fr": "Riz jasmin (sec)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "rice",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Farro (dry)",
+      "name_fr": "\u00c9peautre (sec)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "grains_pasta",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 750.0,
+      "display_qty": "750 g"
+    },
+    {
+      "name_en": "Bulgur wheat (dry)",
+      "name_fr": "Bl\u00e9 concass\u00e9 (sec)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "grains_pasta",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 750.0,
+      "display_qty": "750 g"
+    },
+    {
+      "name_en": "Whole-grain couscous (dry)",
+      "name_fr": "Couscous complet (sec)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "grains_pasta",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 750.0,
+      "display_qty": "750 g"
+    },
+    {
+      "name_en": "Whole-grain pasta",
+      "name_fr": "P\u00e2tes compl\u00e8tes",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "grains_pasta",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Sourdough bread",
+      "name_fr": "Pain au levain",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "baked_goods",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 400.0,
+      "display_qty": "400 g"
+    },
+    {
+      "name_en": "Whole-grain bread",
+      "name_fr": "Pain complet",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "baked_goods",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 350.0,
+      "display_qty": "350 g"
+    },
+    {
+      "name_en": "Sprouted-grain bread",
+      "name_fr": "Pain germ\u00e9",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "baked_goods",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 300.0,
+      "display_qty": "300 g"
+    },
+    {
+      "name_en": "Multigrain bread",
+      "name_fr": "Pain multigrain",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "baked_goods",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 300.0,
+      "display_qty": "300 g"
+    },
+    {
+      "name_en": "Corn tortillas",
+      "name_fr": "Tortillas de ma\u00efs",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "baked_goods",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Brown lentils (dry)",
+      "name_fr": "Lentilles brunes (s\u00e8ches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "legumes",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Red lentils (dry)",
+      "name_fr": "Lentilles rouges (s\u00e8ches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "legumes",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 400.0,
+      "display_qty": "400 g"
+    },
+    {
+      "name_en": "Chickpeas (dry or canned)",
+      "name_fr": "Pois chiches (secs ou en conserve)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "legumes",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 800.0,
+      "display_qty": "800 g"
+    },
+    {
+      "name_en": "Hummus",
+      "name_fr": "Houmous",
+      "aisle": "Deli / Charcuterie",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi"
+      ],
+      "food_category": "legumes",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 800.0,
+      "display_qty": "800 g"
+    },
+    {
+      "name_en": "Almonds (raw or roasted unsalted)",
+      "name_fr": "Amandes (brutes ou r\u00f4ties non sal\u00e9es)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Walnuts (raw or roasted unsalted)",
+      "name_fr": "Noix (brutes ou r\u00f4ties non sal\u00e9es)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Cashews (raw or roasted unsalted)",
+      "name_fr": "Noix de cajou (brutes ou r\u00f4ties non sal\u00e9es)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 400.0,
+      "display_qty": "400 g"
+    },
+    {
+      "name_en": "Pistachios (shelled unsalted)",
+      "name_fr": "Pistaches (d\u00e9cortiqu\u00e9es non sal\u00e9es)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 350.0,
+      "display_qty": "350 g"
+    },
+    {
+      "name_en": "Mixed nuts unsalted",
+      "name_fr": "Noix m\u00e9lang\u00e9es non sal\u00e9es",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 320.0,
+      "display_qty": "320 g"
+    },
+    {
+      "name_en": "Tahini (sesame paste)",
+      "name_fr": "Tahini (p\u00e2te de s\u00e9same)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 300.0,
+      "display_qty": "300 g"
+    },
+    {
+      "name_en": "Olive oil (extra virgin)",
+      "name_fr": "Huile d'olive (extra vierge)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "volume",
+      "unit": "ml",
+      "amount": 500.0,
+      "display_qty": "500 ml"
+    },
+    {
+      "name_en": "Avocado",
+      "name_fr": "Avocat",
+      "aisle": "Produce / Fruits",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "count",
+      "unit": "unit",
+      "amount": 4.0,
+      "display_qty": "4 units"
+    },
+    {
+      "name_en": "Spinach (fresh)",
+      "name_fr": "\u00c9pinards (frais)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Mixed salad leaves",
+      "name_fr": "Mesclun / Salade m\u00e9lang\u00e9e",
+      "aisle": "Produce / L\u00e9gumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 800.0,
+      "display_qty": "800 g"
+    },
+    {
+      "name_en": "Red cabbage (shredded)",
+      "name_fr": "Chou rouge (r\u00e2p\u00e9)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Purple cabbage",
+      "name_fr": "Chou violet",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "count",
+      "unit": "unit",
+      "amount": 1.0,
+      "display_qty": "1 unit"
+    },
+    {
+      "name_en": "Zucchini (for spiralising)",
+      "name_fr": "Courgette (pour spiraliser)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Carrots",
+      "name_fr": "Carottes",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Green beans",
+      "name_fr": "Haricots verts",
+      "aisle": "Produce / L\u00e9gumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Asparagus",
+      "name_fr": "Asperges",
+      "aisle": "Produce / L\u00e9gumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Broccoli florets",
+      "name_fr": "Fleurons de brocoli",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Cauliflower florets",
+      "name_fr": "Fleurons de chou-fleur",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Bell peppers (mixed colours)",
+      "name_fr": "Poivrons (couleurs m\u00e9lang\u00e9es)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2500.0,
+      "display_qty": "2.5 kg"
+    },
+    {
+      "name_en": "Cherry tomatoes",
+      "name_fr": "Tomates cerises",
+      "aisle": "Produce / L\u00e9gumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Tomatoes (fresh heirloom)",
+      "name_fr": "Tomates (fra\u00eeches anciennes vari\u00e9t\u00e9s)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Bok choy",
+      "name_fr": "Bok choy",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Sweet potato",
+      "name_fr": "Patate douce",
+      "aisle": "Produce / L\u00e9gumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Beets (fresh)",
+      "name_fr": "Betteraves (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Fennel bulb",
+      "name_fr": "Bulbe de fenouil",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Parsnips",
+      "name_fr": "Panais",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Celery root (celeriac)",
+      "name_fr": "C\u00e9leri-rave",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_cooked",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Celery stalks",
+      "name_fr": "Tiges de c\u00e9leri",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Cucumber",
+      "name_fr": "Concombre",
+      "aisle": "Produce / L\u00e9gumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl",
+        "Match"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Radishes",
+      "name_fr": "Radis",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 500.0,
+      "display_qty": "500 g"
+    },
+    {
+      "name_en": "Fresh herbs bundle (parsley, dill, basil, chives, thyme, rosemary)",
+      "name_fr": "Bouquet d'herbes fra\u00eeches (persil, aneth, basilic, ciboulette, thym, romarin)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 300.0,
+      "display_qty": "300 g"
+    },
+    {
+      "name_en": "Strawberries (fresh)",
+      "name_fr": "Fraises (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Blueberries (fresh)",
+      "name_fr": "Myrtilles (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1200.0,
+      "display_qty": "1.2 kg"
+    },
+    {
+      "name_en": "Raspberries (fresh)",
+      "name_fr": "Framboises (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Apples (mixed varieties)",
+      "name_fr": "Pommes (vari\u00e9t\u00e9s m\u00e9lang\u00e9es)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2500.0,
+      "display_qty": "2.5 kg"
+    },
+    {
+      "name_en": "Pears (ripe)",
+      "name_fr": "Poires (m\u00fbres)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Peaches (fresh)",
+      "name_fr": "P\u00eaches (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Nectarines (fresh)",
+      "name_fr": "Nectarines (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Oranges (fresh)",
+      "name_fr": "Oranges (fra\u00eeches)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Kiwis (fresh)",
+      "name_fr": "Kiwis (frais)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1500.0,
+      "display_qty": "1.5 kg"
+    },
+    {
+      "name_en": "Lemons (fresh)",
+      "name_fr": "Citrons (frais)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 2000.0,
+      "display_qty": "2 kg"
+    },
+    {
+      "name_en": "Limes (fresh)",
+      "name_fr": "Citrons verts (frais)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 1000.0,
+      "display_qty": "1 kg"
+    },
+    {
+      "name_en": "Garlic cloves",
+      "name_fr": "Gousses d'ail",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 200.0,
+      "display_qty": "200 g"
+    },
+    {
+      "name_en": "Ginger (fresh)",
+      "name_fr": "Gingembre (frais)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 200.0,
+      "display_qty": "200 g"
+    },
+    {
+      "name_en": "Coconut milk (low-fat)",
+      "name_fr": "Lait de coco (all\u00e9g\u00e9)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "volume",
+      "unit": "ml",
+      "amount": 800.0,
+      "display_qty": "800 ml"
+    },
+    {
+      "name_en": "Green curry paste",
+      "name_fr": "P\u00e2te de curry vert",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 200.0,
+      "display_qty": "200 g"
+    },
+    {
+      "name_en": "Balsamic vinegar",
+      "name_fr": "Vinaigre balsamique",
+      "aisle": "Oils / Vinaigrettes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "volume",
+      "unit": "ml",
+      "amount": 250.0,
+      "display_qty": "250 ml"
+    },
+    {
+      "name_en": "White vinegar",
+      "name_fr": "Vinaigre blanc",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "volume",
+      "unit": "ml",
+      "amount": 250.0,
+      "display_qty": "250 ml"
+    },
+    {
+      "name_en": "Honey (raw)",
+      "name_fr": "Miel (brut)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 250.0,
+      "display_qty": "250 g"
+    },
+    {
+      "name_en": "Granola (no added sugar)",
+      "name_fr": "Granola (sans sucre ajout\u00e9)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "baked_goods",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 300.0,
+      "display_qty": "300 g"
+    },
+    {
+      "name_en": "Sea salt",
+      "name_fr": "Sel de mer",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 100.0,
+      "display_qty": "100 g"
+    },
+    {
+      "name_en": "Black pepper (whole peppercorns)",
+      "name_fr": "Poivre noir (grains entiers)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 50.0,
+      "display_qty": "50 g"
+    },
+    {
+      "name_en": "Ground cumin",
+      "name_fr": "Cumin moulu",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 50.0,
+      "display_qty": "50 g"
+    },
+    {
+      "name_en": "Ground coriander",
+      "name_fr": "Coriandre moulue",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 50.0,
+      "display_qty": "50 g"
+    },
+    {
+      "name_en": "Chili powder",
+      "name_fr": "Poudre de piment",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 50.0,
+      "display_qty": "50 g"
+    },
+    {
+      "name_en": "Dried oregano",
+      "name_fr": "Origan s\u00e9ch\u00e9",
+      "aisle": "Spices / \u00c9pices",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 20.0,
+      "display_qty": "20 g"
+    },
+    {
+      "name_en": "Dried thyme",
+      "name_fr": "Thym s\u00e9ch\u00e9",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "mass",
+      "unit": "g",
+      "amount": 20.0,
+      "display_qty": "20 g"
+    },
+    {
+      "name_en": "Water (for cooking & drinking)",
+      "name_fr": "Eau (pour la cuisine & la boisson)",
+      "aisle": "General / G\u00e9n\u00e9ral",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "food_category": "generic",
+      "kind": "volume",
+      "unit": "ml",
+      "amount": 10000.0,
+      "display_qty": "10 L"
+    }
+  ]
 }

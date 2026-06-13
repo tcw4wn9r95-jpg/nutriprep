@@ -1,0 +1,361 @@
+{
+  "week_of": "2026-06-15",
+  "prep_day": "Sunday",
+  "prep_start_time": "15:00",
+  "total_active_minutes": 283,
+  "batches": [
+    {
+      "id": "prep_batch_1",
+      "title": "Smoked Salmon & Avocado Prep",
+      "order": 1,
+      "active_minutes": 10,
+      "steps": [
+        "Toast sourdough bread lightly (2 min at toaster)",
+        "Slice and portion into 7 containers",
+        "Portion smoked salmon into 7 containers (Diego 80g, Diana 60g)",
+        "Portion avocado quarters into 7 containers (Diego 1/4, Diana 1/8)",
+        "Store bread and salmon separately in airtight containers; keep avocado refrigerated with lemon juice"
+      ],
+      "yields": [
+        "7 breakfast servings: sourdough toast, smoked salmon, avocado ready-to-assemble"
+      ],
+      "food_category": "fish_seafood",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Toast 1 slice sourdough 1 min, spread avocado, layer salmon, squeeze lemon, serve 500ml water",
+        "Tuesday": "Toast 1 slice sourdough 1 min, spread avocado, layer salmon, squeeze lemon, serve 500ml water",
+        "Wednesday": "Toast 1 slice sourdough 1 min, spread avocado, layer salmon, squeeze lemon, serve 500ml water",
+        "Thursday": "Toast 1 slice sourdough 1 min, spread avocado, layer salmon, squeeze lemon, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container on ice or coldest shelf",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 1,
+        "use_within_days": 2,
+        "freeze_option_days": 30,
+        "reheat_c": 74,
+        "safety_note": "Fish spoils fast. Use within 2 days; 1 day is safer. Reheat to 74 \u00b0C."
+      }
+    },
+    {
+      "id": "prep_batch_2",
+      "title": "Mediterranean Grilled Chicken, Quinoa & Roasted Vegetables",
+      "order": 2,
+      "active_minutes": 60,
+      "steps": [
+        "Rinse 2 cups dry quinoa under cold running water",
+        "Bring 4 cups salted water to boil, add quinoa, simmer 15 min until fluffy",
+        "Cool quinoa completely, divide into 7 airtight containers (Diego 180g, Diana 130g)",
+        "Pat dry 8 chicken breasts (1200g total), season with sea salt, pepper, oregano, thyme",
+        "Grill or bake chicken on 200\u00b0C oven for 20 min until internal temp 165\u00b0C (use meat thermometer)",
+        "Cool, slice, portion into 7 containers (Diego 200g per day, Diana 150g per day)",
+        "Chop 2 kg mixed vegetables (zucchini, bell peppers, carrots, cherry tomatoes)",
+        "Toss vegetables with 2 tbsp olive oil, sea salt, pepper, dried oregano",
+        "Roast at 200\u00b0C for 25 min, stirring halfway",
+        "Cool, divide into 7 containers (Diego 1.5 cups, Diana 1.2 cups)"
+      ],
+      "yields": [
+        "7 days \u00d7 lunch: 180g (Diego) or 130g (Diana) cooked quinoa + 200g (Diego) or 150g (Diana) sliced grilled chicken + 1.5 cups (Diego) or 1.2 cups (Diana) roasted vegetables"
+      ],
+      "food_category": "poultry",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Reheat quinoa 2 min, reheat chicken 2 min, reheat veg 2 min, drizzle 2 tsp (Diego) or 1.5 tsp (Diana) olive oil, fresh oregano, serve 500ml water",
+        "Tuesday": "Reheat quinoa 2 min, reheat chicken 2 min, reheat veg 2 min, drizzle 2 tsp (Diego) or 1.5 tsp (Diana) olive oil, fresh oregano, serve 500ml water",
+        "Wednesday": "Reheat quinoa 2 min, reheat chicken 2 min, reheat veg 2 min, drizzle 2 tsp (Diego) or 1.5 tsp (Diana) olive oil, fresh oregano, serve 500ml water",
+        "Thursday": "Reheat quinoa 2 min, reheat chicken 2 min, reheat veg 2 min, drizzle 2 tsp (Diego) or 1.5 tsp (Diana) olive oil, fresh oregano, serve 500ml water",
+        "Friday": "Reheat quinoa 2 min, reheat chicken 2 min, reheat veg 2 min, drizzle 2 tsp (Diego) or 1.5 tsp (Diana) olive oil, fresh oregano, serve 500ml water",
+        "Saturday": "Reheat quinoa 2 min, reheat chicken 2 min, reheat veg 2 min, drizzle 2 tsp (Diego) or 1.5 tsp (Diana) olive oil, fresh oregano, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_3",
+      "title": "Greek Yogurt, Walnuts & Berries Snack Prep",
+      "order": 3,
+      "active_minutes": 8,
+      "steps": [
+        "Portion 1500g Greek yogurt into 7 containers (Diego 200g, Diana 150g)",
+        "Divide 175g walnuts into 7 small bags (Diego 25g, Diana 20g)",
+        "Keep yogurt refrigerated; store walnuts in cool, dry place"
+      ],
+      "yields": [
+        "7 pm snack portions: Greek yogurt + walnuts pre-portioned"
+      ],
+      "food_category": "dairy",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Spoon yogurt into bowl, top with walnuts and 100g (Diego) or 80g (Diana) fresh raspberries, serve 500ml water",
+        "Tuesday": "Spoon yogurt into bowl, top with walnuts and fresh berries, serve 500ml water",
+        "Wednesday": "Spoon yogurt into bowl, top with walnuts and fresh berries, serve 500ml water",
+        "Thursday": "Spoon yogurt into bowl, top with walnuts and fresh berries, serve 500ml water",
+        "Friday": "Spoon yogurt into bowl, top with walnuts and fresh berries, serve 500ml water",
+        "Saturday": "Spoon yogurt into bowl, top with walnuts and fresh berries, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "sealed original packaging or airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": null,
+        "use_within_days": 5,
+        "freeze_option_days": null,
+        "reheat_c": null,
+        "safety_note": "Check use-by date on packaging. Opened yogurt: 5\u20137 days."
+      }
+    },
+    {
+      "id": "prep_batch_4",
+      "title": "Baked White Fish, Green Beans & Sweet Potato",
+      "order": 4,
+      "active_minutes": 45,
+      "steps": [
+        "Pat dry 7 white fish fillets (160g Diego, 120g Diana), place on parchment paper, season with sea salt, wrap loosely, refrigerate",
+        "Blanch 1.5 kg green beans in boiling salted water 4 min, ice-bath immediately to stop cooking, drain, divide into 7 containers (Diego 200g, Diana 150g)",
+        "Peel & chop 1.2 kg sweet potato into 1-inch chunks, toss with 1 tbsp olive oil, sea salt, pepper",
+        "Roast sweet potato at 200\u00b0C for 25 min, stirring halfway, divide into 7 containers (Diego 150g, Diana 120g)"
+      ],
+      "yields": [
+        "7 dinner servings: pre-portioned fish fillets + blanched green beans + roasted sweet potato"
+      ],
+      "food_category": "fish_seafood",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Preheat oven to 200\u00b0C, place fish on parchment, lemon juice, 0.5 tsp olive oil, sea salt, bake 12 min, reheat green beans & sweet potato 2 min each, plate, serve 500ml water",
+        "Tuesday": "Preheat oven to 200\u00b0C, place fish on parchment, lemon juice, 0.5 tsp olive oil, sea salt, bake 12 min, reheat green beans & sweet potato 2 min each, plate, serve 500ml water",
+        "Wednesday": "Preheat oven to 200\u00b0C, place fish on parchment, lemon juice, 0.5 tsp olive oil, sea salt, bake 12 min, reheat green beans & sweet potato 2 min each, plate, serve 500ml water",
+        "Thursday": "Preheat oven to 200\u00b0C, place fish on parchment, lemon juice, 0.5 tsp olive oil, sea salt, bake 12 min, reheat green beans & sweet potato 2 min each, plate, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container on ice or coldest shelf",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 1,
+        "use_within_days": 2,
+        "freeze_option_days": 30,
+        "reheat_c": 74,
+        "safety_note": "Fish spoils fast. Use within 2 days; 1 day is safer. Reheat to 74 \u00b0C."
+      }
+    },
+    {
+      "id": "prep_batch_5",
+      "title": "Herb Omelette & Toast Breakfast Prep",
+      "order": 5,
+      "active_minutes": 5,
+      "steps": [
+        "Slice 270g whole-grain bread into 7 slices, store in airtight container (will keep 3\u20134 days)",
+        "Chop fresh herbs (dill, chives, parsley) finely, store in small airtight container with paper towel to absorb moisture"
+      ],
+      "yields": [
+        "7 breakfast portions: sliced whole-grain bread + fresh herb mix ready for omelette"
+      ],
+      "food_category": "grains_pasta",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Heat 1 tsp butter in non-stick pan, whisk 3 (Diego) or 2 (Diana) eggs + salt + fresh herbs, pour into pan, cook 3 min, fold, toast 1 bread slice 1 min, butter lightly, serve with 150g (Diego) or 120g (Diana) fresh strawberries, 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
+      }
+    },
+    {
+      "id": "prep_batch_6",
+      "title": "Turkey Meatballs, Brown Lentils & Roasted Beets",
+      "order": 6,
+      "active_minutes": 50,
+      "steps": [
+        "Mix 600g ground turkey with 2 tbsp breadcrumbs, 1 egg, 1 tsp ground cumin, 0.5 tsp chili powder, 1 minced garlic clove, sea salt, pepper",
+        "Shape into 12 meatballs (approx 50g each), place on parchment-lined baking sheet",
+        "Bake at 200\u00b0C for 20 min until cooked through (internal temp 165\u00b0C)",
+        "Cool, divide into 7 portions (Diego 3 meatballs, Diana 2.5 meatballs)",
+        "Cook 1 cup dry brown lentils in 3 cups water + 1 tsp sea salt for 25 min until tender, cool",
+        "Divide into 7 containers (Diego 1 cup cooked, Diana 0.75 cup)",
+        "Roast 1.5 kg beets (peeled, sliced) at 200\u00b0C with 1 tbsp olive oil, sea salt, pepper for 30 min",
+        "Cool, divide into 7 containers (Diego 200g, Diana 150g)"
+      ],
+      "yields": [
+        "7 lunch servings: 3 or 2.5 turkey meatballs + 1 cup (Diego) or 0.75 cup (Diana) cooked brown lentils + 200g (Diego) or 150g (Diana) roasted beets"
+      ],
+      "food_category": "poultry",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Reheat 3 (Diego) or 2.5 (Diana) meatballs at 180\u00b0C 4 min, reheat lentils 2 min, mix with 2 tbsp fresh parsley + 1 tsp balsamic vinegar + 1 tsp olive oil, reheat beets 2 min, plate, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_7",
+      "title": "Hummus & Vegetable Crudit\u00e9s Snack",
+      "order": 7,
+      "active_minutes": 10,
+      "steps": [
+        "Portion 560g hummus (store-bought or homemade) into 7 small containers (Diego 80g, Diana 60g)",
+        "Slice 700g carrots into sticks, 560g celery into sticks",
+        "Store in airtight container with damp paper towel to keep crisp",
+        "Halve 560g cherry tomatoes, store in separate container"
+      ],
+      "yields": [
+        "7 pm snack servings: hummus + fresh vegetable sticks ready to serve"
+      ],
+      "food_category": "legumes",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Spoon hummus into small bowl, arrange carrot sticks, celery, cherry tomatoes around, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 5,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
+      }
+    },
+    {
+      "id": "prep_batch_8",
+      "title": "Lean Ground Beef & Chickpea Taco Filling",
+      "order": 8,
+      "active_minutes": 40,
+      "steps": [
+        "Brown 600g lean ground beef in large skillet over medium-high heat, breaking apart as it cooks (8 min)",
+        "Add 2 tsp ground cumin, 1 tsp chili powder, juice of 1 lime, sea salt, pepper, stir for 2 min",
+        "Cool, divide into 7 containers (Diego 150g, Diana 120g)",
+        "Cook 1.5 cups dry chickpeas (or drain/rinse 2 cans), portion into 7 containers (Diego 0.75 cup, Diana 0.6 cup)",
+        "Shred 1.5 kg red cabbage, store in airtight container with damp paper towel",
+        "Dice 2 bell peppers, store in separate container",
+        "Chop fresh cilantro, store in small container"
+      ],
+      "yields": [
+        "7 lunch servings: seasoned ground beef + cooked chickpeas + prepped vegetables for taco bowls"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Reheat 150g (Diego) or 120g (Diana) beef 2 min, reheat chickpeas 2 min, arrange in bowl with 1 cup (Diego) or 0.8 cup (Diana) shredded red cabbage + 0.5 cup (Diego) or 0.4 cup (Diana) diced peppers, top with cilantro, squeeze lime, warm 2 corn tortillas (Diego) or 1.5 (Diana) 30 sec/side, serve tortillas on side, 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_9",
+      "title": "Kefir Bowl with Granola & Walnuts",
+      "order": 9,
+      "active_minutes": 5,
+      "steps": [
+        "Portion 1.75 L kefir into 7 containers (Diego 250ml, Diana 200ml), refrigerate",
+        "Portion 280g no-sugar granola into 7 small bags (Diego 40g, Diana 30g)",
+        "Portion 175g walnuts into 7 small bags (Diego 25g, Diana 20g)"
+      ],
+      "yields": [
+        "7 breakfast servings: pre-portioned kefir + granola + walnuts"
+      ],
+      "food_category": "dairy",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Pour kefir into bowl, top with granola, walnuts, fresh blueberries (100g Diego, 80g Diana), serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "sealed original packaging or airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": null,
+        "use_within_days": 5,
+        "freeze_option_days": null,
+        "reheat_c": null,
+        "safety_note": "Check use-by date on packaging. Opened yogurt: 5\u20137 days."
+      }
+    },
+    {
+      "id": "prep_batch_10",
+      "title": "Pan-Seared Salmon, Wild Rice & Asparagus",
+      "order": 10,
+      "active_minutes": 45,
+      "steps": [
+        "Cook 1.5 cups dry wild rice in 3.75 cups salted boiling water for 45 min until tender, cool, divide into 7 containers (Diego 200g, Diana 150g)",
+        "Pat dry 8 salmon fillets (170g Diego, 130g Diana), wrap individually in parchment, refrigerate",
+        "Blanch 1.75 kg asparagus in boiling salted water 3 min, ice-bath, drain, divide into 7 containers (Diego 250g, Diana 200g)"
+      ],
+      "yields": [
+        "7 lunch servings: wild rice + raw salmon fillets ready to sear + blanched asparagus"
+      ],
+      "food_category": "fish_seafood",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Heat 1 tsp olive oil in non-stick pan over medium-high heat, pat salmon dry, sear skin-side down 4 min, flip, cook 3 min until opaque, reheat wild rice 2 min, reheat asparagus 2 min, plate salmon, rice, asparagus, fresh dill & lemon, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container on ice or coldest shelf",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 1,
+        "use_within_days": 2,
+        "freeze_option_days": 30,
+        "reheat_c": 74,
+        "safety_note": "Fish spoils fast. Use within 2 days; 1 day is safer. Reheat to 74 \u00b0C."
+      }
+    },
+    {
+      "id": "prep_batch_11",
+      "title": "Greek Yogurt with Pistachios Snack",
+      "order": 11,
+      "active_minutes": 5,
+      "steps": [
+        "Portion 1.54 kg Greek yogurt into 7 containers (Diego 220g, Diana 170g)",
+        "Portion 175g pistachios into 7 small bags (Diego 25g, Diana 20g)"
+      ],
+      "yields": [
+        "7 pm snack servings: Greek yogurt + pistachios pre-portioned"
+      ],
+      "food_category": "dairy",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Spoon yogurt into bowl, top with crushed pistachios, serve 500ml water"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "sealed original packaging or airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": null,
+        "use_within_days": 5,
+        "freeze_option_days": null,
+        "reheat_c": null,
+        "safety_note": "Check use-by date on packaging. Opened yogurt: 5\u20137 days."
+      }
+    }
+  ]
+}
