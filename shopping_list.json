@@ -54,7 +54,7 @@
     {
       "name_en": "Sourdough bread (pain au levain)",
       "name_fr": "Sourdough bread (pain au levain)",
-      "qty": "560 g",
+      "qty": "490 g",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -66,7 +66,7 @@
     {
       "name_en": "Olive oil (huile d'olive)",
       "name_fr": "Olive oil (huile d'olive)",
-      "qty": "37 tsps",
+      "qty": "35 tsps",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -126,7 +126,7 @@
     {
       "name_en": "Ground beef (bœuf haché)",
       "name_fr": "Ground beef (bœuf haché)",
-      "qty": "1.17 kg",
+      "qty": "915 g",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -162,7 +162,7 @@
     {
       "name_en": "Spinach (épinards)",
       "name_fr": "Spinach (épinards)",
-      "qty": "890 g",
+      "qty": "790 g",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -270,7 +270,7 @@
     {
       "name_en": "Cherry tomatoes (tomates cerises)",
       "name_fr": "Cherry tomatoes (tomates cerises)",
-      "qty": "820 g",
+      "qty": "640 g",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -414,7 +414,7 @@
     {
       "name_en": "Balsamic vinegar (vinaigre balsamique)",
       "name_fr": "Balsamic vinegar (vinaigre balsamique)",
-      "qty": "8 tsps",
+      "qty": "6 tsps",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -436,9 +436,9 @@
       "have_at_home": false
     },
     {
-      "name_en": "Canned chickpeas (pois chiches en conserve)",
-      "name_fr": "Canned chickpeas (pois chiches en conserve)",
-      "qty": "380 g",
+      "name_en": "chicken thighs (skinless)",
+      "name_fr": "chicken thighs (skinless)",
+      "qty": "330 g",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -448,9 +448,9 @@
       "have_at_home": false
     },
     {
-      "name_en": "Tomato paste (concentré de tomates)",
-      "name_fr": "Tomato paste (concentré de tomates)",
-      "qty": "12 tbsps",
+      "name_en": "wholemeal penne",
+      "name_fr": "wholemeal penne",
+      "qty": "135 g",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -460,9 +460,57 @@
       "have_at_home": false
     },
     {
-      "name_en": "Dried oregano, smoked paprika, garlic powder, black pepper",
-      "name_fr": "Dried oregano, smoked paprika, garlic powder, black pepper",
-      "qty": "",
+      "name_en": "crushed tomatoes",
+      "name_fr": "crushed tomatoes",
+      "qty": "270 g",
+      "aisle": "General",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "have_at_home": false
+    },
+    {
+      "name_en": "fresh spinach",
+      "name_fr": "fresh spinach",
+      "qty": "110 g",
+      "aisle": "General",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "have_at_home": false
+    },
+    {
+      "name_en": "garlic",
+      "name_fr": "garlic",
+      "qty": "4 cloves",
+      "aisle": "General",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "have_at_home": false
+    },
+    {
+      "name_en": "light cream",
+      "name_fr": "light cream",
+      "qty": "50 ml",
+      "aisle": "General",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "have_at_home": false
+    },
+    {
+      "name_en": "olive oil",
+      "name_fr": "olive oil",
+      "qty": "2 tsps",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -499,6 +547,18 @@
       "name_en": "Leek (poireau)",
       "name_fr": "Leek (poireau)",
       "qty": "420 g",
+      "aisle": "General",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "have_at_home": false
+    },
+    {
+      "name_en": "Tomato paste (concentré de tomates)",
+      "name_fr": "Tomato paste (concentré de tomates)",
+      "qty": "10 tbsps",
       "aisle": "General",
       "stores": [
         "Cactus",
@@ -559,6 +619,18 @@
       "name_en": "Broccoli (brocoli)",
       "name_fr": "Broccoli (brocoli)",
       "qty": "540 g",
+      "aisle": "General",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "have_at_home": false
+    },
+    {
+      "name_en": "Canned chickpeas (pois chiches en conserve)",
+      "name_fr": "Canned chickpeas (pois chiches en conserve)",
+      "qty": "240 g",
       "aisle": "General",
       "stores": [
         "Cactus",
