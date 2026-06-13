@@ -305,11 +305,13 @@ Diego's calorie need changes day to day with training. On training days, raise h
 6. **Evidence-based**: align with EFSA Dietary Reference Values and WHO guidelines. Sustainable weight loss ≈ 0.25–0.75 kg/week; no crash diets, detoxes, or unproven supplements.
 7. **Hit each member's daily macro targets** (±10% tolerance). Use `day_totals` to verify.
 8. Each week: include oily fish at least twice; legumes on at least 3 days; ≥ 5 portions of veg per day per person.
-9. **VARIETY for MAIN MEALS — lunch & dinner must NOT feel like eating the same thing every day.**
-   - Never serve the same named lunch or dinner dish on two consecutive days. Across the whole week, no lunch or dinner dish may appear more than twice, and never back-to-back.
-   - You MAY batch-cook a base component on Sunday (e.g. roast chicken, cooked quinoa, lentils) and reuse it across several days for efficiency, BUT each lunch/dinner must transform it into a genuinely DIFFERENT dish: change the cuisine, sauce, vegetables, format (bowl → wrap → salad → traybake → soup) and seasoning so it looks and tastes new. Give each day's dish its own distinct `name` and `image_prompt` — never reuse the same name for a reused base.
-   - Rotate proteins, grains and cuisines across the week; aim for at least 4 different cuisines and 4 different main proteins over the 7 days.
-   - **Snacks (am_snack, pm_snack) and breakfast may freely REPEAT** — if repeating the same easy snack or breakfast on several days simplifies shopping and prep, that's encouraged. Convenience wins here; don't force variety on these slots.
+9. **MENU = A SPACED ROTATION of a few good dishes (repetition is GOOD — it shrinks shopping & cooking).**
+   - Build the whole week from a SMALL set of distinct dishes on a spaced rotation — do NOT invent a new dish for every slot. Target roughly: 2–3 breakfasts, 3–4 lunches, 3–4 dinners, 2–3 snack options — about **12–16 distinct dishes total** for the week.
+   - Each distinct lunch/dinner should appear on about 2 days. **SPACE the repeats — never the identical dish on two CONSECUTIVE days** so day-to-day still feels fresh (e.g. dinner A on Mon & Wed, dinner B on Tue & Thu, dinner C on Fri & Sun).
+   - Cook each dish ONCE as a batch and serve its repeat from that batch, RESPECTING the food-safety windows below. If a repeat falls outside the window (e.g. poultry past day 3), cook a second fresh batch mid-week instead — schedule it so each serving is safe.
+   - The repeat of a dish keeps the SAME `name` and ingredients (that's the point — buy and cook once). Reuse the same `image_prompt` for the repeat.
+   - **Breakfasts and snacks may repeat freely** — e.g. the same two breakfasts alternating all week. Convenience wins.
+   - Variety now comes from having a few genuinely different, well-made dishes in the rotation — NOT from a unique dish every day. Across DIFFERENT weeks, change the rotation so it doesn't get stale (see PAST WEEKS).
 10. Assign each prep batch a `food_category` from: poultry, red_meat, fish_seafood, eggs_cooked, rice, grains_pasta, legumes, vegetables_cooked, vegetables_raw_prepped, soup_stew, sauce_dairy, dairy, baked_goods, generic.
 11. **Recipe split**: every meal MUST have `prep_steps` (what to batch-cook/pre-portion on Sunday — empty list `[]` if nothing) AND `day_of_steps` (detailed, numbered, beginner-friendly actions performed on the day, including reheating instructions and quantities). Keep `video_url` as an empty string "" (the user attaches videos later).
 12. **Image prompt**: every meal MUST have an `image_prompt` — a short, vivid description of a finished plate of that meal for an AI image generator (mention key ingredients, plating, natural light; no text/words in image).
