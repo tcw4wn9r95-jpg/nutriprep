@@ -51,14 +51,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 610,
-              "protein_g": 34,
-              "carbs_g": 60,
-              "fat_g": 22,
-              "fiber_g": 6
+              "kcal": 730,
+              "protein_g": 38,
+              "carbs_g": 78,
+              "fat_g": 24,
+              "fiber_g": 8
             }
           },
           "diana": {
@@ -90,14 +94,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 500,
-              "protein_g": 25,
-              "carbs_g": 56,
-              "fat_g": 15,
-              "fiber_g": 6
+              "kcal": 620,
+              "protein_g": 29,
+              "carbs_g": 74,
+              "fat_g": 17,
+              "fiber_g": 8
             }
           }
         }
@@ -448,16 +456,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2110,
-        "protein_g": 146,
-        "carbs_g": 174,
-        "fat_g": 84
+        "kcal": 2230,
+        "protein_g": 150,
+        "carbs_g": 192,
+        "fat_g": 86
       },
       "diana": {
-        "kcal": 1560,
-        "protein_g": 101,
-        "carbs_g": 143,
-        "fat_g": 55
+        "kcal": 1680,
+        "protein_g": 105,
+        "carbs_g": 161,
+        "fat_g": 57
       }
     }
   },
@@ -516,14 +524,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 630,
-              "protein_g": 37,
-              "carbs_g": 62,
-              "fat_g": 23,
-              "fiber_g": 6
+              "kcal": 750,
+              "protein_g": 41,
+              "carbs_g": 80,
+              "fat_g": 25,
+              "fiber_g": 8
             }
           },
           "diana": {
@@ -559,14 +571,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 515,
-              "protein_g": 27,
-              "carbs_g": 58,
-              "fat_g": 16,
-              "fiber_g": 6
+              "kcal": 635,
+              "protein_g": 31,
+              "carbs_g": 76,
+              "fat_g": 18,
+              "fiber_g": 8
             }
           }
         }
@@ -919,16 +935,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2045,
-        "protein_g": 129,
-        "carbs_g": 196,
-        "fat_g": 77
+        "kcal": 2165,
+        "protein_g": 133,
+        "carbs_g": 214,
+        "fat_g": 79
       },
       "diana": {
-        "kcal": 1570,
-        "protein_g": 91,
-        "carbs_g": 168,
-        "fat_g": 50
+        "kcal": 1690,
+        "protein_g": 95,
+        "carbs_g": 186,
+        "fat_g": 52
       }
     }
   },
@@ -981,14 +997,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 575,
-              "protein_g": 32,
-              "carbs_g": 64,
-              "fat_g": 18,
-              "fiber_g": 7
+              "kcal": 695,
+              "protein_g": 36,
+              "carbs_g": 82,
+              "fat_g": 20,
+              "fiber_g": 9
             }
           },
           "diana": {
@@ -1016,14 +1036,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 510,
-              "protein_g": 28,
-              "carbs_g": 60,
-              "fat_g": 16,
-              "fiber_g": 7
+              "kcal": 630,
+              "protein_g": 32,
+              "carbs_g": 78,
+              "fat_g": 18,
+              "fiber_g": 9
             }
           }
         }
@@ -1396,16 +1420,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2110,
-        "protein_g": 142,
-        "carbs_g": 203,
-        "fat_g": 72
+        "kcal": 2230,
+        "protein_g": 146,
+        "carbs_g": 221,
+        "fat_g": 74
       },
       "diana": {
-        "kcal": 1625,
-        "protein_g": 103,
-        "carbs_g": 169,
-        "fat_g": 52
+        "kcal": 1745,
+        "protein_g": 107,
+        "carbs_g": 187,
+        "fat_g": 54
       }
     }
   },
@@ -1456,14 +1480,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 565,
-              "protein_g": 31,
-              "carbs_g": 66,
-              "fat_g": 16,
-              "fiber_g": 6
+              "kcal": 685,
+              "protein_g": 35,
+              "carbs_g": 84,
+              "fat_g": 18,
+              "fiber_g": 8
             }
           },
           "diana": {
@@ -1491,14 +1519,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 505,
-              "protein_g": 27,
-              "carbs_g": 62,
-              "fat_g": 15,
-              "fiber_g": 6
+              "kcal": 625,
+              "protein_g": 31,
+              "carbs_g": 80,
+              "fat_g": 17,
+              "fiber_g": 8
             }
           }
         }
@@ -1864,16 +1896,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2155,
-        "protein_g": 148,
-        "carbs_g": 196,
-        "fat_g": 78
+        "kcal": 2275,
+        "protein_g": 152,
+        "carbs_g": 214,
+        "fat_g": 80
       },
       "diana": {
-        "kcal": 1645,
-        "protein_g": 107,
-        "carbs_g": 164,
-        "fat_g": 56
+        "kcal": 1765,
+        "protein_g": 111,
+        "carbs_g": 182,
+        "fat_g": 58
       }
     }
   },
@@ -1932,14 +1964,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 630,
-              "protein_g": 37,
-              "carbs_g": 62,
-              "fat_g": 23,
-              "fiber_g": 6
+              "kcal": 750,
+              "protein_g": 41,
+              "carbs_g": 80,
+              "fat_g": 25,
+              "fiber_g": 8
             }
           },
           "diana": {
@@ -1975,14 +2011,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 515,
-              "protein_g": 27,
-              "carbs_g": 58,
-              "fat_g": 16,
-              "fiber_g": 6
+              "kcal": 635,
+              "protein_g": 31,
+              "carbs_g": 76,
+              "fat_g": 18,
+              "fiber_g": 8
             }
           }
         }
@@ -2342,16 +2382,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2085,
-        "protein_g": 148,
-        "carbs_g": 186,
-        "fat_g": 75
+        "kcal": 2205,
+        "protein_g": 152,
+        "carbs_g": 204,
+        "fat_g": 77
       },
       "diana": {
-        "kcal": 1580,
-        "protein_g": 103,
-        "carbs_g": 158,
-        "fat_g": 52
+        "kcal": 1700,
+        "protein_g": 107,
+        "carbs_g": 176,
+        "fat_g": 54
       }
     }
   },
@@ -2405,14 +2445,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 610,
-              "protein_g": 33,
-              "carbs_g": 63,
-              "fat_g": 21,
-              "fiber_g": 7
+              "kcal": 730,
+              "protein_g": 37,
+              "carbs_g": 81,
+              "fat_g": 23,
+              "fiber_g": 9
             }
           },
           "diana": {
@@ -2444,14 +2488,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 500,
-              "protein_g": 24,
-              "carbs_g": 59,
-              "fat_g": 15,
-              "fiber_g": 7
+              "kcal": 620,
+              "protein_g": 28,
+              "carbs_g": 77,
+              "fat_g": 17,
+              "fiber_g": 9
             }
           }
         }
@@ -2818,16 +2866,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2105,
-        "protein_g": 142,
-        "carbs_g": 189,
-        "fat_g": 79
+        "kcal": 2225,
+        "protein_g": 146,
+        "carbs_g": 207,
+        "fat_g": 81
       },
       "diana": {
-        "kcal": 1590,
-        "protein_g": 101,
-        "carbs_g": 163,
-        "fat_g": 53
+        "kcal": 1710,
+        "protein_g": 105,
+        "carbs_g": 181,
+        "fat_g": 55
       }
     }
   },
@@ -2883,14 +2931,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 600,
-              "protein_g": 33,
-              "carbs_g": 66,
-              "fat_g": 19,
-              "fiber_g": 6
+              "kcal": 720,
+              "protein_g": 37,
+              "carbs_g": 84,
+              "fat_g": 21,
+              "fiber_g": 8
             }
           },
           "diana": {
@@ -2922,14 +2974,18 @@
               {
                 "item": "250ml Kefir Smoothie with mixed fruit",
                 "qty": "250 ml"
+              },
+              {
+                "item": "Kefir smoothie with mixed fruit (250ml)",
+                "qty": "250ml"
               }
             ],
             "macros": {
-              "kcal": 520,
-              "protein_g": 29,
-              "carbs_g": 62,
-              "fat_g": 16,
-              "fiber_g": 6
+              "kcal": 640,
+              "protein_g": 33,
+              "carbs_g": 80,
+              "fat_g": 18,
+              "fiber_g": 8
             }
           }
         }
@@ -3296,16 +3352,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2170,
-        "protein_g": 148,
-        "carbs_g": 209,
-        "fat_g": 74
+        "kcal": 2290,
+        "protein_g": 152,
+        "carbs_g": 227,
+        "fat_g": 76
       },
       "diana": {
-        "kcal": 1660,
-        "protein_g": 107,
-        "carbs_g": 177,
-        "fat_g": 53
+        "kcal": 1780,
+        "protein_g": 111,
+        "carbs_g": 195,
+        "fat_g": 55
       }
     }
   }
