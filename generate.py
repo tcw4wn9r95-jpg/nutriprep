@@ -305,10 +305,14 @@ Diego's calorie need changes day to day with training. On training days, raise h
 6. **Evidence-based**: align with EFSA Dietary Reference Values and WHO guidelines. Sustainable weight loss ≈ 0.25–0.75 kg/week; no crash diets, detoxes, or unproven supplements.
 7. **Hit each member's daily macro targets** (±10% tolerance). Use `day_totals` to verify.
 8. Each week: include oily fish at least twice; legumes on at least 3 days; ≥ 5 portions of veg per day per person.
-9. **VARIED DISHES on a LEAN FRESH palette — get variety from carbs & seasonings, not from more perishables.**
-   - Keep the FRESH, perishable shop small by reusing the SAME few proteins and vegetables across the whole week: about **3–4 proteins and 6–8 vegetables** for all 7 days. These are the weekly fresh buy — don't let them sprawl.
-   - Create day-to-day VARIETY from cheap, long-shelf-life PANTRY items instead: rotate the CARB (rice, pasta, couscous, potato, tortilla, bread), the SPICE/SEASONING blend, the SAUCE/marinade, and the cooking method/format (bowl, wrap, traybake, stir-fry, soup, salad). The same chicken + courgette can be a Mexican bowl one day, a Mediterranean traybake another, an Asian stir-fry another — just by changing carb + spices.
-   - Lunches and dinners should feel DIFFERENT most days. You do NOT need to repeat dishes — but light, spaced repetition (a dish at most twice, NEVER on consecutive days) is fine when it saves cooking.
+9. **LOCK A LEAN FRESH PALETTE FIRST, then build varied dishes from it. This is a HARD limit, not a guideline.**
+   - BEFORE writing any meals, decide a fixed weekly palette and write nothing outside it:
+       • AT MOST **4 distinct fresh proteins** for the whole week (e.g. chicken, white fish, one oily fish, beef) — plus pantry legumes (canned/dried beans, lentils, chickpeas) which are staples, not fresh, and don't count.
+       • AT MOST **10 distinct fresh vegetables/fruits** for the whole week, reused across many dishes.
+       • ONE bread only. ONE fresh leafy green.
+     If a dish idea needs a protein or vegetable not on these lists, CHANGE THE DISH — do not extend the lists. Count as you go and do not exceed the caps.
+   - Variety comes from the PANTRY, not more fresh items: rotate the CARB (rice, pasta, couscous, potato, tortilla), the SPICE/SEASONING blend, the SAUCE/marinade, and the cooking method/format (bowl, wrap, traybake, stir-fry, soup, salad). The same chicken + courgette becomes a Mexican bowl, a Mediterranean traybake, or an Asian stir-fry just by changing carb + spices. Use as many different spices/sauces/carbs as you like — they're cheap staples.
+   - Aim for ~16–20 distinct dishes across the week. Lunches/dinners should feel different most days; light spaced repetition (a dish at most twice, NEVER on consecutive days) is fine.
    - **Breakfasts and snacks may repeat freely** (e.g. the same two breakfasts alternating all week). Convenience wins.
    - Give each distinct dish its own `name` and `image_prompt`; a deliberate repeat keeps the same name/ingredients.
 10. Assign each prep batch a `food_category` from: poultry, red_meat, fish_seafood, eggs_cooked, rice, grains_pasta, legumes, vegetables_cooked, vegetables_raw_prepped, soup_stew, sauce_dairy, dairy, baked_goods, generic.
@@ -727,8 +731,17 @@ _STAPLE_NAME_KW = ("rice", "riz", "pasta", "pâtes", "pates", "spaghetti", "penn
                    "spice", "herbes de provence", "soy", "maple")
 
 
+# Perishable categories are ALWAYS part of the weekly-fresh shop — never hide them in
+# the staples section even if a name/aisle keyword coincidentally matches.
+_FRESH_CATS = {"poultry", "red_meat", "fish_seafood", "eggs_cooked", "dairy", "sauce_dairy",
+               "baked_goods", "vegetables_cooked", "vegetables_raw_prepped"}
+
+
 def _is_staple(it):
-    if (it.get("food_category") or "").lower() in _STAPLE_CATS:
+    cat = (it.get("food_category") or "").lower()
+    if cat in _FRESH_CATS:
+        return False
+    if cat in _STAPLE_CATS:
         return True
     aisle = (it.get("aisle") or "").lower()
     if any(k in aisle for k in _STAPLE_AISLE_KW):
