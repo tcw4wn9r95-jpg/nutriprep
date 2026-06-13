@@ -152,5 +152,27 @@
       "diego": 1982,
       "diana": 1516
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Soft-Boiled Egg with Sourdough, Goat Cheese & Strawberries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Couscous",
+      "Pan-Seared White Fish with Roasted Green Beans & New Potatoes",
+      "Smoked Salmon & Cream Cheese on Sourdough with Kiwi",
+      "Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice",
+      "Baked Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta",
+      "Poached Egg with Whole-Grain Sourdough, Avocado & Blueberries",
+      "Tuna & Chickpea Salad with Roasted Bell Peppers & Lemon-Olive Oil Dressing",
+      "Herb-Roasted Chicken with Roasted Zucchini & Sweet Potato",
+      "Soft-Boiled Egg with Sourdough, Goat Cheese & Strawberries"
+    ],
+    "shopping_items": 63,
+    "prep_minutes": 193,
+    "day_kcal": {
+      "diego": 2120,
+      "diana": 1630
+    }
   }
 ]
