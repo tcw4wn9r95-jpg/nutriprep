@@ -42,5 +42,27 @@
       "diego": 1742,
       "diana": 1334
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Herb-Crusted Boiled Egg with Sourdough & Berries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Baked White Fish with Lemon Butter, Green Beans & Sweet Potato",
+      "Smoked Salmon & Cream Cheese on Rye",
+      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
+      "Pan-Seared Tuna Steak with Sesame Bok Choy & Brown Rice",
+      "Soft Cheese & Wheatgerm Toast with Kiwi",
+      "Chicken Caesar Salad with Wholegrain Croutons",
+      "Mexican Lean Beef & Chickpea Taco Bowls with Cilantro-Lime Dressing",
+      "Greek Yogurt Parfait with Granola & Strawberries"
+    ],
+    "shopping_items": 103,
+    "prep_minutes": 183,
+    "day_kcal": {
+      "diego": 1838,
+      "diana": 1427
+    }
   }
 ]
