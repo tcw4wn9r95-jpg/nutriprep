@@ -5,20 +5,20 @@
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Herb-Crusted Boiled Egg with Sourdough & Raspberries",
+        "name": "Boiled Egg with Sourdough, Cheese & Raspberries",
         "time": "07:30",
         "prep_ahead": true,
         "cook_minutes_day_of": 2,
-        "image_prompt": "boiled egg halves on rustic sourdough toast, fresh raspberries scattered beside, fresh dill and chives sprinkled on top, morning light, wooden plate",
+        "image_prompt": "Soft-boiled egg in an egg cup beside two slices of sourdough toast with 20g Emmental cheese, small bowl of fresh raspberries on the side, natural morning light",
         "video_url": "",
         "prep_steps": [
-          "Boil 14 eggs (7 for week breakfast + boiled egg dinners), cool in ice bath, peel and store in fridge"
+          "Boil 14 eggs until soft-boiled (6 min), cool in ice bath, store in fridge"
         ],
         "day_of_steps": [
-          "Place 1 boiled egg halves on plate",
-          "Toast 1 sourdough slice, arrange beside egg",
-          "Sprinkle dill and chives over egg",
-          "Serve 150g raspberries on the side"
+          "Toast 2 slices sourdough (Diego) or 1.5 slices (Diana)",
+          "Top each slice with 10g Emmental",
+          "Peel one soft-boiled egg, place in egg cup",
+          "Serve with 100g raspberries (Diego) or 75g (Diana)"
         ],
         "storage_ref": "prep_batch_1",
         "food_category": "eggs_cooked",
@@ -26,60 +26,108 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
+                "item": "Soft-boiled egg",
+                "qty": "1"
               },
               {
                 "item": "Sourdough bread",
-                "qty": "40g"
+                "qty": "2 slices"
               },
               {
-                "item": "Raspberries",
-                "qty": "150g"
+                "item": "Emmental cheese",
+                "qty": "20 g"
               },
               {
-                "item": "Fresh dill",
-                "qty": "5g"
-              },
-              {
-                "item": "Chives",
-                "qty": "2g"
+                "item": "Fresh raspberries",
+                "qty": "100 g"
               }
             ],
             "macros": {
-              "kcal": 380,
-              "protein_g": 16,
-              "carbs_g": 42,
-              "fat_g": 15,
-              "fiber_g": 8
+              "kcal": 420,
+              "protein_g": 18,
+              "carbs_g": 36,
+              "fat_g": 18,
+              "fiber_g": 5
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "1 \u00d7 50g"
+                "item": "Soft-boiled egg",
+                "qty": "1"
               },
               {
                 "item": "Sourdough bread",
-                "qty": "30g"
+                "qty": "1.5 slices"
               },
               {
-                "item": "Raspberries",
-                "qty": "120g"
+                "item": "Emmental cheese",
+                "qty": "15 g"
               },
               {
-                "item": "Fresh dill",
-                "qty": "4g"
-              },
-              {
-                "item": "Chives",
-                "qty": "1.5g"
+                "item": "Fresh raspberries",
+                "qty": "75 g"
               }
             ],
             "macros": {
-              "kcal": 280,
-              "protein_g": 11,
+              "kcal": 315,
+              "protein_g": 14,
+              "carbs_g": 27,
+              "fat_g": 13,
+              "fiber_g": 4
+            }
+          }
+        }
+      },
+      {
+        "slot": "am_snack",
+        "name": "Almonds & Apple",
+        "time": "10:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 0,
+        "image_prompt": "Small handful of roasted almonds in a bowl next to a sliced fresh apple, on a light wooden board, natural daylight",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Portion 30g almonds into a small bowl (Diego) or 22g (Diana)",
+          "Slice 1 apple, arrange on the side"
+        ],
+        "storage_ref": "",
+        "food_category": "generic",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Roasted almonds",
+                "qty": "30 g"
+              },
+              {
+                "item": "Apple",
+                "qty": "1 medium"
+              }
+            ],
+            "macros": {
+              "kcal": 310,
+              "protein_g": 10,
+              "carbs_g": 32,
+              "fat_g": 15,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Roasted almonds",
+                "qty": "22 g"
+              },
+              {
+                "item": "Apple",
+                "qty": "1 medium"
+              }
+            ],
+            "macros": {
+              "kcal": 240,
+              "protein_g": 8,
               "carbs_g": 32,
               "fat_g": 11,
               "fiber_g": 6
@@ -88,17 +136,369 @@
         }
       },
       {
-        "slot": "am_snack",
-        "name": "Almonds & Pear",
-        "time": "10:30",
-        "prep_ahead": false,
+        "slot": "lunch",
+        "name": "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+        "time": "13:00",
+        "prep_ahead": true,
+        "cook_minutes_day_of": 5,
+        "image_prompt": "Plate of herb-crusted grilled chicken breast beside roasted red peppers, zucchini, and cherry tomatoes with quinoa, drizzle of olive oil, lemon wedge, bright daylight from above",
+        "video_url": "",
+        "prep_steps": [
+          "Marinate 600g chicken breasts in 2 tbsp olive oil, garlic, oregano, thyme, lemon juice for 30 min",
+          "Grill or pan-sear until internal temp 75\u00b0C; rest 5 min, slice into portions",
+          "Roast mixed vegetables (300g peppers, 250g zucchini, 200g cherry tomatoes) at 200\u00b0C for 25 min with 1 tbsp olive oil, salt, pepper",
+          "Cook 150g quinoa (dry) in salted water per package; cool and portion"
+        ],
+        "day_of_steps": [
+          "Retrieve grilled chicken, roasted veg, and cooked quinoa from fridge",
+          "Warm chicken briefly (2 min) in a pan if desired, or serve cold",
+          "Arrange 180g chicken (Diego) or 130g (Diana) on plate",
+          "Add 100g roasted veg (Diego) or 75g (Diana)",
+          "Add 80g quinoa (Diego) or 60g (Diana)",
+          "Dress with 1 tsp olive oil, squeeze of lemon, salt & pepper"
+        ],
+        "storage_ref": "prep_batch_2",
+        "food_category": "poultry",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Grilled chicken breast",
+                "qty": "180 g"
+              },
+              {
+                "item": "Roasted mixed veg (peppers, zucchini, tomatoes)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Cooked quinoa",
+                "qty": "80 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Lemon",
+                "qty": "squeeze"
+              }
+            ],
+            "macros": {
+              "kcal": 520,
+              "protein_g": 52,
+              "carbs_g": 38,
+              "fat_g": 13,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Grilled chicken breast",
+                "qty": "130 g"
+              },
+              {
+                "item": "Roasted mixed veg (peppers, zucchini, tomatoes)",
+                "qty": "75 g"
+              },
+              {
+                "item": "Cooked quinoa",
+                "qty": "60 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "0.75 tsp"
+              },
+              {
+                "item": "Lemon",
+                "qty": "squeeze"
+              }
+            ],
+            "macros": {
+              "kcal": 380,
+              "protein_g": 38,
+              "carbs_g": 28,
+              "fat_g": 10,
+              "fiber_g": 5
+            }
+          }
+        }
+      },
+      {
+        "slot": "pm_snack",
+        "name": "Greek Yogurt with Walnuts & Blueberries",
+        "time": "16:30",
+        "prep_ahead": true,
         "cook_minutes_day_of": 1,
-        "image_prompt": "handful of roasted almonds in a small bowl, fresh pear beside on white napkin, natural daylight",
+        "image_prompt": "Glass bowl of creamy Greek yogurt topped with fresh blueberries and toasted walnut pieces, natural light, minimalist presentation",
+        "video_url": "",
+        "prep_steps": [
+          "Portion 600g Greek yogurt (0% fat) into 7 containers (one per day)"
+        ],
+        "day_of_steps": [
+          "Remove one container of pre-portioned yogurt from fridge",
+          "Top 170g yogurt (Diego) or 130g (Diana) with 20g walnuts and 80g blueberries (Diego) or 60g (Diana)"
+        ],
+        "storage_ref": "prep_batch_3",
+        "food_category": "dairy",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "170 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "80 g"
+              }
+            ],
+            "macros": {
+              "kcal": 320,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 12,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "130 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "15 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "60 g"
+              }
+            ],
+            "macros": {
+              "kcal": 240,
+              "protein_g": 23,
+              "carbs_g": 17,
+              "fat_g": 9,
+              "fiber_g": 3
+            }
+          }
+        }
+      },
+      {
+        "slot": "dinner",
+        "name": "Baked White Fish with Lemon, Green Beans & Sweet Potato",
+        "time": "19:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 20,
+        "image_prompt": "Baked white fish fillet on a bed of steamed green beans with roasted sweet potato wedges, lemon slice on top, fresh herbs, warm plated lighting",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Portion 30g almonds into small bowl",
-          "Slice 1 pear, arrange on small plate beside almonds"
+          "Preheat oven to 200\u00b0C",
+          "Place 200g white fish fillet (Diego) or 150g (Diana) on parchment paper",
+          "Season with salt, pepper, fresh dill; squeeze lemon juice",
+          "Roast 15 min until flaky (internal temp 63\u00b0C)",
+          "Meanwhile, steam 150g green beans (Diego) or 115g (Diana) for 8 min until tender-crisp",
+          "Roast 150g diced sweet potato (Diego) or 120g (Diana) tossed in 0.5 tsp olive oil at 200\u00b0C for 15 min",
+          "Plate fish, beans, and sweet potato; drizzle with 1 tsp olive oil (Diego) or 0.75 tsp (Diana)"
+        ],
+        "storage_ref": "",
+        "food_category": "fish_seafood",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "White fish fillet (sea bass or cod)",
+                "qty": "200 g"
+              },
+              {
+                "item": "Fresh dill",
+                "qty": "5 g"
+              },
+              {
+                "item": "Lemon",
+                "qty": "0.5"
+              },
+              {
+                "item": "Green beans",
+                "qty": "150 g"
+              },
+              {
+                "item": "Sweet potato",
+                "qty": "150 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "1.5 tsp"
+              }
+            ],
+            "macros": {
+              "kcal": 420,
+              "protein_g": 45,
+              "carbs_g": 36,
+              "fat_g": 10,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "White fish fillet (sea bass or cod)",
+                "qty": "150 g"
+              },
+              {
+                "item": "Fresh dill",
+                "qty": "4 g"
+              },
+              {
+                "item": "Lemon",
+                "qty": "0.5"
+              },
+              {
+                "item": "Green beans",
+                "qty": "115 g"
+              },
+              {
+                "item": "Sweet potato",
+                "qty": "120 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "1.1 tsp"
+              }
+            ],
+            "macros": {
+              "kcal": 315,
+              "protein_g": 34,
+              "carbs_g": 28,
+              "fat_g": 8,
+              "fiber_g": 5
+            }
+          }
+        }
+      }
+    ],
+    "day_totals": {
+      "diego": {
+        "kcal": 1970,
+        "protein_g": 155,
+        "carbs_g": 164,
+        "fat_g": 68,
+        "fiber_g": 27
+      },
+      "diana": {
+        "kcal": 1510,
+        "protein_g": 117,
+        "carbs_g": 132,
+        "fat_g": 51,
+        "fiber_g": 23
+      }
+    }
+  },
+  {
+    "day": "Tuesday",
+    "date": "2026-06-16",
+    "meals": [
+      {
+        "slot": "breakfast",
+        "name": "Smoked Salmon & Cream Cheese on Rye with Kiwi",
+        "time": "07:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 3,
+        "image_prompt": "Two slices of dark rye bread topped with thin smoked salmon and 15g cream cheese, fresh dill garnish, kiwi fruit halves on the side, morning sunlight",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Toast 2 slices rye bread (Diego) or 1.5 slices (Diana) lightly",
+          "Spread 15g cream cheese (Diego) or 12g (Diana) on each slice",
+          "Layer 50g smoked salmon (Diego) or 40g (Diana) on top, garnish with fresh dill",
+          "Serve with 2 kiwis peeled and halved (Diego) or 1.5 kiwis (Diana)"
+        ],
+        "storage_ref": "",
+        "food_category": "fish_seafood",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Dark rye bread",
+                "qty": "2 slices"
+              },
+              {
+                "item": "Cream cheese",
+                "qty": "15 g"
+              },
+              {
+                "item": "Smoked salmon",
+                "qty": "50 g"
+              },
+              {
+                "item": "Fresh dill",
+                "qty": "3 g"
+              },
+              {
+                "item": "Kiwi fruit",
+                "qty": "2"
+              }
+            ],
+            "macros": {
+              "kcal": 430,
+              "protein_g": 22,
+              "carbs_g": 38,
+              "fat_g": 18,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Dark rye bread",
+                "qty": "1.5 slices"
+              },
+              {
+                "item": "Cream cheese",
+                "qty": "12 g"
+              },
+              {
+                "item": "Smoked salmon",
+                "qty": "40 g"
+              },
+              {
+                "item": "Fresh dill",
+                "qty": "2 g"
+              },
+              {
+                "item": "Kiwi fruit",
+                "qty": "1.5"
+              }
+            ],
+            "macros": {
+              "kcal": 320,
+              "protein_g": 17,
+              "carbs_g": 29,
+              "fat_g": 13,
+              "fiber_g": 5
+            }
+          }
+        }
+      },
+      {
+        "slot": "am_snack",
+        "name": "Cashews & Pear",
+        "time": "10:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 0,
+        "image_prompt": "Small handful of roasted cashew nuts in a ceramic bowl beside a ripe pear cut into quarters, natural light on a wooden surface",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Portion 30g roasted cashews into a small bowl (Diego) or 22g (Diana)",
+          "Slice 1 pear into quarters, arrange beside nuts"
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -106,37 +506,449 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Almonds (roasted)",
-                "qty": "30g"
+                "item": "Roasted cashews",
+                "qty": "30 g"
               },
               {
                 "item": "Pear",
-                "qty": "150g"
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 260,
-              "protein_g": 9,
-              "carbs_g": 24,
-              "fat_g": 14,
+              "kcal": 310,
+              "protein_g": 10,
+              "carbs_g": 30,
+              "fat_g": 16,
               "fiber_g": 6
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Almonds (roasted)",
-                "qty": "20g"
+                "item": "Roasted cashews",
+                "qty": "22 g"
               },
               {
                 "item": "Pear",
-                "qty": "120g"
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 185,
-              "protein_g": 6,
-              "carbs_g": 18,
+              "kcal": 235,
+              "protein_g": 8,
+              "carbs_g": 30,
+              "fat_g": 12,
+              "fiber_g": 6
+            }
+          }
+        }
+      },
+      {
+        "slot": "lunch",
+        "name": "Asian Chicken Lettuce Cups with Sesame Bok Choy",
+        "time": "13:00",
+        "prep_ahead": true,
+        "cook_minutes_day_of": 4,
+        "image_prompt": "Crisp butter lettuce leaves filled with shredded cooked chicken in ginger-soy sauce, topped with sesame bok choy and shredded carrot, drizzle of sesame oil, fresh ginger garnish",
+        "video_url": "",
+        "prep_steps": [
+          "Poach 600g chicken breasts in simmering water with ginger and soy sauce (20 min), cool and shred",
+          "Prepare sauce: 3 tbsp low-sodium soy sauce, 1 tbsp rice vinegar, 1 tsp sesame oil, 1 tbsp grated ginger, 2 cloves minced garlic",
+          "Toss shredded chicken with sauce; refrigerate",
+          "Blanch 400g bok choy (2 min), drain, toss with 1 tsp sesame oil and sesame seeds; cool"
+        ],
+        "day_of_steps": [
+          "Remove chicken and bok choy from fridge",
+          "Arrange 4\u20135 butter lettuce leaves (Diego) or 3\u20134 (Diana) on plate",
+          "Fill each leaf with 100g sauced chicken (Diego) or 75g (Diana)",
+          "Top with 80g sesame bok choy (Diego) or 60g (Diana)",
+          "Garnish with shredded carrot (30g Diego / 20g Diana) and sesame seeds"
+        ],
+        "storage_ref": "prep_batch_4",
+        "food_category": "poultry",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Shredded poached chicken",
+                "qty": "100 g"
+              },
+              {
+                "item": "Ginger-soy sauce",
+                "qty": "2 tbsp"
+              },
+              {
+                "item": "Butter lettuce leaves",
+                "qty": "4\u20135"
+              },
+              {
+                "item": "Sesame bok choy",
+                "qty": "80 g"
+              },
+              {
+                "item": "Shredded carrot",
+                "qty": "30 g"
+              },
+              {
+                "item": "Sesame seeds",
+                "qty": "1 tsp"
+              }
+            ],
+            "macros": {
+              "kcal": 440,
+              "protein_g": 50,
+              "carbs_g": 30,
+              "fat_g": 12,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Shredded poached chicken",
+                "qty": "75 g"
+              },
+              {
+                "item": "Ginger-soy sauce",
+                "qty": "1.5 tbsp"
+              },
+              {
+                "item": "Butter lettuce leaves",
+                "qty": "3\u20134"
+              },
+              {
+                "item": "Sesame bok choy",
+                "qty": "60 g"
+              },
+              {
+                "item": "Shredded carrot",
+                "qty": "20 g"
+              },
+              {
+                "item": "Sesame seeds",
+                "qty": "0.75 tsp"
+              }
+            ],
+            "macros": {
+              "kcal": 330,
+              "protein_g": 38,
+              "carbs_g": 23,
+              "fat_g": 9,
+              "fiber_g": 5
+            }
+          }
+        }
+      },
+      {
+        "slot": "pm_snack",
+        "name": "Greek Yogurt with Walnuts & Blueberries",
+        "time": "16:30",
+        "prep_ahead": true,
+        "cook_minutes_day_of": 1,
+        "image_prompt": "Glass bowl of creamy Greek yogurt topped with fresh blueberries and toasted walnut pieces, natural light, minimalist presentation",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Remove one pre-portioned container of yogurt from fridge",
+          "Top 170g yogurt (Diego) or 130g (Diana) with 20g walnuts and 80g blueberries (Diego) or 60g (Diana)"
+        ],
+        "storage_ref": "prep_batch_3",
+        "food_category": "dairy",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "170 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "80 g"
+              }
+            ],
+            "macros": {
+              "kcal": 320,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 12,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "130 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "15 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "60 g"
+              }
+            ],
+            "macros": {
+              "kcal": 240,
+              "protein_g": 23,
+              "carbs_g": 17,
+              "fat_g": 9,
+              "fiber_g": 3
+            }
+          }
+        }
+      },
+      {
+        "slot": "dinner",
+        "name": "Pan-Seared Tuna Steak with Sesame Cucumber Salad & Brown Rice",
+        "time": "19:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 18,
+        "image_prompt": "Seared tuna steak (rare centre) on a plate with chilled cucumber salad (sesame-vinegar dressing), brown rice on the side, sesame seeds, lemon wedge",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Cook 100g brown rice (Diego) or 80g (Diana) per package instructions (15 min); set aside",
+          "Pat dry 200g tuna steak (Diego) or 150g (Diana); season with salt & pepper",
+          "Heat 1 tsp sesame oil in pan over high heat; sear tuna 2 min each side for rare centre",
+          "Rest tuna 3 min, slice if desired",
+          "Assemble cucumber salad: 150g cucumber diced (Diego) or 110g (Diana), 1 tbsp rice vinegar, 0.5 tsp sesame oil, 1 tsp sesame seeds",
+          "Plate tuna, rice, and cucumber salad; garnish with fresh ginger and extra sesame seeds"
+        ],
+        "storage_ref": "",
+        "food_category": "fish_seafood",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Tuna steak",
+                "qty": "200 g"
+              },
+              {
+                "item": "Brown rice (cooked)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Cucumber",
+                "qty": "150 g"
+              },
+              {
+                "item": "Rice vinegar",
+                "qty": "1 tbsp"
+              },
+              {
+                "item": "Sesame oil",
+                "qty": "1.5 tsp"
+              },
+              {
+                "item": "Sesame seeds",
+                "qty": "1.5 tsp"
+              },
+              {
+                "item": "Fresh ginger",
+                "qty": "5 g"
+              }
+            ],
+            "macros": {
+              "kcal": 490,
+              "protein_g": 52,
+              "carbs_g": 38,
+              "fat_g": 14,
+              "fiber_g": 5
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Tuna steak",
+                "qty": "150 g"
+              },
+              {
+                "item": "Brown rice (cooked)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Cucumber",
+                "qty": "110 g"
+              },
+              {
+                "item": "Rice vinegar",
+                "qty": "0.75 tbsp"
+              },
+              {
+                "item": "Sesame oil",
+                "qty": "1.1 tsp"
+              },
+              {
+                "item": "Sesame seeds",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Fresh ginger",
+                "qty": "4 g"
+              }
+            ],
+            "macros": {
+              "kcal": 370,
+              "protein_g": 40,
+              "carbs_g": 29,
+              "fat_g": 10,
+              "fiber_g": 4
+            }
+          }
+        }
+      }
+    ],
+    "day_totals": {
+      "diego": {
+        "kcal": 1990,
+        "protein_g": 164,
+        "carbs_g": 158,
+        "fat_g": 72,
+        "fiber_g": 27
+      },
+      "diana": {
+        "kcal": 1495,
+        "protein_g": 126,
+        "carbs_g": 128,
+        "fat_g": 53,
+        "fiber_g": 23
+      }
+    }
+  },
+  {
+    "day": "Wednesday",
+    "date": "2026-06-17",
+    "meals": [
+      {
+        "slot": "breakfast",
+        "name": "Boiled Egg with Sourdough, Cheese & Raspberries",
+        "time": "07:30",
+        "prep_ahead": true,
+        "cook_minutes_day_of": 2,
+        "image_prompt": "Soft-boiled egg in an egg cup beside two slices of sourdough toast with 20g Emmental cheese, small bowl of fresh raspberries on the side, natural morning light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Toast 2 slices sourdough (Diego) or 1.5 slices (Diana)",
+          "Top each slice with 10g Emmental",
+          "Retrieve one pre-cooked soft-boiled egg from fridge, place in egg cup",
+          "Serve with 100g raspberries (Diego) or 75g (Diana)"
+        ],
+        "storage_ref": "prep_batch_1",
+        "food_category": "eggs_cooked",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Soft-boiled egg",
+                "qty": "1"
+              },
+              {
+                "item": "Sourdough bread",
+                "qty": "2 slices"
+              },
+              {
+                "item": "Emmental cheese",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh raspberries",
+                "qty": "100 g"
+              }
+            ],
+            "macros": {
+              "kcal": 420,
+              "protein_g": 18,
+              "carbs_g": 36,
+              "fat_g": 18,
+              "fiber_g": 5
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Soft-boiled egg",
+                "qty": "1"
+              },
+              {
+                "item": "Sourdough bread",
+                "qty": "1.5 slices"
+              },
+              {
+                "item": "Emmental cheese",
+                "qty": "15 g"
+              },
+              {
+                "item": "Fresh raspberries",
+                "qty": "75 g"
+              }
+            ],
+            "macros": {
+              "kcal": 315,
+              "protein_g": 14,
+              "carbs_g": 27,
+              "fat_g": 13,
+              "fiber_g": 4
+            }
+          }
+        }
+      },
+      {
+        "slot": "am_snack",
+        "name": "Pistachios & Peach",
+        "time": "10:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 0,
+        "image_prompt": "Shelled pistachios in a small glass bowl beside a fresh, ripe peach cut into quarters, natural outdoor light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Portion 25g roasted pistachios into a small bowl (Diego) or 18g (Diana)",
+          "Slice 1 peach into quarters, remove pit"
+        ],
+        "storage_ref": "",
+        "food_category": "generic",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Roasted pistachios",
+                "qty": "25 g"
+              },
+              {
+                "item": "Fresh peach",
+                "qty": "1 medium"
+              }
+            ],
+            "macros": {
+              "kcal": 280,
+              "protein_g": 9,
+              "carbs_g": 28,
+              "fat_g": 14,
+              "fiber_g": 5
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Roasted pistachios",
+                "qty": "18 g"
+              },
+              {
+                "item": "Fresh peach",
+                "qty": "1 medium"
+              }
+            ],
+            "macros": {
+              "kcal": 210,
+              "protein_g": 7,
+              "carbs_g": 28,
               "fat_g": 10,
               "fiber_g": 5
             }
@@ -148,20 +960,17 @@
         "name": "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
         "time": "13:00",
         "prep_ahead": true,
-        "cook_minutes_day_of": 8,
-        "image_prompt": "golden grilled chicken breast fanned on white plate, roasted red pepper strips and zucchini alongside, fluffy cooked quinoa in background, olive oil drizzle, lemon wedge, fresh herbs",
+        "cook_minutes_day_of": 5,
+        "image_prompt": "Plate of herb-crusted grilled chicken breast beside roasted red peppers, zucchini, and cherry tomatoes with quinoa, drizzle of olive oil, lemon wedge, bright daylight from above",
         "video_url": "",
-        "prep_steps": [
-          "Marinate 800g chicken breasts in lemon juice, garlic, olive oil and oregano (2\u20134 hours or overnight)",
-          "Roast 600g mixed veg (red peppers, zucchini, cherry tomatoes) at 200\u00b0C for 25 min",
-          "Cook 300g quinoa per package directions, cool and portion"
-        ],
+        "prep_steps": [],
         "day_of_steps": [
-          "Grill marinated chicken 6\u20137 min per side until 165\u00b0C internal temp",
-          "Plate 180g grilled chicken per person",
-          "Add 150g roasted veg to plate",
-          "Spoon 100g cooked quinoa alongside veg",
-          "Drizzle 2 tsp olive oil, squeeze lemon juice over"
+          "Remove grilled chicken, roasted veg, and cooked quinoa from fridge",
+          "Warm chicken briefly (1\u20132 min) if desired, or serve chilled",
+          "Arrange 180g chicken (Diego) or 130g (Diana) on plate",
+          "Add 100g roasted veg (Diego) or 75g (Diana)",
+          "Add 80g quinoa (Diego) or 60g (Diana)",
+          "Dress with 1 tsp olive oil, fresh lemon, salt & pepper"
         ],
         "storage_ref": "prep_batch_2",
         "food_category": "poultry",
@@ -170,77 +979,61 @@
             "ingredients": [
               {
                 "item": "Grilled chicken breast",
-                "qty": "180g"
+                "qty": "180 g"
               },
               {
-                "item": "Roasted red pepper",
-                "qty": "80g"
+                "item": "Roasted mixed veg (peppers, zucchini, tomatoes)",
+                "qty": "100 g"
               },
               {
-                "item": "Roasted zucchini",
-                "qty": "50g"
-              },
-              {
-                "item": "Cherry tomatoes",
-                "qty": "20g"
-              },
-              {
-                "item": "Quinoa (cooked)",
-                "qty": "100g"
+                "item": "Cooked quinoa",
+                "qty": "80 g"
               },
               {
                 "item": "Olive oil",
-                "qty": "2 tsp"
+                "qty": "1 tsp"
               },
               {
-                "item": "Lemon juice",
-                "qty": "1 tsp"
+                "item": "Lemon",
+                "qty": "squeeze"
               }
             ],
             "macros": {
               "kcal": 520,
               "protein_g": 52,
-              "carbs_g": 45,
-              "fat_g": 14,
-              "fiber_g": 7
+              "carbs_g": 38,
+              "fat_g": 13,
+              "fiber_g": 6
             }
           },
           "diana": {
             "ingredients": [
               {
                 "item": "Grilled chicken breast",
-                "qty": "130g"
+                "qty": "130 g"
               },
               {
-                "item": "Roasted red pepper",
-                "qty": "65g"
+                "item": "Roasted mixed veg (peppers, zucchini, tomatoes)",
+                "qty": "75 g"
               },
               {
-                "item": "Roasted zucchini",
-                "qty": "40g"
-              },
-              {
-                "item": "Cherry tomatoes",
-                "qty": "15g"
-              },
-              {
-                "item": "Quinoa (cooked)",
-                "qty": "75g"
+                "item": "Cooked quinoa",
+                "qty": "60 g"
               },
               {
                 "item": "Olive oil",
-                "qty": "1.5 tsp"
+                "qty": "0.75 tsp"
               },
               {
-                "item": "Lemon juice",
-                "qty": "0.5 tsp"
+                "item": "Lemon",
+                "qty": "squeeze"
               }
             ],
             "macros": {
-              "kcal": 385,
+              "kcal": 380,
               "protein_g": 38,
-              "carbs_g": 33,
-              "fat_g": 11,
+              "carbs_g": 28,
+              "fat_g": 10,
               "fiber_g": 5
             }
           }
@@ -250,61 +1043,61 @@
         "slot": "pm_snack",
         "name": "Greek Yogurt with Walnuts & Blueberries",
         "time": "16:30",
-        "prep_ahead": false,
+        "prep_ahead": true,
         "cook_minutes_day_of": 1,
-        "image_prompt": "creamy greek yogurt in glass bowl, scattered blueberries and walnut pieces on top, natural daylight from side",
+        "image_prompt": "Glass bowl of creamy Greek yogurt topped with fresh blueberries and toasted walnut pieces, natural light, minimalist presentation",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Spoon 200g Greek yogurt into bowl",
-          "Top with 25g walnut pieces and 100g fresh blueberries"
+          "Remove one pre-portioned container of yogurt from fridge",
+          "Top 170g yogurt (Diego) or 130g (Diana) with 20g walnuts and 80g blueberries (Diego) or 60g (Diana)"
         ],
-        "storage_ref": "",
+        "storage_ref": "prep_batch_3",
         "food_category": "dairy",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Greek yogurt (0% plain)",
-                "qty": "200g"
+                "item": "Greek yogurt 0%",
+                "qty": "170 g"
               },
               {
                 "item": "Walnuts",
-                "qty": "25g"
+                "qty": "20 g"
               },
               {
-                "item": "Blueberries",
-                "qty": "100g"
+                "item": "Fresh blueberries",
+                "qty": "80 g"
               }
             ],
             "macros": {
-              "kcal": 310,
-              "protein_g": 20,
-              "carbs_g": 24,
-              "fat_g": 14,
+              "kcal": 320,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 12,
               "fiber_g": 4
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Greek yogurt (0% plain)",
-                "qty": "150g"
+                "item": "Greek yogurt 0%",
+                "qty": "130 g"
               },
               {
                 "item": "Walnuts",
-                "qty": "18g"
+                "qty": "15 g"
               },
               {
-                "item": "Blueberries",
-                "qty": "80g"
+                "item": "Fresh blueberries",
+                "qty": "60 g"
               }
             ],
             "macros": {
-              "kcal": 235,
-              "protein_g": 15,
-              "carbs_g": 18,
-              "fat_g": 11,
+              "kcal": 240,
+              "protein_g": 23,
+              "carbs_g": 17,
+              "fat_g": 9,
               "fiber_g": 3
             }
           }
@@ -312,679 +1105,24 @@
       },
       {
         "slot": "dinner",
-        "name": "Boiled Egg & Cheese Plate with Whole-Grain Pita & Avocado",
-        "time": "19:30",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 3,
-        "image_prompt": "halved boiled egg on white plate, 30g gruy\u00e8re cheese cubes beside, whole-grain pita bread folded, sliced avocado fanned, fresh baby spinach leaves underneath, cherry tomatoes, light and airy",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Place 2 boiled egg halves on plate",
-          "Add 30g gruy\u00e8re cheese cubes",
-          "Warm 1 whole-grain pita 30 sec in toaster",
-          "Slice 60g avocado, arrange on pita or plate",
-          "Add 50g fresh baby spinach and 30g cherry tomatoes"
-        ],
-        "storage_ref": "prep_batch_1",
-        "food_category": "eggs_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
-              },
-              {
-                "item": "Gruy\u00e8re cheese",
-                "qty": "30g"
-              },
-              {
-                "item": "Whole-grain pita",
-                "qty": "60g"
-              },
-              {
-                "item": "Avocado",
-                "qty": "60g"
-              },
-              {
-                "item": "Baby spinach",
-                "qty": "50g"
-              },
-              {
-                "item": "Cherry tomatoes",
-                "qty": "30g"
-              }
-            ],
-            "macros": {
-              "kcal": 520,
-              "protein_g": 22,
-              "carbs_g": 42,
-              "fat_g": 26,
-              "fiber_g": 9
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "1.5 \u00d7 50g"
-              },
-              {
-                "item": "Gruy\u00e8re cheese",
-                "qty": "20g"
-              },
-              {
-                "item": "Whole-grain pita",
-                "qty": "40g"
-              },
-              {
-                "item": "Avocado",
-                "qty": "40g"
-              },
-              {
-                "item": "Baby spinach",
-                "qty": "40g"
-              },
-              {
-                "item": "Cherry tomatoes",
-                "qty": "25g"
-              }
-            ],
-            "macros": {
-              "kcal": 380,
-              "protein_g": 16,
-              "carbs_g": 30,
-              "fat_g": 20,
-              "fiber_g": 7
-            }
-          }
-        }
-      }
-    ],
-    "day_totals": {
-      "diego": {
-        "kcal": 1990,
-        "protein_g": 119,
-        "carbs_g": 177,
-        "fat_g": 83,
-        "fiber_g": 34
-      },
-      "diana": {
-        "kcal": 1475,
-        "protein_g": 86,
-        "carbs_g": 131,
-        "fat_g": 63,
-        "fiber_g": 26
-      }
-    }
-  },
-  {
-    "day": "Tuesday",
-    "date": "2026-06-16",
-    "meals": [
-      {
-        "slot": "breakfast",
-        "name": "Herb-Crusted Boiled Egg with Sourdough & Blueberries",
-        "time": "07:30",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 2,
-        "image_prompt": "boiled egg halves on rustic sourdough toast, fresh blueberries scattered beside, fresh dill and parsley, warm morning kitchen light, ceramic plate",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Place 1 boiled egg halves on plate",
-          "Toast 1 sourdough slice, arrange beside egg",
-          "Sprinkle fresh dill and parsley over egg",
-          "Serve 140g blueberries on the side"
-        ],
-        "storage_ref": "prep_batch_1",
-        "food_category": "eggs_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
-              },
-              {
-                "item": "Sourdough bread",
-                "qty": "40g"
-              },
-              {
-                "item": "Blueberries",
-                "qty": "140g"
-              },
-              {
-                "item": "Fresh dill",
-                "qty": "5g"
-              },
-              {
-                "item": "Fresh parsley",
-                "qty": "3g"
-              }
-            ],
-            "macros": {
-              "kcal": 380,
-              "protein_g": 16,
-              "carbs_g": 45,
-              "fat_g": 15,
-              "fiber_g": 8
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "1 \u00d7 50g"
-              },
-              {
-                "item": "Sourdough bread",
-                "qty": "30g"
-              },
-              {
-                "item": "Blueberries",
-                "qty": "110g"
-              },
-              {
-                "item": "Fresh dill",
-                "qty": "4g"
-              },
-              {
-                "item": "Fresh parsley",
-                "qty": "2g"
-              }
-            ],
-            "macros": {
-              "kcal": 285,
-              "protein_g": 11,
-              "carbs_g": 34,
-              "fat_g": 11,
-              "fiber_g": 6
-            }
-          }
-        }
-      },
-      {
-        "slot": "am_snack",
-        "name": "Cashews & Apple",
-        "time": "10:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "small white bowl of roasted cashews, fresh apple sliced and fanned beside on light linen, bright natural light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Portion 30g roasted cashews into small bowl",
-          "Core and slice 1 apple, arrange on plate beside cashews"
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Cashews (roasted)",
-                "qty": "30g"
-              },
-              {
-                "item": "Apple",
-                "qty": "160g"
-              }
-            ],
-            "macros": {
-              "kcal": 270,
-              "protein_g": 8,
-              "carbs_g": 28,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Cashews (roasted)",
-                "qty": "20g"
-              },
-              {
-                "item": "Apple",
-                "qty": "130g"
-              }
-            ],
-            "macros": {
-              "kcal": 195,
-              "protein_g": 5,
-              "carbs_g": 21,
-              "fat_g": 10,
-              "fiber_g": 4
-            }
-          }
-        }
-      },
-      {
-        "slot": "lunch",
-        "name": "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
-        "time": "13:00",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "golden-pink salmon fillet skin-side up on white plate, roasted green asparagus spears alongside, golden roasted sweet potato wedges, lemon slice, dill garnish, olive oil shine",
-        "video_url": "",
-        "prep_steps": [
-          "Roast 500g sweet potato wedges at 200\u00b0C for 20 min until tender",
-          "Blanch 400g asparagus 2 min, pat dry, toss with olive oil and garlic, roast 12 min at 200\u00b0C"
-        ],
-        "day_of_steps": [
-          "Pat 160g salmon fillet dry with paper towel",
-          "Heat 1 tsp olive oil in non-stick pan over medium-high heat",
-          "Pan-sear salmon skin-side up for 3\u20134 min, flip, cook 2\u20133 min until opaque",
-          "Plate salmon, asparagus, sweet potato wedges",
-          "Squeeze lemon juice, sprinkle fresh dill over salmon"
-        ],
-        "storage_ref": "prep_batch_3",
-        "food_category": "fish_seafood",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Salmon fillet",
-                "qty": "160g"
-              },
-              {
-                "item": "Roasted asparagus",
-                "qty": "120g"
-              },
-              {
-                "item": "Roasted sweet potato",
-                "qty": "140g"
-              },
-              {
-                "item": "Olive oil",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Fresh dill",
-                "qty": "3g"
-              }
-            ],
-            "macros": {
-              "kcal": 520,
-              "protein_g": 38,
-              "carbs_g": 48,
-              "fat_g": 18,
-              "fiber_g": 8
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Salmon fillet",
-                "qty": "120g"
-              },
-              {
-                "item": "Roasted asparagus",
-                "qty": "100g"
-              },
-              {
-                "item": "Roasted sweet potato",
-                "qty": "105g"
-              },
-              {
-                "item": "Olive oil",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "0.5 tsp"
-              },
-              {
-                "item": "Fresh dill",
-                "qty": "2g"
-              }
-            ],
-            "macros": {
-              "kcal": 380,
-              "protein_g": 28,
-              "carbs_g": 35,
-              "fat_g": 14,
-              "fiber_g": 6
-            }
-          }
-        }
-      },
-      {
-        "slot": "pm_snack",
-        "name": "Greek Yogurt with Almonds & Raspberries",
-        "time": "16:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "creamy greek yogurt in clear glass, toasted almond slivers and fresh raspberries on top, morning window light creating soft shadows",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Spoon 200g Greek yogurt into bowl",
-          "Top with 22g sliced almonds and 100g fresh raspberries"
-        ],
-        "storage_ref": "",
-        "food_category": "dairy",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt (0% plain)",
-                "qty": "200g"
-              },
-              {
-                "item": "Almonds (sliced)",
-                "qty": "22g"
-              },
-              {
-                "item": "Raspberries",
-                "qty": "100g"
-              }
-            ],
-            "macros": {
-              "kcal": 300,
-              "protein_g": 20,
-              "carbs_g": 24,
-              "fat_g": 13,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt (0% plain)",
-                "qty": "150g"
-              },
-              {
-                "item": "Almonds (sliced)",
-                "qty": "16g"
-              },
-              {
-                "item": "Raspberries",
-                "qty": "80g"
-              }
-            ],
-            "macros": {
-              "kcal": 225,
-              "protein_g": 15,
-              "carbs_g": 18,
-              "fat_g": 10,
-              "fiber_g": 4
-            }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "Mexican-Style Chicken Lettuce Wrap with Black Beans & Lime",
-        "time": "19:30",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 8,
-        "image_prompt": "crisp romaine lettuce leaves holding tender seasoned shredded chicken, black beans visible, red bell pepper strips, cilantro and lime wedge on white plate, bright fresh colours",
-        "video_url": "",
-        "prep_steps": [
-          "Shred 400g cooked chicken (reserved from batch) with 2 tsp cumin, 1 tsp paprika, garlic, lime juice",
-          "Warm 300g canned black beans (drained, rinsed) with cumin and lime juice in pot, cool"
-        ],
-        "day_of_steps": [
-          "Warm 130g shredded seasoned chicken in microwave 1 min",
-          "Warm 70g black bean mixture 1 min",
-          "Arrange 3 large romaine lettuce leaves on plate",
-          "Spoon chicken and beans into lettuce leaves",
-          "Top with 40g diced red pepper and fresh cilantro",
-          "Serve lime wedge on side"
-        ],
-        "storage_ref": "prep_batch_4",
-        "food_category": "poultry",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Shredded chicken (seasoned)",
-                "qty": "130g"
-              },
-              {
-                "item": "Black beans (cooked)",
-                "qty": "70g"
-              },
-              {
-                "item": "Romaine lettuce",
-                "qty": "90g"
-              },
-              {
-                "item": "Red bell pepper",
-                "qty": "40g"
-              },
-              {
-                "item": "Fresh cilantro",
-                "qty": "5g"
-              },
-              {
-                "item": "Lime juice",
-                "qty": "1 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 410,
-              "protein_g": 48,
-              "carbs_g": 38,
-              "fat_g": 8,
-              "fiber_g": 8
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Shredded chicken (seasoned)",
-                "qty": "100g"
-              },
-              {
-                "item": "Black beans (cooked)",
-                "qty": "55g"
-              },
-              {
-                "item": "Romaine lettuce",
-                "qty": "70g"
-              },
-              {
-                "item": "Red bell pepper",
-                "qty": "30g"
-              },
-              {
-                "item": "Fresh cilantro",
-                "qty": "4g"
-              },
-              {
-                "item": "Lime juice",
-                "qty": "0.5 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 310,
-              "protein_g": 36,
-              "carbs_g": 28,
-              "fat_g": 6,
-              "fiber_g": 6
-            }
-          }
-        }
-      }
-    ],
-    "day_totals": {
-      "diego": {
-        "kcal": 1880,
-        "protein_g": 130,
-        "carbs_g": 183,
-        "fat_g": 68,
-        "fiber_g": 34
-      },
-      "diana": {
-        "kcal": 1395,
-        "protein_g": 95,
-        "carbs_g": 136,
-        "fat_g": 51,
-        "fiber_g": 26
-      }
-    }
-  },
-  {
-    "day": "Wednesday",
-    "date": "2026-06-17",
-    "meals": [
-      {
-        "slot": "breakfast",
-        "name": "Herb-Crusted Boiled Egg with Sourdough & Peach",
-        "time": "07:30",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 2,
-        "image_prompt": "boiled egg halves on sourdough toast, sliced fresh peach arranged beside, fresh thyme sprinkled on egg white, ceramic plate, soft morning light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Place 1 boiled egg halves on plate",
-          "Toast 1 sourdough slice, arrange beside egg",
-          "Sprinkle fresh thyme over egg",
-          "Slice and serve 1 peach (150g) on the side"
-        ],
-        "storage_ref": "prep_batch_1",
-        "food_category": "eggs_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
-              },
-              {
-                "item": "Sourdough bread",
-                "qty": "40g"
-              },
-              {
-                "item": "Peach",
-                "qty": "150g"
-              },
-              {
-                "item": "Fresh thyme",
-                "qty": "3g"
-              }
-            ],
-            "macros": {
-              "kcal": 370,
-              "protein_g": 16,
-              "carbs_g": 43,
-              "fat_g": 15,
-              "fiber_g": 7
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "1 \u00d7 50g"
-              },
-              {
-                "item": "Sourdough bread",
-                "qty": "30g"
-              },
-              {
-                "item": "Peach",
-                "qty": "120g"
-              },
-              {
-                "item": "Fresh thyme",
-                "qty": "2g"
-              }
-            ],
-            "macros": {
-              "kcal": 275,
-              "protein_g": 11,
-              "carbs_g": 32,
-              "fat_g": 11,
-              "fiber_g": 5
-            }
-          }
-        }
-      },
-      {
-        "slot": "am_snack",
-        "name": "Pistachios & Nectarine",
-        "time": "10:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "pile of roasted unsalted pistachios in small bowl, fresh nectarine whole beside on white napkin, bright natural light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Portion 30g roasted unsalted pistachios into small bowl",
-          "Place 1 nectarine (150g) whole on small plate beside"
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Pistachios (roasted, unsalted)",
-                "qty": "30g"
-              },
-              {
-                "item": "Nectarine",
-                "qty": "150g"
-              }
-            ],
-            "macros": {
-              "kcal": 275,
-              "protein_g": 9,
-              "carbs_g": 28,
-              "fat_g": 14,
-              "fiber_g": 6
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Pistachios (roasted, unsalted)",
-                "qty": "20g"
-              },
-              {
-                "item": "Nectarine",
-                "qty": "120g"
-              }
-            ],
-            "macros": {
-              "kcal": 195,
-              "protein_g": 6,
-              "carbs_g": 21,
-              "fat_g": 10,
-              "fiber_g": 5
-            }
-          }
-        }
-      },
-      {
-        "slot": "lunch",
         "name": "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
-        "time": "13:00",
+        "time": "19:30",
         "prep_ahead": true,
-        "cook_minutes_day_of": 5,
-        "image_prompt": "three golden-brown turkey meatballs on white plate, served over warm brown lentil salad with diced roasted beets, rocket leaves, olive oil shine, lemon wedge",
+        "cook_minutes_day_of": 4,
+        "image_prompt": "Five herbed turkey meatballs on a bed of warm brown lentil salad with roasted beet chunks, topped with fresh parsley, drizzle of balsamic vinegar, warm lighting",
         "video_url": "",
         "prep_steps": [
-          "Mix 500g ground turkey, 30g breadcrumbs, 1 egg, 2 tsp cumin, 1 tsp paprika, garlic, salt & pepper",
-          "Shape into 16 balls, roast at 190\u00b0C for 18 min",
-          "Cook 250g brown lentils per package, cool",
-          "Roast 300g beets at 200\u00b0C for 20 min until tender, cool, dice"
+          "Mix 600g ground turkey with 40g breadcrumbs, 1 egg, 2 cloves garlic, 1 tsp paprika, 1 tsp cumin, salt & pepper",
+          "Form into 20 meatballs (~30g each); bake at 190\u00b0C for 15 min until 75\u00b0C internal temp",
+          "Cook 150g brown lentils per package (25 min); cool",
+          "Roast 400g diced beets at 200\u00b0C for 25 min; cool",
+          "Prepare lentil salad: toss cooled lentils with 200g diced cucumber, roasted beets, 1 tbsp balsamic vinegar, 1 tbsp olive oil, fresh parsley"
         ],
         "day_of_steps": [
-          "Warm 3 turkey meatballs in microwave 2 min",
-          "Toss 60g cooked lentils with 50g diced roasted beets and 1 tsp olive oil, lemon juice",
-          "Plate meatballs on top of lentil-beet salad",
-          "Top with fresh rocket leaves (30g)"
+          "Retrieve meatballs and lentil-beet salad from fridge",
+          "Warm meatballs in oven at 160\u00b0C for 3 min (or serve cold)",
+          "Plate 5\u20136 meatballs (Diego) or 4\u20135 (Diana) on a bed of lentil salad (150g Diego / 110g Diana)",
+          "Drizzle with extra balsamic vinegar and fresh parsley"
         ],
         "storage_ref": "prep_batch_5",
         "food_category": "poultry",
@@ -992,230 +1130,39 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Turkey meatballs (3)",
-                "qty": "90g"
+                "item": "Baked turkey meatballs",
+                "qty": "5\u20136 (160 g)"
               },
               {
-                "item": "Brown lentils (cooked)",
-                "qty": "60g"
-              },
-              {
-                "item": "Roasted beets (diced)",
-                "qty": "50g"
-              },
-              {
-                "item": "Rocket leaves",
-                "qty": "30g"
-              },
-              {
-                "item": "Olive oil",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "1 tsp"
+                "item": "Brown lentil & beet salad",
+                "qty": "150 g"
               }
             ],
             "macros": {
               "kcal": 490,
-              "protein_g": 45,
-              "carbs_g": 52,
+              "protein_g": 48,
+              "carbs_g": 48,
               "fat_g": 12,
-              "fiber_g": 11
+              "fiber_g": 10
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Turkey meatballs (2.25)",
-                "qty": "67g"
+                "item": "Baked turkey meatballs",
+                "qty": "4\u20135 (120 g)"
               },
               {
-                "item": "Brown lentils (cooked)",
-                "qty": "45g"
-              },
-              {
-                "item": "Roasted beets (diced)",
-                "qty": "38g"
-              },
-              {
-                "item": "Rocket leaves",
-                "qty": "25g"
-              },
-              {
-                "item": "Olive oil",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "0.5 tsp"
+                "item": "Brown lentil & beet salad",
+                "qty": "110 g"
               }
             ],
             "macros": {
-              "kcal": 360,
-              "protein_g": 33,
-              "carbs_g": 39,
+              "kcal": 365,
+              "protein_g": 36,
+              "carbs_g": 36,
               "fat_g": 9,
               "fiber_g": 8
-            }
-          }
-        }
-      },
-      {
-        "slot": "pm_snack",
-        "name": "Almonds & Blueberries",
-        "time": "16:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "scatter of roasted almonds and fresh blueberries mixed in a small clear bowl, wooden spoon, soft afternoon light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Mix 25g roasted almonds with 110g fresh blueberries in small bowl"
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Almonds (roasted)",
-                "qty": "25g"
-              },
-              {
-                "item": "Blueberries",
-                "qty": "110g"
-              }
-            ],
-            "macros": {
-              "kcal": 265,
-              "protein_g": 8,
-              "carbs_g": 25,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Almonds (roasted)",
-                "qty": "18g"
-              },
-              {
-                "item": "Blueberries",
-                "qty": "85g"
-              }
-            ],
-            "macros": {
-              "kcal": 195,
-              "protein_g": 6,
-              "carbs_g": 19,
-              "fat_g": 10,
-              "fiber_g": 4
-            }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "Asian Tofu & Bok Choy Stir-Fry with Brown Rice",
-        "time": "19:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 20,
-        "image_prompt": "crispy-edged tofu cubes over bright green bok choy in wok, ginger-soy sauce glossy, sesame seeds on top, fluffy brown rice on the side, chopsticks, steam rising",
-        "video_url": "",
-        "prep_steps": [
-          "Press 400g firm tofu, cut into 2cm cubes",
-          "Marinate in 2 tbsp soy sauce, 1 tbsp sesame oil, grated ginger 30 min"
-        ],
-        "day_of_steps": [
-          "Cook 150g brown rice per package directions (fresh, takes ~30 min), keep warm",
-          "Heat 1.5 tsp sesame oil in wok over high heat",
-          "Pan-fry 150g tofu cubes until golden on all sides (8 min), set aside",
-          "Stir-fry 200g bok choy 3\u20134 min until tender-crisp",
-          "Return tofu, toss with 1 tbsp soy sauce and 1 tsp ginger",
-          "Plate rice, top with tofu and bok choy",
-          "Sprinkle sesame seeds (1 tsp)"
-        ],
-        "storage_ref": "",
-        "food_category": "vegetables_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Firm tofu",
-                "qty": "150g"
-              },
-              {
-                "item": "Bok choy",
-                "qty": "200g"
-              },
-              {
-                "item": "Brown rice (cooked)",
-                "qty": "100g"
-              },
-              {
-                "item": "Sesame oil",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Soy sauce",
-                "qty": "1 tbsp"
-              },
-              {
-                "item": "Fresh ginger",
-                "qty": "5g"
-              },
-              {
-                "item": "Sesame seeds",
-                "qty": "1 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 480,
-              "protein_g": 24,
-              "carbs_g": 48,
-              "fat_g": 20,
-              "fiber_g": 8
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Firm tofu",
-                "qty": "110g"
-              },
-              {
-                "item": "Bok choy",
-                "qty": "150g"
-              },
-              {
-                "item": "Brown rice (cooked)",
-                "qty": "75g"
-              },
-              {
-                "item": "Sesame oil",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Soy sauce",
-                "qty": "0.75 tbsp"
-              },
-              {
-                "item": "Fresh ginger",
-                "qty": "3g"
-              },
-              {
-                "item": "Sesame seeds",
-                "qty": "0.75 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 355,
-              "protein_g": 18,
-              "carbs_g": 36,
-              "fat_g": 15,
-              "fiber_g": 6
             }
           }
         }
@@ -1223,18 +1170,18 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1880,
-        "protein_g": 102,
-        "carbs_g": 196,
-        "fat_g": 75,
-        "fiber_g": 37
+        "kcal": 2020,
+        "protein_g": 157,
+        "carbs_g": 172,
+        "fat_g": 69,
+        "fiber_g": 30
       },
       "diana": {
-        "kcal": 1380,
-        "protein_g": 72,
-        "carbs_g": 147,
-        "fat_g": 55,
-        "fiber_g": 28
+        "kcal": 1510,
+        "protein_g": 118,
+        "carbs_g": 136,
+        "fat_g": 51,
+        "fiber_g": 25
       }
     }
   },
@@ -1244,297 +1191,18 @@
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Herb-Crusted Boiled Egg with Sourdough & Strawberries",
+        "name": "Smoked Salmon & Cream Cheese on Rye with Kiwi",
         "time": "07:30",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 2,
-        "image_prompt": "boiled egg halves on sourdough toast, fresh strawberries fanned beside, basil leaf garnish, white ceramic plate, morning sun",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 3,
+        "image_prompt": "Two slices of dark rye bread topped with thin smoked salmon and 15g cream cheese, fresh dill garnish, kiwi fruit halves on the side, morning sunlight",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Place 1 boiled egg halves on plate",
-          "Toast 1 sourdough slice, arrange beside egg",
-          "Sprinkle fresh basil over egg",
-          "Slice and serve 160g fresh strawberries on the side"
-        ],
-        "storage_ref": "prep_batch_1",
-        "food_category": "eggs_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
-              },
-              {
-                "item": "Sourdough bread",
-                "qty": "40g"
-              },
-              {
-                "item": "Strawberries",
-                "qty": "160g"
-              },
-              {
-                "item": "Fresh basil",
-                "qty": "2g"
-              }
-            ],
-            "macros": {
-              "kcal": 380,
-              "protein_g": 16,
-              "carbs_g": 45,
-              "fat_g": 15,
-              "fiber_g": 8
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Boiled eggs",
-                "qty": "1 \u00d7 50g"
-              },
-              {
-                "item": "Sourdough bread",
-                "qty": "30g"
-              },
-              {
-                "item": "Strawberries",
-                "qty": "130g"
-              },
-              {
-                "item": "Fresh basil",
-                "qty": "1.5g"
-              }
-            ],
-            "macros": {
-              "kcal": 280,
-              "protein_g": 11,
-              "carbs_g": 34,
-              "fat_g": 11,
-              "fiber_g": 6
-            }
-          }
-        }
-      },
-      {
-        "slot": "am_snack",
-        "name": "Walnuts & Pear",
-        "time": "10:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "small white ceramic bowl of walnut halves, fresh pear beside on wooden board, natural diffuse light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Portion 25g walnut halves into small bowl",
-          "Slice 1 pear (155g), arrange on plate beside walnuts"
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Walnuts",
-                "qty": "25g"
-              },
-              {
-                "item": "Pear",
-                "qty": "155g"
-              }
-            ],
-            "macros": {
-              "kcal": 260,
-              "protein_g": 6,
-              "carbs_g": 28,
-              "fat_g": 15,
-              "fiber_g": 6
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Walnuts",
-                "qty": "18g"
-              },
-              {
-                "item": "Pear",
-                "qty": "125g"
-              }
-            ],
-            "macros": {
-              "kcal": 195,
-              "protein_g": 4,
-              "carbs_g": 22,
-              "fat_g": 11,
-              "fiber_g": 5
-            }
-          }
-        }
-      },
-      {
-        "slot": "lunch",
-        "name": "Grilled Beef Steak with Roasted Bell Peppers & Chickpea Pur\u00e9e",
-        "time": "13:00",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 12,
-        "image_prompt": "medium-rare grilled beef steak fanned on white plate, roasted red and yellow bell pepper strips, creamy chickpea hummus dollop, fresh basil, olive oil drizzle",
-        "video_url": "",
-        "prep_steps": [
-          "Marinate 500g sirloin steak in olive oil, garlic, rosemary (30 min\u20132 hours)",
-          "Roast 400g mixed bell peppers at 200\u00b0C for 20 min until soft",
-          "Blend 250g canned chickpeas with 2 tbsp tahini, lemon juice, garlic, water to smooth consistency"
-        ],
-        "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of red meat only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Grill marinated steak 4\u20135 min per side until medium-rare (internal 60\u00b0C)",
-          "Rest steak 2 min, slice into 160g portion",
-          "Plate steak, roasted peppers alongside",
-          "Spoon 50g chickpea pur\u00e9e on plate, drizzle with 1 tsp olive oil",
-          "Garnish with fresh basil"
-        ],
-        "food_category": "red_meat",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Grilled beef steak",
-                "qty": "160g"
-              },
-              {
-                "item": "Roasted bell peppers",
-                "qty": "100g"
-              },
-              {
-                "item": "Chickpea pur\u00e9e",
-                "qty": "50g"
-              },
-              {
-                "item": "Olive oil",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Fresh basil",
-                "qty": "3g"
-              }
-            ],
-            "macros": {
-              "kcal": 550,
-              "protein_g": 48,
-              "carbs_g": 38,
-              "fat_g": 22,
-              "fiber_g": 8
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Grilled beef steak",
-                "qty": "120g"
-              },
-              {
-                "item": "Roasted bell peppers",
-                "qty": "80g"
-              },
-              {
-                "item": "Chickpea pur\u00e9e",
-                "qty": "35g"
-              },
-              {
-                "item": "Olive oil",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Fresh basil",
-                "qty": "2g"
-              }
-            ],
-            "macros": {
-              "kcal": 410,
-              "protein_g": 36,
-              "carbs_g": 28,
-              "fat_g": 17,
-              "fiber_g": 6
-            }
-          }
-        },
-        "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of red meat only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)"
-      },
-      {
-        "slot": "pm_snack",
-        "name": "Cashews & Orange",
-        "time": "16:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "roasted cashew pieces scattered on small white plate, fresh orange segments fanned beside, bright afternoon light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Portion 28g roasted cashews into small bowl",
-          "Peel 1 orange, separate segments into bowl beside cashews"
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Cashews (roasted)",
-                "qty": "28g"
-              },
-              {
-                "item": "Orange",
-                "qty": "150g"
-              }
-            ],
-            "macros": {
-              "kcal": 285,
-              "protein_g": 8,
-              "carbs_g": 30,
-              "fat_g": 15,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Cashews (roasted)",
-                "qty": "20g"
-              },
-              {
-                "item": "Orange",
-                "qty": "120g"
-              }
-            ],
-            "macros": {
-              "kcal": 210,
-              "protein_g": 6,
-              "carbs_g": 24,
-              "fat_g": 11,
-              "fiber_g": 4
-            }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "Baked White Fish with Lemon Butter, Green Beans & Quinoa",
-        "time": "19:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 18,
-        "image_prompt": "flaky white fish fillet with lemon butter sauce, steamed green beans alongside, cooked quinoa, microgreens garnish, white plate, warm kitchen light",
-        "video_url": "",
-        "prep_steps": [
-          "Cook 150g quinoa per package directions, keep warm"
-        ],
-        "day_of_steps": [
-          "Preheat oven to 190\u00b0C",
-          "Place 160g white fish fillet (cod or hake) on parchment, squeeze lemon juice, dot with 2 tsp butter",
-          "Bake 12\u201314 min until opaque and flaking",
-          "Steam 150g fresh green beans 5\u20136 min until tender-crisp",
-          "Plate fish, green beans, quinoa",
-          "Drizzle pan juices and fresh lemon over fish"
+          "Toast 2 slices rye bread (Diego) or 1.5 slices (Diana) lightly",
+          "Spread 15g cream cheese (Diego) or 12g (Diana) on each slice",
+          "Layer 50g smoked salmon (Diego) or 40g (Diana) on top, garnish with fresh dill",
+          "Serve with 2 kiwis peeled and halved (Diego) or 1.5 kiwis (Diana)"
         ],
         "storage_ref": "",
         "food_category": "fish_seafood",
@@ -1542,81 +1210,354 @@
           "diego": {
             "ingredients": [
               {
-                "item": "White fish fillet (cod/hake)",
-                "qty": "160g"
+                "item": "Dark rye bread",
+                "qty": "2 slices"
               },
               {
-                "item": "Green beans (steamed)",
-                "qty": "150g"
+                "item": "Cream cheese",
+                "qty": "15 g"
               },
               {
-                "item": "Quinoa (cooked)",
-                "qty": "100g"
+                "item": "Smoked salmon",
+                "qty": "50 g"
               },
               {
-                "item": "Butter",
-                "qty": "2 tsp"
+                "item": "Fresh dill",
+                "qty": "3 g"
               },
               {
-                "item": "Lemon juice",
-                "qty": "1.5 tsp"
+                "item": "Kiwi fruit",
+                "qty": "2"
               }
             ],
             "macros": {
-              "kcal": 490,
-              "protein_g": 48,
-              "carbs_g": 46,
-              "fat_g": 14,
-              "fiber_g": 9
+              "kcal": 430,
+              "protein_g": 22,
+              "carbs_g": 38,
+              "fat_g": 18,
+              "fiber_g": 6
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "White fish fillet (cod/hake)",
-                "qty": "120g"
+                "item": "Dark rye bread",
+                "qty": "1.5 slices"
               },
               {
-                "item": "Green beans (steamed)",
-                "qty": "120g"
+                "item": "Cream cheese",
+                "qty": "12 g"
               },
               {
-                "item": "Quinoa (cooked)",
-                "qty": "75g"
+                "item": "Smoked salmon",
+                "qty": "40 g"
               },
               {
-                "item": "Butter",
-                "qty": "1.5 tsp"
+                "item": "Fresh dill",
+                "qty": "2 g"
               },
               {
-                "item": "Lemon juice",
+                "item": "Kiwi fruit",
+                "qty": "1.5"
+              }
+            ],
+            "macros": {
+              "kcal": 320,
+              "protein_g": 17,
+              "carbs_g": 29,
+              "fat_g": 13,
+              "fiber_g": 5
+            }
+          }
+        }
+      },
+      {
+        "slot": "am_snack",
+        "name": "Almonds & Orange",
+        "time": "10:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 0,
+        "image_prompt": "Handful of roasted almonds in a ceramic bowl beside fresh orange segments, natural light on a kitchen counter",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Portion 30g roasted almonds into a small bowl (Diego) or 22g (Diana)",
+          "Peel 1 orange, separate into segments"
+        ],
+        "storage_ref": "",
+        "food_category": "generic",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Roasted almonds",
+                "qty": "30 g"
+              },
+              {
+                "item": "Fresh orange",
+                "qty": "1 medium"
+              }
+            ],
+            "macros": {
+              "kcal": 310,
+              "protein_g": 10,
+              "carbs_g": 32,
+              "fat_g": 15,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Roasted almonds",
+                "qty": "22 g"
+              },
+              {
+                "item": "Fresh orange",
+                "qty": "1 medium"
+              }
+            ],
+            "macros": {
+              "kcal": 240,
+              "protein_g": 8,
+              "carbs_g": 32,
+              "fat_g": 11,
+              "fiber_g": 6
+            }
+          }
+        }
+      },
+      {
+        "slot": "lunch",
+        "name": "Asian Chicken Lettuce Cups with Sesame Bok Choy",
+        "time": "13:00",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 4,
+        "image_prompt": "Crisp butter lettuce leaves filled with shredded cooked chicken in ginger-soy sauce, topped with sesame bok choy and shredded carrot, drizzle of sesame oil, fresh ginger garnish",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)",
+          "Remove chicken and bok choy from fridge",
+          "Arrange 4\u20135 butter lettuce leaves (Diego) or 3\u20134 (Diana) on plate",
+          "Fill each leaf with 100g sauced chicken (Diego) or 75g (Diana)",
+          "Top with 80g sesame bok choy (Diego) or 60g (Diana)",
+          "Garnish with shredded carrot (30g Diego / 20g Diana) and sesame seeds"
+        ],
+        "food_category": "poultry",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Shredded poached chicken",
+                "qty": "100 g"
+              },
+              {
+                "item": "Ginger-soy sauce",
+                "qty": "2 tbsp"
+              },
+              {
+                "item": "Butter lettuce leaves",
+                "qty": "4\u20135"
+              },
+              {
+                "item": "Sesame bok choy",
+                "qty": "80 g"
+              },
+              {
+                "item": "Shredded carrot",
+                "qty": "30 g"
+              },
+              {
+                "item": "Sesame seeds",
                 "qty": "1 tsp"
               }
             ],
             "macros": {
-              "kcal": 360,
-              "protein_g": 36,
-              "carbs_g": 34,
-              "fat_g": 11,
-              "fiber_g": 7
+              "kcal": 440,
+              "protein_g": 50,
+              "carbs_g": 30,
+              "fat_g": 12,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Shredded poached chicken",
+                "qty": "75 g"
+              },
+              {
+                "item": "Ginger-soy sauce",
+                "qty": "1.5 tbsp"
+              },
+              {
+                "item": "Butter lettuce leaves",
+                "qty": "3\u20134"
+              },
+              {
+                "item": "Sesame bok choy",
+                "qty": "60 g"
+              },
+              {
+                "item": "Shredded carrot",
+                "qty": "20 g"
+              },
+              {
+                "item": "Sesame seeds",
+                "qty": "0.75 tsp"
+              }
+            ],
+            "macros": {
+              "kcal": 330,
+              "protein_g": 38,
+              "carbs_g": 23,
+              "fat_g": 9,
+              "fiber_g": 5
+            }
+          }
+        },
+        "cook_fresh_for_safety": true,
+        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)"
+      },
+      {
+        "slot": "pm_snack",
+        "name": "Greek Yogurt with Walnuts & Blueberries",
+        "time": "16:30",
+        "prep_ahead": true,
+        "cook_minutes_day_of": 1,
+        "image_prompt": "Glass bowl of creamy Greek yogurt topped with fresh blueberries and toasted walnut pieces, natural light, minimalist presentation",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Remove one pre-portioned container of yogurt from fridge",
+          "Top 170g yogurt (Diego) or 130g (Diana) with 20g walnuts and 80g blueberries (Diego) or 60g (Diana)"
+        ],
+        "storage_ref": "prep_batch_3",
+        "food_category": "dairy",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "170 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "80 g"
+              }
+            ],
+            "macros": {
+              "kcal": 320,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 12,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "130 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "15 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "60 g"
+              }
+            ],
+            "macros": {
+              "kcal": 240,
+              "protein_g": 23,
+              "carbs_g": 17,
+              "fat_g": 9,
+              "fiber_g": 3
             }
           }
         }
+      },
+      {
+        "slot": "dinner",
+        "name": "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
+        "time": "19:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 4,
+        "image_prompt": "Five herbed turkey meatballs on a bed of warm brown lentil salad with roasted beet chunks, topped with fresh parsley, drizzle of balsamic vinegar, warm lighting",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)",
+          "Retrieve meatballs and lentil-beet salad from fridge",
+          "Warm meatballs in oven at 160\u00b0C for 3 min (or serve cold)",
+          "Plate 5\u20136 meatballs (Diego) or 4\u20135 (Diana) on a bed of lentil salad (150g Diego / 110g Diana)",
+          "Drizzle with extra balsamic vinegar and fresh parsley"
+        ],
+        "food_category": "poultry",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Baked turkey meatballs",
+                "qty": "5\u20136 (160 g)"
+              },
+              {
+                "item": "Brown lentil & beet salad",
+                "qty": "150 g"
+              }
+            ],
+            "macros": {
+              "kcal": 490,
+              "protein_g": 48,
+              "carbs_g": 48,
+              "fat_g": 12,
+              "fiber_g": 10
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Baked turkey meatballs",
+                "qty": "4\u20135 (120 g)"
+              },
+              {
+                "item": "Brown lentil & beet salad",
+                "qty": "110 g"
+              }
+            ],
+            "macros": {
+              "kcal": 365,
+              "protein_g": 36,
+              "carbs_g": 36,
+              "fat_g": 9,
+              "fiber_g": 8
+            }
+          }
+        },
+        "cook_fresh_for_safety": true,
+        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)"
       }
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1965,
-        "protein_g": 126,
-        "carbs_g": 187,
-        "fat_g": 81,
-        "fiber_g": 36
+        "kcal": 1990,
+        "protein_g": 160,
+        "carbs_g": 170,
+        "fat_g": 69,
+        "fiber_g": 32
       },
       "diana": {
-        "kcal": 1455,
-        "protein_g": 93,
-        "carbs_g": 142,
-        "fat_g": 61,
+        "kcal": 1495,
+        "protein_g": 122,
+        "carbs_g": 139,
+        "fat_g": 51,
         "fiber_g": 27
       }
     }
@@ -1627,74 +1568,74 @@
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Herb-Crusted Boiled Egg with Sourdough & Kiwis",
+        "name": "Boiled Egg with Sourdough, Cheese & Raspberries",
         "time": "07:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 2,
-        "image_prompt": "boiled egg halves on toasted sourdough, sliced kiwi fruit showing bright green flesh beside, chives sprinkled on egg, white plate, soft morning light",
+        "image_prompt": "Soft-boiled egg in an egg cup beside two slices of sourdough toast with 20g Emmental cheese, small bowl of fresh raspberries on the side, natural morning light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
           "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of eggs cooked only keeps ~4 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Place 1 boiled egg halves on plate",
-          "Toast 1 sourdough slice, arrange beside egg",
-          "Sprinkle fresh chives over egg",
-          "Slice 2 kiwis (140g total), arrange on plate"
+          "Toast 2 slices sourdough (Diego) or 1.5 slices (Diana)",
+          "Top each slice with 10g Emmental",
+          "Retrieve one pre-cooked soft-boiled egg from fridge, place in egg cup",
+          "Serve with 100g raspberries (Diego) or 75g (Diana)"
         ],
         "food_category": "eggs_cooked",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
+                "item": "Soft-boiled egg",
+                "qty": "1"
               },
               {
                 "item": "Sourdough bread",
-                "qty": "40g"
+                "qty": "2 slices"
               },
               {
-                "item": "Kiwis",
-                "qty": "140g"
+                "item": "Emmental cheese",
+                "qty": "20 g"
               },
               {
-                "item": "Fresh chives",
-                "qty": "2g"
+                "item": "Fresh raspberries",
+                "qty": "100 g"
               }
             ],
             "macros": {
-              "kcal": 380,
-              "protein_g": 16,
-              "carbs_g": 44,
-              "fat_g": 15,
-              "fiber_g": 8
+              "kcal": 420,
+              "protein_g": 18,
+              "carbs_g": 36,
+              "fat_g": 18,
+              "fiber_g": 5
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "1 \u00d7 50g"
+                "item": "Soft-boiled egg",
+                "qty": "1"
               },
               {
                 "item": "Sourdough bread",
-                "qty": "30g"
+                "qty": "1.5 slices"
               },
               {
-                "item": "Kiwis",
-                "qty": "110g"
+                "item": "Emmental cheese",
+                "qty": "15 g"
               },
               {
-                "item": "Fresh chives",
-                "qty": "1.5g"
+                "item": "Fresh raspberries",
+                "qty": "75 g"
               }
             ],
             "macros": {
-              "kcal": 285,
-              "protein_g": 11,
-              "carbs_g": 33,
-              "fat_g": 11,
-              "fiber_g": 6
+              "kcal": 315,
+              "protein_g": 14,
+              "carbs_g": 27,
+              "fat_g": 13,
+              "fiber_g": 4
             }
           }
         },
@@ -1703,16 +1644,16 @@
       },
       {
         "slot": "am_snack",
-        "name": "Almonds & Pear",
+        "name": "Walnuts & Nectarine",
         "time": "10:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "small ceramic bowl of raw almonds, fresh pear beside on light wooden board, soft diffuse window light",
+        "cook_minutes_day_of": 0,
+        "image_prompt": "Small handful of walnuts in a white bowl beside a fresh sliced nectarine with pit removed, natural bright light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Portion 28g raw almonds into small bowl",
-          "Slice 1 pear (150g), arrange on plate beside almonds"
+          "Portion 30g walnuts into a small bowl (Diego) or 22g (Diana)",
+          "Slice 1 nectarine into quarters, remove pit"
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -1720,38 +1661,38 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Almonds (raw)",
-                "qty": "28g"
+                "item": "Roasted walnuts",
+                "qty": "30 g"
               },
               {
-                "item": "Pear",
-                "qty": "150g"
+                "item": "Fresh nectarine",
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 270,
+              "kcal": 320,
               "protein_g": 10,
-              "carbs_g": 26,
-              "fat_g": 15,
-              "fiber_g": 7
+              "carbs_g": 28,
+              "fat_g": 16,
+              "fiber_g": 5
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Almonds (raw)",
-                "qty": "20g"
+                "item": "Roasted walnuts",
+                "qty": "22 g"
               },
               {
-                "item": "Pear",
-                "qty": "120g"
+                "item": "Fresh nectarine",
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 200,
-              "protein_g": 7,
-              "carbs_g": 20,
-              "fat_g": 11,
+              "kcal": 240,
+              "protein_g": 8,
+              "carbs_g": 28,
+              "fat_g": 12,
               "fiber_g": 5
             }
           }
@@ -1759,22 +1700,170 @@
       },
       {
         "slot": "lunch",
-        "name": "Pan-Seared Tuna Steak with Sesame Bok Choy & Brown Rice",
+        "name": "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
         "time": "13:00",
         "prep_ahead": false,
-        "cook_minutes_day_of": 20,
-        "image_prompt": "seared tuna steak with pink centre fanned on white plate, glossy sesame bok choy, fluffy brown rice, sesame seeds and scallion garnish, soy drizzle",
+        "cook_minutes_day_of": 5,
+        "image_prompt": "Plate of herb-crusted grilled chicken breast beside roasted red peppers, zucchini, and cherry tomatoes with quinoa, drizzle of olive oil, lemon wedge, bright daylight from above",
         "video_url": "",
-        "prep_steps": [
-          "Cook 130g brown rice per package directions, keep warm"
-        ],
+        "prep_steps": [],
         "day_of_steps": [
-          "Pat 160g tuna steak dry with paper towel",
-          "Heat 1 tsp sesame oil in non-stick pan over high heat until smoking",
-          "Sear tuna 2 min per side for rare (pink center), season with salt and pepper, set aside",
-          "Stir-fry 180g bok choy in same pan 2\u20133 min, toss with 1 tbsp soy sauce and 0.5 tsp sesame oil",
-          "Plate rice, top with tuna and bok choy",
-          "Sprinkle sesame seeds (0.5 tsp) and scallion (5g)"
+          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)",
+          "Remove grilled chicken, roasted veg, and cooked quinoa from fridge",
+          "Warm chicken briefly (1\u20132 min) if desired, or serve chilled",
+          "Arrange 180g chicken (Diego) or 130g (Diana) on plate",
+          "Add 100g roasted veg (Diego) or 75g (Diana)",
+          "Add 80g quinoa (Diego) or 60g (Diana)",
+          "Dress with 1 tsp olive oil, fresh lemon, salt & pepper"
+        ],
+        "food_category": "poultry",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Grilled chicken breast",
+                "qty": "180 g"
+              },
+              {
+                "item": "Roasted mixed veg (peppers, zucchini, tomatoes)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Cooked quinoa",
+                "qty": "80 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Lemon",
+                "qty": "squeeze"
+              }
+            ],
+            "macros": {
+              "kcal": 520,
+              "protein_g": 52,
+              "carbs_g": 38,
+              "fat_g": 13,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Grilled chicken breast",
+                "qty": "130 g"
+              },
+              {
+                "item": "Roasted mixed veg (peppers, zucchini, tomatoes)",
+                "qty": "75 g"
+              },
+              {
+                "item": "Cooked quinoa",
+                "qty": "60 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "0.75 tsp"
+              },
+              {
+                "item": "Lemon",
+                "qty": "squeeze"
+              }
+            ],
+            "macros": {
+              "kcal": 380,
+              "protein_g": 38,
+              "carbs_g": 28,
+              "fat_g": 10,
+              "fiber_g": 5
+            }
+          }
+        },
+        "cook_fresh_for_safety": true,
+        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)"
+      },
+      {
+        "slot": "pm_snack",
+        "name": "Greek Yogurt with Walnuts & Blueberries",
+        "time": "16:30",
+        "prep_ahead": true,
+        "cook_minutes_day_of": 1,
+        "image_prompt": "Glass bowl of creamy Greek yogurt topped with fresh blueberries and toasted walnut pieces, natural light, minimalist presentation",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Remove one pre-portioned container of yogurt from fridge",
+          "Top 170g yogurt (Diego) or 130g (Diana) with 20g walnuts and 80g blueberries (Diego) or 60g (Diana)"
+        ],
+        "storage_ref": "prep_batch_3",
+        "food_category": "dairy",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "170 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "80 g"
+              }
+            ],
+            "macros": {
+              "kcal": 320,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 12,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt 0%",
+                "qty": "130 g"
+              },
+              {
+                "item": "Walnuts",
+                "qty": "15 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "60 g"
+              }
+            ],
+            "macros": {
+              "kcal": 240,
+              "protein_g": 23,
+              "carbs_g": 17,
+              "fat_g": 9,
+              "fiber_g": 3
+            }
+          }
+        }
+      },
+      {
+        "slot": "dinner",
+        "name": "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
+        "time": "19:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 22,
+        "image_prompt": "Pan-seared salmon fillet with crispy skin on a bed of roasted asparagus spears and diced sweet potato, lemon butter sauce drizzle, fresh dill, warm plating light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Preheat oven to 200\u00b0C",
+          "Toss 200g diced sweet potato (Diego) or 160g (Diana) in 1 tsp olive oil, salt, pepper; roast 15 min",
+          "Trim 200g asparagus (Diego) or 150g (Diana); toss with 0.5 tsp olive oil; add to sweet potato; roast 8 more min",
+          "Pat dry 200g salmon fillet (Diego) or 150g (Diana); season with salt & pepper",
+          "Heat 1 tsp olive oil in pan over medium-high heat; sear salmon skin-side down 4 min, flip, cook 3 min until 63\u00b0C internal temp",
+          "Plate salmon, asparagus, and sweet potato; top with squeeze of lemon and fresh dill"
         ],
         "storage_ref": "",
         "food_category": "fish_seafood",
@@ -1782,234 +1871,90 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Tuna steak",
-                "qty": "160g"
+                "item": "Salmon fillet",
+                "qty": "200 g"
               },
               {
-                "item": "Bok choy",
-                "qty": "180g"
+                "item": "Roasted asparagus",
+                "qty": "200 g"
               },
               {
-                "item": "Brown rice (cooked)",
-                "qty": "130g"
+                "item": "Roasted sweet potato",
+                "qty": "200 g"
               },
               {
-                "item": "Sesame oil",
-                "qty": "1.5 tsp"
+                "item": "Olive oil",
+                "qty": "2.5 tsp"
               },
               {
-                "item": "Soy sauce",
-                "qty": "1 tbsp"
+                "item": "Fresh dill",
+                "qty": "3 g"
               },
               {
-                "item": "Sesame seeds",
-                "qty": "0.5 tsp"
-              },
-              {
-                "item": "Scallion",
-                "qty": "5g"
+                "item": "Lemon",
+                "qty": "0.5"
               }
             ],
             "macros": {
-              "kcal": 530,
-              "protein_g": 52,
-              "carbs_g": 46,
-              "fat_g": 16,
-              "fiber_g": 8
+              "kcal": 540,
+              "protein_g": 50,
+              "carbs_g": 40,
+              "fat_g": 18,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Tuna steak",
-                "qty": "120g"
+                "item": "Salmon fillet",
+                "qty": "150 g"
               },
               {
-                "item": "Bok choy",
-                "qty": "140g"
+                "item": "Roasted asparagus",
+                "qty": "150 g"
               },
               {
-                "item": "Brown rice (cooked)",
-                "qty": "95g"
+                "item": "Roasted sweet potato",
+                "qty": "160 g"
               },
               {
-                "item": "Sesame oil",
-                "qty": "1 tsp"
+                "item": "Olive oil",
+                "qty": "1.9 tsp"
               },
               {
-                "item": "Soy sauce",
-                "qty": "0.75 tbsp"
+                "item": "Fresh dill",
+                "qty": "2 g"
               },
               {
-                "item": "Sesame seeds",
-                "qty": "0.35 tsp"
-              },
-              {
-                "item": "Scallion",
-                "qty": "4g"
+                "item": "Lemon",
+                "qty": "0.5"
               }
             ],
             "macros": {
-              "kcal": 395,
-              "protein_g": 39,
-              "carbs_g": 34,
-              "fat_g": 12,
+              "kcal": 410,
+              "protein_g": 38,
+              "carbs_g": 32,
+              "fat_g": 13,
               "fiber_g": 6
             }
           }
         }
-      },
-      {
-        "slot": "pm_snack",
-        "name": "Greek Yogurt with Walnuts & Strawberries",
-        "time": "16:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "creamy greek yogurt in glass bowl, toasted walnut pieces and fresh strawberry halves on top, wooden spoon, soft natural light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Spoon 200g Greek yogurt into bowl",
-          "Top with 20g walnut pieces and 110g sliced fresh strawberries"
-        ],
-        "storage_ref": "",
-        "food_category": "dairy",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt (0% plain)",
-                "qty": "200g"
-              },
-              {
-                "item": "Walnuts",
-                "qty": "20g"
-              },
-              {
-                "item": "Strawberries",
-                "qty": "110g"
-              }
-            ],
-            "macros": {
-              "kcal": 305,
-              "protein_g": 20,
-              "carbs_g": 26,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt (0% plain)",
-                "qty": "150g"
-              },
-              {
-                "item": "Walnuts",
-                "qty": "15g"
-              },
-              {
-                "item": "Strawberries",
-                "qty": "85g"
-              }
-            ],
-            "macros": {
-              "kcal": 230,
-              "protein_g": 15,
-              "carbs_g": 20,
-              "fat_g": 11,
-              "fiber_g": 4
-            }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "Chicken & Chickpea Curry with Spinach & Whole-Grain Pita",
-        "time": "19:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 8,
-        "image_prompt": "creamy golden curry sauce with tender chicken pieces and chickpeas, fresh spinach wilted in, served with warm whole-grain pita bread, cilantro garnish, steam rising",
-        "video_url": "",
-        "prep_steps": [
-          "Saut\u00e9 400g diced chicken with 200g onion (cooked gently, not raw), 3 garlic cloves, 2 tsp curry powder, 1 tsp turmeric, 1 tsp ginger for 6 min",
-          "Add 200g canned chickpeas (drained), 200g canned tomatoes, 100ml vegetable stock, simmer 12 min",
-          "Stir in 150g fresh spinach, cook 2 min until wilted, cool and refrigerate"
-        ],
-        "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of soup stew only keeps ~4 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Reheat 200g curry sauce with chicken, chickpeas and spinach for 3 min",
-          "Warm 1 whole-grain pita 30 sec in toaster",
-          "Spoon curry into bowl or serve with pita bread on side",
-          "Garnish with fresh cilantro (5g)"
-        ],
-        "food_category": "soup_stew",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Chicken & chickpea curry",
-                "qty": "200g"
-              },
-              {
-                "item": "Whole-grain pita",
-                "qty": "60g"
-              },
-              {
-                "item": "Fresh cilantro",
-                "qty": "5g"
-              }
-            ],
-            "macros": {
-              "kcal": 500,
-              "protein_g": 50,
-              "carbs_g": 48,
-              "fat_g": 12,
-              "fiber_g": 9
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Chicken & chickpea curry",
-                "qty": "150g"
-              },
-              {
-                "item": "Whole-grain pita",
-                "qty": "40g"
-              },
-              {
-                "item": "Fresh cilantro",
-                "qty": "4g"
-              }
-            ],
-            "macros": {
-              "kcal": 375,
-              "protein_g": 37,
-              "carbs_g": 36,
-              "fat_g": 9,
-              "fiber_g": 7
-            }
-          }
-        },
-        "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of soup stew only keeps ~4 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)"
       }
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1985,
-        "protein_g": 148,
-        "carbs_g": 190,
-        "fat_g": 72,
-        "fiber_g": 37
+        "kcal": 2120,
+        "protein_g": 160,
+        "carbs_g": 164,
+        "fat_g": 77,
+        "fiber_g": 27
       },
       "diana": {
-        "kcal": 1485,
-        "protein_g": 109,
-        "carbs_g": 143,
-        "fat_g": 55,
-        "fiber_g": 28
+        "kcal": 1585,
+        "protein_g": 121,
+        "carbs_g": 132,
+        "fat_g": 57,
+        "fiber_g": 23
       }
     }
   },
@@ -2019,92 +1964,98 @@
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Herb-Crusted Boiled Egg with Sourdough & Strawberries",
+        "name": "Smoked Salmon & Cream Cheese on Rye with Kiwi",
         "time": "07:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 2,
-        "image_prompt": "boiled egg halves on warm sourdough toast, fresh strawberries fanned beside, parsley sprinkled on egg, white ceramic plate, kitchen window light",
+        "cook_minutes_day_of": 3,
+        "image_prompt": "Two slices of dark rye bread topped with thin smoked salmon and 15g cream cheese, fresh dill garnish, kiwi fruit halves on the side, morning sunlight",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of eggs cooked only keeps ~4 day(s), and this is day 6. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Place 1 boiled egg halves on plate",
-          "Toast 1 sourdough slice, arrange beside egg",
-          "Sprinkle fresh parsley over egg",
-          "Slice 170g fresh strawberries, arrange on plate"
+          "Toast 2 slices rye bread (Diego) or 1.5 slices (Diana) lightly",
+          "Spread 15g cream cheese (Diego) or 12g (Diana) on each slice",
+          "Layer 50g smoked salmon (Diego) or 40g (Diana) on top, garnish with fresh dill",
+          "Serve with 2 kiwis peeled and halved (Diego) or 1.5 kiwis (Diana)"
         ],
-        "food_category": "eggs_cooked",
+        "storage_ref": "",
+        "food_category": "fish_seafood",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
+                "item": "Dark rye bread",
+                "qty": "2 slices"
               },
               {
-                "item": "Sourdough bread",
-                "qty": "40g"
+                "item": "Cream cheese",
+                "qty": "15 g"
               },
               {
-                "item": "Strawberries",
-                "qty": "170g"
+                "item": "Smoked salmon",
+                "qty": "50 g"
               },
               {
-                "item": "Fresh parsley",
-                "qty": "3g"
+                "item": "Fresh dill",
+                "qty": "3 g"
+              },
+              {
+                "item": "Kiwi fruit",
+                "qty": "2"
               }
             ],
             "macros": {
-              "kcal": 380,
-              "protein_g": 16,
-              "carbs_g": 46,
-              "fat_g": 15,
-              "fiber_g": 8
+              "kcal": 430,
+              "protein_g": 22,
+              "carbs_g": 38,
+              "fat_g": 18,
+              "fiber_g": 6
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "1 \u00d7 50g"
+                "item": "Dark rye bread",
+                "qty": "1.5 slices"
               },
               {
-                "item": "Sourdough bread",
-                "qty": "30g"
+                "item": "Cream cheese",
+                "qty": "12 g"
               },
               {
-                "item": "Strawberries",
-                "qty": "135g"
+                "item": "Smoked salmon",
+                "qty": "40 g"
               },
               {
-                "item": "Fresh parsley",
-                "qty": "2g"
+                "item": "Fresh dill",
+                "qty": "2 g"
+              },
+              {
+                "item": "Kiwi fruit",
+                "qty": "1.5"
               }
             ],
             "macros": {
-              "kcal": 285,
-              "protein_g": 11,
-              "carbs_g": 35,
-              "fat_g": 11,
-              "fiber_g": 6
+              "kcal": 320,
+              "protein_g": 17,
+              "carbs_g": 29,
+              "fat_g": 13,
+              "fiber_g": 5
             }
           }
-        },
-        "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of eggs cooked only keeps ~4 day(s), and this is day 6. (The dish is unchanged \u2014 just cooked the same day.)"
+        }
       },
       {
         "slot": "am_snack",
-        "name": "Pistachios & Apple",
+        "name": "Cashews & Pear",
         "time": "10:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "small white bowl of roasted pistachios, fresh sliced apple arranged beside, wooden table, warm natural light",
+        "cook_minutes_day_of": 0,
+        "image_prompt": "Small handful of roasted cashew nuts in a ceramic bowl beside a ripe pear cut into quarters, natural light on a wooden surface",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Portion 30g roasted unsalted pistachios into small bowl",
-          "Core and slice 1 apple (165g), arrange on plate beside"
+          "Portion 30g roasted cashews into a small bowl (Diego) or 22g (Diana)",
+          "Slice 1 pear into quarters, remove pit"
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -2112,148 +2063,144 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Pistachios (roasted, unsalted)",
-                "qty": "30g"
+                "item": "Roasted cashews",
+                "qty": "30 g"
               },
               {
-                "item": "Apple",
-                "qty": "165g"
+                "item": "Pear",
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 285,
-              "protein_g": 9,
-              "carbs_g": 31,
-              "fat_g": 15,
+              "kcal": 310,
+              "protein_g": 10,
+              "carbs_g": 30,
+              "fat_g": 16,
               "fiber_g": 6
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Pistachios (roasted, unsalted)",
-                "qty": "20g"
+                "item": "Roasted cashews",
+                "qty": "22 g"
               },
               {
-                "item": "Apple",
-                "qty": "135g"
+                "item": "Pear",
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 210,
-              "protein_g": 6,
-              "carbs_g": 23,
-              "fat_g": 11,
-              "fiber_g": 5
+              "kcal": 235,
+              "protein_g": 8,
+              "carbs_g": 30,
+              "fat_g": 12,
+              "fiber_g": 6
             }
           }
         }
       },
       {
         "slot": "lunch",
-        "name": "Mediterranean Salad with Turkey & Lentil Base",
+        "name": "Mexican-Style Chicken with Black Beans, Peppers & Brown Rice",
         "time": "13:00",
         "prep_ahead": false,
-        "cook_minutes_day_of": 5,
-        "image_prompt": "vibrant salad with tender shredded turkey breast, warm brown lentils, cherry tomatoes, cucumber ribbons, mixed greens, crumbled feta, olive oil drizzle, lemon wedge",
+        "cook_minutes_day_of": 6,
+        "image_prompt": "Grilled seasoned chicken slices on a bed of cumin-spiced black beans and brown rice with roasted red peppers and diced tomato, lime wedge, fresh cilantro, vibrant natural light",
         "video_url": "",
         "prep_steps": [
-          "Roast 300g turkey breast seasoned with garlic and oregano at 190\u00b0C for 20 min, cool, shred"
+          "Marinate 500g chicken breasts in lime juice, cumin, paprika, garlic, and 1 tbsp olive oil for 30 min",
+          "Grill or pan-sear chicken until 75\u00b0C internal temp; slice into strips",
+          "Heat 1 tsp olive oil; saut\u00e9 150g diced bell peppers (5 min), set aside",
+          "Cook 120g black beans (dry weight converted) per package; toss with cumin, lime juice, salt, pepper",
+          "Cook 120g brown rice per package instructions"
         ],
         "day_of_steps": [
           "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 6. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Plate 80g mixed greens (spinach and rocket)",
-          "Top with 120g shredded roasted turkey",
-          "Add 60g cooked brown lentils (from prep)",
-          "Scatter 60g cherry tomatoes, 50g cucumber (diced), 20g feta cheese",
-          "Dress with 1.5 tsp olive oil and 1 tbsp lemon juice, toss gently"
+          "Retrieve grilled chicken, cooked beans, peppers, and brown rice from fridge",
+          "Warm chicken and beans briefly (2 min) in pan if desired",
+          "Arrange 160g chicken (Diego) or 120g (Diana) on plate",
+          "Add 80g black beans (Diego) or 60g (Diana), 70g roasted peppers (Diego) or 50g (Diana), 70g brown rice (Diego) or 55g (Diana)",
+          "Top with 30g diced fresh tomato, squeeze of lime, and fresh cilantro"
         ],
         "food_category": "poultry",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Mixed greens",
-                "qty": "80g"
+                "item": "Grilled cumin chicken",
+                "qty": "160 g"
               },
               {
-                "item": "Shredded turkey",
-                "qty": "120g"
+                "item": "Cooked black beans",
+                "qty": "80 g"
               },
               {
-                "item": "Brown lentils (cooked)",
-                "qty": "60g"
+                "item": "Roasted red peppers",
+                "qty": "70 g"
               },
               {
-                "item": "Cherry tomatoes",
-                "qty": "60g"
+                "item": "Cooked brown rice",
+                "qty": "70 g"
               },
               {
-                "item": "Cucumber",
-                "qty": "50g"
+                "item": "Fresh tomato",
+                "qty": "30 g"
               },
               {
-                "item": "Feta cheese",
-                "qty": "20g"
+                "item": "Fresh cilantro",
+                "qty": "5 g"
               },
               {
-                "item": "Olive oil",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "1 tbsp"
+                "item": "Lime",
+                "qty": "0.25"
               }
             ],
             "macros": {
-              "kcal": 515,
-              "protein_g": 48,
-              "carbs_g": 44,
-              "fat_g": 18,
-              "fiber_g": 9
+              "kcal": 530,
+              "protein_g": 50,
+              "carbs_g": 52,
+              "fat_g": 12,
+              "fiber_g": 8
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Mixed greens",
-                "qty": "70g"
+                "item": "Grilled cumin chicken",
+                "qty": "120 g"
               },
               {
-                "item": "Shredded turkey",
-                "qty": "90g"
+                "item": "Cooked black beans",
+                "qty": "60 g"
               },
               {
-                "item": "Brown lentils (cooked)",
-                "qty": "45g"
+                "item": "Roasted red peppers",
+                "qty": "50 g"
               },
               {
-                "item": "Cherry tomatoes",
-                "qty": "50g"
+                "item": "Cooked brown rice",
+                "qty": "55 g"
               },
               {
-                "item": "Cucumber",
-                "qty": "40g"
+                "item": "Fresh tomato",
+                "qty": "20 g"
               },
               {
-                "item": "Feta cheese",
-                "qty": "15g"
+                "item": "Fresh cilantro",
+                "qty": "4 g"
               },
               {
-                "item": "Olive oil",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "0.75 tbsp"
+                "item": "Lime",
+                "qty": "0.25"
               }
             ],
             "macros": {
-              "kcal": 385,
-              "protein_g": 36,
-              "carbs_g": 33,
-              "fat_g": 13,
-              "fiber_g": 7
+              "kcal": 395,
+              "protein_g": 38,
+              "carbs_g": 39,
+              "fat_g": 9,
+              "fiber_g": 6
             }
           }
         },
@@ -2262,157 +2209,167 @@
       },
       {
         "slot": "pm_snack",
-        "name": "Walnuts & Blueberries",
+        "name": "Greek Yogurt with Walnuts & Blueberries",
         "time": "16:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 1,
-        "image_prompt": "scattered roasted walnuts and fresh blueberries mixed in small bowl, wooden spoon, soft afternoon window light",
+        "image_prompt": "Glass bowl of creamy Greek yogurt topped with fresh blueberries and toasted walnut pieces, natural light, minimalist presentation",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Mix 22g roasted walnuts with 115g fresh blueberries in small bowl"
+          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of dairy only keeps ~5 day(s), and this is day 6. (The dish is unchanged \u2014 just cooked the same day.)",
+          "Remove one pre-portioned container of yogurt from fridge",
+          "Top 170g yogurt (Diego) or 130g (Diana) with 20g walnuts and 80g blueberries (Diego) or 60g (Diana)"
         ],
-        "storage_ref": "",
-        "food_category": "generic",
+        "food_category": "dairy",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Walnuts",
-                "qty": "22g"
+                "item": "Greek yogurt 0%",
+                "qty": "170 g"
               },
               {
-                "item": "Blueberries",
-                "qty": "115g"
+                "item": "Walnuts",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "80 g"
               }
             ],
             "macros": {
-              "kcal": 260,
-              "protein_g": 6,
-              "carbs_g": 27,
-              "fat_g": 15,
-              "fiber_g": 5
+              "kcal": 320,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 12,
+              "fiber_g": 4
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Walnuts",
-                "qty": "16g"
+                "item": "Greek yogurt 0%",
+                "qty": "130 g"
               },
               {
-                "item": "Blueberries",
-                "qty": "90g"
+                "item": "Walnuts",
+                "qty": "15 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "60 g"
               }
             ],
             "macros": {
-              "kcal": 190,
-              "protein_g": 4,
-              "carbs_g": 20,
-              "fat_g": 11,
-              "fiber_g": 4
+              "kcal": 240,
+              "protein_g": 23,
+              "carbs_g": 17,
+              "fat_g": 9,
+              "fiber_g": 3
             }
           }
-        }
+        },
+        "cook_fresh_for_safety": true,
+        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of dairy only keeps ~5 day(s), and this is day 6. (The dish is unchanged \u2014 just cooked the same day.)"
       },
       {
         "slot": "dinner",
-        "name": "Baked Cod with Herb Crust, Roasted Fennel & Sweet Potato",
+        "name": "Baked Cod with Capers, Roasted Carrots & White Beans",
         "time": "19:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 18,
-        "image_prompt": "golden herb-crusted white fish on white plate, caramelised roasted fennel wedges beside, roasted sweet potato cubes, lemon wedge, fresh dill garnish, olive oil shine",
+        "cook_minutes_day_of": 20,
+        "image_prompt": "Baked white fish fillet topped with capers and parsley butter, surrounded by roasted carrot batons and creamy white beans, fresh lemon, warm plating light",
         "video_url": "",
-        "prep_steps": [
-          "Roast 350g fennel (cut into wedges) and 300g sweet potato (cubed) at 200\u00b0C for 20 min"
-        ],
+        "prep_steps": [],
         "day_of_steps": [
-          "Preheat oven to 190\u00b0C",
-          "Mix 15g breadcrumbs with 1 tsp fresh dill, 1 tsp lemon zest, salt and pepper",
-          "Place 160g cod fillet on parchment, brush with 1 tsp olive oil, top with herb mixture",
-          "Bake 12\u201314 min until opaque",
-          "Plate fish, roasted fennel, and sweet potato",
-          "Squeeze fresh lemon juice over fish"
+          "Preheat oven to 200\u00b0C",
+          "Place 220g cod fillet (Diego) or 170g (Diana) on parchment paper",
+          "Top with 1 tbsp capers, squeeze of lemon, fresh parsley, salt & pepper",
+          "Roast 15 min until flaky (internal temp 63\u00b0C)",
+          "Meanwhile, toss 180g diced carrots (Diego) or 140g (Diana) in 0.5 tsp olive oil; roast at 200\u00b0C for 15 min",
+          "Heat 100g cooked white beans (Diego) or 80g (Diana) gently with 1 tsp olive oil, garlic, fresh herbs (5 min)",
+          "Plate fish, carrots, and beans; drizzle with 0.5 tsp olive oil (Diego) or 0.4 tsp (Diana)"
         ],
-        "storage_ref": "prep_batch_3",
+        "storage_ref": "",
         "food_category": "fish_seafood",
         "portions": {
           "diego": {
             "ingredients": [
               {
                 "item": "Cod fillet",
-                "qty": "160g"
+                "qty": "220 g"
               },
               {
-                "item": "Roasted fennel",
-                "qty": "110g"
+                "item": "Capers",
+                "qty": "1 tbsp"
               },
               {
-                "item": "Roasted sweet potato",
-                "qty": "110g"
+                "item": "Fresh parsley",
+                "qty": "5 g"
               },
               {
-                "item": "Breadcrumbs",
-                "qty": "15g"
+                "item": "Roasted carrots",
+                "qty": "180 g"
+              },
+              {
+                "item": "Cooked white beans",
+                "qty": "100 g"
               },
               {
                 "item": "Olive oil",
-                "qty": "1 tsp"
+                "qty": "1.5 tsp"
               },
               {
-                "item": "Fresh dill",
-                "qty": "2g"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "1 tsp"
+                "item": "Lemon",
+                "qty": "0.5"
               }
             ],
             "macros": {
-              "kcal": 480,
-              "protein_g": 46,
-              "carbs_g": 45,
-              "fat_g": 12,
-              "fiber_g": 7
+              "kcal": 440,
+              "protein_g": 48,
+              "carbs_g": 40,
+              "fat_g": 10,
+              "fiber_g": 8
             }
           },
           "diana": {
             "ingredients": [
               {
                 "item": "Cod fillet",
-                "qty": "120g"
+                "qty": "170 g"
               },
               {
-                "item": "Roasted fennel",
-                "qty": "85g"
+                "item": "Capers",
+                "qty": "0.75 tbsp"
               },
               {
-                "item": "Roasted sweet potato",
-                "qty": "85g"
+                "item": "Fresh parsley",
+                "qty": "4 g"
               },
               {
-                "item": "Breadcrumbs",
-                "qty": "11g"
+                "item": "Roasted carrots",
+                "qty": "140 g"
+              },
+              {
+                "item": "Cooked white beans",
+                "qty": "80 g"
               },
               {
                 "item": "Olive oil",
-                "qty": "0.75 tsp"
+                "qty": "1.1 tsp"
               },
               {
-                "item": "Fresh dill",
-                "qty": "1.5g"
-              },
-              {
-                "item": "Lemon juice",
-                "qty": "0.75 tsp"
+                "item": "Lemon",
+                "qty": "0.5"
               }
             ],
             "macros": {
-              "kcal": 355,
-              "protein_g": 34,
-              "carbs_g": 34,
-              "fat_g": 9,
-              "fiber_g": 5
+              "kcal": 335,
+              "protein_g": 36,
+              "carbs_g": 31,
+              "fat_g": 8,
+              "fiber_g": 6
             }
           }
         }
@@ -2420,18 +2377,18 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1920,
-        "protein_g": 125,
-        "carbs_g": 193,
-        "fat_g": 75,
-        "fiber_g": 35
+        "kcal": 2030,
+        "protein_g": 160,
+        "carbs_g": 182,
+        "fat_g": 68,
+        "fiber_g": 32
       },
       "diana": {
-        "kcal": 1425,
-        "protein_g": 92,
-        "carbs_g": 145,
-        "fat_g": 55,
-        "fiber_g": 27
+        "kcal": 1525,
+        "protein_g": 122,
+        "carbs_g": 146,
+        "fat_g": 52,
+        "fiber_g": 26
       }
     }
   },
@@ -2441,74 +2398,74 @@
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Herb-Crusted Boiled Egg with Sourdough & Raspberries",
+        "name": "Boiled Egg with Sourdough, Cheese & Raspberries",
         "time": "07:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 2,
-        "image_prompt": "boiled egg halves on toasted sourdough, fresh raspberries scattered beside, fresh dill garnish, white ceramic plate, gentle morning light",
+        "image_prompt": "Soft-boiled egg in an egg cup beside two slices of sourdough toast with 20g Emmental cheese, small bowl of fresh raspberries on the side, natural morning light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
           "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of eggs cooked only keeps ~4 day(s), and this is day 7. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Place 1 boiled egg halves on plate",
-          "Toast 1 sourdough slice, arrange beside egg",
-          "Sprinkle fresh dill over egg",
-          "Serve 155g fresh raspberries on the side"
+          "Toast 2 slices sourdough (Diego) or 1.5 slices (Diana)",
+          "Top each slice with 10g Emmental",
+          "Retrieve one pre-cooked soft-boiled egg from fridge, place in egg cup",
+          "Serve with 100g raspberries (Diego) or 75g (Diana)"
         ],
         "food_category": "eggs_cooked",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "2 \u00d7 50g"
+                "item": "Soft-boiled egg",
+                "qty": "1"
               },
               {
                 "item": "Sourdough bread",
-                "qty": "40g"
+                "qty": "2 slices"
               },
               {
-                "item": "Raspberries",
-                "qty": "155g"
+                "item": "Emmental cheese",
+                "qty": "20 g"
               },
               {
-                "item": "Fresh dill",
-                "qty": "5g"
+                "item": "Fresh raspberries",
+                "qty": "100 g"
               }
             ],
             "macros": {
-              "kcal": 380,
-              "protein_g": 16,
-              "carbs_g": 45,
-              "fat_g": 15,
-              "fiber_g": 9
+              "kcal": 420,
+              "protein_g": 18,
+              "carbs_g": 36,
+              "fat_g": 18,
+              "fiber_g": 5
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Boiled eggs",
-                "qty": "1 \u00d7 50g"
+                "item": "Soft-boiled egg",
+                "qty": "1"
               },
               {
                 "item": "Sourdough bread",
-                "qty": "30g"
+                "qty": "1.5 slices"
               },
               {
-                "item": "Raspberries",
-                "qty": "125g"
+                "item": "Emmental cheese",
+                "qty": "15 g"
               },
               {
-                "item": "Fresh dill",
-                "qty": "4g"
+                "item": "Fresh raspberries",
+                "qty": "75 g"
               }
             ],
             "macros": {
-              "kcal": 285,
-              "protein_g": 11,
-              "carbs_g": 34,
-              "fat_g": 11,
-              "fiber_g": 7
+              "kcal": 315,
+              "protein_g": 14,
+              "carbs_g": 27,
+              "fat_g": 13,
+              "fiber_g": 4
             }
           }
         },
@@ -2517,16 +2474,16 @@
       },
       {
         "slot": "am_snack",
-        "name": "Almonds & Nectarine",
+        "name": "Almonds & Apple",
         "time": "10:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "roasted almonds in small white bowl, fresh whole nectarine beside on wooden board, natural diffuse light",
+        "cook_minutes_day_of": 0,
+        "image_prompt": "Small handful of roasted almonds in a bowl next to a sliced fresh apple, on a light wooden board, natural daylight",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Portion 30g roasted almonds into small bowl",
-          "Place 1 nectarine (160g) whole on plate beside"
+          "Portion 30g almonds into a small bowl (Diego) or 22g (Diana)",
+          "Slice 1 apple, arrange on the side"
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -2534,18 +2491,18 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Almonds (roasted)",
-                "qty": "30g"
+                "item": "Roasted almonds",
+                "qty": "30 g"
               },
               {
-                "item": "Nectarine",
-                "qty": "160g"
+                "item": "Apple",
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 285,
+              "kcal": 310,
               "protein_g": 10,
-              "carbs_g": 30,
+              "carbs_g": 32,
               "fat_g": 15,
               "fiber_g": 6
             }
@@ -2553,106 +2510,118 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Almonds (roasted)",
-                "qty": "20g"
+                "item": "Roasted almonds",
+                "qty": "22 g"
               },
               {
-                "item": "Nectarine",
-                "qty": "130g"
+                "item": "Apple",
+                "qty": "1 medium"
               }
             ],
             "macros": {
-              "kcal": 205,
-              "protein_g": 7,
-              "carbs_g": 23,
+              "kcal": 240,
+              "protein_g": 8,
+              "carbs_g": 32,
               "fat_g": 11,
-              "fiber_g": 5
+              "fiber_g": 6
             }
           }
         }
       },
       {
         "slot": "lunch",
-        "name": "Herb-Roasted Chicken with Roasted Root Vegetables & Quinoa",
+        "name": "Mexican-Style Chicken with Black Beans, Peppers & Brown Rice",
         "time": "13:00",
         "prep_ahead": false,
-        "cook_minutes_day_of": 5,
-        "image_prompt": "succulent herb-roasted chicken breast on white plate, roasted carrot batons and parsnip wedges alongside, fluffy quinoa pilaf, fresh thyme garnish, olive oil shine",
+        "cook_minutes_day_of": 6,
+        "image_prompt": "Grilled seasoned chicken slices on a bed of cumin-spiced black beans and brown rice with roasted red peppers and diced tomato, lime wedge, fresh cilantro, vibrant natural light",
         "video_url": "",
-        "prep_steps": [
-          "Marinate 700g chicken breasts in olive oil, garlic, rosemary, thyme 2\u20134 hours or overnight",
-          "Roast marinated chicken at 190\u00b0C for 22\u201325 min until 165\u00b0C internal temp, cool and portion",
-          "Roast 500g mixed root veg (carrots, parsnips) at 200\u00b0C for 25 min",
-          "Cook 250g quinoa per package directions"
-        ],
+        "prep_steps": [],
         "day_of_steps": [
           "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of poultry only keeps ~3 day(s), and this is day 7. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Reheat 150g roasted chicken in microwave 1 min",
-          "Plate chicken with 130g roasted root veg and 90g cooked quinoa",
-          "Drizzle 1 tsp olive oil over veg",
-          "Garnish with fresh thyme (2g)"
+          "Retrieve grilled chicken, cooked beans, peppers, and brown rice from fridge",
+          "Warm chicken and beans briefly (2 min) in pan if desired",
+          "Arrange 160g chicken (Diego) or 120g (Diana) on plate",
+          "Add 80g black beans (Diego) or 60g (Diana), 70g roasted peppers (Diego) or 50g (Diana), 70g brown rice (Diego) or 55g (Diana)",
+          "Top with 30g diced fresh tomato, squeeze of lime, and fresh cilantro"
         ],
         "food_category": "poultry",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Herb-roasted chicken",
-                "qty": "150g"
+                "item": "Grilled cumin chicken",
+                "qty": "160 g"
               },
               {
-                "item": "Roasted root veg",
-                "qty": "130g"
+                "item": "Cooked black beans",
+                "qty": "80 g"
               },
               {
-                "item": "Quinoa (cooked)",
-                "qty": "90g"
+                "item": "Roasted red peppers",
+                "qty": "70 g"
               },
               {
-                "item": "Olive oil",
-                "qty": "1 tsp"
+                "item": "Cooked brown rice",
+                "qty": "70 g"
               },
               {
-                "item": "Fresh thyme",
-                "qty": "2g"
+                "item": "Fresh tomato",
+                "qty": "30 g"
+              },
+              {
+                "item": "Fresh cilantro",
+                "qty": "5 g"
+              },
+              {
+                "item": "Lime",
+                "qty": "0.25"
               }
             ],
             "macros": {
-              "kcal": 515,
+              "kcal": 530,
               "protein_g": 50,
-              "carbs_g": 48,
-              "fat_g": 14,
+              "carbs_g": 52,
+              "fat_g": 12,
               "fiber_g": 8
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Herb-roasted chicken",
-                "qty": "110g"
+                "item": "Grilled cumin chicken",
+                "qty": "120 g"
               },
               {
-                "item": "Roasted root veg",
-                "qty": "100g"
+                "item": "Cooked black beans",
+                "qty": "60 g"
               },
               {
-                "item": "Quinoa (cooked)",
-                "qty": "65g"
+                "item": "Roasted red peppers",
+                "qty": "50 g"
               },
               {
-                "item": "Olive oil",
-                "qty": "0.75 tsp"
+                "item": "Cooked brown rice",
+                "qty": "55 g"
               },
               {
-                "item": "Fresh thyme",
-                "qty": "1.5g"
+                "item": "Fresh tomato",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh cilantro",
+                "qty": "4 g"
+              },
+              {
+                "item": "Lime",
+                "qty": "0.25"
               }
             ],
             "macros": {
-              "kcal": 380,
-              "protein_g": 37,
-              "carbs_g": 36,
-              "fat_g": 11,
+              "kcal": 395,
+              "protein_g": 38,
+              "carbs_g": 39,
+              "fat_g": 9,
               "fiber_g": 6
             }
           }
@@ -2662,162 +2631,177 @@
       },
       {
         "slot": "pm_snack",
-        "name": "Cashews & Blueberries",
+        "name": "Greek Yogurt with Walnuts & Blueberries",
         "time": "16:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 1,
-        "image_prompt": "roasted cashew pieces scattered with fresh blueberries in small white bowl, wooden table, soft afternoon light",
+        "image_prompt": "Glass bowl of creamy Greek yogurt topped with fresh blueberries and toasted walnut pieces, natural light, minimalist presentation",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Mix 25g roasted cashews with 120g fresh blueberries in small bowl"
+          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of dairy only keeps ~5 day(s), and this is day 7. (The dish is unchanged \u2014 just cooked the same day.)",
+          "Remove one pre-portioned container of yogurt from fridge",
+          "Top 170g yogurt (Diego) or 130g (Diana) with 20g walnuts and 80g blueberries (Diego) or 60g (Diana)"
         ],
-        "storage_ref": "",
-        "food_category": "generic",
+        "food_category": "dairy",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Cashews (roasted)",
-                "qty": "25g"
+                "item": "Greek yogurt 0%",
+                "qty": "170 g"
               },
               {
-                "item": "Blueberries",
-                "qty": "120g"
+                "item": "Walnuts",
+                "qty": "20 g"
+              },
+              {
+                "item": "Fresh blueberries",
+                "qty": "80 g"
               }
             ],
             "macros": {
-              "kcal": 275,
-              "protein_g": 7,
-              "carbs_g": 31,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Cashews (roasted)",
-                "qty": "18g"
-              },
-              {
-                "item": "Blueberries",
-                "qty": "95g"
-              }
-            ],
-            "macros": {
-              "kcal": 210,
-              "protein_g": 5,
-              "carbs_g": 24,
-              "fat_g": 11,
+              "kcal": 320,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 12,
               "fiber_g": 4
             }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "Lentil & Roasted Vegetable Buddha Bowl with Tahini Dressing",
-        "time": "19:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 3,
-        "image_prompt": "warm Buddha bowl with roasted vegetables (broccoli, bell pepper, carrot), creamy tahini dressing drizzled, cooked brown lentils base, fresh microgreens and pumpkin seeds on top, white bowl",
-        "video_url": "",
-        "prep_steps": [
-          "Roast 500g mixed veg (broccoli florets, bell pepper chunks, carrot batons) at 200\u00b0C for 20 min",
-          "Cook 300g brown lentils per package directions, cool",
-          "Blend 3 tbsp tahini with 2 tbsp lemon juice, 1 garlic clove, water to thin into dressing"
-        ],
-        "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of legumes only keeps ~5 day(s), and this is day 7. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Plate 70g cooked brown lentils as base",
-          "Top with 140g roasted mixed veg",
-          "Drizzle 2 tbsp tahini dressing over",
-          "Garnish with 8g pumpkin seeds and fresh microgreens (10g)"
-        ],
-        "food_category": "legumes",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Brown lentils (cooked)",
-                "qty": "70g"
-              },
-              {
-                "item": "Roasted mixed veg",
-                "qty": "140g"
-              },
-              {
-                "item": "Tahini dressing",
-                "qty": "2 tbsp"
-              },
-              {
-                "item": "Pumpkin seeds",
-                "qty": "8g"
-              },
-              {
-                "item": "Microgreens",
-                "qty": "10g"
-              }
-            ],
-            "macros": {
-              "kcal": 465,
-              "protein_g": 20,
-              "carbs_g": 52,
-              "fat_g": 20,
-              "fiber_g": 12
-            }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Brown lentils (cooked)",
-                "qty": "52g"
+                "item": "Greek yogurt 0%",
+                "qty": "130 g"
               },
               {
-                "item": "Roasted mixed veg",
-                "qty": "105g"
+                "item": "Walnuts",
+                "qty": "15 g"
               },
               {
-                "item": "Tahini dressing",
-                "qty": "1.5 tbsp"
-              },
-              {
-                "item": "Pumpkin seeds",
-                "qty": "6g"
-              },
-              {
-                "item": "Microgreens",
-                "qty": "8g"
+                "item": "Fresh blueberries",
+                "qty": "60 g"
               }
             ],
             "macros": {
-              "kcal": 350,
-              "protein_g": 15,
-              "carbs_g": 39,
-              "fat_g": 15,
-              "fiber_g": 9
+              "kcal": 240,
+              "protein_g": 23,
+              "carbs_g": 17,
+              "fat_g": 9,
+              "fiber_g": 3
             }
           }
         },
         "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of legumes only keeps ~5 day(s), and this is day 7. (The dish is unchanged \u2014 just cooked the same day.)"
+        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of dairy only keeps ~5 day(s), and this is day 7. (The dish is unchanged \u2014 just cooked the same day.)"
+      },
+      {
+        "slot": "dinner",
+        "name": "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
+        "time": "19:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 22,
+        "image_prompt": "Pan-seared salmon fillet with crispy skin on a bed of roasted asparagus spears and diced sweet potato, lemon butter sauce drizzle, fresh dill, warm plating light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "Preheat oven to 200\u00b0C",
+          "Toss 200g diced sweet potato (Diego) or 160g (Diana) in 1 tsp olive oil, salt, pepper; roast 15 min",
+          "Trim 200g asparagus (Diego) or 150g (Diana); toss with 0.5 tsp olive oil; add to sweet potato; roast 8 more min",
+          "Pat dry 200g salmon fillet (Diego) or 150g (Diana); season with salt & pepper",
+          "Heat 1 tsp olive oil in pan over medium-high heat; sear salmon skin-side down 4 min, flip, cook 3 min until 63\u00b0C internal temp",
+          "Plate salmon, asparagus, and sweet potato; top with squeeze of lemon and fresh dill"
+        ],
+        "storage_ref": "",
+        "food_category": "fish_seafood",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Salmon fillet",
+                "qty": "200 g"
+              },
+              {
+                "item": "Roasted asparagus",
+                "qty": "200 g"
+              },
+              {
+                "item": "Roasted sweet potato",
+                "qty": "200 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "2.5 tsp"
+              },
+              {
+                "item": "Fresh dill",
+                "qty": "3 g"
+              },
+              {
+                "item": "Lemon",
+                "qty": "0.5"
+              }
+            ],
+            "macros": {
+              "kcal": 540,
+              "protein_g": 50,
+              "carbs_g": 40,
+              "fat_g": 18,
+              "fiber_g": 7
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Salmon fillet",
+                "qty": "150 g"
+              },
+              {
+                "item": "Roasted asparagus",
+                "qty": "150 g"
+              },
+              {
+                "item": "Roasted sweet potato",
+                "qty": "160 g"
+              },
+              {
+                "item": "Olive oil",
+                "qty": "1.9 tsp"
+              },
+              {
+                "item": "Fresh dill",
+                "qty": "2 g"
+              },
+              {
+                "item": "Lemon",
+                "qty": "0.5"
+              }
+            ],
+            "macros": {
+              "kcal": 410,
+              "protein_g": 38,
+              "carbs_g": 32,
+              "fat_g": 13,
+              "fiber_g": 6
+            }
+          }
+        }
       }
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1920,
-        "protein_g": 103,
-        "carbs_g": 206,
-        "fat_g": 78,
-        "fiber_g": 40
+        "kcal": 2120,
+        "protein_g": 158,
+        "carbs_g": 182,
+        "fat_g": 75,
+        "fiber_g": 30
       },
       "diana": {
-        "kcal": 1430,
-        "protein_g": 75,
-        "carbs_g": 156,
-        "fat_g": 59,
-        "fiber_g": 30
+        "kcal": 1600,
+        "protein_g": 121,
+        "carbs_g": 147,
+        "fat_g": 55,
+        "fiber_g": 25
       }
     }
   }

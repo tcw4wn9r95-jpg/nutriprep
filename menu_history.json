@@ -108,5 +108,27 @@
       "diego": 1934,
       "diana": 1435
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Boiled Egg with Sourdough, Cheese & Raspberries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Baked White Fish with Lemon, Green Beans & Sweet Potato",
+      "Smoked Salmon & Cream Cheese on Rye with Kiwi",
+      "Asian Chicken Lettuce Cups with Sesame Bok Choy",
+      "Pan-Seared Tuna Steak with Sesame Cucumber Salad & Brown Rice",
+      "Boiled Egg with Sourdough, Cheese & Raspberries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
+      "Smoked Salmon & Cream Cheese on Rye with Kiwi"
+    ],
+    "shopping_items": 62,
+    "prep_minutes": 163,
+    "day_kcal": {
+      "diego": 2034,
+      "diana": 1531
+    }
   }
 ]
