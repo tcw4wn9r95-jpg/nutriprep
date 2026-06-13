@@ -623,7 +623,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v29 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v30 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -647,7 +647,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 29; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 30; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1392,13 +1392,19 @@ async function sendCoach(){
   const trend=wlog.length>=2?(wlog[wlog.length-1].weight_kg-wlog[0].weight_kg).toFixed(1)+" kg over "+wlog.length+" weigh-ins":"no data yet";
   const c=computeCompliance();
   const todayMenu=weekMenu?(weekMenu.find(d=>d.date===todayISO())||{}):{};
-  const menuText=weekMenu?weekMenu.map(d=>`${d.day}: ${d.meals.map(m=>m.slot+"="+m.name).join("; ")}`).join("\n"):"no menu";
+  const _td=todayISO();
+  const menuText=weekMenu?weekMenu.map(d=>{ const tag=d.date<_td?" [PAST — do not change]":d.date===_td?" [TODAY]":""; return `${d.day} ${d.date}${tag}: ${d.meals.map(m=>m.slot+"="+m.name).join("; ")}`; }).join("\n"):"no menu";
+  const _wkRange=weekMenu&&weekMenu.length?`${weekMenu[0].date} to ${weekMenu[weekMenu.length-1].date}`:"none loaded";
   // Cross-app context (training day + recent sleep) — fuelling is Diego-only
   const tToday=trainingForDate(todayISO());
   const trainingLine=(identity==="diego"&&tToday)?`Training today: ${tToday.name} (${tToday.tss} TSS) → +${tToday.extra_kcal} kcal, extra carbs.`:(identity==="diego"?"No training scheduled today (rest-day calories).":"");
   let sleepLine="";
   if(sleepData&&sleepData.length){ const last=sleepData[sleepData.length-1]; const scored=sleepData.filter(s=>s.score).slice(-7); const avg=scored.length?Math.round(scored.reduce((a,s)=>a+s.score,0)/scored.length):null; sleepLine=`Sleep: last night ${last.score||"?"}/100 (${last.duration_h||"?"}h)${avg?", 7-day avg "+avg:""}.`; }
   const system=`You are Coach Léa, a warm registered-dietitian coach for ${identity} in Luxembourg.
+
+## DATES (critical for swaps)
+Today is ${_td} (${new Date(_td+"T12:00:00").toLocaleDateString("en-GB",{weekday:"long"})}). The current menu covers ${_wkRange}.
+When the user names a day (e.g. "Monday", "next Monday", "tomorrow"), map it to the matching date shown in the SHARED HOUSEHOLD MENU below and use that EXACT ISO date in swap_meal. Never invent a date that isn't in the menu, and never change a day marked [PAST].
 
 ## USER
 Name: ${identity} | Goal: ${goals.goal_type||"?"} | Target: ${goals.target_weight_kg||"?"}kg | Weight trend: ${trend}
@@ -1451,14 +1457,18 @@ async function handleCoachTool(name,input){
     if(i>=0)userWeightLog[i]=entry; else userWeightLog.push(entry); userWeightLog.sort((a,b)=>a.date.localeCompare(b.date));
     try{ await ghWrite(`users/${identity}/weight_log.json`,userWeightLog,`Weight ${date}`); addCoachMsg("coach",`✓ Logged ${input.weight_kg} kg.`); renderHomeStats(); }catch(e){ addCoachMsg("coach",`Couldn't save weight: ${e.message}`); }
   } else if(name==="swap_meal"){
-    // Targeted change — only this one slot/date is touched, the rest of the week is untouched.
-    const od=weekMenu&&weekMenu.find(d=>d.date===input.date); const old=od&&od.meals.find(m=>m.slot===input.slot); const oldName=old?old.name:null;
-    await applyMenuChange(input.date,input.slot,input.meal); addCoachMsg("coach",`✓ Swapped ${input.slot} on ${input.date} to "${input.meal.name}" for the household. Shopping list updated.`);
+    // Targeted change — only this one slot/date is touched. Resolve the date robustly so a
+    // mis-guessed ISO date doesn't hit the wrong (or a passed) day.
+    const tgt=resolveMenuDate(input.date);
+    if(!tgt){ addCoachMsg("coach",`I couldn't match that to a day in this week's menu (${weekMenu&&weekMenu.length?weekMenu[0].date+" to "+weekMenu[weekMenu.length-1].date:"no menu loaded"}). Which day did you mean?`); return; }
+    if(tgt<todayISO()){ const dn=weekMenu.find(d=>d.date===tgt); addCoachMsg("coach",`${dn?dn.day+" ("+tgt+")":tgt} has already passed, so I didn't change it. Want me to update an upcoming day instead?`); return; }
+    const od=weekMenu.find(d=>d.date===tgt); const old=od&&od.meals.find(m=>m.slot===input.slot); const oldName=old?old.name:null;
+    await applyMenuChange(tgt,input.slot,input.meal); addCoachMsg("coach",`✓ Swapped ${input.slot} on ${od?od.day+" "+tgt:tgt} to "${input.meal.name}" for the household. Shopping list updated.`);
     if(oldName && oldName!==input.meal.name) await savePreference("note",`Swapped "${oldName}" → "${input.meal.name}" (${input.slot})`);
   } else if(name==="remember_preference"){
     await savePreference(input.kind,input.text); addCoachMsg("coach",`✓ Noted for next time: ${input.text}`);
   } else if(name==="attach_video"){
-    const day=weekMenu.find(d=>d.date===input.date); const meal=day?day.meals.find(m=>m.slot===input.slot):null;
+    const day=weekMenu.find(d=>d.date===resolveMenuDate(input.date)); const meal=day?day.meals.find(m=>m.slot===input.slot):null;
     if(meal){ meal.video_url=input.video_url; try{ await ghWrite("weekly_menu.json",weekMenu,`Attach video`); addCoachMsg("coach",`✓ Video attached.`); }catch(e){ addCoachMsg("coach",`Couldn't save: ${e.message}`); } }
   }
 }
@@ -1471,6 +1481,18 @@ async function savePreference(kind,text){
   if(!learnedPrefs[bucket].includes(v)) learnedPrefs[bucket].push(v);
   learnedPrefs[bucket]=learnedPrefs[bucket].slice(-40);
   try{ await ghWrite("learned_preferences.json",learnedPrefs,`Learn ${kind}: ${v}`); }catch(_){}
+}
+// Map a coach-supplied date to a real date in the current menu. Exact match wins;
+// otherwise match by weekday (so a mis-guessed "Monday" still lands on the menu's
+// Monday, not a passed one). Returns null if it can't be resolved.
+function resolveMenuDate(d){
+  if(!weekMenu||!weekMenu.length) return null;
+  if(d && weekMenu.some(x=>x.date===d)) return d;
+  if(d){
+    const dt=new Date(d+"T12:00:00");
+    if(!isNaN(dt)){ const dow=dt.getDay(); const hit=weekMenu.find(x=>new Date(x.date+"T12:00:00").getDay()===dow); if(hit) return hit.date; }
+  }
+  return null;
 }
 async function applyMenuChange(date,slot,newMeal){
   if(!weekMenu)return; const day=weekMenu.find(d=>d.date===date); if(!day)return;
