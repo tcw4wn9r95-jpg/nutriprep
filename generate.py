@@ -280,8 +280,9 @@ Hard constraints:
 
 Rules for the palette (STRICT):
 - AT MOST 4 fresh proteins (e.g. one poultry, one white fish, one oily fish, one red meat or eggs). Pantry legumes (canned/dried beans, lentils, chickpeas) are STAPLES — list them under carbs_staples, not proteins.
-- AT MOST 10 fresh vegetables and AT MOST 5 fruits — pick versatile ones you can reuse across many cuisines.
-- ONE bread and ONE leafy green only.
+- AT MOST 10 fresh vegetables and AT MOST 5 fruits — pick versatile ones you can reuse across many cuisines. Include any aromatics you need (garlic, onion, ginger) WITHIN this list of 10.
+- Exactly ONE bread and exactly ONE leafy green for the whole week.
+- For seasoning, use DRIED herbs and spices (pantry staples) — do NOT rely on fresh herbs. List them under spices_sauces_staples.
 - Then list the STAPLES you will lean on for VARIETY (as many as you like): grains/carbs, and spices/seasonings/sauces/oils.
 
 Output ONLY this JSON block — no prose:
@@ -327,10 +328,12 @@ if palette.get("proteins") or palette.get("vegetables"):
         f"  BREAD & LEAFY GREEN: {_plist('breads_greens')}\n"
         f"  CARBS / STAPLES — rotate these freely for variety: {_plist('carbs_staples')}\n"
         f"  SPICES / SAUCES / OILS — rotate these freely for variety: {_plist('spices_sauces_staples')}\n"
-        "You MAY also use common cheap aromatics/finishers as needed even if not listed: garlic, onion, shallot, "
-        "lemon, lime, fresh ginger, fresh chilli, fresh herbs — plus basic pantry items (salt, pepper, water, stock, "
-        "vinegar, a little cheese/yogurt/egg). But DO NOT introduce any new fresh PROTEIN or new fresh VEGETABLE "
-        "beyond the locked lists. If a dish idea needs something off-list, redesign it to use the palette instead."
+        "Seasoning comes from DRIED herbs & spices in the staples list — do NOT add fresh herbs (no fresh parsley, "
+        "dill, basil, thyme, coriander, etc.). You MAY use a couple of cheap aromatics only if not already listed: "
+        "garlic, onion, shallot, lemon, lime — plus basic pantry items (salt, pepper, water, stock, vinegar, a little "
+        "cheese/yogurt/egg). STICK TO THE LOCKED PROTEINS EXACTLY (e.g. do not add tuna if it isn't listed). Do NOT "
+        "introduce any new fresh protein, new fresh vegetable, or a second leafy green beyond the locked lists. If a "
+        "dish idea needs something off-list, redesign it to use the palette instead."
     )
     print(f"  Palette locked: {len(palette.get('proteins', []))} proteins, {len(palette.get('vegetables', []))} vegetables.")
 else:
@@ -785,6 +788,14 @@ for item in shopping_json:
         "amount": round(new_balance, 2) if isinstance(new_balance, (int, float)) else None,
         "display_qty": units.format_qty(new_balance, kind, unit) if isinstance(new_balance, (int, float)) else item.get("qty", ""),
     })
+
+# Drop non-food / equipment the model sometimes lists (parchment, foil, bags…).
+_NONFOOD_KW = ("parchment", "baking paper", "greaseproof", "foil", "aluminium", "aluminum",
+               "cling film", "clingfilm", "plastic wrap", "paper towel", "kitchen roll",
+               "skewer", "toothpick", "bin bag", "ziploc", "freezer bag", "napkin", "paper")
+shopping_json = [it for it in shopping_json
+                 if not any(k in ((it.get("name_en") or "") + " " + (it.get("name_fr") or "")).lower()
+                            for k in _NONFOOD_KW)]
 
 # Tag long-shelf-life pantry staples (rice, pasta, spices, oils, sauces, canned, nuts…)
 # so the app can separate them from the weekly-fresh shop. Classification is NAME-driven
