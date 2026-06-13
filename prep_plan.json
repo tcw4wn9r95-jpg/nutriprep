@@ -2,28 +2,32 @@
   "week_of": "2026-06-15",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 183,
+  "total_active_minutes": 170,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Soft-Boiled Eggs (Monday Breakfast)",
+      "title": "Soft-Boiled Eggs for Breakfast (Mon\u2013Thu)",
       "order": 1,
-      "active_minutes": 8,
+      "active_minutes": 15,
       "steps": [
-        "Fill a pot with water, bring to rolling boil",
-        "Gently lower 8 large eggs into boiling water",
-        "Set timer for 6 minutes (soft yolk, set white)",
-        "Remove eggs to ice-cold water immediately, let cool 5 min",
-        "Gently peel shells under cool running water, store in airtight container with damp paper towel",
-        "Refrigerate until Monday morning"
+        "Bring large pot of salted water to boil (enough to cover 14 eggs by 5 cm)",
+        "Gently lower 14 large eggs into boiling water using spoon",
+        "Set timer for 7 minutes (soft yolk, cooked white)",
+        "When timer sounds, immediately transfer eggs to ice bath (large bowl with ice water)",
+        "Let cool for at least 5 minutes until completely cool to touch",
+        "Gently crack and peel under cool running water, starting from blunt end",
+        "Store peeled eggs in airtight container in fridge, submerged in cold water; replace water daily"
       ],
       "yields": [
-        "8 peeled soft-boiled eggs, ready to serve"
+        "14 boiled eggs (7 eggs for each person Mon\u2013Thu)"
       ],
       "food_category": "eggs_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Breakfast \u2014 Herb-Crusted Boiled Egg with Sourdough & Berries: toast sourdough, halve cooled boiled eggs, layer on toast with herbs, serve with berries"
+        "Monday": "Breakfast \u2014 Boiled Egg with Sourdough & Berries: place 1 boiled egg in eggcup, toast bread with butter, add fresh raspberries",
+        "Tuesday": "Breakfast \u2014 Boiled Egg with Sourdough & Berries: place 1 boiled egg in eggcup, toast bread with butter, add fresh blueberries",
+        "Wednesday": "Breakfast \u2014 Boiled Egg with Sourdough & Berries: place 1 boiled egg in eggcup, toast bread with butter, add fresh strawberries",
+        "Thursday": "Breakfast \u2014 Boiled Egg with Sourdough & Berries: place 1 boiled egg in eggcup, toast bread with butter, add fresh mixed berries"
       },
       "storage": {
         "method": "refrigerate",
@@ -38,260 +42,33 @@
     },
     {
       "id": "prep_batch_2",
-      "title": "Grilled Chicken Breasts with Mediterranean Herbs & Roasted Vegetables",
+      "title": "Grilled Chicken Breasts & Roasted Mediterranean Vegetables",
       "order": 2,
       "active_minutes": 35,
       "steps": [
-        "Pat 2.0 kg chicken breasts dry with paper towel",
-        "Mix olive oil (3 tbsp), 3 cloves minced garlic, oregano (2 tsp), thyme (1 tsp), sea salt & black pepper in bowl",
-        "Brush herb mixture generously on both sides of chicken",
-        "Heat a large grill pan or outdoor grill to high heat",
-        "Grill chicken 7-8 minutes per side until internal temp 165\u00b0F (74\u00b0C), no pink at centre",
-        "Remove to cutting board, cool to room temperature (20 min)",
-        "Slice lengthwise into 1 cm strips, portion into containers (150g Diego / 120g Diana per lunch portion \u00d7 3 portions = approx 780g total stored)",
-        "Prep roasted veg: wash & cut 500g zucchini into 1 cm batons, 400g red bell peppers into strips, 300g cherry tomatoes halved",
-        "Toss veg with 4 tsp olive oil, sea salt, black pepper in large baking tray",
-        "Roast at 200\u00b0C for 25 minutes, stirring halfway through until tender & lightly caramelised",
-        "Cool to room temperature, portion into containers (100g Diego / 75g Diana per lunch \u00d7 3 = approx 525g total)",
-        "Cook quinoa: rinse 250g dried quinoa in fine sieve, add to 500ml vegetable stock in pot, bring to boil",
-        "Cover, reduce heat to low, simmer 18 minutes until liquid absorbed & grains translucent",
-        "Fluff with fork, cool 15 minutes, portion into containers (100g Diego / 75g Diana per lunch \u00d7 3 = approx 525g total)",
-        "All containers sealed & refrigerated until Monday"
+        "Pat 800g chicken breasts dry with paper towels",
+        "Season generously on both sides with salt, pepper, dried oregano (1 tsp total), minced garlic (2 cloves), squeeze of lemon",
+        "Heat 1 tsp olive oil in large grill pan or cast-iron skillet over medium-high heat until smoking",
+        "Grill chicken 6\u20137 min per side until internal temp reaches 75\u00b0C and juices run clear (no pink)",
+        "Transfer to cutting board, tent loosely with foil, rest 5 min",
+        "Meanwhile, cut 400g zucchini into 1 cm half-moons; cut 300g red bell peppers into 2 cm chunks; halve 200g cherry tomatoes",
+        "Toss all vegetables with 2 tbsp olive oil, salt, pepper, 1 tsp dried oregano, 2 minced garlic cloves",
+        "Spread on large baking sheet; roast at 200\u00b0C for 25 minutes until golden and tender",
+        "Cool chicken slightly, then slice into 1 cm strips; transfer to airtight container",
+        "Cool roasted vegetables to room temperature; transfer to separate airtight container (can store together as long as you use within 3 days)",
+        "Cook 200g dried quinoa per package directions (usually 1:2 ratio quinoa:water, simmer 15 min); drain and cool",
+        "Store cooked quinoa in airtight container",
+        "Refrigerate all three components separately until assembly"
       ],
       "yields": [
-        "780g sliced grilled chicken",
-        "525g roasted mixed vegetables",
-        "525g cooked quinoa"
+        "800g grilled chicken breast slices",
+        "~600g cooked quinoa",
+        "~900g roasted mixed vegetables"
       ],
       "food_category": "poultry",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa: reheat chicken 5 min (160\u00b0C oven), reheat veg 2 min (microwave), assemble bowl with quinoa base, top with chicken & veg, squeeze lemon",
-        "Wednesday": "Lunch \u2014 Chicken Caesar Salad with Wholegrain Croutons: slice cold grilled chicken into strips, toss with fresh romaine, homemade Caesar dressing, wholegrain croutons & Parmesan shavings",
-        "Saturday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (poultry is only safe ~3 day(s); this is day 6)."
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
-        "reheat_c": 74,
-        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
-      }
-    },
-    {
-      "id": "prep_batch_3",
-      "title": "Greek Yogurt Portions (Monday & Tuesday PM Snacks)",
-      "order": 3,
-      "active_minutes": 5,
-      "steps": [
-        "Open 1.2 kg plain, low-fat Greek yogurt",
-        "Portion into 4 airtight containers: 200g (Diego) and 150g (Diana) per container",
-        "Label containers clearly with 'PM Snack' and date",
-        "Seal & refrigerate until serving day"
-      ],
-      "yields": [
-        "200g Diego portions \u00d7 2 = 400g, 150g Diana portions \u00d7 2 = 300g, total 700g Greek yogurt portioned"
-      ],
-      "food_category": "dairy",
-      "video_url": "",
-      "day_of_assembly": {
-        "Monday": "Pm Snack \u2014 Greek Yogurt with Walnuts & Blueberries: spoon yogurt into bowl, top with chopped walnuts & fresh blueberries",
-        "Tuesday": "Pm Snack \u2014 Nectarine with Pistachios: serve yogurt separately as planned with nectarine & pistachios (alternative snack)"
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "sealed original packaging or airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": null,
-        "use_within_days": 5,
-        "freeze_option_days": null,
-        "reheat_c": null,
-        "safety_note": "Check use-by date on packaging. Opened yogurt: 5\u20137 days."
-      }
-    },
-    {
-      "id": "prep_batch_4",
-      "title": "Spiced Turkey Meatballs & Brown Lentils",
-      "order": 4,
-      "active_minutes": 45,
-      "steps": [
-        "Combine 600g minced turkey (5% fat), 2 large eggs, 80g wholegrain breadcrumbs, 4 cloves minced garlic, 2 tsp cumin, 2 tsp paprika, 1 tsp sea salt, 0.5 tsp black pepper in bowl",
-        "Mix gently with hands until just combined (do not overwork)",
-        "Roll into 36 meatballs (approx 20g each)",
-        "Line two large baking trays with parchment, arrange meatballs",
-        "Bake at 190\u00b0C for 20 minutes until cooked through (internal temp 165\u00b0F / 74\u00b0C)",
-        "Cool 15 minutes on tray, then transfer to airtight containers",
-        "Rinse 200g dried brown lentils in sieve, place in pot with 600ml vegetable stock",
-        "Bring to boil, reduce heat, simmer 25-30 min until tender but not mushy (test at 25 min)",
-        "Drain any excess liquid, cool to room temperature",
-        "Portion into containers (100g Diego / 75g Diana per lunch \u00d7 2 = approx 350g total)",
-        "Prep beets: peel 400g raw beets, slice thinly (1-2mm)",
-        "Toss with 2 tsp olive oil, sea salt, black pepper in baking tray",
-        "Roast at 200\u00b0C for 30 minutes until edges caramelised & tender",
-        "Cool, portion into containers (100g Diego / 75g Diana per lunch \u00d7 2 = approx 350g total)",
-        "All containers sealed & refrigerated until Tuesday"
-      ],
-      "yields": [
-        "36 cooked turkey meatballs (approx 720g)",
-        "350g cooked brown lentils",
-        "350g roasted beets"
-      ],
-      "food_category": "poultry",
-      "video_url": "",
-      "day_of_assembly": {
-        "Tuesday": "Lunch \u2014 Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets: reheat meatballs 3 min (160\u00b0C), warm lentils 2 min, plate lentils, top with meatballs & beets, drizzle balsamic & parsley",
-        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (poultry is only safe ~3 day(s); this is day 5)."
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
-        "reheat_c": 74,
-        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
-      }
-    },
-    {
-      "id": "prep_batch_5",
-      "title": "Homemade Hummus",
-      "order": 5,
-      "active_minutes": 10,
-      "steps": [
-        "Drain & rinse 240g cooked chickpeas (or from 1 can, drained & rinsed)",
-        "Add to food processor with 2 tbsp tahini, 2 tbsp fresh lemon juice, 2 cloves minced garlic, 2 tbsp water, 1 tsp sea salt, 0.5 tsp cumin",
-        "Blend until smooth & creamy (2-3 min), scraping sides as needed",
-        "If too thick, add 1 tbsp water at a time until desired consistency",
-        "Taste & adjust salt/lemon as needed",
-        "Portion into airtight containers: 80g (Diego) and 60g (Diana) per portion for Wednesday snack only",
-        "Top with pinch of paprika & drizzle 0.5 tsp olive oil on each",
-        "Seal & refrigerate until Wednesday"
-      ],
-      "yields": [
-        "240g total hummus, portioned for 1 snack (Diego 80g + Diana 60g) with room for extra"
-      ],
-      "food_category": "legumes",
-      "video_url": "",
-      "day_of_assembly": {
-        "Wednesday": "Pm Snack \u2014 Hummus & Carrot Sticks: spoon prepared hummus into bowl, arrange fresh carrot & celery sticks, garnish with paprika"
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 5,
-        "freeze_option_days": 90,
-        "reheat_c": 74,
-        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
-      }
-    },
-    {
-      "id": "prep_batch_6",
-      "title": "Mexican Seasoned Ground Beef & Cooked Chickpeas + Cauliflower Rice + Cilantro-Lime Dressing",
-      "order": 6,
-      "active_minutes": 40,
-      "steps": [
-        "Heat large non-stick pan over medium-high heat (no oil needed for lean beef)",
-        "Add 250g lean ground beef (5% fat), breaking apart with spoon",
-        "Cook 8-10 min until browned, rendering fat, drain any excess fat if needed",
-        "Add 2 tsp cumin, 1 tsp paprika, 1 tsp chilli powder, 2 cloves minced garlic, sea salt & pepper to taste, stir constantly 1 min until fragrant",
-        "Cool beef to room temperature, transfer to airtight container",
-        "Drain & rinse 300g cooked chickpeas (or 150g dried, pre-cooked), add to same pan, warm through (no need to cook further)",
-        "Season chickpeas with same spices if desired, cool & store in separate container (or mix with beef, as preferred)",
-        "Pulse 500g fresh cauliflower florets in food processor into rice-sized pieces (work in batches if needed)",
-        "Heat 1 tbsp olive oil in large pan, add cauliflower rice in single layer, saut\u00e9 2 minutes stirring often, just to warm & dry slightly (do not overcook)",
-        "Cool, portion into containers (80g Diego / 60g Diana per dinner \u00d7 1 = approx 140g total stored; some extra for flexibility)",
-        "Make cilantro-lime dressing: blend 100g plain Greek yogurt, juice of 1 large lime (approx 3 tbsp), 20g packed fresh cilantro leaves, 1 clove minced garlic, pinch sea salt, 1 tsp olive oil until smooth",
-        "If too thick, add 1 tbsp water",
-        "Transfer to small airtight container, refrigerate",
-        "All prepped items stored separately in airtight containers, ready for Wednesday dinner assembly"
-      ],
-      "yields": [
-        "250g cooked seasoned ground beef",
-        "300g cooked seasoned chickpeas",
-        "140g cauliflower rice (saut\u00e9ed)",
-        "200g cilantro-lime dressing"
-      ],
-      "food_category": "red_meat",
-      "video_url": "",
-      "day_of_assembly": {
-        "Wednesday": "Dinner \u2014 Mexican Lean Beef & Chickpea Taco Bowls with Cilantro-Lime Dressing: reheat beef-chickpea mix 3 min (microwave), warm cauliflower rice 2 min, build bowl with cauliflower rice base, top with warm beef-chickpea mix, raw diced red cabbage, diced avocado, cilantro-lime dressing & fresh cilantro garnish"
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 90,
-        "reheat_c": 74,
-        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
-      }
-    },
-    {
-      "id": "prep_batch_7",
-      "title": "Greek Yogurt Parfait Breakfast (Thursday AM)",
-      "order": 7,
-      "active_minutes": 5,
-      "steps": [
-        "Portion 180g (Diego) and 140g (Diana) plain Greek yogurt into 2 glass bowls or containers, seal & refrigerate",
-        "Portion 40g (Diego) and 30g (Diana) store-bought honey granola into separate small containers, keep at room temperature (protects from sogginess until serving)",
-        "Portion 100g (Diego) and 80g (Diana) fresh strawberries, slice & store in sealed containers in fridge"
-      ],
-      "yields": [
-        "2 yogurt portions (prepped separately)",
-        "2 granola portions (kept separate)",
-        "2 strawberry portions (sliced & stored)"
-      ],
-      "food_category": "dairy",
-      "video_url": "",
-      "day_of_assembly": {
-        "Thursday": "Breakfast \u2014 Greek Yogurt Parfait with Granola & Strawberries: layer into bowl \u2014 yogurt base, then granola, then strawberries, drizzle 1 tsp (Diego) or 0.75 tsp (Diana) honey on top, serve immediately"
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "sealed original packaging or airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": null,
-        "use_within_days": 5,
-        "freeze_option_days": null,
-        "reheat_c": null,
-        "safety_note": "Check use-by date on packaging. Opened yogurt: 5\u20137 days."
-      }
-    },
-    {
-      "id": "prep_batch_8",
-      "title": "Herb-Baked Chicken Breast with Farro & Roasted Vegetables (Thursday Lunch)",
-      "order": 8,
-      "active_minutes": 30,
-      "steps": [
-        "Pat 200g chicken breasts dry, place on lined baking tray",
-        "Mix 1.5 tbsp olive oil, 2 tsp lemon juice, 1 tsp dried oregano, 0.5 tsp dried thyme, 2 cloves minced garlic, sea salt & pepper",
-        "Brush mixture generously on chicken, marinate if time allows (up to 2 hrs)",
-        "Bake at 195\u00b0C for 22 minutes until internal temp 165\u00b0F (74\u00b0C), no pink",
-        "Cool to room temperature, slice into strips, portion into containers (150g Diego / 120g Diana per lunch \u00d7 1 = approx 270g total)",
-        "Rinse 70g (Diego) or 55g (Diana) dried farro, place in pot with 210ml water (3:1 ratio)",
-        "Bring to boil, reduce heat, cover, simmer 25-30 min until chewy & tender",
-        "Cool farro, portion into containers (70g Diego / 55g Diana cooked per lunch \u00d7 1 = approx 125g total)",
-        "Prep veg: cut 250g (Diego) or 200g (Diana) eggplant & zucchini into 2 cm cubes",
-        "Toss with 1 tsp (Diego) or 0.75 tsp (Diana) olive oil, sea salt, black pepper",
-        "Roast at 200\u00b0C for 25 minutes, stirring halfway, until tender & lightly golden",
-        "Cool, portion into containers (150g Diego / 120g Diana per lunch \u00d7 1 = approx 270g total)",
-        "All stored in airtight containers & refrigerated until Thursday"
-      ],
-      "yields": [
-        "270g sliced herb-baked chicken",
-        "125g cooked farro",
-        "270g roasted eggplant & zucchini"
-      ],
-      "food_category": "poultry",
-      "video_url": "",
-      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa: slice 180g grilled chicken, measure 150g roasted vegetables and 100g cooked quinoa, arrange on plate, drizzle with lemon & olive oil",
         "Thursday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (poultry is only safe ~3 day(s); this is day 4)."
       },
       "storage": {
@@ -306,35 +83,186 @@
       }
     },
     {
-      "id": "prep_batch_9",
-      "title": "Cottage Cheese & Berries Breakfast Portions (Saturday AM)",
-      "order": 9,
-      "active_minutes": 5,
+      "id": "prep_batch_3",
+      "title": "Shredded Ginger Chicken Filling",
+      "order": 3,
+      "active_minutes": 20,
       "steps": [
-        "Open 350g low-fat cottage cheese, portion into 2 containers: 200g (Diego) and 150g (Diana)",
-        "Cover & refrigerate until Saturday",
-        "Portion fresh mixed berries: 50g (Diego) and 40g (Diana) into small containers, refrigerate",
-        "Pre-measure honey granola: 35g (Diego) and 25g (Diana) into small containers, keep at room temperature in sealed bags"
+        "Place 400g cooked chicken (from prep_batch_2, cooled) in medium bowl",
+        "Shred by hand or using two forks into 1\u20132 cm pieces",
+        "Mix 2 tbsp low-sodium soy sauce, 1 tbsp rice vinegar, 1 tsp sesame oil, 1 tsp minced fresh ginger, 1 minced garlic clove in small bowl",
+        "Pour dressing over shredded chicken",
+        "Toss gently to coat evenly",
+        "Store in airtight container in fridge"
       ],
       "yields": [
-        "2 cottage cheese portions (200g Diego, 150g Diana)",
-        "2 berry portions",
-        "2 granola portions"
+        "~400g shredded ginger chicken (seasoned)"
       ],
-      "food_category": "dairy",
+      "food_category": "poultry",
       "video_url": "",
       "day_of_assembly": {
-        "Saturday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (dairy is only safe ~5 day(s); this is day 6)."
+        "Tuesday": "Lunch \u2014 Asian Chicken Lettuce Cups with Bok Choy: reheat 150g shredded ginger chicken (30 sec in microwave or warm in pan), arrange 4 butter lettuce leaves on plate, spoon chicken into leaves, add 150g steamed bok choy, sprinkle sesame seeds"
       },
       "storage": {
         "method": "refrigerate",
-        "container": "sealed original packaging or airtight container",
+        "container": "airtight container",
         "fridge_c": "\u2264 4",
-        "cool_within_hours": null,
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_4",
+      "title": "Spiced Turkey Meatballs & Brown Lentil Salad",
+      "order": 4,
+      "active_minutes": 40,
+      "steps": [
+        "Combine 500g ground turkey, 1 tsp dried oregano, 0.5 tsp ground cumin, 1 tsp salt, 0.5 tsp black pepper in large bowl",
+        "Mix gently with hands until just combined (do not overwork)",
+        "Shape into 18 equal meatballs (~25g each), place on parchment-lined baking sheet",
+        "Bake at 190\u00b0C for 18 minutes until internal temp reaches 75\u00b0C",
+        "Cool on baking sheet; transfer to airtight container, cover, refrigerate",
+        "Meanwhile, cook 200g dried brown lentils in 600 ml water with pinch of salt; simmer 25 min until tender but not mushy; drain if excess liquid remains, cool",
+        "Dice 100g cucumber into small pieces; halve 100g cherry tomatoes",
+        "Combine cooled lentils, cucumber, tomatoes, 2 tbsp fresh parsley, 1 tbsp fresh mint (minced) in bowl",
+        "Whisk together 2 tbsp olive oil, 1 tbsp balsamic vinegar, salt, pepper",
+        "Pour dressing over lentil salad, toss gently",
+        "Store in airtight container in fridge (lentils keep up to 5 days)"
+      ],
+      "yields": [
+        "18 turkey meatballs (~450g cooked)",
+        "~600g brown lentil salad (with dressing)"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Lunch \u2014 Spiced Turkey Meatballs with Brown Lentil Salad: reheat 6 turkey meatballs in oven 180\u00b0C for 5 min, measure 180g lentil salad into bowl, arrange warm meatballs on top, serve",
+        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (red meat is only safe ~3 day(s); this is day 5)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_5",
+      "title": "Spiced Ground Beef & Chickpea Base",
+      "order": 5,
+      "active_minutes": 20,
+      "steps": [
+        "Heat 1 tsp olive oil in large non-stick skillet over medium-high heat",
+        "Add 400g lean ground beef (5% fat), breaking apart with wooden spoon",
+        "Cook 5\u20136 minutes, stirring occasionally, until no pink remains; drain if needed",
+        "Add 1 tsp ground cumin, 0.5 tsp mild chilli powder, 1 tsp garlic powder, salt, pepper; stir to coat beef evenly",
+        "Cook 1 minute more until fragrant; remove from heat, cool slightly",
+        "Transfer to airtight container, cover, refrigerate",
+        "Open 1 can (400g) chickpeas, drain and rinse thoroughly in colander",
+        "Drain roasted red peppers from jar (use ~100g); chop into small dice",
+        "Combine chickpeas, red pepper dice, 1 tsp olive oil, juice of 0.5 lime, salt, pepper in bowl",
+        "Mix gently, transfer to airtight container, refrigerate"
+      ],
+      "yields": [
+        "~380g cooked spiced ground beef",
+        "~320g chickpea & roasted pepper mixture"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Dinner \u2014 Mexican-Style Ground Beef & Chickpea Bowl: warm 100g cooked ground beef in pan, add 80g chickpea mixture and warm through, arrange 150g romaine lettuce in bowl, top with warm beef mixture and 100g halved cherry tomatoes, squeeze fresh lime, sprinkle cilantro",
+        "Saturday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (red meat is only safe ~3 day(s); this is day 6)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_6",
+      "title": "Chickpea & Vegetable Salad with Tahini Dressing",
+      "order": 6,
+      "active_minutes": 25,
+      "steps": [
+        "Open 1 can (400g) chickpeas, drain and rinse thoroughly in colander until water runs clear",
+        "Drain roasted red peppers from jar; chop ~100g into 1 cm dice",
+        "Dice 100g cucumber (English or regular) into 1 cm cubes",
+        "Halve 100g cherry tomatoes",
+        "Chop 2 tbsp fresh parsley and 1 tbsp fresh mint leaves into fine ribbons",
+        "Combine chickpeas, red pepper, cucumber, tomatoes, parsley, mint in large bowl",
+        "Make tahini dressing: whisk 2 tbsp tahini, 2 tbsp fresh lemon juice, 1 tbsp water, 1 minced garlic clove, pinch of salt, pinch of black pepper",
+        "If dressing is too thick, add 1 tbsp more water a time until pourable but still creamy",
+        "Pour tahini dressing over vegetables, toss gently until all pieces are coated",
+        "Transfer to airtight container, cover, refrigerate (keeps up to 5 days)"
+      ],
+      "yields": [
+        "~600g chickpea & vegetable salad with tahini dressing"
+      ],
+      "food_category": "legumes",
+      "video_url": "",
+      "day_of_assembly": {
+        "Sunday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (legumes is only safe ~5 day(s); this is day 7)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
         "use_within_days": 5,
-        "freeze_option_days": null,
-        "reheat_c": null,
-        "safety_note": "Check use-by date on packaging. Opened yogurt: 5\u20137 days."
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
+      }
+    },
+    {
+      "id": "prep_batch_7",
+      "title": "Grilled Mediterranean Vegetables",
+      "order": 7,
+      "active_minutes": 15,
+      "steps": [
+        "Rinse zucchini (200g), bell peppers (red/yellow, 150g), eggplant (100g); pat dry with paper towels",
+        "Slice zucchini lengthwise into 0.5 cm thick planks",
+        "Cut bell peppers into 2 cm thick strips, removing seeds and white membrane",
+        "Slice eggplant lengthwise into 0.5 cm thick planks (salt lightly, let sit 10 min to remove excess moisture, then pat dry)",
+        "Brush all vegetables lightly on both sides with 1 tsp olive oil total",
+        "Season generously with salt, black pepper, 0.5 tsp dried oregano",
+        "Heat grill pan or cast-iron skillet over medium-high heat until just smoking",
+        "Grill zucchini 3 min per side until tender and golden; transfer to cutting board",
+        "Grill bell pepper 3 min per side; transfer to board",
+        "Grill eggplant 2 min per side until golden; transfer to board",
+        "Cool vegetables to room temperature",
+        "Chop all grilled vegetables into bite-sized (2\u20133 cm) pieces; store in airtight container in fridge (keeps 4 days)"
+      ],
+      "yields": [
+        "~450g grilled and chopped mixed vegetables"
+      ],
+      "food_category": "vegetables_cooked",
+      "video_url": "",
+      "day_of_assembly": {
+        "Sunday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (vegetables cooked is only safe ~4 day(s); this is day 7)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
       }
     }
   ]

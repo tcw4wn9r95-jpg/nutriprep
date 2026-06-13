@@ -64,5 +64,27 @@
       "diego": 1838,
       "diana": 1427
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Boiled Egg with Sourdough & Berries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Baked White Fish with Lemon & Green Beans",
+      "Boiled Egg with Sourdough & Berries",
+      "Asian Chicken Lettuce Cups with Bok Choy",
+      "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
+      "Boiled Egg with Sourdough & Berries",
+      "Spiced Turkey Meatballs with Brown Lentil Salad",
+      "Mexican-Style Ground Beef & Chickpea Bowl",
+      "Boiled Egg with Sourdough & Berries"
+    ],
+    "shopping_items": 77,
+    "prep_minutes": 170,
+    "day_kcal": {
+      "diego": 1877,
+      "diana": 1426
+    }
   }
 ]
