@@ -4,96 +4,52 @@
     "date": "2026-06-15",
     "meals": [
       {
-        "slot": "breakfast",
-        "name": "Savoury Egg & Sourdough with Rocket, Cherry Tomatoes & Orange",
-        "time": "07:30",
+        "name": "Fried Eggs on Sourdough",
+        "time": "08:00",
         "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "overhead photo of two soft-boiled eggs halved on toasted whole-grain sourdough, rocket leaves and halved cherry tomatoes alongside, a peeled orange in segments, natural morning light on a white ceramic plate",
+        "cook_minutes_day_of": 8,
+        "image_prompt": "Two fried eggs with runny yolks on toasted sourdough bread",
         "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "1. Bring a small saucepan of water to a boil. Lower 2 eggs (Diego) or 2 eggs (Diana) gently with a spoon and cook exactly 7 minutes for jammy yolks.",
-          "2. Meanwhile toast 2 slices (80g Diego) or 1.5 slices (60g Diana) whole-grain sourdough until golden.",
-          "3. Rinse 40g rocket and 60g cherry tomatoes; halve the tomatoes.",
-          "4. Transfer eggs to cold water 1 min, peel and halve. Place on toast.",
-          "5. Arrange rocket and tomatoes on the side. Drizzle 1 tsp olive oil over greens.",
-          "6. Peel and segment 1 orange per person. Serve with 500 ml water."
+        "prep_steps": [
+          "Toast sourdough bread",
+          "Heat butter in a pan"
         ],
-        "storage_ref": "",
-        "food_category": "eggs_cooked",
+        "day_of_steps": [
+          "Crack eggs into hot buttered pan",
+          "Fry until whites are set, yolks still runny (3–4 min)",
+          "Season with salt and pepper",
+          "Serve on warm sourdough toast"
+        ],
+        "food_category": "breakfast",
         "portions": {
           "diego": {
             "ingredients": [
-              {
-                "item": "Eggs (oeufs)",
-                "qty": "2 large"
-              },
-              {
-                "item": "Whole-grain sourdough (pain complet au levain)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Rocket / arugula (roquette)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "60 g"
-              },
-              {
-                "item": "Extra-virgin olive oil (huile d'olive vierge extra)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Orange (orange)",
-                "qty": "1 medium (150 g)"
-              }
+              "2 eggs",
+              "1 slice sourdough bread",
+              "1 tsp butter"
             ],
             "macros": {
-              "kcal": 420,
-              "protein_g": 22,
-              "carbs_g": 48,
-              "fat_g": 14,
-              "fiber_g": 6
+              "kcal": 280,
+              "protein_g": 14,
+              "carbs_g": 24,
+              "fat_g": 12
             }
           },
           "diana": {
             "ingredients": [
-              {
-                "item": "Eggs (oeufs)",
-                "qty": "2 large"
-              },
-              {
-                "item": "Whole-grain sourdough (pain complet au levain)",
-                "qty": "60 g"
-              },
-              {
-                "item": "Rocket / arugula (roquette)",
-                "qty": "30 g"
-              },
-              {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "50 g"
-              },
-              {
-                "item": "Extra-virgin olive oil (huile d'olive vierge extra)",
-                "qty": "0.5 tsp"
-              },
-              {
-                "item": "Orange (orange)",
-                "qty": "1 medium (150 g)"
-              }
+              "2 eggs",
+              "1 slice sourdough bread",
+              "1 tsp butter"
             ],
             "macros": {
-              "kcal": 340,
-              "protein_g": 18,
-              "carbs_g": 36,
-              "fat_g": 11,
-              "fiber_g": 5
+              "kcal": 280,
+              "protein_g": 14,
+              "carbs_g": 24,
+              "fat_g": 12
             }
           }
-        }
+        },
+        "slot": "breakfast"
       },
       {
         "slot": "am_snack",
@@ -161,14 +117,14 @@
         "image_prompt": "overhead photo of a vibrant bowl with sliced cumin-spiced grilled chicken breast, roasted red and yellow pepper strips, canned chickpeas, fluffy brown rice, a wedge of lime and a drizzle of olive oil, natural light on a rustic table",
         "video_url": "",
         "prep_steps": [
-          "Sunday: marinate chicken breasts in cumin, paprika, garlic powder, olive oil, lime juice \u2014 refrigerate.",
-          "Sunday: grill or oven-bake chicken at 200\u00b0C for 20\u201322 min until cooked through; slice and store in airtight container.",
-          "Sunday: roast sliced red and yellow peppers with olive oil, cumin, salt at 200\u00b0C for 20 min; store in airtight container.",
+          "Sunday: marinate chicken breasts in cumin, paprika, garlic powder, olive oil, lime juice — refrigerate.",
+          "Sunday: grill or oven-bake chicken at 200°C for 20–22 min until cooked through; slice and store in airtight container.",
+          "Sunday: roast sliced red and yellow peppers with olive oil, cumin, salt at 200°C for 20 min; store in airtight container.",
           "Sunday: drain and rinse canned chickpeas; portion into container."
         ],
         "day_of_steps": [
           "1. Cook brown rice fresh: 60g dry (Diego) / 45g dry (Diana) in boiling salted water ~25 min; drain.",
-          "2. While rice cooks, reheat sliced chicken and roasted peppers in a pan over medium heat 3\u20134 min.",
+          "2. While rice cooks, reheat sliced chicken and roasted peppers in a pan over medium heat 3–4 min.",
           "3. Warm chickpeas (80g Diego / 60g Diana) in the same pan 1 min.",
           "4. Build bowl: rice base, then chickpeas, then chicken and peppers on top.",
           "5. Squeeze lime juice over bowl. Drizzle 1 tsp (Diego) / 1 tsp (Diana) olive oil.",
@@ -188,7 +144,7 @@
                 "qty": "60 g dry"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -243,7 +199,7 @@
                 "qty": "45 g dry"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -360,13 +316,13 @@
         "image_prompt": "overhead photo of a baked salmon fillet beside a mound of quinoa mixed with diced carrots and broccoli florets, drizzled with balsamic glaze, served on a light ceramic plate with natural evening light",
         "video_url": "",
         "prep_steps": [
-          "Sunday: cook quinoa (100g dry total) in salted water 12\u201315 min; drain, cool, store in airtight container.",
-          "Sunday: roast broccoli florets and carrot rounds with olive oil, turmeric, black pepper at 200\u00b0C for 20 min; store."
+          "Sunday: cook quinoa (100g dry total) in salted water 12–15 min; drain, cool, store in airtight container.",
+          "Sunday: roast broccoli florets and carrot rounds with olive oil, turmeric, black pepper at 200°C for 20 min; store."
         ],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Season salmon fillets (150g Diego / 120g Diana) with garlic powder, dried oregano, salt, pepper.",
-          "2. Place on a lined baking tray; bake 12\u201314 min until flesh flakes easily.",
-          "3. Meanwhile warm quinoa (80g cooked Diego / 60g cooked Diana) and roasted veg (80g broccoli+carrot each) in a pan 3\u20134 min.",
+          "1. Preheat oven to 200°C. Season salmon fillets (150g Diego / 120g Diana) with garlic powder, dried oregano, salt, pepper.",
+          "2. Place on a lined baking tray; bake 12–14 min until flesh flakes easily.",
+          "3. Meanwhile warm quinoa (80g cooked Diego / 60g cooked Diana) and roasted veg (80g broccoli+carrot each) in a pan 3–4 min.",
           "4. Stir 1 tsp balsamic vinegar and 1 tsp olive oil into quinoa mixture.",
           "5. Plate quinoa-veg base, top with salmon fillet.",
           "6. Serve with 500 ml water."
@@ -405,7 +361,7 @@
                 "qty": "0.25 tsp"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -452,7 +408,7 @@
                 "qty": "0.25 tsp"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -473,18 +429,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1785,
-        "protein_g": 128,
-        "carbs_g": 174,
-        "fat_g": 62,
-        "fiber_g": 27
+        "kcal": 1645,
+        "protein_g": 120,
+        "carbs_g": 150,
+        "fat_g": 60
       },
       "diana": {
-        "kcal": 1420,
-        "protein_g": 100,
-        "carbs_g": 138,
-        "fat_g": 47,
-        "fiber_g": 23
+        "kcal": 1360,
+        "protein_g": 96,
+        "carbs_g": 126,
+        "fat_g": 48
       }
     }
   },
@@ -503,7 +457,7 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Toast 80g (Diego) / 60g (Diana) whole-grain sourdough.",
-          "2. Flake smoked mackerel \u2014 80g (Diego) / 60g (Diana) \u2014 evenly over the toast.",
+          "2. Flake smoked mackerel — 80g (Diego) / 60g (Diana) — evenly over the toast.",
           "3. Top with 30g rocket and thin slices of 40g cucumber per person.",
           "4. Add a squeeze of lime juice and a grind of black pepper.",
           "5. Serve 150g strawberries on the side. Drink 500 ml water."
@@ -514,7 +468,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Smoked mackerel (maquereau fum\u00e9)",
+                "item": "Smoked mackerel (maquereau fumé)",
                 "qty": "80 g"
               },
               {
@@ -549,7 +503,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Smoked mackerel (maquereau fum\u00e9)",
+                "item": "Smoked mackerel (maquereau fumé)",
                 "qty": "60 g"
               },
               {
@@ -654,7 +608,7 @@
         "day_of_steps": [
           "1. Cook brown rice: 60g dry (Diego) / 45g dry (Diana) in boiling salted water ~25 min; drain.",
           "2. Heat 1 tsp sesame oil in a wok or large pan over high heat.",
-          "3. Add marinated chicken strips (180g Diego / 140g Diana raw). Stir-fry 5\u20136 min until cooked through.",
+          "3. Add marinated chicken strips (180g Diego / 140g Diana raw). Stir-fry 5–6 min until cooked through.",
           "4. Add 80g sliced zucchini and 60g spinach; stir-fry 2 min until just wilted.",
           "5. Add 1 tbsp soy sauce and 0.5 tsp ginger powder; toss.",
           "6. Serve over rice. Top with 1 tsp sesame oil. Add 1 banana or apple on the side.",
@@ -678,11 +632,11 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "1.5 tsp"
               },
               {
@@ -721,11 +675,11 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "1 tsp"
               },
               {
@@ -826,12 +780,12 @@
         "image_prompt": "overhead photo of a baked mackerel fillet beside roasted cherry tomatoes and wilted spinach on a bed of green lentils, drizzled with red wine vinegar dressing on a terracotta ceramic plate, warm evening light",
         "video_url": "",
         "prep_steps": [
-          "Sunday: cook dried lentils (150g dry total household) in unsalted water 20\u201325 min; drain, cool, store in airtight container."
+          "Sunday: cook dried lentils (150g dry total household) in unsalted water 20–25 min; drain, cool, store in airtight container."
         ],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Season mackerel fillets (130g Diego / 110g Diana) with dried thyme, paprika, salt, pepper.",
-          "2. Place on a lined baking tray with 80g cherry tomatoes per person; bake 12\u201314 min.",
-          "3. Meanwhile wilt 60g spinach per person in a hot dry pan 1\u20132 min.",
+          "1. Preheat oven to 200°C. Season mackerel fillets (130g Diego / 110g Diana) with dried thyme, paprika, salt, pepper.",
+          "2. Place on a lined baking tray with 80g cherry tomatoes per person; bake 12–14 min.",
+          "3. Meanwhile wilt 60g spinach per person in a hot dry pan 1–2 min.",
           "4. Warm cooked lentils (90g Diego / 70g Diana) in a small saucepan with 1 tsp red wine vinegar, salt, garlic powder.",
           "5. Plate lentils first, spinach on top, then mackerel and roasted tomatoes.",
           "6. Drizzle 1 tsp olive oil. Serve with 500 ml water."
@@ -854,7 +808,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -866,7 +820,7 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Dried thyme (thym s\u00e9ch\u00e9)",
+                "item": "Dried thyme (thym séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -897,7 +851,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -909,7 +863,7 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Dried thyme (thym s\u00e9ch\u00e9)",
+                "item": "Dried thyme (thym séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -962,7 +916,7 @@
           "1. Whisk 2 eggs with a pinch of salt and black pepper per person.",
           "2. Heat 0.5 tsp olive oil in a non-stick pan over medium heat.",
           "3. Add 40g spinach and 50g halved cherry tomatoes; cook 1 min until spinach wilts.",
-          "4. Pour egg mixture over veg; cook 2\u20133 min until just set. Fold and slide onto plate.",
+          "4. Pour egg mixture over veg; cook 2–3 min until just set. Fold and slide onto plate.",
           "5. Toast 70g (Diego) / 55g (Diana) sourdough.",
           "6. Serve with 1 orange per person and 500 ml water."
         ],
@@ -976,7 +930,7 @@
                 "qty": "2 large"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "40 g"
               },
               {
@@ -1011,7 +965,7 @@
                 "qty": "2 large"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "40 g"
               },
               {
@@ -1110,7 +1064,7 @@
           "Sunday: grill or pan-sear chicken for Wednesday lunch (180g Diego / 140g Diana raw); slice; store separately."
         ],
         "day_of_steps": [
-          "1. Reheat sliced chicken (180g Diego / 140g Diana) in a pan with 1 tsp olive oil over medium heat 3\u20134 min.",
+          "1. Reheat sliced chicken (180g Diego / 140g Diana) in a pan with 1 tsp olive oil over medium heat 3–4 min.",
           "2. Retrieve cooked lentils from prep_batch_4 (90g Diego / 70g Diana).",
           "3. Whisk together 1 tsp Dijon mustard, 1 tsp red wine vinegar, 1 tsp olive oil, pinch black pepper per serving.",
           "4. Build salad: rocket base, grated raw carrot (60g per person), lentils, chicken strips.",
@@ -1274,11 +1228,11 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Cube 120g (Diego) / 90g (Diana) sweet potato (skin on); toss with 0.5 tsp olive oil, cumin, salt.",
+          "1. Preheat oven to 200°C. Cube 120g (Diego) / 90g (Diana) sweet potato (skin on); toss with 0.5 tsp olive oil, cumin, salt.",
           "2. Spread sweet potato on a lined tray; roast 10 min.",
           "3. Meanwhile coat chicken breast (150g Diego / 120g Diana) in 1 tsp harissa paste + pinch garlic powder.",
           "4. After 10 min add chicken and 80g broccoli + 70g zucchini chunks per person to the tray.",
-          "5. Roast everything together 18\u201320 min until chicken reaches 75\u00b0C internal temperature.",
+          "5. Roast everything together 18–20 min until chicken reaches 75°C internal temperature.",
           "6. Drizzle 1 tsp olive oil over veg before serving. Serve with 500 ml water."
         ],
         "storage_ref": "",
@@ -1303,7 +1257,7 @@
                 "qty": "70 g"
               },
               {
-                "item": "Harissa paste (p\u00e2te de harissa)",
+                "item": "Harissa paste (pâte de harissa)",
                 "qty": "1 tsp"
               },
               {
@@ -1346,7 +1300,7 @@
                 "qty": "70 g"
               },
               {
-                "item": "Harissa paste (p\u00e2te de harissa)",
+                "item": "Harissa paste (pâte de harissa)",
                 "qty": "1 tsp"
               },
               {
@@ -1552,7 +1506,7 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Heat 1 tsp olive oil in a pan over medium-high heat. Add 180g (Diego) / 140g (Diana) chicken breast strips with cumin, chili powder, garlic powder; cook 6\u20137 min.",
+          "1. Heat 1 tsp olive oil in a pan over medium-high heat. Add 180g (Diego) / 140g (Diana) chicken breast strips with cumin, chili powder, garlic powder; cook 6–7 min.",
           "2. Meanwhile warm canned white beans (80g Diego / 60g Diana drained) with 0.5 tsp cumin in a small pan.",
           "3. Warm 2 corn tortillas (Diego) / 1.5 tortillas (Diana) in a dry pan 30 sec per side.",
           "4. Slice and season 60g roasted red pepper from pantry OR quickly pan-roast 70g fresh red pepper 4 min.",
@@ -1569,12 +1523,12 @@
                 "qty": "180 g raw"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
+                "item": "Canned white beans (haricots blancs en boîte)",
                 "qty": "80 g drained"
               },
               {
-                "item": "Corn tortillas (tortillas de ma\u00efs)",
-                "qty": "2 (\u224850 g)"
+                "item": "Corn tortillas (tortillas de maïs)",
+                "qty": "2 (≈50 g)"
               },
               {
                 "item": "Red bell pepper (poivron rouge)",
@@ -1616,12 +1570,12 @@
                 "qty": "140 g raw"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
+                "item": "Canned white beans (haricots blancs en boîte)",
                 "qty": "60 g drained"
               },
               {
-                "item": "Corn tortillas (tortillas de ma\u00efs)",
-                "qty": "1.5 (\u224838 g)"
+                "item": "Corn tortillas (tortillas de maïs)",
+                "qty": "1.5 (≈38 g)"
               },
               {
                 "item": "Red bell pepper (poivron rouge)",
@@ -1734,10 +1688,10 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. In a roasting tin mix drained chickpeas (70g Diego / 55g Diana), sliced zucchini (80g each), sliced celery (40g each), 2 tbsp tomato paste, 1 tsp harissa, 0.5 tsp cumin, 1 tsp olive oil, splash of water.",
+          "1. Preheat oven to 200°C. In a roasting tin mix drained chickpeas (70g Diego / 55g Diana), sliced zucchini (80g each), sliced celery (40g each), 2 tbsp tomato paste, 1 tsp harissa, 0.5 tsp cumin, 1 tsp olive oil, splash of water.",
           "2. Roast veg/chickpea mixture 10 min.",
           "3. Nestle salmon fillets (150g Diego / 120g Diana) into the tin; season with garlic powder, paprika, salt.",
-          "4. Roast further 12\u201314 min until salmon is just cooked.",
+          "4. Roast further 12–14 min until salmon is just cooked.",
           "5. Plate chickpea veg base, top with salmon. Drizzle remaining tray juices. Serve with 500 ml water."
         ],
         "storage_ref": "",
@@ -1750,7 +1704,7 @@
                 "qty": "150 g raw"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "70 g drained"
               },
               {
@@ -1758,15 +1712,15 @@
                 "qty": "80 g"
               },
               {
-                "item": "Celery (c\u00e9leri)",
+                "item": "Celery (céleri)",
                 "qty": "40 g"
               },
               {
-                "item": "Tomato paste (concentr\u00e9 de tomates)",
+                "item": "Tomato paste (concentré de tomates)",
                 "qty": "2 tbsp"
               },
               {
-                "item": "Harissa paste (p\u00e2te de harissa)",
+                "item": "Harissa paste (pâte de harissa)",
                 "qty": "1 tsp"
               },
               {
@@ -1801,7 +1755,7 @@
                 "qty": "120 g raw"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "55 g drained"
               },
               {
@@ -1809,15 +1763,15 @@
                 "qty": "80 g"
               },
               {
-                "item": "Celery (c\u00e9leri)",
+                "item": "Celery (céleri)",
                 "qty": "40 g"
               },
               {
-                "item": "Tomato paste (concentr\u00e9 de tomates)",
+                "item": "Tomato paste (concentré de tomates)",
                 "qty": "2 tbsp"
               },
               {
-                "item": "Harissa paste (p\u00e2te de harissa)",
+                "item": "Harissa paste (pâte de harissa)",
                 "qty": "1 tsp"
               },
               {
@@ -1891,7 +1845,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Smoked mackerel (maquereau fum\u00e9)",
+                "item": "Smoked mackerel (maquereau fumé)",
                 "qty": "80 g"
               },
               {
@@ -1926,7 +1880,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Smoked mackerel (maquereau fum\u00e9)",
+                "item": "Smoked mackerel (maquereau fumé)",
                 "qty": "60 g"
               },
               {
@@ -2028,7 +1982,7 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Cook 60g (Diego) / 45g (Diana) dry whole-wheat pasta/noodles in boiling salted water per pack instructions (~10 min); drain.",
-          "2. Heat 1 tsp sesame oil in a pan; stir-fry 60g bell pepper strips and 80g broccoli per person 3\u20134 min over high heat.",
+          "2. Heat 1 tsp sesame oil in a pan; stir-fry 60g bell pepper strips and 80g broccoli per person 3–4 min over high heat.",
           "3. Add 0.5 tsp ginger powder, 1 tbsp soy sauce; toss and set aside.",
           "4. In the same pan, add 0.5 tsp olive oil; pan-sear mackerel fillet (120g Diego / 100g Diana raw) skin-side down 3 min, flip 2 min.",
           "5. Toss noodles with veg and soy-ginger sauce.",
@@ -2044,7 +1998,7 @@
                 "qty": "120 g raw"
               },
               {
-                "item": "Whole-wheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Whole-wheat pasta (pâtes complètes)",
                 "qty": "60 g dry"
               },
               {
@@ -2060,7 +2014,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "1 tsp"
               },
               {
@@ -2095,7 +2049,7 @@
                 "qty": "100 g raw"
               },
               {
-                "item": "Whole-wheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Whole-wheat pasta (pâtes complètes)",
                 "qty": "45 g dry"
               },
               {
@@ -2111,7 +2065,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "1 tsp"
               },
               {
@@ -2208,9 +2162,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Rub chicken thighs (160g Diego / 125g Diana raw) with cumin, garlic powder, paprika, olive oil, salt.",
+          "1. Preheat oven to 200°C. Rub chicken thighs (160g Diego / 125g Diana raw) with cumin, garlic powder, paprika, olive oil, salt.",
           "2. Slice 80g carrots per person into rounds; toss with 0.5 tsp olive oil, turmeric, black pepper.",
-          "3. Place chicken and carrots on a lined tray; roast 22\u201325 min.",
+          "3. Place chicken and carrots on a lined tray; roast 22–25 min.",
           "4. Meanwhile pour 60g (Diego) / 45g (Diana) dry whole-wheat couscous into a bowl; add equal volume of boiling water + pinch salt; cover 5 min; fluff with fork.",
           "5. In the last 2 min of roasting, place 60g spinach per person on the tray; let it wilt.",
           "6. Plate couscous, top with spinach, carrots and chicken. Serve with 500 ml water."
@@ -2233,7 +2187,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -2280,7 +2234,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -2347,8 +2301,8 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Dice 40g red bell pepper per person finely.",
-          "2. Heat 0.5 tsp olive oil in a non-stick pan; saut\u00e9 pepper 2 min, add 30g spinach, cook 1 min until wilted.",
-          "3. Whisk 2 eggs with salt and black pepper; pour over veg; cook on medium 2\u20133 min; fold and plate.",
+          "2. Heat 0.5 tsp olive oil in a non-stick pan; sauté pepper 2 min, add 30g spinach, cook 1 min until wilted.",
+          "3. Whisk 2 eggs with salt and black pepper; pour over veg; cook on medium 2–3 min; fold and plate.",
           "4. Toast 70g (Diego) / 55g (Diana) sourdough.",
           "5. Serve with 100g blueberries per person and 500 ml water."
         ],
@@ -2366,7 +2320,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "30 g"
               },
               {
@@ -2401,7 +2355,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "30 g"
               },
               {
@@ -2494,9 +2448,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Toss 80g sliced zucchini and 70g cherry tomatoes per person with 0.5 tsp olive oil, dried oregano, salt; roast 15 min.",
+          "1. Preheat oven to 200°C. Toss 80g sliced zucchini and 70g cherry tomatoes per person with 0.5 tsp olive oil, dried oregano, salt; roast 15 min.",
           "2. Meanwhile warm canned chickpeas (60g Diego / 50g Diana drained) in a small pan with 0.5 tsp cumin.",
-          "3. Pan-sear salmon fillet (150g Diego / 120g Diana raw) in 0.5 tsp olive oil, 3\u20134 min per side.",
+          "3. Pan-sear salmon fillet (150g Diego / 120g Diana raw) in 0.5 tsp olive oil, 3–4 min per side.",
           "4. Whisk 1 tsp balsamic vinegar + 1 tsp olive oil + pinch garlic powder as dressing.",
           "5. Build bowl: chickpeas and roasted veg base, flaked salmon on top, drizzle dressing.",
           "6. Serve with 1 orange per person and 500 ml water."
@@ -2511,7 +2465,7 @@
                 "qty": "150 g raw"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -2531,7 +2485,7 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -2558,7 +2512,7 @@
                 "qty": "120 g raw"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "50 g drained"
               },
               {
@@ -2578,7 +2532,7 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -2676,9 +2630,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. In a roasting tin combine drained white beans (80g Diego / 60g Diana), sliced bell peppers (60g red + 40g yellow per person), sliced celery (40g each), 1 tsp olive oil, paprika, dried thyme, garlic powder, salt.",
+          "1. Preheat oven to 200°C. In a roasting tin combine drained white beans (80g Diego / 60g Diana), sliced bell peppers (60g red + 40g yellow per person), sliced celery (40g each), 1 tsp olive oil, paprika, dried thyme, garlic powder, salt.",
           "2. Nestle chicken breasts (150g Diego / 120g Diana raw) on top; rub with paprika, garlic powder, olive oil, salt.",
-          "3. Roast 25\u201328 min until chicken is cooked through (internal temp 75\u00b0C).",
+          "3. Roast 25–28 min until chicken is cooked through (internal temp 75°C).",
           "4. Plate beans and veg, top with sliced chicken. Drizzle pan juices. Serve with 500 ml water."
         ],
         "storage_ref": "",
@@ -2691,7 +2645,7 @@
                 "qty": "150 g raw"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
+                "item": "Canned white beans (haricots blancs en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -2703,7 +2657,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Celery (c\u00e9leri)",
+                "item": "Celery (céleri)",
                 "qty": "40 g"
               },
               {
@@ -2715,7 +2669,7 @@
                 "qty": "0.5 tsp"
               },
               {
-                "item": "Dried thyme (thym s\u00e9ch\u00e9)",
+                "item": "Dried thyme (thym séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -2738,7 +2692,7 @@
                 "qty": "120 g raw"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
+                "item": "Canned white beans (haricots blancs en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -2750,7 +2704,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Celery (c\u00e9leri)",
+                "item": "Celery (céleri)",
                 "qty": "40 g"
               },
               {
@@ -2762,7 +2716,7 @@
                 "qty": "0.5 tsp"
               },
               {
-                "item": "Dried thyme (thym s\u00e9ch\u00e9)",
+                "item": "Dried thyme (thym séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -2824,7 +2778,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Smoked mackerel (maquereau fum\u00e9)",
+                "item": "Smoked mackerel (maquereau fumé)",
                 "qty": "80 g"
               },
               {
@@ -2859,7 +2813,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Smoked mackerel (maquereau fum\u00e9)",
+                "item": "Smoked mackerel (maquereau fumé)",
                 "qty": "60 g"
               },
               {
@@ -2960,8 +2914,8 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Toss carrot rounds (80g per person) and zucchini chunks (70g per person) with 0.5 tsp olive oil, cumin, turmeric, salt; roast 20 min.",
-          "2. Season chicken breast (180g Diego / 140g Diana raw) with cumin, garlic powder, paprika; pan-sear in 0.5 tsp olive oil 5\u20136 min per side.",
+          "1. Preheat oven to 200°C. Toss carrot rounds (80g per person) and zucchini chunks (70g per person) with 0.5 tsp olive oil, cumin, turmeric, salt; roast 20 min.",
+          "2. Season chicken breast (180g Diego / 140g Diana raw) with cumin, garlic powder, paprika; pan-sear in 0.5 tsp olive oil 5–6 min per side.",
           "3. Pour dry couscous (60g Diego / 45g Diana) into bowl; add equal volume boiling water + pinch salt + 0.5 tsp harissa; cover 5 min; fluff.",
           "4. Warm canned lentils (80g Diego / 60g Diana drained) in pan with red wine vinegar 1 min.",
           "5. Build bowl: couscous, lentils, roasted veg, sliced chicken.",
@@ -2981,7 +2935,7 @@
                 "qty": "60 g dry"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -2997,7 +2951,7 @@
                 "qty": "1.5 tsp"
               },
               {
-                "item": "Harissa paste (p\u00e2te de harissa)",
+                "item": "Harissa paste (pâte de harissa)",
                 "qty": "0.5 tsp"
               },
               {
@@ -3036,7 +2990,7 @@
                 "qty": "45 g dry"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -3052,7 +3006,7 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Harissa paste (p\u00e2te de harissa)",
+                "item": "Harissa paste (pâte de harissa)",
                 "qty": "0.5 tsp"
               },
               {
@@ -3158,10 +3112,10 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Slice sweet potato (120g Diego / 90g Diana) into wedges (skin on); toss with 0.5 tsp olive oil, garlic powder, paprika, salt.",
+          "1. Preheat oven to 200°C. Slice sweet potato (120g Diego / 90g Diana) into wedges (skin on); toss with 0.5 tsp olive oil, garlic powder, paprika, salt.",
           "2. Roast sweet potato wedges 10 min.",
           "3. Add salmon fillets (150g Diego / 120g Diana raw) seasoned with dried oregano, turmeric, salt to the tray; add 70g cherry tomatoes per person.",
-          "4. Roast 14\u201315 min until salmon flakes.",
+          "4. Roast 14–15 min until salmon flakes.",
           "5. In the last 2 min, scatter 60g spinach per person over the tray; let wilt in oven heat.",
           "6. Plate with sweet potato wedges, spinach and tomatoes beside salmon. Serve with 500 ml water."
         ],
@@ -3179,7 +3133,7 @@
                 "qty": "120 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -3191,7 +3145,7 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "0.25 tsp"
               },
               {
@@ -3226,7 +3180,7 @@
                 "qty": "90 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -3238,7 +3192,7 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "0.25 tsp"
               },
               {
