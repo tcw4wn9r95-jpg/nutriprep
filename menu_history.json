@@ -86,5 +86,27 @@
       "diego": 1877,
       "diana": 1426
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Herb-Crusted Boiled Egg with Sourdough & Raspberries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Boiled Egg & Cheese Plate with Whole-Grain Pita & Avocado",
+      "Herb-Crusted Boiled Egg with Sourdough & Blueberries",
+      "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
+      "Mexican-Style Chicken Lettuce Wrap with Black Beans & Lime",
+      "Herb-Crusted Boiled Egg with Sourdough & Peach",
+      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
+      "Asian Tofu & Bok Choy Stir-Fry with Brown Rice",
+      "Herb-Crusted Boiled Egg with Sourdough & Strawberries"
+    ],
+    "shopping_items": 80,
+    "prep_minutes": 285,
+    "day_kcal": {
+      "diego": 1934,
+      "diana": 1435
+    }
   }
 ]
