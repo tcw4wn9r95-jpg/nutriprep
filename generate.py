@@ -518,9 +518,10 @@ print("Stage 2: building the week from the locked palette...")
 _DEBUG["phase"] = "calling Claude API"
 stop_reason = None
 with client.messages.stream(
-    # TEMPORARY (testing): cheapest model to keep token spend low while we iterate.
-    # Switch back to "claude-sonnet-4-6" for launch — it produces richer menus.
-    model="claude-haiku-4-5-20251001",
+    # Stage 2 needs strong instruction-following to honour the locked fresh palette,
+    # macro targets and food-safety rules — Haiku ignored ~20% of constraints, so use
+    # Sonnet here. Generation runs ~weekly, so the extra cost is a few cents.
+    model="claude-sonnet-4-6",
     max_tokens=32000,
     messages=[{"role": "user", "content": prompt}],
 ) as stream:
