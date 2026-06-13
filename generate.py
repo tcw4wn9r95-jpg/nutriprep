@@ -59,6 +59,15 @@ if (BASE / "menu_history.json").exists():
     with open(BASE / "menu_history.json") as f:
         menu_history = json.load(f)
 
+# Preferences the household taught Coach Léa through chat (manual swaps, likes, dislikes).
+learned_prefs: dict = {}
+if (BASE / "learned_preferences.json").exists():
+    with open(BASE / "learned_preferences.json") as f:
+        try:
+            learned_prefs = json.load(f) or {}
+        except Exception:
+            learned_prefs = {}
+
 # ── Load per-user data ────────────────────────────────────────────────────────
 users: dict = {}
 for member in MEMBERS:
@@ -187,8 +196,16 @@ else:
 
 # ── Allergens & preferences ───────────────────────────────────────────────────
 allergens = household.get("allergies", []) + household.get("intolerances", [])
-dislikes = household.get("dislikes", [])
+dislikes = list(household.get("dislikes", [])) + list(learned_prefs.get("avoid", []))
 cuisines = household.get("cuisines_loved", [])
+
+# Free-form things learned from chat: foods they love, manual swaps, general notes.
+_pref_lines = []
+if learned_prefs.get("prefer"):
+    _pref_lines.append("Foods/styles they have told Coach Léa they LOVE — lean into these: " + ", ".join(learned_prefs["prefer"]))
+if learned_prefs.get("notes"):
+    _pref_lines.append("Notes from past manual changes (respect the spirit — don't re-suggest dishes they swapped away): " + "; ".join(learned_prefs["notes"]))
+learned_block = "\n".join(f"  {l}" for l in _pref_lines) if _pref_lines else "  Nothing learned from chat yet."
 budget = household.get("budget_eur_per_week", 130)
 max_prep = household.get("max_prep_minutes_sunday", 150)
 max_cook = household.get("max_cook_minutes_weekday", 25)
@@ -263,6 +280,9 @@ Diego's calorie need changes day to day with training. On training days, raise h
 ## PAST WEEKS (avoid repeating the same dishes)
 {history_block}
 
+## LEARNED FROM CHAT (the household corrected the plan — honour this)
+{learned_block}
+
 ## YOUR RULES
 1. **One menu for the household, two sets of portions.** Each meal has a `portions.diego` and `portions.diana` with their own ingredient quantities and macros. The dish is the same; only amounts differ.
 2. **All 5 slots every day**: breakfast, am_snack, lunch, pm_snack, dinner — no exceptions.
@@ -272,7 +292,11 @@ Diego's calorie need changes day to day with training. On training days, raise h
 6. **Evidence-based**: align with EFSA Dietary Reference Values and WHO guidelines. Sustainable weight loss ≈ 0.25–0.75 kg/week; no crash diets, detoxes, or unproven supplements.
 7. **Hit each member's daily macro targets** (±10% tolerance). Use `day_totals` to verify.
 8. Each week: include oily fish at least twice; legumes on at least 3 days; ≥ 5 portions of veg per day per person.
-9. Batch cooking should produce enough portions for 3–4 days before needing fresh cooking.
+9. **VARIETY IS MANDATORY — the week must NOT feel like eating the same thing every day.**
+   - Never serve the same named dish on two consecutive days for any slot. Across the whole week, no lunch or dinner dish may appear more than twice, and never back-to-back.
+   - Breakfast and snacks may repeat at most twice in the week (not consecutively) — otherwise vary them too.
+   - You MAY batch-cook a base component on Sunday (e.g. roast chicken, cooked quinoa, lentils) and reuse it across 3–4 days for efficiency, BUT each day must transform it into a genuinely DIFFERENT dish: change the cuisine, sauce, vegetables, format (bowl → wrap → salad → traybake → soup) and seasoning so it looks and tastes new. Give each day's dish its own distinct `name` and `image_prompt` — never reuse the same name for a reused base.
+   - Rotate proteins, grains and cuisines across the week; aim for at least 4 different cuisines and 4 different main proteins over the 7 days.
 10. Assign each prep batch a `food_category` from: poultry, red_meat, fish_seafood, eggs_cooked, rice, grains_pasta, legumes, vegetables_cooked, vegetables_raw_prepped, soup_stew, sauce_dairy, dairy, baked_goods, generic.
 11. **Recipe split**: every meal MUST have `prep_steps` (what to batch-cook/pre-portion on Sunday — empty list `[]` if nothing) AND `day_of_steps` (detailed, numbered, beginner-friendly actions performed on the day, including reheating instructions and quantities). Keep `video_url` as an empty string "" (the user attaches videos later).
 12. **Image prompt**: every meal MUST have an `image_prompt` — a short, vivid description of a finished plate of that meal for an AI image generator (mention key ingredients, plating, natural light; no text/words in image).

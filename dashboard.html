@@ -248,6 +248,9 @@
   .meal-sheet { background: var(--surface); border-radius: 28px 28px 0 0; width: 100%; max-height: 92vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
   .sheet-hero { position: relative; }
   .sheet-hero img { width: 100%; height: 210px; object-fit: cover; display: block; }
+  .sheet-hero img.img-ph, .meal-thumb.img-ph { object-fit: contain; background: linear-gradient(135deg,#e8f0e6,#cfe0cc); }
+  .search-links { display: flex; gap: 8px; flex-wrap: wrap; margin: 4px 0 2px; }
+  .search-chip { display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: var(--pine); background: var(--surface-warm); border: 1px solid var(--hair); border-radius: 999px; padding: 6px 12px; text-decoration: none; -webkit-tap-highlight-color: transparent; }
   .sheet-hero .sheet-close, .sheet-close { position: fixed; top: calc(var(--safe-t) + 12px); right: 14px; z-index: 200; width: 40px; height: 40px; border: none; padding: 0; background: rgba(35,33,30,.55); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; line-height: 1; cursor: pointer; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); -webkit-tap-highlight-color: transparent; }
   .sheet-body { padding: 20px 20px calc(30px + var(--safe-b)); }
   .sheet-body h2 { font-family: var(--serif); font-size: 22px; font-weight: 600; margin-bottom: 2px; color: var(--ink); }
@@ -614,7 +617,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v23 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v25 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -638,7 +641,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 24; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 25; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -683,7 +686,7 @@ function emptyIcon(name){
 // ── State ─────────────────────────────────────────────────────────────────────
 let identity = localStorage.getItem("nutriprep_identity") || null;
 let weekMenu = null, shoppingList = null, prepPlan = null, planStatus = null, inventory = null, trainingPlan = null, sleepData = null;
-let householdData = null, priceBook = null, nutritionPlan = null;
+let householdData = null, priceBook = null, nutritionPlan = null, learnedPrefs = {avoid:[],prefer:[],notes:[]};
 const SUPERMARKETS = ["Cactus","Auchan","Delhaize","Aldi","Lidl","Match","Grand Frais","Indian Supermarket","Asian Supermarket"];
 const PRICE_UNITS = ["kg","L","item"];
 let shopFilter = "all"; // active supermarket filter on the Shopping tab
@@ -704,10 +707,38 @@ function formatQty(amount,kind,unit){ if(amount==null)return""; if(kind==="mass"
 
 // ── Media helpers ──────────────────────────────────────────────────────────────
 function hashSeed(s){ let h=0; for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))>>>0;} return h%100000; }
+const FOOD_EMOJI={poultry:"🍗",red_meat:"🥩",fish_seafood:"🐟",eggs_cooked:"🍳",eggs:"🍳",rice:"🍚",grains_pasta:"🍝",grains:"🌾",legumes:"🫘",vegetables_cooked:"🥦",vegetables_raw_prepped:"🥗",vegetables:"🥗",soup_stew:"🍲",sauce_dairy:"🧀",dairy:"🥛",baked_goods:"🥐",fruit:"🍓",generic:"🍽️"};
+function foodEmoji(meal){ return FOOD_EMOJI[meal&&meal.food_category]||"🍽️"; }
+function aiImageUrl(prompt,seed,model){ const u=`https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=600&height=400&nologo=true&seed=${seed}`; return model?u+"&model="+model:u; }
+// Always-renders SVG placeholder (category emoji on a soft gradient) — the final fallback.
+function placeholderImg(meal){
+  const svg=`<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#e8f0e6'/><stop offset='1' stop-color='#cfe0cc'/></linearGradient></defs><rect width='600' height='400' fill='url(#g)'/><text x='300' y='210' font-size='150' text-anchor='middle' dominant-baseline='central'>${foodEmoji(meal)}</text></svg>`;
+  return "data:image/svg+xml;utf8,"+encodeURIComponent(svg);
+}
 function mealImageUrl(meal){
-  const prompt = meal.image_prompt || (meal.name + " healthy meal, food photography");
-  const seed = hashSeed(meal.name || prompt);
-  return `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=600&height=400&nologo=true&seed=${seed}`;
+  const prompt = meal.image_prompt || ((meal.name||"") + " healthy meal, food photography");
+  return aiImageUrl(prompt, hashSeed(meal.name||prompt), "flux");
+}
+// Full <img> tag with a fallback chain: flux AI → turbo AI → category placeholder.
+function mealImgTag(meal,cls){
+  const prompt = meal.image_prompt || ((meal.name||"") + " healthy meal, food photography");
+  const seed = hashSeed(meal.name||prompt);
+  const fb = [aiImageUrl(prompt,seed,"turbo")].join("|");
+  return `<img${cls?` class="${cls}"`:""} loading="lazy" src="${aiImageUrl(prompt,seed,"flux")}" data-fb="${fb}" data-ph="${placeholderImg(meal)}" onerror="imgFb(this)">`;
+}
+// onerror handler: walk the pipe-separated fallback list, then drop to the placeholder.
+function imgFb(img){
+  const list=(img.dataset.fb||"").split("|").filter(Boolean);
+  if(list.length){ img.dataset.fb=list.slice(1).join("|"); img.src=list[0]; }
+  else { img.onerror=null; img.classList.add("img-ph"); if(img.dataset.ph)img.src=img.dataset.ph; }
+}
+// Tap-to-open real-photo searches (always work, no key needed).
+function photoSearchLinks(name){
+  const q=encodeURIComponent(name+" recipe");
+  return `<div class="search-links">
+    <a class="search-chip" href="https://www.google.com/search?tbm=isch&q=${q}" target="_blank" rel="noopener">🔍 Photos</a>
+    <a class="search-chip" href="https://www.pinterest.com/search/pins/?q=${q}" target="_blank" rel="noopener">📌 Pinterest</a>
+  </div>`;
 }
 function ytId(url){ const m=url.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{11})/); return m?m[1]:null; }
 function videoHtml(url){
@@ -719,7 +750,14 @@ function videoHtml(url){
   else if(url.includes("tiktok")) platform = "Watch on TikTok";
   return `<a class="video-launch" href="${url}" target="_blank" rel="noopener"><span class="vl-ic">▶</span>${platform}</a>`;
 }
-function ytSearchBtn(name){ return `<a class="btn-yt" href="https://www.youtube.com/results?search_query=${encodeURIComponent(name+" recipe")}" target="_blank" rel="noopener">▶ Search YouTube for this recipe</a>`; }
+// Curated, reputable healthy-recipe channels (handle → searched directly within the channel).
+const RECIPE_CHANNELS=[["Pick Up Limes","PickUpLimes"],["Downshiftology","Downshiftology"],["Mediterranean Dish","TheMediterraneanDish"]];
+function recipeVideoLinks(name){
+  const main=`<a class="btn-yt" href="https://www.youtube.com/results?search_query=${encodeURIComponent(name+" healthy recipe")}" target="_blank" rel="noopener">▶ Search YouTube for this recipe</a>`;
+  const chans=RECIPE_CHANNELS.map(([label,handle])=>`<a class="search-chip" href="https://www.youtube.com/@${handle}/search?query=${encodeURIComponent(name)}" target="_blank" rel="noopener">▶ ${label}</a>`).join("");
+  return main+`<div class="search-links" style="margin-top:6px">${chans}</div>`;
+}
+function ytSearchBtn(name){ return recipeVideoLinks(name); }
 
 // ── Settings ──────────────────────────────────────────────────────────────────
 function cfg(k){ return localStorage.getItem("nutriprep_"+k) || ""; }
@@ -761,6 +799,7 @@ async function loadSharedData(){
   try{ inventory=await ghFetch("inventory.json"); }catch(_){ inventory=null; }
   try{ householdData=await ghFetch("household.json"); }catch(_){ householdData=null; }
   try{ nutritionPlan=await ghFetch("nutrition_plan.json"); }catch(_){ nutritionPlan=null; }
+  try{ learnedPrefs=await ghFetch("learned_preferences.json"); }catch(_){ learnedPrefs={avoid:[],prefer:[],notes:[]}; }
   try{ priceBook=await ghFetch("price_book.json"); }catch(_){ priceBook={products:{}}; }
   // Cross-app reads from the training app (AthleteIQ) at the repo root
   try{ trainingPlan=await (await fetch(`${RAW_ROOT}/weekly_plan.json?t=${Date.now()}`)).json(); }catch(_){ trainingPlan=null; }
@@ -960,7 +999,7 @@ function renderMenu(){
       const{icon,label}=SLOT_LABELS[meal.slot]||{icon:"🍴",label:meal.slot};
       const portion=(meal.portions||{})[identity]||{}; const macros=portion.macros||{};
       return `<div class="meal-detail" onclick='openMeal(${JSON.stringify(meal).replace(/'/g,"&#39;")}, "${day.date}")'>
-        <img class="meal-thumb" loading="lazy" src="${mealImageUrl(meal)}" onerror="this.style.visibility='hidden'">
+        ${mealImgTag(meal,"meal-thumb")}
         <div class="md-info">
           <div class="meal-slot-label">${icon} ${label}</div>
           <div class="meal-name">${meal.name}</div>
@@ -992,13 +1031,13 @@ function openMeal(meal, dayDate){
   const ingList=ingredients.map(ing=>`<div style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between"><span>${ing.item}</span><strong>${ing.qty}</strong></div>`).join("");
   const prepHtml=prepSteps.length?`<div class="recipe-section-title">🧊 Meal prep (Sunday)</div>${prepSteps.map((s,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${s}</div>`).join("")}`:"";
   const dayHtml=dayOf.length?`<div class="recipe-section-title">🍳 On the day${meal.cook_minutes_day_of?` · ${meal.cook_minutes_day_of} min`:""}</div>${dayOf.map((s,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${s}</div>`).join("")}`:"";
-  const vid=meal.video_url?videoHtml(meal.video_url):ytSearchBtn(meal.name);
+  const vid=meal.video_url?videoHtml(meal.video_url):recipeVideoLinks(meal.name);
   const attach=`<div class="attach-row"><input id="meal-video-input" placeholder="Paste recipe video link (YouTube/IG/TikTok)" value="${meal.video_url||""}"><button class="btn" onclick="attachMealVideo()">Save</button></div>`;
 
   document.getElementById("meal-sheet-content").innerHTML=`
     <button class="sheet-close" onclick="closeMealSheet()" aria-label="Close">✕</button>
     <div class="sheet-hero">
-      <img src="${mealImageUrl(meal)}" onerror="this.style.height='80px'">
+      ${mealImgTag(meal,"")}
     </div>
     <div class="sheet-body">
       <div style="font-size:12px;color:var(--muted)">${icon} ${label} · ${meal.time}${meal.prep_ahead?' · <span style="color:var(--green)">batch-prepped</span>':""}</div>
@@ -1015,6 +1054,8 @@ function openMeal(meal, dayDate){
       ${ingList?`<div class="recipe-section-title">🛒 Your ingredients</div>${ingList}`:""}
       ${prepHtml}
       ${dayHtml}
+      <div class="recipe-section-title">📷 Real photos of this dish</div>
+      ${photoSearchLinks(meal.name)}
       <div class="recipe-section-title">🎬 Video</div>
       ${vid}
       ${attach}
@@ -1217,7 +1258,7 @@ function renderPrep(){
       <p>${s.safety_note.includes("⚠")?`<span class="storage-warn">${s.safety_note}</span>`:s.safety_note}</p></div>`:"";
     const steps=(batch.steps||[]).map((st,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${st}</div>`).join("");
     const assembly=batch.day_of_assembly?Object.entries(batch.day_of_assembly).map(([d,instr])=>`<div style="font-size:13px;padding:3px 0"><strong>${d}:</strong> ${instr}</div>`).join(""):"";
-    const vid=batch.video_url?videoHtml(batch.video_url):ytSearchBtn(batch.title||"meal prep");
+    const vid=batch.video_url?videoHtml(batch.video_url):recipeVideoLinks(batch.title||"meal prep");
     const attach=`<div class="attach-row" style="padding:0 14px 12px"><input id="prep-video-${bi}" placeholder="Paste a technique video link" value="${batch.video_url||""}"><button class="btn" onclick="attachPrepVideo(${bi})">Save</button></div>`;
     return `<div class="batch-card">
       <div class="batch-header"><div class="batch-num">${batch.order||bi+1}</div><div class="batch-title">${batch.title||"Batch"}</div><div class="batch-time">${batch.active_minutes||"?"}min</div></div>
@@ -1274,7 +1315,18 @@ function renderWeightChart(){
 // ── COACH ──────────────────────────────────────────────────────────────────────
 function renderCoach(){ const wrap=document.getElementById("coach-msgs"); if(!wrap.children.length){ addCoachMsg("coach",`Hi ${identity?identity.charAt(0).toUpperCase()+identity.slice(1):"there"}! I'm Coach Léa 🌿 Ask me to swap a meal, explain a recipe, log how you feel, or check your progress. Menu changes apply to the whole household.`); } }
 function coachScrollBottom(){ const c=document.querySelector('.content'); if(c) c.scrollTop=c.scrollHeight; }
-function addCoachMsg(role,text){ const wrap=document.getElementById("coach-msgs"); const div=document.createElement("div"); div.className=`msg ${role}`; div.innerHTML=text.replace(/\n/g,"<br>"); wrap.appendChild(div); coachScrollBottom(); }
+// Render a safe subset of Markdown (bold/italic/code/links/bullets) so chat replies
+// don't show literal ** or * around words.
+function mdFmt(text){
+  let t=(text||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  t=t.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
+  t=t.replace(/(^|[^*])\*([^*\n]+)\*/g,"$1<em>$2</em>");
+  t=t.replace(/`([^`]+)`/g,"<code>$1</code>");
+  t=t.replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  t=t.replace(/^[\s]*[-*•]\s+(.+)$/gm,"• $1");
+  return t.replace(/\n/g,"<br>");
+}
+function addCoachMsg(role,text){ const wrap=document.getElementById("coach-msgs"); const div=document.createElement("div"); div.className=`msg ${role}`; div.innerHTML=mdFmt(text); wrap.appendChild(div); coachScrollBottom(); }
 async function sendCoach(){
   const input=document.getElementById("coach-input"); const text=input.value.trim(); if(!text)return;
   const key=cfg("anthropic_key"); if(!key){ alert("Add your Anthropic API key in Settings."); showTab("settings"); return; }
@@ -1304,9 +1356,15 @@ Weight is single-sourced here; ${identity==="diego"?"Diego also uses the Athlete
 ## SHARED HOUSEHOLD MENU (Diego + Diana eat the same dishes, different portions)
 ${menuText}
 
+## WHAT THE HOUSEHOLD HAS TAUGHT YOU (respect this; learned from past chats)
+- Avoid: ${(learnedPrefs.avoid&&learnedPrefs.avoid.length)?learnedPrefs.avoid.join(", "):"—"}
+- Loves: ${(learnedPrefs.prefer&&learnedPrefs.prefer.length)?learnedPrefs.prefer.join(", "):"—"}
+- Notes from past manual changes: ${(learnedPrefs.notes&&learnedPrefs.notes.length)?learnedPrefs.notes.slice(-8).join("; "):"—"}
+
 ## ROLE
 - Evidence-based only (EFSA/WHO). Sustainable loss 0.25–0.75 kg/wk; never below 1200 kcal/day.
-- When the user asks to change a meal, USE the swap_meal tool with a complete replacement meal (keep both diego & diana portions, prep_steps, day_of_steps, image_prompt, food_category). Changes apply to BOTH members.
+- TARGETED CHANGES ONLY: when the user wants to change a dish or a day, USE the swap_meal tool for just that one slot/date. NEVER regenerate or rebuild the whole week — only the meal they asked about changes; everything else stays exactly as is. Provide a complete replacement meal (keep both diego & diana portions, prep_steps, day_of_steps, image_prompt, food_category). The swap applies to BOTH members.
+- LEARN FROM CORRECTIONS: whenever the user tells you they dislike/avoid a food or didn't like a dish, call remember_preference(kind:"avoid"). When they say they love something, call remember_preference(kind:"prefer"). This makes next week's auto-generated plan respect their taste. Do this in addition to any swap.
 - Use log_checkin when they report mood/energy/adherence; log_weight when they state a weight.
 - Be concise (2–4 sentences). You are not a doctor — defer clinical issues to their nutritionist.`;
   const tools=[
@@ -1314,6 +1372,7 @@ ${menuText}
     {name:"log_weight",description:"Log a weight measurement.",input_schema:{type:"object",properties:{weight_kg:{type:"number"},date:{type:"string"}},required:["weight_kg"]}},
     {name:"swap_meal",description:"Replace one meal in the shared weekly menu. Applies to the whole household.",input_schema:{type:"object",properties:{date:{type:"string",description:"ISO date of the day"},slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},meal:{type:"object",description:"Full replacement meal object with name, time, prep_ahead, cook_minutes_day_of, image_prompt, video_url, prep_steps, day_of_steps, food_category, and portions.diego/diana each with ingredients[] and macros"}},required:["date","slot","meal"]}},
     {name:"attach_video",description:"Attach a recipe video URL to a meal.",input_schema:{type:"object",properties:{date:{type:"string"},slot:{type:"string"},video_url:{type:"string"}},required:["date","slot","video_url"]}},
+    {name:"remember_preference",description:"Record a lasting food preference so future weekly plans respect the household's taste. Use whenever the user likes/dislikes/avoids a food, or after a swap because they didn't like a dish.",input_schema:{type:"object",properties:{kind:{type:"string",enum:["avoid","prefer","note"],description:"avoid = never serve again; prefer = they love it; note = general guidance"},text:{type:"string",description:"Concise, e.g. 'no salmon', 'loves chickpea curries', 'prefers lighter dinners'"}},required:["kind","text"]}},
   ];
   const msgs=[...coachHistory.slice(-10).map(h=>({role:h.role,content:h.content})),{role:"user",content:text}];
   try{
@@ -1336,11 +1395,26 @@ async function handleCoachTool(name,input){
     if(i>=0)userWeightLog[i]=entry; else userWeightLog.push(entry); userWeightLog.sort((a,b)=>a.date.localeCompare(b.date));
     try{ await ghWrite(`users/${identity}/weight_log.json`,userWeightLog,`Weight ${date}`); addCoachMsg("coach",`✓ Logged ${input.weight_kg} kg.`); renderHomeStats(); }catch(e){ addCoachMsg("coach",`Couldn't save weight: ${e.message}`); }
   } else if(name==="swap_meal"){
+    // Targeted change — only this one slot/date is touched, the rest of the week is untouched.
+    const od=weekMenu&&weekMenu.find(d=>d.date===input.date); const old=od&&od.meals.find(m=>m.slot===input.slot); const oldName=old?old.name:null;
     await applyMenuChange(input.date,input.slot,input.meal); addCoachMsg("coach",`✓ Swapped ${input.slot} on ${input.date} to "${input.meal.name}" for the household. Shopping list updated.`);
+    if(oldName && oldName!==input.meal.name) await savePreference("note",`Swapped "${oldName}" → "${input.meal.name}" (${input.slot})`);
+  } else if(name==="remember_preference"){
+    await savePreference(input.kind,input.text); addCoachMsg("coach",`✓ Noted for next time: ${input.text}`);
   } else if(name==="attach_video"){
     const day=weekMenu.find(d=>d.date===input.date); const meal=day?day.meals.find(m=>m.slot===input.slot):null;
     if(meal){ meal.video_url=input.video_url; try{ await ghWrite("weekly_menu.json",weekMenu,`Attach video`); addCoachMsg("coach",`✓ Video attached.`); }catch(e){ addCoachMsg("coach",`Couldn't save: ${e.message}`); } }
   }
+}
+// Persist a taste preference the generator reads next week. Shared (household-level).
+async function savePreference(kind,text){
+  if(!learnedPrefs||typeof learnedPrefs!=="object") learnedPrefs={avoid:[],prefer:[],notes:[]};
+  const bucket=kind==="avoid"?"avoid":kind==="prefer"?"prefer":"notes";
+  if(!Array.isArray(learnedPrefs[bucket])) learnedPrefs[bucket]=[];
+  const v=(text||"").trim(); if(!v)return;
+  if(!learnedPrefs[bucket].includes(v)) learnedPrefs[bucket].push(v);
+  learnedPrefs[bucket]=learnedPrefs[bucket].slice(-40);
+  try{ await ghWrite("learned_preferences.json",learnedPrefs,`Learn ${kind}: ${v}`); }catch(_){}
 }
 async function applyMenuChange(date,slot,newMeal){
   if(!weekMenu)return; const day=weekMenu.find(d=>d.date===date); if(!day)return;
@@ -1541,7 +1615,7 @@ const SETUP_TOOL={
   },required:["goals"]}
 };
 
-function setupMsg(role,text){ const c=document.getElementById("setup-msgs"); const d=document.createElement("div"); d.className="msg "+(role==="user"?"user":"coach"); d.innerHTML=text.replace(/\n/g,"<br>"); c.appendChild(d); d.scrollIntoView({behavior:"smooth"}); }
+function setupMsg(role,text){ const c=document.getElementById("setup-msgs"); const d=document.createElement("div"); d.className="msg "+(role==="user"?"user":"coach"); d.innerHTML=mdFmt(text); c.appendChild(d); d.scrollIntoView({behavior:"smooth"}); }
 
 function startSetup(){
   const ov=document.getElementById("setup-overlay"); ov.classList.remove("hidden");
