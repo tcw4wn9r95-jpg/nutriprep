@@ -362,7 +362,11 @@ Output a ```json-shopping block. Pre-aggregate ALL ingredients for BOTH members 
 ```
 
 ### SECTION 3: PREP JSON
-Output a ```json-prep block. List Sunday batch steps in logical cooking order (grains first, then proteins, then veg). Include `day_of_assembly` showing what to do each day with the batch.
+Output a ```json-prep block. List Sunday batch steps in logical cooking order (grains first, then proteins, then veg).
+`day_of_assembly` rules (IMPORTANT — this is shown to the user as a daily checklist, so it must not look repetitive):
+  - Only include the days on which this batch is ACTUALLY used. Do NOT list a day if the batch isn't part of that day's meals.
+  - Each day's text MUST describe assembling that day's SPECIFIC named dish from the menu above (start with the slot + dish name, e.g. "Lunch — Mediterranean Chicken Bowl: …"). NEVER write the same instruction for two different days; identical "reheat X, reheat Y" lines repeated daily are forbidden.
+  - If a batch component is reused on multiple days, each day must recombine it differently (different sauce, veg, format) to match that day's distinct dish name.
 
 ```json-prep
 [
@@ -376,8 +380,8 @@ Output a ```json-prep block. List Sunday batch steps in logical cooking order (g
     "food_category": "poultry",
     "video_url": "",
     "day_of_assembly": {{
-      "Monday": "Reheat 150g chicken, add salad",
-      "Tuesday": "Slice cold chicken into wrap"
+      "Monday": "Lunch — Lemon Chicken Quinoa Bowl: reheat 150g chicken + quinoa, add roasted veg & lemon",
+      "Wednesday": "Lunch — Chicken Caesar Wrap: slice cold chicken into a wholegrain wrap with romaine & yogurt dressing"
     }}
   }}
 ]

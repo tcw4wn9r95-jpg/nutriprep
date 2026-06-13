@@ -617,7 +617,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v25 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v26 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -641,7 +641,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 25; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 26; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1241,6 +1241,20 @@ function renderFridge(){
 }
 
 // ── PREP ──────────────────────────────────────────────────────────────────────
+// Collapse runs of days that share identical assembly text into one "Mon–Sat" row,
+// so a repetitive (or stale) plan never shows the same task six times in a row.
+function groupAssembly(asm){
+  const entries=Object.entries(asm||{}); if(!entries.length)return "";
+  const out=[]; let i=0;
+  while(i<entries.length){
+    let j=i; while(j+1<entries.length && entries[j+1][1]===entries[i][1]) j++;
+    const days=entries.slice(i,j+1).map(e=>e[0]);
+    const label=days.length>1?`${days[0].slice(0,3)}–${days[days.length-1].slice(0,3)}`:days[0];
+    out.push(`<div style="font-size:13px;padding:3px 0"><strong>${label}:</strong> ${entries[i][1]}</div>`);
+    i=j+1;
+  }
+  return out.join("");
+}
 function renderPrep(){
   const batchWrap=document.getElementById("prep-batches"); const sumCard=document.getElementById("prep-summary-card");
   if(!prepPlan||!prepPlan.batches){ batchWrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("pot")}</div><p>No prep plan yet.</p></div>`; return; }
@@ -1257,7 +1271,7 @@ function renderPrep(){
       ${s.reheat_c?`<p><strong>Reheat to:</strong> ${s.reheat_c}°C</p>`:""}
       <p>${s.safety_note.includes("⚠")?`<span class="storage-warn">${s.safety_note}</span>`:s.safety_note}</p></div>`:"";
     const steps=(batch.steps||[]).map((st,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${st}</div>`).join("");
-    const assembly=batch.day_of_assembly?Object.entries(batch.day_of_assembly).map(([d,instr])=>`<div style="font-size:13px;padding:3px 0"><strong>${d}:</strong> ${instr}</div>`).join(""):"";
+    const assembly=batch.day_of_assembly?groupAssembly(batch.day_of_assembly):"";
     const vid=batch.video_url?videoHtml(batch.video_url):recipeVideoLinks(batch.title||"meal prep");
     const attach=`<div class="attach-row" style="padding:0 14px 12px"><input id="prep-video-${bi}" placeholder="Paste a technique video link" value="${batch.video_url||""}"><button class="btn" onclick="attachPrepVideo(${bi})">Save</button></div>`;
     return `<div class="batch-card">
