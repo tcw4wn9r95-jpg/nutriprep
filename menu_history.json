@@ -174,5 +174,27 @@
       "diego": 2120,
       "diana": 1630
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Soft-Boiled Egg with Sourdough, Feta & Berries",
+      "Mediterranean Grilled Chicken with Roasted Veg & Quinoa",
+      "Baked White Fish with Green Beans & New Potatoes",
+      "Soft-Boiled Egg with Sourdough, Feta & Berries",
+      "Asian Chicken Stir-Fry with Bok Choy & Brown Rice",
+      "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
+      "Soft-Boiled Egg with Sourdough, Feta & Berries",
+      "Spiced Chicken Bowl with Roasted Vegetables & Canned Lentils",
+      "Herb-Baked White Fish with Spinach & Potatoes",
+      "Soft-Boiled Egg with Sourdough, Feta & Berries"
+    ],
+    "shopping_items": 60,
+    "prep_minutes": 165,
+    "day_kcal": {
+      "diego": 1872,
+      "diana": 1499
+    }
   }
 ]

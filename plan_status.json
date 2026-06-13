@@ -3,8 +3,77 @@
   "generated": "2026-06-13",
   "week_of": "2026-06-15",
   "meal_count": 35,
-  "shopping_items": 63,
-  "prep_batches": 7,
-  "prep_minutes": 193,
-  "notification_events": 30
+  "shopping_items": 60,
+  "prep_batches": 6,
+  "prep_minutes": 165,
+  "notification_events": 30,
+  "fresh_shop_items": 36,
+  "pantry_staple_items": 24,
+  "locked_palette": {
+    "proteins": [
+      "chicken breast",
+      "salmon",
+      "white fish (sea bass or cod)",
+      "eggs"
+    ],
+    "vegetables": [
+      "bell peppers",
+      "zucchini",
+      "cherry tomatoes",
+      "carrots",
+      "broccoli",
+      "green beans",
+      "cucumber",
+      "spinach (cooked)",
+      "eggplant",
+      "celery"
+    ],
+    "fruits": [
+      "apples",
+      "berries (mixed)",
+      "oranges",
+      "pears",
+      "bananas"
+    ],
+    "breads_greens": [
+      "sourdough bread",
+      "rocket (arugula)"
+    ],
+    "carbs_staples": [
+      "brown rice",
+      "wholewheat pasta",
+      "quinoa",
+      "sweet potatoes",
+      "potatoes",
+      "canned lentils",
+      "canned chickpeas",
+      "canned white beans",
+      "corn tortillas"
+    ],
+    "spices_sauces_staples": [
+      "olive oil",
+      "sesame oil",
+      "balsamic vinegar",
+      "red wine vinegar",
+      "soy sauce",
+      "cumin",
+      "paprika",
+      "garlic",
+      "ginger",
+      "lemon",
+      "lime",
+      "tomato paste",
+      "low-sodium vegetable stock",
+      "fresh parsley",
+      "fresh basil",
+      "chilli flakes",
+      "oregano",
+      "cinnamon",
+      "almonds",
+      "walnuts",
+      "Greek yogurt",
+      "feta cheese",
+      "Gruy\u00e8re cheese"
+    ]
+  }
 }

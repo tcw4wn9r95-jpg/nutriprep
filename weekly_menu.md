@@ -7,57 +7,57 @@
 ---
 
 ## Monday — 2026-06-15
-- ☀️ **Soft-Boiled Egg with Sourdough, Goat Cheese & Strawberries** (07:30) — Diego 490 kcal · Diana 370 kcal
-- 🍎 **Apple & Almonds** (10:30) — Diego 280 kcal · Diana 230 kcal
-- 🥗 **Mediterranean Grilled Chicken with Roasted Vegetables & Couscous** (13:00) — Diego 570 kcal · Diana 430 kcal
-- 🥜 **Greek Yogurt with Walnuts** (16:30) — Diego 260 kcal · Diana 200 kcal
-- 🍽️ **Pan-Seared White Fish with Roasted Green Beans & New Potatoes** (19:30) — Diego 490 kcal · Diana 380 kcal
-  - **Day totals** — Diego 2090 kcal, Diana 1580 kcal
+- ☀️ **Soft-Boiled Egg with Sourdough, Feta & Berries** (07:30) — Diego 420 kcal · Diana 330 kcal
+- 🍎 **Apple & Almonds** (10:30) — Diego 240 kcal · Diana 210 kcal
+- 🥗 **Mediterranean Grilled Chicken with Roasted Veg & Quinoa** (13:00) — Diego 520 kcal · Diana 410 kcal
+- 🥜 **Greek Yogurt & Walnuts** (16:30) — Diego 265 kcal · Diana 210 kcal
+- 🍽️ **Baked White Fish with Green Beans & New Potatoes** (19:30) — Diego 365 kcal · Diana 290 kcal
+  - **Day totals** — Diego 1810 kcal, Diana 1440 kcal
 
 ## Tuesday — 2026-06-16
-- ☀️ **Smoked Salmon & Cream Cheese on Sourdough with Kiwi** (07:30) — Diego 480 kcal · Diana 360 kcal
-- 🍎 **Pear & Cashews** (10:30) — Diego 290 kcal · Diana 240 kcal
-- 🥗 **Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice** (13:00) — Diego 550 kcal · Diana 420 kcal
-- 🥜 **Greek Yogurt with Almonds** (16:30) — Diego 260 kcal · Diana 200 kcal
-- 🍽️ **Baked Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta** (19:30) — Diego 540 kcal · Diana 410 kcal
-  - **Day totals** — Diego 2120 kcal, Diana 1630 kcal
+- ☀️ **Soft-Boiled Egg with Sourdough, Feta & Berries** (07:30) — Diego 420 kcal · Diana 330 kcal
+- 🍎 **Pear & Walnuts** (10:30) — Diego 245 kcal · Diana 210 kcal
+- 🥗 **Asian Chicken Stir-Fry with Bok Choy & Brown Rice** (13:00) — Diego 510 kcal · Diana 400 kcal
+- 🥜 **Orange & Almonds** (16:30) — Diego 245 kcal · Diana 215 kcal
+- 🍽️ **Pan-Seared Salmon with Roasted Asparagus & Sweet Potato** (19:30) — Diego 580 kcal · Diana 460 kcal
+  - **Day totals** — Diego 1990 kcal, Diana 1615 kcal
 
 ## Wednesday — 2026-06-17
-- ☀️ **Poached Egg with Whole-Grain Sourdough, Avocado & Blueberries** (07:30) — Diego 480 kcal · Diana 360 kcal
-- 🍎 **Orange & Pistachios** (10:30) — Diego 300 kcal · Diana 250 kcal
-- 🥗 **Tuna & Chickpea Salad with Roasted Bell Peppers & Lemon-Olive Oil Dressing** (13:00) — Diego 480 kcal · Diana 370 kcal
-- 🥜 **Greek Yogurt with Walnuts** (16:30) — Diego 260 kcal · Diana 200 kcal
-- 🍽️ **Herb-Roasted Chicken with Roasted Zucchini & Sweet Potato** (19:30) — Diego 580 kcal · Diana 450 kcal
-  - **Day totals** — Diego 2100 kcal, Diana 1630 kcal
+- ☀️ **Soft-Boiled Egg with Sourdough, Feta & Berries** (07:30) — Diego 420 kcal · Diana 330 kcal
+- 🍎 **Apple & Almonds** (10:30) — Diego 240 kcal · Diana 210 kcal
+- 🥗 **Spiced Chicken Bowl with Roasted Vegetables & Canned Lentils** (13:00) — Diego 480 kcal · Diana 375 kcal
+- 🥜 **Greek Yogurt & Walnuts** (16:30) — Diego 265 kcal · Diana 210 kcal
+- 🍽️ **Herb-Baked White Fish with Spinach & Potatoes** (19:30) — Diego 380 kcal · Diana 305 kcal
+  - **Day totals** — Diego 1785 kcal, Diana 1430 kcal
 
 ## Thursday — 2026-06-18
-- ☀️ **Soft-Boiled Egg with Sourdough, Goat Cheese & Strawberries** (07:30) — Diego 490 kcal · Diana 370 kcal
-- 🍎 **Nectarine & Almonds** (10:30) — Diego 290 kcal · Diana 240 kcal
-- 🥗 **Mediterranean Grilled Chicken with Roasted Vegetables & Couscous** (13:00) — Diego 570 kcal · Diana 430 kcal
-- 🥜 **Greek Yogurt with Almonds** (16:30) — Diego 260 kcal · Diana 200 kcal
-- 🍽️ **Pan-Seared Salmon with Sesame Cucumber Salad & New Potatoes** (19:30) — Diego 580 kcal · Diana 450 kcal
-  - **Day totals** — Diego 2190 kcal, Diana 1680 kcal
+- ☀️ **Soft-Boiled Egg with Sourdough, Feta & Berries** (07:30) — Diego 420 kcal · Diana 330 kcal
+- 🍎 **Pear & Walnuts** (10:30) — Diego 245 kcal · Diana 210 kcal
+- 🥗 **Mexican-Style Chicken Lettuce Wraps with Roasted Peppers & Beans** (13:00) — Diego 460 kcal · Diana 360 kcal
+- 🥜 **Orange & Almonds** (16:30) — Diego 245 kcal · Diana 215 kcal
+- 🍽️ **Pan-Seared Salmon with Cherry Tomatoes & Couscous** (19:30) — Diego 540 kcal · Diana 430 kcal
+  - **Day totals** — Diego 1950 kcal, Diana 1545 kcal
 
 ## Friday — 2026-06-19
-- ☀️ **Smoked Salmon & Cream Cheese on Sourdough with Kiwi** (07:30) — Diego 480 kcal · Diana 360 kcal
-- 🍎 **Apple & Walnuts** (10:30) — Diego 290 kcal · Diana 240 kcal
-- 🥗 **Mexican Chicken Bowl with Black Beans, Corn & Lime Crema** (13:00) — Diego 580 kcal · Diana 440 kcal
-- 🥜 **Greek Yogurt with Walnuts** (16:30) — Diego 260 kcal · Diana 200 kcal
-- 🍽️ **Baked Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta** (19:30) — Diego 540 kcal · Diana 410 kcal
-  - **Day totals** — Diego 2150 kcal, Diana 1650 kcal
+- ☀️ **Soft-Boiled Egg with Sourdough, Feta & Berries** (07:30) — Diego 420 kcal · Diana 330 kcal
+- 🍎 **Apple & Almonds** (10:30) — Diego 240 kcal · Diana 210 kcal
+- 🥗 **Garlic & Paprika Chicken with Roasted Root Vegetables & Whole-Wheat Pasta** (13:00) — Diego 540 kcal · Diana 425 kcal
+- 🥜 **Greek Yogurt & Walnuts** (16:30) — Diego 265 kcal · Diana 210 kcal
+- 🍽️ **Baked White Fish with Roasted Zucchini & Quinoa** (19:30) — Diego 420 kcal · Diana 330 kcal
+  - **Day totals** — Diego 1885 kcal, Diana 1505 kcal
 
 ## Saturday — 2026-06-20
-- ☀️ **Poached Egg with Whole-Grain Sourdough, Avocado & Blueberries** (07:30) — Diego 480 kcal · Diana 360 kcal
-- 🍎 **Pear & Pistachios** (10:30) — Diego 300 kcal · Diana 250 kcal
-- 🥗 **Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice** (13:00) — Diego 550 kcal · Diana 420 kcal
-- 🥜 **Greek Yogurt with Almonds** (16:30) — Diego 260 kcal · Diana 200 kcal
-- 🍽️ **Herb-Roasted Chicken with Roasted Zucchini & Sweet Potato** (19:30) — Diego 580 kcal · Diana 450 kcal
-  - **Day totals** — Diego 2170 kcal, Diana 1670 kcal
+- ☀️ **Soft-Boiled Egg with Sourdough, Feta & Berries** (07:30) — Diego 420 kcal · Diana 330 kcal
+- 🍎 **Pear & Walnuts** (10:30) — Diego 245 kcal · Diana 210 kcal
+- 🥗 **Pan-Seared Tuna with Cucumber Salad & Brown Rice** (13:00) — Diego 530 kcal · Diana 420 kcal
+- 🥜 **Orange & Almonds** (16:30) — Diego 245 kcal · Diana 215 kcal
+- 🍽️ **Herb-Baked Chicken with Broccoli & Sweet Potato** (19:30) — Diego 460 kcal · Diana 360 kcal
+  - **Day totals** — Diego 1900 kcal, Diana 1535 kcal
 
 ## Sunday — 2026-06-21
-- ☀️ **Soft-Boiled Egg with Sourdough, Goat Cheese & Strawberries** (07:30) — Diego 490 kcal · Diana 370 kcal
-- 🍎 **Nectarine & Cashews** (10:30) — Diego 300 kcal · Diana 250 kcal
-- 🥗 **Tuna & Chickpea Salad with Roasted Bell Peppers & Lemon-Olive Oil Dressing** (13:00) — Diego 480 kcal · Diana 370 kcal
-- 🥜 **Greek Yogurt with Walnuts** (16:30) — Diego 260 kcal · Diana 200 kcal
-- 🍽️ **Pan-Seared White Fish with Roasted Green Beans & New Potatoes** (19:30) — Diego 490 kcal · Diana 380 kcal
-  - **Day totals** — Diego 2020 kcal, Diana 1570 kcal
+- ☀️ **Soft-Boiled Egg with Sourdough, Feta & Berries** (07:30) — Diego 420 kcal · Diana 330 kcal
+- 🍎 **Apple & Almonds** (10:30) — Diego 240 kcal · Diana 210 kcal
+- 🥗 **Lemon-Herb Grilled Chicken with Chickpea Salad & Rocket** (13:00) — Diego 480 kcal · Diana 375 kcal
+- 🥜 **Greek Yogurt & Walnuts** (16:30) — Diego 265 kcal · Diana 210 kcal
+- 🍽️ **Baked White Fish with Green Beans & Potatoes in Tomato Sauce** (19:30) — Diego 380 kcal · Diana 300 kcal
+  - **Day totals** — Diego 1785 kcal, Diana 1425 kcal
