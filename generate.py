@@ -712,42 +712,49 @@ for item in shopping_json:
     })
 
 # Tag long-shelf-life pantry staples (rice, pasta, spices, oils, sauces, canned, nuts…)
-# so the app can separate them from the weekly-fresh shop. The household buys these
-# occasionally and uses them across many weeks, so they shouldn't inflate the weekly list.
-_STAPLE_CATS = {"rice", "grains_pasta", "legumes"}
-_STAPLE_AISLE_KW = ("spice", "épice", "epice", "oil", "huile", "condiment", "vinaig", "grain",
-                    "pasta", "épicerie", "epicerie", "baking", "flour", "farine", "canned",
-                    "conserve", "international", "asie", "moyen", "sauce", "noix", "nut",
-                    "honey", "miel", "dry good", "pantry", "épices")
+# so the app can separate them from the weekly-fresh shop. Classification is NAME-driven
+# (the model's food_category tags proved unreliable): a clearly shelf-stable form wins,
+# then a clearly perishable name forces fresh, then keyword/aisle fallbacks.
+_HARD_STAPLE_KW = ("canned", "tinned", "jarred", "dried", "passata", "tomato paste",
+                   "stock cube", "bouillon", "powder", "flour", "cornflour", "cornstarch",
+                   "baking soda", "baking powder", "breadcrumb", "frozen", "oil", "huile",
+                   "vinegar", "vinaigre", "soy sauce", "honey", "miel", "maple", "tahini")
 _STAPLE_NAME_KW = ("rice", "riz", "pasta", "pâtes", "pates", "spaghetti", "penne", "couscous",
-                   "quinoa", "oat", "avoine", "flour", "farine", "olive oil", "oil", "huile",
-                   "vinegar", "vinaigre", "cumin", "paprika", "oregano", "origan", "cinnamon",
-                   "cannelle", "turmeric", "curcuma", "curry", "chili", "chilli", "soy sauce",
-                   "soja", "honey", "miel", "mustard", "moutarde", "tahini", "stock", "bouillon",
-                   "baking", "sesame", "sésame", "seed", "graine", "tinned", "canned", "passata",
-                   "tomato paste", "concentré", "coconut milk", "lait de coco", "peanut butter",
-                   "walnut", "almond", "amande", "cashew", "noix", "lentil", "lentille",
-                   "chickpea", "pois chiche", "dried bean", "haricots secs", "stock cube",
-                   "spice", "herbes de provence", "soy", "maple")
-
-
-# Perishable categories are ALWAYS part of the weekly-fresh shop — never hide them in
-# the staples section even if a name/aisle keyword coincidentally matches.
-_FRESH_CATS = {"poultry", "red_meat", "fish_seafood", "eggs_cooked", "dairy", "sauce_dairy",
-               "baked_goods", "vegetables_cooked", "vegetables_raw_prepped"}
+                   "quinoa", "barley", "orge", "farro", "bulgur", "noodle", "nouille", "oat",
+                   "avoine", "cumin", "paprika", "oregano", "origan", "cinnamon", "cannelle",
+                   "turmeric", "curcuma", "curry", "chilli", "chili", "coriander seed", "thyme",
+                   "thym", "rosemary", "romarin", "bay leaf", "laurier", "sesame", "sésame",
+                   "mustard", "moutarde", "soy", "soja", "coconut milk", "lait de coco",
+                   "peanut butter", "walnut", "almond", "amande", "cashew", "pecan", "hazelnut",
+                   "pistachio", "pistache", "noisette", "seeds", "graines", "lentil", "lentille",
+                   "chickpea", "pois chiche",
+                   "stock", "herbes de provence", "nut")
+_STAPLE_AISLE_KW = ("spice", "épice", "epice", "condiment", "grain", "pasta", "épicerie",
+                    "epicerie", "baking", "international", "asie", "moyen", "pantry", "dry good")
+# Clearly perishable names → always the weekly-fresh shop (unless a HARD staple form above).
+_PERISHABLE_NAME_KW = ("cheese", "fromage", "yogurt", "yaourt", "yoghurt", "milk", "lait frais",
+                       "cream", "crème", "butter", "beurre", "egg", "oeuf", "œuf", "fillet",
+                       "filet", "steak", "breast", "thigh", "mince", "ground beef",
+                       "ground turkey", "ground chicken", "salmon", "tuna", "cod", "hake",
+                       "chicken", "beef", "pork", "turkey", "prawn", "shrimp", "bread",
+                       "baguette", "lettuce", "spinach", "fresh ", "frais", "fraîche")
 
 
 def _is_staple(it):
-    cat = (it.get("food_category") or "").lower()
-    if cat in _FRESH_CATS:
-        return False
-    if cat in _STAPLE_CATS:
+    name = ((it.get("name_en") or "") + " " + (it.get("name_fr") or "")).lower()
+    if any(k in name for k in _HARD_STAPLE_KW):
+        return True               # canned/dried/oil/vinegar… shelf-stable regardless of category
+    if any(k in name for k in _PERISHABLE_NAME_KW):
+        return False              # fresh meat/fish/dairy/bread/leafy → weekly-fresh
+    if (it.get("food_category") or "").lower() in _STAPLE_CATS:
+        return True
+    if any(k in name for k in _STAPLE_NAME_KW):
         return True
     aisle = (it.get("aisle") or "").lower()
-    if any(k in aisle for k in _STAPLE_AISLE_KW):
-        return True
-    name = ((it.get("name_en") or "") + " " + (it.get("name_fr") or "")).lower()
-    return any(k in name for k in _STAPLE_NAME_KW)
+    return any(k in aisle for k in _STAPLE_AISLE_KW)
+
+
+_STAPLE_CATS = {"rice", "grains_pasta", "legumes"}
 
 
 for _it in shopping_json:
