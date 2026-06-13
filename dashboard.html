@@ -312,6 +312,10 @@
   .filter-chip { flex: 0 0 auto; border: 1.5px solid var(--hair); background: var(--surface); color: var(--muted); font-size: 13px; font-weight: 600; border-radius: 999px; padding: 7px 14px; cursor: pointer; }
   .filter-chip.active { background: var(--pine); border-color: var(--pine); color: #fff; }
   .store-group { margin-bottom: 18px; }
+  .staples-block { margin-top: 6px; border-top: 1px dashed var(--hair); padding-top: 12px; }
+  .staples-block > summary { list-style: none; cursor: pointer; font-family: var(--serif); font-size: 15px; font-weight: 600; color: var(--muted); padding: 4px 2px 10px; -webkit-tap-highlight-color: transparent; }
+  .staples-block > summary::-webkit-details-marker { display: none; }
+  .staples-block > summary span { display: block; font-family: var(--sans); font-size: 11.5px; font-weight: 400; color: var(--faint); margin-top: 2px; }
   .store-subtotal { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--serif); font-size: 17px; font-weight: 600; color: var(--pine); padding: 2px 2px 8px; border-bottom: 1px solid var(--hair); margin-bottom: 10px; }
   .store-subtotal span:last-child { font-size: 14px; color: var(--muted); }
   .shop-right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; min-width: 70px; }
@@ -619,7 +623,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v28 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v29 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -643,7 +647,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 28; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 29; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1104,54 +1108,65 @@ function itemCost(it){
   return lineCostJS(it.qty, e.price_eur, e.price_unit||"item", it.have_at_home);
 }
 
+function shopItemRow(it){
+  const key=it.name_en||""; const checked=checkedItems[key]?" checked":""; const inPantry=it.have_at_home; const c=itemCost(it);
+  const price=inPantry?`<span class="shop-price pantry">in pantry</span>`:(c!=null?`<span class="shop-price">${eur(c)}</span>`:`<span class="shop-price none" onclick="openLibrary('${key.replace(/'/g,"\\'")}')">+ price</span>`);
+  return `<div class="shop-item${inPantry?" in-pantry":""}">
+    <button class="shop-check${checked}" onclick="toggleCheck('${key.replace(/'/g,"\\'")}',this)">${checked?"✓":""}</button>
+    <div class="shop-names"><div class="shop-en">${it.name_en||""}</div><div class="shop-fr">${it.name_fr||""}</div></div>
+    <div class="shop-right"><div class="shop-qty">${it.qty||""}</div>${price}</div>
+  </div>`;
+}
 function renderShopping(){
   const wrap=document.getElementById("shopping-list-content");
   const fr=document.getElementById("shop-filter");
   const bc=document.getElementById("budget-card");
   if(!shoppingList||!shoppingList.items){ if(bc)bc.innerHTML=""; if(fr)fr.innerHTML=""; wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("bag")}</div><p>No shopping list yet.</p></div>`; return; }
-  const items=shoppingList.items;
-  // Budget card: total vs household budget.
+  // Fresh = the weekly perishable shop. Staples (rice/spices/oils/sauces) are bought
+  // occasionally and last for weeks, so they go in a separate, collapsed section.
+  const fresh=shoppingList.items.filter(it=>!it.staple);
+  const staples=shoppingList.items.filter(it=>it.staple);
   const budget=shoppingList.budget_eur||(householdData&&householdData.budget_eur_per_week)||0;
-  let total=0, unpriced=0;
-  items.forEach(it=>{ if(it.have_at_home)return; const c=itemCost(it); if(c==null)unpriced++; else total+=c; });
-  total=Math.round(total*100)/100;
+  let freshTotal=0, stapleTotal=0, unpriced=0, freshCount=0;
+  fresh.forEach(it=>{ if(it.have_at_home)return; freshCount++; const c=itemCost(it); if(c==null)unpriced++; else freshTotal+=c; });
+  staples.forEach(it=>{ if(it.have_at_home)return; const c=itemCost(it); if(c!=null)stapleTotal+=c; });
+  freshTotal=Math.round(freshTotal*100)/100; stapleTotal=Math.round(stapleTotal*100)/100;
+  const total=Math.round((freshTotal+stapleTotal)*100)/100;
   const over=budget&&total>budget; const pct=budget?Math.min(100,Math.round(total/budget*100)):0;
   if(bc) bc.innerHTML=`<div class="card" style="padding:14px 16px;margin-bottom:12px">
     <div class="row-between"><div style="font-family:var(--serif);font-size:21px;color:${over?'var(--clay)':'var(--pine)'}">${eur(total)}${budget?` <span style="font-size:13px;color:var(--muted);font-family:var(--sans)">/ ${eur(budget)}</span>`:''}</div>
     <div style="font-size:12px;color:var(--muted)">${unpriced?unpriced+' to price':'all priced'}</div></div>
+    <div style="font-size:12px;color:var(--muted);margin-top:4px">${freshCount} fresh item${freshCount===1?'':'s'} this week${staples.length?` · ${staples.length} pantry staple${staples.length===1?'':'s'} (${eur(stapleTotal)})`:''}</div>
     ${budget?`<div class="progress-bar-wrap" style="margin-top:8px"><div class="progress-bar-fill" style="width:${pct}%;${over?'background:var(--clay)':''}"></div></div>`:''}</div>`;
-  // Filter chips for the supermarkets present.
-  const stores=[...new Set(items.filter(it=>!it.have_at_home).map(itemStore).filter(Boolean))].sort();
+  // Filter chips for the supermarkets present among FRESH items.
+  const stores=[...new Set(fresh.filter(it=>!it.have_at_home).map(itemStore).filter(Boolean))].sort();
   if(shopFilter!=="all"&&!stores.includes(shopFilter)) shopFilter="all";
   if(fr) fr.innerHTML=`<button class="filter-chip${shopFilter==='all'?' active':''}" onclick="setShopFilter('all')">All</button>`+
     stores.map(s=>`<button class="filter-chip${shopFilter===s?' active':''}" onclick="setShopFilter('${s.replace(/'/g,"\\'")}')">${s}</button>`).join("");
-  // Group by supermarket → section.
+  // Fresh: group by supermarket → aisle.
   const groups={};
-  items.forEach(it=>{ const s=itemStore(it)||"__unassigned__"; const a=it.aisle||"General"; ((groups[s]=groups[s]||{})[a]=groups[s][a]||[]).push(it); });
+  fresh.forEach(it=>{ const s=itemStore(it)||"__unassigned__"; const a=it.aisle||"General"; ((groups[s]=groups[s]||{})[a]=groups[s][a]||[]).push(it); });
   let storeKeys=Object.keys(groups).filter(s=>s!=="__unassigned__").sort();
   if(groups["__unassigned__"]) storeKeys.push("__unassigned__");
   if(shopFilter!=="all") storeKeys=storeKeys.filter(s=>s===shopFilter);
-  wrap.innerHTML=storeKeys.map(store=>{
+  const freshHtml=storeKeys.map(store=>{
     const aisles=groups[store]; let sub=0;
     Object.values(aisles).forEach(arr=>arr.forEach(it=>{ if(!it.have_at_home){ const c=itemCost(it); if(c!=null)sub+=c; } }));
     sub=Math.round(sub*100)/100;
     const unassigned=store==="__unassigned__";
     const head=`<div class="store-subtotal"><span>${unassigned?'Unassigned':store}</span><span>${sub>0?eur(sub):(unassigned?'set prices':'')}</span></div>`;
     const hint=unassigned?`<div style="font-size:12px;color:var(--muted);margin:0 2px 8px">Open the product library to set a shop &amp; price.</div>`:"";
-    const body=Object.keys(aisles).sort().map(aisle=>{
-      const rows=aisles[aisle].map(it=>{
-        const key=it.name_en||""; const checked=checkedItems[key]?" checked":""; const inPantry=it.have_at_home; const c=itemCost(it);
-        const price=inPantry?`<span class="shop-price pantry">in pantry</span>`:(c!=null?`<span class="shop-price">${eur(c)}</span>`:`<span class="shop-price none" onclick="openLibrary('${key.replace(/'/g,"\\'")}')">+ price</span>`);
-        return `<div class="shop-item${inPantry?" in-pantry":""}">
-          <button class="shop-check${checked}" onclick="toggleCheck('${key.replace(/'/g,"\\'")}',this)">${checked?"✓":""}</button>
-          <div class="shop-names"><div class="shop-en">${it.name_en||""}</div><div class="shop-fr">${it.name_fr||""}</div></div>
-          <div class="shop-right"><div class="shop-qty">${it.qty||""}</div>${price}</div>
-        </div>`;
-      }).join("");
-      return `<div class="aisle-section"><div class="aisle-label">${aisle}</div>${rows}</div>`;
-    }).join("");
+    const body=Object.keys(aisles).sort().map(aisle=>`<div class="aisle-section"><div class="aisle-label">${aisle}</div>${aisles[aisle].map(shopItemRow).join("")}</div>`).join("");
     return `<div class="store-group">${head}${hint}${body}</div>`;
   }).join("");
+  // Staples: one collapsed section, grouped by aisle (only shown on "All").
+  let stapleHtml="";
+  if(staples.length && shopFilter==="all"){
+    const byAisle={}; staples.forEach(it=>{ const a=it.aisle||"Pantry"; (byAisle[a]=byAisle[a]||[]).push(it); });
+    const inner=Object.keys(byAisle).sort().map(a=>`<div class="aisle-section"><div class="aisle-label">${a}</div>${byAisle[a].map(shopItemRow).join("")}</div>`).join("");
+    stapleHtml=`<details class="staples-block"><summary>🧂 Pantry staples · ${staples.length} item${staples.length===1?'':'s'} <span>buy occasionally — lasts several weeks</span></summary>${inner}</details>`;
+  }
+  wrap.innerHTML=freshHtml+stapleHtml;
 }
 function setShopFilter(s){ shopFilter=s; renderShopping(); }
 

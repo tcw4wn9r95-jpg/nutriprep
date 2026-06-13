@@ -305,23 +305,21 @@ Diego's calorie need changes day to day with training. On training days, raise h
 6. **Evidence-based**: align with EFSA Dietary Reference Values and WHO guidelines. Sustainable weight loss ≈ 0.25–0.75 kg/week; no crash diets, detoxes, or unproven supplements.
 7. **Hit each member's daily macro targets** (±10% tolerance). Use `day_totals` to verify.
 8. Each week: include oily fish at least twice; legumes on at least 3 days; ≥ 5 portions of veg per day per person.
-9. **MENU = A SPACED ROTATION of a few good dishes (repetition is GOOD — it shrinks shopping & cooking).**
-   - Build the whole week from a SMALL set of distinct dishes on a spaced rotation — do NOT invent a new dish for every slot. Target roughly: 2–3 breakfasts, 3–4 lunches, 3–4 dinners, 2–3 snack options — about **12–16 distinct dishes total** for the week.
-   - Each distinct lunch/dinner should appear on about 2 days. **SPACE the repeats — never the identical dish on two CONSECUTIVE days** so day-to-day still feels fresh (e.g. dinner A on Mon & Wed, dinner B on Tue & Thu, dinner C on Fri & Sun).
-   - Cook each dish ONCE as a batch and serve its repeat from that batch, RESPECTING the food-safety windows below. If a repeat falls outside the window (e.g. poultry past day 3), cook a second fresh batch mid-week instead — schedule it so each serving is safe.
-   - The repeat of a dish keeps the SAME `name` and ingredients (that's the point — buy and cook once). Reuse the same `image_prompt` for the repeat.
-   - **Breakfasts and snacks may repeat freely** — e.g. the same two breakfasts alternating all week. Convenience wins.
-   - Variety now comes from having a few genuinely different, well-made dishes in the rotation — NOT from a unique dish every day. Across DIFFERENT weeks, change the rotation so it doesn't get stale (see PAST WEEKS).
+9. **VARIED DISHES on a LEAN FRESH palette — get variety from carbs & seasonings, not from more perishables.**
+   - Keep the FRESH, perishable shop small by reusing the SAME few proteins and vegetables across the whole week: about **3–4 proteins and 6–8 vegetables** for all 7 days. These are the weekly fresh buy — don't let them sprawl.
+   - Create day-to-day VARIETY from cheap, long-shelf-life PANTRY items instead: rotate the CARB (rice, pasta, couscous, potato, tortilla, bread), the SPICE/SEASONING blend, the SAUCE/marinade, and the cooking method/format (bowl, wrap, traybake, stir-fry, soup, salad). The same chicken + courgette can be a Mexican bowl one day, a Mediterranean traybake another, an Asian stir-fry another — just by changing carb + spices.
+   - Lunches and dinners should feel DIFFERENT most days. You do NOT need to repeat dishes — but light, spaced repetition (a dish at most twice, NEVER on consecutive days) is fine when it saves cooking.
+   - **Breakfasts and snacks may repeat freely** (e.g. the same two breakfasts alternating all week). Convenience wins.
+   - Give each distinct dish its own `name` and `image_prompt`; a deliberate repeat keeps the same name/ingredients.
 10. Assign each prep batch a `food_category` from: poultry, red_meat, fish_seafood, eggs_cooked, rice, grains_pasta, legumes, vegetables_cooked, vegetables_raw_prepped, soup_stew, sauce_dairy, dairy, baked_goods, generic.
 11. **Recipe split**: every meal MUST have `prep_steps` (what to batch-cook/pre-portion on Sunday — empty list `[]` if nothing) AND `day_of_steps` (detailed, numbered, beginner-friendly actions performed on the day, including reheating instructions and quantities). Keep `video_url` as an empty string "" (the user attaches videos later).
 12. **Image prompt**: every meal MUST have an `image_prompt` — a short, vivid description of a finished plate of that meal for an AI image generator (mention key ingredients, plating, natural light; no text/words in image).
 13. **Fuel Diego's training days**: match Diego's `day_totals` to the per-day adjusted target in the TRAINING FUELLING table (extra mostly as carbohydrate around the session). On rest days use his base target. Diana's `day_totals` always track her own base target.
 14. **Adapt to sleep**: after poor-sleep nights, favour easy-to-digest, blood-sugar-stable meals, adequate protein, and avoid heavy late dinners.
-15. **CONSOLIDATE THE SHOPPING — a SHARED PALETTE recombined into different dishes.** This is as important as variety. The 35 dishes must be built by RECOMBINING a small, fixed set of ingredients in different ways — NOT by giving each dish its own new ingredients. Variety comes from technique, seasoning, sauce and format, not from buying more SKUs.
-   - **Hard cap: the whole week's shopping list must contain ≤ 35 distinct products total** (excluding salt/pepper/water). Count as you go; if you would exceed it, reuse an ingredient already on the list instead of adding a new one.
-   - Design from a fixed palette first, then build dishes from it: ~4–5 proteins, ~8–10 vegetables, ~3 fruits, 2–3 grains/starches, 1 bread, 1 yogurt, 1 cheese, 1 main oil, a handful of pantry spices/condiments. Every dish must draw from this palette.
-   - ONE variant per staple for the week: one bread, one rice, one pasta, one yogurt, one cheese, one cooking oil, one leafy green. Never a second variety of the same thing for a single dish.
-   - It is GOOD to repeat an ingredient across many days — that means buying it once in a bigger pack and fewer trips. Do not add any ingredient used in only one dish if something already on the list would work.
+15. **CONSOLIDATE FRESH ITEMS ONLY — pantry staples are cheap, last for weeks, and DON'T count against you.**
+   - Minimise DISTINCT FRESH / PERISHABLE products only: meat, fish, fresh vegetables, fresh herbs, dairy, bread. This is the weekly shop — keep it tight (~**12–16 fresh items**) by reusing the same proteins and vegetables across many dishes.
+   - Do NOT minimise pantry staples: rice, pasta, couscous, other grains, dried/canned legumes, flour, spices, dried herbs, oils, vinegars, jarred sauces, canned goods, nuts/seeds, honey. The household buys these occasionally in standard packs and uses them across MANY weeks — so use as many different spices, seasonings, sauces and carbs as you like for variety. They are NOT a weekly burden; lean on them as the cheap source of variety.
+   - One variant per FRESH staple where it matters (one bread, one fresh leafy green). Several different spices/condiments/carbs is encouraged, not discouraged.
    - Use ingredients sold in standard Luxembourg supermarket pack sizes.
 16. **SHOPPING AISLES**: give every shopping item a real `aisle` (e.g. "Produce / Fruits & Légumes", "Meat / Boucherie", "Fish / Poissonnerie", "Dairy / Crèmerie", "Bakery / Boulangerie", "Grains & Pasta / Épicerie", "Frozen / Surgelés", "Oils & Condiments", "Spices / Épices") so the list groups sensibly for one efficient trip. Do not dump everything into "General".
 ## FOOD SAFETY — FRIDGE WINDOWS FROM SUNDAY PREP (HARD RULES, NON-NEGOTIABLE)
@@ -708,6 +706,39 @@ for item in shopping_json:
         "amount": round(new_balance, 2) if isinstance(new_balance, (int, float)) else None,
         "display_qty": units.format_qty(new_balance, kind, unit) if isinstance(new_balance, (int, float)) else item.get("qty", ""),
     })
+
+# Tag long-shelf-life pantry staples (rice, pasta, spices, oils, sauces, canned, nuts…)
+# so the app can separate them from the weekly-fresh shop. The household buys these
+# occasionally and uses them across many weeks, so they shouldn't inflate the weekly list.
+_STAPLE_CATS = {"rice", "grains_pasta", "legumes"}
+_STAPLE_AISLE_KW = ("spice", "épice", "epice", "oil", "huile", "condiment", "vinaig", "grain",
+                    "pasta", "épicerie", "epicerie", "baking", "flour", "farine", "canned",
+                    "conserve", "international", "asie", "moyen", "sauce", "noix", "nut",
+                    "honey", "miel", "dry good", "pantry", "épices")
+_STAPLE_NAME_KW = ("rice", "riz", "pasta", "pâtes", "pates", "spaghetti", "penne", "couscous",
+                   "quinoa", "oat", "avoine", "flour", "farine", "olive oil", "oil", "huile",
+                   "vinegar", "vinaigre", "cumin", "paprika", "oregano", "origan", "cinnamon",
+                   "cannelle", "turmeric", "curcuma", "curry", "chili", "chilli", "soy sauce",
+                   "soja", "honey", "miel", "mustard", "moutarde", "tahini", "stock", "bouillon",
+                   "baking", "sesame", "sésame", "seed", "graine", "tinned", "canned", "passata",
+                   "tomato paste", "concentré", "coconut milk", "lait de coco", "peanut butter",
+                   "walnut", "almond", "amande", "cashew", "noix", "lentil", "lentille",
+                   "chickpea", "pois chiche", "dried bean", "haricots secs", "stock cube",
+                   "spice", "herbes de provence", "soy", "maple")
+
+
+def _is_staple(it):
+    if (it.get("food_category") or "").lower() in _STAPLE_CATS:
+        return True
+    aisle = (it.get("aisle") or "").lower()
+    if any(k in aisle for k in _STAPLE_AISLE_KW):
+        return True
+    name = ((it.get("name_en") or "") + " " + (it.get("name_fr") or "")).lower()
+    return any(k in name for k in _STAPLE_NAME_KW)
+
+
+for _it in shopping_json:
+    _it["staple"] = _is_staple(_it)
 
 shopping_sorted = sorted(shopping_json, key=lambda x: x.get("aisle", "zzz"))
 
