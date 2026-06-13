@@ -24,5 +24,78 @@
         "text": "Fair point! 😄 Let me keep it simple then. How about **Fried Eggs on Whole-Grain Sourdough with Feta & Strawberries**? That swaps out the soft-boiled for fried, keeps the same quality ingredients and macros, and stays quick on Monday morning.\n\nDoes that work for you?"
       }
     ]
+  },
+  {
+    "role": "user",
+    "content": "Change Monday’s breakfast to fried eggs, those are the only ones we like"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "Perfect! Let me swap Monday's breakfast to just fried eggs on sourdough."
+      },
+      {
+        "type": "tool_use",
+        "id": "toolu_013BauieFFb7LetugFeK5jkp",
+        "name": "swap_meal",
+        "input": {
+          "date": "2026-06-15",
+          "slot": "breakfast",
+          "meal": {
+            "name": "Fried Eggs on Sourdough",
+            "time": "08:00",
+            "prep_ahead": false,
+            "cook_minutes_day_of": 8,
+            "image_prompt": "Two fried eggs with runny yolks on toasted sourdough bread",
+            "video_url": "",
+            "prep_steps": [
+              "Toast sourdough bread",
+              "Heat butter in a pan"
+            ],
+            "day_of_steps": [
+              "Crack eggs into hot buttered pan",
+              "Fry until whites are set, yolks still runny (3–4 min)",
+              "Season with salt and pepper",
+              "Serve on warm sourdough toast"
+            ],
+            "food_category": "breakfast",
+            "portions": {
+              "diego": {
+                "ingredients": [
+                  "2 eggs",
+                  "1 slice sourdough bread",
+                  "1 tsp butter"
+                ],
+                "macros": {
+                  "kcal": 280,
+                  "protein_g": 14,
+                  "carbs_g": 24,
+                  "fat_g": 12
+                }
+              },
+              "diana": {
+                "ingredients": [
+                  "2 eggs",
+                  "1 slice sourdough bread",
+                  "1 tsp butter"
+                ],
+                "macros": {
+                  "kcal": 280,
+                  "protein_g": 14,
+                  "carbs_g": 24,
+                  "fat_g": 12
+                }
+              }
+            },
+            "slot": "breakfast"
+          }
+        },
+        "caller": {
+          "type": "direct"
+        }
+      }
+    ]
   }
 ]
