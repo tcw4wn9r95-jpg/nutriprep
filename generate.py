@@ -275,6 +275,7 @@ Hard constraints:
 - Allergies (NEVER include): {', '.join(allergens) if allergens else 'none'}
 - Dislikes / avoid (never include): {', '.join(dislikes) if dislikes else 'none'}
 - Preferred cuisines: {', '.join(cuisines) if cuisines else 'varied'}
+{('- The household has ASKED FOR these — honour them in the palette (e.g. if they want more beef and less chicken, pick beef as a protein and do NOT pick chicken; if they love tilapia/salmon, include them): ' + '; '.join(learned_prefs.get('prefer', []))) if learned_prefs.get('prefer') else ''}
 - The palette must be able to deliver: oily fish twice/week, legumes on ≥3 days, ≥5 veg portions/day each, and hit ~{diego_kcal} kcal (Diego) / ~{diana_kcal} kcal (Diana).
 {('- Nutritionist guidance to respect: ' + nutrition_block) if nutrition_block and nutrition_block.strip() else ''}
 
