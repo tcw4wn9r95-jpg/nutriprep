@@ -1,29 +1,8 @@
 {
-  "kcal": 1980,
-  "protein_g": 150,
-  "carbs_g": 180,
-  "fat_g": 70,
-  "fiber_g": 32,
-  "source": "nutritionist (estimated from plan)",
-  "hydration_l": 2.0,
-  "methodology": "Glucose Goddess — structure meals to blunt blood-glucose spikes: eat vegetables/fibre first, keep breakfast savoury and protein-rich, add a little vinegar or fat to carbs, and move gently after eating.",
-  "prescribed_foods": [
-    "vegetables/fibre first at each meal (Glucose Goddess)",
-    "savoury, protein-rich breakfast",
-    "lean proteins: chicken, fish, turkey, pork loin, beef",
-    "legumes: lentils, chickpeas, hummus",
-    "whole grains and sourdough over refined starches",
-    "nuts: almonds, walnuts, cashews, pistachios",
-    "Greek yogurt and kefir"
-  ],
-  "restricted_foods": [
-    "juices",
-    "soups",
-    "fried or breaded foods",
-    "chocolate or sweets",
-    "alcoholic beverages"
-  ],
-  "client_name": "Diego Casares",
-  "nutritionist_notes": "Portion/exchange-based plan following the Glucose Goddess approach. Daily calorie and macro figures are estimated from a mid-range choice in each meal exchange; the food categories, portions and allowed alternatives are the authority. 500 ml of water with each of the four meals (~2 L/day). Original document in Spanish (clinic: Alvear 1).",
-  "updated_on": "2026-06-12"
+  "kcal": 2090,
+  "protein_g": 153,
+  "carbs_g": 217,
+  "fat_g": 68,
+  "fiber_g": 30,
+  "source": "derived"
 }
