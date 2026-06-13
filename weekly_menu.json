@@ -815,135 +815,117 @@
         }
       },
       {
-        "slot": "dinner",
-        "name": "Mediterranean Beef & Chickpea Skillet with Roasted Cherry Tomatoes & Sourdough",
+        "name": "Creamy Tomato Chicken Thighs with Wilted Spinach & Wholemeal Penne",
         "time": "19:30",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 20,
-        "image_prompt": "rustic skillet with seasoned ground beef, golden chickpeas, burst roasted cherry tomatoes and wilted spinach, served with a slice of toasted sourdough on the side, warm amber light, overhead angle",
+        "prep_ahead": "Marinate chicken thighs in garlic, olive oil and herbs the night before.",
+        "cook_minutes_day_of": 30,
+        "image_prompt": "Creamy tomato chicken thighs over wholemeal penne with wilted spinach, garnished with fresh basil",
         "video_url": "",
         "prep_steps": [
-          "On Sunday, cook 200 g chickpeas (from batch_lentils_chickpeas prep) and portion. Refrigerate."
+          "Marinate chicken thighs in garlic, olive oil, and dried herbs.",
+          "Cook wholemeal penne according to package instructions."
         ],
         "day_of_steps": [
-          "Heat 1 tsp olive oil in a skillet over medium-high heat.",
-          "Add ground beef (Diego: 150 g, Diana: 100 g), season with dried oregano, smoked paprika, garlic powder, black pepper. Cook 5–6 min, breaking up with spoon.",
-          "Add drained chickpeas (Diego: 80 g, Diana: 60 g), cherry tomatoes (Diego: 100 g, Diana: 80 g) and 1 tbsp tomato paste. Stir well, simmer 5 min until tomatoes burst.",
-          "Add spinach (Diego: 60 g, Diana: 40 g) and stir until wilted, 2 min.",
-          "Drizzle 1 tsp balsamic vinegar over the skillet.",
-          "Toast sourdough (Diego: 40 g, Diana: 30 g). Serve skillet in bowls with toast on side."
+          "Sear chicken thighs in a pan until golden.",
+          "Add crushed tomatoes, garlic, and a splash of cream; simmer 15 min.",
+          "Stir in spinach until wilted.",
+          "Serve over drained penne."
         ],
-        "storage_ref": "prep_batch_chickpeas",
-        "food_category": "red_meat",
+        "food_category": "poultry",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Ground beef (bœuf haché)",
-                "qty": "150 g raw"
+                "item": "chicken thighs (skinless)",
+                "qty": "180g"
               },
               {
-                "item": "Canned chickpeas (pois chiches en conserve)",
-                "qty": "80 g drained"
+                "item": "wholemeal penne",
+                "qty": "75g dry"
               },
               {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "100 g"
+                "item": "crushed tomatoes",
+                "qty": "150g"
               },
               {
-                "item": "Spinach (épinards)",
-                "qty": "60 g"
+                "item": "fresh spinach",
+                "qty": "60g"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
+                "item": "garlic",
+                "qty": "2 cloves"
               },
               {
-                "item": "Olive oil (huile d'olive)",
+                "item": "light cream",
+                "qty": "30ml"
+              },
+              {
+                "item": "olive oil",
                 "qty": "1 tsp"
-              },
-              {
-                "item": "Tomato paste (concentré de tomates)",
-                "qty": "1 tbsp"
-              },
-              {
-                "item": "Balsamic vinegar (vinaigre balsamique)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Dried oregano, smoked paprika, garlic powder, black pepper",
-                "qty": "seasoning"
               }
             ],
             "macros": {
-              "kcal": 470,
-              "protein_g": 40,
-              "carbs_g": 34,
-              "fat_g": 18,
-              "fiber_g": 8
+              "kcal": 540,
+              "protein_g": 42,
+              "carbs_g": 55,
+              "fat_g": 14,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Ground beef (bœuf haché)",
-                "qty": "100 g raw"
+                "item": "chicken thighs (skinless)",
+                "qty": "150g"
               },
               {
-                "item": "Canned chickpeas (pois chiches en conserve)",
-                "qty": "60 g drained"
+                "item": "wholemeal penne",
+                "qty": "60g dry"
               },
               {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "80 g"
+                "item": "crushed tomatoes",
+                "qty": "120g"
               },
               {
-                "item": "Spinach (épinards)",
-                "qty": "40 g"
+                "item": "fresh spinach",
+                "qty": "50g"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
+                "item": "garlic",
+                "qty": "2 cloves"
               },
               {
-                "item": "Olive oil (huile d'olive)",
+                "item": "light cream",
+                "qty": "20ml"
+              },
+              {
+                "item": "olive oil",
                 "qty": "1 tsp"
-              },
-              {
-                "item": "Tomato paste (concentré de tomates)",
-                "qty": "1 tbsp"
-              },
-              {
-                "item": "Balsamic vinegar (vinaigre balsamique)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Dried oregano, smoked paprika, garlic powder, black pepper",
-                "qty": "seasoning"
               }
             ],
             "macros": {
-              "kcal": 335,
-              "protein_g": 27,
-              "carbs_g": 26,
+              "kcal": 450,
+              "protein_g": 35,
+              "carbs_g": 45,
               "fat_g": 12,
               "fiber_g": 6
             }
           }
-        }
+        },
+        "slot": "dinner"
       }
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2165,
-        "protein_g": 133,
-        "carbs_g": 214,
-        "fat_g": 79
+        "kcal": 2235,
+        "protein_g": 135,
+        "carbs_g": 235,
+        "fat_g": 75
       },
       "diana": {
-        "kcal": 1690,
-        "protein_g": 95,
-        "carbs_g": 186,
+        "kcal": 1805,
+        "protein_g": 103,
+        "carbs_g": 205,
         "fat_g": 52
       }
     }
