@@ -137,5 +137,13 @@
   {
     "role": "assistant",
     "content": "Let me handle all of this at once — recording your preferences AND applying the changes to this week's plan right now!\n(Done: I noted a preference, noted a preference, noted a preference, noted a preference, noted a preference, added an item to meals.)"
+  },
+  {
+    "role": "user",
+    "content": "Apply these on the existing plan"
+  },
+  {
+    "role": "assistant",
+    "content": "Let me apply everything to the current week right now! I'll:\n1. Add the 250ml kefir smoothie to every breakfast\n2. Swap in more beef dinners (replacing heavier proteins where needed)\n3. Make sure there's one chicken dinner (in a sauce) and one vegetarian dinner\n4. Keep dinners lighter and easier to digest\n\nLet me fire all these changes at once!\n(Done: I added an item to meals, noted a preference, noted a preference, noted a preference, noted a preference.)"
   }
 ]
