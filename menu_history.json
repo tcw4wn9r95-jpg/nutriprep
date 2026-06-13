@@ -196,5 +196,27 @@
       "diego": 1872,
       "diana": 1499
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Strawberries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Baked White Fish with Green Beans, Mushrooms & New Potatoes",
+      "Smoked Salmon on Rye with Cream Cheese & Kiwi",
+      "Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice",
+      "Lean Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta",
+      "Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Blueberries",
+      "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
+      "Grilled Chicken Breast with Couscous, Roasted Peppers & Spinach",
+      "Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Strawberries"
+    ],
+    "shopping_items": 67,
+    "prep_minutes": 289,
+    "day_kcal": {
+      "diego": 2171,
+      "diana": 1656
+    }
   }
 ]

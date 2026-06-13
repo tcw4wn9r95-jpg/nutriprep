@@ -3,13 +3,13 @@
   "currency": "EUR",
   "est_total_eur": 102,
   "est_by_supermarket": {},
-  "unpriced_count": 60,
+  "unpriced_count": 67,
   "budget_eur": 120,
   "items": [
     {
-      "name_en": "Sourdough bread (1 loaf)",
-      "name_fr": "Pain au levain (1 pain)",
-      "qty": "500g",
+      "name_en": "Whole-grain sourdough bread",
+      "name_fr": "Pain de seigle complet / pain au levain",
+      "qty": "800 g",
       "aisle": "Bakery / Boulangerie",
       "food_category": "baked_goods",
       "stores": [
@@ -26,10 +26,143 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Tomato paste",
-      "name_fr": "Concentr\u00e9 de tomates",
-      "qty": "200g",
-      "aisle": "Canned Goods / \u00c9picerie",
+      "name_en": "Rye bread",
+      "name_fr": "Pain de seigle",
+      "qty": "400 g",
+      "aisle": "Bakery / Boulangerie",
+      "food_category": "baked_goods",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Canned tuna in water",
+      "name_fr": "Thon en conserve (\u00e0 l'eau)",
+      "qty": "250 g",
+      "aisle": "Canned & Packaged / Conserves",
+      "food_category": "fish_seafood",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Canned white beans",
+      "name_fr": "Haricots blancs en conserve",
+      "qty": "800 g",
+      "aisle": "Canned & Packaged / Conserves",
+      "food_category": "legumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Canned black beans",
+      "name_fr": "Haricots noirs en conserve",
+      "qty": "400 g",
+      "aisle": "Canned & Packaged / Conserves",
+      "food_category": "legumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Canned chickpeas",
+      "name_fr": "Pois chiches en conserve",
+      "qty": "400 g",
+      "aisle": "Canned & Packaged / Conserves",
+      "food_category": "legumes",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Canned tomato paste",
+      "name_fr": "Concentr\u00e9 de tomate en conserve",
+      "qty": "200 g",
+      "aisle": "Canned & Packaged / Conserves",
+      "food_category": "sauce_dairy",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Vegetable stock (liquid or cube)",
+      "name_fr": "Bouillon de l\u00e9gumes (liquide ou cube)",
+      "qty": "1.0 L",
+      "aisle": "Canned & Packaged / Conserves",
+      "food_category": "generic",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "L",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Dijon mustard",
+      "name_fr": "Moutarde de Dijon",
+      "qty": "200 g",
+      "aisle": "Condiments / Sauces",
       "food_category": "generic",
       "stores": [
         "Cactus",
@@ -48,8 +181,8 @@
     },
     {
       "name_en": "Eggs (large)",
-      "name_fr": "\u0152ufs (grands)",
-      "qty": "14",
+      "name_fr": "\u0152ufs (gros)",
+      "qty": "24",
       "aisle": "Dairy / Cr\u00e8merie",
       "food_category": "eggs_cooked",
       "stores": [
@@ -66,9 +199,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Greek yogurt (plain, unsweetened)",
-      "name_fr": "Yaourt grec (nature, sans sucre)",
-      "qty": "1.4 kg",
+      "name_en": "Greek yogurt (0% fat)",
+      "name_fr": "Yaourt grec (0% mati\u00e8re grasse)",
+      "qty": "2.5 kg",
       "aisle": "Dairy / Cr\u00e8merie",
       "food_category": "dairy",
       "stores": [
@@ -85,9 +218,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Gruy\u00e8re cheese",
-      "name_fr": "Fromage Gruy\u00e8re",
-      "qty": "0.2 kg",
+      "name_en": "Greek feta cheese",
+      "name_fr": "Fromage feta grec",
+      "qty": "250 g",
       "aisle": "Dairy / Cr\u00e8merie",
       "food_category": "dairy",
       "stores": [
@@ -104,17 +237,16 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Feta cheese",
-      "name_fr": "Fromage feta",
-      "qty": "0.35 kg",
-      "aisle": "Dairy / Fromagerie",
+      "name_en": "Cream cheese",
+      "name_fr": "Fromage \u00e0 la cr\u00e8me",
+      "qty": "200 g",
+      "aisle": "Dairy / Laiterie",
       "food_category": "dairy",
       "stores": [
         "Cactus",
         "Auchan",
         "Delhaize",
-        "Aldi",
-        "Lidl"
+        "Aldi"
       ],
       "available_in_lux": true,
       "have_at_home": false,
@@ -125,9 +257,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Salmon fillets",
-      "name_fr": "Filets de saumon",
-      "qty": "1.1 kg",
+      "name_en": "Salmon fillet",
+      "name_fr": "Filet de saumon",
+      "qty": "600 g",
       "aisle": "Fish / Poissonnerie",
       "food_category": "fish_seafood",
       "stores": [
@@ -144,9 +276,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "White fish fillets (sea bass or cod)",
-      "name_fr": "Filets de poisson blanc (bar ou morue)",
-      "qty": "1.3 kg",
+      "name_en": "White fish fillet (cod/hake)",
+      "name_fr": "Filet de morue/colin",
+      "qty": "550 g",
       "aisle": "Fish / Poissonnerie",
       "food_category": "fish_seafood",
       "stores": [
@@ -163,9 +295,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Tuna loin",
-      "name_fr": "Longe de thon",
-      "qty": "0.36 kg",
+      "name_en": "Smoked salmon",
+      "name_fr": "Saumon fum\u00e9",
+      "qty": "150 g",
       "aisle": "Fish / Poissonnerie",
       "food_category": "fish_seafood",
       "stores": [
@@ -184,7 +316,7 @@
     {
       "name_en": "Brown rice (dry)",
       "name_fr": "Riz brun (sec)",
-      "qty": "0.5 kg",
+      "qty": "500 g",
       "aisle": "Grains & Pasta / \u00c9picerie",
       "food_category": "rice",
       "stores": [
@@ -203,7 +335,7 @@
     {
       "name_en": "Quinoa (dry)",
       "name_fr": "Quinoa (sec)",
-      "qty": "0.4 kg",
+      "qty": "400 g",
       "aisle": "Grains & Pasta / \u00c9picerie",
       "food_category": "grains_pasta",
       "stores": [
@@ -222,7 +354,7 @@
     {
       "name_en": "Couscous (dry)",
       "name_fr": "Couscous (sec)",
-      "qty": "0.3 kg",
+      "qty": "300 g",
       "aisle": "Grains & Pasta / \u00c9picerie",
       "food_category": "grains_pasta",
       "stores": [
@@ -239,9 +371,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Whole-wheat pasta",
+      "name_en": "Whole-grain pasta",
       "name_fr": "P\u00e2tes compl\u00e8tes",
-      "qty": "0.5 kg",
+      "qty": "500 g",
       "aisle": "Grains & Pasta / \u00c9picerie",
       "food_category": "grains_pasta",
       "stores": [
@@ -258,85 +390,29 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Canned lentils (cooked)",
-      "name_fr": "Lentilles en conserve (cuites)",
-      "qty": "800g (2 cans \u00e0 400g)",
-      "aisle": "Grains & Pasta / \u00c9picerie",
-      "food_category": "legumes",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": true,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Canned chickpeas (cooked)",
-      "name_fr": "Pois chiches en conserve (cuits)",
-      "qty": "800g (2 cans \u00e0 400g)",
-      "aisle": "Grains & Pasta / \u00c9picerie",
-      "food_category": "legumes",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": true,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Canned white beans (cooked)",
-      "name_fr": "Haricots blancs en conserve (cuits)",
-      "qty": "800g (2 cans \u00e0 400g)",
-      "aisle": "Grains & Pasta / \u00c9picerie",
-      "food_category": "legumes",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": true,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Parchment paper (roll)",
-      "name_fr": "Papier parchemin (rouleau)",
-      "qty": "1 roll",
-      "aisle": "Kitchen Supplies / Fournitures de cuisine",
+      "name_en": "Soy sauce",
+      "name_fr": "Sauce soja",
+      "qty": "200 ml",
+      "aisle": "International / Asie",
       "food_category": "generic",
       "stores": [
         "Cactus",
         "Auchan",
-        "Delhaize"
+        "Delhaize",
+        "Aldi"
       ],
       "available_in_lux": true,
       "have_at_home": false,
-      "staple": false,
+      "staple": true,
       "supermarket": "Cactus",
       "unit_price_eur": null,
-      "price_unit": "item",
+      "price_unit": "L",
       "line_cost_eur": null
     },
     {
       "name_en": "Chicken breast",
       "name_fr": "Blanc de poulet",
-      "qty": "2.8 kg",
+      "qty": "3.0 kg",
       "aisle": "Meat / Boucherie",
       "food_category": "poultry",
       "stores": [
@@ -355,10 +431,48 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Almonds (raw, unsalted)",
-      "name_fr": "Amandes (brutes, non sal\u00e9es)",
-      "qty": "0.35 kg",
-      "aisle": "Oils & Condiments / \u00c9picerie",
+      "name_en": "Lean beef steak (sirloin/rump)",
+      "name_fr": "Steak de b\u0153uf maigre (surlonge/rumsteck)",
+      "qty": "500 g",
+      "aisle": "Meat / Boucherie",
+      "food_category": "red_meat",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Lean beef mince",
+      "name_fr": "Viande hach\u00e9e de b\u0153uf maigre",
+      "qty": "550 g",
+      "aisle": "Meat / Boucherie",
+      "food_category": "red_meat",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Raw almonds",
+      "name_fr": "Amandes crues",
+      "qty": "400 g",
+      "aisle": "Nuts & Seeds / Fruits secs & Graines",
       "food_category": "generic",
       "stores": [
         "Cactus",
@@ -374,10 +488,10 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Walnuts (raw)",
-      "name_fr": "Noix (brutes)",
-      "qty": "0.35 kg",
-      "aisle": "Oils & Condiments / \u00c9picerie",
+      "name_en": "Raw walnuts",
+      "name_fr": "Noix crues",
+      "qty": "350 g",
+      "aisle": "Nuts & Seeds / Fruits secs & Graines",
       "food_category": "generic",
       "stores": [
         "Cactus",
@@ -393,10 +507,10 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Olive oil (extra virgin)",
-      "name_fr": "Huile d'olive (extra vierge)",
-      "qty": "0.5 L",
-      "aisle": "Oils & Condiments / \u00c9picerie",
+      "name_en": "Raw cashews",
+      "name_fr": "Noix de cajou crues",
+      "qty": "150 g",
+      "aisle": "Nuts & Seeds / Fruits secs & Graines",
       "food_category": "generic",
       "stores": [
         "Cactus",
@@ -408,14 +522,52 @@
       "staple": true,
       "supermarket": "Cactus",
       "unit_price_eur": null,
-      "price_unit": "L",
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Raw pistachios",
+      "name_fr": "Pistaches crues",
+      "qty": "150 g",
+      "aisle": "Nuts & Seeds / Fruits secs & Graines",
+      "food_category": "generic",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Sesame seeds",
+      "name_fr": "Graines de s\u00e9same",
+      "qty": "100 g",
+      "aisle": "Nuts & Seeds / Fruits secs & Graines",
+      "food_category": "generic",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
       "line_cost_eur": null
     },
     {
       "name_en": "Sesame oil",
       "name_fr": "Huile de s\u00e9same",
-      "qty": "0.2 L",
-      "aisle": "Oils & Condiments / \u00c9picerie",
+      "qty": "200 ml",
+      "aisle": "Oils & Condiments / Huiles & Condiments",
       "food_category": "generic",
       "stores": [
         "Cactus",
@@ -431,10 +583,10 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Red wine vinegar",
-      "name_fr": "Vinaigre de vin rouge",
-      "qty": "0.25 L",
-      "aisle": "Oils & Condiments / \u00c9picerie",
+      "name_en": "Harissa paste",
+      "name_fr": "P\u00e2te de harissa",
+      "qty": "200 g",
+      "aisle": "Oils & Condiments / Huiles & Condiments",
       "food_category": "generic",
       "stores": [
         "Cactus",
@@ -446,38 +598,21 @@
       "staple": true,
       "supermarket": "Cactus",
       "unit_price_eur": null,
-      "price_unit": "L",
+      "price_unit": "kg",
       "line_cost_eur": null
     },
     {
-      "name_en": "Low-sodium soy sauce",
-      "name_fr": "Sauce soja faible en sodium",
-      "qty": "0.3 L",
-      "aisle": "Oils & Condiments / \u00c9picerie",
+      "name_en": "Extra virgin olive oil",
+      "name_fr": "Huile d'olive vierge extra",
+      "qty": "500 ml",
+      "aisle": "Oils / Huiles",
       "food_category": "generic",
       "stores": [
         "Cactus",
         "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": true,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "L",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Low-sodium vegetable stock (carton or cubes)",
-      "name_fr": "Bouillon de l\u00e9gumes faible en sodium",
-      "qty": "1.0 L",
-      "aisle": "Oils & Condiments / \u00c9picerie",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
+        "Delhaize",
+        "Aldi",
+        "Lidl"
       ],
       "available_in_lux": true,
       "have_at_home": false,
@@ -490,7 +625,7 @@
     {
       "name_en": "Balsamic vinegar",
       "name_fr": "Vinaigre balsamique",
-      "qty": "0.25 L",
+      "qty": "250 ml",
       "aisle": "Oils / Vinaigrettes",
       "food_category": "generic",
       "stores": [
@@ -507,85 +642,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Mixed fresh berries",
-      "name_fr": "Baies fra\u00eeches m\u00e9lang\u00e9es",
-      "qty": "1.1 kg",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Apples",
-      "name_fr": "Pommes",
-      "qty": "1.4 kg",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Pears",
-      "name_fr": "Poires",
-      "qty": "1.4 kg",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Oranges",
-      "name_fr": "Oranges",
-      "qty": "1.4 kg",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Bell peppers (mixed colours)",
-      "name_fr": "Poivrons (couleurs m\u00e9lang\u00e9es)",
-      "qty": "0.7 kg",
+      "name_en": "Bell peppers (red, yellow)",
+      "name_fr": "Poivrons (rouges, jaunes)",
+      "qty": "1.5 kg",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -621,47 +680,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Broccoli florets",
-      "name_fr": "Bouquets de brocoli",
-      "qty": "0.6 kg",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "vegetables_raw_prepped",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Fresh spinach",
-      "name_fr": "\u00c9pinards frais",
-      "qty": "0.4 kg",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "vegetables_raw_prepped",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
       "name_en": "Bok choy",
-      "name_fr": "Bok choy",
-      "qty": "0.7 kg",
+      "name_fr": "Pak-cho\u00ef",
+      "qty": "500 g",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -678,9 +699,28 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Fresh rocket (arugula)",
+      "name_en": "Spinach (fresh)",
+      "name_fr": "\u00c9pinards frais",
+      "qty": "300 g",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Fresh arugula",
       "name_fr": "Roquette fra\u00eeche",
-      "qty": "0.2 kg",
+      "qty": "250 g",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -698,8 +738,8 @@
     },
     {
       "name_en": "New potatoes",
-      "name_fr": "Petites pommes de terre nouvelles",
-      "qty": "1.5 kg",
+      "name_fr": "Pommes de terre nouvelles",
+      "qty": "1.2 kg",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -718,6 +758,63 @@
     {
       "name_en": "Sweet potatoes",
       "name_fr": "Patates douces",
+      "qty": "700 g",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Fresh strawberries",
+      "name_fr": "Fraises fra\u00eeches",
+      "qty": "1.2 kg",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Fresh blueberries",
+      "name_fr": "Myrtilles fra\u00eeches",
+      "qty": "800 g",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Apples",
+      "name_fr": "Pommes",
       "qty": "1.0 kg",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
@@ -735,28 +832,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Fresh garlic bulbs",
-      "name_fr": "Bulbes d'ail frais",
-      "qty": "2",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "vegetables_raw_prepped",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "item",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Fresh ginger root",
-      "name_fr": "Racine de gingembre frais",
-      "qty": "0.15 kg",
+      "name_en": "Pears",
+      "name_fr": "Poires",
+      "qty": "700 g",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -773,9 +851,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Fresh dill",
-      "name_fr": "Aneth frais",
-      "qty": "1 bunch",
+      "name_en": "Oranges",
+      "name_fr": "Oranges",
+      "qty": "600 g",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -792,9 +870,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Fresh thyme",
-      "name_fr": "Thym frais",
-      "qty": "1 bunch",
+      "name_en": "Fresh kiwis",
+      "name_fr": "Kiwis frais",
+      "qty": "450 g",
       "aisle": "Produce / Fruits & L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -811,55 +889,91 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Fresh lemons",
-      "name_fr": "Citrons frais",
-      "qty": "6",
+      "name_en": "Garlic (fresh bulbs)",
+      "name_fr": "Ail (gousses fra\u00eeches)",
+      "qty": "200 g",
       "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "item",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Fresh limes",
-      "name_fr": "Citrons verts frais",
-      "qty": "3",
-      "aisle": "Produce / Fruits & L\u00e9gumes",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": false,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "item",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Fresh parsley",
-      "name_fr": "Persil frais",
-      "qty": "1 bunch",
-      "aisle": "Produce / Herbes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
         "Cactus",
         "Auchan",
-        "Delhaize",
-        "Aldi",
-        "Lidl"
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Fresh ginger",
+      "name_fr": "Gingembre frais",
+      "qty": "150 g",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Fresh lemon",
+      "name_fr": "Citron frais",
+      "qty": "600 g",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "item",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Fresh lime",
+      "name_fr": "Citron vert frais",
+      "qty": "200 g",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "item",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Fresh cilantro (coriander leaves)",
+      "name_fr": "Coriandre fra\u00eeche (feuilles)",
+      "qty": "100 g",
+      "aisle": "Produce / Fruits & L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
       ],
       "available_in_lux": true,
       "have_at_home": false,
@@ -872,7 +986,7 @@
     {
       "name_en": "Fresh basil",
       "name_fr": "Basilic frais",
-      "qty": "1 bunch",
+      "qty": "50 g",
       "aisle": "Produce / Herbes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -891,7 +1005,7 @@
     {
       "name_en": "Zucchini",
       "name_fr": "Courgette",
-      "qty": "1.0 kg",
+      "qty": "900 g",
       "aisle": "Produce / L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -913,7 +1027,7 @@
     {
       "name_en": "Cherry tomatoes",
       "name_fr": "Tomates cerises",
-      "qty": "0.7 kg",
+      "qty": "600 g",
       "aisle": "Produce / L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -922,6 +1036,28 @@
         "Delhaize",
         "Aldi",
         "Lidl"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": false,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Broccoli",
+      "name_fr": "Brocoli",
+      "qty": "800 g",
+      "aisle": "Produce / L\u00e9gumes",
+      "food_category": "vegetables_raw_prepped",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl",
+        "Match"
       ],
       "available_in_lux": true,
       "have_at_home": false,
@@ -934,7 +1070,7 @@
     {
       "name_en": "Green beans",
       "name_fr": "Haricots verts",
-      "qty": "0.9 kg",
+      "qty": "1.0 kg",
       "aisle": "Produce / L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -953,9 +1089,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Cucumber",
-      "name_fr": "Concombre",
-      "qty": "0.75 kg",
+      "name_en": "Mushrooms",
+      "name_fr": "Champignons",
+      "qty": "800 g",
       "aisle": "Produce / L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -977,7 +1113,7 @@
     {
       "name_en": "Eggplant",
       "name_fr": "Aubergine",
-      "qty": "0.6 kg",
+      "qty": "350 g",
       "aisle": "Produce / L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -996,9 +1132,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Celery",
-      "name_fr": "C\u00e9leri",
-      "qty": "0.5 kg",
+      "name_en": "Asparagus",
+      "name_fr": "Asperges",
+      "qty": "800 g",
       "aisle": "Produce / L\u00e9gumes",
       "food_category": "vegetables_raw_prepped",
       "stores": [
@@ -1015,9 +1151,30 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Cumin (ground)",
-      "name_fr": "Cumin (moulu)",
-      "qty": "50g",
+      "name_en": "Dried oregano",
+      "name_fr": "Origan s\u00e9ch\u00e9",
+      "qty": "30 g",
+      "aisle": "Spices / \u00c9pices",
+      "food_category": "generic",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize",
+        "Aldi",
+        "Lidl"
+      ],
+      "available_in_lux": true,
+      "have_at_home": false,
+      "staple": true,
+      "supermarket": "Cactus",
+      "unit_price_eur": null,
+      "price_unit": "kg",
+      "line_cost_eur": null
+    },
+    {
+      "name_en": "Dried thyme",
+      "name_fr": "Thym s\u00e9ch\u00e9",
+      "qty": "30 g",
       "aisle": "Spices / \u00c9pices",
       "food_category": "generic",
       "stores": [
@@ -1034,9 +1191,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Paprika (ground)",
-      "name_fr": "Paprika (moulue)",
-      "qty": "50g",
+      "name_en": "Paprika powder",
+      "name_fr": "Paprika en poudre",
+      "qty": "50 g",
       "aisle": "Spices / \u00c9pices",
       "food_category": "generic",
       "stores": [
@@ -1053,9 +1210,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Oregano (dried)",
-      "name_fr": "Origan (s\u00e9ch\u00e9)",
-      "qty": "30g",
+      "name_en": "Ground cumin",
+      "name_fr": "Cumin moulu",
+      "qty": "50 g",
       "aisle": "Spices / \u00c9pices",
       "food_category": "generic",
       "stores": [
@@ -1072,9 +1229,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Chilli flakes",
-      "name_fr": "Flocons de piment",
-      "qty": "30g",
+      "name_en": "Chili powder",
+      "name_fr": "Poudre de chili",
+      "qty": "50 g",
       "aisle": "Spices / \u00c9pices",
       "food_category": "generic",
       "stores": [
@@ -1091,9 +1248,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Cinnamon (ground)",
-      "name_fr": "Cannelle (moulue)",
-      "qty": "30g",
+      "name_en": "Ground coriander",
+      "name_fr": "Coriandre moulue",
+      "qty": "50 g",
       "aisle": "Spices / \u00c9pices",
       "food_category": "generic",
       "stores": [
@@ -1110,9 +1267,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Salt (sea salt or table salt)",
-      "name_fr": "Sel (sel de mer ou sel de table)",
-      "qty": "500g",
+      "name_en": "Salt",
+      "name_fr": "Sel",
+      "qty": "500 g",
       "aisle": "Spices / \u00c9pices",
       "food_category": "generic",
       "stores": [
@@ -1129,28 +1286,9 @@
       "line_cost_eur": null
     },
     {
-      "name_en": "Black pepper (ground)",
-      "name_fr": "Poivre noir (moulu)",
-      "qty": "50g",
-      "aisle": "Spices / \u00c9pices",
-      "food_category": "generic",
-      "stores": [
-        "Cactus",
-        "Auchan",
-        "Delhaize"
-      ],
-      "available_in_lux": true,
-      "have_at_home": false,
-      "staple": true,
-      "supermarket": "Cactus",
-      "unit_price_eur": null,
-      "price_unit": "kg",
-      "line_cost_eur": null
-    },
-    {
-      "name_en": "Sesame seeds",
-      "name_fr": "Graines de s\u00e9same",
-      "qty": "100g",
+      "name_en": "Black pepper",
+      "name_fr": "Poivre noir",
+      "qty": "100 g",
       "aisle": "Spices / \u00c9pices",
       "food_category": "generic",
       "stores": [

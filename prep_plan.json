@@ -2,35 +2,202 @@
   "week_of": "2026-06-15",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 165,
+  "total_active_minutes": 289,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Soft-Boiled Eggs & Sourdough Toast (Breakfasts)",
+      "title": "Mediterranean Grilled Chicken, Roasted Vegetables & Quinoa",
       "order": 1,
-      "active_minutes": 15,
+      "active_minutes": 35,
       "steps": [
-        "Bring large pot of water to a boil",
-        "Gently add 14 large eggs, set timer for 6 minutes",
-        "Meanwhile, preheat oven to 180\u00b0C",
-        "After 6 minutes, transfer eggs to ice bath, cool completely (5\u201310 min), peel gently under cold water",
-        "Store peeled eggs in airtight container in fridge",
-        "Slice sourdough loaf into 7 slices (35g each)",
-        "Lay slices on baking tray, toast in 180\u00b0C oven 4\u20135 minutes until golden",
-        "Cool toasted sourdough completely, store in airtight container at room temperature or in fridge"
+        "Season 650g chicken breast with dried oregano, lemon juice, minced garlic, salt, pepper",
+        "Grill or bake chicken at 200\u00b0C for 18 min until cooked through; cool and portion into 2 servings",
+        "Chop 200g bell peppers, 200g zucchini, 100g carrots; toss with 1.5 tbsp olive oil, 1 tsp paprika, 1 tsp thyme",
+        "Roast vegetables at 200\u00b0C for 22 min until tender; cool and portion into 2 servings",
+        "Cook 150g dry quinoa in 300ml vegetable stock; cool and portion into 2 servings",
+        "Store all components in separate sealed containers in fridge"
       ],
       "yields": [
-        "14 soft-boiled eggs (1 per day, with 0 spare)",
-        "7 slices toasted sourdough (1 per day)"
+        "Grilled chicken: 2 portions (~180g Diego, 140g Diana)",
+        "Roasted vegetables: 2 portions (~200g Diego, 160g Diana)",
+        "Cooked quinoa: 2 portions (~90g Diego, 70g Diana)"
+      ],
+      "food_category": "poultry",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa: reheat 180g chicken + quinoa, add roasted veg, drizzle 1 tsp olive oil",
+        "Wednesday": "Dinner \u2014 Grilled Chicken Breast with Couscous, Roasted Peppers & Spinach: do not use this batch (fresh couscous dinner on Wed)"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_2",
+      "title": "Asian Chicken Stir-Fry with Bok Choy, Carrots & Brown Rice",
+      "order": 2,
+      "active_minutes": 28,
+      "steps": [
+        "Cut 600g chicken breast into bite-sized pieces; season with salt, pepper, minced garlic",
+        "Stir-fry chicken in 1.5 tbsp olive oil over high heat for 8 min until cooked; cool and portion",
+        "Slice 500g bok choy lengthwise; julienne 200g carrots",
+        "Heat 1 tbsp sesame oil in wok; stir-fry bok choy and carrots for 4 min; season with 2 tbsp soy sauce, 1 tsp minced ginger; cool and portion",
+        "Cook 120g dry brown rice in 240ml water; cool and portion into 2 servings",
+        "Store chicken, stir-fried vegetables, and rice in separate sealed containers"
+      ],
+      "yields": [
+        "Cooked chicken pieces: 2 portions (~160g Diego, 130g Diana)",
+        "Stir-fried bok choy & carrots: 2 portions (~180g Diego, 150g Diana)",
+        "Cooked brown rice: 2 portions (~80g Diego, 65g Diana)"
+      ],
+      "food_category": "poultry",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Lunch \u2014 Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice: reheat chicken 2 min, add reheated vegetables, top cooked rice, drizzle 0.5 tsp sesame oil, sprinkle sesame seeds"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_3",
+      "title": "Baked White Fish, Green Beans, Mushrooms & New Potatoes",
+      "order": 3,
+      "active_minutes": 26,
+      "steps": [
+        "Boil 400g new potatoes with skin until tender (~18 min); cool and portion into 2 servings",
+        "Steam 500g green beans for 8 min until tender-crisp; cool and portion into 2 servings",
+        "Saut\u00e9 300g diced mushrooms in 1 tbsp olive oil with minced garlic and 0.5 tsp thyme for 6 min; cool and portion into 2 servings",
+        "Store each component in separate sealed containers in fridge"
+      ],
+      "yields": [
+        "Boiled new potatoes: 2 portions (~100g each)",
+        "Steamed green beans: 2 portions (~120g Diego, 100g Diana)",
+        "Saut\u00e9ed mushrooms: 2 portions (~75g Diego, 60g Diana)"
+      ],
+      "food_category": "vegetables_cooked",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Dinner \u2014 Baked White Fish with Green Beans, Mushrooms & New Potatoes: bake 160g (Diego) or 130g (Diana) fresh fish 10 min, reheat potatoes/beans/mushrooms, plate and drizzle olive oil",
+        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (vegetables cooked is only safe ~4 day(s); this is day 5).",
+        "Sunday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (vegetables cooked is only safe ~4 day(s); this is day 7)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
+      }
+    },
+    {
+      "id": "prep_batch_4",
+      "title": "Lean Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta",
+      "order": 4,
+      "active_minutes": 32,
+      "steps": [
+        "Mix 550g lean beef mince with 30g grated onion (raw), 1 large egg, minced garlic, 1 tsp dried oregano, salt, pepper",
+        "Roll into 16 golf-ball-sized meatballs; place on baking tray; bake at 180\u00b0C for 14 min until cooked; cool and portion (8 balls per person \u00d7 2 = 16 total)",
+        "Saut\u00e9 minced garlic in 1 tbsp olive oil; add 400g tomato paste + 200ml water; simmer 8 min with 1 tsp dried basil and 0.5 tsp oregano; cool and portion",
+        "Cook 200g dry whole-grain pasta al dente (~10 min); cool and portion into 2 servings",
+        "Store meatballs, sauce, and pasta in separate sealed containers"
+      ],
+      "yields": [
+        "Cooked beef meatballs: 16 pieces (~5 per Diego serving, 4 per Diana serving)",
+        "Tomato sauce: 2 portions (~120g Diego, 100g Diana)",
+        "Cooked whole-grain pasta: 2 portions (~100g Diego, 80g Diana)"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Dinner \u2014 Lean Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta: reheat 100g (Diego) or 80g (Diana) pasta, reheat 5 (Diego) or 4 (Diana) meatballs + sauce, plate and garnish with basil"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_5",
+      "title": "Grilled Chicken Breast with Couscous, Roasted Peppers & Spinach",
+      "order": 5,
+      "active_minutes": 30,
+      "steps": [
+        "Season 600g chicken breast with 1 tsp cumin, 1 tsp paprika, minced garlic, salt, pepper",
+        "Grill or bake chicken at 200\u00b0C for 18 min until cooked through; cool and portion into 2 servings",
+        "Chop 400g bell peppers (red & yellow); toss with 1 tbsp olive oil, 0.5 tsp cumin, thyme",
+        "Roast peppers at 200\u00b0C for 15 min; cool and portion into 2 servings",
+        "Cook 120g dry couscous in 240ml vegetable stock; fluff; cool and portion into 2 servings",
+        "Saut\u00e9 300g fresh spinach in 0.5 tbsp olive oil with minced garlic for 3 min until wilted; cool and portion into 2 servings",
+        "Store all components separately in sealed containers"
+      ],
+      "yields": [
+        "Grilled chicken breast: 2 portions (~170g Diego, 140g Diana)",
+        "Roasted bell peppers: 2 portions (~120g Diego, 100g Diana)",
+        "Cooked couscous: 2 portions (~75g Diego, 60g Diana)",
+        "Wilted spinach: 2 portions (~100g Diego, 80g Diana)"
+      ],
+      "food_category": "poultry",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Dinner \u2014 Grilled Chicken Breast with Couscous, Roasted Peppers & Spinach: reheat 170g (Diego) or 140g (Diana) chicken, reheat peppers and spinach, portion couscous, plate together and drizzle 0.5 tsp olive oil"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_6",
+      "title": "Soft-Boiled Eggs (for 5 breakfasts)",
+      "order": 6,
+      "active_minutes": 12,
+      "steps": [
+        "Bring large pot of water to rolling boil",
+        "Gently lower 10 large eggs into boiling water",
+        "Cook for exactly 6 minutes for soft-boiled consistency (runny yolk, set white)",
+        "Transfer immediately to ice bath to stop cooking",
+        "Once cool, gently peel under cool running water, being careful with soft yolk",
+        "Store in sealed container with paper towel to absorb moisture; keep refrigerated"
+      ],
+      "yields": [
+        "10 soft-boiled eggs, peeled and stored (used for Monday, Wednesday, Thursday, Saturday, Sunday breakfasts)"
       ],
       "food_category": "eggs_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Breakfast \u2014 Soft-Boiled Egg with Sourdough, Feta & Berries: place 1 chilled egg in egg cup, serve 1 toasted sourdough slice + 30g crumbled feta + 150g mixed berries on separate small plate",
-        "Tuesday": "Breakfast \u2014 Soft-Boiled Egg with Sourdough, Feta & Berries: place 1 chilled egg in egg cup, serve 1 toasted sourdough slice + feta cheese + mixed berries",
-        "Wednesday": "Breakfast \u2014 Soft-Boiled Egg with Sourdough, Feta & Berries: assemble 1 egg + 1 toast slice + feta + berries on plate",
-        "Thursday": "Breakfast \u2014 Soft-Boiled Egg with Sourdough, Feta & Berries: plate 1 soft egg, toast, feta, berries",
-        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (eggs cooked is only safe ~4 day(s); this is day 5).",
+        "Monday": "Breakfast \u2014 Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Strawberries: toast bread, place 1 egg (Diego) or 0.75 egg (Diana) in cup, crumble feta on toast, arrange strawberries",
+        "Wednesday": "Breakfast \u2014 Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Blueberries: toast bread, place 1 egg (Diego) or 0.75 egg (Diana) in cup, crumble feta on toast, arrange blueberries",
+        "Thursday": "Breakfast \u2014 Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Strawberries: toast bread, place 1 egg (Diego) or 0.75 egg (Diana) in cup, crumble feta on toast, arrange strawberries",
         "Saturday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (eggs cooked is only safe ~4 day(s); this is day 6).",
         "Sunday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (eggs cooked is only safe ~4 day(s); this is day 7)."
       },
@@ -46,149 +213,23 @@
       }
     },
     {
-      "id": "prep_batch_2",
-      "title": "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa (Monday Lunch)",
-      "order": 2,
-      "active_minutes": 35,
-      "steps": [
-        "Pat dry 700g chicken breast, place in shallow bowl",
-        "Make marinade: juice 3 lemons, 3 tbsp (45ml) olive oil, 2 tsp dried oregano, 4 cloves minced garlic, salt & pepper",
-        "Pour marinade over chicken, cover, refrigerate 30 minutes minimum (or proceed immediately for time)",
-        "Heat grill or grill pan to high, brush with oil",
-        "Grill chicken 6\u20137 minutes per side until internal temp 75\u00b0C, set aside to cool 5 minutes",
-        "Once cool, portion into 7 containers (100g each for portion tracking, weigh before storing)",
-        "Deseed and chop 300g bell peppers + 300g zucchini into 2cm chunks",
-        "Toss 600g total veg with 2 tsp olive oil, 1 tsp oregano, salt & pepper on a roasting tray",
-        "Roast at 200\u00b0C for 20 minutes until tender and lightly caramelised, stir halfway",
-        "Cool completely, portion into containers",
-        "Rinse 200g dry quinoa, bring 400ml salted water to boil in a pot",
-        "Add quinoa, cover, reduce heat to low, simmer 12\u201313 minutes until water absorbed",
-        "Fluff with fork, cool completely, portion into 7 containers (85\u201390g cooked per day)"
-      ],
-      "yields": [
-        "700g grilled chicken breast (portioned)",
-        "600g roasted bell pepper & zucchini mix (portioned)",
-        "600g cooked quinoa (portioned into ~85\u201390g servings)"
-      ],
-      "food_category": "poultry",
-      "video_url": "",
-      "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Grilled Chicken with Roasted Veg & Quinoa: reheat 180g chicken + 100g roasted veg in pan (2 min), warm 120g quinoa (1 min), plate together, drizzle 2 tsp fresh olive oil, squeeze lemon, scatter fresh parsley (5g)"
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
-        "reheat_c": 74,
-        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
-      }
-    },
-    {
-      "id": "prep_batch_3",
-      "title": "Asian Chicken Stir-Fry with Bok Choy & Brown Rice (Tuesday Lunch)",
-      "order": 3,
-      "active_minutes": 25,
-      "steps": [
-        "Cut 700g chicken breast into bite-sized cubes (2cm)",
-        "Heat 2 tsp sesame oil in a large wok or deep pan over high heat",
-        "Add 4 cloves minced garlic + 1 tbsp minced fresh ginger, stir-fry 30 seconds until fragrant",
-        "Add chicken cubes, stir-fry 8\u201310 minutes until cooked through (no pink)",
-        "Add 1.5 tsp low-sodium soy sauce, mix well, taste and adjust seasoning",
-        "Transfer to a plate, cool completely",
-        "Chop 350g bok choy into 3cm pieces (greens and stalks separated)",
-        "Heat 1 tsp sesame oil in the same wok, add bok choy stalks first, stir-fry 1 minute",
-        "Add greens, stir-fry 1 more minute until just tender-crisp and bright green",
-        "Add cooked chicken back to wok, toss 30 seconds, cool completely",
-        "Portion chicken + bok choy mix into 7 containers",
-        "Rinse 180g dry brown rice, cook in 360ml salted water per rice packet instructions (~18\u201320 min)",
-        "Fluff with fork, cool completely, portion into 7 containers (77g cooked per day)"
-      ],
-      "yields": [
-        "700g stir-fried chicken + bok choy mix (portioned)",
-        "540g cooked brown rice (portioned into ~77g servings)"
-      ],
-      "food_category": "poultry",
-      "video_url": "",
-      "day_of_assembly": {
-        "Tuesday": "Lunch \u2014 Asian Chicken Stir-Fry with Bok Choy & Brown Rice: reheat 180g chicken + bok choy mix in pan (2 min), warm 110g cooked brown rice (1 min), plate rice as base, top with chicken & bok choy, sprinkle 5g sesame seeds + fresh ginger shreds (3g)"
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
-        "reheat_c": 74,
-        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
-      }
-    },
-    {
-      "id": "prep_batch_4",
-      "title": "Spiced Chicken with Roasted Eggplant & Carrots + Lentils (Wednesday Lunch)",
-      "order": 4,
+      "id": "prep_batch_7",
+      "title": "Mexican-Style Chicken & Black Bean Bowl with Cilantro-Lime Rice",
+      "order": 7,
       "active_minutes": 30,
       "steps": [
-        "Cube 700g chicken breast into 2\u20133cm pieces",
-        "Season cubed chicken with 2 tsp ground cumin, 1 tsp paprika, salt, pepper, 2 cloves minced garlic; mix well",
-        "Heat 2 tsp olive oil in a large pan over medium-high heat",
-        "Pan-fry seasoned chicken 10\u201312 minutes, stirring occasionally, until cooked through and golden edges",
-        "Transfer to plate, cool completely, portion into 7 containers",
-        "Cube 300g eggplant + 250g carrots into 2cm pieces",
-        "Toss 550g total veg with 1 tsp olive oil, 1 tsp ground cumin, salt & pepper on roasting tray",
-        "Roast at 200\u00b0C for 20 minutes until tender and caramelised, stir halfway",
-        "Cool completely, portion into 7 containers",
-        "Open 2 cans (800g) lentils, drain, rinse thoroughly under cold water",
-        "Warm rinsed lentils gently in a small pot (2\u20133 min) with a splash of water if needed",
-        "Cool completely, portion into 7 containers (42g cooked lentils per portion)"
+        "Season 600g chicken breast with 1.5 tsp chili powder, 1 tsp cumin, 0.5 tsp paprika, minced garlic, salt, pepper",
+        "Bake chicken at 180\u00b0C for 18 min until cooked; cool and shred with forks; portion into 2 servings",
+        "Cook 150g dry brown rice in 300ml water; stir in juice of 1 lime and 2 tbsp fresh chopped cilantro; cool and portion into 2 servings",
+        "Roast 400g diced bell peppers with 1 tbsp olive oil, 1 tsp cumin, 0.5 tsp chili powder at 200\u00b0C for 14 min; cool and portion into 2 servings",
+        "Heat 1 can (400g) black beans with minced garlic and 0.5 tsp cumin for 5 min; cool and portion into 2 servings",
+        "Store each component separately in sealed containers"
       ],
       "yields": [
-        "700g cumin-paprika pan-fried chicken (portioned)",
-        "550g roasted eggplant & carrots (portioned)",
-        "280g cooked lentils (portioned into ~40g servings)"
-      ],
-      "food_category": "poultry",
-      "video_url": "",
-      "day_of_assembly": {
-        "Wednesday": "Lunch \u2014 Spiced Chicken Bowl with Roasted Vegetables & Canned Lentils: reheat 180g cumin chicken + 100g roasted eggplant & carrots in pan (2 min), warm 100g lentils (1 min), plate together, drizzle 0.5 tsp olive oil, garnish 5g fresh parsley"
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
-        "reheat_c": 74,
-        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
-      }
-    },
-    {
-      "id": "prep_batch_5",
-      "title": "Mexican-Style Chicken Lettuce Wraps with Roasted Peppers & White Beans (Thursday Lunch)",
-      "order": 5,
-      "active_minutes": 28,
-      "steps": [
-        "Cube 700g chicken breast into 2cm pieces",
-        "Season chicken with 2 tsp ground cumin, 1 tsp chilli flakes (or less if sensitive), juice of 2 limes, salt, pepper; toss well",
-        "Heat 1 tsp olive oil in a large pan over medium-high heat",
-        "Pan-fry seasoned chicken 10\u201312 minutes until cooked through, stirring occasionally",
-        "Transfer to plate, cool completely, portion into 7 containers",
-        "Slice 280g mixed bell peppers (red, yellow) into 1cm strips",
-        "Toss peppers with 1 tsp olive oil, 1 tsp paprika, salt & pepper on roasting tray",
-        "Roast at 200\u00b0C for 15 minutes until tender and lightly charred, stir halfway",
-        "Cool completely, portion into 7 containers",
-        "Open 2 cans (800g) white beans, drain, rinse thoroughly under cold water",
-        "Warm rinsed beans gently in a small pot (2 min), add 0.5 tsp lime juice, stir, cool completely",
-        "Portion into 7 containers (40g cooked beans per serving)"
-      ],
-      "yields": [
-        "700g cumin-chilli pan-fried chicken (portioned)",
-        "280g roasted mixed bell peppers (portioned)",
-        "280g cooked white beans (portioned into ~40g servings)"
+        "Shredded cooked chicken: 2 portions (~160g Diego, 130g Diana)",
+        "Cilantro-lime rice: 2 portions (~85g Diego, 68g Diana)",
+        "Roasted bell peppers: 2 portions (~110g Diego, 90g Diana)",
+        "Heated black beans: 2 portions (~90g Diego, 70g Diana)"
       ],
       "food_category": "poultry",
       "video_url": "",
@@ -207,32 +248,59 @@
       }
     },
     {
-      "id": "prep_batch_6",
-      "title": "Lemon-Herb Grilled Chicken with Chickpea Salad (Sunday Lunch)",
-      "order": 6,
-      "active_minutes": 32,
+      "id": "prep_batch_8",
+      "title": "Tuna & White Bean Salad Components",
+      "order": 8,
+      "active_minutes": 12,
       "steps": [
-        "Pat dry 700g chicken breast, place in shallow dish",
-        "Make marinade: juice 4 lemons, 3 tbsp (45ml) olive oil, 2 tsp dried oregano, 1 tsp fresh thyme (or 0.5 tsp dried), 4 cloves minced garlic, salt & pepper",
-        "Pour marinade over chicken, cover, refrigerate 30 minutes minimum",
-        "Heat grill or grill pan to high, brush with oil",
-        "Grill chicken 6\u20137 minutes per side until internal temp 75\u00b0C, rest 5 minutes",
-        "Cool completely, portion into 7 containers (100g each)",
-        "Open 2 cans (800g) chickpeas, drain, rinse thoroughly under cold water",
-        "Dice 150g bell pepper (red or yellow), 150g cucumber",
-        "In a large bowl, combine rinsed chickpeas, diced pepper, diced cucumber, 1.5 tsp olive oil, juice of 1 lemon, salt & pepper, mix gently",
-        "Cool completely, portion into 7 containers (40g chickpea salad per serving)",
-        "Wash and dry 200g fresh rocket, store in airtight container lined with paper towel"
+        "Open 3 cans (750g total) white beans; drain and rinse thoroughly; divide into 2 portions and store in sealed containers",
+        "Dice 2 red/yellow bell peppers (350g total); dice 1 large cucumber (300g total)",
+        "Whisk together 1 tbsp balsamic vinegar + 1 tsp olive oil; toss with diced peppers and cucumber; divide into 2 portions and store in sealed containers",
+        "Wash and dry 200g fresh arugula; store in airtight container with paper towel to absorb moisture"
       ],
       "yields": [
-        "700g lemon-herb grilled chicken breast (portioned)",
-        "280g chickpea salad (portioned into ~40g servings)",
-        "200g fresh rocket (bulk, portioned fresh each day)"
+        "Cooked white beans: 2 portions (~80g Diego, 65g Diana)",
+        "Mixed diced bell pepper & cucumber with balsamic: 2 portions (~100g Diego, 80g Diana)",
+        "Fresh arugula: 200g total (50g Diego, 40g Diana per serving)"
+      ],
+      "food_category": "vegetables_raw_prepped",
+      "video_url": "",
+      "day_of_assembly": {
+        "Thursday": "Dinner \u2014 Tuna & White Bean Salad: arrange 50g (Diego) or 40g (Diana) fresh arugula as base, flake 1 can (100g Diego) or 0.75 can (75g Diana) fresh tuna on top, add beans and dressed vegetables, drizzle 1 tsp (Diego) or 0.7 tsp (Diana) olive oil"
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container or zip bag",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": null,
+        "use_within_days": 4,
+        "freeze_option_days": null,
+        "reheat_c": null,
+        "safety_note": "Pre-cut vegetables: store dry, use within 3\u20134 days. Wash just before eating."
+      }
+    },
+    {
+      "id": "prep_batch_9",
+      "title": "Harissa-Spiced Chicken with Roasted Vegetables & Chickpeas",
+      "order": 9,
+      "active_minutes": 32,
+      "steps": [
+        "Season 600g chicken breast with 2 tbsp harissa paste, juice of 0.5 lemon, minced garlic, salt, pepper",
+        "Grill or bake chicken at 200\u00b0C for 18 min until cooked through; cool and portion into 2 servings",
+        "Chop 300g carrots; chop 300g zucchini",
+        "Drain 1 can (400g) chickpeas; rinse",
+        "Toss carrots, zucchini, chickpeas with 1.5 tbsp olive oil, 0.5 tsp harissa, 1 tsp ground coriander",
+        "Roast all together at 200\u00b0C for 18 min until vegetables are tender; cool and portion into 2 servings",
+        "Store chicken and roasted vegetable-chickpea mix in separate sealed containers"
+      ],
+      "yields": [
+        "Harissa-spiced grilled chicken: 2 portions (~170g Diego, 140g Diana)",
+        "Roasted carrots, zucchini & chickpeas: 2 portions (~230g Diego, ~185g Diana)"
       ],
       "food_category": "poultry",
       "video_url": "",
       "day_of_assembly": {
-        "Sunday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (poultry is only safe ~3 day(s); this is day 7)."
+        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (poultry is only safe ~3 day(s); this is day 5)."
       },
       "storage": {
         "method": "refrigerate",
@@ -243,6 +311,75 @@
         "freeze_option_days": 60,
         "reheat_c": 74,
         "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_10",
+      "title": "Baked White Fish Accompaniments: Broccoli, Cherry Tomatoes & Potatoes",
+      "order": 10,
+      "active_minutes": 24,
+      "steps": [
+        "Boil 380g new potatoes with skin until tender (~16 min); cool and portion into 2 servings",
+        "Chop 450g fresh broccoli into florets; toss with 1 tbsp olive oil, minced garlic, 0.5 tsp thyme",
+        "Roast broccoli at 200\u00b0C for 14 min until golden; cool and portion into 2 servings",
+        "Halve 300g cherry tomatoes; toss with 0.5 tbsp olive oil, 0.5 tsp dried oregano",
+        "Roast tomatoes alongside broccoli for final 8 min; cool and portion into 2 servings",
+        "Store potatoes, broccoli, and tomatoes in separate sealed containers"
+      ],
+      "yields": [
+        "Boiled new potatoes: 2 portions (~100g each)",
+        "Roasted broccoli florets: 2 portions (~130g Diego, 110g Diana)",
+        "Roasted cherry tomatoes: 2 portions (~80g Diego, 65g Diana)"
+      ],
+      "food_category": "vegetables_cooked",
+      "video_url": "",
+      "day_of_assembly": {
+        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (vegetables cooked is only safe ~4 day(s); this is day 5)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
+      }
+    },
+    {
+      "id": "prep_batch_11",
+      "title": "Grilled Lean Beef with Roasted Eggplant & Mushrooms, Couscous",
+      "order": 11,
+      "active_minutes": 28,
+      "steps": [
+        "Season 500g lean beef steak (sirloin or rump) with salt, pepper, minced garlic, 0.5 tsp thyme",
+        "Grill or pan-sear beef over high heat 4 min per side for medium; cool; slice into 2 portions",
+        "Slice 350g eggplant lengthwise into 0.5 cm planks; dice 300g mushrooms",
+        "Toss eggplant and mushrooms with 1.5 tbsp olive oil, 1 tsp dried oregano, minced garlic",
+        "Roast at 200\u00b0C for 16 min until tender; cool and portion into 2 servings",
+        "Cook 100g dry couscous in 200ml vegetable stock; fluff; cool and portion into 2 servings",
+        "Store beef, roasted vegetables, and couscous in separate sealed containers"
+      ],
+      "yields": [
+        "Grilled lean beef slices: 2 portions (~140g Diego, 110g Diana)",
+        "Roasted eggplant & mushrooms: 2 portions (~180g Diego, 150g Diana)",
+        "Cooked couscous: 2 portions (~65g Diego, 52g Diana)"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Saturday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (red meat is only safe ~3 day(s); this is day 6)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
       }
     }
   ]
