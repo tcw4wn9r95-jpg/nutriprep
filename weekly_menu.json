@@ -16,7 +16,7 @@
           "1. Pour 250 ml kefir into a blender, add half a banana and 80 g blueberries, blend until smooth. Pour into a tall glass.",
           "2. Toast 40 g (Diego) / 30 g (Diana) sourdough bread in a toaster.",
           "3. Heat a non-stick pan over medium heat with a few drops of olive oil.",
-          "4. Crack 2 eggs (Diego) / 2 eggs (Diana) into the pan, fry 2\u20133 min until whites are set and yolks still slightly runny.",
+          "4. Crack 2 eggs (Diego) / 2 eggs (Diana) into the pan, fry 2–3 min until whites are set and yolks still slightly runny.",
           "5. Slide eggs onto toast. Season with black pepper and sea salt.",
           "6. Serve with the kefir smoothie on the side."
         ],
@@ -26,7 +26,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -38,7 +38,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -48,20 +48,24 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "3 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 430,
-              "protein_g": 25,
-              "carbs_g": 45,
-              "fat_g": 16,
-              "fiber_g": 5
+              "kcal": 580,
+              "protein_g": 33,
+              "carbs_g": 63,
+              "fat_g": 21,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -73,7 +77,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -83,14 +87,18 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 380,
-              "protein_g": 22,
-              "carbs_g": 38,
-              "fat_g": 15,
-              "fiber_g": 5
+              "kcal": 530,
+              "protein_g": 30,
+              "carbs_g": 56,
+              "fat_g": 20,
+              "fiber_g": 7
             }
           }
         }
@@ -162,13 +170,13 @@
         "video_url": "",
         "prep_steps": [
           "Sunday: Marinate chicken breast in cumin, paprika, garlic powder, olive oil and lime juice.",
-          "Sunday: Bake marinated chicken at 200\u00b0C for 22 min; cool, slice, store in airtight container.",
-          "Sunday: Roast sliced bell peppers and cherry tomatoes with olive oil, cumin and oregano at 200\u00b0C for 20 min; store in container.",
+          "Sunday: Bake marinated chicken at 200°C for 22 min; cool, slice, store in airtight container.",
+          "Sunday: Roast sliced bell peppers and cherry tomatoes with olive oil, cumin and oregano at 200°C for 20 min; store in container.",
           "Sunday: Drain and rinse canned chickpeas; store in container."
         ],
         "day_of_steps": [
           "1. Boil kettle. Place 70 g (Diego) / 55 g (Diana) dry couscous in a bowl, pour over just-boiled water to cover by 1 cm, cover with a plate for 5 min, then fluff with a fork.",
-          "2. Reheat sliced chicken (150 g Diego / 120 g Diana) and roasted peppers/tomatoes in a pan over medium heat for 3\u20134 min with a splash of water.",
+          "2. Reheat sliced chicken (150 g Diego / 120 g Diana) and roasted peppers/tomatoes in a pan over medium heat for 3–4 min with a splash of water.",
           "3. Add 80 g (Diego) / 60 g (Diana) drained chickpeas to the pan for the last 2 min.",
           "4. Place couscous in a bowl, top with chicken, chickpeas and roasted veg.",
           "5. Squeeze half a lime over the bowl. Drizzle 1 tsp olive oil. Add 1 cup mixed salad greens on the side.",
@@ -188,7 +196,7 @@
                 "qty": "70 g dry"
               },
               {
-                "item": "Bell peppers roasted (poivrons r\u00f4tis)",
+                "item": "Bell peppers roasted (poivrons rôtis)",
                 "qty": "100 g"
               },
               {
@@ -196,11 +204,11 @@
                 "qty": "80 g"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "80 g drained"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
@@ -235,7 +243,7 @@
                 "qty": "55 g dry"
               },
               {
-                "item": "Bell peppers roasted (poivrons r\u00f4tis)",
+                "item": "Bell peppers roasted (poivrons rôtis)",
                 "qty": "80 g"
               },
               {
@@ -243,11 +251,11 @@
                 "qty": "60 g"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "60 g drained"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
@@ -348,9 +356,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Peel and dice sweet potato; boil in salted water for 15 min until soft.",
+          "1. Preheat oven to 200°C. Peel and dice sweet potato; boil in salted water for 15 min until soft.",
           "2. Season salmon fillets with paprika, garlic powder, sea salt and black pepper. Place on a lined baking tray.",
-          "3. Bake salmon for 14\u201316 min until cooked through.",
+          "3. Bake salmon for 14–16 min until cooked through.",
           "4. Drain sweet potato; mash with 1 tsp olive oil, sea salt, black pepper and a pinch of turmeric.",
           "5. Heat 1 tsp olive oil in a pan, add minced garlic clove, cook 30 sec, add spinach and toss for 2 min until wilted. Season.",
           "6. Plate: mash base, salmon fillet on top, spinach on the side.",
@@ -370,7 +378,7 @@
                 "qty": "180 g raw"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "100 g"
               },
               {
@@ -409,7 +417,7 @@
                 "qty": "130 g raw"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "80 g"
               },
               {
@@ -442,18 +450,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1995,
-        "protein_g": 140,
-        "carbs_g": 195,
-        "fat_g": 69,
-        "fiber_g": 30
+        "kcal": 2145,
+        "protein_g": 148,
+        "carbs_g": 213,
+        "fat_g": 74
       },
       "diana": {
-        "kcal": 1570,
-        "protein_g": 108,
-        "carbs_g": 158,
-        "fat_g": 52,
-        "fiber_g": 25
+        "kcal": 1720,
+        "protein_g": 116,
+        "carbs_g": 176,
+        "fat_g": 57
       }
     }
   },
@@ -483,7 +489,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -495,7 +501,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -503,26 +509,30 @@
                 "qty": "40 g"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 450,
-              "protein_g": 28,
-              "carbs_g": 44,
-              "fat_g": 17,
-              "fiber_g": 5
+              "kcal": 600,
+              "protein_g": 36,
+              "carbs_g": 62,
+              "fat_g": 22,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -534,7 +544,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -542,20 +552,24 @@
                 "qty": "30 g"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 395,
-              "protein_g": 25,
-              "carbs_g": 37,
-              "fat_g": 16,
-              "fiber_g": 5
+              "kcal": 545,
+              "protein_g": 33,
+              "carbs_g": 55,
+              "fat_g": 21,
+              "fiber_g": 7
             }
           }
         }
@@ -626,12 +640,12 @@
         "image_prompt": "overhead photo of a Buddha-style bowl with brown rice, tender sesame-glazed chicken slices, bright green broccoli and orange carrot sticks, drizzled with sesame oil and soy sauce, modern ceramic bowl, natural daylight",
         "video_url": "",
         "prep_steps": [
-          "Sunday: Slice chicken breast; marinate in soy sauce, sesame oil, ginger powder and garlic powder for 30 min, then stir-fry in batches over high heat until cooked; cool and store in container (use Mon\u2013Wed).",
+          "Sunday: Slice chicken breast; marinate in soy sauce, sesame oil, ginger powder and garlic powder for 30 min, then stir-fry in batches over high heat until cooked; cool and store in container (use Mon–Wed).",
           "Sunday: Parboil broccoli florets 2 min, refresh in cold water; store in container.",
           "Sunday: Julienne or coin-slice carrots; store raw in sealed bag."
         ],
         "day_of_steps": [
-          "1. Cook brown rice fresh: rinse 75 g (Diego) / 60 g (Diana) dry brown rice, simmer in 250 ml water for 25 min. (Start this first \u2014 brown rice takes longest.)",
+          "1. Cook brown rice fresh: rinse 75 g (Diego) / 60 g (Diana) dry brown rice, simmer in 250 ml water for 25 min. (Start this first — brown rice takes longest.)",
           "2. Heat 1 tsp sesame oil in a wok or large pan over high heat.",
           "3. Add carrot slices (80 g each), stir-fry 3 min; add parboiled broccoli (100 g Diego / 80 g Diana), stir-fry 2 min.",
           "4. Add pre-cooked chicken (150 g Diego / 120 g Diana), toss with 1 tbsp soy sauce and a pinch of ginger powder, heat through 2 min.",
@@ -660,11 +674,11 @@
                 "qty": "80 g"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "5 ml"
               },
               {
@@ -703,11 +717,11 @@
                 "qty": "80 g"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "4 ml"
               },
               {
@@ -811,11 +825,11 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Canned tuna in water (thon en bo\u00eete au naturel)",
+                "item": "Canned tuna in water (thon en boîte au naturel)",
                 "qty": "140 g drained"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
+                "item": "Canned white beans (haricots blancs en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -827,7 +841,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
@@ -854,11 +868,11 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Canned tuna in water (thon en bo\u00eete au naturel)",
+                "item": "Canned tuna in water (thon en boîte au naturel)",
                 "qty": "140 g drained"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
+                "item": "Canned white beans (haricots blancs en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -870,7 +884,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
@@ -899,18 +913,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1890,
-        "protein_g": 128,
-        "carbs_g": 192,
-        "fat_g": 65,
-        "fiber_g": 32
+        "kcal": 2040,
+        "protein_g": 136,
+        "carbs_g": 210,
+        "fat_g": 70
       },
       "diana": {
-        "kcal": 1545,
-        "protein_g": 104,
-        "carbs_g": 162,
-        "fat_g": 49,
-        "fiber_g": 28
+        "kcal": 1695,
+        "protein_g": 112,
+        "carbs_g": 180,
+        "fat_g": 54
       }
     }
   },
@@ -940,7 +952,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -952,7 +964,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -962,20 +974,24 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 415,
-              "protein_g": 24,
-              "carbs_g": 43,
-              "fat_g": 15,
-              "fiber_g": 5
+              "kcal": 565,
+              "protein_g": 32,
+              "carbs_g": 61,
+              "fat_g": 20,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -987,7 +1003,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -997,14 +1013,18 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 370,
-              "protein_g": 22,
-              "carbs_g": 37,
-              "fat_g": 14,
-              "fiber_g": 5
+              "kcal": 520,
+              "protein_g": 30,
+              "carbs_g": 55,
+              "fat_g": 19,
+              "fiber_g": 7
             }
           }
         }
@@ -1072,12 +1092,12 @@
         "time": "13:00",
         "prep_ahead": true,
         "cook_minutes_day_of": 15,
-        "image_prompt": "overhead photo of a brown rice bowl with sesame-glazed chicken, saut\u00e9ed zucchini ribbons and wilted spinach, topped with a drizzle of sesame oil and soy sauce, rustic bowl, natural light",
+        "image_prompt": "overhead photo of a brown rice bowl with sesame-glazed chicken, sautéed zucchini ribbons and wilted spinach, topped with a drizzle of sesame oil and soy sauce, rustic bowl, natural light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
           "1. Cook brown rice fresh: 75 g (Diego) / 60 g (Diana) dry, simmer 25 min.",
-          "2. Heat 1 tsp sesame oil in a pan; slice zucchini into half-moons and saut\u00e9 3\u20134 min over medium-high heat.",
+          "2. Heat 1 tsp sesame oil in a pan; slice zucchini into half-moons and sauté 3–4 min over medium-high heat.",
           "3. Add spinach (80 g each), toss until wilted, season with soy sauce and garlic powder.",
           "4. Add pre-cooked sesame chicken (150 g Diego / 120 g Diana) from batch, heat through 2 min.",
           "5. Serve rice in bowl, top with chicken and vegetables.",
@@ -1101,11 +1121,11 @@
                 "qty": "120 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "80 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "5 ml"
               },
               {
@@ -1140,11 +1160,11 @@
                 "qty": "100 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "80 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "4 ml"
               },
               {
@@ -1242,9 +1262,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Slice zucchini into coins and halve cherry tomatoes; toss with olive oil, oregano, black pepper on a baking tray.",
+          "1. Preheat oven to 200°C. Slice zucchini into coins and halve cherry tomatoes; toss with olive oil, oregano, black pepper on a baking tray.",
           "2. Roast vegetables for 15 min.",
-          "3. Season salmon with oregano, paprika, salt and garlic powder. Nestle onto the veg tray and bake a further 13\u201315 min.",
+          "3. Season salmon with oregano, paprika, salt and garlic powder. Nestle onto the veg tray and bake a further 13–15 min.",
           "4. While salmon bakes: put dry couscous in a bowl, pour over hot water or stock (1:1.5 ratio), cover 5 min, fluff.",
           "5. Plate: couscous base, salmon on top, roasted veg alongside.",
           "6. Drizzle with balsamic vinegar and remaining olive oil."
@@ -1335,18 +1355,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1940,
-        "protein_g": 139,
-        "carbs_g": 194,
-        "fat_g": 67,
-        "fiber_g": 28
+        "kcal": 2090,
+        "protein_g": 147,
+        "carbs_g": 212,
+        "fat_g": 72
       },
       "diana": {
-        "kcal": 1530,
-        "protein_g": 108,
-        "carbs_g": 160,
-        "fat_g": 50,
-        "fiber_g": 25
+        "kcal": 1680,
+        "protein_g": 116,
+        "carbs_g": 178,
+        "fat_g": 55
       }
     }
   },
@@ -1376,7 +1394,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -1388,7 +1406,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1396,26 +1414,30 @@
                 "qty": "40 g"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 450,
-              "protein_g": 28,
-              "carbs_g": 44,
-              "fat_g": 17,
-              "fiber_g": 5
+              "kcal": 600,
+              "protein_g": 36,
+              "carbs_g": 62,
+              "fat_g": 22,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -1427,7 +1449,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1435,20 +1457,24 @@
                 "qty": "30 g"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 395,
-              "protein_g": 25,
-              "carbs_g": 37,
-              "fat_g": 16,
-              "fiber_g": 5
+              "kcal": 545,
+              "protein_g": 33,
+              "carbs_g": 55,
+              "fat_g": 21,
+              "fiber_g": 7
             }
           }
         }
@@ -1520,8 +1546,8 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Toss carrot coins with olive oil, cumin, salt; roast on a tray for 20 min.",
-          "2. Season chicken breast with paprika, garlic powder, salt, black pepper. Heat pan to medium-high, cook chicken 5\u20136 min per side until done. Rest 2 min, slice.",
+          "1. Preheat oven to 200°C. Toss carrot coins with olive oil, cumin, salt; roast on a tray for 20 min.",
+          "2. Season chicken breast with paprika, garlic powder, salt, black pepper. Heat pan to medium-high, cook chicken 5–6 min per side until done. Rest 2 min, slice.",
           "3. Drain and rinse canned lentils; warm in a pan with 1 tsp olive oil, cumin and a splash of water for 2 min.",
           "4. Wilt spinach in the same pan for 1 min.",
           "5. Mix 1 tsp harissa paste with 1 tsp olive oil and a squeeze of lime for the dressing.",
@@ -1538,7 +1564,7 @@
                 "qty": "180 g raw"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "100 g drained"
               },
               {
@@ -1546,7 +1572,7 @@
                 "qty": "120 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "80 g"
               },
               {
@@ -1581,7 +1607,7 @@
                 "qty": "140 g raw"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -1589,7 +1615,7 @@
                 "qty": "100 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "80 g"
               },
               {
@@ -1694,8 +1720,8 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Slice bell peppers; toss with olive oil, cumin, paprika, salt and roast in oven at 200\u00b0C for 18 min.",
-          "2. Cut chicken into strips; season with cumin, paprika, garlic powder, salt. Cook in a pan over medium-high for 6\u20137 min until cooked through.",
+          "1. Slice bell peppers; toss with olive oil, cumin, paprika, salt and roast in oven at 200°C for 18 min.",
+          "2. Cut chicken into strips; season with cumin, paprika, garlic powder, salt. Cook in a pan over medium-high for 6–7 min until cooked through.",
           "3. Drain chickpeas; add to pan with a pinch of cumin and soy sauce, toss 2 min.",
           "4. Warm corn tortillas in a dry pan for 30 sec each side.",
           "5. Assemble: plate peppers and chickpeas, top with chicken strips, add dollop of Greek yogurt. Serve tortillas on the side with a squeeze of lime."
@@ -1710,7 +1736,7 @@
                 "qty": "150 g raw"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -1718,7 +1744,7 @@
                 "qty": "120 g"
               },
               {
-                "item": "Corn tortillas (tortillas de ma\u00efs)",
+                "item": "Corn tortillas (tortillas de maïs)",
                 "qty": "2 (approx. 50 g)"
               },
               {
@@ -1749,7 +1775,7 @@
                 "qty": "120 g raw"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -1757,7 +1783,7 @@
                 "qty": "100 g"
               },
               {
-                "item": "Corn tortillas (tortillas de ma\u00efs)",
+                "item": "Corn tortillas (tortillas de maïs)",
                 "qty": "2 (approx. 50 g)"
               },
               {
@@ -1786,18 +1812,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2010,
-        "protein_g": 154,
-        "carbs_g": 185,
-        "fat_g": 66,
-        "fiber_g": 34
+        "kcal": 2160,
+        "protein_g": 162,
+        "carbs_g": 203,
+        "fat_g": 71
       },
       "diana": {
-        "kcal": 1570,
-        "protein_g": 116,
-        "carbs_g": 154,
-        "fat_g": 50,
-        "fiber_g": 29
+        "kcal": 1720,
+        "protein_g": 124,
+        "carbs_g": 172,
+        "fat_g": 55
       }
     }
   },
@@ -1827,7 +1851,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -1839,7 +1863,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1849,20 +1873,24 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 415,
-              "protein_g": 24,
-              "carbs_g": 43,
-              "fat_g": 15,
-              "fiber_g": 5
+              "kcal": 565,
+              "protein_g": 32,
+              "carbs_g": 61,
+              "fat_g": 20,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -1874,7 +1902,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1884,14 +1912,18 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 370,
-              "protein_g": 22,
-              "carbs_g": 37,
-              "fat_g": 14,
-              "fiber_g": 5
+              "kcal": 520,
+              "protein_g": 30,
+              "carbs_g": 55,
+              "fat_g": 19,
+              "fiber_g": 7
             }
           }
         }
@@ -1955,15 +1987,15 @@
       },
       {
         "slot": "lunch",
-        "name": "Tuna Ni\u00e7oise-Style Bowl with Lentils, Cucumber, Cherry Tomatoes & Sourdough",
+        "name": "Tuna Niçoise-Style Bowl with Lentils, Cucumber, Cherry Tomatoes & Sourdough",
         "time": "13:00",
         "prep_ahead": false,
         "cook_minutes_day_of": 5,
-        "image_prompt": "overhead photo of a Ni\u00e7oise-inspired salad bowl with canned tuna, green lentils, cucumber slices, cherry tomatoes and mixed greens, drizzled with olive oil and white wine vinegar, a slice of sourdough on the side, natural light",
+        "image_prompt": "overhead photo of a Niçoise-inspired salad bowl with canned tuna, green lentils, cucumber slices, cherry tomatoes and mixed greens, drizzled with olive oil and white wine vinegar, a slice of sourdough on the side, natural light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)",
+          "🥘 Cook this fresh today — food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 5. (The dish is unchanged — just cooked the same day.)",
           "1. Drain canned tuna and canned lentils.",
           "2. Slice cucumber and halve cherry tomatoes.",
           "3. Combine tuna, lentils, cucumber, tomatoes and mixed salad greens in a large bowl.",
@@ -1976,11 +2008,11 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Canned tuna in water (thon en bo\u00eete au naturel)",
+                "item": "Canned tuna in water (thon en boîte au naturel)",
                 "qty": "140 g drained"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "100 g drained"
               },
               {
@@ -1992,7 +2024,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
@@ -2023,11 +2055,11 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Canned tuna in water (thon en bo\u00eete au naturel)",
+                "item": "Canned tuna in water (thon en boîte au naturel)",
                 "qty": "140 g drained"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -2039,7 +2071,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Mixed salad greens (m\u00e9lange de salades)",
+                "item": "Mixed salad greens (mélange de salades)",
                 "qty": "40 g"
               },
               {
@@ -2069,7 +2101,7 @@
           }
         },
         "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)"
+        "safety_note": "🥘 Cook this fresh today — food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 5. (The dish is unchanged — just cooked the same day.)"
       },
       {
         "slot": "pm_snack",
@@ -2142,13 +2174,13 @@
         "time": "19:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 25,
-        "image_prompt": "a bowl of wholewheat pasta noodles topped with tender chicken strips, saut\u00e9ed mushrooms and bright green broccoli in a glossy soy-ginger sauce, chopsticks on the side, modern bowl, natural evening light",
+        "image_prompt": "a bowl of wholewheat pasta noodles topped with tender chicken strips, sautéed mushrooms and bright green broccoli in a glossy soy-ginger sauce, chopsticks on the side, modern bowl, natural evening light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
           "1. Cook wholewheat pasta according to packet in salted boiling water (al dente ~10 min). Drain.",
           "2. Slice chicken breast into thin strips; season with garlic powder, ginger powder, black pepper.",
-          "3. Heat 1 tsp sesame oil in a wok over high heat. Add chicken, stir-fry 5\u20136 min.",
+          "3. Heat 1 tsp sesame oil in a wok over high heat. Add chicken, stir-fry 5–6 min.",
           "4. Add sliced mushrooms (80 g each) and broccoli florets (80 g each); stir-fry 4 min.",
           "5. Add 1 tbsp soy sauce, pinch of ginger powder and a splash of water; toss to glaze.",
           "6. Toss pasta into the wok and combine. Serve immediately."
@@ -2163,7 +2195,7 @@
                 "qty": "150 g raw"
               },
               {
-                "item": "Wholewheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Wholewheat pasta (pâtes complètes)",
                 "qty": "80 g dry"
               },
               {
@@ -2175,7 +2207,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "5 ml"
               },
               {
@@ -2202,7 +2234,7 @@
                 "qty": "120 g raw"
               },
               {
-                "item": "Wholewheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Wholewheat pasta (pâtes complètes)",
                 "qty": "60 g dry"
               },
               {
@@ -2214,7 +2246,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "4 ml"
               },
               {
@@ -2239,18 +2271,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1935,
-        "protein_g": 144,
-        "carbs_g": 201,
-        "fat_g": 60,
-        "fiber_g": 35
+        "kcal": 2085,
+        "protein_g": 152,
+        "carbs_g": 219,
+        "fat_g": 65
       },
       "diana": {
-        "kcal": 1530,
-        "protein_g": 113,
-        "carbs_g": 165,
-        "fat_g": 45,
-        "fiber_g": 30
+        "kcal": 1680,
+        "protein_g": 121,
+        "carbs_g": 183,
+        "fat_g": 50
       }
     }
   },
@@ -2280,7 +2310,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -2292,7 +2322,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2300,26 +2330,30 @@
                 "qty": "40 g"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 450,
-              "protein_g": 28,
-              "carbs_g": 44,
-              "fat_g": 17,
-              "fiber_g": 5
+              "kcal": 600,
+              "protein_g": 36,
+              "carbs_g": 62,
+              "fat_g": 22,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -2331,7 +2365,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2339,20 +2373,24 @@
                 "qty": "30 g"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 395,
-              "protein_g": 25,
-              "carbs_g": 37,
-              "fat_g": 16,
-              "fiber_g": 5
+              "kcal": 545,
+              "protein_g": 33,
+              "carbs_g": 55,
+              "fat_g": 21,
+              "fiber_g": 7
             }
           }
         }
@@ -2424,9 +2462,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Slice bell peppers and zucchini; toss with chickpeas, olive oil, cumin, paprika, oregano, garlic powder, salt, pepper on a roasting tray.",
+          "1. Preheat oven to 200°C. Slice bell peppers and zucchini; toss with chickpeas, olive oil, cumin, paprika, oregano, garlic powder, salt, pepper on a roasting tray.",
           "2. Season chicken breast with paprika, cumin, garlic powder, salt; place on tray nestled among veg.",
-          "3. Roast for 25\u201328 min until chicken cooked through and veg golden.",
+          "3. Roast for 25–28 min until chicken cooked through and veg golden.",
           "4. Meanwhile, prepare couscous: pour just-boiled water over dry couscous (1:1.5 ratio), cover 5 min, fluff.",
           "5. Plate couscous, top with chicken and veg. Squeeze lime over.",
           "6. Serve with a piece of fruit."
@@ -2453,7 +2491,7 @@
                 "qty": "100 g"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -2496,7 +2534,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -2585,14 +2623,14 @@
         "time": "19:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 30,
-        "image_prompt": "a plate with a golden baked salmon fillet beside cubed roasted sweet potato, charred broccoli florets and saut\u00e9ed mushrooms, drizzled with olive oil and balsamic vinegar, warm evening light, white plate",
+        "image_prompt": "a plate with a golden baked salmon fillet beside cubed roasted sweet potato, charred broccoli florets and sautéed mushrooms, drizzled with olive oil and balsamic vinegar, warm evening light, white plate",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Cube sweet potato; toss with olive oil, paprika, salt and roast 25 min on a tray.",
+          "1. Preheat oven to 200°C. Cube sweet potato; toss with olive oil, paprika, salt and roast 25 min on a tray.",
           "2. Add broccoli florets to the tray after 10 min of sweet potato roasting; roast remaining 15 min together.",
           "3. Season salmon with turmeric, paprika, garlic powder, salt; place on a separate baking sheet, bake 14 min.",
-          "4. In a small pan, saut\u00e9 sliced mushrooms in 1 tsp olive oil with garlic powder and thyme for 4 min.",
+          "4. In a small pan, sauté sliced mushrooms in 1 tsp olive oil with garlic powder and thyme for 4 min.",
           "5. Plate sweet potato and broccoli, add mushrooms, place salmon on top.",
           "6. Drizzle with balsamic vinegar."
         ],
@@ -2626,7 +2664,7 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Thyme (thym s\u00e9ch\u00e9)",
+                "item": "Thyme (thym séché)",
                 "qty": "pinch"
               }
             ],
@@ -2665,7 +2703,7 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Thyme (thym s\u00e9ch\u00e9)",
+                "item": "Thyme (thym séché)",
                 "qty": "pinch"
               }
             ],
@@ -2682,18 +2720,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2020,
-        "protein_g": 131,
-        "carbs_g": 195,
-        "fat_g": 76,
-        "fiber_g": 33
+        "kcal": 2170,
+        "protein_g": 139,
+        "carbs_g": 213,
+        "fat_g": 81
       },
       "diana": {
-        "kcal": 1585,
-        "protein_g": 100,
-        "carbs_g": 161,
-        "fat_g": 55,
-        "fiber_g": 28
+        "kcal": 1735,
+        "protein_g": 108,
+        "carbs_g": 179,
+        "fat_g": 60
       }
     }
   },
@@ -2723,7 +2759,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -2735,7 +2771,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2745,20 +2781,24 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 420,
-              "protein_g": 24,
-              "carbs_g": 43,
-              "fat_g": 15,
-              "fiber_g": 5
+              "kcal": 570,
+              "protein_g": 32,
+              "carbs_g": 61,
+              "fat_g": 20,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir de lait)",
+                "item": "Kefir (kéfir de lait)",
                 "qty": "250 ml"
               },
               {
@@ -2770,7 +2810,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2780,14 +2820,18 @@
               {
                 "item": "Olive oil (huile d'olive)",
                 "qty": "2 ml"
+              },
+              {
+                "item": "250ml Kefir Smoothie with Fruit",
+                "qty": ""
               }
             ],
             "macros": {
-              "kcal": 375,
-              "protein_g": 22,
-              "carbs_g": 37,
-              "fat_g": 14,
-              "fiber_g": 5
+              "kcal": 525,
+              "protein_g": 30,
+              "carbs_g": 55,
+              "fat_g": 19,
+              "fiber_g": 7
             }
           }
         }
@@ -2860,7 +2904,7 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Cut chicken breast into chunks; season with cumin, paprika, coriander, salt.",
-          "2. Heat olive oil in a deep pan; brown chicken chunks 3\u20134 min.",
+          "2. Heat olive oil in a deep pan; brown chicken chunks 3–4 min.",
           "3. Add diced bell peppers, sliced carrots and 1 tsp harissa paste; stir 2 min.",
           "4. Add drained canned lentils, 200 ml tomato passata and 150 ml water. Simmer 15 min.",
           "5. Prepare couscous: pour hot water over couscous, cover 5 min, fluff.",
@@ -2877,7 +2921,7 @@
                 "qty": "180 g raw"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "100 g drained"
               },
               {
@@ -2928,7 +2972,7 @@
                 "qty": "140 g raw"
               },
               {
-                "item": "Canned lentils (lentilles en bo\u00eete)",
+                "item": "Canned lentils (lentilles en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -3049,10 +3093,10 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200\u00b0C. Halve bell peppers lengthways; remove seeds. Place on a baking tray.",
+          "1. Preheat oven to 200°C. Halve bell peppers lengthways; remove seeds. Place on a baking tray.",
           "2. Mix drained tuna, drained chickpeas, tomato passata, garlic powder, cumin, oregano, black pepper in a bowl.",
           "3. Fill each pepper half generously with tuna-chickpea mixture.",
-          "4. Top with a little low-fat cheese; bake 22\u201325 min until peppers are soft and top is golden.",
+          "4. Top with a little low-fat cheese; bake 22–25 min until peppers are soft and top is golden.",
           "5. Toast sourdough bread while peppers bake.",
           "6. Serve stuffed peppers with sourdough on the side. Drizzle with olive oil."
         ],
@@ -3062,7 +3106,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Canned tuna in water (thon en bo\u00eete au naturel)",
+                "item": "Canned tuna in water (thon en boîte au naturel)",
                 "qty": "140 g drained"
               },
               {
@@ -3070,7 +3114,7 @@
                 "qty": "2 medium (240 g total)"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "80 g drained"
               },
               {
@@ -3078,7 +3122,7 @@
                 "qty": "80 ml"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
@@ -3101,7 +3145,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Canned tuna in water (thon en bo\u00eete au naturel)",
+                "item": "Canned tuna in water (thon en boîte au naturel)",
                 "qty": "140 g drained"
               },
               {
@@ -3109,7 +3153,7 @@
                 "qty": "2 medium (240 g total)"
               },
               {
-                "item": "Canned chickpeas (pois chiches en bo\u00eete)",
+                "item": "Canned chickpeas (pois chiches en boîte)",
                 "qty": "60 g drained"
               },
               {
@@ -3117,7 +3161,7 @@
                 "qty": "60 ml"
               },
               {
-                "item": "Low-fat cheese (fromage all\u00e9g\u00e9)",
+                "item": "Low-fat cheese (fromage allégé)",
                 "qty": "20 g"
               },
               {
@@ -3142,18 +3186,16 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2000,
-        "protein_g": 152,
-        "carbs_g": 201,
-        "fat_g": 63,
-        "fiber_g": 35
+        "kcal": 2150,
+        "protein_g": 160,
+        "carbs_g": 219,
+        "fat_g": 68
       },
       "diana": {
-        "kcal": 1630,
-        "protein_g": 120,
-        "carbs_g": 166,
-        "fat_g": 48,
-        "fiber_g": 30
+        "kcal": 1780,
+        "protein_g": 128,
+        "carbs_g": 184,
+        "fat_g": 53
       }
     }
   }
