@@ -88,6 +88,18 @@
       "have_at_home": false
     },
     {
+      "name_en": "Kefir smoothie with mixed fruit (250ml)",
+      "name_fr": "Kefir smoothie with mixed fruit (250ml)",
+      "qty": "3.5 L",
+      "aisle": "General",
+      "stores": [
+        "Cactus",
+        "Auchan",
+        "Delhaize"
+      ],
+      "have_at_home": false
+    },
+    {
       "name_en": "Apple (pomme)",
       "name_fr": "Apple (pomme)",
       "qty": "",
