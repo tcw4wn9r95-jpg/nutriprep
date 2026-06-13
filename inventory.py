@@ -4,8 +4,9 @@ Runs at ~21:00 Luxembourg (19:00 UTC) via cron. For every confirmed meal
 (meal_logs entry with ate=true that hasn't been applied to inventory yet),
 subtract that person's portion ingredients from inventory.json.
 
-Inventory is (re)seeded weekly by generate.py to the full week's required
-quantities. This job only depletes it based on what was actually eaten.
+The pantry reflects only what the household has actually bought (added via
+"Add bought to fridge" in the app). generate.py never seeds it. This job
+only depletes it based on what was actually eaten.
 """
 import json
 from datetime import date

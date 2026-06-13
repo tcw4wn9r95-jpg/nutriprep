@@ -315,7 +315,10 @@ Diego's calorie need changes day to day with training. On training days, raise h
 12. **Image prompt**: every meal MUST have an `image_prompt` — a short, vivid description of a finished plate of that meal for an AI image generator (mention key ingredients, plating, natural light; no text/words in image).
 13. **Fuel Diego's training days**: match Diego's `day_totals` to the per-day adjusted target in the TRAINING FUELLING table (extra mostly as carbohydrate around the session). On rest days use his base target. Diana's `day_totals` always track her own base target.
 14. **Adapt to sleep**: after poor-sleep nights, favour easy-to-digest, blood-sugar-stable meals, adequate protein, and avoid heavy late dinners.
-
+15. **CONSOLIDATE THE SHOPPING — fewer distinct products, fewer store trips.** Variety belongs in the DISHES, not the shopping cart. Deliberately reuse the same staple ingredient across many meals instead of buying single-use variants:
+   - Pick ONE bread for the whole week (e.g. one wholegrain loaf) and use it wherever bread appears — never a different bread per dish. Same for ONE type of rice, ONE yogurt, ONE cheese, ONE oil, ONE cooking green, etc.
+   - It is GOOD to repeat the same ingredient on multiple days; reusing a staple buys it once in a larger pack. Do not introduce an ingredient that's used in only one dish if an already-listed ingredient would work just as well.
+   - Aim to keep the whole week's shopping to a tight set of versatile ingredients (think ~25–35 distinct products total, not one new item per dish). Favour ingredients that come in standard Luxembourg supermarket pack sizes.
 ## FOOD SAFETY — FRIDGE WINDOWS FROM SUNDAY PREP (HARD RULES, NON-NEGOTIABLE)
 Prep is done on Sunday. Counting Monday = day 1, Tuesday = day 2 … Sunday = day 7, a Sunday-cooked
 batch must be EATEN within its safe window:
@@ -776,12 +779,11 @@ shopping_out = {
     "items": shopping_sorted,
 }
 
-# Re-seed pantry to the full week's required quantities (assumes shopping is done).
-inventory_out = {
-    "updated": today.isoformat(),
-    "week_of": next_monday.isoformat(),
-    "items": new_inventory_items,
-}
+# The pantry/fridge reflects what the household has ACTUALLY bought — it is never
+# auto-seeded from the plan. Generation leaves inventory.json untouched; the pantry
+# only changes when the user marks shopping items as bought, deletes items by hand,
+# or the daily depletion cron runs. (`new_inventory_items` above is unused now but the
+# shopping loop still uses the real pantry to avoid re-buying what's genuinely on hand.)
 
 # ── Post-process prep plan (food safety) ─────────────────────────────────────
 from food_safety import validate_prep_plan, enforce_food_safety
@@ -928,9 +930,6 @@ with open(BASE / "prep_plan.json", "w") as f:
 
 with open(BASE / "notif_schedule.json", "w") as f:
     json.dump(notif_out, f, indent=2)
-
-with open(BASE / "inventory.json", "w") as f:
-    json.dump(inventory_out, f, indent=2)
 
 # ── Update plan status ────────────────────────────────────────────────────────
 plan_status = {

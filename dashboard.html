@@ -150,6 +150,8 @@
   .fridge-fr { font-size: 11px; color: var(--muted); font-style: italic; }
   .fridge-qty { font-size: 13px; font-weight: 700; color: var(--pine); }
   .fridge-qty.low { color: var(--clay); }
+  .fridge-del { width: 28px; height: 28px; flex: none; border: none; border-radius: 50%; background: var(--surface-warm); color: var(--muted); font-size: 14px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; -webkit-tap-highlight-color: transparent; }
+  .fridge-del:active { background: var(--clay); color: #fff; }
 
   /* Prep batches */
   .batch-card { background: var(--surface); border-radius: var(--r-sm); margin-bottom: 12px; overflow: hidden; box-shadow: var(--shadow); }
@@ -526,7 +528,7 @@
     <div id="budget-card"></div>
     <div style="display:flex;gap:8px;margin-bottom:12px">
       <button class="btn btn-outline btn-ic" style="flex:1" onclick="openLibrary()"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>Product library</button>
-      <button class="btn btn-ic" style="flex:1" onclick="markAllBought()">✓ Mark bought</button>
+      <button class="btn btn-ic" style="flex:1" onclick="markAllBought()">✓ Add bought to fridge</button>
     </div>
     <div id="shop-filter" class="filter-row"></div>
     <div id="shopping-list-content"></div>
@@ -617,7 +619,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v27 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v28 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -641,7 +643,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 27; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 28; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1209,36 +1211,60 @@ async function saveProduct(btn){
   catch(e){ btn.disabled=false; btn.textContent=old; alert("Couldn't save: "+e.message); }
 }
 function toggleCheck(key,btn){ checkedItems[key]=!checkedItems[key]; localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems)); btn.classList.toggle("checked"); btn.textContent=checkedItems[key]?"✓":""; }
+// Only items the user actually ticked while shopping go into the fridge — the pantry
+// reflects real purchases, never the whole plan. If nothing is ticked, offer add-all.
 async function markAllBought(){
   if(!shoppingList||!shoppingList.items)return;
-  if(!confirm("Add all bought items to your fridge/pantry?"))return;
+  const buyable=shoppingList.items.filter(it=>!it.have_at_home);
+  let toAdd=buyable.filter(it=>checkedItems[it.name_en||""]);
+  if(!toAdd.length){
+    if(!confirm("No items are ticked. Add the whole list to your fridge?"))return;
+    toAdd=buyable;
+  } else if(!confirm(`Add ${toAdd.length} ticked item(s) to your fridge?`))return;
   const inv=inventory&&inventory.items?JSON.parse(JSON.stringify(inventory)):{items:[]};
-  const idx={}; inv.items.forEach(it=>idx[it.name_en.toLowerCase()]=it);
-  shoppingList.items.forEach(it=>{
-    if(it.have_at_home)return; // already counted
+  if(!inv.items)inv.items=[];
+  const idx={}; inv.items.forEach(it=>idx[(it.name_en||"").toLowerCase()]=it);
+  toAdd.forEach(it=>{
     const q=parseQty(it.qty); const key=(it.name_en||"").toLowerCase(); const ex=idx[key];
     if(ex && ex.kind===q.kind && ex.unit===q.unit){ ex.amount=(ex.amount||0)+(q.amount||0); ex.display_qty=formatQty(ex.amount,ex.kind,ex.unit); }
-    else if(!ex){ const ni={name_en:it.name_en,name_fr:it.name_fr,aisle:it.aisle,stores:it.stores,kind:q.kind,unit:q.unit,amount:q.amount,display_qty:q.kind!=="unknown"?formatQty(q.amount,q.kind,q.unit):it.qty}; inv.items.push(ni); idx[key]=ni; }
+    else if(!ex){ const ni={name_en:it.name_en,name_fr:it.name_fr,aisle:it.aisle,stores:it.stores,food_category:it.food_category||"generic",kind:q.kind,unit:q.unit,amount:q.amount,display_qty:q.kind!=="unknown"?formatQty(q.amount,q.kind,q.unit):it.qty}; inv.items.push(ni); idx[key]=ni; }
+    delete checkedItems[it.name_en||""]; // tick consumed — it's in the fridge now
   });
   inv.updated=todayISO();
-  try{ await ghWrite("inventory.json", inv, `Mark shopping bought (${identity})`); inventory=inv; alert("✓ Added to your fridge."); showTab("fridge"); }
+  localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems));
+  try{ await ghWrite("inventory.json", inv, `Add bought to fridge (${identity})`); inventory=inv; alert("✓ Added to your fridge."); showTab("fridge"); }
   catch(e){ alert("Couldn't update fridge: "+e.message); }
 }
 
 // ── FRIDGE ──────────────────────────────────────────────────────────────────────
 function renderFridge(){
   const wrap=document.getElementById("fridge-content"); const meta=document.getElementById("fridge-meta");
-  if(!inventory||!inventory.items||!inventory.items.length){ wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("box")}</div><p>Your fridge is empty. Generate a plan or tap "Mark all bought" on the shopping list.</p></div>`; meta.textContent=""; return; }
-  meta.textContent=`Updates daily at 21:00 based on confirmed meals. Last updated: ${inventory.updated||"—"}`;
+  if(!inventory||!inventory.items||!inventory.items.length){ wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("box")}</div><p>Your fridge is empty. Tick items on the shopping list as you buy them, then tap "✓ Add bought to fridge".</p></div>`; meta.textContent=""; return; }
+  meta.textContent=`Only what you've bought. Depletes daily at 21:00 from confirmed meals. Tap ✕ to remove an item. Updated: ${inventory.updated||"—"}`;
   const byAisle={}; inventory.items.forEach(it=>{ const a=it.aisle||"General"; (byAisle[a]=byAisle[a]||[]).push(it); });
   wrap.innerHTML=Object.keys(byAisle).sort().map(aisle=>{
     const items=byAisle[aisle].map(it=>{
       const qty=it.display_qty || (it.amount!=null?formatQty(it.amount,it.kind,it.unit):"");
       const low=it.kind==="mass"?(it.amount||0)<100:it.kind==="volume"?(it.amount||0)<100:(it.amount||0)<1;
-      return `<div class="fridge-item"><div class="fridge-row"><div><div class="fridge-name">${it.name_en}</div><div class="fridge-fr">${it.name_fr||""}</div></div><div class="fridge-qty${low?" low":""}">${qty||"—"}</div></div></div>`;
+      return `<div class="fridge-item"><div class="fridge-row">
+        <div><div class="fridge-name">${it.name_en}</div><div class="fridge-fr">${it.name_fr||""}</div></div>
+        <div style="display:flex;align-items:center;gap:12px">
+          <div class="fridge-qty${low?" low":""}">${qty||"—"}</div>
+          <button class="fridge-del" title="Remove from fridge" data-k="${attrEsc(it.name_en||"")}" onclick="deleteFridgeItem(this.dataset.k)">✕</button>
+        </div></div></div>`;
     }).join("");
     return `<div class="aisle-section"><div class="aisle-label">${aisle}</div>${items}</div>`;
   }).join("");
+}
+async function deleteFridgeItem(key){
+  if(!inventory||!inventory.items)return;
+  const before=inventory.items.length;
+  inventory.items=inventory.items.filter(it=>(it.name_en||"")!==key);
+  if(inventory.items.length===before)return;
+  inventory.updated=todayISO();
+  renderFridge(); // optimistic
+  try{ await ghWrite("inventory.json", inventory, `Remove ${key} from fridge (${identity})`); }
+  catch(e){ alert("Couldn't update fridge: "+e.message); await loadSharedData(); renderFridge(); }
 }
 
 // ── PREP ──────────────────────────────────────────────────────────────────────
