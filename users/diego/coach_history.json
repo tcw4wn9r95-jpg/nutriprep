@@ -121,5 +121,13 @@
   {
     "role": "assistant",
     "content": "(remember_preference) (remember_preference) (remember_preference) (add_item_to_meals)"
+  },
+  {
+    "role": "user",
+    "content": "I want to have more beef, vegetarian protein and fish and not that much chicken. remember chicken is not the Diana’s preference and she only eats it when mixed with a sauce or something"
+  },
+  {
+    "role": "assistant",
+    "content": "On it! Let me lock in all your preferences and start swapping the chicken-heavy days right now. I'll tackle the soonest chicken meals first — there are quite a few so I'll do a good batch now and we can finish the rest after.\n(Done: I noted a preference, noted a preference, noted a preference.)"
   }
 ]
