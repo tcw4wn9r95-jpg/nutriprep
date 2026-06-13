@@ -623,7 +623,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v30 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v31 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -647,7 +647,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 30; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 31; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1383,6 +1383,19 @@ function mdFmt(text){
   return t.replace(/\n/g,"<br>");
 }
 function addCoachMsg(role,text){ const wrap=document.getElementById("coach-msgs"); const div=document.createElement("div"); div.className=`msg ${role}`; div.innerHTML=mdFmt(text); wrap.appendChild(div); coachScrollBottom(); }
+// Anthropic rejects any history where an assistant tool_use block has no following
+// tool_result. We run tools locally (no second round-trip), so persist + replay assistant
+// turns as PLAIN TEXT only — stripping tool_use/tool_result keeps the history always valid.
+function histText(content){
+  if(typeof content==="string") return content;
+  if(Array.isArray(content)){
+    const t=content.filter(b=>b&&b.type==="text").map(b=>b.text).join("").trim();
+    if(t) return t;
+    const tools=content.filter(b=>b&&b.type==="tool_use").map(b=>`(${b.name})`).join(" ");
+    return tools||"(action taken)";
+  }
+  return content==null?"":String(content);
+}
 async function sendCoach(){
   const input=document.getElementById("coach-input"); const text=input.value.trim(); if(!text)return;
   const key=cfg("anthropic_key"); if(!key){ alert("Add your Anthropic API key in Settings."); showTab("settings"); return; }
@@ -1436,7 +1449,7 @@ ${menuText}
     {name:"attach_video",description:"Attach a recipe video URL to a meal.",input_schema:{type:"object",properties:{date:{type:"string"},slot:{type:"string"},video_url:{type:"string"}},required:["date","slot","video_url"]}},
     {name:"remember_preference",description:"Record a lasting food preference so future weekly plans respect the household's taste. Use whenever the user likes/dislikes/avoids a food, or after a swap because they didn't like a dish.",input_schema:{type:"object",properties:{kind:{type:"string",enum:["avoid","prefer","note"],description:"avoid = never serve again; prefer = they love it; note = general guidance"},text:{type:"string",description:"Concise, e.g. 'no salmon', 'loves chickpea curries', 'prefers lighter dinners'"}},required:["kind","text"]}},
   ];
-  const msgs=[...coachHistory.slice(-10).map(h=>({role:h.role,content:h.content})),{role:"user",content:text}];
+  const msgs=[...coachHistory.slice(-10).map(h=>({role:h.role,content:histText(h.content)})),{role:"user",content:text}];
   try{
     const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-haiku-4-5-20251001",max_tokens:2048,system,tools,messages:msgs})});
     const data=await res.json(); typing.remove();
@@ -1444,7 +1457,7 @@ ${menuText}
     let reply="";
     for(const block of data.content){ if(block.type==="text")reply+=block.text; if(block.type==="tool_use")await handleCoachTool(block.name,block.input); }
     if(reply)addCoachMsg("coach",reply);
-    coachHistory.push({role:"user",content:text},{role:"assistant",content:data.content}); coachHistory=coachHistory.slice(-20);
+    coachHistory.push({role:"user",content:text},{role:"assistant",content:histText(data.content)}); coachHistory=coachHistory.slice(-20);
     try{ await ghWrite(`users/${identity}/coach_history.json`,coachHistory,`Coach history ${todayISO()}`); }catch(_){}
   }catch(e){ typing.remove(); addCoachMsg("coach",`Connection error: ${e.message}`); }
 }
