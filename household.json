@@ -7,7 +7,11 @@
   "allergies": [],
   "intolerances": [],
   "dislikes": [
-    "raw onions"
+    "raw onions",
+    "pork",
+    "scrambled eggs",
+    "cold cuts",
+    "sausage"
   ],
   "diet_style": "omnivore",
   "cuisines_loved": [
@@ -17,15 +21,18 @@
     "french"
   ],
   "spice_tolerance": "medium",
-  "budget_eur_per_week": 100,
+  "budget_eur_per_week": 120,
   "cooking_skill": "intermediate",
-  "max_prep_minutes_sunday": 90,
+  "max_prep_minutes_sunday": 120,
   "max_cook_minutes_weekday": 30,
   "kitchen_equipment": [
     "oven",
     "stovetop",
     "blender",
     "air fryer",
-    "instant pot"
+    "instant pot",
+    "food processor",
+    "microwave",
+    "chopper"
   ]
 }
