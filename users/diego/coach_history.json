@@ -1,0 +1,15 @@
+[
+  {
+    "role": "user",
+    "content": "Let’s change the soft boiled egg breakfast on Monday please, could it be something with fried egg?"
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "text": "I'd love to help you swap Monday's breakfast! To craft a great fried-egg breakfast that fits your training and weight-loss goal, I need a bit more detail:\n\n1. **What veggies or sides would you like with the fried egg?** (e.g. spinach, tomatoes, mushrooms, asparagus)\n2. **Bread preference?** (sourdough, rye, whole-grain toast, or something else?)\n3. **Any other proteins or toppings?** (cheese, avocado, herbs, etc.)\n\nOnce you tell me, I'll swap it in for the whole household and make sure it keeps you fueled for the week ahead! 🍳"
+      }
+    ]
+  }
+]
