@@ -315,10 +315,13 @@ Diego's calorie need changes day to day with training. On training days, raise h
 12. **Image prompt**: every meal MUST have an `image_prompt` — a short, vivid description of a finished plate of that meal for an AI image generator (mention key ingredients, plating, natural light; no text/words in image).
 13. **Fuel Diego's training days**: match Diego's `day_totals` to the per-day adjusted target in the TRAINING FUELLING table (extra mostly as carbohydrate around the session). On rest days use his base target. Diana's `day_totals` always track her own base target.
 14. **Adapt to sleep**: after poor-sleep nights, favour easy-to-digest, blood-sugar-stable meals, adequate protein, and avoid heavy late dinners.
-15. **CONSOLIDATE THE SHOPPING — fewer distinct products, fewer store trips.** Variety belongs in the DISHES, not the shopping cart. Deliberately reuse the same staple ingredient across many meals instead of buying single-use variants:
-   - Pick ONE bread for the whole week (e.g. one wholegrain loaf) and use it wherever bread appears — never a different bread per dish. Same for ONE type of rice, ONE yogurt, ONE cheese, ONE oil, ONE cooking green, etc.
-   - It is GOOD to repeat the same ingredient on multiple days; reusing a staple buys it once in a larger pack. Do not introduce an ingredient that's used in only one dish if an already-listed ingredient would work just as well.
-   - Aim to keep the whole week's shopping to a tight set of versatile ingredients (think ~25–35 distinct products total, not one new item per dish). Favour ingredients that come in standard Luxembourg supermarket pack sizes.
+15. **CONSOLIDATE THE SHOPPING — a SHARED PALETTE recombined into different dishes.** This is as important as variety. The 35 dishes must be built by RECOMBINING a small, fixed set of ingredients in different ways — NOT by giving each dish its own new ingredients. Variety comes from technique, seasoning, sauce and format, not from buying more SKUs.
+   - **Hard cap: the whole week's shopping list must contain ≤ 35 distinct products total** (excluding salt/pepper/water). Count as you go; if you would exceed it, reuse an ingredient already on the list instead of adding a new one.
+   - Design from a fixed palette first, then build dishes from it: ~4–5 proteins, ~8–10 vegetables, ~3 fruits, 2–3 grains/starches, 1 bread, 1 yogurt, 1 cheese, 1 main oil, a handful of pantry spices/condiments. Every dish must draw from this palette.
+   - ONE variant per staple for the week: one bread, one rice, one pasta, one yogurt, one cheese, one cooking oil, one leafy green. Never a second variety of the same thing for a single dish.
+   - It is GOOD to repeat an ingredient across many days — that means buying it once in a bigger pack and fewer trips. Do not add any ingredient used in only one dish if something already on the list would work.
+   - Use ingredients sold in standard Luxembourg supermarket pack sizes.
+16. **SHOPPING AISLES**: give every shopping item a real `aisle` (e.g. "Produce / Fruits & Légumes", "Meat / Boucherie", "Fish / Poissonnerie", "Dairy / Crèmerie", "Bakery / Boulangerie", "Grains & Pasta / Épicerie", "Frozen / Surgelés", "Oils & Condiments", "Spices / Épices") so the list groups sensibly for one efficient trip. Do not dump everything into "General".
 ## FOOD SAFETY — FRIDGE WINDOWS FROM SUNDAY PREP (HARD RULES, NON-NEGOTIABLE)
 Prep is done on Sunday. Counting Monday = day 1, Tuesday = day 2 … Sunday = day 7, a Sunday-cooked
 batch must be EATEN within its safe window:
