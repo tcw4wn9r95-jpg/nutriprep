@@ -623,7 +623,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v31 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v32 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -647,7 +647,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 31; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 32; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1438,8 +1438,13 @@ ${menuText}
 
 ## ROLE
 - Evidence-based only (EFSA/WHO). Sustainable loss 0.25–0.75 kg/wk; never below 1200 kcal/day.
-- TARGETED CHANGES ONLY: when the user wants to change a dish or a day, USE the swap_meal tool for just that one slot/date. NEVER regenerate or rebuild the whole week — only the meal they asked about changes; everything else stays exactly as is. Provide a complete replacement meal (keep both diego & diana portions, prep_steps, day_of_steps, image_prompt, food_category). The swap applies to BOTH members.
-- LEARN FROM CORRECTIONS: whenever the user tells you they dislike/avoid a food or didn't like a dish, call remember_preference(kind:"avoid"). When they say they love something, call remember_preference(kind:"prefer"). This makes next week's auto-generated plan respect their taste. Do this in addition to any swap.
+- APPLY CHANGES NOW — never just promise. If the user wants something in their CURRENT week, you MUST call a tool THIS turn, and only then confirm. NEVER say a change is done (or "I'll update it") unless you actually called the tool:
+   • Change a specific dish on a day → swap_meal. The date MUST be an exact ISO date from the menu above. To change the same thing across several days, call swap_meal once per day in this same turn.
+   • Add a recurring item to every/most days of a slot (e.g. "a 250ml kefir smoothie with every breakfast") → add_item_to_meals (you provide its macros so totals stay correct).
+   • Remove or replace a recurring dish (e.g. "no more smoked mackerel") → call swap_meal for EACH day it appears, replacing it with something on-palette.
+  Only change the meals asked about; never rebuild the whole week. Swaps apply to BOTH members (keep diego & diana portions, prep_steps, day_of_steps, image_prompt, food_category).
+- remember_preference is ONLY for shaping FUTURE auto-generated weeks (e.g. "use more beef and less chicken from now on"). If a request ALSO affects the current week, apply it now with the tools above AND record the preference — never substitute a preference for a change the user wants now.
+- LEARN FROM CORRECTIONS: when the user says they dislike/avoid a food call remember_preference(kind:"avoid"); when they love something call remember_preference(kind:"prefer").
 - Use log_checkin when they report mood/energy/adherence; log_weight when they state a weight.
 - Be concise (2–4 sentences). You are not a doctor — defer clinical issues to their nutritionist.`;
   const tools=[
@@ -1448,6 +1453,7 @@ ${menuText}
     {name:"swap_meal",description:"Replace one meal in the shared weekly menu. Applies to the whole household.",input_schema:{type:"object",properties:{date:{type:"string",description:"ISO date of the day"},slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},meal:{type:"object",description:"Full replacement meal object with name, time, prep_ahead, cook_minutes_day_of, image_prompt, video_url, prep_steps, day_of_steps, food_category, and portions.diego/diana each with ingredients[] and macros"}},required:["date","slot","meal"]}},
     {name:"attach_video",description:"Attach a recipe video URL to a meal.",input_schema:{type:"object",properties:{date:{type:"string"},slot:{type:"string"},video_url:{type:"string"}},required:["date","slot","video_url"]}},
     {name:"remember_preference",description:"Record a lasting food preference so future weekly plans respect the household's taste. Use whenever the user likes/dislikes/avoids a food, or after a swap because they didn't like a dish.",input_schema:{type:"object",properties:{kind:{type:"string",enum:["avoid","prefer","note"],description:"avoid = never serve again; prefer = they love it; note = general guidance"},text:{type:"string",description:"Concise, e.g. 'no salmon', 'loves chickpea curries', 'prefers lighter dinners'"}},required:["kind","text"]}},
+    {name:"add_item_to_meals",description:"Add a recurring ingredient/component (e.g. a 250ml kefir smoothie with fruit) to a meal slot across days of the CURRENT plan, updating macros and the shopping list. Use for 'add X to my breakfasts every day' style requests. Applies to today + future days only.",input_schema:{type:"object",properties:{slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},item:{type:"string",description:"e.g. 'Kefir smoothie with mixed fruit'"},qty:{type:"string",description:"e.g. '250 ml'"},macros:{type:"object",description:"Per-serving macros to ADD to each meal",properties:{kcal:{type:"number"},protein_g:{type:"number"},carbs_g:{type:"number"},fat_g:{type:"number"},fiber_g:{type:"number"}}},days:{type:"string",description:"'all' (default) or comma-separated ISO dates from the menu"},applies_to:{type:"string",enum:["both","diego","diana"],description:"default both"}},required:["slot","item","macros"]}},
   ];
   const msgs=[...coachHistory.slice(-10).map(h=>({role:h.role,content:histText(h.content)})),{role:"user",content:text}];
   try{
@@ -1480,6 +1486,28 @@ async function handleCoachTool(name,input){
     if(oldName && oldName!==input.meal.name) await savePreference("note",`Swapped "${oldName}" → "${input.meal.name}" (${input.slot})`);
   } else if(name==="remember_preference"){
     await savePreference(input.kind,input.text); addCoachMsg("coach",`✓ Noted for next time: ${input.text}`);
+  } else if(name==="add_item_to_meals"){
+    if(!weekMenu){ addCoachMsg("coach","There's no menu loaded to update."); return; }
+    const slot=input.slot, mac=input.macros||{}, item=input.item||"item", qty=input.qty||"";
+    const who=(input.applies_to&&input.applies_to!=="both")?[input.applies_to]:["diego","diana"];
+    let daySet=null;
+    if(input.days&&input.days!=="all"){ daySet=new Set(input.days.split(",").map(s=>resolveMenuDate(s.trim())).filter(Boolean)); }
+    let count=0; const _td=todayISO();
+    weekMenu.forEach(d=>{
+      if(d.date<_td) return; if(daySet&&!daySet.has(d.date)) return;
+      const meal=d.meals.find(m=>m.slot===slot); if(!meal) return;
+      meal.portions=meal.portions||{};
+      who.forEach(mem=>{
+        const p=meal.portions[mem]=meal.portions[mem]||{}; p.ingredients=p.ingredients||[];
+        const has=p.ingredients.some(i=>(((typeof i==="object"&&i)?i.item||"":String(i))).toLowerCase()===item.toLowerCase());
+        if(!has){ p.ingredients.push({item,qty}); p.macros=p.macros||{}; ["kcal","protein_g","carbs_g","fat_g","fiber_g"].forEach(k=>{ if(mac[k]!=null) p.macros[k]=Math.round((p.macros[k]||0)+mac[k]); }); }
+      });
+      ["diego","diana"].forEach(mem=>{ let t={kcal:0,protein_g:0,carbs_g:0,fat_g:0}; d.meals.forEach(m=>{ const mm=((m.portions||{})[mem]||{}).macros||{}; t.kcal+=mm.kcal||0;t.protein_g+=mm.protein_g||0;t.carbs_g+=mm.carbs_g||0;t.fat_g+=mm.fat_g||0; }); (d.day_totals=d.day_totals||{})[mem]=t; });
+      count++;
+    });
+    if(!count){ addCoachMsg("coach",`I couldn't find any upcoming ${slot} to add that to.`); return; }
+    try{ await ghWrite("weekly_menu.json",weekMenu,`Add ${item} to ${slot} (${identity})`); await regenerateShopping(); addCoachMsg("coach",`✓ Added ${item} to ${count} ${slot}${count>1?"s":""}. Shopping list updated.`); }
+    catch(e){ addCoachMsg("coach",`Couldn't save that change: ${e.message}`); }
   } else if(name==="attach_video"){
     const day=weekMenu.find(d=>d.date===resolveMenuDate(input.date)); const meal=day?day.meals.find(m=>m.slot===input.slot):null;
     if(meal){ meal.video_url=input.video_url; try{ await ghWrite("weekly_menu.json",weekMenu,`Attach video`); addCoachMsg("coach",`✓ Video attached.`); }catch(e){ addCoachMsg("coach",`Couldn't save: ${e.message}`); } }
