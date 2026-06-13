@@ -2,109 +2,74 @@
   "week_of": "2026-06-15",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 60,
+  "total_active_minutes": 27,
   "batches": [
     {
-      "id": "prep_batch_1",
-      "title": "Mexican-Spiced Chicken + Roasted Peppers & Chickpeas (Monday Lunch)",
+      "id": "prep_batch_boiled_eggs",
+      "title": "Hard-Boiled Eggs (for Wed & Thu breakfasts)",
       "order": 1,
-      "active_minutes": 30,
+      "active_minutes": 12,
       "steps": [
-        "1. Preheat oven to 200\u00b0C.",
-        "2. In a bowl, combine 450 g chicken breast (whole pieces) with 2 tbsp olive oil, 1\u00bd tsp cumin, 1\u00bd tsp paprika, 1 tsp garlic powder, juice of 1 lime, pinch of salt. Mix well and leave to marinate 15 min while oven heats.",
-        "3. Slice 300 g bell peppers into strips; halve 200 g cherry tomatoes. Toss with 1 tbsp olive oil, 1 tsp cumin, 1 tsp oregano, salt and pepper on a large roasting tray.",
-        "4. Place marinated chicken pieces on the same tray or a separate one. Roast at 200\u00b0C for 22\u201325 min until chicken reaches 75\u00b0C internal temperature and veg are golden.",
-        "5. Remove from oven; rest chicken 5 min, then slice into strips. Let cool completely.",
-        "6. Drain and rinse 2 \u00d7 400 g cans of chickpeas; store in a separate sealed container.",
-        "7. Store sliced chicken in one airtight container and roasted peppers/tomatoes in another. Refrigerate immediately. Use within 3 days (Monday only \u2014 this batch is consumed Monday lunch only due to portion size)."
+        "Fill a large saucepan with cold water and bring to a rolling boil.",
+        "Gently lower 10 eggs into the water using a spoon to avoid cracking.",
+        "Boil for exactly 9 minutes for firm yolks.",
+        "Transfer immediately to a bowl of ice-cold water and leave for 3 minutes.",
+        "Peel all eggs carefully under running water. Pat dry.",
+        "Place peeled eggs in an airtight container with a damp paper towel to keep them moist.",
+        "Refrigerate. Label container: 'Boiled eggs \u2014 use by Thursday morning (day 4).'"
       ],
       "yields": [
-        "~450 g sliced cooked chicken (both portions \u2014 Monday lunch only)",
-        "~500 g roasted bell peppers and cherry tomatoes"
+        "10 peeled hard-boiled eggs (5 per person across Wed & Thu breakfasts)"
       ],
-      "food_category": "poultry",
+      "food_category": "eggs_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mexican Chicken & Chickpea Bowl: reheat sliced chicken and roasted peppers in a pan 3\u20134 min, add chickpeas for last 2 min, serve over fresh couscous with lime and salad greens."
+        "Wednesday": "Breakfast \u2014 Kefir Smoothie & Boiled Eggs on Sourdough: take 2 eggs per person from container, halve, season with salt and pepper, place on toasted sourdough. Blend kefir smoothie fresh.",
+        "Thursday": "Breakfast \u2014 Kefir Smoothie & Boiled Eggs on Sourdough: retrieve last 2 eggs per person (day 4 \u2014 final safe day), halve, plate on toasted sourdough. Blend smoothie fresh with banana and strawberries."
       },
       "storage": {
         "method": "refrigerate",
-        "container": "airtight container",
+        "container": "covered container",
         "fridge_c": "\u2264 4",
         "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
+        "use_within_days": 4,
+        "freeze_option_days": null,
         "reheat_c": 74,
-        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+        "safety_note": "Hard-boiled eggs: 1 week in shell, 5 days peeled in water. Scrambled/cooked dishes: 3\u20134 days."
       }
     },
     {
-      "id": "prep_batch_2",
-      "title": "Asian Sesame Chicken (Tuesday\u2013Wednesday Lunches)",
+      "id": "prep_batch_peppers",
+      "title": "Roasted Bell Peppers (for Mon lunch & Wed dinner)",
       "order": 2,
-      "active_minutes": 25,
+      "active_minutes": 15,
       "steps": [
-        "1. Slice 600 g chicken breast into thin strips (about 5 mm thick).",
-        "2. In a bowl, mix 3 tbsp soy sauce, 2 tsp sesame oil, 1 tsp ginger powder, 1 tsp garlic powder. Add chicken strips and toss to coat. Marinate 10 min.",
-        "3. Heat a wok or large non-stick pan over high heat. Working in two batches to avoid steaming, stir-fry chicken strips for 5\u20136 min total until golden and cooked through. Do not overcrowd the pan.",
-        "4. Spread cooked chicken on a tray to cool quickly (no more than 2 hours at room temp).",
-        "5. Parboil 200 g broccoli florets in boiling salted water for 2 min; drain, refresh under cold running water, drain again.",
-        "6. Julienne or coin-slice 200 g carrots; store raw in a sealed zip-lock bag.",
-        "7. Store cooked chicken in a sealed container and parboiled broccoli in a separate container. Refrigerate immediately. Use within 3 days (Tue and Wed = days 1 and 2 \u2014 within safe window)."
+        "Preheat oven to 200\u00b0C.",
+        "Slice 700 g mixed red and yellow bell peppers into strips about 1.5 cm wide. Discard seeds and white pith.",
+        "Spread pepper strips in a single layer on a large lined baking tray.",
+        "Drizzle with 1 tbsp olive oil, sprinkle with dried oregano, smoked paprika, black pepper and a pinch of sea salt. Toss to coat evenly.",
+        "Roast for 25\u201328 minutes, turning once halfway, until peppers are soft and lightly caramelised at the edges.",
+        "Remove from oven, allow to cool completely before refrigerating.",
+        "Transfer to an airtight container. Label: 'Roasted peppers \u2014 use by Thursday (day 4).'"
       ],
       "yields": [
-        "~600 g sesame-glazed cooked chicken strips",
-        "~200 g parboiled broccoli florets",
-        "~200 g raw sliced carrots"
+        "~600 g roasted bell peppers (for Mon lunch 250 g + Wed dinner 180 g)"
       ],
-      "food_category": "poultry",
+      "food_category": "vegetables_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Tuesday": "Lunch \u2014 Asian Sesame Chicken Bowl with Broccoli, Carrots & Brown Rice: stir-fry carrot coins and parboiled broccoli in sesame oil, add pre-cooked chicken, toss with soy sauce, serve over freshly cooked brown rice.",
-        "Wednesday": "Lunch \u2014 Asian Sesame Chicken Bowl with Zucchini, Spinach & Brown Rice: saut\u00e9 sliced zucchini and spinach in sesame oil, add pre-cooked chicken, toss with soy sauce and garlic powder, serve over freshly cooked brown rice."
+        "Monday": "Lunch \u2014 Mexican Beef & Lentil Bowl: reheat 150 g (Diego) / 100 g (Diana) roasted peppers in pan 2 min alongside reheated ground beef, layer over spinach and lentils in bowl with tortillas.",
+        "Wednesday": "Dinner \u2014 Tilapia Tacos: reheat 100 g (Diego) / 80 g (Diana) roasted peppers briefly in pan with a pinch of smoked paprika, layer into warm corn tortillas with flaked tilapia, fresh spinach and mustard-lime sauce."
       },
       "storage": {
         "method": "refrigerate",
         "container": "airtight container",
         "fridge_c": "\u2264 4",
         "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
-        "reheat_c": 74,
-        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
-      }
-    },
-    {
-      "id": "prep_batch_3",
-      "title": "Canned Lentils + White Beans \u2014 Drained & Portioned (Tue Dinner, Fri Lunch)",
-      "order": 3,
-      "active_minutes": 5,
-      "steps": [
-        "1. Open 2 \u00d7 400 g cans of white beans; drain and rinse thoroughly in a colander under cold water.",
-        "2. Open 2 \u00d7 400 g cans of lentils; drain and rinse in the same colander.",
-        "3. Store drained white beans in one labelled airtight container.",
-        "4. Store drained lentils in a second labelled airtight container.",
-        "5. Refrigerate both. White beans used Tuesday dinner (day 1 \u2014 well within 5-day window). Lentils used Friday lunch (day 5 \u2014 right at the edge of 5-day window; safe for legumes)."
-      ],
-      "yields": [
-        "~700 g drained white beans (ready to use)",
-        "~700 g drained lentils (ready to use)"
-      ],
-      "food_category": "legumes",
-      "video_url": "",
-      "day_of_assembly": {
-        "Tuesday": "Dinner \u2014 Tuna & White Bean Salad: combine drained white beans with canned tuna, sliced cucumber, cherry tomatoes and salad greens; dress with olive oil and white wine vinegar; serve with toasted sourdough.",
-        "Friday": "Lunch \u2014 Tuna Ni\u00e7oise-Style Bowl: combine drained lentils with canned tuna, sliced cucumber, cherry tomatoes and salad greens; dress with olive oil and white wine vinegar; serve with toasted sourdough and a piece of fruit."
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 5,
+        "use_within_days": 4,
         "freeze_option_days": 90,
         "reheat_c": 74,
-        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
+        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
       }
     }
   ]

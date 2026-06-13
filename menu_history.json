@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Smoked Salmon & Avocado on Sourdough",
-      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
-      "Baked White Fish with Lemon, Green Beans & Sweet Potato",
-      "Herb Omelette with Whole-Grain Toast & Berries",
-      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
-      "Lean Ground Beef & Chickpea Taco Bowls (Mexican Style)",
-      "Kefir Bowl with Granola, Walnuts & Blueberries",
-      "Pan-Seared Salmon with Asparagus & Wild Rice",
-      "Herb-Crusted Chicken Breast with Roasted Root Vegetables & Farro",
-      "Cottage Cheese with Walnuts, Honey & Orange"
-    ],
-    "shopping_items": 95,
-    "prep_minutes": 283,
-    "day_kcal": {
-      "diego": 2183,
-      "diana": 1640
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Herb Omelette with Whole-Grain Toast & Berries",
       "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
       "Baked White Fish with Lemon, Green Beans & Sweet Potato",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1970,
       "diana": 1566
+    }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
+      "Mexican Beef & Lentil Bowl with Roasted Peppers, Corn Tortillas & Lime",
+      "Baked Salmon with Garlic-Lemon Spinach & Sweet Potato Wedges",
+      "Kefir Smoothie with Strawberries & Banana + Fried Eggs on Sourdough with Feta",
+      "Asian Sesame Tilapia Bowl with Stir-Fried Zucchini, Carrots & Brown Rice",
+      "Mediterranean Beef & Chickpea Skillet with Roasted Cherry Tomatoes & Sourdough",
+      "Kefir Smoothie with Blueberries & Orange + Boiled Eggs on Sourdough",
+      "French-Style Beef & Leek Pasta with Wholemeal Penne & Spinach",
+      "Tilapia Tacos with Roasted Bell Peppers, Spinach & Lime in Corn Tortillas",
+      "Kefir Smoothie with Banana & Strawberries + Boiled Eggs on Sourdough"
+    ],
+    "shopping_items": 52,
+    "prep_minutes": 27,
+    "day_kcal": {
+      "diego": 1991,
+      "diana": 1484
     }
   }
 ]

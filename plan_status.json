@@ -3,52 +3,52 @@
   "generated": "2026-06-13",
   "week_of": "2026-06-15",
   "meal_count": 35,
-  "shopping_items": 51,
-  "prep_batches": 3,
-  "prep_minutes": 60,
+  "shopping_items": 52,
+  "prep_batches": 2,
+  "prep_minutes": 27,
   "notification_events": 30,
   "fresh_shop_items": 24,
-  "pantry_staple_items": 27,
+  "pantry_staple_items": 28,
   "locked_palette": {
     "proteins": [
-      "chicken breast",
+      "tilapia",
       "salmon",
-      "canned tuna",
-      "eggs"
+      "beef (ground and cuts)",
+      "eggs (boiled, fried, poached)"
     ],
     "vegetables": [
-      "bell peppers",
+      "spinach",
+      "bell peppers (red/yellow)",
       "zucchini",
       "carrots",
       "cherry tomatoes",
-      "spinach",
+      "cucumber",
       "broccoli",
       "garlic",
       "ginger",
-      "cucumber",
-      "mushrooms"
+      "leeks"
     ],
     "fruits": [
-      "apples",
       "blueberries",
-      "oranges",
+      "apples",
       "bananas",
-      "pears"
+      "strawberries",
+      "oranges"
     ],
     "breads_greens": [
       "sourdough bread",
-      "mixed salad greens"
+      "spinach"
     ],
     "carbs_staples": [
       "brown rice",
-      "wholewheat pasta",
+      "wholemeal pasta",
       "sweet potatoes",
-      "potatoes",
+      "potatoes with skin",
       "corn tortillas",
-      "couscous",
       "canned lentils",
       "canned chickpeas",
-      "canned white beans"
+      "dried lentils",
+      "quinoa"
     ],
     "spices_sauces_staples": [
       "olive oil",
@@ -57,22 +57,17 @@
       "balsamic vinegar",
       "white wine vinegar",
       "cumin",
-      "paprika",
-      "coriander",
+      "smoked paprika",
+      "dried oregano",
+      "dried thyme",
       "garlic powder",
       "ginger powder",
-      "turmeric",
-      "oregano",
-      "thyme",
+      "chili powder",
       "black pepper",
       "sea salt",
-      "Greek yogurt",
-      "low-fat cheese",
-      "almonds",
-      "walnuts",
-      "tomato passata",
-      "harissa paste",
-      "lime juice"
+      "honey",
+      "mustard",
+      "tomato paste"
     ]
   }
 }
