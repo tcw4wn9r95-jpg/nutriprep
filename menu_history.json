@@ -130,5 +130,27 @@
       "diego": 2034,
       "diana": 1531
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Poached Egg with Whole-Grain Sourdough, Avocado & Blueberries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Baked White Fish with Lemon, Green Beans & Sweet Potato",
+      "Smoked Salmon on Rye with Cream Cheese & Kiwi",
+      "Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice",
+      "Pan-Seared Salmon with Roasted Asparagus & New Potatoes",
+      "Boiled Egg with Sourdough, Cheese & Raspberries",
+      "Mexican-Style Chicken Lettuce Wraps with Black Beans & Lime",
+      "Turkey Meatballs with Tomato Sauce, Courgette & Pasta",
+      "Poached Egg with Whole-Grain Sourdough, Avocado & Blueberries"
+    ],
+    "shopping_items": 79,
+    "prep_minutes": 382,
+    "day_kcal": {
+      "diego": 1982,
+      "diana": 1516
+    }
   }
 ]
