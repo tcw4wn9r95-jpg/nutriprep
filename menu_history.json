@@ -20,5 +20,27 @@
       "diego": 2183,
       "diana": 1640
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Herb Omelette with Whole-Grain Toast & Berries",
+      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
+      "Baked White Fish with Lemon, Green Beans & Sweet Potato",
+      "Smoked Salmon & Cream Cheese on Sourdough",
+      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
+      "Pan-Seared Tuna Steak with Sesame Bok Choy & Brown Rice",
+      "Kefir Bowl with Granola & Blueberries",
+      "Lean Beef & Chickpea Taco Bowls (Mexican Style)",
+      "Herb-Roasted Chicken Thighs with Ratatouille & Farro",
+      "Poached Eggs with Whole-Grain Sourdough & Tomato"
+    ],
+    "shopping_items": 92,
+    "prep_minutes": 300,
+    "day_kcal": {
+      "diego": 1742,
+      "diana": 1334
+    }
   }
 ]
