@@ -218,5 +218,27 @@
       "diego": 2171,
       "diana": 1656
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Savoury Egg & Sourdough with Rocket, Cherry Tomatoes & Orange",
+      "Mexican Chicken & Chickpea Bowl with Roasted Peppers, Brown Rice & Lime",
+      "Baked Salmon with Roasted Broccoli, Carrot & Quinoa Tabbouleh",
+      "Smoked Mackerel on Sourdough with Rocket, Cucumber & Strawberries",
+      "Asian Sesame Chicken Bowl with Stir-Fried Zucchini, Spinach & Brown Rice",
+      "Mediterranean Baked Mackerel with Roasted Cherry Tomatoes, Spinach & Lentils",
+      "Two-Egg Omelette with Spinach, Cherry Tomatoes & Sourdough Toast with Orange",
+      "French-Style Chicken & Lentil Salad with Rocket, Carrots & Dijon Vinaigrette",
+      "Harissa Baked Chicken with Roasted Zucchini, Broccoli & Sweet Potato",
+      "Savoury Egg & Sourdough with Rocket, Cherry Tomatoes & Orange"
+    ],
+    "shopping_items": 53,
+    "prep_minutes": 50,
+    "day_kcal": {
+      "diego": 1784,
+      "diana": 1409
+    }
   }
 ]

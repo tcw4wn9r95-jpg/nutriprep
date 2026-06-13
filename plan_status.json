@@ -3,75 +3,75 @@
   "generated": "2026-06-13",
   "week_of": "2026-06-15",
   "meal_count": 35,
-  "shopping_items": 67,
-  "prep_batches": 11,
-  "prep_minutes": 289,
+  "shopping_items": 53,
+  "prep_batches": 2,
+  "prep_minutes": 50,
   "notification_events": 30,
-  "fresh_shop_items": 38,
-  "pantry_staple_items": 29,
+  "fresh_shop_items": 23,
+  "pantry_staple_items": 30,
   "locked_palette": {
     "proteins": [
       "chicken breast",
       "salmon",
-      "canned tuna",
-      "beef (lean cuts)"
+      "mackerel",
+      "eggs"
     ],
     "vegetables": [
-      "bell peppers",
+      "bell peppers (red, yellow)",
       "zucchini",
-      "carrots",
       "cherry tomatoes",
+      "carrots",
       "broccoli",
-      "cucumber",
-      "spinach (cooked)",
-      "mushrooms",
-      "eggplant",
-      "green beans"
+      "spinach",
+      "garlic",
+      "ginger",
+      "celery",
+      "cucumber"
     ],
     "fruits": [
       "apples",
-      "strawberries",
       "blueberries",
-      "oranges",
-      "pears"
+      "strawberries",
+      "bananas",
+      "oranges"
     ],
     "breads_greens": [
-      "sourdough bread",
-      "arugula"
+      "whole-grain sourdough",
+      "rocket (arugula)"
     ],
     "carbs_staples": [
       "brown rice",
-      "wholewheat pasta",
+      "whole-wheat pasta",
       "sweet potatoes",
       "potatoes",
-      "couscous",
-      "canned chickpeas",
-      "canned lentils",
-      "canned white beans",
       "corn tortillas",
-      "quinoa"
+      "quinoa",
+      "couscous",
+      "canned lentils",
+      "canned chickpeas",
+      "canned white beans",
+      "dried lentils"
     ],
     "spices_sauces_staples": [
-      "olive oil",
+      "extra-virgin olive oil",
       "sesame oil",
+      "soy sauce",
       "balsamic vinegar",
-      "lemon juice",
-      "garlic",
-      "ginger",
+      "red wine vinegar",
       "cumin",
       "paprika",
       "dried oregano",
-      "thyme",
-      "soy sauce",
-      "tomato paste",
-      "Greek yogurt",
-      "Greek cheese (feta)",
-      "almonds",
-      "walnuts",
-      "Dijon mustard",
+      "dried thyme",
+      "garlic powder",
+      "ginger powder",
+      "chili powder",
+      "turmeric",
+      "black pepper",
+      "sea salt",
+      "lime juice",
+      "dijon mustard",
       "harissa",
-      "coriander",
-      "chili powder"
+      "tomato paste"
     ]
   }
 }
