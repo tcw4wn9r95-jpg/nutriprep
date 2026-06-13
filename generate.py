@@ -261,6 +261,82 @@ if athlete.get("name") or athlete.get("training_goal"):
 diego_kcal = (users["diego"].get("macro_targets") or {}).get("kcal", "?")
 diana_kcal = (users["diana"].get("macro_targets") or {}).get("kcal", "?")
 
+# ── Stage 1: lock a lean FRESH palette ────────────────────────────────────────
+# The model won't obey a fresh-item cap inside the big menu prompt, so we first ask
+# for ONLY a small shared palette of fresh proteins/vegetables, then force Stage 2 to
+# build the entire week from exactly that list. Staples (carbs/spices/sauces) stay free,
+# so variety comes from them — keeping the weekly FRESH shop small.
+client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+_palette_prompt = f"""You are a dietitian planning ONE week of meals for a Luxembourg household (Diego + Diana — same dishes, different portions).
+Your ONLY job right now is to choose a SMALL shared FRESH-INGREDIENT PALETTE that the whole week's dishes will be built from. Day-to-day variety will come from carbs, spices and sauces (cheap pantry staples) — NOT from many different fresh items.
+
+Hard constraints:
+- Allergies (NEVER include): {', '.join(allergens) if allergens else 'none'}
+- Dislikes / avoid (never include): {', '.join(dislikes) if dislikes else 'none'}
+- Preferred cuisines: {', '.join(cuisines) if cuisines else 'varied'}
+- The palette must be able to deliver: oily fish twice/week, legumes on ≥3 days, ≥5 veg portions/day each, and hit ~{diego_kcal} kcal (Diego) / ~{diana_kcal} kcal (Diana).
+{('- Nutritionist guidance to respect: ' + nutrition_block) if nutrition_block and nutrition_block.strip() else ''}
+
+Rules for the palette (STRICT):
+- AT MOST 4 fresh proteins (e.g. one poultry, one white fish, one oily fish, one red meat or eggs). Pantry legumes (canned/dried beans, lentils, chickpeas) are STAPLES — list them under carbs_staples, not proteins.
+- AT MOST 10 fresh vegetables and AT MOST 5 fruits — pick versatile ones you can reuse across many cuisines.
+- ONE bread and ONE leafy green only.
+- Then list the STAPLES you will lean on for VARIETY (as many as you like): grains/carbs, and spices/seasonings/sauces/oils.
+
+Output ONLY this JSON block — no prose:
+```json-palette
+{{
+  "proteins": ["..."],
+  "vegetables": ["..."],
+  "fruits": ["..."],
+  "breads_greens": ["one bread", "one leafy green"],
+  "carbs_staples": ["brown rice", "wholewheat pasta", "couscous", "canned chickpeas", "..."],
+  "spices_sauces_staples": ["olive oil", "soy sauce", "cumin", "paprika", "..."]
+}}
+```"""
+
+print("Stage 1: locking the fresh palette...")
+_DEBUG["phase"] = "calling Claude API (palette)"
+palette: dict = {}
+try:
+    _pal_msg = client.messages.create(
+        model="claude-haiku-4-5-20251001",
+        max_tokens=1500,
+        messages=[{"role": "user", "content": _palette_prompt}],
+    )
+    _pal_text = "".join(b.text for b in _pal_msg.content if getattr(b, "type", None) == "text")
+    _start, _end = _pal_text.find("{"), _pal_text.rfind("}")
+    if _start >= 0 and _end > _start:
+        palette = json.loads(_pal_text[_start:_end + 1])
+except Exception as e:  # never let palette selection block the whole run
+    print(f"  ! Stage 1 failed ({e}); falling back to soft caps in the menu prompt.")
+    palette = {}
+
+
+def _plist(key):
+    return ", ".join(str(x) for x in (palette.get(key) or []))
+
+
+if palette.get("proteins") or palette.get("vegetables"):
+    palette_block = (
+        "These fresh ingredients were LOCKED FIRST and are NON-NEGOTIABLE. Build EVERY dish using ONLY them:\n"
+        f"  FRESH PROTEINS — use only these: {_plist('proteins')}\n"
+        f"  FRESH VEGETABLES — use only these: {_plist('vegetables')}\n"
+        f"  FRUITS — use only these: {_plist('fruits')}\n"
+        f"  BREAD & LEAFY GREEN: {_plist('breads_greens')}\n"
+        f"  CARBS / STAPLES — rotate these freely for variety: {_plist('carbs_staples')}\n"
+        f"  SPICES / SAUCES / OILS — rotate these freely for variety: {_plist('spices_sauces_staples')}\n"
+        "You MAY also use common cheap aromatics/finishers as needed even if not listed: garlic, onion, shallot, "
+        "lemon, lime, fresh ginger, fresh chilli, fresh herbs — plus basic pantry items (salt, pepper, water, stock, "
+        "vinegar, a little cheese/yogurt/egg). But DO NOT introduce any new fresh PROTEIN or new fresh VEGETABLE "
+        "beyond the locked lists. If a dish idea needs something off-list, redesign it to use the palette instead."
+    )
+    print(f"  Palette locked: {len(palette.get('proteins', []))} proteins, {len(palette.get('vegetables', []))} vegetables.")
+else:
+    palette_block = ("No locked palette available — keep the FRESH shop lean yourself: AT MOST 4 fresh proteins and "
+                     "AT MOST 10 fresh vegetables for the whole week, reused across dishes.")
+
 prompt = f"""You are Coach Léa, a registered dietitian coach for a household in Luxembourg.
 Generate a complete, evidence-based weekly meal plan for the week of {next_monday.strftime('%d %B %Y')} (Monday–Sunday).
 
@@ -296,6 +372,9 @@ Diego's calorie need changes day to day with training. On training days, raise h
 ## LEARNED FROM CHAT (the household corrected the plan — honour this)
 {learned_block}
 
+## LOCKED FRESH PALETTE (chosen first — the whole week MUST be built from this)
+{palette_block}
+
 ## YOUR RULES
 1. **One menu for the household, two sets of portions.** Each meal has a `portions.diego` and `portions.diana` with their own ingredient quantities and macros. The dish is the same; only amounts differ.
 2. **All 5 slots every day**: breakfast, am_snack, lunch, pm_snack, dinner — no exceptions.
@@ -305,13 +384,9 @@ Diego's calorie need changes day to day with training. On training days, raise h
 6. **Evidence-based**: align with EFSA Dietary Reference Values and WHO guidelines. Sustainable weight loss ≈ 0.25–0.75 kg/week; no crash diets, detoxes, or unproven supplements.
 7. **Hit each member's daily macro targets** (±10% tolerance). Use `day_totals` to verify.
 8. Each week: include oily fish at least twice; legumes on at least 3 days; ≥ 5 portions of veg per day per person.
-9. **LOCK A LEAN FRESH PALETTE FIRST, then build varied dishes from it. This is a HARD limit, not a guideline.**
-   - BEFORE writing any meals, decide a fixed weekly palette and write nothing outside it:
-       • AT MOST **4 distinct fresh proteins** for the whole week (e.g. chicken, white fish, one oily fish, beef) — plus pantry legumes (canned/dried beans, lentils, chickpeas) which are staples, not fresh, and don't count.
-       • AT MOST **10 distinct fresh vegetables/fruits** for the whole week, reused across many dishes.
-       • ONE bread only. ONE fresh leafy green.
-     If a dish idea needs a protein or vegetable not on these lists, CHANGE THE DISH — do not extend the lists. Count as you go and do not exceed the caps.
-   - Variety comes from the PANTRY, not more fresh items: rotate the CARB (rice, pasta, couscous, potato, tortilla), the SPICE/SEASONING blend, the SAUCE/marinade, and the cooking method/format (bowl, wrap, traybake, stir-fry, soup, salad). The same chicken + courgette becomes a Mexican bowl, a Mediterranean traybake, or an Asian stir-fry just by changing carb + spices. Use as many different spices/sauces/carbs as you like — they're cheap staples.
+9. **BUILD EVERY DISH FROM THE LOCKED FRESH PALETTE ABOVE. This is a HARD limit, not a guideline.**
+   - Use ONLY the fresh proteins and fresh vegetables/fruits listed in the LOCKED FRESH PALETTE section. Do NOT introduce any fresh protein or fresh vegetable that isn't on those lists. If a dish idea needs something off-list, redesign it to use the palette.
+   - Variety comes from the PANTRY, not more fresh items: rotate the CARB (rice, pasta, couscous, potato, tortilla), the SPICE/SEASONING blend, the SAUCE/marinade, and the cooking method/format (bowl, wrap, traybake, stir-fry, soup, salad). The same chicken + courgette becomes a Mexican bowl, a Mediterranean traybake, or an Asian stir-fry just by changing carb + spices. Use as many different spices/sauces/carbs from the palette as you like — they're cheap staples.
    - Aim for ~16–20 distinct dishes across the week. Lunches/dinners should feel different most days; light spaced repetition (a dish at most twice, NEVER on consecutive days) is fine.
    - **Breakfasts and snacks may repeat freely** (e.g. the same two breakfasts alternating all week). Convenience wins.
    - Give each distinct dish its own `name` and `image_prompt`; a deliberate repeat keeps the same name/ingredients.
@@ -433,8 +508,8 @@ Keep each prep batch's `video_url` as "" (empty). Make `steps` detailed and begi
 Generate all 7 days. Be specific and realistic. Verify that each person's `day_totals` sum to within ±10% of their kcal target.
 """
 
-print("Calling Claude for meal plan...")
-client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+print("Stage 2: building the week from the locked palette...")
+# (client created in Stage 1 above is reused here)
 # A full week (35 meals × 2 portions + shopping + prep) is a large structured
 # output — give it plenty of room and stream so the request can't time out.
 _DEBUG["phase"] = "calling Claude API"
@@ -997,6 +1072,9 @@ plan_status = {
     "prep_batches": len(prep_json),
     "prep_minutes": prep_total_min,
     "notification_events": len(events),
+    "fresh_shop_items": sum(1 for it in shopping_sorted if not it.get("staple")),
+    "pantry_staple_items": sum(1 for it in shopping_sorted if it.get("staple")),
+    "locked_palette": palette or None,
 }
 with open(BASE / "plan_status.json", "w") as f:
     json.dump(plan_status, f, indent=2)
