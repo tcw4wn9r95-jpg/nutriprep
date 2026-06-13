@@ -502,7 +502,7 @@
     },
     "bell peppers (mixed colours)": {
       "name_en": "Bell peppers (mixed colours)",
-      "name_fr": "Poivrons (couleurs mélangées)",
+      "name_fr": "Poivrons (assortis)",
       "aisle": "Produce / Fruits & Légumes",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -3992,7 +3992,7 @@
     },
     "paprika (sweet)": {
       "name_en": "Paprika (sweet)",
-      "name_fr": "Paprika (douce)",
+      "name_fr": "Paprika doux",
       "aisle": "Spices / Épices",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4022,8 +4022,8 @@
     },
     "canned tuna in water": {
       "name_en": "Canned tuna in water",
-      "name_fr": "Thon en conserve (à l'eau)",
-      "aisle": "Canned & Packaged / Conserves",
+      "name_fr": "Thon en boîte au naturel",
+      "aisle": "Grains & Pasta / Épicerie",
       "supermarket": "Cactus",
       "price_eur": null,
       "price_unit": "kg",
@@ -4122,7 +4122,7 @@
     },
     "mixed salad greens": {
       "name_en": "Mixed salad greens",
-      "name_fr": "Salade mélangée",
+      "name_fr": "Mélange de salades",
       "aisle": "Produce / Fruits & Légumes",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4432,7 +4432,7 @@
     },
     "harissa paste": {
       "name_en": "Harissa paste",
-      "name_fr": "Pâte de harissa",
+      "name_fr": "Harissa (pâte)",
       "aisle": "Oils & Condiments",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4612,7 +4612,7 @@
     },
     "spinach (baby)": {
       "name_en": "Spinach (baby)",
-      "name_fr": "Épinards (pousses)",
+      "name_fr": "Épinards (jeunes pousses)",
       "aisle": "Produce / Fruits & Légumes",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4674,6 +4674,96 @@
       "name_en": "Turmeric",
       "name_fr": "Curcuma",
       "aisle": "Spices / Épices",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "item",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "kefir (plain, low-fat)": {
+      "name_en": "Kefir (plain, low-fat)",
+      "name_fr": "Kéfir de lait nature",
+      "aisle": "Dairy / Crèmerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "low-fat cheese slices": {
+      "name_en": "Low-fat cheese slices",
+      "name_fr": "Fromage allégé en tranches",
+      "aisle": "Dairy / Crèmerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "wholewheat pasta": {
+      "name_en": "Wholewheat pasta",
+      "name_fr": "Pâtes complètes",
+      "aisle": "Grains & Pasta / Épicerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "almonds (raw)": {
+      "name_en": "Almonds (raw)",
+      "name_fr": "Amandes brutes",
+      "aisle": "Grains & Pasta / Épicerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "walnuts (shelled)": {
+      "name_en": "Walnuts (shelled)",
+      "name_fr": "Noix décortiquées",
+      "aisle": "Grains & Pasta / Épicerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "soy sauce (low-sodium)": {
+      "name_en": "Soy sauce (low-sodium)",
+      "name_fr": "Sauce soja réduite en sel",
+      "aisle": "Oils & Condiments",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "white wine vinegar": {
+      "name_en": "White wine vinegar",
+      "name_fr": "Vinaigre de vin blanc",
+      "aisle": "Oils & Condiments",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "olive oil": {
+      "name_en": "Olive oil",
+      "name_fr": "Huile d'olive",
+      "aisle": "Oils / Huiles",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-06-13"
+    },
+    "garlic": {
+      "name_en": "Garlic",
+      "name_fr": "Ail",
+      "aisle": "Produce / Légumes",
       "supermarket": "Cactus",
       "price_eur": null,
       "price_unit": "item",

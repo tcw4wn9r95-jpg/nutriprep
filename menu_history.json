@@ -240,5 +240,27 @@
       "diego": 1784,
       "diana": 1409
     }
+  },
+  {
+    "week_of": "2026-06-15",
+    "generated": "2026-06-13",
+    "meal_names": [
+      "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
+      "Mexican Chicken & Chickpea Bowl with Roasted Peppers, Couscous & Lime",
+      "Baked Salmon with Garlic-Spinach & Sweet Potato Mash",
+      "Kefir Smoothie with Pear & Blueberries + Eggs on Sourdough with Low-Fat Cheese",
+      "Asian Sesame Chicken Bowl with Stir-Fried Broccoli, Carrots & Brown Rice",
+      "Tuna & White Bean Salad with Cucumber, Cherry Tomatoes & Sourdough",
+      "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
+      "Asian Sesame Chicken Bowl with Zucchini, Spinach & Brown Rice",
+      "Mediterranean Baked Salmon with Roasted Zucchini, Cherry Tomatoes & Couscous",
+      "Kefir Smoothie with Pear & Blueberries + Eggs on Sourdough with Low-Fat Cheese"
+    ],
+    "shopping_items": 51,
+    "prep_minutes": 60,
+    "day_kcal": {
+      "diego": 1970,
+      "diana": 1566
+    }
   }
 ]

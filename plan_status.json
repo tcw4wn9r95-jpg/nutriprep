@@ -3,75 +3,76 @@
   "generated": "2026-06-13",
   "week_of": "2026-06-15",
   "meal_count": 35,
-  "shopping_items": 53,
-  "prep_batches": 2,
-  "prep_minutes": 50,
+  "shopping_items": 51,
+  "prep_batches": 3,
+  "prep_minutes": 60,
   "notification_events": 30,
-  "fresh_shop_items": 23,
-  "pantry_staple_items": 30,
+  "fresh_shop_items": 24,
+  "pantry_staple_items": 27,
   "locked_palette": {
     "proteins": [
       "chicken breast",
       "salmon",
-      "mackerel",
+      "canned tuna",
       "eggs"
     ],
     "vegetables": [
-      "bell peppers (red, yellow)",
+      "bell peppers",
       "zucchini",
-      "cherry tomatoes",
       "carrots",
-      "broccoli",
+      "cherry tomatoes",
       "spinach",
+      "broccoli",
       "garlic",
       "ginger",
-      "celery",
-      "cucumber"
+      "cucumber",
+      "mushrooms"
     ],
     "fruits": [
       "apples",
       "blueberries",
-      "strawberries",
+      "oranges",
       "bananas",
-      "oranges"
+      "pears"
     ],
     "breads_greens": [
-      "whole-grain sourdough",
-      "rocket (arugula)"
+      "sourdough bread",
+      "mixed salad greens"
     ],
     "carbs_staples": [
       "brown rice",
-      "whole-wheat pasta",
+      "wholewheat pasta",
       "sweet potatoes",
       "potatoes",
       "corn tortillas",
-      "quinoa",
       "couscous",
       "canned lentils",
       "canned chickpeas",
-      "canned white beans",
-      "dried lentils"
+      "canned white beans"
     ],
     "spices_sauces_staples": [
-      "extra-virgin olive oil",
+      "olive oil",
       "sesame oil",
       "soy sauce",
       "balsamic vinegar",
-      "red wine vinegar",
+      "white wine vinegar",
       "cumin",
       "paprika",
-      "dried oregano",
-      "dried thyme",
+      "coriander",
       "garlic powder",
       "ginger powder",
-      "chili powder",
       "turmeric",
+      "oregano",
+      "thyme",
       "black pepper",
       "sea salt",
-      "lime juice",
-      "dijon mustard",
-      "harissa",
-      "tomato paste"
+      "Greek yogurt",
+      "low-fat cheese",
+      "almonds",
+      "walnuts",
+      "tomato passata",
+      "harissa paste",
+      "lime juice"
     ]
   }
 }

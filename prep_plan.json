@@ -2,32 +2,30 @@
   "week_of": "2026-06-15",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 50,
+  "total_active_minutes": 60,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Monday Lunch \u2014 Cumin-Paprika Chicken & Roasted Peppers for Mexican Bowl",
+      "title": "Mexican-Spiced Chicken + Roasted Peppers & Chickpeas (Monday Lunch)",
       "order": 1,
-      "active_minutes": 25,
+      "active_minutes": 30,
       "steps": [
-        "1. Weigh 180g (Diego) + 140g (Diana) = 320g total chicken breast for Monday lunch. Slice into 1.5cm strips.",
-        "2. In a bowl combine 1 tbsp olive oil, 1 tsp cumin, 1 tsp paprika, 0.5 tsp garlic powder, 1 tbsp lime juice. Toss chicken strips in marinade. Cover and refrigerate for Monday.",
-        "3. Slice 140g red bell pepper and 110g yellow bell pepper into strips for Monday's bowl.",
-        "4. Toss pepper strips with 1 tsp olive oil, 0.5 tsp cumin, pinch salt. Spread on a lined baking tray.",
-        "5. Roast peppers at 200\u00b0C for 20 min until slightly charred at the edges.",
-        "6. Allow peppers to cool completely, then store in an airtight container in the fridge.",
-        "7. Cook the marinated chicken Monday morning or store raw in the fridge (cook fresh Monday at lunch \u2014 see day_of_steps).",
-        "8. Drain and rinse 1 can of chickpeas (use 80g Diego + 60g Diana = 140g); store in a small airtight container."
+        "1. Preheat oven to 200\u00b0C.",
+        "2. In a bowl, combine 450 g chicken breast (whole pieces) with 2 tbsp olive oil, 1\u00bd tsp cumin, 1\u00bd tsp paprika, 1 tsp garlic powder, juice of 1 lime, pinch of salt. Mix well and leave to marinate 15 min while oven heats.",
+        "3. Slice 300 g bell peppers into strips; halve 200 g cherry tomatoes. Toss with 1 tbsp olive oil, 1 tsp cumin, 1 tsp oregano, salt and pepper on a large roasting tray.",
+        "4. Place marinated chicken pieces on the same tray or a separate one. Roast at 200\u00b0C for 22\u201325 min until chicken reaches 75\u00b0C internal temperature and veg are golden.",
+        "5. Remove from oven; rest chicken 5 min, then slice into strips. Let cool completely.",
+        "6. Drain and rinse 2 \u00d7 400 g cans of chickpeas; store in a separate sealed container.",
+        "7. Store sliced chicken in one airtight container and roasted peppers/tomatoes in another. Refrigerate immediately. Use within 3 days (Monday only \u2014 this batch is consumed Monday lunch only due to portion size)."
       ],
       "yields": [
-        "320g marinated raw chicken strips (fridge, cook Monday)",
-        "250g roasted bell peppers (fridge, 4 days)",
-        "140g drained chickpeas (fridge, 5 days)"
+        "~450 g sliced cooked chicken (both portions \u2014 Monday lunch only)",
+        "~500 g roasted bell peppers and cherry tomatoes"
       ],
       "food_category": "poultry",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mexican Chicken & Chickpea Bowl: grill marinated chicken strips in a hot pan 5\u20136 min; combine with roasted peppers, warmed chickpeas and freshly cooked brown rice; squeeze lime over bowl."
+        "Monday": "Lunch \u2014 Mexican Chicken & Chickpea Bowl: reheat sliced chicken and roasted peppers in a pan 3\u20134 min, add chickpeas for last 2 min, serve over fresh couscous with lime and salad greens."
       },
       "storage": {
         "method": "refrigerate",
@@ -42,26 +40,28 @@
     },
     {
       "id": "prep_batch_2",
-      "title": "Monday Dinner \u2014 Cooked Quinoa & Roasted Broccoli-Carrot for Salmon Bowl",
+      "title": "Asian Sesame Chicken (Tuesday\u2013Wednesday Lunches)",
       "order": 2,
       "active_minutes": 25,
       "steps": [
-        "1. Rinse 150g dry quinoa (total household, generous portion to cover Monday dinner + any carry-over).",
-        "2. Bring 300ml salted water to a boil; add quinoa, reduce to simmer, cover and cook 12\u201314 min until water is absorbed.",
-        "3. Fluff with fork, spread on a tray to cool, then store in an airtight container in the fridge.",
-        "4. Cut 200g broccoli into small florets and slice 150g carrot into 0.5cm rounds (total for both Monday dinner portions).",
-        "5. Toss broccoli and carrot with 1 tsp olive oil, 0.5 tsp turmeric, pinch black pepper and salt.",
-        "6. Spread on a lined baking tray; roast at 200\u00b0C for 20 min until tender and lightly golden.",
-        "7. Cool completely; store in an airtight container in the fridge."
+        "1. Slice 600 g chicken breast into thin strips (about 5 mm thick).",
+        "2. In a bowl, mix 3 tbsp soy sauce, 2 tsp sesame oil, 1 tsp ginger powder, 1 tsp garlic powder. Add chicken strips and toss to coat. Marinate 10 min.",
+        "3. Heat a wok or large non-stick pan over high heat. Working in two batches to avoid steaming, stir-fry chicken strips for 5\u20136 min total until golden and cooked through. Do not overcrowd the pan.",
+        "4. Spread cooked chicken on a tray to cool quickly (no more than 2 hours at room temp).",
+        "5. Parboil 200 g broccoli florets in boiling salted water for 2 min; drain, refresh under cold running water, drain again.",
+        "6. Julienne or coin-slice 200 g carrots; store raw in a sealed zip-lock bag.",
+        "7. Store cooked chicken in a sealed container and parboiled broccoli in a separate container. Refrigerate immediately. Use within 3 days (Tue and Wed = days 1 and 2 \u2014 within safe window)."
       ],
       "yields": [
-        "~300g cooked quinoa (fridge, safe up to day 3 = Wednesday)",
-        "350g roasted broccoli and carrot (fridge, safe up to day 4 = Thursday)"
+        "~600 g sesame-glazed cooked chicken strips",
+        "~200 g parboiled broccoli florets",
+        "~200 g raw sliced carrots"
       ],
-      "food_category": "grains_pasta",
+      "food_category": "poultry",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Dinner \u2014 Baked Salmon with Roasted Broccoli, Carrot & Quinoa Tabbouleh: reheat 80g quinoa + 80g roasted veg (Diego) or 60g quinoa + 80g veg (Diana) in a pan 3 min; stir in balsamic vinegar and olive oil; top with freshly baked salmon."
+        "Tuesday": "Lunch \u2014 Asian Sesame Chicken Bowl with Broccoli, Carrots & Brown Rice: stir-fry carrot coins and parboiled broccoli in sesame oil, add pre-cooked chicken, toss with soy sauce, serve over freshly cooked brown rice.",
+        "Wednesday": "Lunch \u2014 Asian Sesame Chicken Bowl with Zucchini, Spinach & Brown Rice: saut\u00e9 sliced zucchini and spinach in sesame oil, add pre-cooked chicken, toss with soy sauce and garlic powder, serve over freshly cooked brown rice."
       },
       "storage": {
         "method": "refrigerate",
@@ -71,7 +71,40 @@
         "use_within_days": 3,
         "freeze_option_days": 60,
         "reheat_c": 74,
-        "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
+        "safety_note": "Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 \u00b0C through."
+      }
+    },
+    {
+      "id": "prep_batch_3",
+      "title": "Canned Lentils + White Beans \u2014 Drained & Portioned (Tue Dinner, Fri Lunch)",
+      "order": 3,
+      "active_minutes": 5,
+      "steps": [
+        "1. Open 2 \u00d7 400 g cans of white beans; drain and rinse thoroughly in a colander under cold water.",
+        "2. Open 2 \u00d7 400 g cans of lentils; drain and rinse in the same colander.",
+        "3. Store drained white beans in one labelled airtight container.",
+        "4. Store drained lentils in a second labelled airtight container.",
+        "5. Refrigerate both. White beans used Tuesday dinner (day 1 \u2014 well within 5-day window). Lentils used Friday lunch (day 5 \u2014 right at the edge of 5-day window; safe for legumes)."
+      ],
+      "yields": [
+        "~700 g drained white beans (ready to use)",
+        "~700 g drained lentils (ready to use)"
+      ],
+      "food_category": "legumes",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Dinner \u2014 Tuna & White Bean Salad: combine drained white beans with canned tuna, sliced cucumber, cherry tomatoes and salad greens; dress with olive oil and white wine vinegar; serve with toasted sourdough.",
+        "Friday": "Lunch \u2014 Tuna Ni\u00e7oise-Style Bowl: combine drained lentils with canned tuna, sliced cucumber, cherry tomatoes and salad greens; dress with olive oil and white wine vinegar; serve with toasted sourdough and a piece of fruit."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 5,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
       }
     }
   ]
