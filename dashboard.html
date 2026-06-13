@@ -623,7 +623,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v33 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v34 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -647,7 +647,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 33; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 34; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -783,7 +783,31 @@ function renderIdentityPicker(){ const wrap=document.getElementById("settings-id
 function renderUserChip(){ document.getElementById("hdr-user-chip").textContent = identity?(identity==="diego"?"👨 Diego":"👩 Diana"):"—"; }
 
 // ── GitHub API ─────────────────────────────────────────────────────────────────
-async function ghFetch(path){ const r=await fetch(`${RAW}/${path}?t=${Date.now()}`); if(!r.ok)throw new Error(`${r.status} ${path}`); return r.json(); }
+// Read via the GitHub Contents API when we have a token — it is STRONGLY CONSISTENT
+// (reflects writes immediately), unlike raw.githubusercontent.com which is a CDN that
+// lags minutes behind a push and was making fresh changes look like they didn't apply.
+// Falls back to the raw CDN when there's no token or the API is unavailable.
+async function ghFetch(path){
+  const token=cfg("gh_token");
+  if(token){
+    try{
+      const r=await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${path}?ref=${GITHUB_BRANCH}&t=${Date.now()}`,
+        {cache:"no-store",headers:{Authorization:`Bearer ${token}`,Accept:"application/vnd.github.raw+json"}});
+      if(r.status===404) throw new Error(`404 ${path}`);
+      if(r.ok){
+        const txt=await r.text();
+        const parsed=JSON.parse(txt);
+        // If the API ignored the raw media type it returns file metadata — decode base64.
+        if(parsed && parsed.encoding==="base64" && typeof parsed.content==="string" && parsed.download_url!==undefined){
+          return JSON.parse(decodeURIComponent(escape(atob(parsed.content.replace(/\s/g,"")))));
+        }
+        return parsed;
+      }
+      // non-OK (rate limit etc.) → fall through to the raw CDN
+    }catch(e){ if(String(e&&e.message||"").startsWith("404")) throw e; /* else fall back */ }
+  }
+  const r2=await fetch(`${RAW}/${path}?t=${Date.now()}`,{cache:"no-store"}); if(!r2.ok)throw new Error(`${r2.status} ${path}`); return r2.json();
+}
 async function ghWrite(apiPath, content, message){
   const token=cfg("gh_token"); if(!token)throw new Error("No GitHub token — go to Settings.");
   const apiUrl=`https://api.github.com/repos/${GITHUB_REPO}/contents/${apiPath}`;

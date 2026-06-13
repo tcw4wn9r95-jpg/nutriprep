@@ -1,4 +1,4 @@
-const CACHE = "nutriprep-standalone-v21";
+const CACHE = "nutriprep-standalone-v22";
 const ASSETS = ["./dashboard.html"];
 
 self.addEventListener("install", e => {
@@ -17,11 +17,15 @@ self.addEventListener("activate", e => {
 
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
+  const url = new URL(e.request.url);
+  const sameOrigin = url.origin === self.location.origin;
+  // Force a fresh copy of same-origin app files (HTML, version.json, sw) so the PWA
+  // can never get stuck on a stale build; cache them for offline fallback. Leave
+  // cross-origin requests (images, GitHub/Anthropic APIs) to default behaviour.
   e.respondWith(
-    fetch(e.request)
+    fetch(e.request, sameOrigin ? { cache: "no-store" } : undefined)
       .then(r => {
-        const clone = r.clone();
-        caches.open(CACHE).then(c => c.put(e.request, clone));
+        if (sameOrigin) { const clone = r.clone(); caches.open(CACHE).then(c => c.put(e.request, clone)); }
         return r;
       })
       .catch(() => caches.match(e.request))
