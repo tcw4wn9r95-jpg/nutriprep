@@ -623,7 +623,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v34 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v35 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -647,7 +647,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 34; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 35; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -811,10 +811,17 @@ async function ghFetch(path){
 async function ghWrite(apiPath, content, message){
   const token=cfg("gh_token"); if(!token)throw new Error("No GitHub token — go to Settings.");
   const apiUrl=`https://api.github.com/repos/${GITHUB_REPO}/contents/${apiPath}`;
-  let sha=null; try{ sha=(await (await fetch(apiUrl,{headers:{Authorization:`Bearer ${token}`}})).json()).sha; }catch(_){}
-  const body={message, content:btoa(unescape(encodeURIComponent(JSON.stringify(content,null,2)))), branch:GITHUB_BRANCH}; if(sha)body.sha=sha;
-  const r=await fetch(apiUrl,{method:"PUT",headers:{"Content-Type":"application/json",Authorization:`Bearer ${token}`},body:JSON.stringify(body)});
-  if(!r.ok){ throw new Error((await r.json()).message||r.status); } return r.json();
+  const encoded=btoa(unescape(encodeURIComponent(JSON.stringify(content,null,2))));
+  // Up to 3 tries: a 409 means someone else wrote between our GET-sha and PUT (cron,
+  // partner, rapid edits). Re-fetch the latest sha and retry instead of erroring the chat.
+  for(let attempt=0; attempt<3; attempt++){
+    let sha=null; try{ sha=(await (await fetch(`${apiUrl}?t=${Date.now()}`,{cache:"no-store",headers:{Authorization:`Bearer ${token}`}})).json()).sha; }catch(_){}
+    const body={message, content:encoded, branch:GITHUB_BRANCH}; if(sha)body.sha=sha;
+    const r=await fetch(apiUrl,{method:"PUT",headers:{"Content-Type":"application/json",Authorization:`Bearer ${token}`},body:JSON.stringify(body)});
+    if(r.ok) return r.json();
+    if(r.status===409 && attempt<2) continue;   // sha conflict → retry with a fresh sha
+    throw new Error((await r.json().catch(()=>({}))).message||r.status);
+  }
 }
 async function ghWriteRaw(apiPath, base64Content, message){
   const token=cfg("gh_token"); if(!token)throw new Error("No GitHub token.");
@@ -1492,12 +1499,22 @@ ${menuText}
     {name:"add_item_to_meals",description:"Add a recurring ingredient/component (e.g. a 250ml kefir smoothie with fruit) to a meal slot across days of the CURRENT plan, updating macros and the shopping list. Use for 'add X to my breakfasts every day' style requests. Applies to today + future days only.",input_schema:{type:"object",properties:{slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},item:{type:"string",description:"e.g. 'Kefir smoothie with mixed fruit'"},qty:{type:"string",description:"e.g. '250 ml'"},macros:{type:"object",description:"Per-serving macros to ADD to each meal",properties:{kcal:{type:"number"},protein_g:{type:"number"},carbs_g:{type:"number"},fat_g:{type:"number"},fiber_g:{type:"number"}}},days:{type:"string",description:"'all' (default) or comma-separated ISO dates from the menu"},applies_to:{type:"string",enum:["both","diego","diana"],description:"default both"}},required:["slot","item","macros"]}},
   ];
   const msgs=[...coachHistory.slice(-10).map(h=>({role:h.role,content:histText(h.content)})),{role:"user",content:text}];
+  const callCoach=(model)=>fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model,max_tokens:4096,system,tools,messages:msgs})});
   try{
-    const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:4096,system,tools,messages:msgs})});
-    const data=await res.json(); typing.remove();
-    if(!res.ok){ addCoachMsg("coach",`Error: ${data.error?.message||res.status}`); return; }
-    let reply="";
-    for(const block of data.content){ if(block.type==="text")reply+=block.text; if(block.type==="tool_use")await handleCoachTool(block.name,block.input); }
+    let res=await callCoach("claude-sonnet-4-6");
+    let data=await res.json();
+    // If this key can't use Sonnet, fall back to Haiku so the chat still works.
+    if(!res.ok && /model/i.test((data.error&&data.error.message)||"")){ res=await callCoach("claude-haiku-4-5-20251001"); data=await res.json(); }
+    typing.remove();
+    if(!res.ok){ addCoachMsg("coach",`Error: ${(data.error&&data.error.message)||res.status}`); return; }
+    let reply=""; const content=Array.isArray(data.content)?data.content:[];
+    for(const block of content){
+      if(block.type==="text") reply+=block.text;
+      else if(block.type==="tool_use"){
+        try{ await handleCoachTool(block.name,block.input); }
+        catch(err){ addCoachMsg("coach",`⚠ I couldn't apply that change (${err.message||err}). Anything else I saved still stands — try again in a moment.`); }
+      }
+    }
     if(reply)addCoachMsg("coach",reply);
     coachHistory.push({role:"user",content:text},{role:"assistant",content:histText(data.content)}); coachHistory=coachHistory.slice(-20);
     try{ await ghWrite(`users/${identity}/coach_history.json`,coachHistory,`Coach history ${todayISO()}`); }catch(_){}
