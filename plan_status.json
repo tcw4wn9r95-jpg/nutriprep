@@ -1,32 +1,32 @@
 {
   "status": "published",
-  "generated": "2026-06-13",
-  "week_of": "2026-06-15",
+  "generated": "2026-06-21",
+  "week_of": "2026-06-22",
   "meal_count": 35,
-  "shopping_items": 52,
-  "prep_batches": 2,
-  "prep_minutes": 27,
+  "shopping_items": 53,
+  "prep_batches": 4,
+  "prep_minutes": 100,
   "notification_events": 30,
-  "fresh_shop_items": 24,
+  "fresh_shop_items": 25,
   "pantry_staple_items": 28,
   "locked_palette": {
     "proteins": [
       "tilapia",
       "salmon",
-      "beef (ground and cuts)",
-      "eggs (boiled, fried, poached)"
+      "beef (lean cuts)",
+      "eggs"
     ],
     "vegetables": [
-      "spinach",
-      "bell peppers (red/yellow)",
+      "bell peppers",
       "zucchini",
-      "carrots",
       "cherry tomatoes",
-      "cucumber",
+      "carrots",
       "broccoli",
+      "spinach (cooked)",
       "garlic",
       "ginger",
-      "leeks"
+      "cucumber",
+      "eggplant"
     ],
     "fruits": [
       "blueberries",
@@ -41,33 +41,33 @@
     ],
     "carbs_staples": [
       "brown rice",
-      "wholemeal pasta",
+      "wholewheat pasta",
       "sweet potatoes",
-      "potatoes with skin",
       "corn tortillas",
+      "quinoa",
       "canned lentils",
       "canned chickpeas",
-      "dried lentils",
-      "quinoa"
+      "canned white beans"
     ],
     "spices_sauces_staples": [
       "olive oil",
       "sesame oil",
       "soy sauce",
       "balsamic vinegar",
-      "white wine vinegar",
+      "apple cider vinegar",
       "cumin",
       "smoked paprika",
-      "dried oregano",
-      "dried thyme",
       "garlic powder",
       "ginger powder",
+      "dried oregano",
+      "dried thyme",
+      "turmeric",
       "chili powder",
       "black pepper",
       "sea salt",
-      "honey",
-      "mustard",
-      "tomato paste"
+      "lemon juice",
+      "lime juice",
+      "tahini"
     ]
   }
 }

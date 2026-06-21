@@ -2,363 +2,363 @@
   "tz": "Europe/Luxembourg",
   "events": [
     {
-      "id": "snack-2026-06-15-am_snack",
+      "id": "snack-2026-06-22-am_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-15T10:30:00+02:00",
+      "at": "2026-06-22T10:30:00+02:00",
       "title": "Snack time \ud83c\udf4e",
       "body": "Apple with Almonds \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-15-lunch",
+      "id": "cook-2026-06-22-lunch",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-15T12:45:00+02:00",
+      "at": "2026-06-22T12:45:00+02:00",
       "title": "Start lunch soon \ud83c\udf73",
-      "body": "Mexican Beef & Lentil Bowl with Roasted Peppers, Corn Tortillas & Lime \u2014 10 min. Tap for recipe.",
+      "body": "Mexican Beef & Lentil Bowl with Roasted Peppers, Sweet Potato & Lime \u2014 10 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-15-pm_snack",
+      "id": "snack-2026-06-22-pm_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-15T16:30:00+02:00",
+      "at": "2026-06-22T16:30:00+02:00",
       "title": "Snack time \ud83e\udd5c",
-      "body": "Greek Yogurt with Walnuts & Strawberries \u2014 keeps you on track toward your goal.",
+      "body": "Greek Yogurt with Strawberries \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-15-dinner",
+      "id": "cook-2026-06-22-dinner",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-15T19:00:00+02:00",
+      "at": "2026-06-22T18:55:00+02:00",
       "title": "Start dinner soon \ud83c\udf73",
-      "body": "Baked Salmon with Garlic-Lemon Spinach & Sweet Potato Wedges \u2014 25 min. Tap for recipe.",
+      "body": "Asian Ginger-Soy Tilapia with Stir-Fried Zucchini, Spinach & Brown Rice \u2014 30 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-16-am_snack",
+      "id": "snack-2026-06-23-am_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-16T10:30:00+02:00",
+      "at": "2026-06-23T10:30:00+02:00",
       "title": "Snack time \ud83c\udf4e",
-      "body": "Orange & Pistachios \u2014 keeps you on track toward your goal.",
-      "sent": false
-    },
-    {
-      "id": "cook-2026-06-16-lunch",
-      "type": "cook",
-      "audience": [
-        "diego",
-        "diana"
-      ],
-      "at": "2026-06-16T12:30:00+02:00",
-      "title": "Start lunch soon \ud83c\udf73",
-      "body": "Asian Sesame Tilapia Bowl with Stir-Fried Zucchini, Carrots & Brown Rice \u2014 25 min. Tap for recipe.",
-      "sent": false
-    },
-    {
-      "id": "snack-2026-06-16-pm_snack",
-      "type": "snack",
-      "audience": [
-        "diego",
-        "diana"
-      ],
-      "at": "2026-06-16T16:30:00+02:00",
-      "title": "Snack time \ud83e\udd5c",
       "body": "Apple with Walnuts \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-16-dinner",
+      "id": "cook-2026-06-23-lunch",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-16T19:05:00+02:00",
-      "title": "Start dinner soon \ud83c\udf73",
-      "body": "Mediterranean Beef & Chickpea Skillet with Roasted Cherry Tomatoes & Sourdough \u2014 20 min. Tap for recipe.",
-      "sent": false
-    },
-    {
-      "id": "snack-2026-06-17-am_snack",
-      "type": "snack",
-      "audience": [
-        "diego",
-        "diana"
-      ],
-      "at": "2026-06-17T10:30:00+02:00",
-      "title": "Snack time \ud83c\udf4e",
-      "body": "Greek Yogurt with Blueberries & Almonds \u2014 keeps you on track toward your goal.",
-      "sent": false
-    },
-    {
-      "id": "cook-2026-06-17-lunch",
-      "type": "cook",
-      "audience": [
-        "diego",
-        "diana"
-      ],
-      "at": "2026-06-17T12:30:00+02:00",
+      "at": "2026-06-23T12:45:00+02:00",
       "title": "Start lunch soon \ud83c\udf73",
-      "body": "French-Style Beef & Leek Pasta with Wholemeal Penne & Spinach \u2014 25 min. Tap for recipe.",
+      "body": "Mediterranean Baked Salmon with Roasted Eggplant, Chickpeas & Quinoa \u2014 10 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-17-pm_snack",
+      "id": "snack-2026-06-23-pm_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-17T16:30:00+02:00",
+      "at": "2026-06-23T16:30:00+02:00",
       "title": "Snack time \ud83e\udd5c",
-      "body": "Apple & Pistachios \u2014 keeps you on track toward your goal.",
+      "body": "Greek Yogurt with Blueberries & Walnuts \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-17-dinner",
+      "id": "cook-2026-06-23-dinner",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-17T19:05:00+02:00",
+      "at": "2026-06-23T19:00:00+02:00",
       "title": "Start dinner soon \ud83c\udf73",
-      "body": "Tilapia Tacos with Roasted Bell Peppers, Spinach & Lime in Corn Tortillas \u2014 20 min. Tap for recipe.",
+      "body": "Beef Stir-Fry with Broccoli, Carrots & Wholewheat Noodles in Soy-Ginger Sauce \u2014 25 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-18-am_snack",
+      "id": "snack-2026-06-24-am_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-18T10:30:00+02:00",
+      "at": "2026-06-24T10:30:00+02:00",
       "title": "Snack time \ud83c\udf4e",
-      "body": "Greek Yogurt with Strawberries & Walnuts \u2014 keeps you on track toward your goal.",
+      "body": "Apple with Almonds \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-18-lunch",
+      "id": "cook-2026-06-24-lunch",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-18T12:30:00+02:00",
+      "at": "2026-06-24T12:45:00+02:00",
       "title": "Start lunch soon \ud83c\udf73",
-      "body": "Salmon & Quinoa Power Bowl with Roasted Broccoli, Carrots & Lemon-Mustard Drizzle \u2014 25 min. Tap for recipe.",
+      "body": "French-Style Beef & White Bean Skillet with Roasted Zucchini & Sourdough \u2014 10 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-18-pm_snack",
+      "id": "snack-2026-06-24-pm_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-18T16:30:00+02:00",
+      "at": "2026-06-24T16:30:00+02:00",
       "title": "Snack time \ud83e\udd5c",
-      "body": "Apple & Almonds \u2014 keeps you on track toward your goal.",
+      "body": "Greek Yogurt with Strawberries \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-18-dinner",
+      "id": "cook-2026-06-24-dinner",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-18T18:55:00+02:00",
+      "at": "2026-06-24T19:00:00+02:00",
       "title": "Start dinner soon \ud83c\udf73",
-      "body": "Cumin Beef Stir-Fry with Zucchini, Bell Peppers & Brown Rice (cook fresh) \u2014 30 min. Tap for recipe.",
+      "body": "Mediterranean Baked Salmon with Roasted Cherry Tomatoes, Spinach & Lentils \u2014 25 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-19-am_snack",
+      "id": "snack-2026-06-25-am_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-19T10:30:00+02:00",
+      "at": "2026-06-25T10:30:00+02:00",
       "title": "Snack time \ud83c\udf4e",
-      "body": "Orange & Walnuts \u2014 keeps you on track toward your goal.",
+      "body": "Apple with Almonds \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-19-lunch",
+      "id": "cook-2026-06-25-lunch",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-19T12:25:00+02:00",
+      "at": "2026-06-25T12:35:00+02:00",
       "title": "Start lunch soon \ud83c\udf73",
-      "body": "Mediterranean Beef & Vegetable Traybake with Chickpeas, Zucchini & New Potatoes \u2014 30 min. Tap for recipe.",
+      "body": "Mexican Tilapia Tacos with Roasted Peppers, Black Beans & Lime-Cumin Slaw \u2014 20 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-19-pm_snack",
+      "id": "snack-2026-06-25-pm_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-19T16:30:00+02:00",
+      "at": "2026-06-25T16:30:00+02:00",
       "title": "Snack time \ud83e\udd5c",
-      "body": "Greek Yogurt with Blueberries & Pistachios \u2014 keeps you on track toward your goal.",
+      "body": "Greek Yogurt with Blueberries \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-19-dinner",
+      "id": "cook-2026-06-25-dinner",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-19T19:00:00+02:00",
+      "at": "2026-06-25T19:15:00+02:00",
       "title": "Start dinner soon \ud83c\udf73",
-      "body": "Asian-Style Baked Tilapia with Sesame Broccoli, Carrots & Quinoa \u2014 25 min. Tap for recipe.",
+      "body": "Creamy Tomato-Chickpea Beef Skillet with Wilted Spinach & Sourdough \u2014 10 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-20-am_snack",
+      "id": "snack-2026-06-26-am_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-20T10:30:00+02:00",
+      "at": "2026-06-26T10:30:00+02:00",
       "title": "Snack time \ud83c\udf4e",
-      "body": "Apple & Almonds \u2014 keeps you on track toward your goal.",
+      "body": "Apple with Walnuts \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-20-lunch",
+      "id": "cook-2026-06-26-lunch",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-20T12:30:00+02:00",
+      "at": "2026-06-26T12:40:00+02:00",
       "title": "Start lunch soon \ud83c\udf73",
-      "body": "Mexican Salmon & Lentil Bowl with Roasted Peppers, Spinach & Corn Tortillas \u2014 25 min. Tap for recipe.",
+      "body": "Asian Sesame Beef Bowl with Stir-Fried Broccoli, Carrots & Quinoa \u2014 15 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-20-pm_snack",
+      "id": "snack-2026-06-26-pm_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-20T16:30:00+02:00",
+      "at": "2026-06-26T16:30:00+02:00",
       "title": "Snack time \ud83e\udd5c",
-      "body": "Greek Yogurt with Apple & Walnuts \u2014 keeps you on track toward your goal.",
+      "body": "Greek Yogurt with Strawberries & Almonds \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-20-dinner",
+      "id": "cook-2026-06-26-dinner",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-20T18:55:00+02:00",
+      "at": "2026-06-26T19:00:00+02:00",
       "title": "Start dinner soon \ud83c\udf73",
-      "body": "French-Herb Tilapia Traybake with Leeks, Zucchini & Potatoes \u2014 30 min. Tap for recipe.",
+      "body": "French Herbed Tilapia with Roasted Eggplant, Cherry Tomatoes & Lentils \u2014 25 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "weighin-2026-06-21",
+      "id": "snack-2026-06-27-am_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-27T10:30:00+02:00",
+      "title": "Snack time \ud83c\udf4e",
+      "body": "Apple with Almonds \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-27-lunch",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-27T12:25:00+02:00",
+      "title": "Start lunch soon \ud83c\udf73",
+      "body": "Creamy Tomato Chicken Thighs with Wilted Spinach & Wholemeal Penne \u2014 30 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "snack-2026-06-27-pm_snack",
+      "type": "snack",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-27T16:30:00+02:00",
+      "title": "Snack time \ud83e\udd5c",
+      "body": "Greek Yogurt with Blueberries & Walnuts \u2014 keeps you on track toward your goal.",
+      "sent": false
+    },
+    {
+      "id": "cook-2026-06-27-dinner",
+      "type": "cook",
+      "audience": [
+        "diego",
+        "diana"
+      ],
+      "at": "2026-06-27T19:00:00+02:00",
+      "title": "Start dinner soon \ud83c\udf73",
+      "body": "Cumin-Turmeric Salmon with Roasted Bell Peppers, Zucchini & White Bean Mash \u2014 25 min. Tap for recipe.",
+      "sent": false
+    },
+    {
+      "id": "weighin-2026-06-28",
       "type": "weigh_in",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-21T08:00:00+02:00",
+      "at": "2026-06-28T08:00:00+02:00",
       "title": "Sunday weigh-in \u2696\ufe0f",
       "body": "Log your weight to track your progress this week.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-21-am_snack",
+      "id": "snack-2026-06-28-am_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-21T10:30:00+02:00",
+      "at": "2026-06-28T10:30:00+02:00",
       "title": "Snack time \ud83c\udf4e",
-      "body": "Apple & Pistachios \u2014 keeps you on track toward your goal.",
+      "body": "Apple with Walnuts \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-21-lunch",
+      "id": "cook-2026-06-28-lunch",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-21T12:25:00+02:00",
+      "at": "2026-06-28T12:30:00+02:00",
       "title": "Start lunch soon \ud83c\udf73",
-      "body": "Smoky Beef & Lentil Stuffed Bell Peppers with Tomato Sauce & Quinoa \u2014 30 min. Tap for recipe.",
+      "body": "Mexican Egg & Chickpea Burrito Bowl with Roasted Peppers, Spinach & Brown Rice \u2014 25 min. Tap for recipe.",
       "sent": false
     },
     {
-      "id": "prep-2026-06-21",
+      "id": "prep-2026-06-28",
       "type": "prep",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-21T15:00:00+02:00",
+      "at": "2026-06-28T15:00:00+02:00",
       "title": "Meal prep time \ud83e\udd57",
-      "body": "~0h27 of prep sets up your whole week. Tap for the steps.",
+      "body": "~1h40 of prep sets up your whole week. Tap for the steps.",
       "sent": false
     },
     {
-      "id": "snack-2026-06-21-pm_snack",
+      "id": "snack-2026-06-28-pm_snack",
       "type": "snack",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-21T16:30:00+02:00",
+      "at": "2026-06-28T16:30:00+02:00",
       "title": "Snack time \ud83e\udd5c",
-      "body": "Greek Yogurt with Banana & Almonds \u2014 keeps you on track toward your goal.",
+      "body": "Greek Yogurt with Strawberries \u2014 keeps you on track toward your goal.",
       "sent": false
     },
     {
-      "id": "cook-2026-06-21-dinner",
+      "id": "cook-2026-06-28-dinner",
       "type": "cook",
       "audience": [
         "diego",
         "diana"
       ],
-      "at": "2026-06-21T19:00:00+02:00",
+      "at": "2026-06-28T19:00:00+02:00",
       "title": "Start dinner soon \ud83c\udf73",
-      "body": "Ginger-Soy Salmon with Stir-Fried Broccoli, Leeks & Wholemeal Noodles \u2014 25 min. Tap for recipe.",
+      "body": "Turmeric-Ginger Tilapia with Roasted Broccoli, Carrots & Lentils in Apple Cider Vinegar Dressing \u2014 25 min. Tap for recipe.",
       "sent": false
     }
   ]

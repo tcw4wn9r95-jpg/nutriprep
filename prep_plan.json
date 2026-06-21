@@ -1,75 +1,140 @@
 {
-  "week_of": "2026-06-15",
+  "week_of": "2026-06-22",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 27,
+  "total_active_minutes": 100,
   "batches": [
     {
-      "id": "prep_batch_boiled_eggs",
-      "title": "Hard-Boiled Eggs (for Wed & Thu breakfasts)",
+      "id": "prep_batch_1",
+      "title": "Monday Lunch Components: Ground Beef, Lentils, Roasted Sweet Potato & Peppers",
       "order": 1,
-      "active_minutes": 12,
+      "active_minutes": 35,
       "steps": [
-        "Fill a large saucepan with cold water and bring to a rolling boil.",
-        "Gently lower 10 eggs into the water using a spoon to avoid cracking.",
-        "Boil for exactly 9 minutes for firm yolks.",
-        "Transfer immediately to a bowl of ice-cold water and leave for 3 minutes.",
-        "Peel all eggs carefully under running water. Pat dry.",
-        "Place peeled eggs in an airtight container with a damp paper towel to keep them moist.",
-        "Refrigerate. Label container: 'Boiled eggs \u2014 use by Thursday morning (day 4).'"
+        "1. Preheat oven to 200\u00b0C.",
+        "2. Dice 300 g sweet potato into 2 cm cubes. Toss with 1 tbsp olive oil, 1 tsp cumin, 1 tsp smoked paprika, salt and pepper. Spread on a baking tray lined with parchment.",
+        "3. Slice 3 bell peppers (mixed colours) into strips. Toss with 1 tsp olive oil, salt. Spread on a second baking tray.",
+        "4. Place both trays in oven: sweet potato for 25 min, peppers for 20 min. Check and turn halfway. Remove when tender and lightly caramelised. Cool completely.",
+        "5. Rinse 200 g dried green lentils. Place in a medium pot with 600 ml cold water and 1/2 tsp salt. Bring to boil, reduce to simmer 20 min until just tender. Drain and season with 1/2 tsp cumin, black pepper. Cool completely.",
+        "6. Heat 1 tsp olive oil in a large non-stick pan over medium-high heat. Add 600 g lean ground beef, breaking up with a spoon. Cook 7\u20138 min until fully browned. Season with 1 tsp cumin, 1 tsp smoked paprika, 1/2 tsp chili powder, 1 tsp garlic powder, salt. Cook 2 more min. Cool completely.",
+        "7. Portion into airtight containers: beef separate from lentils and roasted veg. Label Monday. Refrigerate immediately."
       ],
       "yields": [
-        "10 peeled hard-boiled eggs (5 per person across Wed & Thu breakfasts)"
+        "600 g cooked seasoned ground beef (\u22483 portions)",
+        "400 g cooked green lentils",
+        "300 g roasted sweet potato",
+        "600 g roasted bell peppers"
       ],
-      "food_category": "eggs_cooked",
+      "food_category": "red_meat",
       "video_url": "",
       "day_of_assembly": {
-        "Wednesday": "Breakfast \u2014 Kefir Smoothie & Boiled Eggs on Sourdough: take 2 eggs per person from container, halve, season with salt and pepper, place on toasted sourdough. Blend kefir smoothie fresh.",
-        "Thursday": "Breakfast \u2014 Kefir Smoothie & Boiled Eggs on Sourdough: retrieve last 2 eggs per person (day 4 \u2014 final safe day), halve, plate on toasted sourdough. Blend smoothie fresh with banana and strawberries."
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "covered container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 4,
-        "freeze_option_days": null,
-        "reheat_c": 74,
-        "safety_note": "Hard-boiled eggs: 1 week in shell, 5 days peeled in water. Scrambled/cooked dishes: 3\u20134 days."
-      }
-    },
-    {
-      "id": "prep_batch_peppers",
-      "title": "Roasted Bell Peppers (for Mon lunch & Wed dinner)",
-      "order": 2,
-      "active_minutes": 15,
-      "steps": [
-        "Preheat oven to 200\u00b0C.",
-        "Slice 700 g mixed red and yellow bell peppers into strips about 1.5 cm wide. Discard seeds and white pith.",
-        "Spread pepper strips in a single layer on a large lined baking tray.",
-        "Drizzle with 1 tbsp olive oil, sprinkle with dried oregano, smoked paprika, black pepper and a pinch of sea salt. Toss to coat evenly.",
-        "Roast for 25\u201328 minutes, turning once halfway, until peppers are soft and lightly caramelised at the edges.",
-        "Remove from oven, allow to cool completely before refrigerating.",
-        "Transfer to an airtight container. Label: 'Roasted peppers \u2014 use by Thursday (day 4).'"
-      ],
-      "yields": [
-        "~600 g roasted bell peppers (for Mon lunch 250 g + Wed dinner 180 g)"
-      ],
-      "food_category": "vegetables_cooked",
-      "video_url": "",
-      "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mexican Beef & Lentil Bowl: reheat 150 g (Diego) / 100 g (Diana) roasted peppers in pan 2 min alongside reheated ground beef, layer over spinach and lentils in bowl with tortillas.",
-        "Wednesday": "Dinner \u2014 Tilapia Tacos: reheat 100 g (Diego) / 80 g (Diana) roasted peppers briefly in pan with a pinch of smoked paprika, layer into warm corn tortillas with flaked tilapia, fresh spinach and mustard-lime sauce."
+        "Monday": "Lunch \u2014 Mexican Beef & Lentil Bowl: reheat 200 g beef + 120 g lentils + 120 g sweet potato + 100 g peppers in microwave; assemble bowl with lentils first, top with beef; squeeze lime."
       },
       "storage": {
         "method": "refrigerate",
         "container": "airtight container",
         "fridge_c": "\u2264 4",
         "cool_within_hours": 2,
-        "use_within_days": 4,
+        "use_within_days": 3,
         "freeze_option_days": 90,
         "reheat_c": 74,
-        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_2",
+      "title": "Tuesday Lunch Components: Roasted Eggplant, Roasted Chickpeas & Quinoa",
+      "order": 2,
+      "active_minutes": 30,
+      "steps": [
+        "1. Preheat oven to 200\u00b0C (can use same oven session as batch 1).",
+        "2. Cube 1 large eggplant (\u2248400 g) into 2 cm pieces. Toss with 1.5 tbsp olive oil, 1 tsp smoked paprika, 1 tsp dried oregano, salt. Spread on a lined baking tray.",
+        "3. Drain and rinse 2 cans (800 g) chickpeas. Pat dry with paper towel \u2014 this ensures crispiness. Toss with 1 tbsp olive oil, 1 tsp cumin, 1 tsp turmeric, salt. Spread on a separate tray.",
+        "4. Roast eggplant 25 min and chickpeas 20 min, turning once at the halfway mark. Both should be golden. Cool completely.",
+        "5. Rinse 300 g quinoa in a fine sieve until water runs clear. Place in a medium pot with 600 ml water and 1/2 tsp salt. Bring to boil, reduce to low, cover and cook 15 min. Remove from heat, leave covered 5 min. Fluff with a fork. Cool completely.",
+        "6. Store quinoa, eggplant and chickpeas in separate labelled airtight containers. Refrigerate immediately."
+      ],
+      "yields": [
+        "\u2248750 g cooked quinoa",
+        "\u2248380 g roasted eggplant",
+        "\u2248600 g roasted chickpeas"
+      ],
+      "food_category": "legumes",
+      "video_url": "",
+      "day_of_assembly": {
+        "Tuesday": "Lunch \u2014 Mediterranean Baked Salmon with Roasted Eggplant, Chickpeas & Quinoa: bake fresh salmon 14 min while reheating 130 g quinoa + 100 g eggplant + 80 g chickpeas; drizzle tahini-lemon sauce.",
+        "Friday": "Lunch \u2014 Asian Sesame Beef Bowl with Broccoli, Carrots & Quinoa: reheat 130 g quinoa (from mid-week Wednesday fresh cook); stir-fry fresh beef strips and vegetables; serve over quinoa."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 5,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
+      }
+    },
+    {
+      "id": "prep_batch_3",
+      "title": "Wednesday Lunch Components: French Beef & White Bean Skillet with Roasted Zucchini",
+      "order": 3,
+      "active_minutes": 30,
+      "steps": [
+        "1. Preheat oven to 200\u00b0C.",
+        "2. Slice 2 large zucchini into 0.5 cm rounds. Toss with 1 tbsp olive oil, 1 tsp dried oregano, 1/2 tsp black pepper, salt. Spread on a lined baking tray. Roast 20 min until golden and slightly charred at edges. Cool and refrigerate.",
+        "3. Mince 3 garlic cloves. Heat 1.5 tbsp olive oil in a large heavy-bottomed pot over medium-high heat. Add 500 g lean beef chunks; sear undisturbed 2\u20133 min per side until browned all over.",
+        "4. Add garlic, 1 tsp dried oregano, 1 tsp dried thyme, 1 tsp smoked paprika, 1/2 tsp black pepper; stir 1 min.",
+        "5. Add 2 cans (800 g total) drained white beans and 1 can (400 g) diced tomatoes. Stir well. Bring to a simmer; cook covered on low heat 20 min until beef is tender. Taste and adjust salt.",
+        "6. Cool completely. Portion into airtight containers. Refrigerate immediately \u2014 MUST be eaten by Wednesday (day 3 beef rule)."
+      ],
+      "yields": [
+        "\u22481.1 kg beef & white bean skillet (\u22484 portions household)",
+        "\u2248500 g roasted zucchini rounds"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Lunch \u2014 French-Style Beef & White Bean Skillet with Roasted Zucchini & Sourdough: reheat 300 g skillet in pan 5\u20136 min; microwave 120 g zucchini; plate zucchini first, then skillet, sourdough on side."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_4",
+      "title": "Wednesday Mid-Week Fresh Quinoa Cook (for Friday Lunch)",
+      "order": 4,
+      "active_minutes": 5,
+      "steps": [
+        "1. NOTE: This batch is NOT cooked on Sunday \u2014 cook it on Wednesday evening after dinner (takes only 5 min active). This ensures it is within the 3-day safety window for Friday.",
+        "2. On Wednesday evening: rinse 300 g quinoa in a fine sieve. Place in a pot with 600 ml water and 1/2 tsp salt. Bring to boil, cover, simmer 15 min. Fluff and cool uncovered 10 min.",
+        "3. Transfer to an airtight container, label 'Friday Quinoa', refrigerate immediately. Use by Friday (2 days)."
+      ],
+      "yields": [
+        "\u2248750 g cooked quinoa for Friday"
+      ],
+      "food_category": "grains_pasta",
+      "video_url": "",
+      "day_of_assembly": {
+        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (grains pasta is only safe ~3 day(s); this is day 5)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
       }
     }
   ]
