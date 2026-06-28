@@ -1,73 +1,74 @@
 {
   "status": "published",
-  "generated": "2026-06-21",
-  "week_of": "2026-06-22",
+  "generated": "2026-06-28",
+  "week_of": "2026-06-29",
   "meal_count": 35,
-  "shopping_items": 53,
-  "prep_batches": 4,
-  "prep_minutes": 100,
+  "shopping_items": 57,
+  "prep_batches": 0,
+  "prep_minutes": 0,
   "notification_events": 30,
-  "fresh_shop_items": 25,
-  "pantry_staple_items": 28,
+  "fresh_shop_items": 22,
+  "pantry_staple_items": 35,
   "locked_palette": {
     "proteins": [
       "tilapia",
       "salmon",
       "beef (lean cuts)",
-      "eggs"
+      "eggs (boiled/poached only)"
     ],
     "vegetables": [
-      "bell peppers",
+      "bell peppers (red, yellow)",
       "zucchini",
       "cherry tomatoes",
-      "carrots",
       "broccoli",
-      "spinach (cooked)",
+      "carrots",
+      "spinach (fresh, for cooking)",
+      "cucumber",
       "garlic",
       "ginger",
-      "cucumber",
-      "eggplant"
+      "celery"
     ],
     "fruits": [
       "blueberries",
+      "raspberries",
       "apples",
       "bananas",
-      "strawberries",
       "oranges"
     ],
     "breads_greens": [
-      "sourdough bread",
-      "spinach"
+      "sourdough bread (whole grain)",
+      "mixed leaf salad greens"
     ],
     "carbs_staples": [
       "brown rice",
       "wholewheat pasta",
       "sweet potatoes",
-      "corn tortillas",
+      "potatoes (waxy, with skin)",
       "quinoa",
+      "corn tortillas",
       "canned lentils",
       "canned chickpeas",
-      "canned white beans"
+      "canned cannellini beans"
     ],
     "spices_sauces_staples": [
-      "olive oil",
+      "extra virgin olive oil",
       "sesame oil",
-      "soy sauce",
       "balsamic vinegar",
-      "apple cider vinegar",
+      "red wine vinegar",
+      "soy sauce",
+      "tamari",
       "cumin",
       "smoked paprika",
-      "garlic powder",
-      "ginger powder",
       "dried oregano",
       "dried thyme",
-      "turmeric",
-      "chili powder",
+      "dried basil",
       "black pepper",
       "sea salt",
-      "lemon juice",
-      "lime juice",
-      "tahini"
+      "chili flakes",
+      "ground coriander",
+      "cinnamon",
+      "lime juice (bottled)",
+      "tomato passata (tinned)"
     ]
   }
 }

@@ -1,23 +1,23 @@
 [
   {
     "day": "Monday",
-    "date": "2026-06-22",
+    "date": "2026-06-29",
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
+        "name": "Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Feta",
         "time": "07:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "overhead photo of a tall glass of purple-blue kefir smoothie with banana and blueberries beside two fried eggs on toasted sourdough, natural morning light, wooden table",
+        "cook_minutes_day_of": 12,
+        "image_prompt": "overhead photo of a glass of purple blueberry kefir smoothie beside two halved boiled eggs on toasted wholegrain sourdough with crumbled white feta, natural morning light, wooden table, appetising",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Pour 250 ml kefir into a blender with 1/2 banana and 80 g blueberries; blend 30 seconds until smooth; pour into a tall glass.",
-          "Heat a non-stick pan over medium heat; add 1 tsp olive oil.",
-          "Diego: crack 3 eggs into pan, fry sunny-side-up 3\u20134 min until whites are set. Diana: crack 2 eggs into pan, fry similarly.",
-          "Toast 40 g sourdough (Diego) / 30 g sourdough (Diana) in toaster until golden.",
-          "Plate eggs on sourdough; serve smoothie alongside. Drink 500 ml water."
+          "1. Bring a small saucepan of water to the boil. Lower 2 eggs (Diego) or 2 eggs (Diana) gently into the water and boil 9 minutes for hard-boiled. Transfer to cold water, peel, and slice in half.",
+          "2. While eggs cook, pour 250 ml kefir into a blender, add the banana and blueberries for each person's smoothie. Blend 30 seconds until smooth. Pour into a glass.",
+          "3. Toast 50 g (Diego) / 35 g (Diana) wholegrain sourdough slices.",
+          "4. Lay sliced eggs on toast, crumble 30 g (Diego) / 20 g (Diana) feta over the top, season with black pepper.",
+          "5. Serve smoothie alongside toast. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "eggs_cooked",
@@ -25,70 +25,70 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
                 "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
+                "qty": "80 g (\u00bd medium)"
               },
               {
                 "item": "Blueberries (myrtilles)",
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g (1 slice)"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g (1 thick slice)"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp (5 ml)"
+                "item": "Feta cheese (fromage feta)",
+                "qty": "30 g"
               }
             ],
             "macros": {
-              "kcal": 520,
-              "protein_g": 32,
-              "carbs_g": 45,
-              "fat_g": 20,
-              "fiber_g": 4
+              "kcal": 490,
+              "protein_g": 30,
+              "carbs_g": 48,
+              "fat_g": 18,
+              "fiber_g": 5
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
                 "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
+                "qty": "60 g (\u2153 medium)"
               },
               {
                 "item": "Blueberries (myrtilles)",
-                "qty": "80 g"
+                "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs, boiled (\u0153ufs durs)",
                 "qty": "2 large"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g (1 thin slice)"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g (1 thin slice)"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp (2 ml)"
+                "item": "Feta cheese (fromage feta)",
+                "qty": "20 g"
               }
             ],
             "macros": {
-              "kcal": 400,
-              "protein_g": 23,
-              "carbs_g": 40,
-              "fat_g": 14,
+              "kcal": 390,
+              "protein_g": 24,
+              "carbs_g": 36,
+              "fat_g": 13,
               "fiber_g": 4
             }
           }
@@ -96,17 +96,17 @@
       },
       {
         "slot": "am_snack",
-        "name": "Apple with Almonds",
+        "name": "Apple & Almond Snack",
         "time": "10:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 1,
-        "image_prompt": "a sliced green apple fanned on a small plate next to a handful of whole almonds, bright natural light, minimalist white background",
+        "image_prompt": "close-up of a sliced green apple fanned on a small plate next to a small bowl of whole almonds, natural light, minimalist white background",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Wash and slice 1 apple into wedges.",
-          "Weigh almonds (Diego: 25 g; Diana: 20 g) into a small bowl.",
-          "Eat apple first (fibre), then almonds. Drink 500 ml water."
+          "1. Rinse and slice 1 apple per person.",
+          "2. Weigh 25 g almonds (Diego) / 20 g almonds (Diana) into a small bowl.",
+          "3. Serve together. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -115,7 +115,7 @@
             "ingredients": [
               {
                 "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "qty": "150 g (1 medium)"
               },
               {
                 "item": "Almonds (amandes)",
@@ -123,10 +123,10 @@
               }
             ],
             "macros": {
-              "kcal": 220,
-              "protein_g": 6,
-              "carbs_g": 26,
-              "fat_g": 12,
+              "kcal": 215,
+              "protein_g": 5,
+              "carbs_g": 22,
+              "fat_g": 13,
               "fiber_g": 5
             }
           },
@@ -134,7 +134,7 @@
             "ingredients": [
               {
                 "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "qty": "130 g (1 small)"
               },
               {
                 "item": "Almonds (amandes)",
@@ -142,36 +142,34 @@
               }
             ],
             "macros": {
-              "kcal": 185,
-              "protein_g": 5,
-              "carbs_g": 25,
-              "fat_g": 9,
-              "fiber_g": 5
+              "kcal": 172,
+              "protein_g": 4,
+              "carbs_g": 18,
+              "fat_g": 10,
+              "fiber_g": 4
             }
           }
         }
       },
       {
         "slot": "lunch",
-        "name": "Mexican Beef & Lentil Bowl with Roasted Peppers, Sweet Potato & Lime",
+        "name": "Mexican Beef & Lentil Stuffed Pepper Bowl with Quinoa",
         "time": "13:00",
         "prep_ahead": true,
         "cook_minutes_day_of": 10,
-        "image_prompt": "overhead bowl with seasoned ground beef, orange lentils, roasted red and yellow bell pepper strips, cubed sweet potato, drizzled with lime juice, on a terracotta-coloured table, natural light",
+        "image_prompt": "overhead photo of a vibrant bowl with cumin-spiced ground beef and green lentils over golden quinoa, roasted red and yellow bell pepper strips, cherry tomatoes, a drizzle of olive oil, natural light on a terracotta surface",
         "video_url": "",
         "prep_steps": [
-          "Sunday: Roast 300 g diced sweet potato at 200\u00b0C 25 min with 1 tsp olive oil, cumin, smoked paprika.",
-          "Sunday: Roast 2 sliced bell peppers (mixed colours) at 200\u00b0C 20 min with olive oil.",
-          "Sunday: Cook 200 g dried green lentils in salted water 20 min; drain and season with cumin, salt, pepper.",
-          "Sunday: Brown 600 g lean ground beef with garlic, cumin, chili powder, smoked paprika; cool and refrigerate."
+          "Sunday: Cook quinoa batch \u2014 rinse 300 g quinoa, simmer in 600 ml water 15 min, cool and refrigerate.",
+          "Sunday: Brown 700 g lean ground beef with garlic, cumin, smoked paprika, chili flakes in a large pan; drain excess fat, mix in drained canned lentils and passata, simmer 10 min. Cool and refrigerate.",
+          "Sunday: Roast sliced red and yellow bell peppers and cherry tomatoes at 200\u00b0C for 25 min with olive oil, salt, and cumin. Cool and refrigerate."
         ],
         "day_of_steps": [
-          "Reheat beef (Diego: 200 g; Diana: 130 g) in a pan over medium heat 3\u20134 min.",
-          "Reheat sweet potato (Diego: 120 g; Diana: 80 g) and roasted peppers (Diego: 100 g; Diana: 80 g) in microwave 2 min.",
-          "Reheat lentils (Diego: 120 g cooked; Diana: 80 g cooked) in microwave 1 min.",
-          "Assemble bowl: start with lentils at the base (fibre first), then peppers, sweet potato, beef on top.",
-          "Squeeze fresh lime juice over bowl; drizzle 1 tsp olive oil.",
-          "Serve with 1 apple (dessert). Drink 500 ml water."
+          "1. Scoop 130 g (Diego) / 90 g (Diana) cooked quinoa into a microwave-safe bowl and reheat 90 seconds, stir.",
+          "2. Reheat 220 g (Diego) / 160 g (Diana) beef-lentil mixture in a saucepan over medium heat 3\u20134 minutes, stirring, until piping hot.",
+          "3. Add 100 g (Diego) / 80 g (Diana) roasted peppers and tomatoes alongside the quinoa.",
+          "4. Drizzle 2 tsp olive oil over the bowl, squeeze a little bottled lime juice, season with black pepper.",
+          "5. Serve immediately. Drink 500 ml water."
         ],
         "storage_ref": "prep_batch_1",
         "food_category": "red_meat",
@@ -180,566 +178,103 @@
             "ingredients": [
               {
                 "item": "Lean ground beef (b\u0153uf hach\u00e9 maigre)",
-                "qty": "200 g raw"
+                "qty": "170 g raw weight equiv."
               },
               {
-                "item": "Cooked green lentils (lentilles vertes cuites)",
-                "qty": "120 g"
+                "item": "Canned green lentils (lentilles vertes en bo\u00eete)",
+                "qty": "80 g drained"
               },
               {
-                "item": "Roasted sweet potato (patate douce r\u00f4tie)",
-                "qty": "120 g"
+                "item": "Quinoa, cooked (quinoa cuit)",
+                "qty": "130 g"
               },
               {
-                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
+                "item": "Roasted bell peppers & cherry tomatoes (poivrons et tomates cerises r\u00f4tis)",
                 "qty": "100 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
+                "item": "Tomato passata (passata de tomates)",
+                "qty": "40 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Bottled lime juice (jus de citron vert)",
                 "qty": "1 tsp"
               },
               {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
-              },
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "item": "Cumin, smoked paprika, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 620,
-              "protein_g": 48,
-              "carbs_g": 55,
+              "kcal": 570,
+              "protein_g": 47,
+              "carbs_g": 46,
               "fat_g": 18,
-              "fiber_g": 12
+              "fiber_g": 9
             }
           },
           "diana": {
             "ingredients": [
               {
                 "item": "Lean ground beef (b\u0153uf hach\u00e9 maigre)",
-                "qty": "130 g raw"
+                "qty": "120 g raw weight equiv."
               },
               {
-                "item": "Cooked green lentils (lentilles vertes cuites)",
-                "qty": "80 g"
+                "item": "Canned green lentils (lentilles vertes en bo\u00eete)",
+                "qty": "60 g drained"
               },
               {
-                "item": "Roasted sweet potato (patate douce r\u00f4tie)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
-              },
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              }
-            ],
-            "macros": {
-              "kcal": 470,
-              "protein_g": 34,
-              "carbs_g": 42,
-              "fat_g": 13,
-              "fiber_g": 9
-            }
-          }
-        }
-      },
-      {
-        "slot": "pm_snack",
-        "name": "Greek Yogurt with Strawberries",
-        "time": "16:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 2,
-        "image_prompt": "a white bowl of thick Greek yogurt topped with halved fresh strawberries, natural afternoon light, marble surface",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Spoon Greek yogurt (Diego: 200 g; Diana: 150 g) into a bowl.",
-          "Wash and halve 80 g strawberries; place on top.",
-          "Optionally add a tiny drizzle of balsamic vinegar for blood-sugar benefit. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "dairy",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "200 g"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              }
-            ],
-            "macros": {
-              "kcal": 145,
-              "protein_g": 20,
-              "carbs_g": 14,
-              "fat_g": 1,
-              "fiber_g": 1
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "150 g"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              }
-            ],
-            "macros": {
-              "kcal": 115,
-              "protein_g": 15,
-              "carbs_g": 12,
-              "fat_g": 1,
-              "fiber_g": 1
-            }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "Asian Ginger-Soy Tilapia with Stir-Fried Zucchini, Spinach & Brown Rice",
-        "time": "19:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 30,
-        "image_prompt": "a white plate with golden pan-seared tilapia fillet glazed in ginger-soy sauce beside stir-fried zucchini and wilted spinach, a neat mound of brown rice, sesame oil drizzle, natural warm light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Cook brown rice: rinse Diego: 70 g / Diana: 50 g dry rice; add to pot with 2x water; bring to boil, simmer 25 min covered; fluff.",
-          "Mix marinade: 2 tbsp soy sauce, 1 tsp grated ginger (or ginger powder), 1 tsp sesame oil, squeeze of lime.",
-          "Pat tilapia dry (Diego: 180 g; Diana: 130 g); coat both sides with marinade.",
-          "Heat 1 tsp olive oil in non-stick pan over medium-high; sear tilapia 3\u20134 min per side until opaque and golden.",
-          "In same pan add 1 tsp sesame oil; stir-fry 1 sliced zucchini and 80 g spinach 3 min; season with soy sauce and garlic powder.",
-          "Plate: vegetables first on plate, then rice alongside, tilapia on top. Drizzle any pan juices over fish.",
-          "Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "fish_seafood",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "180 g"
-              },
-              {
-                "item": "Brown rice dry (riz complet)",
-                "qty": "70 g"
-              },
-              {
-                "item": "Zucchini (courgette)",
-                "qty": "120 g"
-              },
-              {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Soy sauce (sauce soja)",
-                "qty": "2 tbsp"
-              },
-              {
-                "item": "Sesame oil (huile de s\u00e9same)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
-              },
-              {
-                "item": "Ginger powder (gingembre en poudre)",
-                "qty": "1/2 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 490,
-              "protein_g": 42,
-              "carbs_g": 50,
-              "fat_g": 12,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "130 g"
-              },
-              {
-                "item": "Brown rice dry (riz complet)",
-                "qty": "50 g"
-              },
-              {
-                "item": "Zucchini (courgette)",
-                "qty": "100 g"
-              },
-              {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Soy sauce (sauce soja)",
-                "qty": "1.5 tbsp"
-              },
-              {
-                "item": "Sesame oil (huile de s\u00e9same)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
-              },
-              {
-                "item": "Ginger powder (gingembre en poudre)",
-                "qty": "1/2 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 370,
-              "protein_g": 31,
-              "carbs_g": 38,
-              "fat_g": 9,
-              "fiber_g": 4
-            }
-          }
-        }
-      }
-    ],
-    "day_totals": {
-      "diego": {
-        "kcal": 1995,
-        "protein_g": 148,
-        "carbs_g": 190,
-        "fat_g": 63,
-        "fiber_g": 27
-      },
-      "diana": {
-        "kcal": 1540,
-        "protein_g": 108,
-        "carbs_g": 157,
-        "fat_g": 46,
-        "fiber_g": 23
-      }
-    },
-    "training": {
-      "member": "diego",
-      "name": "Aerobic Base Ride",
-      "sport": "cycling_indoor",
-      "tss": 22,
-      "duration_min": 30,
-      "extra_kcal": 154
-    }
-  },
-  {
-    "day": "Tuesday",
-    "date": "2026-06-23",
-    "meals": [
-      {
-        "slot": "breakfast",
-        "name": "Kefir Smoothie with Strawberry & Banana + Fried Eggs on Sourdough with Feta",
-        "time": "07:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "a tall pink kefir smoothie with strawberry and banana next to two fried eggs on golden sourdough toast with crumbled white feta, bright morning light, linen tablecloth",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Blend 250 ml kefir with 80 g strawberries and 1/2 banana until smooth; pour into glass.",
-          "Fry eggs in 1 tsp olive oil: Diego 3 eggs, Diana 2 eggs, sunny-side-up 3\u20134 min.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g).",
-          "Crumble feta (Diego: 25 g; Diana: 20 g) over eggs on toast.",
-          "Serve smoothie alongside. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "eggs_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Kefir (k\u00e9fir)",
-                "qty": "250 ml"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Feta cheese (fromage feta)",
-                "qty": "25 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 545,
-              "protein_g": 35,
-              "carbs_g": 44,
-              "fat_g": 22,
-              "fiber_g": 3
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Kefir (k\u00e9fir)",
-                "qty": "250 ml"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "2 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
-              },
-              {
-                "item": "Feta cheese (fromage feta)",
-                "qty": "20 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 415,
-              "protein_g": 25,
-              "carbs_g": 39,
-              "fat_g": 16,
-              "fiber_g": 3
-            }
-          }
-        }
-      },
-      {
-        "slot": "am_snack",
-        "name": "Apple with Walnuts",
-        "time": "10:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "a whole green apple next to a small white dish of walnut halves, soft natural light on a wooden board",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Slice 1 apple into wedges.",
-          "Weigh walnuts (Diego: 25 g; Diana: 20 g) into a small bowl.",
-          "Eat apple first, then walnuts. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              },
-              {
-                "item": "Walnuts (noix)",
-                "qty": "25 g"
-              }
-            ],
-            "macros": {
-              "kcal": 235,
-              "protein_g": 4,
-              "carbs_g": 24,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              },
-              {
-                "item": "Walnuts (noix)",
-                "qty": "20 g"
-              }
-            ],
-            "macros": {
-              "kcal": 205,
-              "protein_g": 3,
-              "carbs_g": 24,
-              "fat_g": 11,
-              "fiber_g": 5
-            }
-          }
-        }
-      },
-      {
-        "slot": "lunch",
-        "name": "Mediterranean Baked Salmon with Roasted Eggplant, Chickpeas & Quinoa",
-        "time": "13:00",
-        "prep_ahead": true,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "overhead bowl with flaky baked salmon, roasted purple eggplant cubes, golden chickpeas, fluffy quinoa, drizzled with tahini and lemon, natural light on a blue ceramic bowl",
-        "video_url": "",
-        "prep_steps": [
-          "Sunday: Cook 300 g quinoa in salted water per packet; cool and refrigerate.",
-          "Sunday: Cube 1 large eggplant; toss with olive oil, smoked paprika, oregano; roast 200\u00b0C 25 min; cool and refrigerate.",
-          "Sunday: Drain 2 cans chickpeas; toss with olive oil, cumin, turmeric; roast 200\u00b0C 20 min; cool and refrigerate."
-        ],
-        "day_of_steps": [
-          "Preheat oven to 200\u00b0C. Season salmon (Diego: 180 g; Diana: 130 g) with oregano, smoked paprika, olive oil; bake 12\u201314 min until cooked through.",
-          "Reheat quinoa (Diego: 130 g cooked; Diana: 90 g cooked) in microwave 2 min.",
-          "Reheat roasted eggplant (Diego: 100 g; Diana: 80 g) and chickpeas (Diego: 80 g; Diana: 60 g) in microwave 2 min.",
-          "Assemble bowl: quinoa base, then chickpeas and eggplant, salmon on top.",
-          "Drizzle 1 tsp tahini mixed with lemon juice and water (thin sauce) over bowl.",
-          "Serve with 1 orange. Drink 500 ml water."
-        ],
-        "storage_ref": "prep_batch_2",
-        "food_category": "fish_seafood",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Salmon fillet (filet de saumon)",
-                "qty": "180 g raw"
-              },
-              {
-                "item": "Cooked quinoa (quinoa cuit)",
-                "qty": "130 g"
-              },
-              {
-                "item": "Roasted eggplant (aubergine r\u00f4tie)",
-                "qty": "100 g"
-              },
-              {
-                "item": "Roasted chickpeas (pois chiches r\u00f4tis)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Tahini (tahini)",
-                "qty": "1 tsp (5 g)"
-              },
-              {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Orange (orange)",
-                "qty": "1 medium"
-              }
-            ],
-            "macros": {
-              "kcal": 620,
-              "protein_g": 47,
-              "carbs_g": 52,
-              "fat_g": 20,
-              "fiber_g": 10
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Salmon fillet (filet de saumon)",
-                "qty": "130 g raw"
-              },
-              {
-                "item": "Cooked quinoa (quinoa cuit)",
+                "item": "Quinoa, cooked (quinoa cuit)",
                 "qty": "90 g"
               },
               {
-                "item": "Roasted eggplant (aubergine r\u00f4tie)",
+                "item": "Roasted bell peppers & cherry tomatoes (poivrons et tomates cerises r\u00f4tis)",
                 "qty": "80 g"
               },
               {
-                "item": "Roasted chickpeas (pois chiches r\u00f4tis)",
-                "qty": "60 g"
+                "item": "Tomato passata (passata de tomates)",
+                "qty": "30 g"
               },
               {
-                "item": "Tahini (tahini)",
-                "qty": "1 tsp (5 g)"
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
               },
               {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
+                "item": "Bottled lime juice (jus de citron vert)",
+                "qty": "1 tsp"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Orange (orange)",
-                "qty": "1 medium"
+                "item": "Cumin, smoked paprika, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 465,
-              "protein_g": 34,
-              "carbs_g": 40,
+              "kcal": 420,
+              "protein_g": 33,
+              "carbs_g": 33,
               "fat_g": 14,
-              "fiber_g": 8
+              "fiber_g": 7
             }
           }
         }
       },
       {
         "slot": "pm_snack",
-        "name": "Greek Yogurt with Blueberries & Walnuts",
+        "name": "Greek Yogurt with Raspberries & Walnuts",
         "time": "16:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 2,
-        "image_prompt": "a glass bowl of white Greek yogurt topped with fresh blueberries and crushed walnuts, soft natural light, marble countertop",
+        "image_prompt": "close-up of a white ceramic bowl of thick Greek yogurt topped with fresh red raspberries and walnut halves, soft natural afternoon light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Spoon Greek yogurt (Diego: 180 g; Diana: 150 g) into bowl.",
-          "Top with blueberries (Diego: 60 g; Diana: 60 g) and walnuts (Diego: 15 g; Diana: 10 g). Drink 500 ml water."
+          "1. Spoon 180 g (Diego) / 140 g (Diana) plain Greek yogurt (0% or 2%) into a bowl.",
+          "2. Add 80 g raspberries and 15 g walnuts (Diego) / 60 g raspberries and 12 g walnuts (Diana) on top.",
+          "3. Serve immediately. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "dairy",
@@ -747,12 +282,12 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
+                "item": "Greek yogurt (yaourt grec)",
                 "qty": "180 g"
               },
               {
-                "item": "Blueberries (myrtilles)",
-                "qty": "60 g"
+                "item": "Raspberries (framboises)",
+                "qty": "80 g"
               },
               {
                 "item": "Walnuts (noix)",
@@ -760,150 +295,143 @@
               }
             ],
             "macros": {
-              "kcal": 195,
-              "protein_g": 19,
-              "carbs_g": 17,
-              "fat_g": 7,
-              "fiber_g": 2
+              "kcal": 225,
+              "protein_g": 18,
+              "carbs_g": 14,
+              "fat_g": 10,
+              "fiber_g": 4
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "150 g"
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "140 g"
               },
               {
-                "item": "Blueberries (myrtilles)",
+                "item": "Raspberries (framboises)",
                 "qty": "60 g"
               },
               {
                 "item": "Walnuts (noix)",
-                "qty": "10 g"
+                "qty": "12 g"
               }
             ],
             "macros": {
-              "kcal": 155,
-              "protein_g": 15,
-              "carbs_g": 16,
-              "fat_g": 4,
-              "fiber_g": 2
+              "kcal": 170,
+              "protein_g": 13,
+              "carbs_g": 11,
+              "fat_g": 8,
+              "fiber_g": 3
             }
           }
         }
       },
       {
         "slot": "dinner",
-        "name": "Beef Stir-Fry with Broccoli, Carrots & Wholewheat Noodles in Soy-Ginger Sauce",
+        "name": "Baked Salmon with Roasted Broccoli, Carrots & Sweet Potato Wedges",
         "time": "19:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 25,
-        "image_prompt": "a shallow bowl of wholewheat noodles topped with strips of stir-fried beef, bright green broccoli florets and orange carrot rounds in a glossy soy-ginger sauce, sesame oil drizzle, warm evening light",
+        "cook_minutes_day_of": 28,
+        "image_prompt": "overhead shot of a baked salmon fillet glazed with soy and ginger beside golden sweet potato wedges, roasted broccoli florets and orange carrot batons on a dark baking tray, warm evening light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Cook wholewheat pasta/noodles (Diego: 70 g dry; Diana: 50 g dry) per packet, drain; toss with 1/2 tsp sesame oil to prevent sticking.",
-          "Slice lean beef (Diego: 170 g; Diana: 120 g) into thin strips; marinate 5 min in 2 tbsp soy sauce + 1/2 tsp ginger powder + 1/2 tsp garlic powder.",
-          "Cut broccoli into small florets; slice 1 carrot into thin rounds.",
-          "Heat 1 tsp sesame oil in wok over high heat; stir-fry beef 3 min until browned; remove to plate.",
-          "Add 1 tsp olive oil; stir-fry broccoli and carrots 4\u20135 min; add beef back; pour remaining marinade + 2 tbsp water; toss 1 min.",
-          "Serve stir-fry over noodles. Drink 500 ml water."
+          "1. Preheat oven to 200\u00b0C.",
+          "2. Cut sweet potato (with skin) into wedges: 180 g (Diego) / 120 g (Diana). Toss with 1 tsp olive oil, smoked paprika, sea salt. Spread on one side of a lined baking tray. Bake 10 minutes.",
+          "3. Meanwhile, cut broccoli into florets (100 g each) and carrot batons (80 g each). Toss with 1 tsp olive oil, dried thyme, black pepper.",
+          "4. After 10 minutes, add vegetables to the other side of the tray.",
+          "5. Season salmon fillets (160 g Diego / 120 g Diana) with soy sauce, grated-equivalent ground ginger (\u00bd tsp), and a drizzle of sesame oil. Place on a small oven-proof dish.",
+          "6. Bake salmon and vegetables together for a further 14\u201316 minutes until salmon is cooked through and flakes easily.",
+          "7. Plate: vegetables first, then salmon on top, sweet potato wedges alongside. Drink 500 ml water."
         ],
         "storage_ref": "",
-        "food_category": "red_meat",
+        "food_category": "fish_seafood",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
-                "qty": "170 g raw"
+                "item": "Salmon fillet (filet de saumon)",
+                "qty": "160 g"
               },
               {
-                "item": "Wholewheat noodles/pasta (p\u00e2tes compl\u00e8tes)",
-                "qty": "70 g dry"
+                "item": "Sweet potato with skin (patate douce avec peau)",
+                "qty": "180 g"
               },
               {
-                "item": "Broccoli (brocoli)",
-                "qty": "120 g"
+                "item": "Broccoli florets (fleurettes de brocoli)",
+                "qty": "100 g"
               },
               {
-                "item": "Carrot (carotte)",
+                "item": "Carrots (carottes)",
                 "qty": "80 g"
               },
               {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
+              },
+              {
                 "item": "Soy sauce (sauce soja)",
-                "qty": "2 tbsp"
+                "qty": "1 tbsp"
               },
               {
                 "item": "Sesame oil (huile de s\u00e9same)",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
                 "qty": "1 tsp"
               },
               {
-                "item": "Ginger powder (gingembre en poudre)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Garlic powder (ail en poudre)",
-                "qty": "1/2 tsp"
+                "item": "Smoked paprika, dried thyme, ground ginger",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 530,
-              "protein_g": 43,
-              "carbs_g": 52,
-              "fat_g": 16,
+              "kcal": 490,
+              "protein_g": 38,
+              "carbs_g": 41,
+              "fat_g": 18,
               "fiber_g": 8
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
-                "qty": "120 g raw"
+                "item": "Salmon fillet (filet de saumon)",
+                "qty": "120 g"
               },
               {
-                "item": "Wholewheat noodles/pasta (p\u00e2tes compl\u00e8tes)",
-                "qty": "50 g dry"
+                "item": "Sweet potato with skin (patate douce avec peau)",
+                "qty": "120 g"
               },
               {
-                "item": "Broccoli (brocoli)",
+                "item": "Broccoli florets (fleurettes de brocoli)",
                 "qty": "100 g"
               },
               {
-                "item": "Carrot (carotte)",
-                "qty": "60 g"
+                "item": "Carrots (carottes)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "1 tsp"
               },
               {
                 "item": "Soy sauce (sauce soja)",
-                "qty": "1.5 tbsp"
+                "qty": "1 tbsp"
               },
               {
                 "item": "Sesame oil (huile de s\u00e9same)",
                 "qty": "1 tsp"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Ginger powder (gingembre en poudre)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Garlic powder (ail en poudre)",
-                "qty": "1/2 tsp"
+                "item": "Smoked paprika, dried thyme, ground ginger",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 390,
-              "protein_g": 31,
-              "carbs_g": 39,
-              "fat_g": 11,
-              "fiber_g": 6
+              "kcal": 360,
+              "protein_g": 28,
+              "carbs_g": 29,
+              "fat_g": 12,
+              "fiber_g": 7
             }
           }
         }
@@ -911,39 +439,40 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2125,
-        "protein_g": 148,
-        "carbs_g": 189,
-        "fat_g": 79,
-        "fiber_g": 28
+        "kcal": 1990,
+        "protein_g": 138,
+        "carbs_g": 171,
+        "fat_g": 77,
+        "fiber_g": 31
       },
       "diana": {
-        "kcal": 1630,
-        "protein_g": 108,
-        "carbs_g": 158,
-        "fat_g": 56,
-        "fiber_g": 24
+        "kcal": 1512,
+        "protein_g": 102,
+        "carbs_g": 127,
+        "fat_g": 57,
+        "fiber_g": 25
       }
     }
   },
   {
-    "day": "Wednesday",
-    "date": "2026-06-24",
+    "day": "Tuesday",
+    "date": "2026-06-30",
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Kefir Smoothie with Blueberry & Orange + Fried Eggs on Sourdough",
+        "name": "Kefir & Raspberry Smoothie + Boiled Eggs on Sourdough with Feta",
         "time": "07:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "a glass of vibrant purple kefir smoothie beside two fried eggs on toasted sourdough on a white plate, orange slices on the side, bright window light",
+        "cook_minutes_day_of": 12,
+        "image_prompt": "side-view photo of a pink raspberry kefir smoothie glass next to two halved boiled eggs on wholegrain sourdough toast scattered with crumbled feta, bright morning light, light linen placemat",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Blend 250 ml kefir with 100 g blueberries and juice of 1/2 orange; pour into glass.",
-          "Heat pan with 1 tsp olive oil; fry eggs (Diego: 3; Diana: 2) sunny-side-up 3\u20134 min.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g).",
-          "Serve eggs on toast; smoothie alongside. Drink 500 ml water."
+          "1. Boil eggs 9 minutes, transfer to cold water, peel and halve.",
+          "2. Blend 250 ml kefir with 100 g raspberries and \u00bd banana (60 g) per person until smooth.",
+          "3. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "4. Lay boiled egg halves on toast, crumble feta, season with black pepper.",
+          "5. Serve smoothie alongside. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "eggs_cooked",
@@ -951,69 +480,529 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
-                "item": "Blueberries (myrtilles)",
+                "item": "Raspberries (framboises)",
                 "qty": "100 g"
               },
               {
-                "item": "Orange (orange)",
-                "qty": "1/2"
+                "item": "Banana (banane)",
+                "qty": "60 g (\u2153 medium)"
               },
               {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
+                "item": "Feta cheese (fromage feta)",
+                "qty": "30 g"
               }
             ],
             "macros": {
-              "kcal": 510,
-              "protein_g": 31,
-              "carbs_g": 44,
-              "fat_g": 19,
+              "kcal": 485,
+              "protein_g": 30,
+              "carbs_g": 46,
+              "fat_g": 18,
+              "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Kefir (k\u00e9fir de lait)",
+                "qty": "250 ml"
+              },
+              {
+                "item": "Raspberries (framboises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Banana (banane)",
+                "qty": "60 g (\u2153 medium)"
+              },
+              {
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Feta cheese (fromage feta)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 385,
+              "protein_g": 24,
+              "carbs_g": 35,
+              "fat_g": 13,
+              "fiber_g": 5
+            }
+          }
+        }
+      },
+      {
+        "slot": "am_snack",
+        "name": "Orange & Walnut Snack",
+        "time": "10:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 1,
+        "image_prompt": "top-down photo of a peeled orange separated into segments on a small plate alongside a handful of walnut halves on white surface, soft natural light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Peel 1 orange per person and separate into segments.",
+          "2. Weigh 20 g walnuts (Diego) / 15 g walnuts (Diana).",
+          "3. Serve together. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "generic",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Orange (orange)",
+                "qty": "160 g (1 medium)"
+              },
+              {
+                "item": "Walnuts (noix)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 195,
+              "protein_g": 4,
+              "carbs_g": 20,
+              "fat_g": 13,
               "fiber_g": 4
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Orange (orange)",
+                "qty": "160 g (1 medium)"
+              },
+              {
+                "item": "Walnuts (noix)",
+                "qty": "15 g"
+              }
+            ],
+            "macros": {
+              "kcal": 165,
+              "protein_g": 3,
+              "carbs_g": 19,
+              "fat_g": 10,
+              "fiber_g": 4
+            }
+          }
+        }
+      },
+      {
+        "slot": "lunch",
+        "name": "Asian Soy-Ginger Tilapia Bowl with Stir-Fried Broccoli, Carrots & Brown Rice",
+        "time": "13:00",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 28,
+        "image_prompt": "overhead bowl photo of soy-ginger glazed tilapia fillet over brown rice with vibrant stir-fried broccoli florets and orange carrot batons, sesame oil drizzle, natural light on a wooden surface",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Cook brown rice: bring water to a boil, add 75 g (Diego) / 55 g (Diana) dry brown rice, simmer 22 minutes. Drain.",
+          "2. While rice cooks, mix marinade: 2 tbsp soy sauce, \u00bd tsp ground ginger, 1 tsp sesame oil, squeeze of lime juice.",
+          "3. Marinate tilapia fillets (160 g Diego / 120 g Diana) in the marinade for 5 minutes.",
+          "4. Heat 1 tsp olive oil in a non-stick pan over medium-high heat. Cook tilapia 3\u20134 minutes per side until cooked through. Remove and rest.",
+          "5. In the same pan, stir-fry broccoli (100 g) and carrot batons (80 g) per person with 1 tsp sesame oil and a dash of tamari for 4\u20135 minutes until tender-crisp.",
+          "6. Plate: rice first, then vegetables, then tilapia on top. Drizzle remaining marinade from pan. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "fish_seafood",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Tilapia fillet (filet de tilapia)",
+                "qty": "160 g"
+              },
+              {
+                "item": "Brown rice, dry (riz complet cru)",
+                "qty": "75 g"
+              },
+              {
+                "item": "Broccoli florets (fleurettes de brocoli)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Carrots (carottes)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Soy sauce (sauce soja)",
+                "qty": "2 tbsp"
+              },
+              {
+                "item": "Tamari (tamari)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Sesame oil (huile de s\u00e9same)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Bottled lime juice (jus de citron vert)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Ground ginger (gingembre moulu)",
+                "qty": "\u00bd tsp"
+              }
+            ],
+            "macros": {
+              "kcal": 530,
+              "protein_g": 40,
+              "carbs_g": 59,
+              "fat_g": 12,
+              "fiber_g": 8
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Tilapia fillet (filet de tilapia)",
+                "qty": "120 g"
+              },
+              {
+                "item": "Brown rice, dry (riz complet cru)",
+                "qty": "55 g"
+              },
+              {
+                "item": "Broccoli florets (fleurettes de brocoli)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Carrots (carottes)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Soy sauce (sauce soja)",
+                "qty": "2 tbsp"
+              },
+              {
+                "item": "Tamari (tamari)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Sesame oil (huile de s\u00e9same)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Bottled lime juice (jus de citron vert)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Ground ginger (gingembre moulu)",
+                "qty": "\u00bd tsp"
+              }
+            ],
+            "macros": {
+              "kcal": 400,
+              "protein_g": 29,
+              "carbs_g": 44,
+              "fat_g": 9,
+              "fiber_g": 7
+            }
+          }
+        }
+      },
+      {
+        "slot": "pm_snack",
+        "name": "Greek Yogurt with Blueberries & Almonds",
+        "time": "16:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 2,
+        "image_prompt": "close-up of thick white Greek yogurt in a small bowl topped with fresh blueberries and sliced almonds, soft afternoon light, marble surface",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Spoon 180 g (Diego) / 140 g (Diana) Greek yogurt into a bowl.",
+          "2. Top with 70 g blueberries and 20 g almonds (Diego) / 50 g blueberries and 15 g almonds (Diana).",
+          "3. Serve. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "dairy",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "180 g"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Almonds (amandes)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 240,
+              "protein_g": 18,
+              "carbs_g": 17,
+              "fat_g": 11,
+              "fiber_g": 3
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "140 g"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Almonds (amandes)",
+                "qty": "15 g"
+              }
+            ],
+            "macros": {
+              "kcal": 180,
+              "protein_g": 13,
+              "carbs_g": 13,
+              "fat_g": 8,
+              "fiber_g": 2
+            }
+          }
+        }
+      },
+      {
+        "slot": "dinner",
+        "name": "Mediterranean Beef & Chickpea Traybake with Roasted Zucchini, Peppers & Sourdough",
+        "time": "19:30",
+        "prep_ahead": true,
+        "cook_minutes_day_of": 10,
+        "image_prompt": "overhead photo of a rustic oven tray with spiced beef strips and golden chickpeas among roasted zucchini rounds and colourful bell pepper pieces, a slice of sourdough on the side, warm Mediterranean light",
+        "video_url": "",
+        "prep_steps": [
+          "Sunday: Roast chickpeas + zucchini + peppers with oregano, olive oil, salt for 25 min at 200\u00b0C. Refrigerate."
+        ],
+        "day_of_steps": [
+          "1. Reheat Sunday's roasted chickpea-vegetable mix (120 g Diego / 90 g Diana) in a pan over medium heat for 4\u20135 minutes.",
+          "2. In a separate pan, cook 150 g (Diego) / 110 g (Diana) thin lean beef strips with 1 tsp olive oil, dried oregano, smoked paprika, black pepper, 2\u20133 minutes per side until cooked through.",
+          "3. Combine beef with reheated vegetables in the pan, add a splash of red wine vinegar, toss.",
+          "4. Toast 50 g (Diego) / 35 g (Diana) sourdough.",
+          "5. Plate vegetables and beef; serve with sourdough on the side. Drink 500 ml water."
+        ],
+        "storage_ref": "prep_batch_2",
+        "food_category": "red_meat",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
+                "qty": "150 g"
+              },
+              {
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Zucchini (courgette)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Bell peppers, mixed (poivrons m\u00e9lang\u00e9s)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Red wine vinegar (vinaigre de vin rouge)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Dried oregano, smoked paprika, black pepper",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 530,
+              "protein_g": 42,
+              "carbs_g": 42,
+              "fat_g": 17,
+              "fiber_g": 9
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
+                "qty": "110 g"
+              },
+              {
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Zucchini (courgette)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Bell peppers, mixed (poivrons m\u00e9lang\u00e9s)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Red wine vinegar (vinaigre de vin rouge)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Dried oregano, smoked paprika, black pepper",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 395,
+              "protein_g": 30,
+              "carbs_g": 31,
+              "fat_g": 13,
+              "fiber_g": 7
+            }
+          }
+        }
+      }
+    ],
+    "day_totals": {
+      "diego": {
+        "kcal": 1980,
+        "protein_g": 134,
+        "carbs_g": 184,
+        "fat_g": 71,
+        "fiber_g": 30
+      },
+      "diana": {
+        "kcal": 1525,
+        "protein_g": 99,
+        "carbs_g": 142,
+        "fat_g": 53,
+        "fiber_g": 25
+      }
+    }
+  },
+  {
+    "day": "Wednesday",
+    "date": "2026-07-01",
+    "meals": [
+      {
+        "slot": "breakfast",
+        "name": "Kefir & Banana Blueberry Smoothie + Boiled Eggs on Sourdough with Feta",
+        "time": "07:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 12,
+        "image_prompt": "bright overhead photo of a tall glass of creamy blueberry-banana kefir smoothie next to two halved boiled eggs on thick sourdough toast with feta and black pepper, morning sunlight, wooden table",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Boil eggs 9 minutes, cool in cold water, peel and halve.",
+          "2. Blend 250 ml kefir with 80 g blueberries and 80 g banana per person. Blend smooth.",
+          "3. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "4. Place egg halves on toast, crumble feta (30 g Diego / 20 g Diana), black pepper.",
+          "5. Serve smoothie alongside toast. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "eggs_cooked",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
                 "item": "Blueberries (myrtilles)",
-                "qty": "100 g"
+                "qty": "80 g"
               },
               {
-                "item": "Orange (orange)",
-                "qty": "1/2"
+                "item": "Banana (banane)",
+                "qty": "80 g (\u00bd medium)"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs, boiled (\u0153ufs durs)",
                 "qty": "2 large"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
+                "item": "Feta cheese (fromage feta)",
+                "qty": "30 g"
               }
             ],
             "macros": {
-              "kcal": 390,
-              "protein_g": 22,
-              "carbs_g": 40,
+              "kcal": 490,
+              "protein_g": 30,
+              "carbs_g": 50,
+              "fat_g": 18,
+              "fiber_g": 5
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Kefir (k\u00e9fir de lait)",
+                "qty": "250 ml"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Banana (banane)",
+                "qty": "60 g (\u2153 medium)"
+              },
+              {
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Feta cheese (fromage feta)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 385,
+              "protein_g": 24,
+              "carbs_g": 37,
               "fat_g": 13,
               "fiber_g": 4
             }
@@ -1022,17 +1011,17 @@
       },
       {
         "slot": "am_snack",
-        "name": "Apple with Almonds",
+        "name": "Apple & Pistachio Snack",
         "time": "10:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 1,
-        "image_prompt": "a sliced red apple fanned on a small plate next to a handful of whole almonds, bright natural light, minimalist white background",
+        "image_prompt": "flat lay of a crisp apple sliced into wedges alongside a small pile of shelled pistachios on a light grey surface, fresh natural light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Slice 1 apple into wedges.",
-          "Weigh almonds (Diego: 25 g; Diana: 20 g).",
-          "Eat apple first. Drink 500 ml water."
+          "1. Slice 1 apple per person.",
+          "2. Weigh 25 g pistachios (Diego) / 20 g pistachios (Diana).",
+          "3. Serve. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -1041,17 +1030,17 @@
             "ingredients": [
               {
                 "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "qty": "150 g (1 medium)"
               },
               {
-                "item": "Almonds (amandes)",
+                "item": "Pistachios (pistaches)",
                 "qty": "25 g"
               }
             ],
             "macros": {
               "kcal": 220,
-              "protein_g": 6,
-              "carbs_g": 26,
+              "protein_g": 5,
+              "carbs_g": 24,
               "fat_g": 12,
               "fiber_g": 5
             }
@@ -1060,41 +1049,42 @@
             "ingredients": [
               {
                 "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "qty": "130 g (1 small)"
               },
               {
-                "item": "Almonds (amandes)",
+                "item": "Pistachios (pistaches)",
                 "qty": "20 g"
               }
             ],
             "macros": {
-              "kcal": 185,
-              "protein_g": 5,
-              "carbs_g": 25,
+              "kcal": 178,
+              "protein_g": 4,
+              "carbs_g": 19,
               "fat_g": 9,
-              "fiber_g": 5
+              "fiber_g": 4
             }
           }
         }
       },
       {
         "slot": "lunch",
-        "name": "French-Style Beef & White Bean Skillet with Roasted Zucchini & Sourdough",
+        "name": "Mexican Beef & Black Bean Corn Tortilla Bowls with Roasted Peppers & Spinach",
         "time": "13:00",
         "prep_ahead": true,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "a rustic skillet with browned beef chunks, white beans, roasted zucchini slices in a tomato-herb sauce, served with a slice of sourdough on the side, warm natural light on a wooden table",
+        "cook_minutes_day_of": 12,
+        "image_prompt": "overhead photo of two warm corn tortillas filled with spiced beef strips, black lentils, wilted spinach, roasted yellow and red peppers, drizzled with lime juice and olive oil, fresh natural light on terracotta",
         "video_url": "",
         "prep_steps": [
-          "Sunday: Dice 500 g lean beef into 2 cm chunks; brown in olive oil with garlic, oregano, thyme, smoked paprika; add 1 can drained white beans and 1 can diced tomatoes (canned ok as pantry); simmer 20 min; cool and refrigerate.",
-          "Sunday: Slice 2 zucchini into rounds; toss with olive oil, oregano, black pepper; roast 200\u00b0C 20 min; refrigerate."
+          "Sunday: Roast bell pepper strips with olive oil, cumin, salt at 200\u00b0C 25 min. Refrigerate.",
+          "Sunday: Season and cook lean beef (ground or strips) with garlic, cumin, chili flakes. Cool, refrigerate."
         ],
         "day_of_steps": [
-          "Reheat beef & white bean skillet (Diego: 300 g; Diana: 220 g) in pan over medium heat 5\u20136 min, adding a splash of water if needed.",
-          "Reheat roasted zucchini (Diego: 120 g; Diana: 90 g) in microwave 2 min.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g).",
-          "Plate: start with zucchini on plate (fibre first), then spoon skillet alongside, sourdough on side.",
-          "Serve with 1 banana (dessert). Drink 500 ml water."
+          "1. Warm corn tortillas (2 for Diego / 2 for Diana) in a dry pan 30 seconds each side.",
+          "2. Reheat 150 g (Diego) / 110 g (Diana) cooked beef in pan over medium heat 3\u20134 min. Add drained canned lentils (60 g Diego / 45 g Diana) and stir to warm through.",
+          "3. In the same pan, wilt 60 g fresh spinach per person with 1 tsp olive oil and a pinch of cumin, 2 minutes.",
+          "4. Reheat roasted peppers (80 g per person) briefly in pan.",
+          "5. Fill each tortilla: spinach first, then beef-lentil mix, then peppers. Squeeze lime juice over, drizzle 1 tsp olive oil.",
+          "6. Serve with 100 g mixed leaf salad greens tossed with balsamic vinegar. Drink 500 ml water."
         ],
         "storage_ref": "prep_batch_3",
         "food_category": "red_meat",
@@ -1102,155 +1092,31 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Beef & white bean skillet portion (b\u0153uf aux haricots blancs)",
-                "qty": "300 g"
-              },
-              {
-                "item": "Roasted zucchini (courgette r\u00f4tie)",
-                "qty": "120 g"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              }
-            ],
-            "macros": {
-              "kcal": 590,
-              "protein_g": 48,
-              "carbs_g": 54,
-              "fat_g": 17,
-              "fiber_g": 11
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Beef & white bean skillet portion (b\u0153uf aux haricots blancs)",
-                "qty": "220 g"
-              },
-              {
-                "item": "Roasted zucchini (courgette r\u00f4tie)",
-                "qty": "90 g"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              }
-            ],
-            "macros": {
-              "kcal": 445,
-              "protein_g": 34,
-              "carbs_g": 43,
-              "fat_g": 12,
-              "fiber_g": 8
-            }
-          }
-        }
-      },
-      {
-        "slot": "pm_snack",
-        "name": "Greek Yogurt with Strawberries",
-        "time": "16:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 2,
-        "image_prompt": "thick white Greek yogurt in a bowl topped with sliced red strawberries, soft natural light, terracotta ceramic",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Spoon Greek yogurt (Diego: 200 g; Diana: 150 g) into bowl.",
-          "Slice 80 g strawberries; top yogurt. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "dairy",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "200 g"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              }
-            ],
-            "macros": {
-              "kcal": 145,
-              "protein_g": 20,
-              "carbs_g": 14,
-              "fat_g": 1,
-              "fiber_g": 1
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
+                "item": "Lean beef (b\u0153uf maigre)",
                 "qty": "150 g"
               },
               {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              }
-            ],
-            "macros": {
-              "kcal": 115,
-              "protein_g": 15,
-              "carbs_g": 12,
-              "fat_g": 1,
-              "fiber_g": 1
-            }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "Mediterranean Baked Salmon with Roasted Cherry Tomatoes, Spinach & Lentils",
-        "time": "19:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 25,
-        "image_prompt": "a white plate with herb-crusted baked salmon fillet, burst roasted cherry tomatoes, wilted spinach and green lentils, drizzled with lemon-olive oil, natural warm evening light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Preheat oven 200\u00b0C. Place salmon (Diego: 180 g; Diana: 130 g) on baking tray; season with dried oregano, turmeric, olive oil; bake 14 min.",
-          "Add 150 g cherry tomatoes to tray at 10 min mark; roast together for final 4 min.",
-          "Heat 1 tsp olive oil in pan; add 80 g spinach; wilt 2 min with garlic powder.",
-          "Warm canned lentils (Diego: 100 g drained; Diana: 70 g drained) with 1 tsp balsamic vinegar in small pot 2 min.",
-          "Plate: lentils first, spinach second, salmon on top, cherry tomatoes scattered around.",
-          "Squeeze lemon juice over plate. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "fish_seafood",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Salmon fillet (filet de saumon)",
-                "qty": "180 g raw"
+                "item": "Canned green lentils (lentilles vertes en bo\u00eete)",
+                "qty": "60 g drained"
               },
               {
-                "item": "Canned lentils drained (lentilles en bo\u00eete \u00e9goutt\u00e9es)",
+                "item": "Corn tortillas (tortillas de ma\u00efs)",
+                "qty": "2 (approx. 60 g)"
+              },
+              {
+                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Fresh spinach (\u00e9pinards frais)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Mixed leaf salad greens (salade mesclun)",
                 "qty": "100 g"
               },
               {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "150 g"
-              },
-              {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
                 "qty": "2 tsp"
               },
               {
@@ -1258,338 +1124,70 @@
                 "qty": "1 tsp"
               },
               {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
-              }
-            ],
-            "macros": {
-              "kcal": 480,
-              "protein_g": 43,
-              "carbs_g": 24,
-              "fat_g": 20,
-              "fiber_g": 8
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Salmon fillet (filet de saumon)",
-                "qty": "130 g raw"
-              },
-              {
-                "item": "Canned lentils drained (lentilles en bo\u00eete \u00e9goutt\u00e9es)",
-                "qty": "70 g"
-              },
-              {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "120 g"
-              },
-              {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Balsamic vinegar (vinaigre balsamique)",
+                "item": "Bottled lime juice",
                 "qty": "1 tsp"
               },
               {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
+                "item": "Cumin, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 360,
-              "protein_g": 31,
-              "carbs_g": 18,
-              "fat_g": 15,
-              "fiber_g": 6
-            }
-          }
-        }
-      }
-    ],
-    "day_totals": {
-      "diego": {
-        "kcal": 1945,
-        "protein_g": 148,
-        "carbs_g": 162,
-        "fat_g": 69,
-        "fiber_g": 29
-      },
-      "diana": {
-        "kcal": 1495,
-        "protein_g": 107,
-        "carbs_g": 138,
-        "fat_g": 50,
-        "fiber_g": 24
-      }
-    },
-    "training": {
-      "member": "diego",
-      "name": "Threshold Taste \u2014 2x6min",
-      "sport": "cycling_indoor",
-      "tss": 28,
-      "duration_min": 30,
-      "extra_kcal": 196
-    }
-  },
-  {
-    "day": "Thursday",
-    "date": "2026-06-25",
-    "meals": [
-      {
-        "slot": "breakfast",
-        "name": "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
-        "time": "07:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "overhead photo of a tall glass of purple-blue kefir smoothie with banana and blueberries beside two fried eggs on toasted sourdough, natural morning light, wooden table",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Blend 250 ml kefir with 1/2 banana and 80 g blueberries; pour into glass.",
-          "Fry eggs (Diego: 3; Diana: 2) in 1 tsp olive oil, sunny-side-up.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g).",
-          "Serve eggs on toast alongside smoothie. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "eggs_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Kefir (k\u00e9fir)",
-                "qty": "250 ml"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Blueberries (myrtilles)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 520,
-              "protein_g": 32,
-              "carbs_g": 45,
-              "fat_g": 20,
-              "fiber_g": 4
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Kefir (k\u00e9fir)",
-                "qty": "250 ml"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Blueberries (myrtilles)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "2 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 400,
-              "protein_g": 23,
-              "carbs_g": 40,
-              "fat_g": 14,
-              "fiber_g": 4
-            }
-          }
-        }
-      },
-      {
-        "slot": "am_snack",
-        "name": "Apple with Almonds",
-        "time": "10:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "a sliced golden apple fanned on a small plate next to a small bowl of almonds, natural light on a linen cloth",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Slice 1 apple; weigh almonds (Diego: 25 g; Diana: 20 g). Eat apple first. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              },
-              {
-                "item": "Almonds (amandes)",
-                "qty": "25 g"
-              }
-            ],
-            "macros": {
-              "kcal": 220,
-              "protein_g": 6,
-              "carbs_g": 26,
-              "fat_g": 12,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              },
-              {
-                "item": "Almonds (amandes)",
-                "qty": "20 g"
-              }
-            ],
-            "macros": {
-              "kcal": 185,
-              "protein_g": 5,
-              "carbs_g": 25,
-              "fat_g": 9,
-              "fiber_g": 5
-            }
-          }
-        }
-      },
-      {
-        "slot": "lunch",
-        "name": "Mexican Tilapia Tacos with Roasted Peppers, Black Beans & Lime-Cumin Slaw",
-        "time": "13:00",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 20,
-        "image_prompt": "two corn tortillas each filled with flaky spiced tilapia, roasted bell pepper strips, shredded carrot slaw, white bean cream and lime wedges, overhead view on a terracotta plate, bright natural light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Season tilapia (Diego: 180 g; Diana: 130 g) with cumin, chili powder, smoked paprika, garlic powder, olive oil.",
-          "Pan-fry tilapia over medium-high heat 3\u20134 min per side until flaky; break into chunks with a fork.",
-          "Warm corn tortillas (Diego: 3; Diana: 2) in dry pan 30 sec each side.",
-          "Quick slaw: grate 1 carrot; toss with 1 tsp apple cider vinegar, cumin, salt.",
-          "Warm canned chickpeas (Diego: 80 g; Diana: 60 g) with cumin and lime in small pan 2 min.",
-          "Fill tortillas: chickpeas first, then tilapia chunks, carrot slaw, roasted pepper strips (use leftover Sunday peppers or fresh, sliced and microwaved 2 min).",
-          "Squeeze lime over tacos. Serve with 1/2 banana. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "fish_seafood",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "180 g raw"
-              },
-              {
-                "item": "Corn tortillas (tortillas de ma\u00efs)",
-                "qty": "3 (\u224875 g)"
-              },
-              {
-                "item": "Canned chickpeas drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Bell pepper (poivron)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Carrot (carotte)",
-                "qty": "60 g"
-              },
-              {
-                "item": "Apple cider vinegar (vinaigre de cidre)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              }
-            ],
-            "macros": {
-              "kcal": 590,
-              "protein_g": 46,
-              "carbs_g": 60,
-              "fat_g": 14,
+              "kcal": 555,
+              "protein_g": 44,
+              "carbs_g": 48,
+              "fat_g": 17,
               "fiber_g": 9
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "130 g raw"
+                "item": "Lean beef (b\u0153uf maigre)",
+                "qty": "110 g"
+              },
+              {
+                "item": "Canned green lentils (lentilles vertes en bo\u00eete)",
+                "qty": "45 g drained"
               },
               {
                 "item": "Corn tortillas (tortillas de ma\u00efs)",
-                "qty": "2 (\u224850 g)"
+                "qty": "2 (approx. 60 g)"
               },
               {
-                "item": "Canned chickpeas drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Fresh spinach (\u00e9pinards frais)",
                 "qty": "60 g"
               },
               {
-                "item": "Bell pepper (poivron)",
-                "qty": "60 g"
+                "item": "Mixed leaf salad greens (salade mesclun)",
+                "qty": "80 g"
               },
               {
-                "item": "Carrot (carotte)",
-                "qty": "60 g"
-              },
-              {
-                "item": "Apple cider vinegar (vinaigre de cidre)",
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
                 "qty": "1 tsp"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
+                "item": "Balsamic vinegar (vinaigre balsamique)",
+                "qty": "1 tsp"
               },
               {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
+                "item": "Bottled lime juice",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Cumin, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 440,
-              "protein_g": 33,
-              "carbs_g": 47,
-              "fat_g": 10,
+              "kcal": 415,
+              "protein_g": 31,
+              "carbs_g": 41,
+              "fat_g": 12,
               "fiber_g": 7
             }
           }
@@ -1597,16 +1195,17 @@
       },
       {
         "slot": "pm_snack",
-        "name": "Greek Yogurt with Blueberries",
+        "name": "Greek Yogurt with Raspberries & Walnuts",
         "time": "16:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 2,
-        "image_prompt": "white Greek yogurt in a small bowl with a generous topping of fresh blueberries, soft light, white marble",
+        "image_prompt": "overhead close-up of Greek yogurt in a small bowl with scattered raspberries and walnut pieces, soft afternoon window light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Spoon Greek yogurt (Diego: 200 g; Diana: 150 g) into bowl.",
-          "Top with blueberries (Diego: 80 g; Diana: 80 g). Drink 500 ml water."
+          "1. Spoon 180 g (Diego) / 140 g (Diana) Greek yogurt into a bowl.",
+          "2. Top with 80 g raspberries and 15 g walnuts (Diego) / 60 g raspberries and 12 g walnuts (Diana).",
+          "3. Serve. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "dairy",
@@ -1614,183 +1213,188 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "200 g"
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "180 g"
               },
               {
-                "item": "Blueberries (myrtilles)",
+                "item": "Raspberries (framboises)",
                 "qty": "80 g"
+              },
+              {
+                "item": "Walnuts (noix)",
+                "qty": "15 g"
               }
             ],
             "macros": {
-              "kcal": 150,
-              "protein_g": 20,
-              "carbs_g": 17,
-              "fat_g": 1,
-              "fiber_g": 2
+              "kcal": 225,
+              "protein_g": 18,
+              "carbs_g": 14,
+              "fat_g": 10,
+              "fiber_g": 4
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "150 g"
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "140 g"
               },
               {
-                "item": "Blueberries (myrtilles)",
-                "qty": "80 g"
+                "item": "Raspberries (framboises)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Walnuts (noix)",
+                "qty": "12 g"
               }
             ],
             "macros": {
-              "kcal": 120,
-              "protein_g": 15,
-              "carbs_g": 16,
-              "fat_g": 1,
-              "fiber_g": 2
+              "kcal": 170,
+              "protein_g": 13,
+              "carbs_g": 11,
+              "fat_g": 8,
+              "fiber_g": 3
             }
           }
         }
       },
       {
         "slot": "dinner",
-        "name": "Creamy Tomato-Chickpea Beef Skillet with Wilted Spinach & Sourdough",
+        "name": "French-Style Salmon en Papillote with Zucchini, Carrots & Herbed Potatoes",
         "time": "19:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "a deep ceramic bowl with creamy tomato beef and chickpea stew, dark wilted spinach leaves on top, served with a thick slice of sourdough bread, warm candlelit-style evening light",
+        "cook_minutes_day_of": 30,
+        "image_prompt": "overhead photo of a just-opened parchment parcel revealing a perfectly cooked salmon fillet with zucchini ribbons and carrot coins, golden herb-seasoned potato slices alongside on a white plate, soft natural light",
         "video_url": "",
-        "prep_steps": [
-          "Sunday: This uses leftover beef & white bean skillet adapted \u2014 but for Thursday dinner, a FRESH mid-week cook is required (beef safe window expires). Cook fresh Thursday evening per day_of_steps."
-        ],
+        "prep_steps": [],
         "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of red meat only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Heat 1 tsp olive oil in pan over medium; add 1 minced garlic clove; saut\u00e9 1 min.",
-          "Add lean ground beef (Diego: 160 g; Diana: 110 g); cook breaking up 5 min until browned.",
-          "Add 1 can drained chickpeas (household total 120 g), 4 tbsp canned diced tomatoes (pantry), 1/2 tsp cumin, 1/2 tsp smoked paprika, salt; simmer 5 min.",
-          "Stir in 2 tbsp Greek yogurt off the heat for creaminess; add 80 g spinach; stir until wilted 1\u20132 min.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g).",
-          "Plate skillet first; sourdough on side. Drink 500 ml water."
+          "1. Preheat oven to 200\u00b0C.",
+          "2. Slice waxy potatoes (skin on, 160 g Diego / 110 g Diana) into thin rounds. Toss with 1 tsp olive oil, dried thyme, sea salt, black pepper. Spread on a lined tray; bake 25 minutes.",
+          "3. Cut 2 large squares of baking parchment. Place 60 g zucchini rounds and 60 g carrot coins (per person) in centre. Season with dried basil, black pepper, drizzle of olive oil.",
+          "4. Lay salmon fillet (160 g Diego / 120 g Diana) on top of vegetables. Add 1 tsp olive oil, squeeze of lime juice, pinch of dried oregano.",
+          "5. Fold parchment into tight parcels. Bake 18\u201320 minutes until salmon is opaque.",
+          "6. Open parcels carefully (steam). Serve salmon parcels alongside potato slices. Drink 500 ml water."
         ],
-        "food_category": "red_meat",
+        "storage_ref": "",
+        "food_category": "fish_seafood",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Lean ground beef (b\u0153uf hach\u00e9 maigre)",
-                "qty": "160 g raw"
+                "item": "Salmon fillet (filet de saumon)",
+                "qty": "160 g"
               },
               {
-                "item": "Canned chickpeas drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
-                "qty": "80 g"
+                "item": "Waxy potatoes with skin (pommes de terre \u00e0 chair ferme avec peau)",
+                "qty": "160 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
+                "item": "Zucchini (courgette)",
+                "qty": "60 g"
               },
               {
-                "item": "Canned diced tomatoes (tomates concass\u00e9es en bo\u00eete)",
-                "qty": "80 g"
+                "item": "Carrots (carottes)",
+                "qty": "60 g"
               },
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "30 g"
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
+                "item": "Bottled lime juice",
                 "qty": "1 tsp"
+              },
+              {
+                "item": "Dried thyme, dried basil, dried oregano, black pepper",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 510,
-              "protein_g": 46,
+              "kcal": 500,
+              "protein_g": 38,
               "carbs_g": 37,
-              "fat_g": 17,
-              "fiber_g": 8
+              "fat_g": 20,
+              "fiber_g": 6
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Lean ground beef (b\u0153uf hach\u00e9 maigre)",
-                "qty": "110 g raw"
+                "item": "Salmon fillet (filet de saumon)",
+                "qty": "120 g"
               },
               {
-                "item": "Canned chickpeas drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "item": "Waxy potatoes with skin (pommes de terre \u00e0 chair ferme avec peau)",
+                "qty": "110 g"
+              },
+              {
+                "item": "Zucchini (courgette)",
                 "qty": "60 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Canned diced tomatoes (tomates concass\u00e9es en bo\u00eete)",
+                "item": "Carrots (carottes)",
                 "qty": "60 g"
               },
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "20 g"
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "1 tsp"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
+                "item": "Bottled lime juice",
+                "qty": "1 tsp"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
+                "item": "Dried thyme, dried basil, dried oregano, black pepper",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 370,
-              "protein_g": 32,
-              "carbs_g": 28,
-              "fat_g": 12,
-              "fiber_g": 6
+              "kcal": 375,
+              "protein_g": 28,
+              "carbs_g": 27,
+              "fat_g": 14,
+              "fiber_g": 5
             }
           }
-        },
-        "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of red meat only keeps ~3 day(s), and this is day 4. (The dish is unchanged \u2014 just cooked the same day.)"
+        }
       }
     ],
     "day_totals": {
       "diego": {
         "kcal": 1990,
-        "protein_g": 150,
-        "carbs_g": 185,
-        "fat_g": 64,
-        "fiber_g": 28
+        "protein_g": 135,
+        "carbs_g": 173,
+        "fat_g": 77,
+        "fiber_g": 29
       },
       "diana": {
-        "kcal": 1515,
-        "protein_g": 108,
-        "carbs_g": 156,
-        "fat_g": 46,
-        "fiber_g": 24
+        "kcal": 1523,
+        "protein_g": 100,
+        "carbs_g": 135,
+        "fat_g": 56,
+        "fiber_g": 23
       }
     }
   },
   {
-    "day": "Friday",
-    "date": "2026-06-26",
+    "day": "Thursday",
+    "date": "2026-07-02",
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Kefir Smoothie with Strawberry & Banana + Fried Eggs on Sourdough with Feta",
+        "name": "Kefir & Blueberry Banana Smoothie + Boiled Eggs on Sourdough with Feta",
         "time": "07:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "pink strawberry-banana kefir smoothie in a glass beside fried eggs topped with crumbled feta on sourdough toast, bright morning light, light wooden table",
+        "cook_minutes_day_of": 12,
+        "image_prompt": "side-view of a violet blueberry banana kefir smoothie beside sourdough toast loaded with sliced boiled eggs and white feta crumbles, warm morning kitchen light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Blend 250 ml kefir with 80 g strawberries and 1/2 banana; pour into glass.",
-          "Fry eggs (Diego: 3; Diana: 2) in 1 tsp olive oil sunny-side-up 3\u20134 min.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g); crumble feta (Diego: 25 g; Diana: 20 g) over eggs.",
-          "Serve smoothie alongside. Drink 500 ml water."
+          "1. Boil eggs 9 minutes, cool, peel, halve.",
+          "2. Blend 250 ml kefir, 80 g blueberries, 70 g banana per person until smooth.",
+          "3. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "4. Top toast with egg halves and crumbled feta (30 g Diego / 20 g Diana), black pepper.",
+          "5. Serve smoothie alongside. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "eggs_cooked",
@@ -1798,537 +1402,70 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
-                "item": "Strawberries (fraises)",
+                "item": "Blueberries (myrtilles)",
                 "qty": "80 g"
               },
               {
                 "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Feta cheese (fromage feta)",
-                "qty": "25 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 545,
-              "protein_g": 35,
-              "carbs_g": 44,
-              "fat_g": 22,
-              "fiber_g": 3
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Kefir (k\u00e9fir)",
-                "qty": "250 ml"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "2 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
-              },
-              {
-                "item": "Feta cheese (fromage feta)",
-                "qty": "20 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 415,
-              "protein_g": 25,
-              "carbs_g": 39,
-              "fat_g": 16,
-              "fiber_g": 3
-            }
-          }
-        }
-      },
-      {
-        "slot": "am_snack",
-        "name": "Apple with Walnuts",
-        "time": "10:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 1,
-        "image_prompt": "sliced crisp apple beside a small dish of walnut halves on a wooden chopping board, soft natural light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Slice 1 apple; weigh walnuts (Diego: 25 g; Diana: 20 g). Eat apple first. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "generic",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              },
-              {
-                "item": "Walnuts (noix)",
-                "qty": "25 g"
-              }
-            ],
-            "macros": {
-              "kcal": 235,
-              "protein_g": 4,
-              "carbs_g": 24,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              },
-              {
-                "item": "Walnuts (noix)",
-                "qty": "20 g"
-              }
-            ],
-            "macros": {
-              "kcal": 205,
-              "protein_g": 3,
-              "carbs_g": 24,
-              "fat_g": 11,
-              "fiber_g": 5
-            }
-          }
-        }
-      },
-      {
-        "slot": "lunch",
-        "name": "Asian Sesame Beef Bowl with Stir-Fried Broccoli, Carrots & Quinoa",
-        "time": "13:00",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 15,
-        "image_prompt": "overhead bowl with sesame-glazed sliced beef, green broccoli florets, shredded orange carrot, fluffy quinoa, drizzled with sesame oil and soy sauce, natural light on a dark ceramic bowl",
-        "video_url": "",
-        "prep_steps": [
-          "Sunday: Cook 300 g quinoa in salted water; cool and refrigerate (used Mon\u2013Wed too if scheduled, but here for Friday \u2014 cook a FRESH batch mid-week Wednesday for Friday safety). NOTE: quinoa is safe 3 days; cooked Wednesday it is safe Friday (day 2)."
-        ],
-        "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of red meat only keeps ~3 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)",
-          "Reheat cooked quinoa (Diego: 130 g; Diana: 90 g) in microwave 2 min.",
-          "Slice lean beef (Diego: 170 g; Diana: 120 g) into thin strips; marinate in soy sauce, sesame oil, ginger powder 5 min.",
-          "Stir-fry beef in 1 tsp sesame oil over high heat 3\u20134 min; remove from pan.",
-          "Add 1 tsp olive oil; stir-fry broccoli florets (Diego: 100 g; Diana: 80 g) and sliced carrot (Diego: 60 g; Diana: 50 g) 4 min.",
-          "Return beef; toss together with a splash of soy sauce and lime juice.",
-          "Serve stir-fry over quinoa. Drink 500 ml water."
-        ],
-        "food_category": "red_meat",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
-                "qty": "170 g raw"
-              },
-              {
-                "item": "Cooked quinoa (quinoa cuit)",
-                "qty": "130 g"
-              },
-              {
-                "item": "Broccoli (brocoli)",
-                "qty": "100 g"
-              },
-              {
-                "item": "Carrot (carotte)",
-                "qty": "60 g"
-              },
-              {
-                "item": "Soy sauce (sauce soja)",
-                "qty": "2 tbsp"
-              },
-              {
-                "item": "Sesame oil (huile de s\u00e9same)",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Ginger powder (gingembre en poudre)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
-              }
-            ],
-            "macros": {
-              "kcal": 580,
-              "protein_g": 47,
-              "carbs_g": 45,
-              "fat_g": 19,
-              "fiber_g": 7
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
-                "qty": "120 g raw"
-              },
-              {
-                "item": "Cooked quinoa (quinoa cuit)",
-                "qty": "90 g"
-              },
-              {
-                "item": "Broccoli (brocoli)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Carrot (carotte)",
-                "qty": "50 g"
-              },
-              {
-                "item": "Soy sauce (sauce soja)",
-                "qty": "1.5 tbsp"
-              },
-              {
-                "item": "Sesame oil (huile de s\u00e9same)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Ginger powder (gingembre en poudre)",
-                "qty": "1/2 tsp"
-              },
-              {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
-              }
-            ],
-            "macros": {
-              "kcal": 430,
-              "protein_g": 33,
-              "carbs_g": 34,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          }
-        },
-        "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of red meat only keeps ~3 day(s), and this is day 5. (The dish is unchanged \u2014 just cooked the same day.)"
-      },
-      {
-        "slot": "pm_snack",
-        "name": "Greek Yogurt with Strawberries & Almonds",
-        "time": "16:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 2,
-        "image_prompt": "a bowl of creamy Greek yogurt with sliced strawberries and scattered almonds, afternoon natural light, white ceramic on linen",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Spoon Greek yogurt (Diego: 200 g; Diana: 150 g) into bowl.",
-          "Slice 80 g strawberries; place on top; scatter almonds (Diego: 15 g; Diana: 10 g). Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "dairy",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "200 g"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Almonds (amandes)",
-                "qty": "15 g"
-              }
-            ],
-            "macros": {
-              "kcal": 210,
-              "protein_g": 22,
-              "carbs_g": 16,
-              "fat_g": 7,
-              "fiber_g": 2
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "150 g"
-              },
-              {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Almonds (amandes)",
-                "qty": "10 g"
-              }
-            ],
-            "macros": {
-              "kcal": 165,
-              "protein_g": 16,
-              "carbs_g": 14,
-              "fat_g": 5,
-              "fiber_g": 2
-            }
-          }
-        }
-      },
-      {
-        "slot": "dinner",
-        "name": "French Herbed Tilapia with Roasted Eggplant, Cherry Tomatoes & Lentils",
-        "time": "19:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 25,
-        "image_prompt": "a white dinner plate with golden herb-roasted tilapia fillet, roasted eggplant cubes and burst cherry tomatoes, green lentils with a drizzle of olive oil, lemon wedge on the side, warm restaurant-style light",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Preheat oven 200\u00b0C. Cube 1/2 eggplant (Diego: 100 g; Diana: 80 g); toss with 1 tsp olive oil, thyme, oregano; spread on baking tray.",
-          "Roast eggplant 15 min; add cherry tomatoes (100 g) and tilapia (Diego: 175 g; Diana: 125 g) seasoned with thyme, garlic powder, olive oil to the same tray.",
-          "Continue roasting 12\u201314 min until tilapia is cooked through.",
-          "Warm canned lentils (Diego: 100 g; Diana: 70 g) in small pan with 1 tsp balsamic vinegar and garlic powder 2 min.",
-          "Plate: lentils first, roasted veg alongside, tilapia on top. Squeeze lemon over everything.",
-          "Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "fish_seafood",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "175 g raw"
-              },
-              {
-                "item": "Eggplant (aubergine)",
-                "qty": "100 g"
-              },
-              {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "100 g"
-              },
-              {
-                "item": "Canned lentils drained (lentilles en bo\u00eete \u00e9goutt\u00e9es)",
-                "qty": "100 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "2 tsp"
-              },
-              {
-                "item": "Balsamic vinegar (vinaigre balsamique)",
-                "qty": "1 tsp"
-              },
-              {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
-              }
-            ],
-            "macros": {
-              "kcal": 440,
-              "protein_g": 42,
-              "carbs_g": 28,
-              "fat_g": 14,
-              "fiber_g": 9
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "125 g raw"
-              },
-              {
-                "item": "Eggplant (aubergine)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "100 g"
-              },
-              {
-                "item": "Canned lentils drained (lentilles en bo\u00eete \u00e9goutt\u00e9es)",
                 "qty": "70 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1.5 tsp"
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
               },
               {
-                "item": "Balsamic vinegar (vinaigre balsamique)",
-                "qty": "1 tsp"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
               },
               {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
+                "item": "Feta cheese (fromage feta)",
+                "qty": "30 g"
               }
             ],
             "macros": {
-              "kcal": 320,
+              "kcal": 485,
               "protein_g": 30,
-              "carbs_g": 21,
-              "fat_g": 10,
-              "fiber_g": 7
-            }
-          }
-        }
-      }
-    ],
-    "day_totals": {
-      "diego": {
-        "kcal": 2010,
-        "protein_g": 150,
-        "carbs_g": 157,
-        "fat_g": 76,
-        "fiber_g": 26
-      },
-      "diana": {
-        "kcal": 1535,
-        "protein_g": 107,
-        "carbs_g": 132,
-        "fat_g": 56,
-        "fiber_g": 22
-      }
-    },
-    "training": {
-      "member": "diego",
-      "name": "Lower Body & Core",
-      "sport": "strength",
-      "tss": 20,
-      "duration_min": 30,
-      "extra_kcal": 140
-    }
-  },
-  {
-    "day": "Saturday",
-    "date": "2026-06-27",
-    "meals": [
-      {
-        "slot": "breakfast",
-        "name": "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
-        "time": "07:30",
-        "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "a tall purple kefir smoothie next to fried eggs on golden sourdough toast, weekend morning light, casual kitchen table setting",
-        "video_url": "",
-        "prep_steps": [],
-        "day_of_steps": [
-          "Blend 250 ml kefir with 1/2 banana and 80 g blueberries; pour into glass.",
-          "Fry eggs (Diego: 3; Diana: 2) in 1 tsp olive oil sunny-side-up.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g).",
-          "Serve eggs on toast, smoothie alongside. Drink 500 ml water."
-        ],
-        "storage_ref": "",
-        "food_category": "eggs_cooked",
-        "portions": {
-          "diego": {
-            "ingredients": [
-              {
-                "item": "Kefir (k\u00e9fir)",
-                "qty": "250 ml"
-              },
-              {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Blueberries (myrtilles)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
-              }
-            ],
-            "macros": {
-              "kcal": 520,
-              "protein_g": 32,
-              "carbs_g": 45,
-              "fat_g": 20,
-              "fiber_g": 4
+              "carbs_g": 47,
+              "fat_g": 18,
+              "fiber_g": 5
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
                 "item": "Blueberries (myrtilles)",
-                "qty": "80 g"
+                "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Banana (banane)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Eggs, boiled (\u0153ufs durs)",
                 "qty": "2 large"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
+                "item": "Feta cheese (fromage feta)",
+                "qty": "20 g"
               }
             ],
             "macros": {
-              "kcal": 400,
-              "protein_g": 23,
-              "carbs_g": 40,
-              "fat_g": 14,
+              "kcal": 380,
+              "protein_g": 24,
+              "carbs_g": 36,
+              "fat_g": 13,
               "fiber_g": 4
             }
           }
@@ -2336,15 +1473,17 @@
       },
       {
         "slot": "am_snack",
-        "name": "Apple with Almonds",
+        "name": "Orange & Almond Snack",
         "time": "10:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 1,
-        "image_prompt": "apple slices and a small bowl of almonds on a terracotta plate, bright weekend morning light",
+        "image_prompt": "top-down photo of orange slices on a small white plate with a pile of whole almonds beside them, fresh natural light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Slice 1 apple; weigh almonds (Diego: 25 g; Diana: 20 g). Eat apple first. Drink 500 ml water."
+          "1. Peel and segment 1 orange per person.",
+          "2. Weigh 25 g almonds (Diego) / 20 g almonds (Diana).",
+          "3. Serve. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -2352,8 +1491,8 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "item": "Orange (orange)",
+                "qty": "160 g (1 medium)"
               },
               {
                 "item": "Almonds (amandes)",
@@ -2362,17 +1501,17 @@
             ],
             "macros": {
               "kcal": 220,
-              "protein_g": 6,
-              "carbs_g": 26,
-              "fat_g": 12,
-              "fiber_g": 5
+              "protein_g": 5,
+              "carbs_g": 22,
+              "fat_g": 13,
+              "fiber_g": 4
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "item": "Orange (orange)",
+                "qty": "160 g (1 medium)"
               },
               {
                 "item": "Almonds (amandes)",
@@ -2381,10 +1520,10 @@
             ],
             "macros": {
               "kcal": 185,
-              "protein_g": 5,
-              "carbs_g": 25,
-              "fat_g": 9,
-              "fiber_g": 5
+              "protein_g": 4,
+              "carbs_g": 21,
+              "fat_g": 10,
+              "fiber_g": 4
             }
           }
         }
@@ -2395,18 +1534,17 @@
         "time": "13:00",
         "prep_ahead": false,
         "cook_minutes_day_of": 30,
-        "image_prompt": "a pasta bowl with wholemeal penne in a rich creamy tomato sauce, tender chicken thigh pieces, wilted dark spinach, fresh cherry tomato halves, parmesan-free, warm Saturday lunch light",
+        "image_prompt": "overhead photo of penne pasta tossed with creamy tomato sauce, tender chicken thigh pieces and wilted spinach in a wide bowl, garnished with dried basil, natural light on a white surface",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Cook wholemeal penne (Diego: 75 g dry; Diana: 55 g dry) per packet al dente; drain, reserve 50 ml pasta water.",
-          "Dice skinless chicken thighs (Diego: 200 g; Diana: 140 g) into bite-size pieces; season with smoked paprika, garlic powder, salt.",
-          "Heat 1 tsp olive oil in pan over medium-high; sear chicken 5\u20136 min until cooked through.",
-          "Add 1 tsp garlic powder, 100 g cherry tomatoes halved, 1 can diced tomatoes (80 g); simmer 3 min.",
-          "Lower heat; stir in 3 tbsp Greek yogurt (acts as cream) and pasta water; stir gently until sauce forms.",
-          "Add 80 g spinach; stir until wilted 1\u20132 min.",
-          "Toss penne through sauce; serve immediately.",
-          "Serve with 1/2 banana for dessert. Drink 500 ml water."
+          "1. Cook wholemeal penne: boil salted water, add 85 g (Diego) / 65 g (Diana) dry pasta, cook 11 minutes. Drain, reserve 50 ml pasta water.",
+          "2. Season 170 g (Diego) / 125 g (Diana) skinless chicken thighs with smoked paprika, dried oregano, salt, pepper.",
+          "3. Heat 1 tsp olive oil in a wide pan, sear chicken thighs 5\u20136 min per side until cooked through (internal 75\u00b0C). Remove and slice.",
+          "4. In same pan, add 150 g (both Diego and Diana) tomato passata, garlic (from locked list \u2014 use \u00bd tsp garlic powder or a minced clove from pantry), chili flakes, dried basil. Simmer 3 minutes. Stir in 2 tbsp Greek yogurt per person for creaminess.",
+          "5. Wilt 70 g fresh spinach per person in sauce for 1\u20132 minutes.",
+          "6. Toss drained pasta into sauce with a splash of pasta water. Top with sliced chicken.",
+          "7. Plate pasta first, then sauce, then chicken. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "poultry",
@@ -2415,36 +1553,36 @@
             "ingredients": [
               {
                 "item": "Skinless chicken thighs (cuisses de poulet sans peau)",
-                "qty": "200 g raw"
+                "qty": "170 g"
               },
               {
                 "item": "Wholemeal penne (penne compl\u00e8tes)",
-                "qty": "75 g dry"
+                "qty": "85 g dry"
               },
               {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "100 g"
+                "item": "Tomato passata (passata de tomates)",
+                "qty": "150 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
+                "item": "Fresh spinach (\u00e9pinards frais)",
+                "qty": "70 g"
               },
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "40 g"
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "30 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
                 "qty": "1 tsp"
               },
               {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
+                "item": "Smoked paprika, dried oregano, dried basil, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 590,
-              "protein_g": 51,
+              "kcal": 570,
+              "protein_g": 46,
               "carbs_g": 58,
               "fat_g": 14,
               "fiber_g": 8
@@ -2454,39 +1592,964 @@
             "ingredients": [
               {
                 "item": "Skinless chicken thighs (cuisses de poulet sans peau)",
-                "qty": "140 g raw"
+                "qty": "125 g"
               },
               {
                 "item": "Wholemeal penne (penne compl\u00e8tes)",
-                "qty": "55 g dry"
+                "qty": "65 g dry"
               },
               {
-                "item": "Cherry tomatoes (tomates cerises)",
-                "qty": "100 g"
+                "item": "Tomato passata (passata de tomates)",
+                "qty": "150 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "80 g"
+                "item": "Fresh spinach (\u00e9pinards frais)",
+                "qty": "70 g"
               },
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "30 g"
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "20 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "1 tsp"
               },
               {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
+                "item": "Smoked paprika, dried oregano, dried basil, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 440,
-              "protein_g": 36,
-              "carbs_g": 44,
+              "kcal": 435,
+              "protein_g": 33,
+              "carbs_g": 46,
               "fat_g": 10,
+              "fiber_g": 7
+            }
+          }
+        }
+      },
+      {
+        "slot": "pm_snack",
+        "name": "Greek Yogurt with Blueberries & Pistachios",
+        "time": "16:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 2,
+        "image_prompt": "close-up of creamy Greek yogurt topped with dark blueberries and green pistachio kernels in a ceramic bowl, soft afternoon light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Spoon 180 g (Diego) / 140 g (Diana) Greek yogurt into a bowl.",
+          "2. Top with 70 g blueberries and 15 g pistachios (Diego) / 50 g blueberries and 12 g pistachios (Diana).",
+          "3. Serve. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "dairy",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "180 g"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Pistachios (pistaches)",
+                "qty": "15 g"
+              }
+            ],
+            "macros": {
+              "kcal": 225,
+              "protein_g": 18,
+              "carbs_g": 17,
+              "fat_g": 10,
+              "fiber_g": 3
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "140 g"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Pistachios (pistaches)",
+                "qty": "12 g"
+              }
+            ],
+            "macros": {
+              "kcal": 175,
+              "protein_g": 13,
+              "carbs_g": 13,
+              "fat_g": 8,
+              "fiber_g": 2
+            }
+          }
+        }
+      },
+      {
+        "slot": "dinner",
+        "name": "Baked Tilapia with Roasted Broccoli, Cherry Tomatoes & Cannellini Beans on Sourdough",
+        "time": "19:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 28,
+        "image_prompt": "overhead dinner plate with oven-baked tilapia fillet resting on creamy cannellini beans and roasted broccoli florets and burst cherry tomatoes, a slice of crusty sourdough on the side, warm evening light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Preheat oven to 200\u00b0C.",
+          "2. Toss broccoli florets (90 g per person) and cherry tomatoes (80 g per person) with 1 tsp olive oil, dried oregano, sea salt, black pepper. Spread on lined tray. Roast 20 minutes.",
+          "3. Season tilapia fillets (150 g Diego / 115 g Diana) with smoked paprika, dried thyme, black pepper, 1 tsp olive oil. Place on separate small tray.",
+          "4. Bake tilapia for last 14\u201316 minutes alongside vegetables until cooked through.",
+          "5. Warm drained canned cannellini beans (70 g Diego / 50 g Diana) in a small pan with 1 tsp olive oil, garlic powder, red wine vinegar, 2 minutes.",
+          "6. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "7. Plate: beans first, then vegetables and tilapia, sourdough on side. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "fish_seafood",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Tilapia fillet (filet de tilapia)",
+                "qty": "150 g"
+              },
+              {
+                "item": "Canned cannellini beans, drained (haricots blancs en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Broccoli florets (fleurettes de brocoli)",
+                "qty": "90 g"
+              },
+              {
+                "item": "Cherry tomatoes (tomates cerises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "3 tsp"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Red wine vinegar (vinaigre de vin rouge)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Smoked paprika, dried thyme, dried oregano",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 490,
+              "protein_g": 41,
+              "carbs_g": 40,
+              "fat_g": 16,
+              "fiber_g": 9
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Tilapia fillet (filet de tilapia)",
+                "qty": "115 g"
+              },
+              {
+                "item": "Canned cannellini beans, drained (haricots blancs en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Broccoli florets (fleurettes de brocoli)",
+                "qty": "90 g"
+              },
+              {
+                "item": "Cherry tomatoes (tomates cerises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Red wine vinegar (vinaigre de vin rouge)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Smoked paprika, dried thyme, dried oregano",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 370,
+              "protein_g": 29,
+              "carbs_g": 30,
+              "fat_g": 12,
+              "fiber_g": 7
+            }
+          }
+        }
+      }
+    ],
+    "day_totals": {
+      "diego": {
+        "kcal": 1990,
+        "protein_g": 140,
+        "carbs_g": 184,
+        "fat_g": 71,
+        "fiber_g": 29
+      },
+      "diana": {
+        "kcal": 1545,
+        "protein_g": 103,
+        "carbs_g": 146,
+        "fat_g": 53,
+        "fiber_g": 24
+      }
+    }
+  },
+  {
+    "day": "Friday",
+    "date": "2026-07-03",
+    "meals": [
+      {
+        "slot": "breakfast",
+        "name": "Kefir & Raspberry Smoothie + Boiled Eggs on Sourdough with Feta",
+        "time": "07:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 12,
+        "image_prompt": "bright morning photo of a pink raspberry kefir smoothie in a tall glass beside two halved boiled eggs on sourdough toast with feta and black pepper, white linen napkin, sunlight streaming",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Boil eggs 9 minutes, cool, peel, halve.",
+          "2. Blend 250 ml kefir with 100 g raspberries and 60 g banana per person.",
+          "3. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "4. Top toast with egg halves and crumbled feta (30 g Diego / 20 g Diana), black pepper.",
+          "5. Serve smoothie. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "eggs_cooked",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Kefir (k\u00e9fir de lait)",
+                "qty": "250 ml"
+              },
+              {
+                "item": "Raspberries (framboises)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Banana (banane)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Feta cheese (fromage feta)",
+                "qty": "30 g"
+              }
+            ],
+            "macros": {
+              "kcal": 480,
+              "protein_g": 30,
+              "carbs_g": 46,
+              "fat_g": 18,
               "fiber_g": 6
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Kefir (k\u00e9fir de lait)",
+                "qty": "250 ml"
+              },
+              {
+                "item": "Raspberries (framboises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Banana (banane)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Feta cheese (fromage feta)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 380,
+              "protein_g": 24,
+              "carbs_g": 35,
+              "fat_g": 13,
+              "fiber_g": 5
+            }
+          }
+        }
+      },
+      {
+        "slot": "am_snack",
+        "name": "Apple & Cashew Snack",
+        "time": "10:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 1,
+        "image_prompt": "top-down photo of a sliced red apple and a small bowl of cashews on a light wooden board, clean natural light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Slice 1 apple per person.",
+          "2. Weigh 25 g cashews (Diego) / 20 g cashews (Diana).",
+          "3. Serve. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "generic",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Apple (pomme)",
+                "qty": "150 g"
+              },
+              {
+                "item": "Cashews (noix de cajou)",
+                "qty": "25 g"
+              }
+            ],
+            "macros": {
+              "kcal": 225,
+              "protein_g": 4,
+              "carbs_g": 27,
+              "fat_g": 12,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Apple (pomme)",
+                "qty": "130 g"
+              },
+              {
+                "item": "Cashews (noix de cajou)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 182,
+              "protein_g": 3,
+              "carbs_g": 22,
+              "fat_g": 10,
+              "fiber_g": 3
+            }
+          }
+        }
+      },
+      {
+        "slot": "lunch",
+        "name": "Asian Sesame Beef Stir-Fry with Zucchini, Broccoli & Wholewheat Noodles",
+        "time": "13:00",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 28,
+        "image_prompt": "overhead bowl of wholewheat noodles tossed with dark soy-sesame sauce, thin beef strips, bright green broccoli florets and zucchini ribbons, sesame oil gloss, natural light on bamboo mat",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Cook wholewheat noodles (80 g Diego / 60 g Diana dry) in boiling salted water per package (8\u201310 min). Drain and toss with 1 tsp sesame oil.",
+          "2. Slice lean beef (160 g Diego / 120 g Diana) into thin strips. Marinate 5 min in 2 tbsp soy sauce, \u00bd tsp ground ginger, \u00bd tsp cinnamon (optional), black pepper.",
+          "3. Heat 1 tsp sesame oil in wok or large pan, high heat. Stir-fry beef 3 min until browned. Remove.",
+          "4. Stir-fry broccoli (90 g) and zucchini (90 g) per person in same pan with 1 tsp soy sauce, 2 min.",
+          "5. Return beef to pan, add drained canned chickpeas (50 g per person), toss all together 1\u20132 min.",
+          "6. Serve over noodles, drizzle with balsamic vinegar (\u00bc tsp) for depth. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "red_meat",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
+                "qty": "160 g"
+              },
+              {
+                "item": "Wholewheat noodles (nouilles de bl\u00e9 complet)",
+                "qty": "80 g dry"
+              },
+              {
+                "item": "Broccoli florets (fleurettes de brocoli)",
+                "qty": "90 g"
+              },
+              {
+                "item": "Zucchini (courgette)",
+                "qty": "90 g"
+              },
+              {
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Soy sauce (sauce soja)",
+                "qty": "2 tbsp"
+              },
+              {
+                "item": "Sesame oil (huile de s\u00e9same)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Balsamic vinegar (vinaigre balsamique)",
+                "qty": "\u00bc tsp"
+              },
+              {
+                "item": "Ground ginger, black pepper",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 575,
+              "protein_g": 46,
+              "carbs_g": 54,
+              "fat_g": 16,
+              "fiber_g": 9
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
+                "qty": "120 g"
+              },
+              {
+                "item": "Wholewheat noodles (nouilles de bl\u00e9 complet)",
+                "qty": "60 g dry"
+              },
+              {
+                "item": "Broccoli florets (fleurettes de brocoli)",
+                "qty": "90 g"
+              },
+              {
+                "item": "Zucchini (courgette)",
+                "qty": "90 g"
+              },
+              {
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Soy sauce (sauce soja)",
+                "qty": "2 tbsp"
+              },
+              {
+                "item": "Sesame oil (huile de s\u00e9same)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Balsamic vinegar (vinaigre balsamique)",
+                "qty": "\u00bc tsp"
+              },
+              {
+                "item": "Ground ginger, black pepper",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 435,
+              "protein_g": 33,
+              "carbs_g": 44,
+              "fat_g": 12,
+              "fiber_g": 8
+            }
+          }
+        }
+      },
+      {
+        "slot": "pm_snack",
+        "name": "Greek Yogurt with Raspberries & Almonds",
+        "time": "16:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 2,
+        "image_prompt": "close-up ceramic bowl of white Greek yogurt topped with ruby raspberries and slivered almonds, soft warm afternoon light, marble countertop",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Spoon 180 g (Diego) / 140 g (Diana) Greek yogurt into a bowl.",
+          "2. Top with 80 g raspberries and 20 g almonds (Diego) / 60 g raspberries and 15 g almonds (Diana).",
+          "3. Serve. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "dairy",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "180 g"
+              },
+              {
+                "item": "Raspberries (framboises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Almonds (amandes)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 235,
+              "protein_g": 18,
+              "carbs_g": 14,
+              "fat_g": 11,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "140 g"
+              },
+              {
+                "item": "Raspberries (framboises)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Almonds (amandes)",
+                "qty": "15 g"
+              }
+            ],
+            "macros": {
+              "kcal": 178,
+              "protein_g": 13,
+              "carbs_g": 11,
+              "fat_g": 8,
+              "fiber_g": 3
+            }
+          }
+        }
+      },
+      {
+        "slot": "dinner",
+        "name": "Mediterranean Baked Salmon with Chickpea-Spinach Rag\u00f9 & Roasted Bell Peppers",
+        "time": "19:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 28,
+        "image_prompt": "overhead photo of a baked salmon fillet on a bed of golden chickpeas and wilted spinach rag\u00f9 surrounded by roasted red and yellow bell pepper strips, drizzled with olive oil, warm restaurant lighting",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Preheat oven to 200\u00b0C. Slice bell peppers. Toss with 1 tsp olive oil, dried oregano, sea salt. Roast 20 minutes.",
+          "2. Season salmon (160 g Diego / 120 g Diana) with smoked paprika, dried basil, black pepper, 1 tsp olive oil. Place on a small oven-proof dish. Bake 16\u201318 minutes.",
+          "3. In a pan, heat 1 tsp olive oil, add drained chickpeas (80 g Diego / 60 g Diana), passata (80 g per person), ground coriander, chili flakes. Simmer 5 min.",
+          "4. Stir in 70 g fresh spinach per person; wilt 2 minutes. Season with red wine vinegar (1 tsp).",
+          "5. Plate: chickpea-spinach rag\u00f9 first, salmon on top, roasted peppers alongside. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "fish_seafood",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Salmon fillet (filet de saumon)",
+                "qty": "160 g"
+              },
+              {
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Fresh spinach (\u00e9pinards frais)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Bell peppers, mixed (poivrons m\u00e9lang\u00e9s)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Tomato passata (passata de tomates)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "3 tsp"
+              },
+              {
+                "item": "Red wine vinegar (vinaigre de vin rouge)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Smoked paprika, dried basil, dried oregano, ground coriander, chili flakes",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 480,
+              "protein_g": 42,
+              "carbs_g": 27,
+              "fat_g": 21,
+              "fiber_g": 8
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Salmon fillet (filet de saumon)",
+                "qty": "120 g"
+              },
+              {
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Fresh spinach (\u00e9pinards frais)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Bell peppers, mixed (poivrons m\u00e9lang\u00e9s)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Tomato passata (passata de tomates)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Red wine vinegar (vinaigre de vin rouge)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Smoked paprika, dried basil, dried oregano, ground coriander, chili flakes",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 365,
+              "protein_g": 30,
+              "carbs_g": 22,
+              "fat_g": 16,
+              "fiber_g": 7
+            }
+          }
+        }
+      }
+    ],
+    "day_totals": {
+      "diego": {
+        "kcal": 1995,
+        "protein_g": 140,
+        "carbs_g": 168,
+        "fat_g": 78,
+        "fiber_g": 31
+      },
+      "diana": {
+        "kcal": 1540,
+        "protein_g": 103,
+        "carbs_g": 134,
+        "fat_g": 59,
+        "fiber_g": 26
+      }
+    }
+  },
+  {
+    "day": "Saturday",
+    "date": "2026-07-04",
+    "meals": [
+      {
+        "slot": "breakfast",
+        "name": "Kefir & Blueberry Orange Smoothie + Boiled Eggs on Sourdough with Feta",
+        "time": "07:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 12,
+        "image_prompt": "side-view of a deep blue blueberry kefir smoothie with a wedge of orange on a glass rim, beside sourdough toast with halved boiled eggs and feta, relaxed weekend morning light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Boil eggs 9 minutes, cool, peel, halve.",
+          "2. Blend 250 ml kefir, 90 g blueberries, juice of \u00bd orange (approx. 50 ml) per person.",
+          "3. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "4. Arrange egg halves on toast, crumble feta (30 g Diego / 20 g Diana), black pepper.",
+          "5. Serve smoothie. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "eggs_cooked",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Kefir (k\u00e9fir de lait)",
+                "qty": "250 ml"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "90 g"
+              },
+              {
+                "item": "Orange (orange)",
+                "qty": "\u00bd orange (juice, approx. 50 ml)"
+              },
+              {
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Feta cheese (fromage feta)",
+                "qty": "30 g"
+              }
+            ],
+            "macros": {
+              "kcal": 475,
+              "protein_g": 29,
+              "carbs_g": 45,
+              "fat_g": 18,
+              "fiber_g": 5
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Kefir (k\u00e9fir de lait)",
+                "qty": "250 ml"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Orange (orange)",
+                "qty": "\u00bd orange (juice, approx. 50 ml)"
+              },
+              {
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Feta cheese (fromage feta)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 375,
+              "protein_g": 23,
+              "carbs_g": 34,
+              "fat_g": 13,
+              "fiber_g": 4
+            }
+          }
+        }
+      },
+      {
+        "slot": "am_snack",
+        "name": "Orange & Pistachio Snack",
+        "time": "10:30",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 1,
+        "image_prompt": "bright overhead of orange wedges and a small pile of pistachio kernels on a white ceramic plate, fresh natural light",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Peel and segment 1 orange per person.",
+          "2. Weigh 25 g pistachios (Diego) / 20 g pistachios (Diana).",
+          "3. Serve. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "generic",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Orange (orange)",
+                "qty": "160 g (1 medium)"
+              },
+              {
+                "item": "Pistachios (pistaches)",
+                "qty": "25 g"
+              }
+            ],
+            "macros": {
+              "kcal": 220,
+              "protein_g": 5,
+              "carbs_g": 22,
+              "fat_g": 12,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Orange (orange)",
+                "qty": "160 g (1 medium)"
+              },
+              {
+                "item": "Pistachios (pistaches)",
+                "qty": "20 g"
+              }
+            ],
+            "macros": {
+              "kcal": 185,
+              "protein_g": 4,
+              "carbs_g": 21,
+              "fat_g": 10,
+              "fiber_g": 4
+            }
+          }
+        }
+      },
+      {
+        "slot": "lunch",
+        "name": "French Lentil & Roasted Vegetable Salad with Poached Egg & Sourdough",
+        "time": "13:00",
+        "prep_ahead": false,
+        "cook_minutes_day_of": 25,
+        "image_prompt": "overhead salad bowl with warm green lentils, roasted cherry tomatoes, zucchini and bell pepper strips over mixed greens, topped with a perfectly poached egg and a balsamic drizzle, rustic wooden surface",
+        "video_url": "",
+        "prep_steps": [],
+        "day_of_steps": [
+          "1. Preheat oven to 200\u00b0C. Toss cherry tomatoes (80 g), zucchini rounds (80 g), and bell pepper strips (80 g) per person with 1 tsp olive oil, dried thyme, sea salt. Roast 20 minutes.",
+          "2. Warm drained canned lentils (100 g Diego / 75 g Diana) in a pan with 1 tsp olive oil, ground coriander, balsamic vinegar (1 tsp), salt, pepper.",
+          "3. Bring a small saucepan of water to a bare simmer, add 1 tsp red wine vinegar. Crack each egg into a cup and slide gently into water. Poach 3\u20134 minutes until white is set.",
+          "4. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "5. Plate: mixed salad greens (80 g), then warm lentils, then roasted vegetables. Place poached egg on top. Drizzle 1 tsp olive oil. Serve with sourdough. Drink 500 ml water."
+        ],
+        "storage_ref": "",
+        "food_category": "legumes",
+        "portions": {
+          "diego": {
+            "ingredients": [
+              {
+                "item": "Canned green lentils, drained (lentilles vertes en bo\u00eete \u00e9goutt\u00e9es)",
+                "qty": "100 g"
+              },
+              {
+                "item": "Eggs, poached (\u0153ufs poch\u00e9s)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Cherry tomatoes (tomates cerises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Zucchini (courgette)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Bell peppers (poivrons)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Mixed leaf salad greens (salade mesclun)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Balsamic vinegar (vinaigre balsamique)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Dried thyme, ground coriander, black pepper",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 540,
+              "protein_g": 32,
+              "carbs_g": 57,
+              "fat_g": 17,
+              "fiber_g": 12
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Canned green lentils, drained (lentilles vertes en bo\u00eete \u00e9goutt\u00e9es)",
+                "qty": "75 g"
+              },
+              {
+                "item": "Eggs, poached (\u0153ufs poch\u00e9s)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Cherry tomatoes (tomates cerises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Zucchini (courgette)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Bell peppers (poivrons)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Mixed leaf salad greens (salade mesclun)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Balsamic vinegar (vinaigre balsamique)",
+                "qty": "2 tsp"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Dried thyme, ground coriander, black pepper",
+                "qty": "to taste"
+              }
+            ],
+            "macros": {
+              "kcal": 415,
+              "protein_g": 24,
+              "carbs_g": 44,
+              "fat_g": 14,
+              "fiber_g": 10
             }
           }
         }
@@ -2497,12 +2560,13 @@
         "time": "16:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 2,
-        "image_prompt": "white Greek yogurt topped with blueberries and crushed walnuts in a glass bowl, soft afternoon light on a wooden table",
+        "image_prompt": "close-up of a bowl of thick Greek yogurt dotted with blueberries and broken walnut pieces, warm late afternoon light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Spoon Greek yogurt (Diego: 180 g; Diana: 150 g) into bowl.",
-          "Top with blueberries (60 g each) and walnuts (Diego: 20 g; Diana: 15 g). Drink 500 ml water."
+          "1. Spoon 180 g (Diego) / 140 g (Diana) Greek yogurt into a bowl.",
+          "2. Top with 80 g blueberries and 15 g walnuts (Diego) / 60 g blueberries and 12 g walnuts (Diana).",
+          "3. Serve. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "dairy",
@@ -2510,35 +2574,12 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
+                "item": "Greek yogurt (yaourt grec)",
                 "qty": "180 g"
               },
               {
                 "item": "Blueberries (myrtilles)",
-                "qty": "60 g"
-              },
-              {
-                "item": "Walnuts (noix)",
-                "qty": "20 g"
-              }
-            ],
-            "macros": {
-              "kcal": 220,
-              "protein_g": 19,
-              "carbs_g": 17,
-              "fat_g": 8,
-              "fiber_g": 2
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "150 g"
-              },
-              {
-                "item": "Blueberries (myrtilles)",
-                "qty": "60 g"
+                "qty": "80 g"
               },
               {
                 "item": "Walnuts (noix)",
@@ -2546,31 +2587,53 @@
               }
             ],
             "macros": {
-              "kcal": 180,
-              "protein_g": 15,
-              "carbs_g": 16,
-              "fat_g": 6,
-              "fiber_g": 2
+              "kcal": 225,
+              "protein_g": 18,
+              "carbs_g": 17,
+              "fat_g": 10,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "140 g"
+              },
+              {
+                "item": "Blueberries (myrtilles)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Walnuts (noix)",
+                "qty": "12 g"
+              }
+            ],
+            "macros": {
+              "kcal": 170,
+              "protein_g": 13,
+              "carbs_g": 11,
+              "fat_g": 8,
+              "fiber_g": 3
             }
           }
         }
       },
       {
         "slot": "dinner",
-        "name": "Cumin-Turmeric Salmon with Roasted Bell Peppers, Zucchini & White Bean Mash",
+        "name": "Honey-Glazed Tilapia with Stir-Fried Celery, Zucchini & Sweet Potato Mash",
         "time": "19:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 25,
-        "image_prompt": "a white plate with golden cumin-turmeric salmon fillet, colourful roasted bell pepper strips, zucchini slices and a smooth white bean mash, olive oil drizzle, warm Saturday evening light",
+        "cook_minutes_day_of": 30,
+        "image_prompt": "overhead plate of golden honey-glazed tilapia fillet beside creamy sweet potato mash and stir-fried celery and zucchini, warm evening light, natural rustic wooden table",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Preheat oven 200\u00b0C. Slice bell pepper (80 g) and zucchini (100 g); toss with olive oil, smoked paprika, black pepper; roast 20 min.",
-          "Season salmon (Diego: 180 g; Diana: 130 g) with cumin, turmeric, garlic powder, 1 tsp olive oil; bake on separate tray 14 min.",
-          "Drain and rinse canned white beans (Diego: 100 g; Diana: 70 g); mash with fork with 1 tsp olive oil, garlic powder, lemon juice, salt until smooth.",
-          "Warm white bean mash in microwave 1 min.",
-          "Plate: white bean mash first, roasted veg alongside, salmon on top.",
-          "Squeeze lemon over salmon. Drink 500 ml water."
+          "1. Peel and cube sweet potato (180 g Diego / 120 g Diana). Boil in salted water 15 minutes until tender. Drain, mash with 1 tsp olive oil, black pepper, pinch of cinnamon.",
+          "2. Mix glaze: 1 tsp soy sauce + \u00bd tsp sesame oil + squeeze of lime juice. Brush onto tilapia fillets (160 g Diego / 120 g Diana).",
+          "3. Heat 1 tsp olive oil in non-stick pan. Cook tilapia 3\u20134 min per side until caramelised and cooked through.",
+          "4. In same pan, stir-fry celery (2 stalks, 80 g, sliced) and zucchini (90 g, rounds) per person with 1 tsp sesame oil, tamari, dried basil, 4\u20135 minutes.",
+          "5. Plate: sweet potato mash, stir-fried vegetables, tilapia on top. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "fish_seafood",
@@ -2578,70 +2641,102 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Salmon fillet (filet de saumon)",
-                "qty": "180 g raw"
+                "item": "Tilapia fillet (filet de tilapia)",
+                "qty": "160 g"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
-                "qty": "100 g drained"
+                "item": "Sweet potato (patate douce)",
+                "qty": "180 g"
               },
               {
-                "item": "Bell pepper (poivron)",
-                "qty": "80 g"
+                "item": "Celery stalks (branches de c\u00e9leri)",
+                "qty": "80 g (2 stalks)"
               },
               {
                 "item": "Zucchini (courgette)",
-                "qty": "100 g"
+                "qty": "90 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
                 "qty": "2 tsp"
               },
               {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
+                "item": "Sesame oil (huile de s\u00e9same)",
+                "qty": "1\u00bd tsp"
+              },
+              {
+                "item": "Soy sauce (sauce soja)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Tamari (tamari)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Bottled lime juice",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Cinnamon, dried basil, black pepper",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 490,
-              "protein_g": 44,
-              "carbs_g": 28,
-              "fat_g": 19,
-              "fiber_g": 8
+              "kcal": 520,
+              "protein_g": 40,
+              "carbs_g": 43,
+              "fat_g": 18,
+              "fiber_g": 7
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Salmon fillet (filet de saumon)",
-                "qty": "130 g raw"
+                "item": "Tilapia fillet (filet de tilapia)",
+                "qty": "120 g"
               },
               {
-                "item": "Canned white beans (haricots blancs en bo\u00eete)",
-                "qty": "70 g drained"
+                "item": "Sweet potato (patate douce)",
+                "qty": "120 g"
               },
               {
-                "item": "Bell pepper (poivron)",
-                "qty": "80 g"
+                "item": "Celery stalks (branches de c\u00e9leri)",
+                "qty": "80 g (2 stalks)"
               },
               {
                 "item": "Zucchini (courgette)",
-                "qty": "100 g"
+                "qty": "90 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1.5 tsp"
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "1 tsp"
               },
               {
-                "item": "Lemon juice (jus de citron)",
-                "qty": "1/2 lemon"
+                "item": "Sesame oil (huile de s\u00e9same)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Soy sauce (sauce soja)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Tamari (tamari)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Bottled lime juice",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Cinnamon, dried basil, black pepper",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 370,
-              "protein_g": 32,
-              "carbs_g": 22,
-              "fat_g": 15,
+              "kcal": 385,
+              "protein_g": 29,
+              "carbs_g": 32,
+              "fat_g": 13,
               "fiber_g": 6
             }
           }
@@ -2650,39 +2745,40 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2040,
-        "protein_g": 152,
-        "carbs_g": 174,
-        "fat_g": 73,
-        "fiber_g": 27
+        "kcal": 1980,
+        "protein_g": 124,
+        "carbs_g": 184,
+        "fat_g": 75,
+        "fiber_g": 32
       },
       "diana": {
-        "kcal": 1575,
-        "protein_g": 111,
-        "carbs_g": 147,
-        "fat_g": 54,
-        "fiber_g": 23
+        "kcal": 1530,
+        "protein_g": 93,
+        "carbs_g": 142,
+        "fat_g": 58,
+        "fiber_g": 27
       }
     }
   },
   {
     "day": "Sunday",
-    "date": "2026-06-28",
+    "date": "2026-07-05",
     "meals": [
       {
         "slot": "breakfast",
-        "name": "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough with Feta",
+        "name": "Kefir & Banana Raspberry Smoothie + Boiled Eggs on Sourdough with Feta",
         "time": "07:30",
         "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "a blueberry-banana kefir smoothie in a tall glass beside fried eggs topped with crumbled feta on sourdough toast, relaxed Sunday morning light, linen tablecloth",
+        "cook_minutes_day_of": 12,
+        "image_prompt": "overhead of a pink-purple smoothie glass with banana and raspberries beside thick sourdough toast topped with halved boiled eggs and white feta crumbles, relaxed Sunday morning light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Blend 250 ml kefir with 1/2 banana and 80 g blueberries; pour into glass.",
-          "Fry eggs (Diego: 3; Diana: 2) in 1 tsp olive oil sunny-side-up 3\u20134 min.",
-          "Toast sourdough (Diego: 40 g; Diana: 30 g); crumble feta (Diego: 25 g; Diana: 20 g) over eggs.",
-          "Serve smoothie alongside. Drink 500 ml water."
+          "1. Boil eggs 9 minutes, cool, peel, halve.",
+          "2. Blend 250 ml kefir with 80 g raspberries and 80 g banana per person.",
+          "3. Toast sourdough: 50 g Diego / 35 g Diana.",
+          "4. Top with egg halves, crumble feta (30 g Diego / 20 g Diana), season with black pepper.",
+          "5. Serve smoothie. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "eggs_cooked",
@@ -2690,94 +2786,88 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
-                "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
-              },
-              {
-                "item": "Blueberries (myrtilles)",
+                "item": "Raspberries (framboises)",
                 "qty": "80 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
+                "item": "Banana (banane)",
+                "qty": "80 g"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
+                "item": "Eggs, boiled (\u0153ufs durs)",
+                "qty": "2 large"
+              },
+              {
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
               },
               {
                 "item": "Feta cheese (fromage feta)",
-                "qty": "25 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1 tsp"
+                "qty": "30 g"
               }
             ],
             "macros": {
-              "kcal": 545,
-              "protein_g": 35,
-              "carbs_g": 44,
-              "fat_g": 22,
-              "fiber_g": 4
+              "kcal": 485,
+              "protein_g": 30,
+              "carbs_g": 47,
+              "fat_g": 18,
+              "fiber_g": 6
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Kefir (k\u00e9fir)",
+                "item": "Kefir (k\u00e9fir de lait)",
                 "qty": "250 ml"
               },
               {
+                "item": "Raspberries (framboises)",
+                "qty": "60 g"
+              },
+              {
                 "item": "Banana (banane)",
-                "qty": "1/2 medium (60 g)"
+                "qty": "60 g"
               },
               {
-                "item": "Blueberries (myrtilles)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs, boiled (\u0153ufs durs)",
                 "qty": "2 large"
               },
               {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
               },
               {
                 "item": "Feta cheese (fromage feta)",
                 "qty": "20 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1/2 tsp"
               }
             ],
             "macros": {
-              "kcal": 415,
-              "protein_g": 25,
-              "carbs_g": 39,
-              "fat_g": 16,
-              "fiber_g": 4
+              "kcal": 375,
+              "protein_g": 24,
+              "carbs_g": 35,
+              "fat_g": 13,
+              "fiber_g": 5
             }
           }
         }
       },
       {
         "slot": "am_snack",
-        "name": "Apple with Walnuts",
+        "name": "Apple & Walnut Snack",
         "time": "10:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 1,
-        "image_prompt": "apple wedges and walnuts on a small Sunday morning plate, sunlight streaming through kitchen window",
+        "image_prompt": "overhead of apple slices and walnut halves on a small wooden board, warm weekend morning light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Slice 1 apple; weigh walnuts (Diego: 25 g; Diana: 20 g). Eat apple first. Drink 500 ml water."
+          "1. Slice 1 apple per person.",
+          "2. Weigh 20 g walnuts (Diego) / 15 g walnuts (Diana).",
+          "3. Serve. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "generic",
@@ -2786,26 +2876,7 @@
             "ingredients": [
               {
                 "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
-              },
-              {
-                "item": "Walnuts (noix)",
-                "qty": "25 g"
-              }
-            ],
-            "macros": {
-              "kcal": 235,
-              "protein_g": 4,
-              "carbs_g": 24,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
-          },
-          "diana": {
-            "ingredients": [
-              {
-                "item": "Apple (pomme)",
-                "qty": "1 medium (150 g)"
+                "qty": "150 g"
               },
               {
                 "item": "Walnuts (noix)",
@@ -2813,118 +2884,145 @@
               }
             ],
             "macros": {
-              "kcal": 205,
+              "kcal": 200,
               "protein_g": 3,
-              "carbs_g": 24,
-              "fat_g": 11,
-              "fiber_g": 5
+              "carbs_g": 22,
+              "fat_g": 13,
+              "fiber_g": 4
+            }
+          },
+          "diana": {
+            "ingredients": [
+              {
+                "item": "Apple (pomme)",
+                "qty": "130 g"
+              },
+              {
+                "item": "Walnuts (noix)",
+                "qty": "15 g"
+              }
+            ],
+            "macros": {
+              "kcal": 163,
+              "protein_g": 2,
+              "carbs_g": 18,
+              "fat_g": 10,
+              "fiber_g": 3
             }
           }
         }
       },
       {
         "slot": "lunch",
-        "name": "Mexican Egg & Chickpea Burrito Bowl with Roasted Peppers, Spinach & Brown Rice",
+        "name": "Beef & Roasted Vegetable Quinoa Salad with Balsamic Dressing",
         "time": "13:00",
         "prep_ahead": false,
-        "cook_minutes_day_of": 25,
-        "image_prompt": "overhead bowl with fluffy brown rice, spiced chickpeas, soft scrambled-style eggs folded through spinach, colourful roasted pepper strips, lime wedge on the side, bright Sunday midday light",
+        "cook_minutes_day_of": 30,
+        "image_prompt": "overhead of a large salad bowl with golden quinoa, thin seared beef strips, roasted cherry tomatoes, bell pepper chunks and cucumber slices, dressed with balsamic vinegar and olive oil, bright Sunday daylight",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Cook brown rice (Diego: 70 g dry; Diana: 50 g dry) in salted water 25 min; drain.",
-          "Roast sliced bell pepper (Diego: 80 g; Diana: 60 g) with olive oil and cumin 15 min at 200\u00b0C.",
-          "Drain and rinse chickpeas (Diego: 80 g; Diana: 60 g); warm in pan with cumin, chili powder, garlic powder, 1 tsp olive oil 3 min.",
-          "Beat eggs (Diego: 3; Diana: 2) with salt; cook in lightly oiled pan over low-medium heat, folding gently (not scrambled, more like baked omelette strips) 3\u20134 min; add 60 g spinach last minute, stir until wilted.",
-          "Assemble bowl: rice base, then spinach-egg mixture, chickpeas, roasted peppers.",
-          "Squeeze lime juice over; drizzle 1 tsp olive oil. Serve with 1/2 orange. Drink 500 ml water."
+          "1. Cook quinoa: rinse 70 g (Diego) / 50 g (Diana) dry quinoa, simmer in water 15 min, cool slightly.",
+          "2. Preheat oven 200\u00b0C. Toss cherry tomatoes (80 g) and bell pepper strips (80 g) per person with 1 tsp olive oil, dried oregano. Roast 20 min.",
+          "3. Season lean beef strips (160 g Diego / 120 g Diana) with smoked paprika, cumin, black pepper. Sear in hot pan with 1 tsp olive oil, 2\u20133 min each side. Rest and slice.",
+          "4. Slice cucumber (60 g per person) and add drained chickpeas (60 g per person).",
+          "5. Make dressing: 2 tsp olive oil + 1 tsp balsamic vinegar + pinch dried oregano per person.",
+          "6. Assemble: quinoa base, then roasted vegetables, cucumber, chickpeas, beef on top. Drizzle dressing. Drink 500 ml water."
         ],
         "storage_ref": "",
-        "food_category": "eggs_cooked",
+        "food_category": "red_meat",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "3 large"
+                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
+                "qty": "160 g"
               },
               {
-                "item": "Brown rice dry (riz complet)",
-                "qty": "70 g"
+                "item": "Quinoa (quinoa)",
+                "qty": "70 g dry"
               },
               {
-                "item": "Canned chickpeas drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "item": "Cherry tomatoes (tomates cerises)",
                 "qty": "80 g"
               },
               {
-                "item": "Bell pepper (poivron)",
+                "item": "Bell peppers (poivrons)",
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Cucumber (concombre)",
                 "qty": "60 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "2 tsp"
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "60 g"
               },
               {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "3 tsp"
               },
               {
-                "item": "Orange (orange)",
-                "qty": "1/2"
+                "item": "Balsamic vinegar (vinaigre balsamique)",
+                "qty": "1 tsp"
+              },
+              {
+                "item": "Smoked paprika, cumin, dried oregano",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 550,
-              "protein_g": 30,
-              "carbs_g": 65,
-              "fat_g": 16,
-              "fiber_g": 10
+              "kcal": 575,
+              "protein_g": 47,
+              "carbs_g": 51,
+              "fat_g": 18,
+              "fiber_g": 9
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "2 large"
+                "item": "Lean beef strips (lani\u00e8res de b\u0153uf maigre)",
+                "qty": "120 g"
               },
               {
-                "item": "Brown rice dry (riz complet)",
-                "qty": "50 g"
+                "item": "Quinoa (quinoa)",
+                "qty": "50 g dry"
               },
               {
-                "item": "Canned chickpeas drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
+                "item": "Cherry tomatoes (tomates cerises)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Bell peppers (poivrons)",
+                "qty": "80 g"
+              },
+              {
+                "item": "Cucumber (concombre)",
                 "qty": "60 g"
               },
               {
-                "item": "Bell pepper (poivron)",
+                "item": "Canned chickpeas, drained (pois chiches en bo\u00eete \u00e9goutt\u00e9s)",
                 "qty": "60 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
-                "qty": "60 g"
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
+                "qty": "2 tsp"
               },
               {
-                "item": "Olive oil (huile d'olive)",
+                "item": "Balsamic vinegar (vinaigre balsamique)",
                 "qty": "1 tsp"
               },
               {
-                "item": "Lime juice (jus de citron vert)",
-                "qty": "1/2 lime"
-              },
-              {
-                "item": "Orange (orange)",
-                "qty": "1/2"
+                "item": "Smoked paprika, cumin, dried oregano",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 410,
-              "protein_g": 21,
-              "carbs_g": 50,
-              "fat_g": 11,
+              "kcal": 430,
+              "protein_g": 33,
+              "carbs_g": 41,
+              "fat_g": 13,
               "fiber_g": 8
             }
           }
@@ -2932,16 +3030,17 @@
       },
       {
         "slot": "pm_snack",
-        "name": "Greek Yogurt with Strawberries",
+        "name": "Greek Yogurt with Raspberries & Pistachios",
         "time": "16:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 2,
-        "image_prompt": "a bowl of creamy white Greek yogurt with sliced strawberries arranged on top, soft Sunday afternoon light, white background",
+        "image_prompt": "close-up of a white Greek yogurt bowl with scattered red raspberries and bright green pistachios, golden Sunday afternoon light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Spoon Greek yogurt (Diego: 200 g; Diana: 150 g) into bowl.",
-          "Slice 80 g strawberries; place on top. Drink 500 ml water."
+          "1. Spoon 180 g (Diego) / 140 g (Diana) Greek yogurt into a bowl.",
+          "2. Top with 70 g raspberries and 15 g pistachios (Diego) / 50 g raspberries and 12 g pistachios (Diana).",
+          "3. Serve. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "dairy",
@@ -2949,58 +3048,68 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "200 g"
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "180 g"
               },
               {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
+                "item": "Raspberries (framboises)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Pistachios (pistaches)",
+                "qty": "15 g"
               }
             ],
             "macros": {
-              "kcal": 145,
-              "protein_g": 20,
+              "kcal": 220,
+              "protein_g": 18,
               "carbs_g": 14,
-              "fat_g": 1,
-              "fiber_g": 1
+              "fat_g": 10,
+              "fiber_g": 3
             }
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Greek yogurt 0% (yaourt grec 0%)",
-                "qty": "150 g"
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "140 g"
               },
               {
-                "item": "Strawberries (fraises)",
-                "qty": "80 g"
+                "item": "Raspberries (framboises)",
+                "qty": "50 g"
+              },
+              {
+                "item": "Pistachios (pistaches)",
+                "qty": "12 g"
               }
             ],
             "macros": {
-              "kcal": 115,
-              "protein_g": 15,
-              "carbs_g": 12,
-              "fat_g": 1,
-              "fiber_g": 1
+              "kcal": 170,
+              "protein_g": 13,
+              "carbs_g": 11,
+              "fat_g": 8,
+              "fiber_g": 2
             }
           }
         }
       },
       {
         "slot": "dinner",
-        "name": "Turmeric-Ginger Tilapia with Roasted Broccoli, Carrots & Lentils in Apple Cider Vinegar Dressing",
+        "name": "Tomato-Oregano Baked Tilapia with Cannellini Beans, Wilted Spinach & Sourdough",
         "time": "19:30",
         "prep_ahead": false,
         "cook_minutes_day_of": 25,
-        "image_prompt": "a plate with golden turmeric tilapia, dark roasted broccoli florets and caramelised carrot slices, a mound of green lentils glistening with a light vinegar dressing, warm Sunday evening light",
+        "image_prompt": "overhead of a baked tilapia fillet in a tomato-oregano sauce surrounded by creamy white cannellini beans and wilted spinach in a white baking dish, sourdough slice on the side, warm Sunday evening light",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "Preheat oven 200\u00b0C. Toss broccoli (Diego: 120 g; Diana: 90 g) and sliced carrots (Diego: 80 g; Diana: 60 g) with 1 tsp olive oil, turmeric, black pepper; roast 20 min.",
-          "Season tilapia (Diego: 170 g; Diana: 120 g) with turmeric, ginger powder, garlic powder, 1 tsp olive oil; pan-fry 3\u20134 min per side.",
-          "Warm canned lentils (Diego: 100 g; Diana: 70 g) in small pan; dress with 1 tsp apple cider vinegar, 1/2 tsp cumin, salt.",
-          "Plate: lentils first, roasted veg alongside, tilapia on top.",
-          "Drizzle 1/2 tsp sesame oil as finishing flavour. Drink 500 ml water."
+          "1. Preheat oven to 190\u00b0C.",
+          "2. Spread passata (100 g per person) in the base of an oven-proof dish. Add dried oregano, chili flakes, black pepper.",
+          "3. Rinse and add drained cannellini beans (70 g Diego / 50 g Diana) to sauce, stir.",
+          "4. Lay tilapia fillets (150 g Diego / 115 g Diana) on top of beans. Drizzle 1 tsp olive oil each, dust with smoked paprika.",
+          "5. Bake 18\u201320 minutes until fish flakes and sauce bubbles.",
+          "6. Stir in 70 g fresh spinach per person, return to oven for 2 minutes until wilted.",
+          "7. Toast sourdough: 50 g Diego / 35 g Diana. Serve alongside baking dish. Drink 500 ml water."
         ],
         "storage_ref": "",
         "food_category": "fish_seafood",
@@ -3009,78 +3118,78 @@
             "ingredients": [
               {
                 "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "170 g raw"
+                "qty": "150 g"
               },
               {
-                "item": "Broccoli (brocoli)",
-                "qty": "120 g"
+                "item": "Canned cannellini beans, drained (haricots blancs en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "70 g"
               },
               {
-                "item": "Carrot (carotte)",
-                "qty": "80 g"
-              },
-              {
-                "item": "Canned lentils drained (lentilles en bo\u00eete \u00e9goutt\u00e9es)",
+                "item": "Tomato passata (passata de tomates)",
                 "qty": "100 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
+                "item": "Fresh spinach (\u00e9pinards frais)",
+                "qty": "70 g"
+              },
+              {
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
                 "qty": "2 tsp"
               },
               {
-                "item": "Apple cider vinegar (vinaigre de cidre)",
-                "qty": "1 tsp"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "50 g"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
-                "qty": "1/2 tsp"
+                "item": "Dried oregano, smoked paprika, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 440,
-              "protein_g": 44,
-              "carbs_g": 30,
-              "fat_g": 15,
-              "fiber_g": 11
+              "kcal": 500,
+              "protein_g": 43,
+              "carbs_g": 40,
+              "fat_g": 13,
+              "fiber_g": 8
             }
           },
           "diana": {
             "ingredients": [
               {
                 "item": "Tilapia fillet (filet de tilapia)",
-                "qty": "120 g raw"
+                "qty": "115 g"
               },
               {
-                "item": "Broccoli (brocoli)",
-                "qty": "90 g"
+                "item": "Canned cannellini beans, drained (haricots blancs en bo\u00eete \u00e9goutt\u00e9s)",
+                "qty": "50 g"
               },
               {
-                "item": "Carrot (carotte)",
-                "qty": "60 g"
+                "item": "Tomato passata (passata de tomates)",
+                "qty": "100 g"
               },
               {
-                "item": "Canned lentils drained (lentilles en bo\u00eete \u00e9goutt\u00e9es)",
+                "item": "Fresh spinach (\u00e9pinards frais)",
                 "qty": "70 g"
               },
               {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "1.5 tsp"
-              },
-              {
-                "item": "Apple cider vinegar (vinaigre de cidre)",
+                "item": "Extra virgin olive oil (huile d'olive extra vierge)",
                 "qty": "1 tsp"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
-                "qty": "1/2 tsp"
+                "item": "Wholegrain sourdough bread (pain au levain complet)",
+                "qty": "35 g"
+              },
+              {
+                "item": "Dried oregano, smoked paprika, chili flakes",
+                "qty": "to taste"
               }
             ],
             "macros": {
-              "kcal": 325,
-              "protein_g": 31,
-              "carbs_g": 22,
-              "fat_g": 11,
-              "fiber_g": 8
+              "kcal": 375,
+              "protein_g": 30,
+              "carbs_g": 31,
+              "fat_g": 10,
+              "fiber_g": 7
             }
           }
         }
@@ -3088,18 +3197,18 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 1915,
-        "protein_g": 133,
-        "carbs_g": 177,
-        "fat_g": 68,
-        "fiber_g": 31
+        "kcal": 1980,
+        "protein_g": 141,
+        "carbs_g": 174,
+        "fat_g": 72,
+        "fiber_g": 30
       },
       "diana": {
-        "kcal": 1470,
-        "protein_g": 95,
-        "carbs_g": 147,
-        "fat_g": 50,
-        "fiber_g": 26
+        "kcal": 1513,
+        "protein_g": 102,
+        "carbs_g": 136,
+        "fat_g": 54,
+        "fiber_g": 25
       }
     }
   }

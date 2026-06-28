@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Herb-Crusted Boiled Egg with Sourdough & Berries",
-      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
-      "Baked White Fish with Lemon Butter, Green Beans & Sweet Potato",
-      "Smoked Salmon & Cream Cheese on Rye",
-      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
-      "Pan-Seared Tuna Steak with Sesame Bok Choy & Brown Rice",
-      "Soft Cheese & Wheatgerm Toast with Kiwi",
-      "Chicken Caesar Salad with Wholegrain Croutons",
-      "Mexican Lean Beef & Chickpea Taco Bowls with Cilantro-Lime Dressing",
-      "Greek Yogurt Parfait with Granola & Strawberries"
-    ],
-    "shopping_items": 103,
-    "prep_minutes": 183,
-    "day_kcal": {
-      "diego": 1838,
-      "diana": 1427
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Boiled Egg with Sourdough & Berries",
       "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
       "Baked White Fish with Lemon & Green Beans",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 2003,
       "diana": 1537
+    }
+  },
+  {
+    "week_of": "2026-06-29",
+    "generated": "2026-06-28",
+    "meal_names": [
+      "Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Feta",
+      "Mexican Beef & Lentil Stuffed Pepper Bowl with Quinoa",
+      "Baked Salmon with Roasted Broccoli, Carrots & Sweet Potato Wedges",
+      "Kefir & Raspberry Smoothie + Boiled Eggs on Sourdough with Feta",
+      "Asian Soy-Ginger Tilapia Bowl with Stir-Fried Broccoli, Carrots & Brown Rice",
+      "Mediterranean Beef & Chickpea Traybake with Roasted Zucchini, Peppers & Sourdough",
+      "Kefir & Banana Blueberry Smoothie + Boiled Eggs on Sourdough with Feta",
+      "Mexican Beef & Black Bean Corn Tortilla Bowls with Roasted Peppers & Spinach",
+      "French-Style Salmon en Papillote with Zucchini, Carrots & Herbed Potatoes",
+      "Kefir & Blueberry Banana Smoothie + Boiled Eggs on Sourdough with Feta"
+    ],
+    "shopping_items": 57,
+    "prep_minutes": 0,
+    "day_kcal": {
+      "diego": 1986,
+      "diana": 1527
     }
   }
 ]
