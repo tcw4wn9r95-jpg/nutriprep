@@ -491,6 +491,10 @@
     <div class="stats-strip" id="home-stats"></div>
     <div class="milestones" id="home-milestones"></div>
     <div id="plan-action" style="margin-bottom:12px"></div>
+    <div id="plan-paused-banner" style="display:none;background:var(--honey-pale);border:1px solid var(--honey);border-radius:var(--r-sm);padding:10px 14px;margin-bottom:12px;font-size:13px;color:var(--ink);align-items:center;gap:10px">
+      <span style="font-size:18px">⏸</span>
+      <span>Auto-generation is <strong>paused</strong> — Sunday's plan run is skipped. Manual generate still works. <span style="color:var(--pine);cursor:pointer;text-decoration:underline" onclick="showTab('settings')">Resume in Settings</span></span>
+    </div>
     <div id="training-banner"></div>
     <div id="today-banner"></div>
     <div class="card" id="today-macro-card" style="display:none">
@@ -601,6 +605,17 @@
       </div>
     </div>
     <div class="card">
+      <div class="card-title">Plan generation</div>
+      <div class="setting-row">
+        <div>
+          <div class="setting-label">Auto-generate weekly plan</div>
+          <div class="setting-sub">Runs every Sunday at 20:00 Luxembourg time. Turn off to save Claude credits.</div>
+        </div>
+        <button class="toggle on" id="plan-gen-toggle" onclick="togglePlanPause()"></button>
+      </div>
+      <div id="plan-gen-status" style="font-size:12px;color:var(--muted);margin-top:6px"></div>
+    </div>
+    <div class="card">
       <div class="card-title">Notifications</div>
       <div class="setting-row">
         <div><div class="setting-label">Push notifications</div><div class="setting-sub">Prep, cook, snack & weigh-in</div></div>
@@ -623,7 +638,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v35 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v36 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -647,7 +662,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 35; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 36; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -774,7 +789,42 @@ function ytSearchBtn(name){ return recipeVideoLinks(name); }
 function cfg(k){ return localStorage.getItem("nutriprep_"+k) || ""; }
 function setCfg(k,v){ localStorage.setItem("nutriprep_"+k, v); }
 function saveSettings(){ setCfg("anthropic_key", document.getElementById("s-anthropic-key").value); setCfg("gh_token", document.getElementById("s-gh-token").value); }
-function loadSettingsUI(){ document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderIdentityPicker(); renderGoals(); renderMacrosCard(); }
+function loadSettingsUI(){ document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderIdentityPicker(); renderGoals(); renderMacrosCard(); loadPlanConfig(); }
+
+// ── Plan pause ────────────────────────────────────────────────────────────────
+let planConfig = {paused: false};
+
+async function loadPlanConfig(){
+  try { planConfig = await ghFetch("plan_config.json"); } catch(_){ planConfig = {paused:false}; }
+  _applyPlanPauseUI();
+}
+
+function _applyPlanPauseUI(){
+  const paused = !!planConfig.paused;
+  const toggle = document.getElementById("plan-gen-toggle");
+  const status = document.getElementById("plan-gen-status");
+  const banner = document.getElementById("plan-paused-banner");
+  if(toggle){ toggle.classList.toggle("on", !paused); }
+  if(status){ status.textContent = paused ? "Paused — Sunday auto-run will be skipped." : "Active — plan regenerates every Sunday automatically."; }
+  if(banner){ banner.style.display = paused ? "flex" : "none"; }
+}
+
+async function togglePlanPause(){
+  if(!cfg("gh_token")){ alert("Add your GitHub token in Settings first."); return; }
+  const status = document.getElementById("plan-gen-status");
+  const newPaused = !planConfig.paused;
+  planConfig = {...planConfig, paused: newPaused};
+  _applyPlanPauseUI();
+  if(status) status.textContent = "Saving…";
+  try {
+    await ghWrite("plan_config.json", planConfig, newPaused ? "Pause plan auto-generation" : "Resume plan auto-generation");
+    _applyPlanPauseUI();
+  } catch(e){
+    planConfig = {...planConfig, paused: !newPaused};
+    _applyPlanPauseUI();
+    alert("Couldn't save: " + e.message);
+  }
+}
 
 // ── Identity ──────────────────────────────────────────────────────────────────
 function pickIdentity(who, el){ pendingIdentity=who; document.querySelectorAll(".identity-choice").forEach(b=>b.classList.remove("selected")); if(el)el.classList.add("selected"); }
@@ -1999,7 +2049,7 @@ async function showTab(tab){
 async function init(){
   renderUserChip();
   document.getElementById("notif-toggle").classList.toggle("on",!!cfg("notif_enabled"));
-  await Promise.all([loadSharedData(), loadUserData()]);
+  await Promise.all([loadSharedData(), loadUserData(), loadPlanConfig()]);
   renderToday();
   document.getElementById("build-label").textContent=`NutriPrep · build v${APP_BUILD} · nutriprep`;
   if("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").then(reg=>{ try{reg.update();}catch(_){} }).catch(e=>console.warn("SW:",e)); }

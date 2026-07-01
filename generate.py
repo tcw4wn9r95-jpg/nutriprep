@@ -99,6 +99,14 @@ ATHLETE_MEMBER = "diego"
 
 # ── Skip if plan already exists (unless forced) ───────────────────────────────
 _force = os.environ.get("FORCE_GENERATE", "").strip().lower() in ("1", "true")
+
+# ── Pause gate: respect plan_config.json {"paused": true} on scheduled runs ──
+if not _force and (BASE / "plan_config.json").exists():
+    with open(BASE / "plan_config.json") as _f:
+        if json.load(_f).get("paused"):
+            print("⏸  Plan generation is paused. Open the app → Settings → Plan generation to resume.")
+            sys.exit(0)
+
 if not _force and (BASE / "plan_status.json").exists():
     with open(BASE / "plan_status.json") as f:
         existing = json.load(f)
