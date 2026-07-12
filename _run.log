@@ -31,7 +31,7 @@ Collecting pydantic-core==2.46.4 (from pydantic<3,>=1.9.0->anthropic>=0.40.0)
 Collecting typing-inspection>=0.4.2 (from pydantic<3,>=1.9.0->anthropic>=0.40.0)
   Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
 Downloading anthropic-0.116.0-py3-none-any.whl (956 kB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 956.9/956.9 kB 17.2 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 956.9/956.9 kB 145.5 MB/s  0:00:00
 Downloading anyio-4.14.1-py3-none-any.whl (124 kB)
 Downloading distro-1.9.0-py3-none-any.whl (20 kB)
 Downloading docstring_parser-0.18.0-py3-none-any.whl (22 kB)
@@ -40,7 +40,7 @@ Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
 Downloading jiter-0.16.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (343 kB)
 Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
 Downloading pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 48.9 MB/s  0:00:00
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 280.3 MB/s  0:00:00
 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
 Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
 Downloading h11-0.16.0-py3-none-any.whl (37 kB)
