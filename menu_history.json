@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Herb-Crusted Boiled Egg with Sourdough & Raspberries",
-      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
-      "Boiled Egg & Cheese Plate with Whole-Grain Pita & Avocado",
-      "Herb-Crusted Boiled Egg with Sourdough & Blueberries",
-      "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
-      "Mexican-Style Chicken Lettuce Wrap with Black Beans & Lime",
-      "Herb-Crusted Boiled Egg with Sourdough & Peach",
-      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
-      "Asian Tofu & Bok Choy Stir-Fry with Brown Rice",
-      "Herb-Crusted Boiled Egg with Sourdough & Strawberries"
-    ],
-    "shopping_items": 80,
-    "prep_minutes": 285,
-    "day_kcal": {
-      "diego": 1934,
-      "diana": 1435
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Boiled Egg with Sourdough, Cheese & Raspberries",
       "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
       "Baked White Fish with Lemon, Green Beans & Sweet Potato",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1988,
       "diana": 1537
+    }
+  },
+  {
+    "week_of": "2026-08-17",
+    "generated": "2026-08-11",
+    "meal_names": [
+      "Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Avocado",
+      "Mediterranean Beef & Lentil Bowl with Roasted Peppers & Quinoa",
+      "Soy-Ginger Baked Salmon with Stir-Fried Broccoli & Spinach on Sourdough",
+      "Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Greek Yogurt Spread",
+      "Asian Tilapia Bowl with Stir-Fried Zucchini, Carrots & Brown Rice",
+      "Mexican Beef & Black Bean Lettuce-Free Taco Bowl with Roasted Peppers & Corn Tortillas",
+      "Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Avocado",
+      "French-Style Beef & Mushroom Stew with Leeks, Roasted Carrots & Whole-Wheat Pasta",
+      "Turmeric-Paprika Baked Tilapia with Roasted Cherry Tomatoes, Spinach & Sweet Potato Wedges",
+      "Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Olive Oil & Oregano"
+    ],
+    "shopping_items": 53,
+    "prep_minutes": 12,
+    "day_kcal": {
+      "diego": 1879,
+      "diana": 1515
     }
   }
 ]

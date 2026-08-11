@@ -3,70 +3,72 @@
   "generated": "2026-08-11",
   "week_of": "2026-08-17",
   "meal_count": 35,
-  "shopping_items": 48,
-  "prep_batches": 4,
-  "prep_minutes": 40,
+  "shopping_items": 53,
+  "prep_batches": 1,
+  "prep_minutes": 12,
   "notification_events": 30,
-  "fresh_shop_items": 24,
-  "pantry_staple_items": 24,
+  "fresh_shop_items": 27,
+  "pantry_staple_items": 26,
   "locked_palette": {
     "proteins": [
-      "tilapia",
       "salmon",
+      "tilapia",
       "beef (lean cuts)",
-      "eggs (boiled, poached, baked)"
+      "eggs"
     ],
     "vegetables": [
-      "garlic",
-      "onion (cooked only)",
-      "bell peppers (red, yellow)",
+      "bell peppers",
       "zucchini",
       "cherry tomatoes",
       "carrots",
       "broccoli",
-      "cucumber",
-      "spinach (fresh, for cooking)",
-      "ginger"
+      "spinach",
+      "garlic",
+      "ginger",
+      "leeks",
+      "mushrooms"
     ],
     "fruits": [
       "blueberries",
-      "strawberries",
       "apples",
-      "bananas",
-      "oranges"
+      "oranges",
+      "pears",
+      "bananas"
     ],
     "breads_greens": [
-      "sourdough bread (whole grain)",
-      "mixed salad greens (or romaine)"
+      "sourdough bread",
+      "spinach"
     ],
     "carbs_staples": [
       "brown rice",
-      "whole wheat pasta",
-      "sweet potato",
-      "potatoes (waxy, with skin)",
-      "corn tortillas",
-      "quinoa",
+      "whole-wheat pasta",
+      "sweet potatoes",
+      "potatoes",
       "canned lentils",
       "canned chickpeas",
-      "canned black beans"
+      "canned black beans",
+      "quinoa",
+      "corn tortillas"
     ],
     "spices_sauces_staples": [
-      "extra virgin olive oil",
+      "olive oil",
       "sesame oil",
       "balsamic vinegar",
       "soy sauce",
-      "lime juice",
       "cumin",
       "paprika",
-      "dried oregano",
-      "dried thyme",
+      "turmeric",
       "garlic powder",
+      "ginger powder",
+      "dried thyme",
+      "dried oregano",
+      "chilli powder",
+      "smoked paprika",
       "ground coriander",
-      "chili powder",
-      "black pepper",
-      "salt",
-      "Greek yogurt (plain, unsweetened)",
-      "kefir (plain, unsweetened)"
+      "lime juice",
+      "tomato passata",
+      "greek yogurt",
+      "kefir"
     ]
   }
 }
