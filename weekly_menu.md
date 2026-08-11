@@ -1,63 +1,63 @@
-# Meal Plan — Week of 29 June 2026
+# Meal Plan — Week of 17 August 2026
 
-**Generated:** 28 June 2026  
+**Generated:** 11 August 2026  
 **Diego:** 2090 kcal/day  
 **Diana:** 1550 kcal/day  
 
 ---
 
-## Monday — 2026-06-29
-- ☀️ **Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Feta** (07:30) — Diego 490 kcal · Diana 390 kcal
-- 🍎 **Apple & Almond Snack** (10:30) — Diego 215 kcal · Diana 172 kcal
-- 🥗 **Mexican Beef & Lentil Stuffed Pepper Bowl with Quinoa** (13:00) — Diego 570 kcal · Diana 420 kcal
-- 🥜 **Greek Yogurt with Raspberries & Walnuts** (16:30) — Diego 225 kcal · Diana 170 kcal
-- 🍽️ **Baked Salmon with Roasted Broccoli, Carrots & Sweet Potato Wedges** (19:30) — Diego 490 kcal · Diana 360 kcal
-  - **Day totals** — Diego 1990 kcal, Diana 1512 kcal
+## Monday — 2026-08-17
+- ☀️ **Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Avocado** (07:30) — Diego 490 kcal · Diana 390 kcal
+- 🍎 **Apple & Walnut Snack** (10:30) — Diego 238 kcal · Diana 208 kcal
+- 🥗 **Mediterranean Beef & Lentil Bowl with Roasted Peppers, Zucchini & Quinoa** (13:00) — Diego 620 kcal · Diana 470 kcal
+- 🥜 **Greek Yogurt with Strawberries** (16:30) — Diego 145 kcal · Diana 115 kcal
+- 🍽️ **Asian Soy-Ginger Salmon with Stir-Fried Broccoli, Carrots & Brown Rice** (19:30) — Diego 510 kcal · Diana 370 kcal
+  - **Day totals** — Diego 2003 kcal, Diana 1553 kcal
 
-## Tuesday — 2026-06-30
-- ☀️ **Kefir & Raspberry Smoothie + Boiled Eggs on Sourdough with Feta** (07:30) — Diego 485 kcal · Diana 385 kcal
-- 🍎 **Orange & Walnut Snack** (10:30) — Diego 195 kcal · Diana 165 kcal
-- 🥗 **Asian Soy-Ginger Tilapia Bowl with Stir-Fried Broccoli, Carrots & Brown Rice** (13:00) — Diego 530 kcal · Diana 400 kcal
-- 🥜 **Greek Yogurt with Blueberries & Almonds** (16:30) — Diego 240 kcal · Diana 180 kcal
-- 🍽️ **Mediterranean Beef & Chickpea Traybake with Roasted Zucchini, Peppers & Sourdough** (19:30) — Diego 530 kcal · Diana 395 kcal
-  - **Day totals** — Diego 1980 kcal, Diana 1525 kcal
+## Tuesday — 2026-08-18
+- ☀️ **Kefir & Strawberry Smoothie + Boiled Eggs on Sourdough with Olive Oil** (07:30) — Diego 495 kcal · Diana 390 kcal
+- 🍎 **Orange & Almonds Snack** (10:30) — Diego 205 kcal · Diana 176 kcal
+- 🥗 **Mexican Beef & Black Bean Bowl with Roasted Peppers, Corn Tortillas & Lime** (13:00) — Diego 645 kcal · Diana 475 kcal
+- 🥜 **Greek Yogurt with Blueberries** (16:30) — Diego 148 kcal · Diana 118 kcal
+- 🍽️ **Baked Tilapia with Paprika-Cumin Roasted Carrots & Sweet Potato Wedges** (19:30) — Diego 430 kcal · Diana 340 kcal
+  - **Day totals** — Diego 1923 kcal, Diana 1499 kcal
 
-## Wednesday — 2026-07-01
-- ☀️ **Kefir & Banana Blueberry Smoothie + Boiled Eggs on Sourdough with Feta** (07:30) — Diego 490 kcal · Diana 385 kcal
-- 🍎 **Apple & Pistachio Snack** (10:30) — Diego 220 kcal · Diana 178 kcal
-- 🥗 **Mexican Beef & Black Bean Corn Tortilla Bowls with Roasted Peppers & Spinach** (13:00) — Diego 555 kcal · Diana 415 kcal
-- 🥜 **Greek Yogurt with Raspberries & Walnuts** (16:30) — Diego 225 kcal · Diana 170 kcal
-- 🍽️ **French-Style Salmon en Papillote with Zucchini, Carrots & Herbed Potatoes** (19:30) — Diego 500 kcal · Diana 375 kcal
-  - **Day totals** — Diego 1990 kcal, Diana 1523 kcal
+## Wednesday — 2026-08-19
+- ☀️ **Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Olive Oil** (07:30) — Diego 490 kcal · Diana 390 kcal
+- 🍎 **Apple & Almonds Snack** (10:30) — Diego 238 kcal · Diana 208 kcal
+- 🥗 **French-Style Salmon Niçoise Bowl with Chickpeas, Mixed Greens & Potatoes** (13:00) — Diego 615 kcal · Diana 460 kcal
+- 🥜 **Greek Yogurt with Strawberries** (16:30) — Diego 145 kcal · Diana 115 kcal
+- 🍽️ **Mediterranean Beef & Chickpea Skillet with Spinach, Cherry Tomatoes & Sourdough** (19:30) — Diego 540 kcal · Diana 395 kcal
+  - **Day totals** — Diego 2028 kcal, Diana 1568 kcal
 
-## Thursday — 2026-07-02
-- ☀️ **Kefir & Blueberry Banana Smoothie + Boiled Eggs on Sourdough with Feta** (07:30) — Diego 485 kcal · Diana 380 kcal
-- 🍎 **Orange & Almond Snack** (10:30) — Diego 220 kcal · Diana 185 kcal
-- 🥗 **Creamy Tomato Chicken Thighs with Wilted Spinach & Wholemeal Penne** (13:00) — Diego 570 kcal · Diana 435 kcal
-- 🥜 **Greek Yogurt with Blueberries & Pistachios** (16:30) — Diego 225 kcal · Diana 175 kcal
-- 🍽️ **Baked Tilapia with Roasted Broccoli, Cherry Tomatoes & Cannellini Beans on Sourdough** (19:30) — Diego 490 kcal · Diana 370 kcal
-  - **Day totals** — Diego 1990 kcal, Diana 1545 kcal
+## Thursday — 2026-08-20
+- ☀️ **Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Olive Oil** (07:30) — Diego 490 kcal · Diana 390 kcal
+- 🍎 **Apple & Walnuts Snack** (10:30) — Diego 238 kcal · Diana 208 kcal
+- 🥗 **Asian Ginger-Soy Beef Stir-Fry with Zucchini, Broccoli & Whole-Wheat Noodles** (13:00) — Diego 620 kcal · Diana 450 kcal
+- 🥜 **Greek Yogurt with Blueberries** (16:30) — Diego 148 kcal · Diana 118 kcal
+- 🍽️ **Baked Salmon with Lentil & Spinach Salad, Roasted Cherry Tomatoes & Sourdough** (19:30) — Diego 510 kcal · Diana 385 kcal
+  - **Day totals** — Diego 2006 kcal, Diana 1551 kcal
 
-## Friday — 2026-07-03
-- ☀️ **Kefir & Raspberry Smoothie + Boiled Eggs on Sourdough with Feta** (07:30) — Diego 480 kcal · Diana 380 kcal
-- 🍎 **Apple & Cashew Snack** (10:30) — Diego 225 kcal · Diana 182 kcal
-- 🥗 **Asian Sesame Beef Stir-Fry with Zucchini, Broccoli & Wholewheat Noodles** (13:00) — Diego 575 kcal · Diana 435 kcal
-- 🥜 **Greek Yogurt with Raspberries & Almonds** (16:30) — Diego 235 kcal · Diana 178 kcal
-- 🍽️ **Mediterranean Baked Salmon with Chickpea-Spinach Ragù & Roasted Bell Peppers** (19:30) — Diego 480 kcal · Diana 365 kcal
-  - **Day totals** — Diego 1995 kcal, Diana 1540 kcal
+## Friday — 2026-08-21
+- ☀️ **Kefir & Strawberry Smoothie + Fresh Boiled Eggs on Sourdough** (07:30) — Diego 495 kcal · Diana 390 kcal
+- 🍎 **Orange & Almonds Snack** (10:30) — Diego 205 kcal · Diana 176 kcal
+- 🥗 **Mexican Tilapia Taco Bowl with Black Beans, Roasted Peppers, Corn Tortillas & Lime** (13:00) — Diego 580 kcal · Diana 420 kcal
+- 🥜 **Greek Yogurt with Blueberries** (16:30) — Diego 148 kcal · Diana 118 kcal
+- 🍽️ **French Herb-Baked Tilapia with Ratatouille-Style Roasted Veg & Quinoa** (19:30) — Diego 530 kcal · Diana 390 kcal
+  - **Day totals** — Diego 1958 kcal, Diana 1494 kcal
 
-## Saturday — 2026-07-04
-- ☀️ **Kefir & Blueberry Orange Smoothie + Boiled Eggs on Sourdough with Feta** (07:30) — Diego 475 kcal · Diana 375 kcal
-- 🍎 **Orange & Pistachio Snack** (10:30) — Diego 220 kcal · Diana 185 kcal
-- 🥗 **French Lentil & Roasted Vegetable Salad with Poached Egg & Sourdough** (13:00) — Diego 540 kcal · Diana 415 kcal
-- 🥜 **Greek Yogurt with Blueberries & Walnuts** (16:30) — Diego 225 kcal · Diana 170 kcal
-- 🍽️ **Honey-Glazed Tilapia with Stir-Fried Celery, Zucchini & Sweet Potato Mash** (19:30) — Diego 520 kcal · Diana 385 kcal
-  - **Day totals** — Diego 1980 kcal, Diana 1530 kcal
+## Saturday — 2026-08-22
+- ☀️ **Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Olive Oil** (07:30) — Diego 490 kcal · Diana 390 kcal
+- 🍎 **Apple & Walnuts Snack** (10:30) — Diego 238 kcal · Diana 208 kcal
+- 🥗 **Mediterranean Beef & Lentil Stuffed Bell Peppers with Quinoa & Tomato Sauce** (13:00) — Diego 640 kcal · Diana 470 kcal
+- 🥜 **Greek Yogurt with Strawberries** (16:30) — Diego 145 kcal · Diana 115 kcal
+- 🍽️ **Asian Sesame-Glazed Tilapia with Stir-Fried Zucchini, Carrots & Whole-Wheat Noodles** (19:30) — Diego 505 kcal · Diana 375 kcal
+  - **Day totals** — Diego 2018 kcal, Diana 1558 kcal
 
-## Sunday — 2026-07-05
-- ☀️ **Kefir & Banana Raspberry Smoothie + Boiled Eggs on Sourdough with Feta** (07:30) — Diego 485 kcal · Diana 375 kcal
-- 🍎 **Apple & Walnut Snack** (10:30) — Diego 200 kcal · Diana 163 kcal
-- 🥗 **Beef & Roasted Vegetable Quinoa Salad with Balsamic Dressing** (13:00) — Diego 575 kcal · Diana 430 kcal
-- 🥜 **Greek Yogurt with Raspberries & Pistachios** (16:30) — Diego 220 kcal · Diana 170 kcal
-- 🍽️ **Tomato-Oregano Baked Tilapia with Cannellini Beans, Wilted Spinach & Sourdough** (19:30) — Diego 500 kcal · Diana 375 kcal
-  - **Day totals** — Diego 1980 kcal, Diana 1513 kcal
+## Sunday — 2026-08-23
+- ☀️ **Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Olive Oil** (07:30) — Diego 490 kcal · Diana 390 kcal
+- 🍎 **Orange & Walnuts Snack** (10:30) — Diego 218 kcal · Diana 188 kcal
+- 🥗 **Creamy Tomato & Spinach Baked Eggs with Chickpeas on Sourdough** (13:00) — Diego 580 kcal · Diana 440 kcal
+- 🥜 **Greek Yogurt with Blueberries** (16:30) — Diego 148 kcal · Diana 118 kcal
+- 🍽️ **Oven-Baked Salmon & Beef Skewer Bowl with Roasted Peppers, Brown Rice & Lemon-Herb Yogurt** (19:30) — Diego 545 kcal · Diana 400 kcal
+  - **Day totals** — Diego 1981 kcal, Diana 1536 kcal

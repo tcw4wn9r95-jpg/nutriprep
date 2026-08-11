@@ -1,74 +1,72 @@
 {
   "status": "published",
-  "generated": "2026-06-28",
-  "week_of": "2026-06-29",
+  "generated": "2026-08-11",
+  "week_of": "2026-08-17",
   "meal_count": 35,
-  "shopping_items": 57,
-  "prep_batches": 0,
-  "prep_minutes": 0,
+  "shopping_items": 48,
+  "prep_batches": 4,
+  "prep_minutes": 40,
   "notification_events": 30,
-  "fresh_shop_items": 22,
-  "pantry_staple_items": 35,
+  "fresh_shop_items": 24,
+  "pantry_staple_items": 24,
   "locked_palette": {
     "proteins": [
       "tilapia",
       "salmon",
       "beef (lean cuts)",
-      "eggs (boiled/poached only)"
+      "eggs (boiled, poached, baked)"
     ],
     "vegetables": [
+      "garlic",
+      "onion (cooked only)",
       "bell peppers (red, yellow)",
       "zucchini",
       "cherry tomatoes",
-      "broccoli",
       "carrots",
-      "spinach (fresh, for cooking)",
+      "broccoli",
       "cucumber",
-      "garlic",
-      "ginger",
-      "celery"
+      "spinach (fresh, for cooking)",
+      "ginger"
     ],
     "fruits": [
       "blueberries",
-      "raspberries",
+      "strawberries",
       "apples",
       "bananas",
       "oranges"
     ],
     "breads_greens": [
       "sourdough bread (whole grain)",
-      "mixed leaf salad greens"
+      "mixed salad greens (or romaine)"
     ],
     "carbs_staples": [
       "brown rice",
-      "wholewheat pasta",
-      "sweet potatoes",
+      "whole wheat pasta",
+      "sweet potato",
       "potatoes (waxy, with skin)",
-      "quinoa",
       "corn tortillas",
+      "quinoa",
       "canned lentils",
       "canned chickpeas",
-      "canned cannellini beans"
+      "canned black beans"
     ],
     "spices_sauces_staples": [
       "extra virgin olive oil",
       "sesame oil",
       "balsamic vinegar",
-      "red wine vinegar",
       "soy sauce",
-      "tamari",
+      "lime juice",
       "cumin",
-      "smoked paprika",
+      "paprika",
       "dried oregano",
       "dried thyme",
-      "dried basil",
-      "black pepper",
-      "sea salt",
-      "chili flakes",
+      "garlic powder",
       "ground coriander",
-      "cinnamon",
-      "lime juice (bottled)",
-      "tomato passata (tinned)"
+      "chili powder",
+      "black pepper",
+      "salt",
+      "Greek yogurt (plain, unsweetened)",
+      "kefir (plain, unsweetened)"
     ]
   }
 }

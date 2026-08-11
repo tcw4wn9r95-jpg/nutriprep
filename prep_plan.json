@@ -1,7 +1,148 @@
 {
-  "week_of": "2026-06-29",
+  "week_of": "2026-08-17",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 0,
-  "batches": []
+  "total_active_minutes": 40,
+  "batches": [
+    {
+      "id": "prep_batch_eggs",
+      "title": "Hard-Boiled Eggs (Mon\u2013Thu breakfasts)",
+      "order": 1,
+      "active_minutes": 15,
+      "steps": [
+        "1. Place 16 large eggs in a large pot in a single layer (2 eggs \u00d7 2 people \u00d7 4 days = 16 eggs).",
+        "2. Cover with cold water by at least 2 cm.",
+        "3. Bring to a rolling boil over high heat.",
+        "4. Once boiling, reduce heat to medium and cook exactly 10 minutes.",
+        "5. While eggs cook, prepare a large bowl of ice water.",
+        "6. Transfer eggs immediately to the ice bath using a slotted spoon. Leave 10 minutes until completely cold.",
+        "7. Peel all eggs gently under cold running water.",
+        "8. Pat dry with paper towel. Store in an airtight container in the fridge. Label: 'Boiled eggs \u2014 prepared Sunday, use by Thursday (day 4).'",
+        "9. Use 2 eggs per person each morning Monday through Thursday."
+      ],
+      "yields": [
+        "16 peeled hard-boiled eggs, stored in fridge up to 4 days"
+      ],
+      "food_category": "eggs_cooked",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Breakfast \u2014 Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough: retrieve 2 eggs per person, halve onto toasted sourdough, drizzle olive oil.",
+        "Tuesday": "Breakfast \u2014 Kefir & Strawberry Smoothie + Boiled Eggs on Sourdough: retrieve 2 eggs per person, halve onto sourdough toast with olive oil drizzle.",
+        "Wednesday": "Breakfast \u2014 Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough: retrieve 2 eggs per person (day 3 \u2014 safe), halve and arrange on toasted sourdough.",
+        "Thursday": "Breakfast \u2014 Kefir & Banana Smoothie + Boiled Eggs on Sourdough: retrieve last 2 eggs per person (day 4 \u2014 within safe window), serve on toast with olive oil."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "covered container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": null,
+        "reheat_c": 74,
+        "safety_note": "Hard-boiled eggs: 1 week in shell, 5 days peeled in water. Scrambled/cooked dishes: 3\u20134 days."
+      }
+    },
+    {
+      "id": "prep_batch_roasted_veg",
+      "title": "Roasted Bell Peppers & Zucchini (Mon & Tue lunches)",
+      "order": 2,
+      "active_minutes": 15,
+      "steps": [
+        "1. Preheat oven to 210\u00b0C (fan 190\u00b0C).",
+        "2. Wash and deseed 3 large red bell peppers and 2 large yellow bell peppers. Cut into 3\u20134 cm strips.",
+        "3. Wash 2 medium zucchini; cut into 1 cm half-rounds.",
+        "4. Spread pepper strips on one large baking tray; spread zucchini on a second tray (or use two oven racks). Do not overcrowd.",
+        "5. Drizzle peppers with 1 tbsp olive oil; season with salt, black pepper, \u00bd tsp paprika. Toss well.",
+        "6. Drizzle zucchini with 1 tbsp olive oil; season with salt, \u00bd tsp dried oregano. Toss well.",
+        "7. Roast 22\u201325 minutes, turning once halfway, until edges are lightly charred and veg is tender.",
+        "8. Remove from oven; allow to cool completely (at least 20 min) before storing.",
+        "9. Transfer roasted peppers and zucchini to separate airtight containers. Label with today's date. Refrigerate. Safe up to 4 days (use by Thursday).",
+        "10. Portion for Monday lunch: 120 g mix (Diego), 90 g mix (Diana). Portion for Tuesday lunch: 100 g peppers (Diego), 80 g peppers (Diana)."
+      ],
+      "yields": [
+        "Approx 700 g roasted bell peppers + 400 g roasted zucchini, refrigerated"
+      ],
+      "food_category": "vegetables_cooked",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: microwave 120 g (Diego) / 90 g (Diana) roasted pepper-zucchini mix 60 sec; layer over quinoa with seared beef strips and lentils.",
+        "Tuesday": "Lunch \u2014 Mexican Beef & Black Bean Bowl: microwave 100 g (Diego) / 80 g (Diana) roasted peppers 60 sec; spoon alongside browned ground beef, black beans and warm corn tortillas."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
+      }
+    },
+    {
+      "id": "prep_batch_quinoa",
+      "title": "Cooked Quinoa (Mon lunch)",
+      "order": 3,
+      "active_minutes": 5,
+      "steps": [
+        "1. Rinse 200 g dry quinoa under cold water in a fine sieve for 1 minute to remove bitterness.",
+        "2. Place rinsed quinoa in a medium saucepan with 400 ml cold water and a pinch of salt.",
+        "3. Bring to a boil over high heat, then reduce heat to low, cover, and simmer 12\u201314 minutes until water is absorbed and tails have unfurled.",
+        "4. Remove from heat; let stand covered 5 minutes. Fluff with a fork.",
+        "5. Spread on a plate to cool for 15 minutes \u2014 do not refrigerate warm to avoid moisture build-up.",
+        "6. Transfer to an airtight container. Label with date. Refrigerate. Safe up to 3 days (use Monday only from this batch \u2014 extra kept as backup)."
+      ],
+      "yields": [
+        "Approx 400 g cooked quinoa (from 200 g dry)"
+      ],
+      "food_category": "grains_pasta",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: scoop 120 g (Diego) / 80 g (Diana) cooked quinoa into bowl; microwave 90 sec; use as base for beef, lentils and roasted veg."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
+      }
+    },
+    {
+      "id": "prep_batch_potatoes",
+      "title": "Boiled Waxy Potatoes (Wed lunch)",
+      "order": 4,
+      "active_minutes": 5,
+      "steps": [
+        "1. Scrub 800 g waxy potatoes (grenaille or Charlotte) well under cold water \u2014 leave skins on.",
+        "2. Place in a pot, cover with cold salted water by 3 cm.",
+        "3. Bring to a boil over high heat; cook 18\u201322 minutes until a knife inserts easily with no resistance.",
+        "4. Drain; allow to steam-dry in colander 5 minutes.",
+        "5. Cool to room temperature (do not refrigerate warm). Transfer to airtight container; refrigerate.",
+        "6. Label with Sunday's date. Safe in fridge up to 3 days \u2014 use Wednesday (day 3, within window).",
+        "7. Per serving: Diego uses 2 medium potatoes (approx 200 g); Diana uses 1.5 medium (approx 150 g)."
+      ],
+      "yields": [
+        "Approx 750 g cooked waxy potatoes (skin-on)"
+      ],
+      "food_category": "vegetables_cooked",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Lunch \u2014 French-Style Salmon Ni\u00e7oise Bowl: retrieve potatoes, halve them; arrange cold over mixed greens with chickpeas, cherry tomatoes, cucumber and freshly pan-cooked salmon; dress with olive oil and balsamic vinegar."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
+      }
+    }
+  ]
 }
