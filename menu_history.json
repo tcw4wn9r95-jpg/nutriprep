@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Boiled Egg with Sourdough, Cheese & Raspberries",
-      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
-      "Baked White Fish with Lemon, Green Beans & Sweet Potato",
-      "Smoked Salmon & Cream Cheese on Rye with Kiwi",
-      "Asian Chicken Lettuce Cups with Sesame Bok Choy",
-      "Pan-Seared Tuna Steak with Sesame Cucumber Salad & Brown Rice",
-      "Boiled Egg with Sourdough, Cheese & Raspberries",
-      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
-      "Spiced Turkey Meatballs with Brown Lentil Salad & Roasted Beets",
-      "Smoked Salmon & Cream Cheese on Rye with Kiwi"
-    ],
-    "shopping_items": 62,
-    "prep_minutes": 163,
-    "day_kcal": {
-      "diego": 2034,
-      "diana": 1531
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Poached Egg with Whole-Grain Sourdough, Avocado & Blueberries",
       "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
       "Baked White Fish with Lemon, Green Beans & Sweet Potato",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1879,
       "diana": 1515
+    }
+  },
+  {
+    "week_of": "2026-08-24",
+    "generated": "2026-08-23",
+    "meal_names": [
+      "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Feta",
+      "Mediterranean Beef & Chickpea Bowl with Roasted Peppers & Quinoa",
+      "Soy-Glazed Salmon with Stir-Fried Broccoli, Mushrooms & Brown Rice",
+      "Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Feta",
+      "Asian Ginger Tilapia Bowl with Stir-Fried Zucchini, Carrots & Quinoa",
+      "Mexican Beef & Black Bean Tacos with Roasted Peppers",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta",
+      "French-Style Beef & Lentil Skillet with Roasted Carrots & Sourdough",
+      "Baked Tilapia with Garlic-Oregano Roasted Zucchini & Sweet Potato Wedges",
+      "Kefir & Kiwi Smoothie + Boiled Eggs on Sourdough with Feta"
+    ],
+    "shopping_items": 58,
+    "prep_minutes": 20,
+    "day_kcal": {
+      "diego": 1980,
+      "diana": 1516
     }
   }
 ]

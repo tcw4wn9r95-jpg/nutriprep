@@ -1,74 +1,75 @@
 {
   "status": "published",
-  "generated": "2026-08-11",
-  "week_of": "2026-08-17",
+  "generated": "2026-08-23",
+  "week_of": "2026-08-24",
   "meal_count": 35,
-  "shopping_items": 53,
-  "prep_batches": 1,
-  "prep_minutes": 12,
+  "shopping_items": 58,
+  "prep_batches": 2,
+  "prep_minutes": 20,
   "notification_events": 30,
   "fresh_shop_items": 27,
-  "pantry_staple_items": 26,
+  "pantry_staple_items": 31,
   "locked_palette": {
     "proteins": [
-      "salmon",
       "tilapia",
+      "salmon",
       "beef (lean cuts)",
-      "eggs"
+      "eggs (boiled, fried, baked)"
     ],
     "vegetables": [
-      "bell peppers",
+      "bell peppers (red, yellow)",
       "zucchini",
+      "broccoli",
       "cherry tomatoes",
       "carrots",
-      "broccoli",
-      "spinach",
+      "spinach (cooked)",
+      "mushrooms",
       "garlic",
       "ginger",
-      "leeks",
-      "mushrooms"
+      "leeks (cooked)"
     ],
     "fruits": [
       "blueberries",
+      "strawberries",
       "apples",
-      "oranges",
-      "pears",
-      "bananas"
+      "bananas",
+      "kiwis"
     ],
     "breads_greens": [
-      "sourdough bread",
+      "sourdough bread (whole grain)",
       "spinach"
     ],
     "carbs_staples": [
       "brown rice",
-      "whole-wheat pasta",
+      "whole wheat pasta",
+      "quinoa",
       "sweet potatoes",
       "potatoes",
       "canned lentils",
       "canned chickpeas",
       "canned black beans",
-      "quinoa",
       "corn tortillas"
     ],
     "spices_sauces_staples": [
       "olive oil",
       "sesame oil",
-      "balsamic vinegar",
       "soy sauce",
+      "balsamic vinegar",
+      "white wine vinegar",
       "cumin",
-      "paprika",
-      "turmeric",
+      "smoked paprika",
+      "dried oregano",
+      "dried basil",
+      "dried thyme",
       "garlic powder",
       "ginger powder",
-      "dried thyme",
-      "dried oregano",
-      "chilli powder",
-      "smoked paprika",
-      "ground coriander",
-      "lime juice",
-      "tomato passata",
-      "greek yogurt",
-      "kefir"
+      "chili powder",
+      "coriander",
+      "black pepper",
+      "sea salt",
+      "Dijon mustard",
+      "tomato paste",
+      "low-sodium vegetable stock"
     ]
   }
 }

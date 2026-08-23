@@ -1,31 +1,30 @@
 {
-  "week_of": "2026-08-17",
+  "week_of": "2026-08-24",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 12,
+  "total_active_minutes": 20,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Batch-Boiled Eggs for the Week (Mon\u2013Thu)",
+      "title": "Hard-Boil Eggs for the Week (Mon\u2013Fri)",
       "order": 1,
-      "active_minutes": 12,
+      "active_minutes": 15,
       "steps": [
-        "1. Place 14 eggs in a large saucepan. Cover with cold water by at least 2 cm.",
-        "2. Bring to a full rolling boil over high heat. Once boiling, reduce to medium and cook exactly 9 minutes (fully hard-boiled for safe storage).",
-        "3. Drain immediately and transfer eggs to a bowl of ice-cold water. Leave 5 minutes.",
-        "4. Peel all 14 eggs under running water. Pat dry with kitchen paper.",
-        "5. Place peeled eggs in an airtight container. Label: 'Boiled Eggs \u2014 use by Thursday'. Refrigerate.",
-        "6. Safety note: hard-boiled peeled eggs keep safely 4 days in the fridge (through Thursday = day 4 \u2713)."
+        "1. Place 14 large eggs in a large saucepan; cover with cold water by at least 3 cm.",
+        "2. Bring to a rolling boil over high heat, then reduce to a gentle boil; cook exactly 10 minutes.",
+        "3. Transfer eggs immediately to a bowl of ice water; leave 10 minutes to stop cooking.",
+        "4. Peel all eggs and store in an airtight container in the fridge. They keep safely for 4 days (Mon\u2013Thu). Boil fresh eggs on Friday if needed (already accounted for: Friday uses last 2 from batch or boil fresh).",
+        "5. Label container with today's date."
       ],
       "yields": [
-        "14 peeled hard-boiled eggs \u2014 2 per person per breakfast day (Tuesday, Wednesday, Thursday = 6 days \u00d7 2 persons = 12 used; 2 extra for Thursday lunch chickpea bowl)"
+        "14 hard-boiled, peeled eggs \u2014 ready to use Mon\u2013Fri breakfasts and pm snacks"
       ],
       "food_category": "eggs_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Tuesday": "Breakfast \u2014 Kefir & Banana Smoothie + Boiled Eggs on Sourdough: retrieve 2 eggs each, toast sourdough, spread Greek yogurt, halve eggs on top.",
-        "Wednesday": "Breakfast \u2014 Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Avocado: retrieve 2 eggs each, toast sourdough, slice avocado on top of eggs.",
-        "Thursday": "Breakfast \u2014 Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Olive Oil: retrieve 2 eggs each, toast sourdough, drizzle olive oil, dust with oregano. Also use 2 eggs each for Lunch \u2014 Chickpea Bowl: add cold halved eggs as protein topping."
+        "Tuesday": "Breakfast \u2014 Kefir & Banana Smoothie + Boiled Eggs on Sourdough: halve 2 (Diego) / 1 (Diana) pre-boiled eggs onto toasted sourdough; crumble feta; blend kefir-banana smoothie.",
+        "Thursday": "Breakfast \u2014 Kefir & Kiwi Smoothie + Boiled Eggs on Sourdough: halve 2 (Diego) / 1 (Diana) pre-boiled eggs onto toast; add feta; blend kefir-kiwi smoothie.",
+        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (eggs cooked is only safe ~4 day(s); this is day 5)."
       },
       "storage": {
         "method": "refrigerate",
@@ -36,6 +35,39 @@
         "freeze_option_days": null,
         "reheat_c": 74,
         "safety_note": "Hard-boiled eggs: 1 week in shell, 5 days peeled in water. Scrambled/cooked dishes: 3\u20134 days."
+      }
+    },
+    {
+      "id": "prep_batch_2",
+      "title": "Cook Quinoa Batch (used Mon lunch & Tue lunch)",
+      "order": 2,
+      "active_minutes": 5,
+      "steps": [
+        "1. Rinse 200 g dry quinoa under cold running water for 30 seconds in a fine sieve to remove bitterness.",
+        "2. Add to a medium saucepan with 400 ml cold water and a pinch of sea salt.",
+        "3. Bring to a boil over high heat; reduce to lowest heat; cover with lid; cook 15 minutes.",
+        "4. Remove from heat; leave lid on and steam 5 more minutes.",
+        "5. Fluff with a fork; spread on a large plate or tray to cool quickly (10 min).",
+        "6. Transfer to an airtight container; refrigerate immediately. Safe up to 3 days (Monday\u2013Wednesday)."
+      ],
+      "yields": [
+        "~480 g cooked quinoa \u2014 enough for Monday lunch (Diego 120 g / Diana 80 g) and Tuesday lunch (Diego 120 g / Diana 90 g)"
+      ],
+      "food_category": "grains_pasta",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Chickpea Bowl: portion 120 g (Diego) / 80 g (Diana) cold quinoa into bowls; reheat in microwave 90 sec; top with freshly seared beef strips, roasted peppers and chickpeas.",
+        "Tuesday": "Lunch \u2014 Asian Ginger Tilapia Bowl: portion 120 g (Diego) / 90 g (Diana) quinoa; reheat microwave 90 sec; top with freshly baked tilapia and stir-fried zucchini-carrot mix."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
       }
     }
   ]
