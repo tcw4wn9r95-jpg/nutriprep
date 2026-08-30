@@ -1,29 +1,30 @@
 {
-  "week_of": "2026-08-24",
+  "week_of": "2026-08-31",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 20,
+  "total_active_minutes": 80,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Hard-Boil Eggs for the Week (Mon\u2013Fri)",
+      "title": "Hard-Boil Eggs for Weekday Breakfasts (Mon\u2013Fri)",
       "order": 1,
       "active_minutes": 15,
       "steps": [
-        "1. Place 14 large eggs in a large saucepan; cover with cold water by at least 3 cm.",
-        "2. Bring to a rolling boil over high heat, then reduce to a gentle boil; cook exactly 10 minutes.",
-        "3. Transfer eggs immediately to a bowl of ice water; leave 10 minutes to stop cooking.",
-        "4. Peel all eggs and store in an airtight container in the fridge. They keep safely for 4 days (Mon\u2013Thu). Boil fresh eggs on Friday if needed (already accounted for: Friday uses last 2 from batch or boil fresh).",
-        "5. Label container with today's date."
+        "1. Place 14 large eggs in a single layer in a large saucepan. Cover with cold water by 3 cm.",
+        "2. Bring to a rolling boil over high heat. Once boiling, reduce to medium and cook exactly 10 minutes.",
+        "3. Transfer eggs immediately to a bowl of ice-cold water. Leave 10 minutes to stop cooking.",
+        "4. Peel all eggs carefully. Pat dry with paper towel.",
+        "5. Place peeled eggs in a sealed airtight container lined with damp paper towel. Label 'Boiled Eggs \u2014 eat by Thursday'. Refrigerate."
       ],
       "yields": [
-        "14 hard-boiled, peeled eggs \u2014 ready to use Mon\u2013Fri breakfasts and pm snacks"
+        "14 peeled hard-boiled eggs (for 2 people \u00d7 2 eggs \u00d7 4 days: Tue\u2013Fri)"
       ],
       "food_category": "eggs_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Tuesday": "Breakfast \u2014 Kefir & Banana Smoothie + Boiled Eggs on Sourdough: halve 2 (Diego) / 1 (Diana) pre-boiled eggs onto toasted sourdough; crumble feta; blend kefir-banana smoothie.",
-        "Thursday": "Breakfast \u2014 Kefir & Kiwi Smoothie + Boiled Eggs on Sourdough: halve 2 (Diego) / 1 (Diana) pre-boiled eggs onto toast; add feta; blend kefir-kiwi smoothie.",
+        "Tuesday": "Breakfast \u2014 Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Avocado: retrieve 2 eggs per person, halve and place on avocado-spread toast.",
+        "Wednesday": "Breakfast \u2014 Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Feta: retrieve 2 eggs per person, halve and layer on toast with crumbled feta.",
+        "Thursday": "Breakfast \u2014 Kefir & Strawberry Smoothie + Boiled Eggs on Sourdough with Avocado: retrieve 2 eggs per person, halve and lay on avocado-topped sourdough with orange on side.",
         "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (eggs cooked is only safe ~4 day(s); this is day 5)."
       },
       "storage": {
@@ -39,25 +40,25 @@
     },
     {
       "id": "prep_batch_2",
-      "title": "Cook Quinoa Batch (used Mon lunch & Tue lunch)",
+      "title": "Cook Quinoa for Mon\u2013Tue Lunches",
       "order": 2,
-      "active_minutes": 5,
+      "active_minutes": 15,
       "steps": [
-        "1. Rinse 200 g dry quinoa under cold running water for 30 seconds in a fine sieve to remove bitterness.",
-        "2. Add to a medium saucepan with 400 ml cold water and a pinch of sea salt.",
-        "3. Bring to a boil over high heat; reduce to lowest heat; cover with lid; cook 15 minutes.",
-        "4. Remove from heat; leave lid on and steam 5 more minutes.",
-        "5. Fluff with a fork; spread on a large plate or tray to cool quickly (10 min).",
-        "6. Transfer to an airtight container; refrigerate immediately. Safe up to 3 days (Monday\u2013Wednesday)."
+        "1. Rinse 300 g dry quinoa in a fine mesh sieve under cold running water for 60 seconds to remove bitterness.",
+        "2. Add to a medium saucepan with 600 ml cold salted water (1 tsp salt).",
+        "3. Bring to a boil over high heat, then reduce to low. Cover and simmer 12 minutes.",
+        "4. Remove from heat. Let stand covered 5 minutes. Fluff with a fork.",
+        "5. Spread on a baking tray to cool to room temperature (about 15 min). Do not cover while hot.",
+        "6. Once cool, divide into two labelled containers: 'Quinoa \u2014 Mon Lunch' (Diego 120 g + Diana 90 g) and 'Quinoa \u2014 Tue Lunch' (Diego 120 g + Diana 90 g). Refrigerate."
       ],
       "yields": [
-        "~480 g cooked quinoa \u2014 enough for Monday lunch (Diego 120 g / Diana 80 g) and Tuesday lunch (Diego 120 g / Diana 90 g)"
+        "~780 g cooked quinoa (from 300 g dry), portioned for 2 lunches"
       ],
       "food_category": "grains_pasta",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Beef & Chickpea Bowl: portion 120 g (Diego) / 80 g (Diana) cold quinoa into bowls; reheat in microwave 90 sec; top with freshly seared beef strips, roasted peppers and chickpeas.",
-        "Tuesday": "Lunch \u2014 Asian Ginger Tilapia Bowl: portion 120 g (Diego) / 90 g (Diana) quinoa; reheat microwave 90 sec; top with freshly baked tilapia and stir-fried zucchini-carrot mix."
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl with Roasted Eggplant & Quinoa: reheat Diego's 120 g + Diana's 90 g quinoa in microwave 90 sec, use as bowl base.",
+        "Tuesday": "Lunch \u2014 Asian Tilapia Bowl with Stir-Fried Broccoli, Bell Pepper & Quinoa: reheat Diego's 120 g + Diana's 90 g quinoa in microwave 90 sec, layer under stir-fried veg and tilapia."
       },
       "storage": {
         "method": "refrigerate",
@@ -68,6 +69,75 @@
         "freeze_option_days": 60,
         "reheat_c": 74,
         "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
+      }
+    },
+    {
+      "id": "prep_batch_3",
+      "title": "Braise Spiced Beef for Mon & Tue Lunches/Dinners",
+      "order": 3,
+      "active_minutes": 30,
+      "steps": [
+        "1. Weigh out total beef: 720 g lean beef strips (for Monday lunch and Tuesday dinner) \u2014 or use two batches if needed. Cut into 3 cm pieces or strips.",
+        "2. Heat 1 tbsp olive oil in a large heavy pan or Dutch oven over high heat.",
+        "3. Brown beef in batches (do not crowd), 2 min per side. Set aside.",
+        "4. In same pan, add 3 tbsp tomato paste, 2 cloves minced garlic (or 1 tsp garlic powder), 1 tsp cumin, 1 tsp paprika, 1 tsp dried oregano, and 200 ml water or stock.",
+        "5. Stir well, scraping up any browned bits. Return beef to pan.",
+        "6. Simmer on low heat, covered, 15 minutes until beef is tender and sauce is thick.",
+        "7. Portion into two labelled containers: 'Beef Stew \u2014 Mon Lunch' (Diego 150 g + Diana 110 g) and 'Beef Tacos \u2014 Tue Dinner' (Diego 150 g + Diana 110 g).",
+        "8. Cool completely before sealing. Refrigerate immediately. Use by Wednesday (day 3 limit)."
+      ],
+      "yields": [
+        "~520 g cooked braised beef in sauce, portioned for Monday lunch and Tuesday dinner"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl with Roasted Eggplant & Quinoa: reheat Diego's 150 g + Diana's 110 g beef in a pan with a splash of water 3 min, serve over quinoa with lentils and eggplant.",
+        "Tuesday": "Dinner \u2014 Mexican Beef & Black Bean Tacos with Roasted Bell Peppers & Corn Tortillas: reheat Diego's 150 g + Diana's 110 g beef in a pan with 2 tbsp water 3 min, mix in warm black beans and fill tortillas with roasted peppers."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_4",
+      "title": "Roast Mixed Vegetables (Eggplant, Zucchini, Broccoli, Bell Peppers) for Mon\u2013Tue",
+      "order": 4,
+      "active_minutes": 20,
+      "steps": [
+        "1. Preheat oven to 200\u00b0C. Line two large baking trays with baking paper.",
+        "2. Tray A \u2014 Eggplant: Cube 400 g eggplant into 2 cm pieces. Toss with 1.5 tsp olive oil, 1 tsp cumin, 0.5 tsp paprika, salt and pepper. Spread in a single layer.",
+        "3. Tray B \u2014 Broccoli & Bell Pepper: Break 250 g broccoli into florets. Slice 250 g bell peppers. Toss together with 1.5 tsp olive oil, 0.5 tsp garlic powder, salt. Spread in a single layer.",
+        "4. Roast both trays at 200\u00b0C for 20\u201322 minutes, flipping halfway. Vegetables should be golden and slightly caramelised.",
+        "5. Cool on trays for 15 min. Transfer to labelled containers: 'Eggplant \u2014 Mon Lunch', 'Broccoli/Pepper \u2014 Tue Lunch', 'Peppers \u2014 Tue Dinner'. Refrigerate. Use within 4 days."
+      ],
+      "yields": [
+        "~380 g roasted eggplant (Mon lunch)",
+        "~200 g roasted broccoli florets (Tue lunch)",
+        "~200 g roasted bell pepper (Tue dinner)"
+      ],
+      "food_category": "vegetables_cooked",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl with Roasted Eggplant & Quinoa: reheat Diego's 100 g + Diana's 80 g roasted eggplant in microwave 60 sec, scatter over bowl.",
+        "Tuesday": "Dinner \u2014 Mexican Beef & Black Bean Tacos: reheat Diego's 80 g + Diana's 80 g roasted bell pepper in microwave 60 sec, pile into tacos over beef-bean mix."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
       }
     }
   ]
