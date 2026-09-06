@@ -1,99 +1,36 @@
 {
-  "week_of": "2026-08-31",
+  "week_of": "2026-09-07",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 80,
+  "total_active_minutes": 115,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Hard-Boil Eggs for Weekday Breakfasts (Mon\u2013Fri)",
+      "title": "Quinoa, Beef Mince (Mediterranean), Roasted Bell Peppers & Green Lentils",
       "order": 1,
-      "active_minutes": 15,
+      "active_minutes": 45,
       "steps": [
-        "1. Place 14 large eggs in a single layer in a large saucepan. Cover with cold water by 3 cm.",
-        "2. Bring to a rolling boil over high heat. Once boiling, reduce to medium and cook exactly 10 minutes.",
-        "3. Transfer eggs immediately to a bowl of ice-cold water. Leave 10 minutes to stop cooking.",
-        "4. Peel all eggs carefully. Pat dry with paper towel.",
-        "5. Place peeled eggs in a sealed airtight container lined with damp paper towel. Label 'Boiled Eggs \u2014 eat by Thursday'. Refrigerate."
+        "Cook quinoa: rinse 500 g dry quinoa under cold water 1 minute. Place in a large pot with 1 L cold salted water. Bring to a boil, reduce to a simmer, cover and cook 15 minutes until water is absorbed. Fluff with fork. Spread on a baking tray to cool quickly. Divide into 6 portions (~130 g each) in airtight containers; label and refrigerate.",
+        "Brown beef mince (Mediterranean): heat 1 tbsp olive oil in a large non-stick pan over medium-high heat. Add 600 g beef mince; break apart with a wooden spoon. Cook 6\u20138 minutes until no pink remains. Add 2 cloves minced garlic, 1 tsp cumin, 1 tsp paprika, 1 tsp oregano, \u00bd tsp sea salt; stir 2 minutes. Remove from heat; cool completely on a plate. Portion into 2 containers: 260 g (2 \u00d7 Monday/Thursday Diego) and 180 g (2 \u00d7 Monday/Thursday Diana); refrigerate.",
+        "Roast bell peppers: slice 6 bell peppers (mixed colours) into strips; toss in a bowl with 2 tbsp olive oil, 1 tsp paprika, \u00bd tsp sea salt, \u00bd tsp black pepper. Spread on 2 lined baking trays in a single layer. Roast at 200 \u00b0C (fan) for 25 minutes until edges are charred. Cool completely; transfer to 2 airtight containers; refrigerate.",
+        "Prepare green lentils: open 2 \u00d7 400 g cans green lentils; drain and rinse under cold water. Transfer to a bowl; season with 1 tsp cumin, 1 tsp olive oil, \u00bd tsp sea salt; stir to coat. Portion into 2 containers for Monday and Thursday; refrigerate.",
+        "Brown beef mince (Mexican tacos): heat 1 tbsp olive oil in the same pan over medium-high. Add 400 g beef mince; break apart. Cook 5 minutes; add 1 tsp cumin, 1 tsp chilli powder, 1 tsp garlic powder, \u00bd tsp oregano, \u00bd tsp sea salt; stir 2 minutes. Cool completely; portion into 2 containers for Tuesday dinner; refrigerate.",
+        "Prepare black beans (Tuesday dinner): drain and rinse 1 \u00d7 400 g can black beans. Toss with \u00bd tsp cumin, \u00bd tsp lime juice, pinch of salt. Store in a small container in the fridge."
       ],
       "yields": [
-        "14 peeled hard-boiled eggs (for 2 people \u00d7 2 eggs \u00d7 4 days: Tue\u2013Fri)"
-      ],
-      "food_category": "eggs_cooked",
-      "video_url": "",
-      "day_of_assembly": {
-        "Tuesday": "Breakfast \u2014 Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Avocado: retrieve 2 eggs per person, halve and place on avocado-spread toast.",
-        "Wednesday": "Breakfast \u2014 Kefir & Blueberry Smoothie + Boiled Eggs on Sourdough with Feta: retrieve 2 eggs per person, halve and layer on toast with crumbled feta.",
-        "Thursday": "Breakfast \u2014 Kefir & Strawberry Smoothie + Boiled Eggs on Sourdough with Avocado: retrieve 2 eggs per person, halve and lay on avocado-topped sourdough with orange on side.",
-        "Friday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (eggs cooked is only safe ~4 day(s); this is day 5)."
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "covered container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 4,
-        "freeze_option_days": null,
-        "reheat_c": 74,
-        "safety_note": "Hard-boiled eggs: 1 week in shell, 5 days peeled in water. Scrambled/cooked dishes: 3\u20134 days."
-      }
-    },
-    {
-      "id": "prep_batch_2",
-      "title": "Cook Quinoa for Mon\u2013Tue Lunches",
-      "order": 2,
-      "active_minutes": 15,
-      "steps": [
-        "1. Rinse 300 g dry quinoa in a fine mesh sieve under cold running water for 60 seconds to remove bitterness.",
-        "2. Add to a medium saucepan with 600 ml cold salted water (1 tsp salt).",
-        "3. Bring to a boil over high heat, then reduce to low. Cover and simmer 12 minutes.",
-        "4. Remove from heat. Let stand covered 5 minutes. Fluff with a fork.",
-        "5. Spread on a baking tray to cool to room temperature (about 15 min). Do not cover while hot.",
-        "6. Once cool, divide into two labelled containers: 'Quinoa \u2014 Mon Lunch' (Diego 120 g + Diana 90 g) and 'Quinoa \u2014 Tue Lunch' (Diego 120 g + Diana 90 g). Refrigerate."
-      ],
-      "yields": [
-        "~780 g cooked quinoa (from 300 g dry), portioned for 2 lunches"
-      ],
-      "food_category": "grains_pasta",
-      "video_url": "",
-      "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl with Roasted Eggplant & Quinoa: reheat Diego's 120 g + Diana's 90 g quinoa in microwave 90 sec, use as bowl base.",
-        "Tuesday": "Lunch \u2014 Asian Tilapia Bowl with Stir-Fried Broccoli, Bell Pepper & Quinoa: reheat Diego's 120 g + Diana's 90 g quinoa in microwave 90 sec, layer under stir-fried veg and tilapia."
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 60,
-        "reheat_c": 74,
-        "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
-      }
-    },
-    {
-      "id": "prep_batch_3",
-      "title": "Braise Spiced Beef for Mon & Tue Lunches/Dinners",
-      "order": 3,
-      "active_minutes": 30,
-      "steps": [
-        "1. Weigh out total beef: 720 g lean beef strips (for Monday lunch and Tuesday dinner) \u2014 or use two batches if needed. Cut into 3 cm pieces or strips.",
-        "2. Heat 1 tbsp olive oil in a large heavy pan or Dutch oven over high heat.",
-        "3. Brown beef in batches (do not crowd), 2 min per side. Set aside.",
-        "4. In same pan, add 3 tbsp tomato paste, 2 cloves minced garlic (or 1 tsp garlic powder), 1 tsp cumin, 1 tsp paprika, 1 tsp dried oregano, and 200 ml water or stock.",
-        "5. Stir well, scraping up any browned bits. Return beef to pan.",
-        "6. Simmer on low heat, covered, 15 minutes until beef is tender and sauce is thick.",
-        "7. Portion into two labelled containers: 'Beef Stew \u2014 Mon Lunch' (Diego 150 g + Diana 110 g) and 'Beef Tacos \u2014 Tue Dinner' (Diego 150 g + Diana 110 g).",
-        "8. Cool completely before sealing. Refrigerate immediately. Use by Wednesday (day 3 limit)."
-      ],
-      "yields": [
-        "~520 g cooked braised beef in sauce, portioned for Monday lunch and Tuesday dinner"
+        "Cooked quinoa: ~750 g cooked (6 portions)",
+        "Mediterranean beef mince: ~600 g cooked",
+        "Roasted bell pepper strips: ~700 g",
+        "Seasoned green lentils: ~500 g drained",
+        "Mexican spiced beef mince: ~350 g cooked",
+        "Seasoned black beans: ~200 g"
       ],
       "food_category": "red_meat",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl with Roasted Eggplant & Quinoa: reheat Diego's 150 g + Diana's 110 g beef in a pan with a splash of water 3 min, serve over quinoa with lentils and eggplant.",
-        "Tuesday": "Dinner \u2014 Mexican Beef & Black Bean Tacos with Roasted Bell Peppers & Corn Tortillas: reheat Diego's 150 g + Diana's 110 g beef in a pan with 2 tbsp water 3 min, mix in warm black beans and fill tortillas with roasted peppers."
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: reheat 130 g (Diego) / 90 g (Diana) quinoa in microwave 90 sec; reheat beef portion and lentils in pan 4 min; warm bell peppers 45 sec in microwave; assemble bowl and drizzle with olive oil and balsamic vinegar.",
+        "Tuesday": "Dinner \u2014 Mexican Beef & Black Bean Tacos: reheat Mexican beef in pan 4 min; warm black beans with lime juice 1 min; warm tortillas in dry pan; fill tortillas with beef, beans, bell pepper strips; dress spinach with olive oil and balsamic vinegar on the side.",
+        "Thursday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (red meat is only safe ~3 day(s); this is day 4)."
       },
       "storage": {
         "method": "refrigerate",
@@ -107,27 +44,58 @@
       }
     },
     {
-      "id": "prep_batch_4",
-      "title": "Roast Mixed Vegetables (Eggplant, Zucchini, Broccoli, Bell Peppers) for Mon\u2013Tue",
-      "order": 4,
-      "active_minutes": 20,
+      "id": "prep_batch_2",
+      "title": "Beef Chuck Stew & Roasted Zucchini",
+      "order": 2,
+      "active_minutes": 65,
       "steps": [
-        "1. Preheat oven to 200\u00b0C. Line two large baking trays with baking paper.",
-        "2. Tray A \u2014 Eggplant: Cube 400 g eggplant into 2 cm pieces. Toss with 1.5 tsp olive oil, 1 tsp cumin, 0.5 tsp paprika, salt and pepper. Spread in a single layer.",
-        "3. Tray B \u2014 Broccoli & Bell Pepper: Break 250 g broccoli into florets. Slice 250 g bell peppers. Toss together with 1.5 tsp olive oil, 0.5 tsp garlic powder, salt. Spread in a single layer.",
-        "4. Roast both trays at 200\u00b0C for 20\u201322 minutes, flipping halfway. Vegetables should be golden and slightly caramelised.",
-        "5. Cool on trays for 15 min. Transfer to labelled containers: 'Eggplant \u2014 Mon Lunch', 'Broccoli/Pepper \u2014 Tue Lunch', 'Peppers \u2014 Tue Dinner'. Refrigerate. Use within 4 days."
+        "Cube beef chuck: trim and cut 700 g beef chuck into 3 cm cubes. Pat dry with kitchen paper \u2014 this helps browning.",
+        "Brown the chuck: heat 2 tbsp olive oil in a large heavy-bottomed pot or Dutch oven over high heat. Add beef cubes in 2 batches (do not crowd the pan); sear 2\u20133 minutes per side until a deep brown crust forms. Remove batches to a plate.",
+        "Build the stew base: lower heat to medium; add 3 cloves minced garlic to the pot; cook 30 seconds. Add 2 tbsp tomato paste; stir 1 minute. Pour in 500 ml water (or beef stock if available). Add 1 tsp cumin, 1 tsp paprika, 1 tsp oregano, \u00bd tsp thyme, 1 tsp sea salt, \u00bd tsp black pepper; stir well.",
+        "Braise: return beef cubes to the pot; bring to a gentle boil, then reduce heat to low; cover and simmer 60 minutes, stirring occasionally, until beef is fork-tender. Add a splash of water if the liquid reduces too much.",
+        "Cool and portion: remove pot from heat; let cool 15 minutes with lid off. Portion into 4 containers (2 \u00d7 Wednesday lunch, 2 \u00d7 Thursday lunch, labelled by day and person). Refrigerate immediately.",
+        "Roast zucchini: while stew simmers, slice 3 zucchini (600 g total) into half-moon pieces. Toss with 1 tbsp olive oil, 1 tsp oregano, \u00bd tsp garlic powder, \u00bd tsp sea salt. Spread on 2 lined baking trays. Roast at 200 \u00b0C for 20 minutes until golden. Cool; store in 1 large container in fridge (used Wednesday and Thursday lunch)."
       ],
       "yields": [
-        "~380 g roasted eggplant (Mon lunch)",
-        "~200 g roasted broccoli florets (Tue lunch)",
-        "~200 g roasted bell pepper (Tue dinner)"
+        "Braised beef chuck stew: ~550 g cooked (4 portions \u2014 enough for Wed & Thu lunches for 2 people)",
+        "Roasted zucchini: ~400 g (2 portions per day over Wed & Thu)"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Wednesday": "Lunch \u2014 French-Style Beef & Chickpea Stew with Sweet Potato: reheat 150 g (Diego) / 110 g (Diana) beef chuck stew in a saucepan 5\u20136 min; stir in chickpeas 2 min; reheat baked sweet potato in microwave 2 min; serve stew alongside sweet potato with balsamic vinegar.",
+        "Thursday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (red meat is only safe ~3 day(s); this is day 4)."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    },
+    {
+      "id": "prep_batch_3",
+      "title": "Baked Sweet Potatoes (for Wednesday & Thursday lunches)",
+      "order": 3,
+      "active_minutes": 5,
+      "steps": [
+        "Preheat oven to 200 \u00b0C. Scrub 5 medium sweet potatoes (each ~180 g) under running water; pierce each 4\u20135 times with a fork.",
+        "Place directly on the oven rack or a baking tray. Bake 40\u201345 minutes until a fork slides in easily and the skin is slightly wrinkled.",
+        "Remove from oven; allow to cool completely at room temperature (~20 minutes). Do NOT wrap in foil while cooling \u2014 this traps steam and makes the skin soggy.",
+        "Once cool, place in 2 separate airtight containers or zip-lock bags; label with day. Refrigerate immediately. Use within 4 days."
+      ],
+      "yields": [
+        "5 baked sweet potatoes (~900 g total cooked weight), used for Wednesday and Thursday lunches"
       ],
       "food_category": "vegetables_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl with Roasted Eggplant & Quinoa: reheat Diego's 100 g + Diana's 80 g roasted eggplant in microwave 60 sec, scatter over bowl.",
-        "Tuesday": "Dinner \u2014 Mexican Beef & Black Bean Tacos: reheat Diego's 80 g + Diana's 80 g roasted bell pepper in microwave 60 sec, pile into tacos over beef-bean mix."
+        "Wednesday": "Lunch \u2014 French-Style Beef & Chickpea Stew with Sweet Potato: reheat 1 whole sweet potato (Diego, 180 g) or \u00be (Diana, 130 g) in microwave 2 min; serve alongside beef-chickpea stew.",
+        "Thursday": "Lunch \u2014 Mediterranean Beef Chuck & Lentil Skillet: no sweet potato used Thursday \u2014 roasted zucchini replaces it in this dish. Remaining sweet potatoes reserved for weekend or discard if past 4-day window."
       },
       "storage": {
         "method": "refrigerate",

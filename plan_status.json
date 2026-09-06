@@ -1,19 +1,19 @@
 {
   "status": "published",
-  "generated": "2026-08-30",
-  "week_of": "2026-08-31",
+  "generated": "2026-09-06",
+  "week_of": "2026-09-07",
   "meal_count": 35,
-  "shopping_items": 54,
-  "prep_batches": 4,
-  "prep_minutes": 80,
+  "shopping_items": 52,
+  "prep_batches": 3,
+  "prep_minutes": 115,
   "notification_events": 30,
-  "fresh_shop_items": 28,
-  "pantry_staple_items": 26,
+  "fresh_shop_items": 23,
+  "pantry_staple_items": 29,
   "locked_palette": {
     "proteins": [
       "tilapia",
       "salmon",
-      "beef (lean cuts)",
+      "beef (chuck/stewing cuts)",
       "eggs"
     ],
     "vegetables": [
@@ -21,51 +21,52 @@
       "zucchini",
       "carrots",
       "cherry tomatoes",
-      "broccoli",
       "spinach (cooked)",
+      "broccoli",
       "garlic",
       "ginger",
-      "eggplant",
-      "green beans"
+      "leeks",
+      "mushrooms"
     ],
     "fruits": [
       "blueberries",
       "apples",
-      "bananas",
+      "pears",
       "oranges",
-      "strawberries"
+      "peaches"
     ],
     "breads_greens": [
       "sourdough bread",
-      "rocket (arugula)"
+      "baby spinach"
     ],
     "carbs_staples": [
       "brown rice",
       "wholewheat pasta",
       "sweet potatoes",
       "potatoes",
-      "quinoa",
       "corn tortillas",
+      "quinoa",
       "canned lentils",
       "canned chickpeas",
-      "canned white beans"
+      "canned black beans"
     ],
     "spices_sauces_staples": [
-      "extra virgin olive oil",
+      "olive oil",
       "sesame oil",
       "balsamic vinegar",
       "soy sauce",
+      "lime juice",
       "cumin",
       "paprika",
-      "dried oregano",
-      "dried thyme",
-      "chilli powder",
+      "oregano",
+      "thyme",
       "garlic powder",
       "ginger powder",
-      "lime juice",
-      "tomato paste",
-      "Greek yogurt",
-      "kefir"
+      "black pepper",
+      "sea salt",
+      "chilli powder",
+      "ground coriander",
+      "Dijon mustard"
     ]
   }
 }

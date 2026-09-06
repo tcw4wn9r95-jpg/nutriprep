@@ -202,7 +202,7 @@
     },
     "quinoa (dry)": {
       "name_en": "Quinoa (dry)",
-      "name_fr": "Quinoa (cru)",
+      "name_fr": "Quinoa (sec)",
       "aisle": "Grains & Pasta / Épicerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -212,7 +212,7 @@
     },
     "brown rice (dry)": {
       "name_en": "Brown rice (dry)",
-      "name_fr": "Riz complet (cru)",
+      "name_fr": "Riz complet (sec)",
       "aisle": "Grains & Pasta / Épicerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -502,7 +502,7 @@
     },
     "bell peppers (mixed colours)": {
       "name_en": "Bell peppers (mixed colours)",
-      "name_fr": "Poivrons (couleurs mélangées)",
+      "name_fr": "Poivrons (couleurs variées)",
       "aisle": "Produce / Fruits & Légumes",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -802,7 +802,7 @@
     },
     "ground cumin": {
       "name_en": "Ground cumin",
-      "name_fr": "Cumin moulu",
+      "name_fr": "Cumin en poudre",
       "aisle": "Spices / Épices",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -812,7 +812,7 @@
     },
     "ground coriander": {
       "name_en": "Ground coriander",
-      "name_fr": "Coriandre en poudre",
+      "name_fr": "Coriandre moulue",
       "aisle": "Spices / Épices",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -2882,7 +2882,7 @@
     },
     "sesame oil (toasted)": {
       "name_en": "Sesame oil (toasted)",
-      "name_fr": "Huile de sésame grillé",
+      "name_fr": "Huile de sésame (torréfiée)",
       "aisle": "Oils & Condiments",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4812,7 +4812,7 @@
     },
     "tilapia fillets (fresh or frozen)": {
       "name_en": "Tilapia fillets (fresh or frozen)",
-      "name_fr": "Filets de tilapia frais ou surgelés",
+      "name_fr": "Filets de tilapia (frais ou surgelés)",
       "aisle": "Fish / Poissonnerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4862,7 +4862,7 @@
     },
     "almonds (whole, unsalted)": {
       "name_en": "Almonds (whole, unsalted)",
-      "name_fr": "Amandes (entières, non salées)",
+      "name_fr": "Amandes entières non salées",
       "aisle": "Grains & Pasta / Épicerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4872,7 +4872,7 @@
     },
     "walnuts (halves, unsalted)": {
       "name_en": "Walnuts (halves, unsalted)",
-      "name_fr": "Noix (cerneaux, non salées)",
+      "name_fr": "Noix (cerneaux non salés)",
       "aisle": "Grains & Pasta / Épicerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -5002,7 +5002,7 @@
     },
     "canned green lentils": {
       "name_en": "Canned green lentils",
-      "name_fr": "Lentilles vertes en boîte",
+      "name_fr": "Lentilles vertes en conserve",
       "aisle": "Grains & Pasta / Épicerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -5052,7 +5052,7 @@
     },
     "soy sauce (low sodium)": {
       "name_en": "Soy sauce (low sodium)",
-      "name_fr": "Sauce soja réduite en sel",
+      "name_fr": "Sauce soja (faible en sel)",
       "aisle": "Oils & Condiments",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -5202,7 +5202,7 @@
     },
     "pistachios (shelled, unsalted)": {
       "name_en": "Pistachios (shelled, unsalted)",
-      "name_fr": "Pistaches décortiquées non salées",
+      "name_fr": "Pistaches (décortiquées non salées)",
       "aisle": "Grains & Pasta / Épicerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -5802,7 +5802,7 @@
     },
     "greek yogurt (0% or 2%)": {
       "name_en": "Greek yogurt (0% or 2%)",
-      "name_fr": "Yaourt grec nature",
+      "name_fr": "Yaourt grec (0% ou 2%)",
       "aisle": "Dairy / Crèmerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -5909,7 +5909,67 @@
       "price_unit": "kg",
       "net_weight": null,
       "updated": "2026-08-30"
+    },
+    "kefir (plain drinking)": {
+      "name_en": "Kefir (plain drinking)",
+      "name_fr": "Kéfir de lait nature",
+      "aisle": "Dairy / Crèmerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-09-06"
+    },
+    "wholewheat pasta (penne or fusilli)": {
+      "name_en": "Wholewheat pasta (penne or fusilli)",
+      "name_fr": "Pâtes complètes (penne ou fusilli)",
+      "aisle": "Grains & Pasta / Épicerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-09-06"
+    },
+    "beef mince (5% fat)": {
+      "name_en": "Beef mince (5% fat)",
+      "name_fr": "Viande hachée de bœuf (5% MG)",
+      "aisle": "Meat / Boucherie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-09-06"
+    },
+    "beef chuck (stewing cut)": {
+      "name_en": "Beef chuck (stewing cut)",
+      "name_fr": "Bœuf à braiser",
+      "aisle": "Meat / Boucherie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-09-06"
+    },
+    "baby spinach (fresh, washed)": {
+      "name_en": "Baby spinach (fresh, washed)",
+      "name_fr": "Épinards frais en sachet",
+      "aisle": "Produce / Fruits & Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-09-06"
+    },
+    "mushrooms (button)": {
+      "name_en": "Mushrooms (button)",
+      "name_fr": "Champignons de Paris",
+      "aisle": "Produce / Fruits & Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-09-06"
     }
   },
-  "updated": "2026-08-30"
+  "updated": "2026-09-06"
 }

@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Soft-Boiled Egg with Sourdough, Goat Cheese & Strawberries",
-      "Mediterranean Grilled Chicken with Roasted Vegetables & Couscous",
-      "Pan-Seared White Fish with Roasted Green Beans & New Potatoes",
-      "Smoked Salmon & Cream Cheese on Sourdough with Kiwi",
-      "Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice",
-      "Baked Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta",
-      "Poached Egg with Whole-Grain Sourdough, Avocado & Blueberries",
-      "Tuna & Chickpea Salad with Roasted Bell Peppers & Lemon-Olive Oil Dressing",
-      "Herb-Roasted Chicken with Roasted Zucchini & Sweet Potato",
-      "Soft-Boiled Egg with Sourdough, Goat Cheese & Strawberries"
-    ],
-    "shopping_items": 63,
-    "prep_minutes": 193,
-    "day_kcal": {
-      "diego": 2120,
-      "diana": 1630
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Soft-Boiled Egg with Sourdough, Feta & Berries",
       "Mediterranean Grilled Chicken with Roasted Veg & Quinoa",
       "Baked White Fish with Green Beans & New Potatoes",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1969,
       "diana": 1530
+    }
+  },
+  {
+    "week_of": "2026-09-07",
+    "generated": "2026-09-06",
+    "meal_names": [
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Avocado",
+      "Mediterranean Beef & Lentil Bowl with Roasted Bell Peppers & Quinoa",
+      "Soy-Ginger Baked Salmon with Stir-Fried Zucchini & Spinach on Sourdough",
+      "Kefir & Peach Smoothie + Fried Eggs on Sourdough with Feta",
+      "Asian Tilapia Bowl with Stir-Fried Broccoli, Carrots & Brown Rice",
+      "Mexican Beef & Black Bean Tacos with Roasted Bell Peppers",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Avocado",
+      "French-Style Beef & Chickpea Stew with Sweet Potato",
+      "Cumin-Spiced Tilapia with Saut\u00e9ed Leeks, Spinach & Wholemeal Pasta",
+      "Kefir & Orange Smoothie + Fried Eggs on Sourdough with Feta"
+    ],
+    "shopping_items": 52,
+    "prep_minutes": 115,
+    "day_kcal": {
+      "diego": 1986,
+      "diana": 1561
     }
   }
 ]
