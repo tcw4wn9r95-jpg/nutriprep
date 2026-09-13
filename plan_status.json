@@ -1,72 +1,77 @@
 {
   "status": "published",
-  "generated": "2026-09-06",
-  "week_of": "2026-09-07",
+  "generated": "2026-09-13",
+  "week_of": "2026-09-14",
   "meal_count": 35,
-  "shopping_items": 52,
-  "prep_batches": 3,
-  "prep_minutes": 115,
+  "shopping_items": 58,
+  "prep_batches": 2,
+  "prep_minutes": 25,
   "notification_events": 30,
-  "fresh_shop_items": 23,
+  "fresh_shop_items": 29,
   "pantry_staple_items": 29,
   "locked_palette": {
     "proteins": [
       "tilapia",
       "salmon",
-      "beef (chuck/stewing cuts)",
-      "eggs"
+      "beef (lean cuts)",
+      "eggs (boiled/fried)"
     ],
     "vegetables": [
-      "bell peppers",
-      "zucchini",
-      "carrots",
-      "cherry tomatoes",
-      "spinach (cooked)",
-      "broccoli",
       "garlic",
       "ginger",
-      "leeks",
-      "mushrooms"
+      "bell peppers (red, yellow)",
+      "courgette",
+      "broccoli",
+      "cherry tomatoes",
+      "carrots",
+      "green beans",
+      "mushrooms",
+      "aubergine"
     ],
     "fruits": [
       "blueberries",
+      "strawberries",
       "apples",
-      "pears",
-      "oranges",
+      "bananas",
       "peaches"
     ],
     "breads_greens": [
-      "sourdough bread",
-      "baby spinach"
+      "sourdough (whole grain)",
+      "spinach"
     ],
     "carbs_staples": [
       "brown rice",
       "wholewheat pasta",
-      "sweet potatoes",
-      "potatoes",
-      "corn tortillas",
       "quinoa",
-      "canned lentils",
+      "sweet potato",
+      "potato with skin",
+      "corn tortillas",
       "canned chickpeas",
-      "canned black beans"
+      "dried lentils",
+      "canned white beans",
+      "rolled oats"
     ],
     "spices_sauces_staples": [
-      "olive oil",
+      "extra virgin olive oil",
       "sesame oil",
-      "balsamic vinegar",
       "soy sauce",
-      "lime juice",
+      "balsamic vinegar",
+      "red wine vinegar",
       "cumin",
       "paprika",
-      "oregano",
-      "thyme",
+      "smoked paprika",
+      "dried oregano",
+      "dried thyme",
       "garlic powder",
       "ginger powder",
+      "chilli flakes",
+      "ground coriander",
       "black pepper",
       "sea salt",
-      "chilli powder",
-      "ground coriander",
-      "Dijon mustard"
+      "honey",
+      "lime juice",
+      "tomato paste",
+      "kefir (plain, unsweetened)"
     ]
   }
 }

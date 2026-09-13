@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Soft-Boiled Egg with Sourdough, Feta & Berries",
-      "Mediterranean Grilled Chicken with Roasted Veg & Quinoa",
-      "Baked White Fish with Green Beans & New Potatoes",
-      "Soft-Boiled Egg with Sourdough, Feta & Berries",
-      "Asian Chicken Stir-Fry with Bok Choy & Brown Rice",
-      "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
-      "Soft-Boiled Egg with Sourdough, Feta & Berries",
-      "Spiced Chicken Bowl with Roasted Vegetables & Canned Lentils",
-      "Herb-Baked White Fish with Spinach & Potatoes",
-      "Soft-Boiled Egg with Sourdough, Feta & Berries"
-    ],
-    "shopping_items": 60,
-    "prep_minutes": 165,
-    "day_kcal": {
-      "diego": 1872,
-      "diana": 1499
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Strawberries",
       "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
       "Baked White Fish with Green Beans, Mushrooms & New Potatoes",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1986,
       "diana": 1561
+    }
+  },
+  {
+    "week_of": "2026-09-14",
+    "generated": "2026-09-13",
+    "meal_names": [
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta",
+      "Mediterranean Beef & Lentil Bowl with Roasted Aubergine & Quinoa",
+      "Soy-Ginger Baked Salmon with Stir-Fried Spinach & Sweet Potato Mash",
+      "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Avocado",
+      "Mexican Beef & Black Bean Bowl with Roasted Bell Peppers & Brown Rice",
+      "Asian Tilapia with Stir-Fried Courgette & Mushrooms on Sweet Potato Mash",
+      "Kefir & Banana Smoothie + Boiled Eggs on Sourdough with Feta",
+      "Chickpea & Roasted Vegetable Quinoa Bowl with Balsamic Drizzle",
+      "Smoky Beef & Roasted Pepper Wholewheat Pasta",
+      "Kefir & Peach Smoothie + Fried Eggs on Sourdough with Feta"
+    ],
+    "shopping_items": 58,
+    "prep_minutes": 25,
+    "day_kcal": {
+      "diego": 2071,
+      "diana": 1601
     }
   }
 ]

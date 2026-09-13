@@ -1,101 +1,65 @@
 {
-  "week_of": "2026-09-07",
+  "week_of": "2026-09-14",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 115,
+  "total_active_minutes": 25,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Quinoa, Beef Mince (Mediterranean), Roasted Bell Peppers & Green Lentils",
+      "title": "Green Lentils (Mon\u2013Thu lunches)",
       "order": 1,
-      "active_minutes": 45,
+      "active_minutes": 10,
       "steps": [
-        "Cook quinoa: rinse 500 g dry quinoa under cold water 1 minute. Place in a large pot with 1 L cold salted water. Bring to a boil, reduce to a simmer, cover and cook 15 minutes until water is absorbed. Fluff with fork. Spread on a baking tray to cool quickly. Divide into 6 portions (~130 g each) in airtight containers; label and refrigerate.",
-        "Brown beef mince (Mediterranean): heat 1 tbsp olive oil in a large non-stick pan over medium-high heat. Add 600 g beef mince; break apart with a wooden spoon. Cook 6\u20138 minutes until no pink remains. Add 2 cloves minced garlic, 1 tsp cumin, 1 tsp paprika, 1 tsp oregano, \u00bd tsp sea salt; stir 2 minutes. Remove from heat; cool completely on a plate. Portion into 2 containers: 260 g (2 \u00d7 Monday/Thursday Diego) and 180 g (2 \u00d7 Monday/Thursday Diana); refrigerate.",
-        "Roast bell peppers: slice 6 bell peppers (mixed colours) into strips; toss in a bowl with 2 tbsp olive oil, 1 tsp paprika, \u00bd tsp sea salt, \u00bd tsp black pepper. Spread on 2 lined baking trays in a single layer. Roast at 200 \u00b0C (fan) for 25 minutes until edges are charred. Cool completely; transfer to 2 airtight containers; refrigerate.",
-        "Prepare green lentils: open 2 \u00d7 400 g cans green lentils; drain and rinse under cold water. Transfer to a bowl; season with 1 tsp cumin, 1 tsp olive oil, \u00bd tsp sea salt; stir to coat. Portion into 2 containers for Monday and Thursday; refrigerate.",
-        "Brown beef mince (Mexican tacos): heat 1 tbsp olive oil in the same pan over medium-high. Add 400 g beef mince; break apart. Cook 5 minutes; add 1 tsp cumin, 1 tsp chilli powder, 1 tsp garlic powder, \u00bd tsp oregano, \u00bd tsp sea salt; stir 2 minutes. Cool completely; portion into 2 containers for Tuesday dinner; refrigerate.",
-        "Prepare black beans (Tuesday dinner): drain and rinse 1 \u00d7 400 g can black beans. Toss with \u00bd tsp cumin, \u00bd tsp lime juice, pinch of salt. Store in a small container in the fridge."
+        "Rinse 300 g dried green lentils in cold water.",
+        "Place in a medium saucepan, cover with at least 5 cm of cold water.",
+        "Bring to a boil over high heat, then reduce to a gentle simmer.",
+        "Cook uncovered 20\u201322 min until tender but holding their shape.",
+        "Drain in a colander, rinse briefly with cold water to stop cooking.",
+        "Season lightly with salt. Cool completely before storing.",
+        "Transfer to an airtight container. Label: 'Lentils \u2014 cooked Sunday 20/09. Use by Friday 25/09.'"
       ],
       "yields": [
-        "Cooked quinoa: ~750 g cooked (6 portions)",
-        "Mediterranean beef mince: ~600 g cooked",
-        "Roasted bell pepper strips: ~700 g",
-        "Seasoned green lentils: ~500 g drained",
-        "Mexican spiced beef mince: ~350 g cooked",
-        "Seasoned black beans: ~200 g"
+        "~750 g cooked green lentils"
       ],
-      "food_category": "red_meat",
+      "food_category": "legumes",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: reheat 130 g (Diego) / 90 g (Diana) quinoa in microwave 90 sec; reheat beef portion and lentils in pan 4 min; warm bell peppers 45 sec in microwave; assemble bowl and drizzle with olive oil and balsamic vinegar.",
-        "Tuesday": "Dinner \u2014 Mexican Beef & Black Bean Tacos: reheat Mexican beef in pan 4 min; warm black beans with lime juice 1 min; warm tortillas in dry pan; fill tortillas with beef, beans, bell pepper strips; dress spinach with olive oil and balsamic vinegar on the side.",
-        "Thursday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (red meat is only safe ~3 day(s); this is day 4)."
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: reheat 150g (Diego) / 120g (Diana) lentils in a pan with 1 tsp red wine vinegar, cumin and black pepper 3 min; combine with reheated beef mince and aubergine over quinoa.",
+        "Thursday": "Lunch \u2014 French Lentil & Roasted Carrot Bowl: reheat 150g (Diego) / 120g (Diana) lentils in a pan with 1 tsp olive oil and red wine vinegar 3 min; serve over roasted carrots with a boiled egg and sourdough croutons."
       },
       "storage": {
         "method": "refrigerate",
         "container": "airtight container",
         "fridge_c": "\u2264 4",
         "cool_within_hours": 2,
-        "use_within_days": 3,
+        "use_within_days": 5,
         "freeze_option_days": 90,
         "reheat_c": 74,
-        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
       }
     },
     {
       "id": "prep_batch_2",
-      "title": "Beef Chuck Stew & Roasted Zucchini",
+      "title": "Sweet Potato Mash (Mon\u2013Tue dinners)",
       "order": 2,
-      "active_minutes": 65,
+      "active_minutes": 15,
       "steps": [
-        "Cube beef chuck: trim and cut 700 g beef chuck into 3 cm cubes. Pat dry with kitchen paper \u2014 this helps browning.",
-        "Brown the chuck: heat 2 tbsp olive oil in a large heavy-bottomed pot or Dutch oven over high heat. Add beef cubes in 2 batches (do not crowd the pan); sear 2\u20133 minutes per side until a deep brown crust forms. Remove batches to a plate.",
-        "Build the stew base: lower heat to medium; add 3 cloves minced garlic to the pot; cook 30 seconds. Add 2 tbsp tomato paste; stir 1 minute. Pour in 500 ml water (or beef stock if available). Add 1 tsp cumin, 1 tsp paprika, 1 tsp oregano, \u00bd tsp thyme, 1 tsp sea salt, \u00bd tsp black pepper; stir well.",
-        "Braise: return beef cubes to the pot; bring to a gentle boil, then reduce heat to low; cover and simmer 60 minutes, stirring occasionally, until beef is fork-tender. Add a splash of water if the liquid reduces too much.",
-        "Cool and portion: remove pot from heat; let cool 15 minutes with lid off. Portion into 4 containers (2 \u00d7 Wednesday lunch, 2 \u00d7 Thursday lunch, labelled by day and person). Refrigerate immediately.",
-        "Roast zucchini: while stew simmers, slice 3 zucchini (600 g total) into half-moon pieces. Toss with 1 tbsp olive oil, 1 tsp oregano, \u00bd tsp garlic powder, \u00bd tsp sea salt. Spread on 2 lined baking trays. Roast at 200 \u00b0C for 20 minutes until golden. Cool; store in 1 large container in fridge (used Wednesday and Thursday lunch)."
+        "Peel 800 g sweet potatoes and cut into 3 cm cubes.",
+        "Place in a large saucepan, cover with cold salted water.",
+        "Bring to a boil and cook 18\u201320 min until very tender when pierced with a fork.",
+        "Drain well; return to the warm pot for 1 min to steam-dry.",
+        "Mash thoroughly with 1 tsp olive oil and a good pinch of black pepper until smooth.",
+        "Cool completely. Transfer to an airtight container.",
+        "Label: 'Sweet potato mash \u2014 cooked Sunday. Use Mon (day 1) and Tue (day 2) only.'"
       ],
       "yields": [
-        "Braised beef chuck stew: ~550 g cooked (4 portions \u2014 enough for Wed & Thu lunches for 2 people)",
-        "Roasted zucchini: ~400 g (2 portions per day over Wed & Thu)"
-      ],
-      "food_category": "red_meat",
-      "video_url": "",
-      "day_of_assembly": {
-        "Wednesday": "Lunch \u2014 French-Style Beef & Chickpea Stew with Sweet Potato: reheat 150 g (Diego) / 110 g (Diana) beef chuck stew in a saucepan 5\u20136 min; stir in chickpeas 2 min; reheat baked sweet potato in microwave 2 min; serve stew alongside sweet potato with balsamic vinegar.",
-        "Thursday": "\u26a0 Cook fresh today \u2014 do NOT use the Sunday batch (red meat is only safe ~3 day(s); this is day 4)."
-      },
-      "storage": {
-        "method": "refrigerate",
-        "container": "airtight container",
-        "fridge_c": "\u2264 4",
-        "cool_within_hours": 2,
-        "use_within_days": 3,
-        "freeze_option_days": 90,
-        "reheat_c": 74,
-        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
-      }
-    },
-    {
-      "id": "prep_batch_3",
-      "title": "Baked Sweet Potatoes (for Wednesday & Thursday lunches)",
-      "order": 3,
-      "active_minutes": 5,
-      "steps": [
-        "Preheat oven to 200 \u00b0C. Scrub 5 medium sweet potatoes (each ~180 g) under running water; pierce each 4\u20135 times with a fork.",
-        "Place directly on the oven rack or a baking tray. Bake 40\u201345 minutes until a fork slides in easily and the skin is slightly wrinkled.",
-        "Remove from oven; allow to cool completely at room temperature (~20 minutes). Do NOT wrap in foil while cooling \u2014 this traps steam and makes the skin soggy.",
-        "Once cool, place in 2 separate airtight containers or zip-lock bags; label with day. Refrigerate immediately. Use within 4 days."
-      ],
-      "yields": [
-        "5 baked sweet potatoes (~900 g total cooked weight), used for Wednesday and Thursday lunches"
+        "~700 g sweet potato mash"
       ],
       "food_category": "vegetables_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Wednesday": "Lunch \u2014 French-Style Beef & Chickpea Stew with Sweet Potato: reheat 1 whole sweet potato (Diego, 180 g) or \u00be (Diana, 130 g) in microwave 2 min; serve alongside beef-chickpea stew.",
-        "Thursday": "Lunch \u2014 Mediterranean Beef Chuck & Lentil Skillet: no sweet potato used Thursday \u2014 roasted zucchini replaces it in this dish. Remaining sweet potatoes reserved for weekend or discard if past 4-day window."
+        "Monday": "Dinner \u2014 Soy-Ginger Baked Salmon with Spinach: microwave 200g (Diego) / 150g (Diana) mash 2 min; serve as base for baked salmon fillet and stir-fried spinach.",
+        "Tuesday": "Dinner \u2014 Asian Tilapia with Stir-Fried Courgette & Mushrooms: microwave 180g (Diego) / 140g (Diana) mash 2 min; plate as base under pan-seared tilapia with sesame-ginger stir-fried courgette and mushrooms."
       },
       "storage": {
         "method": "refrigerate",
