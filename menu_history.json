@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Strawberries",
-      "Mediterranean Grilled Chicken with Roasted Vegetables & Quinoa",
-      "Baked White Fish with Green Beans, Mushrooms & New Potatoes",
-      "Smoked Salmon on Rye with Cream Cheese & Kiwi",
-      "Asian Chicken Stir-Fry with Bok Choy, Sesame & Brown Rice",
-      "Lean Beef & Herb Meatballs with Tomato Sauce & Whole-Grain Pasta",
-      "Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Blueberries",
-      "Pan-Seared Salmon with Roasted Asparagus & Sweet Potato",
-      "Grilled Chicken Breast with Couscous, Roasted Peppers & Spinach",
-      "Soft-Boiled Egg with Whole-Grain Sourdough, Feta & Strawberries"
-    ],
-    "shopping_items": 67,
-    "prep_minutes": 289,
-    "day_kcal": {
-      "diego": 2171,
-      "diana": 1656
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Savoury Egg & Sourdough with Rocket, Cherry Tomatoes & Orange",
       "Mexican Chicken & Chickpea Bowl with Roasted Peppers, Brown Rice & Lime",
       "Baked Salmon with Roasted Broccoli, Carrot & Quinoa Tabbouleh",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 2071,
       "diana": 1601
+    }
+  },
+  {
+    "week_of": "2026-09-21",
+    "generated": "2026-09-20",
+    "meal_names": [
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta",
+      "Mediterranean Beef & Lentil Bowl with Roasted Bell Peppers & Quinoa",
+      "Soy-Ginger Baked Salmon with Stir-Fried Broccoli & Carrots on Sourdough",
+      "Kefir & Apple Smoothie + Fried Eggs on Sourdough with Avocado-Style Olive Spread",
+      "Asian Beef Bowl with Stir-Fried Zucchini & Mushrooms on Brown Rice",
+      "French-Style Tilapia en Papillote with Leeks, Cherry Tomatoes & Sourdough",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta",
+      "Mexican Beef & Chickpea Tacos with Roasted Bell Peppers",
+      "Baked Salmon with Turmeric-Roasted Carrots & Spinach on Quinoa",
+      "Kefir & Orange Smoothie + Fried Eggs on Sourdough with Feta"
+    ],
+    "shopping_items": 53,
+    "prep_minutes": 43,
+    "day_kcal": {
+      "diego": 1958,
+      "diana": 1510
     }
   }
 ]

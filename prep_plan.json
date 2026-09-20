@@ -1,65 +1,100 @@
 {
-  "week_of": "2026-09-14",
+  "week_of": "2026-09-21",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 25,
+  "total_active_minutes": 43,
   "batches": [
     {
       "id": "prep_batch_1",
-      "title": "Green Lentils (Mon\u2013Thu lunches)",
+      "title": "Hard-boil extra eggs for the week (optional buffer)",
       "order": 1,
-      "active_minutes": 10,
+      "active_minutes": 5,
       "steps": [
-        "Rinse 300 g dried green lentils in cold water.",
-        "Place in a medium saucepan, cover with at least 5 cm of cold water.",
-        "Bring to a boil over high heat, then reduce to a gentle simmer.",
-        "Cook uncovered 20\u201322 min until tender but holding their shape.",
-        "Drain in a colander, rinse briefly with cold water to stop cooking.",
-        "Season lightly with salt. Cool completely before storing.",
-        "Transfer to an airtight container. Label: 'Lentils \u2014 cooked Sunday 20/09. Use by Friday 25/09.'"
+        "Fill a medium saucepan with water; bring to a rolling boil.",
+        "Gently lower 4 eggs into the water using a spoon.",
+        "Boil exactly 9 minutes for firm yolks.",
+        "Transfer immediately to a bowl of ice-cold water; leave 5 minutes.",
+        "Peel and store in an airtight container in the fridge \u2014 use within 4 days (Mon\u2013Thu).",
+        "Label container with today's date."
       ],
       "yields": [
-        "~750 g cooked green lentils"
+        "4 peeled hard-boiled eggs \u2014 for Thursday frittata or any emergency snack Mon\u2013Thu"
       ],
-      "food_category": "legumes",
+      "food_category": "eggs_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: reheat 150g (Diego) / 120g (Diana) lentils in a pan with 1 tsp red wine vinegar, cumin and black pepper 3 min; combine with reheated beef mince and aubergine over quinoa.",
-        "Thursday": "Lunch \u2014 French Lentil & Roasted Carrot Bowl: reheat 150g (Diego) / 120g (Diana) lentils in a pan with 1 tsp olive oil and red wine vinegar 3 min; serve over roasted carrots with a boiled egg and sourdough croutons."
+        "Thursday": "Dinner \u2014 French Leek & Mushroom Egg Frittata: use 1\u20132 hard-boiled eggs sliced into salad greens alongside the frittata, or incorporate into baked egg base as needed."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "covered container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 4,
+        "freeze_option_days": null,
+        "reheat_c": 74,
+        "safety_note": "Hard-boiled eggs: 1 week in shell, 5 days peeled in water. Scrambled/cooked dishes: 3\u20134 days."
+      }
+    },
+    {
+      "id": "prep_batch_2",
+      "title": "Slow-braised beef chuck for Mon, Tue & Wed lunches",
+      "order": 2,
+      "active_minutes": 25,
+      "steps": [
+        "Cut 1.2 kg beef chuck into 3\u20134 cm cubes; pat dry with paper towels.",
+        "Heat 2 tbsp olive oil in a large heavy-bottomed pot or Dutch oven over high heat until shimmering.",
+        "Working in 2\u20133 batches, sear beef cubes on all sides until deep brown (about 3\u20134 min per batch); do not crowd the pan. Remove each batch and set aside.",
+        "Reduce heat to medium. Add 3 minced garlic cloves to the pot; saut\u00e9 1 minute until fragrant.",
+        "Add 2 tbsp tomato paste; stir and cook 1 min.",
+        "Return all beef to the pot. Add 1 tsp smoked paprika, 1 tsp cumin, 1 tsp dried oregano, \u00bd tsp black pepper, 1 tsp sea salt, and 400 ml water (or low-salt beef stock).",
+        "Bring to a simmer, then cover and reduce heat to low. Braise 60\u201370 min until beef is very tender and pulls apart slightly.",
+        "Remove from heat. Allow to cool 20 min uncovered.",
+        "Divide into clearly labelled portions: 300 g for Monday lunch (Diego 150 g + Diana 150 g), 260 g for Tuesday lunch (Diego 150 g + Diana 110 g), 260 g for Wednesday lunch (Diego 150 g + Diana 110 g).",
+        "Store each portion in a separate airtight container in the fridge. Use Monday's within 1 day, Tuesday's within 2 days, Wednesday's within 3 days \u2014 all safe within the 3-day beef window.",
+        "Cool completely before sealing. Refrigerate immediately."
+      ],
+      "yields": [
+        "~820 g cooked braised beef \u2014 portioned for Mon, Tue, Wed lunches (3 containers)"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: reheat Monday portion (150 g Diego / 110 g Diana) in saucepan with splash of water; serve over quinoa with roasted peppers and lentils, smoked paprika drizzle.",
+        "Tuesday": "Lunch \u2014 Asian Beef Bowl: reheat Tuesday portion in pan with 1 tbsp soy sauce and \u00bd tsp ginger powder; toss over brown rice with stir-fried zucchini and mushrooms.",
+        "Wednesday": "Lunch \u2014 Mexican Beef & Chickpea Tacos: reheat Wednesday portion in pan with cumin, chili powder, garlic powder; serve in warmed corn tortillas with roasted peppers, chickpeas, mixed greens, and a yogurt drizzle."
       },
       "storage": {
         "method": "refrigerate",
         "container": "airtight container",
         "fridge_c": "\u2264 4",
         "cool_within_hours": 2,
-        "use_within_days": 5,
+        "use_within_days": 3,
         "freeze_option_days": 90,
         "reheat_c": 74,
-        "safety_note": "Cooked beans and lentils keep well. Freeze in portions for quick meals."
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
       }
     },
     {
-      "id": "prep_batch_2",
-      "title": "Sweet Potato Mash (Mon\u2013Tue dinners)",
-      "order": 2,
-      "active_minutes": 15,
+      "id": "prep_batch_3",
+      "title": "Roast mushrooms for Tuesday lunch",
+      "order": 3,
+      "active_minutes": 8,
       "steps": [
-        "Peel 800 g sweet potatoes and cut into 3 cm cubes.",
-        "Place in a large saucepan, cover with cold salted water.",
-        "Bring to a boil and cook 18\u201320 min until very tender when pierced with a fork.",
-        "Drain well; return to the warm pot for 1 min to steam-dry.",
-        "Mash thoroughly with 1 tsp olive oil and a good pinch of black pepper until smooth.",
-        "Cool completely. Transfer to an airtight container.",
-        "Label: 'Sweet potato mash \u2014 cooked Sunday. Use Mon (day 1) and Tue (day 2) only.'"
+        "Wipe 300 g button mushrooms clean with a damp cloth; quarter them.",
+        "Toss with 1 tbsp olive oil, \u00bd tsp dried thyme, salt and pepper on a large baking tray.",
+        "Spread in a single layer \u2014 do not pile them or they will steam rather than roast.",
+        "Roast at 200 \u00b0C for 20 minutes, stirring once halfway, until golden and slightly shrunken.",
+        "Cool completely, then transfer to an airtight container. Refrigerate \u2014 use within 4 days (safe for Mon\u2013Thu, so Tuesday is day 2 \u2713).",
+        "Label with date."
       ],
       "yields": [
-        "~700 g sweet potato mash"
+        "~220 g roasted mushrooms \u2014 for Tuesday lunch (Asian Beef Bowl)"
       ],
       "food_category": "vegetables_cooked",
       "video_url": "",
       "day_of_assembly": {
-        "Monday": "Dinner \u2014 Soy-Ginger Baked Salmon with Spinach: microwave 200g (Diego) / 150g (Diana) mash 2 min; serve as base for baked salmon fillet and stir-fried spinach.",
-        "Tuesday": "Dinner \u2014 Asian Tilapia with Stir-Fried Courgette & Mushrooms: microwave 180g (Diego) / 140g (Diana) mash 2 min; plate as base under pan-seared tilapia with sesame-ginger stir-fried courgette and mushrooms."
+        "Tuesday": "Lunch \u2014 Asian Beef Bowl: reheat 60\u201345 g roasted mushrooms in the beef pan during last 1 min of stir-frying for extra umami depth."
       },
       "storage": {
         "method": "refrigerate",
@@ -70,6 +105,39 @@
         "freeze_option_days": 90,
         "reheat_c": 74,
         "safety_note": "Cooked vegetables store well. Roasted veg can be eaten cold in salads."
+      }
+    },
+    {
+      "id": "prep_batch_4",
+      "title": "Cook quinoa for Mon & Wed lunches/dinners",
+      "order": 4,
+      "active_minutes": 5,
+      "steps": [
+        "Rinse 300 g dry quinoa in a fine-mesh sieve under cold running water for 30 seconds to remove bitterness.",
+        "Combine quinoa with 600 ml water and a pinch of sea salt in a medium saucepan.",
+        "Bring to a boil, then reduce heat to low; cover and simmer 12\u201315 minutes until all water is absorbed and quinoa has sprouted its germ ring.",
+        "Remove from heat; let stand covered 5 minutes, then fluff with a fork.",
+        "Cool completely before transferring to an airtight container. Refrigerate \u2014 use within 3 days (Mon = day 1, Wed = day 3 \u2713).",
+        "Label with Sunday's date."
+      ],
+      "yields": [
+        "~750 g cooked quinoa \u2014 for Monday lunch and Wednesday dinner"
+      ],
+      "food_category": "grains_pasta",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Lentil Bowl: reheat 120 g (Diego) / 90 g (Diana) quinoa in microwave with 2 tbsp water for 1 min; use as bowl base.",
+        "Wednesday": "Dinner \u2014 Baked Salmon with Turmeric-Roasted Carrots & Spinach: reheat 120 g (Diego) / 90 g (Diana) quinoa in microwave with 2 tbsp water for 1 min; plate as base under salmon and vegetables."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 60,
+        "reheat_c": 74,
+        "safety_note": "Add a splash of water before reheating to restore moisture. Use within 3 days."
       }
     }
   ]
