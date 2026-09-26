@@ -1,77 +1,74 @@
 {
   "status": "published",
-  "generated": "2026-09-20",
-  "week_of": "2026-09-21",
+  "generated": "2026-09-26",
+  "week_of": "2026-09-28",
   "meal_count": 35,
-  "shopping_items": 53,
-  "prep_batches": 4,
-  "prep_minutes": 43,
+  "shopping_items": 52,
+  "prep_batches": 0,
+  "prep_minutes": 0,
   "notification_events": 30,
-  "fresh_shop_items": 25,
+  "fresh_shop_items": 24,
   "pantry_staple_items": 28,
   "locked_palette": {
     "proteins": [
-      "tilapia",
       "salmon",
-      "beef (chuck/stewing cuts)",
-      "eggs"
+      "tilapia",
+      "beef (ground and cuts)",
+      "eggs (boiled, fried, poached)"
     ],
     "vegetables": [
+      "garlic",
+      "onion (cooked only)",
+      "ginger",
       "bell peppers",
       "zucchini",
-      "carrots",
       "cherry tomatoes",
+      "carrots",
       "broccoli",
-      "spinach (cooked)",
-      "garlic",
-      "ginger",
-      "leeks",
-      "mushrooms"
+      "green beans",
+      "spinach"
     ],
     "fruits": [
-      "apples",
       "blueberries",
+      "raspberries",
+      "apples",
       "bananas",
-      "oranges",
-      "pears"
+      "oranges"
     ],
     "breads_greens": [
       "sourdough bread",
-      "mixed salad greens"
+      "mixed leaf salad"
     ],
     "carbs_staples": [
       "brown rice",
       "wholewheat pasta",
-      "sweet potatoes",
-      "potatoes",
+      "sweet potato",
       "corn tortillas",
-      "quinoa",
       "canned lentils",
       "canned chickpeas",
-      "canned white beans"
+      "canned white beans",
+      "quinoa"
     ],
     "spices_sauces_staples": [
-      "olive oil",
+      "extra virgin olive oil",
       "sesame oil",
-      "balsamic vinegar",
       "soy sauce",
+      "balsamic vinegar",
+      "white wine vinegar",
       "cumin",
       "paprika",
       "smoked paprika",
-      "garlic powder",
-      "ginger powder",
       "dried oregano",
       "dried thyme",
-      "dried rosemary",
-      "chili powder",
-      "turmeric",
-      "black pepper",
-      "sea salt",
-      "tomato paste",
+      "dried basil",
+      "ground ginger",
+      "garlic powder",
+      "chilli flakes",
+      "ground coriander",
+      "lime juice",
+      "tomato passata",
       "Greek yogurt",
-      "kefir",
-      "Dijon mustard",
-      "lime juice"
+      "kefir (plain, unsweetened)"
     ]
   }
 }

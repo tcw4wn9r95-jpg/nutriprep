@@ -3,28 +3,6 @@
     "week_of": "2026-06-15",
     "generated": "2026-06-13",
     "meal_names": [
-      "Savoury Egg & Sourdough with Rocket, Cherry Tomatoes & Orange",
-      "Mexican Chicken & Chickpea Bowl with Roasted Peppers, Brown Rice & Lime",
-      "Baked Salmon with Roasted Broccoli, Carrot & Quinoa Tabbouleh",
-      "Smoked Mackerel on Sourdough with Rocket, Cucumber & Strawberries",
-      "Asian Sesame Chicken Bowl with Stir-Fried Zucchini, Spinach & Brown Rice",
-      "Mediterranean Baked Mackerel with Roasted Cherry Tomatoes, Spinach & Lentils",
-      "Two-Egg Omelette with Spinach, Cherry Tomatoes & Sourdough Toast with Orange",
-      "French-Style Chicken & Lentil Salad with Rocket, Carrots & Dijon Vinaigrette",
-      "Harissa Baked Chicken with Roasted Zucchini, Broccoli & Sweet Potato",
-      "Savoury Egg & Sourdough with Rocket, Cherry Tomatoes & Orange"
-    ],
-    "shopping_items": 53,
-    "prep_minutes": 50,
-    "day_kcal": {
-      "diego": 1784,
-      "diana": 1409
-    }
-  },
-  {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
       "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
       "Mexican Chicken & Chickpea Bowl with Roasted Peppers, Couscous & Lime",
       "Baked Salmon with Garlic-Spinach & Sweet Potato Mash",
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1958,
       "diana": 1510
+    }
+  },
+  {
+    "week_of": "2026-09-28",
+    "generated": "2026-09-26",
+    "meal_names": [
+      "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Olive Spread",
+      "Mediterranean Beef & Lentil Bowl with Roasted Bell Peppers & Quinoa",
+      "Soy-Ginger Baked Salmon with Stir-Fried Zucchini & Spinach on Sourdough",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta",
+      "Asian Tilapia Bowl with Stir-Fried Broccoli, Carrots & Brown Rice",
+      "Mexican Beef & Black Bean Tacos with Roasted Bell Peppers & Zucchini",
+      "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Feta",
+      "French-Style Tilapia en Papillote with Roasted Carrots, Green Beans & Quinoa",
+      "Mediterranean Beef & Chickpea Skillet with Roasted Cherry Tomatoes, Spinach & Sourdough",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Olive Spread"
+    ],
+    "shopping_items": 52,
+    "prep_minutes": 0,
+    "day_kcal": {
+      "diego": 2106,
+      "diana": 1618
     }
   }
 ]
