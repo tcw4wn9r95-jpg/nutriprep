@@ -1089,6 +1089,16 @@ events.append({
     "body": f"~{prep_total_min // 60}h{prep_total_min % 60:02d} of prep sets up your whole week. Tap for the steps.",
     "sent": False,
 })
+# Tell the cook the new menu is here (the first thing to do is look at it).
+_ready_at = datetime.now(LUX) + timedelta(minutes=2)
+events.append({
+    "id": f"plan-ready-{next_monday.isoformat()}", "type": "plan_ready", "audience": MEMBERS,
+    "at": _ready_at.replace(second=0, microsecond=0).isoformat(),
+    "title": "Next week's menu is ready 🥗",
+    "body": f"{len({m.get('name') for d in menu_json for m in d.get('meals', [])})} dishes planned. "
+            "Have a look and swap anything before Saturday's shop.",
+    "sent": False,
+})
 # Keep this week's still-pending reminders (Fri–Sun meals, snacks, weigh-in).
 _now = datetime.now(LUX)
 _new_ids = {e["id"] for e in events}
@@ -1099,6 +1109,12 @@ for e in _previous_events:
         continue
     if not e.get("sent") and _now <= at < datetime.combine(next_monday, datetime.min.time(), LUX) and e.get("id") not in _new_ids:
         events.append(e)
+
+# Each reminder opens the screen it talks about.
+_TAB_FOR = {"shop": "shopping", "prep": "prep", "cook": "today", "snack": "today",
+            "weigh_in": "progress", "plan_ready": "menu"}
+for _e in events:
+    _e.setdefault("tab", _TAB_FOR.get(_e.get("type"), "today"))
 
 # Sort events chronologically
 events.sort(key=lambda e: e["at"])

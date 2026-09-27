@@ -1,4 +1,4 @@
-const CACHE = "nutriprep-standalone-v29";
+const CACHE = "nutriprep-standalone-v30";
 const ASSETS = ["./dashboard.html"];
 
 self.addEventListener("install", e => {
@@ -42,7 +42,7 @@ self.addEventListener("push", e => {
       icon: "./apple-touch-icon.png",
       badge: "./apple-touch-icon.png",
       tag: data.type || "nutriprep",
-      data: { url: "./dashboard.html" },
+      data: { url: "./dashboard.html" + (data.tab ? "?tab=" + encodeURIComponent(data.tab) : ""), tab: data.tab || "" },
       requireInteraction: false,
     })
   );
@@ -52,9 +52,12 @@ self.addEventListener("notificationclick", e => {
   e.notification.close();
   e.waitUntil(
     clients.matchAll({ type: "window" }).then(cs => {
-      const target = (e.notification.data || {}).url || "./dashboard.html";
+      const d = e.notification.data || {};
+      const target = d.url || "./dashboard.html";
       const open = cs.find(c => c.url.includes("dashboard.html") && "focus" in c);
-      return open ? open.focus() : clients.openWindow(target);
+      // Already open: bring it forward on the screen the reminder is about.
+      if (open) { if (d.tab) open.postMessage({ type: "open-tab", tab: d.tab }); return open.focus(); }
+      return clients.openWindow(target);
     })
   );
 });

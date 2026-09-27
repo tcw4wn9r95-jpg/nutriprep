@@ -312,6 +312,34 @@
   .ask-result { margin-top: 10px; font-size: 13px; background: var(--sage-pale); border-radius: 10px; padding: 9px 11px; line-height: 1.45; }
   .ask-result ul { margin: 6px 0 0 18px; }
   .ask-result.err { background: #F6E4DE; color: #9b4a31; }
+  .journey-card { border: 1.5px solid var(--sage); }
+  .jc-head { display: flex; gap: 12px; align-items: flex-start; }
+  .jc-ic { font-size: 26px; line-height: 1; }
+  .jc-title { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--pine); }
+  .jc-text { font-size: 13px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+  .gs-row { display: flex; gap: 10px; align-items: center; padding: 8px 4px; border-bottom: 1px solid var(--hair); cursor: pointer; }
+  .gs-row.done { opacity: .55; cursor: default; }
+  .gs-row.next .gs-label { color: var(--pine); }
+  .gs-dot { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--hair); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #fff; flex-shrink: 0; }
+  .gs-row.done .gs-dot { background: var(--pine); border-color: var(--pine); }
+  .gs-row.next .gs-dot { border-color: var(--pine); }
+  .gs-label { font-size: 14px; font-weight: 600; }
+  .gs-hint { font-size: 11.5px; color: var(--muted); }
+  .gs-opt { font-size: 10.5px; font-weight: 600; color: var(--faint); }
+  .gs-go { color: var(--pine); font-size: 20px; }
+  .link-muted { font-size: 12px; color: var(--pine); text-decoration: underline; cursor: pointer; }
+  .plan-mini { font-size: 12px; color: var(--muted); text-align: center; }
+  .prep-step { cursor: pointer; }
+  .prep-step.done { opacity: .5; text-decoration: line-through; }
+  .prep-step.done .batch-step-num { background: var(--pine); }
+  .rate-list { margin-top: 8px; }
+  .rate-row { padding: 8px 0; border-bottom: 1px solid var(--hair); }
+  .rate-name { font-size: 13.5px; font-weight: 600; margin-bottom: 4px; }
+  .rate-person { display: inline-flex; align-items: center; gap: 4px; margin-right: 14px; font-size: 12px; color: var(--muted); }
+  .rate-btn { border: 1.5px solid var(--hair); background: none; border-radius: 999px; padding: 3px 9px; cursor: pointer; font-size: 13px; }
+  .rate-btn.on { background: var(--sage-pale); border-color: var(--pine); }
+  .another { display: flex; gap: 6px; margin-top: 12px; }
+  .another input { flex: 1; min-width: 0; border: 1.5px solid var(--hair); border-radius: 999px; padding: 8px 12px; font-size: 13px; background: var(--bg); color: var(--ink); }
   #prefs-status { font-size: 12px; color: var(--muted); padding: 6px 14px calc(10px + var(--safe-b)); background: var(--surface); border-top: 1px solid var(--hair); text-align: center; }
 
   /* Meal sheet */
@@ -553,6 +581,8 @@
 <div class="content">
   <!-- TODAY -->
   <div class="tab-pane active" id="pane-today">
+    <div id="getting-started"></div>
+    <div id="journey"></div>
     <div id="plan-action" style="margin-bottom:12px"></div>
     <div id="plan-paused-banner" style="display:none;background:var(--honey-pale);border:1px solid var(--honey);border-radius:var(--r-sm);padding:10px 14px;margin-bottom:12px;font-size:13px;color:var(--ink);align-items:center;gap:10px">
       <span style="font-size:18px">⏸</span>
@@ -703,7 +733,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v42 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v43 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -727,7 +757,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 42; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 43; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1389,11 +1419,155 @@ function kcalLine(meal){
   return MEMBERS.map(m=>{ const k=((((meal.portions||{})[m])||{}).macros||{}).kcal; return k?`${esc(personName(m))} ${k}`:null; }).filter(Boolean).join(" · ")+" kcal";
 }
 
+// ── The weekly journey: one "what now" card on Home ────────────────────────────
+// Friday evening the new menu lands → review it; Saturday → shop; Sunday → prep;
+// Thursday/Friday of a running week → rate its dishes (feeds Friday's plan).
+// Only ever ONE of these at a time. First-run setup is a checklist above it.
+function luxDow(){ return ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Luxembourg",weekday:"short"}).format(new Date())); }
+function _lsGet(k){ try{ return localStorage.getItem(k); }catch(_){ return null; } }
+function _lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(_){} }
+function journeyCard(icon, title, text, btnLabel, action, extra){
+  return `<div class="card journey-card"><div class="jc-head"><span class="jc-ic">${icon}</span><div><div class="jc-title">${title}</div><div class="jc-text">${text}</div></div></div>${extra||""}${btnLabel?`<button class="btn btn-block" style="margin-top:10px" onclick="${action}">${btnLabel}</button>`:""}</div>`;
+}
+
+// First run: what the app needs, ticked off as it happens. Never blocks the app.
+function gettingStartedSteps(){
+  const P=prefs||normalizePrefs({});
+  const setupDone=!!(_lsGet("nutriprep_setup_done")||MEMBERS.some(m=>_lsGet("nutriprep_setup_done_"+m))||MEMBERS.every(m=>(people[m].goals||{}).goal_type));
+  const prefsDone=P.migrated_legacy||MEMBERS.some(m=>{ const p=P.people[m]; return p.diet_style||PREF_LIST_KINDS.some(k=>p[k].length); });
+  return [
+    {id:"connect", req:true, done:!!(cfg("gh_token")&&cfg("anthropic_key")), label:"Connect the app", hint:"GitHub token (saves your data) and Anthropic key (Coach Léa)", action:"showTab('settings')"},
+    {id:"household", req:true, done:setupDone, label:"Set up the household with Coach Léa", hint:"Who eats, goals, budget, kitchen", action:"startSetup()"},
+    {id:"prefs", req:true, done:!!prefsDone, label:"Food preferences for each person", hint:"Allergies, won't-eat, loves, diet", action:"openPrefs()"},
+    {id:"plan", req:true, done:planExists(), label:"Build the first weekly plan", hint:"Then it's automatic every Friday", action:"generatePlan()"},
+    {id:"nutri", req:false, done:!!(nutritionPlan&&nutritionPlan.source==="nutritionist_upload"), label:"Upload the nutritionist's plan", hint:"Optional — otherwise targets come from goals", action:"showTab('settings')"},
+    {id:"notif", req:false, done:!!cfg("notif_enabled"), label:"Reminders on this phone", hint:"Menu ready, shop, prep, cook", action:"showTab('settings')"},
+    {id:"claudio", req:false, done:!!(fuelData||trainingSync), label:"Link Coach Claudio", hint:"Training fuel in, Diego's meals out", action:"showTab('settings')"},
+  ];
+}
+function renderGettingStarted(){
+  const el=document.getElementById("getting-started"); if(!el) return;
+  const steps=gettingStartedSteps(), reqLeft=steps.filter(s=>s.req&&!s.done);
+  if(!reqLeft.length || _lsGet("nutriprep_gs_hidden")){ el.innerHTML=""; return; }
+  const done=steps.filter(s=>s.done).length, next=steps.find(s=>!s.done&&s.req);
+  el.innerHTML=`<div class="card journey-card"><div class="row-between"><div class="jc-title">👋 Getting started</div><span style="font-size:12px;color:var(--muted)">${done} of ${steps.length} done</span></div>
+    <div class="progress-bar-wrap" style="margin:8px 0 6px"><div class="progress-bar-fill" style="width:${Math.round(done/steps.length*100)}%"></div></div>
+    ${steps.map(s=>`<div class="gs-row${s.done?" done":""}${s===next?" next":""}" onclick="${s.done?"":s.action}"><span class="gs-dot">${s.done?"✓":""}</span><div style="flex:1"><div class="gs-label">${esc(s.label)}${s.req?"":` <span class="gs-opt">optional</span>`}</div><div class="gs-hint">${esc(s.hint)}</div></div>${s.done?"":"<span class='gs-go'>›</span>"}</div>`).join("")}
+    <div style="text-align:right;margin-top:6px"><span class="link-muted" onclick="_lsSet('nutriprep_gs_hidden','1');renderGettingStarted()">Hide</span></div></div>`;
+}
+
+function prepKey(){ return "nutriprep_prep_"+((prepPlan&&prepPlan.week_of)||"current"); }
+function prepState(){ try{ return JSON.parse(_lsGet(prepKey())||"{}"); }catch(_){ return {}; } }
+function togglePrepStep(bi, si){ const s=prepState(), k=bi+"-"+si; if(s[k]) delete s[k]; else s[k]=true; _lsSet(prepKey(), JSON.stringify(s)); renderPrep(); }
+function prepProgress(){ const s=prepState(); let total=0, done=0; ((prepPlan&&prepPlan.batches)||[]).forEach((b,bi)=>(b.steps||[]).forEach((_,si)=>{ total++; if(s[bi+"-"+si]) done++; })); return {total, done}; }
+
+function rateDishes(){
+  const t=todayISO(), wk=(planStatus&&planStatus.week_of)||"";
+  const seen=new Set(), out=[];
+  (weekMenu||[]).filter(d=>!d.carried_over && d.date>=wk && d.date<=t).forEach(d=>d.meals.forEach(m=>{
+    if(!["lunch","dinner"].includes(m.slot)) return; const k=(m.name||"").toLowerCase(); if(!k||seen.has(k)) return; seen.add(k); out.push(m.name); }));
+  return out;
+}
+function _dislikeNote(name){ return `Didn't enjoy “${name}”`; }
+function dishRating(m, name){ const p=((prefs||normalizePrefs({})).people[m])||{love:[],notes:[]}; const lc=name.toLowerCase();
+  return p.love.some(x=>x.toLowerCase()===lc)?"love":p.notes.some(x=>x.toLowerCase()===_dislikeNote(name).toLowerCase())?"nope":""; }
+function rateDish(m, name, kind){
+  const cur=dishRating(m,name);
+  if(cur==="love") prefRemove(m,"love",name,"weekly review",true);
+  if(cur==="nope") prefRemove(m,"notes",_dislikeNote(name),"weekly review",true);
+  if(cur!==kind){ if(kind==="love") prefAdd(m,"love",name,"weekly review",true); else prefAdd(m,"notes",_dislikeNote(name),"weekly review",true); }
+  schedulePrefsSave(); renderJourney();
+}
+function renderJourney(){
+  const el=document.getElementById("journey"); if(!el) return; el.innerHTML="";
+  renderGettingStarted();
+  if(!planExists()||!planStatus) return;
+  const t=todayISO(), wk=planStatus.week_of||"", dow=luxDow();
+  if(wk && t<wk){                                   // the weekend before the new week
+    if(dow===6){
+      const items=((shoppingList&&shoppingList.items)||[]).filter(it=>!it.have_at_home);
+      const left=items.filter(it=>!checkedItems[it.name_en||""]).length;
+      el.innerHTML=left
+        ? journeyCard("🛒","Shopping day",`${left} of ${items.length} items still to buy for next week. Can't find something? Tap ⇄ on it.`,"Open the shopping list","showTab('shopping')")
+        : journeyCard("✅","Everything's bought",`Put it away and tap “Add bought to fridge” so the pantry knows.`,"Open the shopping list","showTab('shopping')");
+    } else if(dow===0){
+      const p=prepProgress(), mins=(prepPlan&&prepPlan.total_active_minutes)||0;
+      el.innerHTML=journeyCard("🔪",p.done&&p.done===p.total?"Prep done 🎉":"Prep day",
+        p.total?`${p.done} of ${p.total} steps done${mins?` · about ${mins} min in total`:""}. Tick steps off as you go.`:"No batch-prep this week.",
+        p.total&&p.done<p.total?(p.done?"Carry on prepping":"Start prepping"):"", "showTab('prep')",
+        p.total?`<div class="progress-bar-wrap" style="margin-top:8px"><div class="progress-bar-fill" style="width:${Math.round(p.done/p.total*100)}%"></div></div>`:"");
+    } else {
+      const next=(weekMenu||[]).filter(d=>!d.carried_over && d.date>=wk);
+      const dishes=new Set(next.flatMap(d=>d.meals.map(m=>m.name))).size, ov=menuOverlap();
+      el.innerHTML=journeyCard("🥗","Next week's menu is ready",`${dishes} dishes${ov?` · ${ov.pct}% the same plate for everyone`:""}. Anything you don't fancy? Open it and tap “↻ Another dish” before Saturday's shop.`,"Review the menu","showTab('menu')");
+    }
+    return;
+  }
+  if((dow===4||dow===5) && !_lsGet("nutriprep_rated_"+wk)){
+    const dishes=rateDishes(); if(!dishes.length) return;
+    const btn=(m,n,k,icon)=>`<button class="rate-btn${dishRating(m,n)===k?" on":""}" onclick="rateDish('${m}',decodeURIComponent('${encodeURIComponent(n).replace(/'/g,"%27")}'),'${k}')">${icon}</button>`;
+    el.innerHTML=journeyCard("⭐","How was this week?",`Rate the dishes so Friday's plan brings back the hits and drops the misses. Skip any you didn't have.`,"","",
+      `<div class="rate-list">${dishes.map(n=>`<div class="rate-row"><div class="rate-name">${esc(n)}</div>${MEMBERS.map(m=>`<div class="rate-person"><span>${esc(personName(m))}</span>${btn(m,n,"love","👍")}${btn(m,n,"nope","👎")}</div>`).join("")}</div>`).join("")}</div>
+      <div style="text-align:right;margin-top:8px"><span class="link-muted" onclick="_lsSet('nutriprep_rated_${wk}','1');renderJourney()">Done</span></div>`);
+  }
+}
+
+// ── "↻ Another dish": Claude replaces ONE dish (review before shopping) ─────────
+function dishPayload(day, meal){
+  const budget=Object.fromEntries(MEMBERS.map(m=>{ const target=(people[m].macros||{}).kcal||null;
+    const others=day.meals.filter(x=>x!==meal).reduce((a,x)=>a+(+((((x.portions||{})[m]||{}).macros||{}).kcal)||0),0);
+    return [m,{daily_target_kcal:target, other_meals_that_day_kcal:others}]; }));
+  return {ref:`${day.date}|${meal.slot}`, day:day.day, date:day.date, slot:meal.slot, time:meal.time, name:meal.name,
+    food_category:meal.food_category||"", prep_ahead:!!meal.prep_ahead, cook_minutes_day_of:meal.cook_minutes_day_of||0,
+    image_prompt:meal.image_prompt||"", prep_steps:meal.prep_steps||[], day_of_steps:meal.day_of_steps||meal.recipe||[], portions:meal.portions||{}, day_budget:budget};
+}
+async function anotherDish(){
+  const day=(weekMenu||[]).find(d=>d.date===currentMealDate), meal=day&&day.meals.find(m=>m.slot===currentMeal.slot);
+  const st=document.getElementById("another-status"), btn=document.getElementById("another-btn");
+  if(!day||!meal) return;
+  if(!cfg("anthropic_key")){ st.textContent="Add your Anthropic key in Settings first."; return; }
+  const why=((document.getElementById("another-why")||{}).value||"").trim();
+  st.textContent="Claude is finding another dish…"; if(btn) btn.disabled=true;
+  const weekDishes=[...new Set((weekMenu||[]).filter(d=>!d.carried_over).flatMap(d=>d.meals.map(m=>m.name)))].filter(n=>n!==meal.name);
+  const system=`You are replacing ONE dish in a household's weekly meal plan. One person cooks for everyone; each person has their own portion (and a variant when their preferences need one).
+Design a DIFFERENT dish for the same meal slot that:
+- fits the slot and time, and isn't already on this week's menu;
+- reuses ingredients that are already on the shopping list where it can, so the shop barely changes;
+- sizes each person's portion so their day lands near daily_target_kcal given other_meals_that_day_kcal, with realistic macros per portion;
+- respects everyone's preferences below (never a kitchen allergen; give a person a variant if the shared dish breaks their rules; aim for the same plate for everyone);
+- is safe for its day: poultry/red meat batch-prepped Sunday keep 3 days (Monday = day 1), fish 2, cooked rice 1 — otherwise prep_ahead false and cook it on the day.
+Return exactly one dish with the given ref, prep_batches [] and a one-sentence summary.
+
+Food preferences and middle ground:
+${prefsSummaryText()}
+Middle ground: ${JSON.stringify(middleGround())}`;
+  const payload={dish:dishPayload(day,meal), why:why||null, already_on_menu:weekDishes,
+    shopping_list:((shoppingList&&shoppingList.items)||[]).map(i=>i.name_en), people:MEMBERS.map(m=>({id:m,name:personName(m)}))};
+  try{
+    const out=await callClaudeJSON(system, JSON.stringify(payload), _swapSchema(), {maxTokens:8000, effort:"medium"});
+    const r=(out.meals||[]).find(x=>x.ref===`${day.date}|${meal.slot}`)||(out.meals||[])[0];
+    if(!r) throw new Error("no dish came back");
+    const oldName=meal.name, before=Object.fromEntries(MEMBERS.map(m=>[m,+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0]));
+    ["name","image_prompt","food_category","prep_ahead","cook_minutes_day_of","prep_steps","day_of_steps"].forEach(k=>{ if(r[k]!==undefined) meal[k]=r[k]; });
+    MEMBERS.forEach(m=>{ const p=(r.portions||{})[m]; if(p&&Array.isArray(p.ingredients)) meal.portions[m]={ingredients:p.ingredients, macros:p.macros, variant:p.variant||null}; });
+    meal.video_url=""; meal.replaced=[...(meal.replaced||[]),{from:oldName,on:todayISO(),why:why||""}];
+    recomputeDayTotals(day);
+    prefAdd("everyone","notes",`Swapped “${oldName}” → “${meal.name}”${why?` (${why})`:""}`,"review");
+    markMenuDirty();
+    await ghWrite("weekly_menu.json", weekMenu, `Another dish: ${oldName} → ${meal.name}`);
+    await regenerateShopping();
+    refreshMenuViews(); openMeal(meal, day.date);
+    const s2=document.getElementById("another-status");
+    if(s2) s2.textContent=`✓ ${oldName} → ${meal.name}. ${out.summary||""} ${MEMBERS.map(m=>`${personName(m)} ${before[m]}→${+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0}`).join(", ")} kcal. Shopping list updated.`;
+  }catch(e){ st.textContent="Couldn't get another dish: "+e.message; if(btn) btn.disabled=false; }
+}
+
 // ── TODAY / HOME ────────────────────────────────────────────────────────────────
 function renderToday(){
   const today=todayISO();
   const dayData=weekMenu?weekMenu.find(d=>d.date===today):null;
   renderPlanAction();
+  renderJourney();
   renderTrainingBanner();
   renderNextAction(dayData);
   renderTodaySlots(dayData);
@@ -1626,6 +1800,7 @@ function openMeal(meal, dayDate){
       ${diffBox}${warnBox}
       <div style="margin:10px 0 2px">${madeButton(dayDate, meal, "btn btn-block made-sheet")}</div>
       <div style="font-size:11.5px;color:var(--muted);text-align:center">Takes everyone's portions out of the fridge & pantry (updated nightly).</div>
+      ${dayDate>=todayISO()?`<div class="another"><input id="another-why" placeholder="Want something else? Why (optional) — e.g. lighter, no fish"><button class="btn btn-outline btn-sm" id="another-btn" onclick="anotherDish()">↻ Another dish</button></div><div id="another-status" style="font-size:12px;color:var(--muted);margin-top:6px"></div>`:""}
       <div class="recipe-section-title">🍽️ Plates</div>
       <div class="plates">${plates}</div>
       ${prepHtml}
@@ -2068,7 +2243,8 @@ function renderPrep(){
   document.getElementById("prep-summary").innerHTML=`
     <div class="stat-row"><span class="stat-label">Prep day</span><span class="stat-val">Sunday · ${prepPlan.prep_start_time||""}</span></div>
     <div class="stat-row"><span class="stat-label">Total active time</span><span class="stat-val">${prepPlan.total_active_minutes||0} min</span></div>
-    <div class="stat-row"><span class="stat-label">Batches</span><span class="stat-val">${prepPlan.batches.length}</span></div>`;
+    <div class="stat-row"><span class="stat-label">Batches</span><span class="stat-val">${prepPlan.batches.length}</span></div>
+    ${(()=>{ const p=prepProgress(); return p.total?`<div style="margin-top:10px;font-size:12px;color:var(--muted)">${p.done} of ${p.total} steps done — tap a step to tick it off</div><div class="progress-bar-wrap" style="margin-top:4px"><div class="progress-bar-fill" style="width:${Math.round(p.done/p.total*100)}%"></div></div>`:""; })()}`;
   batchWrap.innerHTML=prepPlan.batches.map((batch,bi)=>{
     const s=batch.storage||{};
     const safety=s.safety_note?`<div class="batch-storage"><div class="batch-storage-title">🧊 Food safety</div>
@@ -2076,7 +2252,8 @@ function renderPrep(){
       <p><strong>Use within:</strong> ${s.use_within_days||"?"} days${s.freeze_option_days?" · Freeze: "+s.freeze_option_days+" days":""}</p>
       ${s.reheat_c?`<p><strong>Reheat to:</strong> ${s.reheat_c}°C</p>`:""}
       <p>${s.safety_note.includes("⚠")?`<span class="storage-warn">${s.safety_note}</span>`:s.safety_note}</p></div>`:"";
-    const steps=(batch.steps||[]).map((st,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${st}</div>`).join("");
+    const ps=prepState();
+    const steps=(batch.steps||[]).map((st,i)=>{ const done=!!ps[bi+"-"+i]; return `<div class="batch-step prep-step${done?" done":""}" onclick="togglePrepStep(${bi},${i})" role="checkbox" aria-checked="${done}"><span class="batch-step-num">${done?"✓":i+1}</span>${st}</div>`; }).join("");
     const assembly=batch.day_of_assembly?groupAssembly(batch.day_of_assembly):"";
     const vid=batch.video_url?videoHtml(batch.video_url):recipeVideoLinks(batch.title||"meal prep");
     const attach=`<div class="attach-row" style="padding:0 14px 12px"><input id="prep-video-${bi}" placeholder="Paste a technique video link" value="${batch.video_url||""}"><button class="btn" onclick="attachPrepVideo(${bi})">Save</button></div>`;
@@ -2695,12 +2872,9 @@ function renderPlanAction(){
     wrap.innerHTML=`<button class="btn btn-block btn-ic" onclick="generatePlan()">${ic("sparkle")} Generate this week's plan</button>
       <div style="font-size:12px;color:var(--muted);text-align:center;margin-top:8px">Coach Léa will build your menu, shopping list & prep plan.</div>`;
   } else {
-    const wk=(planStatus&&planStatus.week_of)?` · week of ${planStatus.week_of}`:"";
-    wrap.innerHTML=`<div style="display:flex;gap:8px">
-        <button class="btn btn-outline btn-ic" style="flex:1" onclick="refreshPlan()">${ic("refresh")} Update plan</button>
-        <button class="btn btn-ic" style="flex:1" onclick="generatePlan()">${ic("sparkle")} Regenerate</button>
-      </div>
-      <div style="font-size:11px;color:var(--muted);text-align:center;margin-top:8px">Update pulls changes made via chat${wk}. Regenerate builds a fresh week.</div>`;
+    // Day to day the plan runs itself (built every Friday) — keep its controls small.
+    const wk=(planStatus&&planStatus.week_of)?`week of ${planStatus.week_of}`:"this week";
+    wrap.innerHTML=`<div class="plan-mini">Plan · ${wk} · <span class="link-muted" onclick="refreshPlan()">Refresh</span> · <span class="link-muted" onclick="generatePlan()">Rebuild</span></div>`;
   }
 }
 async function generatePlan(){
@@ -2740,6 +2914,9 @@ async function init(){
   document.getElementById("notif-toggle").classList.toggle("on",!!cfg("notif_enabled"));
   await Promise.all([loadSharedData(), loadUserData(), loadPlanConfig()]);
   renderToday();
+  // Reminders open the screen they're about (?tab=… or a message from the service worker).
+  const _qt=new URLSearchParams(location.search).get("tab"); if(_qt && TABS.includes(_qt) && _qt!=="today") showTab(_qt);
+  if("serviceWorker" in navigator) navigator.serviceWorker.addEventListener("message",e=>{ const d=e.data||{}; if(d.type==="open-tab" && TABS.includes(d.tab)) showTab(d.tab); });
   document.getElementById("build-label").textContent=`NutriPrep · build v${APP_BUILD} · nutriprep`;
   if("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").then(reg=>{ try{reg.update();}catch(_){} }).catch(e=>console.warn("SW:",e)); }
   checkForUpdate();

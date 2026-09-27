@@ -433,3 +433,23 @@ Coach Claudio owns training fuel (published as `fuel.json` on every Garmin sync,
 the food diary and diet compliance. NutriPrep shows Claudio's fuel instead of computing its own
 (`training_link.load_fuel`, `completedForDate` in the app); Claudio shows NutriPrep's dishes as Diego's
 planned meals and uses NutriPrep's macros as his targets.
+
+### The weekly journey (build 43)
+
+Home shows at most ONE "what now" card (`renderJourney`), driven by the plan's `week_of` and the Luxembourg
+weekday; the plan controls shrink to a one-line "Plan · week of … · Refresh · Rebuild".
+
+| When | Card | Goes to |
+|---|---|---|
+| First launch, until connect + household + preferences + first plan are done | 👋 Getting started checklist (7 steps, 3 optional; ticks itself; can be hidden) | Settings / Léa / preferences / generate |
+| Fri → before Saturday (new week not started) | 🥗 Next week's menu is ready — review, "↻ Another dish" | Menu |
+| Saturday | 🛒 Shopping day — N of M still to buy → ✅ everything's bought | Shopping |
+| Sunday | 🔪 Prep day — steps ticked / total, progress | Prep (tickable steps, per-week progress on this device) |
+| Thu/Fri of a running week | ⭐ How was this week? — 👍/👎 per person for each lunch/dinner so far | writes `preferences.json` (source "weekly review") |
+
+- **↻ Another dish** (meal sheet, today onwards): Claude gets ONLY that dish, the reason typed, the shopping list
+  and the rest of the week's dish names; returns one dish sized to each person's day; the app recomputes that day,
+  rebuilds the shopping list and notes the swap in preferences.
+- **Reminders open the right screen:** every event carries a `tab` (shop→shopping, prep→prep, cook/snack→today,
+  weigh_in→progress, plan_ready→menu); `notify.py` sends it, `sw.js` opens `dashboard.html?tab=…` or tells an open
+  window to switch. `generate.py` adds a "Next week's menu is ready" reminder when the Friday plan lands.

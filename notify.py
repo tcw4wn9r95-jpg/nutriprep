@@ -16,6 +16,9 @@ from pywebpush import webpush, WebPushException
 BASE = Path(__file__).parent
 MEMBERS = ["diego", "diana"]
 WINDOW_MINUTES = 16  # look-back window to catch cron drift
+# Which app tab each reminder opens (events may also carry their own "tab").
+TAB_FOR = {"shop": "shopping", "prep": "prep", "cook": "today", "snack": "today",
+           "weigh_in": "progress", "plan_ready": "menu"}
 
 VAPID_PRIVATE_KEY_PEM = os.environ.get("VAPID_PRIVATE_KEY", "")
 VAPID_CLAIMS = {"sub": "mailto:nutri@nutriprep.local"}
@@ -82,7 +85,9 @@ def main():
     try:
         for event in due_events:
             audience = event.get("audience", MEMBERS)
-            payload = json.dumps({"title": event["title"], "body": event["body"]})
+            # `tab` lets the notification open the screen it talks about.
+            payload = json.dumps({"title": event["title"], "body": event["body"],
+                                  "type": event.get("type", ""), "tab": event.get("tab") or TAB_FOR.get(event.get("type"), "today")})
 
             sent_to: set[str] = set()
             owners = [HOUSEHOLD] + [m for m in audience if m in MEMBERS]
