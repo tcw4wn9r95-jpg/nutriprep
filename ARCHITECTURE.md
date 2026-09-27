@@ -374,3 +374,17 @@ Diana" picker: every screen shows the whole household, and people only differ wh
   `push_subscriptions.json` (household devices; `notify.py` still honours the old per-member files and sends
   each device an event once).
 - Tests: `python -m unittest discover -s tests`.
+
+### Middle ground & "Tell Claude" (build 38)
+
+- The preferences screen edits one person at a time (colour-coded tabs, "Editing 👩 Diana — changes Diana's
+  plate only", section titles like "Diana won't eat"), with a side-by-side comparison table.
+- **Middle ground** (`tailoring.middle_ground`, mirrored in the app): the strictest diet becomes the shared base
+  and the others get their extra protein as an add-on; personal intolerances / won't-eat items are kept out of
+  the shared pot; a love that clashes with someone else's rules is served on the side; loves everyone shares, and
+  favourites nobody objects to, are built into shared dishes. `generate.py` puts these rules in both prompts and
+  records `plan_status.overlap` (share of meals that are the same plate); the Menu tab shows the same %.
+- **Tell Claude**: a free-text box at the bottom of the preferences screen. The app sends the comment plus the
+  current lists to `claude-opus-5` with a JSON-schema structured output of `{operations[], reply}`, applies each
+  valid add/remove with source "claude" (visible in Recent changes) and keeps the comment in
+  `preferences.json → comments`.

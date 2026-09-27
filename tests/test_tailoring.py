@@ -129,5 +129,51 @@ class DifferenceTests(unittest.TestCase):
         self.assertIn("Everyone loves (lean into these): beef", block)
 
 
+class MiddleGroundTests(unittest.TestCase):
+    def setUp(self):
+        self.prefs = t.normalize({"household": {"love": ["Mediterranean"]}, "people": {
+            "diego": {"love": ["beef", "mushroom risotto", "salmon", "roast vegetables"]},
+            "diana": {"diet_style": "pescatarian", "avoid": ["mushrooms"], "intolerances": ["lactose"],
+                      "love": ["salmon", "hummus"]}}}, M)
+
+    def test_base_is_the_strictest_diet_with_addons(self):
+        mg = t.middle_ground(self.prefs, M)
+        self.assertEqual(mg["base_diet"], "pescatarian")
+        self.assertEqual(mg["addons"], [{"member": "diego", "note": "add meat as a separate component"}])
+        vegan = t.normalize({"people": {"diana": {"diet_style": "vegan"}, "diego": {"diet_style": "vegetarian"}}}, M)
+        self.assertEqual(t.middle_ground(vegan, M)["addons"],
+                         [{"member": "diego", "note": "add dairy or eggs as a separate component"}])
+
+    def test_conflicting_loves_go_on_the_side(self):
+        mg = t.middle_ground(self.prefs, M)
+        sides = {(s["item"], s["member"]) for s in mg["sides"]}
+        self.assertEqual(sides, {("beef", "diego"), ("mushroom risotto", "diego")})
+        mush = next(e for e in mg["keep_out"] if e["item"] == "mushrooms")
+        self.assertEqual((mush["who"], mush["side_for"]), (["diana"], ["diego"]))
+
+    def test_shared_and_safe_loves(self):
+        mg = t.middle_ground(self.prefs, M)
+        self.assertEqual(mg["shared_loves"], ["Mediterranean", "salmon"])
+        self.assertEqual({(s["item"], s["member"]) for s in mg["safe_loves"]},
+                         {("roast vegetables", "diego"), ("hummus", "diana")})
+
+    def test_block_and_overlap(self):
+        block = t.middle_ground_block(self.prefs, M)
+        self.assertIn("Shared base is pescatarian (Diego: add meat as a separate component)", block)
+        self.assertIn("mushrooms (Diana) — serve on the side for Diego", block)
+        menu = [{"meals": [meal("A", ["Rice"], ["Rice"]), meal("B", ["Beef"], ["Tofu"])]}]
+        t.annotate_differences(menu, M, self.prefs)
+        self.assertEqual(t.overlap_stats(menu), {"meals": 2, "same_plate": 1, "same_plate_pct": 50})
+
+
+class HouseholdLoveTests(unittest.TestCase):
+    def test_household_love_blocked_by_one_person_goes_on_the_side(self):
+        prefs = t.normalize({"household": {"love": ["beef", "hummus"]},
+                             "people": {"diana": {"diet_style": "vegetarian"}}}, M)
+        mg = t.middle_ground(prefs, M)
+        self.assertEqual(mg["shared_loves"], ["hummus"])
+        self.assertEqual([(s["item"], s["member"]) for s in mg["sides"]], [("beef", "diego")])
+
+
 if __name__ == "__main__":
     unittest.main()

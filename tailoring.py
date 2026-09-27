@@ -416,3 +416,128 @@ def prompt_block(prefs: dict, members: list[str]) -> str:
             bits.append("notes: " + "; ".join(p["notes"][-8:]))
         lines.append(f"{m.capitalize()} — " + (" · ".join(bits) if bits else "no personal restrictions"))
     return "\n".join(lines)
+
+
+# ── Middle ground: one shared pot that fits as many plates as possible ─────────
+_DIET_ORDER = ["", "omnivore", "flexitarian", "pescatarian", "vegetarian", "vegan"]
+# Food groups each diet leaves out, in the order they're named to the cook.
+_DIET_LEAVES_OUT = {
+    "omnivore": [], "flexitarian": [], "": [],
+    "pescatarian": ["meat"],
+    "vegetarian": ["meat", "fish"],
+    "vegan": ["meat", "fish", "dairy", "eggs"],
+}
+
+
+def middle_ground(prefs: dict, members: list[str]) -> dict:
+    """Rules that maximise how often everyone can eat the SAME plate.
+
+    * base_diet — the strictest diet in the house; shared dishes are built on it
+      and the others get their extra protein as a separate add-on.
+    * keep_out — personal intolerances / won't-eat items: left out of the shared
+      pot (a person who loves one gets it on the side).
+    * sides — someone's love that clashes with another person's rules: cooked or
+      served on the side, only for them.
+    * shared_loves — loved by everyone (or by the household): build dishes on them.
+    * safe_loves — one person's love nobody objects to: fine in the shared dish.
+    """
+    styles = {m: prefs["people"][m]["diet_style"] or "omnivore" for m in members}
+    base = max(styles.values(), key=_DIET_ORDER.index) if styles else "omnivore"
+    addons = []
+    for m in members:
+        extra = [g for g in _DIET_LEAVES_OUT[base] if g not in _DIET_LEAVES_OUT[styles[m]]]
+        if extra:
+            groups = extra[0] if len(extra) == 1 else ", ".join(extra[:-1]) + " or " + extra[-1]
+            addons.append({"member": m, "note": f"add {groups} as a separate component"})
+
+    rules = {m: restrictions_for(prefs, m) for m in members}
+    loves = {m: _clean_list(prefs["people"][m]["love"]) for m in members}
+    hh_love = prefs["household"]["love"]
+
+    keep_out, seen = [], {}
+    for m in members:
+        p = prefs["people"][m]
+        for kind in ("intolerances", "avoid"):
+            for item in p[kind]:
+                key = item.lower()
+                if key in seen:
+                    if m not in seen[key]["who"]:
+                        seen[key]["who"].append(m)
+                    continue
+                entry = {"item": item, "kind": kind, "who": [m], "side_for": []}
+                seen[key] = entry
+                keep_out.append(entry)
+    sides, safe = [], []
+    for m in members:
+        for love in loves[m]:
+            blockers = []
+            for o in members:
+                if o == m:
+                    continue
+                for r in rules[o]:
+                    if matches(love, r["terms"], _is_dairy_terms(r["terms"])):
+                        blockers.append({"member": o, "rule": r["label"]})
+                        break
+            if blockers:
+                sides.append({"item": love, "member": m, "because": blockers})
+                for e in keep_out:
+                    if any(b["rule"] == e["item"] for b in blockers) and m not in e["side_for"]:
+                        e["side_for"].append(m)
+            elif not all(any(love.lower() == x.lower() for x in loves[o]) for o in members):
+                safe.append({"item": love, "member": m})
+    common = [x for x in loves[members[0]] if all(any(x.lower() == y.lower() for y in loves[o]) for o in members[1:])] \
+        if members else []
+    # A household-wide love still has to pass everyone's rules; if it doesn't, the
+    # people who can eat it get it on the side.
+    shared = []
+    for love in _clean_list(hh_love + common):
+        blocked = [{"member": o, "rule": r["label"]} for o in members
+                   for r in rules[o][:] if matches(love, r["terms"], _is_dairy_terms(r["terms"]))]
+        if not blocked:
+            shared.append(love)
+            continue
+        blocked_members = {b["member"] for b in blocked}
+        for m in members:
+            if m not in blocked_members and not any(s["item"].lower() == love.lower() and s["member"] == m for s in sides):
+                sides.append({"item": love, "member": m, "because": blocked})
+    return {
+        "base_diet": base,
+        "addons": addons,
+        "keep_out": keep_out,
+        "sides": sides,
+        "shared_loves": shared,
+        "safe_loves": safe,
+    }
+
+
+def middle_ground_block(prefs: dict, members: list[str]) -> str:
+    mg = middle_ground(prefs, members)
+    name = lambda m: m.capitalize()  # noqa: E731
+    lines = ["Goal: the SAME plate for everyone as often as possible (aim for ≥85% of meals identical apart from "
+             "portion size). Build every shared dish on this common ground, then add per-person extras — don't swap "
+             "whole recipes:"]
+    if mg["base_diet"] not in ("", "omnivore", "flexitarian"):
+        extra = "; ".join(f"{name(a['member'])}: {a['note']}" for a in mg["addons"])
+        lines.append(f"- Shared base is {mg['base_diet']}" + (f" ({extra})." if extra else "."))
+    if mg["keep_out"]:
+        lines.append("- Keep OUT of the shared pot: " + "; ".join(
+            f"{e['item']} ({', '.join(name(w) for w in e['who'])})"
+            + (f" — serve on the side for {', '.join(name(s) for s in e['side_for'])}" if e["side_for"] else "")
+            for e in mg["keep_out"]))
+    if mg["sides"]:
+        lines.append("- Loved by one, not OK for another → on the side / add-on only: " + "; ".join(
+            f"{s['item']} for {name(s['member'])}" for s in mg["sides"]))
+    if mg["shared_loves"]:
+        lines.append("- Everyone loves — build shared dishes around: " + ", ".join(mg["shared_loves"]))
+    if mg["safe_loves"]:
+        lines.append("- One person's favourite that suits everyone — use in shared dishes: " + ", ".join(
+            f"{s['item']} ({name(s['member'])})" for s in mg["safe_loves"]))
+    return "\n".join(lines)
+
+
+def overlap_stats(menu: list[dict]) -> dict:
+    """How many meals are the same plate for everyone (after annotate_differences)."""
+    total = sum(len(d.get("meals", [])) for d in menu)
+    differ = sum(1 for d in menu for m in d.get("meals", []) if m.get("differs_for"))
+    return {"meals": total, "same_plate": total - differ,
+            "same_plate_pct": round((total - differ) / total * 100) if total else None}

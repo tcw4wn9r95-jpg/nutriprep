@@ -303,6 +303,25 @@
   .glance .none { color: var(--faint); }
   .phist { font-size: 12px; color: var(--muted); padding: 5px 0; border-bottom: 1px solid var(--hair); display: flex; gap: 8px; }
   .phist .d { color: var(--faint); white-space: nowrap; }
+  .seg.sticky { position: sticky; top: -14px; z-index: 3; box-shadow: 0 4px 10px rgba(35,33,30,.06); }
+  .who-banner { background: var(--surface); border-left: 5px solid; border-radius: var(--r-sm); padding: 10px 13px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  .who-banner .wb-title { font-family: var(--serif); font-size: 18px; font-weight: 600; }
+  .who-banner .wb-sub { font-size: 12.5px; color: var(--muted); margin-top: 2px; line-height: 1.4; }
+  .glance.cmp th { font-size: 12.5px; text-align: left; padding: 4px; }
+  .glance.cmp td { width: 42%; }
+  .glance.cmp td:first-child { width: 1%; font-size: 11.5px; }
+  .glance.cmp .pchip { font-size: 11.5px; padding: 3px 8px; }
+  .mg { border: 1.5px solid var(--sage); }
+  .mg-list { margin: 4px 0 6px 18px; font-size: 12.5px; line-height: 1.5; }
+  .mg-list li { margin-bottom: 4px; }
+  .mg-who { color: var(--muted); }
+  .mg-meter { margin-top: 8px; }
+  .pref-sec.ask { border: 1.5px dashed var(--pine); }
+  .pref-sec.ask textarea { width: 100%; border: 1.5px solid var(--hair); border-radius: 12px; padding: 10px 12px; font: inherit; font-size: 14px; background: var(--bg); color: var(--ink); resize: vertical; }
+  .pref-sec.ask textarea:focus { outline: none; border-color: var(--pine); }
+  .ask-result { margin-top: 10px; font-size: 13px; background: var(--sage-pale); border-radius: 10px; padding: 9px 11px; line-height: 1.45; }
+  .ask-result ul { margin: 6px 0 0 18px; }
+  .ask-result.err { background: #F6E4DE; color: #9b4a31; }
   #prefs-status { font-size: 12px; color: var(--muted); padding: 6px 14px calc(10px + var(--safe-b)); background: var(--surface); border-top: 1px solid var(--hair); text-align: center; }
 
   /* Meal sheet */
@@ -695,7 +714,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v37 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v38 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -719,7 +738,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 37; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 38; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -926,7 +945,7 @@ const _PLANT_DAIRY=/\b(oat|almond|soy|soya|rice|coconut|cashew|pea|plant|vegan|a
 function _cleanList(v){ const out=[], seen=new Set(); (Array.isArray(v)?v:[]).forEach(x=>{ const s=String(x==null?"":x).trim(); if(s&&!seen.has(s.toLowerCase())){ seen.add(s.toLowerCase()); out.push(s); } }); return out; }
 function normalizePrefs(p){
   p=p||{}; const hh=p.household||{};
-  const out={migrated_legacy:!!p.migrated_legacy, household:{}, people:{}, history:Array.isArray(p.history)?p.history.slice(-200):[]};
+  const out={migrated_legacy:!!p.migrated_legacy, household:{}, people:{}, history:Array.isArray(p.history)?p.history.slice(-200):[], comments:Array.isArray(p.comments)?p.comments.slice(-30):[]};
   PREF_LIST_KINDS.forEach(k=>out.household[k]=_cleanList(hh[k]));
   MEMBERS.forEach(m=>{ const src=(p.people||{})[m]||{}; const o={}; PREF_LIST_KINDS.forEach(k=>o[k]=_cleanList(src[k]));
     const st=String(src.diet_style||"").trim().toLowerCase(); o.diet_style=DIET_STYLES.includes(st)?st:""; out.people[m]=o; });
@@ -988,20 +1007,21 @@ function prefsSummaryText(){
 }
 
 // Editing — every change is logged to history so it can be tracked over time.
-let _prefsSaveTimer=null, prefsWho="everyone";
+let _prefsSaveTimer=null, prefsWho=MEMBERS[0];
 function _prefBucket(who){ if(!prefs) prefs=normalizePrefs({}); return who==="everyone"?prefs.household:prefs.people[who]; }
 function _prefLog(who,kind,item,action,source){ prefs.history.push({at:todayISO(),who,kind,item,action,source:source||"app"}); prefs.history=prefs.history.slice(-200); }
 function prefAdd(who,kind,text,source,noSave){
   const b=_prefBucket(who); if(!b||!PREF_KINDS[kind]) return;
   const items=String(text||"").split(kind==="notes"?/\n/:/[,;\n]/).map(x=>x.trim()).filter(Boolean);
   let changed=false;
-  items.forEach(v=>{ if(!b[kind].some(x=>x.toLowerCase()===v.toLowerCase())){ b[kind].push(v); _prefLog(who,kind,v,"added",source); changed=true; } });
+  const inherited=who==="everyone"?[]:(prefs.household[kind]||[]);
+  items.forEach(v=>{ if(![...b[kind],...inherited].some(x=>x.toLowerCase()===v.toLowerCase())){ b[kind].push(v); _prefLog(who,kind,v,"added",source); changed=true; } });
   if(changed && !noSave) schedulePrefsSave();
   return changed;
 }
-function prefRemove(who,kind,text){
-  const b=_prefBucket(who); if(!b) return; const i=b[kind].findIndex(x=>x.toLowerCase()===String(text).toLowerCase());
-  if(i<0) return; const [v]=b[kind].splice(i,1); _prefLog(who,kind,v,"removed","app"); schedulePrefsSave();
+function prefRemove(who,kind,text,source,noSave){
+  const b=_prefBucket(who); if(!b||!b[kind]) return false; const i=b[kind].findIndex(x=>x.toLowerCase()===String(text).toLowerCase());
+  if(i<0) return false; const [v]=b[kind].splice(i,1); _prefLog(who,kind,v,"removed",source||"app"); if(!noSave) schedulePrefsSave(); return true;
 }
 function prefSetDiet(m,style,source,noSave){
   const b=_prefBucket(m); if(!b||m==="everyone") return; const st=String(style||"").trim().toLowerCase();
@@ -1029,49 +1049,199 @@ async function flushPrefs(){
 function openPrefs(who){ if(who) prefsWho=who; if(!prefs) prefs=normalizePrefs({}); document.getElementById("prefs-overlay").classList.remove("hidden"); renderPrefs(); }
 function closePrefs(){ document.getElementById("prefs-overlay").classList.add("hidden"); renderPrefsGlance(); }
 function prefsAddFromInput(kind){ const el=document.getElementById("padd-"+kind); if(!el) return; const v=el.value; el.value=""; if(prefAdd(prefsWho,kind,v)===false) _setPrefsStatus("Already on the list."); setTimeout(()=>{ const e2=document.getElementById("padd-"+kind); if(e2) e2.focus(); },0); }
+// ── Middle ground (mirrors tailoring.middle_ground) ─────────────────────────────
+const _DIET_ORDER=["","omnivore","flexitarian","pescatarian","vegetarian","vegan"];
+const _DIET_LEAVES_OUT={"":[],omnivore:[],flexitarian:[],pescatarian:["meat"],vegetarian:["meat","fish"],vegan:["meat","fish","dairy","eggs"]};
+function middleGround(){
+  const P=prefs||normalizePrefs({});
+  const styles=Object.fromEntries(MEMBERS.map(m=>[m,P.people[m].diet_style||"omnivore"]));
+  const base=MEMBERS.map(m=>styles[m]).reduce((a,b)=>_DIET_ORDER.indexOf(b)>_DIET_ORDER.indexOf(a)?b:a,"omnivore");
+  const addons=[];
+  MEMBERS.forEach(m=>{ const extra=_DIET_LEAVES_OUT[base].filter(g=>!_DIET_LEAVES_OUT[styles[m]].includes(g));
+    if(extra.length) addons.push({member:m, note:`add ${extra.length===1?extra[0]:extra.slice(0,-1).join(", ")+" or "+extra[extra.length-1]} as a separate component`}); });
+  const rules=Object.fromEntries(MEMBERS.map(m=>[m,restrictionsFor(m).filter(r=>r.kind!=="allergies")]));
+  const loves=Object.fromEntries(MEMBERS.map(m=>[m,_cleanList(P.people[m].love)]));
+  const keepOut=[], seen={};
+  MEMBERS.forEach(m=>["intolerances","avoid"].forEach(k=>P.people[m][k].forEach(item=>{ const key=item.toLowerCase();
+    if(seen[key]){ if(!seen[key].who.includes(m)) seen[key].who.push(m); return; }
+    seen[key]={item,kind:k,who:[m],side_for:[]}; keepOut.push(seen[key]); })));
+  const sides=[], safe=[];
+  MEMBERS.forEach(m=>loves[m].forEach(love=>{
+    const blockers=[];
+    MEMBERS.filter(o=>o!==m).forEach(o=>{ const r=rules[o].find(r=>termMatches(love,r.terms)); if(r) blockers.push({member:o,rule:r.label}); });
+    if(blockers.length){ sides.push({item:love,member:m,because:blockers}); keepOut.forEach(e=>{ if(blockers.some(b=>b.rule===e.item)&&!e.side_for.includes(m)) e.side_for.push(m); }); }
+    else if(!MEMBERS.every(o=>loves[o].some(x=>x.toLowerCase()===love.toLowerCase()))) safe.push({item:love,member:m});
+  }));
+  const common=loves[MEMBERS[0]].filter(x=>MEMBERS.slice(1).every(o=>loves[o].some(y=>y.toLowerCase()===x.toLowerCase())));
+  // A household-wide love still has to pass everyone's rules (same as tailoring.middle_ground).
+  const shared=[];
+  _cleanList([...P.household.love,...common]).forEach(love=>{
+    const blocked=[]; MEMBERS.forEach(o=>rules[o].forEach(r=>{ if(termMatches(love,r.terms)) blocked.push({member:o,rule:r.label}); }));
+    if(!blocked.length){ shared.push(love); return; }
+    MEMBERS.filter(m=>!blocked.some(b=>b.member===m)).forEach(m=>{ if(!sides.some(s=>s.item.toLowerCase()===love.toLowerCase()&&s.member===m)) sides.push({item:love,member:m,because:blocked}); });
+  });
+  return {base_diet:base, addons, keep_out:keepOut, sides, shared_loves:shared, safe_loves:safe};
+}
+function menuOverlap(){
+  if(!weekMenu) return null; let total=0, differ=0;
+  weekMenu.forEach(d=>d.meals.forEach(m=>{ total++; if(Object.keys(mealDifferences(m)).length) differ++; }));
+  return total?{total, same:total-differ, pct:Math.round((total-differ)/total*100)}:null;
+}
+
+// ── Preferences screen ───────────────────────────────────────────────────────────
+const PERSON_COLOR={diego:"#3E6E8E",diana:"#A4516F",everyone:"#2C5A4E"};
+function _whoName(who){ return who==="everyone"?"Everyone":personName(who); }
+// Section titles read as sentences about the person being edited, so it's always
+// obvious whose plate an entry changes.
+function _kindTitle(kind, who){
+  const n=_whoName(who), all=who==="everyone";
+  return {allergies: all?"Allergies in the house":`${n} is allergic to`,
+          intolerances: all?"Nobody tolerates":`${n} can't tolerate`,
+          avoid: all?"Nobody eats":`${n} won't eat`,
+          love: all?"Everyone loves":`${n} loves`,
+          notes: all?"Notes for the household":`Notes about ${n}`}[kind];
+}
+function _kindHint(kind, who){
+  const n=_whoName(who);
+  if(kind==="allergies") return `Kept out of every dish for everyone — shared pans, no cross-contact.`;
+  if(who==="everyone") return {intolerances:"Left out of every plate.",avoid:"Left out of every plate.",love:"Planned more often for the whole table.",notes:"Anything the planner should know about the household."}[kind];
+  return {intolerances:`Never on ${n}'s plate. Others can still have it.`,avoid:`Never on ${n}'s plate. One food per entry works best.`,love:`Planned more often. If someone else can't eat it, ${n} gets it on the side.`,notes:`Anything else about how ${n} likes to eat.`}[kind];
+}
 function _chip(who,kind,v,from){ return `<span class="pchip k-${kind}">${esc(v)}${from?` <span class="from">${esc(from)}</span>`:""}${from?"":`<button onclick="prefRemove('${who}','${kind}',decodeURIComponent('${encodeURIComponent(v).replace(/'/g,"%27")}'))" aria-label="Remove ${esc(v)}">✕</button>`}</span>`; }
+// Side-by-side: one column per person, one row per kind — shared entries marked 🏠.
 function renderPrefsGlanceHtml(){
   const P=prefs||normalizePrefs({});
-  const row=(label,bucket,diet)=>{
-    const parts=[];
-    if(diet&&diet!=="omnivore") parts.push(`<span class="pchip k-love">${esc(diet)}</span>`);
-    ["allergies","intolerances","avoid"].forEach(k=>bucket[k].forEach(v=>parts.push(`<span class="pchip k-${k}" title="${PREF_KINDS[k].label}">${PREF_KINDS[k].icon} ${esc(v)}</span>`)));
-    bucket.love.slice(0,6).forEach(v=>parts.push(`<span class="pchip k-love">💚 ${esc(v)}</span>`));
-    return `<tr><td>${label}</td><td>${parts.length?`<div class="pchips" style="margin:0">${parts.join("")}</div>`:'<span class="none">nothing set</span>'}</td></tr>`;
+  const cell=(m,k)=>{
+    const own=(P.people[m][k]||[]).map(v=>`<span class="pchip k-${k}">${esc(v)}</span>`);
+    const shared=(P.household[k]||[]).map(v=>`<span class="pchip k-${k}" title="Applies to everyone">🏠 ${esc(v)}</span>`);
+    const all=[...own,...shared]; return all.length?`<div class="pchips" style="margin:0">${all.join("")}</div>`:'<span class="none">—</span>';
   };
-  return `<table class="glance">${row("🏠 Everyone",P.household,"")}${MEMBERS.map(m=>row(whoLabel(m),P.people[m],P.people[m].diet_style)).join("")}</table>`;
+  const rows=[["diet","🍽️ Diet"],["allergies","🚫 Allergic"],["intolerances","⚠️ Intolerant"],["avoid","👎 Won't eat"],["love","💚 Loves"]];
+  return `<table class="glance cmp"><thead><tr><th></th>${MEMBERS.map(m=>`<th style="color:${PERSON_COLOR[m]||"inherit"}">${whoLabel(m)}</th>`).join("")}</tr></thead><tbody>
+    ${rows.map(([k,label])=>`<tr><td>${label}</td>${MEMBERS.map(m=>`<td>${k==="diet"?(P.people[m].diet_style?`<span class="pchip k-love">${esc(P.people[m].diet_style)}</span>`:'<span class="none">any</span>'):cell(m,k)}</td>`).join("")}</tr>`).join("")}
+  </tbody></table>`;
 }
-function renderPrefsGlance(){ const el=document.getElementById("prefs-glance"); if(el) el.innerHTML=renderPrefsGlanceHtml()+`<div style="font-size:11.5px;color:var(--muted);margin-top:8px">🚫 allergy · ⚠️ intolerance · 👎 won't eat · 💚 loves. Tap Edit (or 🏠 at the top) to change.</div>`; }
+function renderPrefsGlance(){ const el=document.getElementById("prefs-glance"); if(el) el.innerHTML=renderPrefsGlanceHtml()+`<div style="font-size:11.5px;color:var(--muted);margin-top:8px">🏠 = applies to everyone. Tap Edit (or 🏠 Household at the top) to change.</div>`; }
+function middleGroundHtml(){
+  const mg=middleGround(); const nm=m=>esc(personName(m)); const li=[];
+  if(!["","omnivore","flexitarian"].includes(mg.base_diet)) li.push(`<li><strong>Shared base: ${esc(mg.base_diet)}.</strong>${mg.addons.length?" "+mg.addons.map(a=>`${nm(a.member)}: ${esc(a.note)}.`).join(" "):""}</li>`);
+  if(mg.keep_out.length) li.push(`<li><strong>Left out of the shared pot:</strong> ${mg.keep_out.map(e=>`${esc(e.item)} <span class="mg-who">(${e.who.map(nm).join(", ")})</span>${e.side_for.length?` → on the side for ${e.side_for.map(nm).join(", ")}`:""}`).join("; ")}</li>`);
+  const sidesOnly=mg.sides.filter(s=>!mg.keep_out.some(e=>e.side_for.includes(s.member)&&s.because.some(b=>b.rule===e.item)));
+  if(sidesOnly.length) li.push(`<li><strong>On the side only:</strong> ${sidesOnly.map(s=>`${esc(s.item)} for ${nm(s.member)} <span class="mg-who">(${s.because.map(b=>`${nm(b.member)}: ${esc(b.rule)}`).join(", ")})</span>`).join("; ")}</li>`);
+  if(mg.shared_loves.length) li.push(`<li><strong>Build around (everyone loves):</strong> ${mg.shared_loves.map(esc).join(", ")}</li>`);
+  if(mg.safe_loves.length) li.push(`<li><strong>Favourites that suit everyone:</strong> ${mg.safe_loves.map(s=>`${esc(s.item)} <span class="mg-who">(${nm(s.member)})</span>`).join(", ")}</li>`);
+  const ov=menuOverlap();
+  const meter=ov?`<div class="mg-meter"><div class="row-between" style="font-size:12.5px"><span>This week: <strong>${ov.same} of ${ov.total}</strong> meals are the same plate</span><strong>${ov.pct}%</strong></div><div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${ov.pct}%"></div></div></div>`:"";
+  return `<div class="pref-sec mg"><h3>🤝 Middle ground</h3><div class="hint">Worked out from everyone's lists so the cook makes one dish and adds small extras, instead of cooking twice. The weekly plan follows these rules.</div>
+    ${li.length?`<ul class="mg-list">${li.join("")}</ul>`:'<div style="font-size:12.5px;color:var(--muted)">No conflicts — every dish can be shared as-is.</div>'}${meter}</div>`;
+}
 function renderPrefs(){
   const body=document.getElementById("prefs-body"); if(!body) return;
-  const P=prefs; const who=prefsWho; const b=_prefBucket(who);
-  const seg=`<div class="seg">${["everyone",...MEMBERS].map(w=>`<button class="${w===who?"active":""}" onclick="prefsWho='${w}';renderPrefs()">${w==="everyone"?"🏠 Everyone":whoLabel(w)}</button>`).join("")}</div>`;
-  const glance=`<div class="pref-sec"><h3>At a glance</h3><div class="hint">What each plate has to respect. Differences show on the menu as “↳ Name: …”.</div>${renderPrefsGlanceHtml()}</div>`;
-  const diet=who==="everyone"?"":`<div class="pref-sec"><h3>🍽️ ${esc(personName(who))}'s diet</h3><div class="hint">Anything outside it is swapped out on ${esc(personName(who))}'s plate only.</div>
+  const P=prefs; const who=prefsWho; const b=_prefBucket(who); const color=PERSON_COLOR[who]||"var(--pine)";
+  const n=_whoName(who);
+  const seg=`<div class="seg sticky">${[...MEMBERS,"everyone"].map(w=>`<button class="${w===who?"active":""}" style="${w===who?`color:#fff;background:${PERSON_COLOR[w]}`:""}" onclick="prefsWho='${w}';renderPrefs()">${w==="everyone"?"🏠 Everyone":whoLabel(w)}</button>`).join("")}</div>`;
+  const banner=`<div class="who-banner" style="border-color:${color}"><div class="wb-title" style="color:${color}">${who==="everyone"?"🏠 Everyone in the house":`Editing ${whoLabel(who)}`}</div>
+    <div class="wb-sub">${who==="everyone"?"Entries here apply to every plate.":`Everything below changes <strong>${esc(n)}'s plate only</strong> (allergies are the exception — they keep the food out of the kitchen).`}</div></div>`;
+  const diet=who==="everyone"?"":`<div class="pref-sec" style="border-left:4px solid ${color}"><h3>🍽️ ${esc(n)}'s diet</h3><div class="hint">Anything outside it is swapped out on ${esc(n)}'s plate only.</div>
     <div class="diet-row">${DIET_STYLES.map(st=>`<button class="${b.diet_style===st?"active":""}" onclick="prefSetDiet('${who}','${st}')">${st}</button>`).join("")}${b.diet_style?`<button onclick="prefSetDiet('${who}','')">clear</button>`:""}</div></div>`;
-  const inherited=(k)=>who==="everyone"?"":P.household[k].map(v=>_chip(who,k,v,"everyone")).join("");
+  const inherited=(k)=>who==="everyone"?"":P.household[k].map(v=>_chip(who,k,v,"🏠 everyone")).join("");
   const secs=PREF_LIST_KINDS.map(k=>{
     const K=PREF_KINDS[k]; const have=new Set([...b[k],...(who==="everyone"?[]:P.household[k])].map(x=>x.toLowerCase()));
     const sugg=K.sugg.filter(x=>!have.has(x.toLowerCase())).slice(0,10);
-    const forWho=who==="everyone"?"everyone":personName(who);
-    const hint=k==="allergies"?K.hint:(who==="everyone"?K.hint.replace("this person's plate","anyone's plate").replace("the others can still have it","applies to all"):K.hint.replace("this person's",personName(who)+"'s"));
-    return `<div class="pref-sec"><h3>${K.icon} ${K.label}</h3><div class="hint">${esc(hint)}</div>
-      <div class="pchips">${inherited(k)}${b[k].map(v=>_chip(who,k,v)).join("")||(inherited(k)?"":'<span style="font-size:12px;color:var(--faint)">None yet</span>')}</div>
-      <div class="padd"><input id="padd-${k}" placeholder="${k==="notes"?"Add a note…":"Add for "+esc(forWho)+" — commas for several"}" onkeydown="if(event.key==='Enter')prefsAddFromInput('${k}')"><button onclick="prefsAddFromInput('${k}')">Add</button></div>
+    const chips=b[k].map(v=>_chip(who,k,v)).join("")+inherited(k);
+    return `<div class="pref-sec" style="border-left:4px solid ${color}"><h3>${K.icon} ${esc(_kindTitle(k,who))}</h3><div class="hint">${esc(_kindHint(k,who))}</div>
+      <div class="pchips">${chips||'<span style="font-size:12px;color:var(--faint)">Nothing yet</span>'}</div>
+      <div class="padd"><input id="padd-${k}" placeholder="${esc(k==="notes"?`Add a note about ${n}…`:`${_kindTitle(k,who)}… (commas for several)`)}" onkeydown="if(event.key==='Enter')prefsAddFromInput('${k}')"><button style="background:${color}" onclick="prefsAddFromInput('${k}')">Add</button></div>
       ${sugg.length?`<div class="psugg">${sugg.map(x=>`<button onclick="prefAdd('${who}','${k}','${x.replace(/'/g,"\\'")}')">+ ${esc(x)}</button>`).join("")}</div>`:""}
     </div>`;
   }).join("");
+  const glance=`<div class="pref-sec"><h3>👀 Side by side</h3><div class="hint">What each plate has to respect. On the menu, differences show as “↳ Name: …”.</div>${renderPrefsGlanceHtml()}</div>`;
   const hist=(P.history||[]).slice(-25).reverse();
-  const histHtml=`<div class="pref-sec"><h3>🕘 Recent changes</h3><div class="hint">Everything added or removed, and where it came from (app, meal 👍/👎, Coach Léa, setup).</div>
-    ${hist.length?hist.map(h=>`<div class="phist"><span class="d">${esc(h.at||"")}</span><span>${h.action==="removed"?"−":h.action==="set"?"→":"+"} <strong>${esc(h.item)}</strong> · ${esc(h.kind==="diet"?"diet":(PREF_KINDS[h.kind]||{label:h.kind}).label.toLowerCase())} · ${h.who==="everyone"?"everyone":esc(personName(h.who))} <span style="color:var(--faint)">(${esc(h.source||"app")})</span></span></div>`).join(""):'<div style="font-size:12px;color:var(--faint)">No changes yet.</div>'}
+  const histHtml=`<div class="pref-sec"><h3>🕘 Recent changes</h3><div class="hint">Everything added or removed, and where it came from (app, meal 👍/👎, Claude, Coach Léa, setup).</div>
+    ${hist.length?hist.map(h=>`<div class="phist"><span class="d">${esc(h.at||"")}</span><span>${h.action==="removed"?"−":h.action==="set"?"→":"+"} <strong>${esc(h.item)}</strong> · ${esc(h.kind==="diet"?"diet":(PREF_KINDS[h.kind]||{label:h.kind}).label.toLowerCase())} · <span style="color:${PERSON_COLOR[h.who]||"inherit"};font-weight:600">${h.who==="everyone"?"everyone":esc(personName(h.who))}</span> <span style="color:var(--faint)">(${esc(h.source||"app")})</span></span></div>`).join(""):'<div style="font-size:12px;color:var(--faint)">No changes yet.</div>'}
     <button class="btn btn-outline btn-block btn-sm" style="margin-top:10px" onclick="applyPrefsThisWeek()">Adapt this week's remaining meals with Coach Léa</button></div>`;
-  body.innerHTML=seg+glance+diet+secs+histHtml;
+  const comments=(P.comments||[]).slice(-4).reverse();
+  const ask=`<div class="pref-sec ask"><h3>💬 Anything else? Tell Claude</h3>
+    <div class="hint">Write it the way you'd say it — e.g. “Diana has gone off salmon but loves prawns now; Diego wants less red meat”. Claude turns it into the lists above for the right person, and every change shows in Recent changes.</div>
+    <textarea id="prefs-comment" rows="3" oninput="_pendingComment=this.value" placeholder="Additional comments about what ${esc(MEMBERS.map(personName).join(" or "))} like, can't eat or want more of…">${esc(_pendingComment)}</textarea>
+    <button class="btn btn-block" id="prefs-ask-btn" style="margin-top:8px" onclick="askClaudePrefs()">Update preferences with Claude</button>
+    <div id="prefs-ask-result">${_askResultHtml}</div>
+    ${comments.length?`<div class="sub-title">Earlier comments</div>${comments.map(c=>`<div class="phist"><span class="d">${esc(c.at)}</span><span>“${esc(c.text)}” — <em>${esc(c.reply||"")}</em></span></div>`).join("")}`:""}
+  </div>`;
+  body.innerHTML=seg+banner+diet+secs+middleGroundHtml()+glance+histHtml+ask;
 }
 function applyPrefsThisWeek(){
   closePrefs(); showTab("coach");
   const inp=document.getElementById("coach-input");
-  inp.value="Please check this week's remaining meals against everyone's food preferences and adapt any plate that doesn't fit (only that person's portion).";
+  inp.value="Please check this week's remaining meals against everyone's food preferences and the middle-ground rules, and adapt any plate that doesn't fit (only that person's portion).";
   inp.focus();
+}
+
+// ── "Tell Claude": free-text comments → structured preference changes ────────────
+let _pendingComment="", _askResultHtml="";
+const PREF_OPS_SCHEMA={type:"object",additionalProperties:false,required:["operations","reply"],properties:{
+  operations:{type:"array",items:{type:"object",additionalProperties:false,required:["who","kind","action","item"],properties:{
+    who:{type:"string",enum:["everyone",...MEMBERS]},
+    kind:{type:"string",enum:["allergies","intolerances","avoid","love","notes","diet"]},
+    action:{type:"string",enum:["add","remove"]},
+    item:{type:"string"}}}},
+  reply:{type:"string"}}};
+async function callClaudeJSON(system, userText, schema){
+  const key=cfg("anthropic_key"); if(!key) throw new Error("Add your Anthropic API key in Settings first.");
+  const headers={"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"};
+  const body={model:"claude-opus-5",max_tokens:4000,system,messages:[{role:"user",content:userText}],
+    output_config:{effort:"low",format:{type:"json_schema",schema}}};
+  // Server-side fallback re-runs a declined request on another model within the same call.
+  let res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{...headers,"anthropic-beta":"server-side-fallback-2026-07-01"},body:JSON.stringify({...body,fallbacks:"default"})});
+  let data=await res.json().catch(()=>({}));
+  if(!res.ok && res.status===400){ // key/org without the beta or model — retry plain on Haiku (supports structured outputs)
+    res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers,body:JSON.stringify({...body,model:"claude-haiku-4-5",output_config:{format:body.output_config.format}})});
+    data=await res.json().catch(()=>({}));
+  }
+  if(!res.ok) throw new Error((data.error&&data.error.message)||("HTTP "+res.status));
+  if(data.stop_reason==="refusal") throw new Error("Claude declined that request.");
+  if(data.stop_reason==="max_tokens") throw new Error("The reply was cut off — try a shorter comment.");
+  const text=(data.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
+  return JSON.parse(text);
+}
+async function askClaudePrefs(){
+  const ta=document.getElementById("prefs-comment"); const text=(ta&&ta.value||"").trim();
+  if(!text){ _setPrefsStatus("Write a comment first."); return; }
+  _pendingComment=text;
+  const btn=document.getElementById("prefs-ask-btn"); if(btn){ btn.disabled=true; btn.textContent="Claude is reading…"; }
+  const system=`You maintain the food-preference lists for a household meal-planning app. One person cooks for everyone.
+People (use these ids for "who"): ${MEMBERS.map(m=>`"${m}" = ${personName(m)}`).join(", ")}; "everyone" = applies to the whole household.
+Kinds: allergies (kept out of the whole kitchen — only when the comment clearly says allergy), intolerances (e.g. lactose, gluten), avoid (won't eat / dislikes / gone off), love (likes, wants more of), notes (anything else, e.g. "lighter dinners", "less red meat"), diet (item must be one of ${DIET_STYLES.join(", ")}; use action "add" to set it and "remove" with the current style to clear it).
+
+Current lists:
+${prefsSummaryText()}
+
+Turn the user's comment into operations:
+- One food per operation, short and lowercase unless a proper name ("salmon", not "she doesn't like salmon anymore").
+- Someone who no longer dislikes/avoids something → "remove" it from that list; someone who went off a food they loved → remove from love AND add to avoid.
+- Only use "everyone" when the comment is about the whole household. If you cannot tell who a statement is about, do not guess: leave it out and ask in the reply.
+- Never invent preferences the comment doesn't state. Don't repeat items that are already on the right list.
+- reply: one short, friendly sentence saying what you changed (by name), or the question you need answered.`;
+  try{
+    const out=await callClaudeJSON(system, text, PREF_OPS_SCHEMA);
+    const applied=[];
+    (Array.isArray(out.operations)?out.operations:[]).forEach(op=>{
+      const who=(op.who==="everyone"||MEMBERS.includes(op.who))?op.who:null; const item=String(op.item||"").trim();
+      if(!who||!item) return;
+      if(op.kind==="diet"){ if(who==="everyone") return; const before=_prefBucket(who).diet_style; prefSetDiet(who, op.action==="remove"?"":item, "claude", true); if(_prefBucket(who).diet_style!==before) applied.push(`${_whoName(who)}: diet → ${_prefBucket(who).diet_style||"any"}`); return; }
+      if(!PREF_KINDS[op.kind]) return;
+      if(op.action==="remove"){ if(prefRemove(who,op.kind,item,"claude",true)) applied.push(`− ${_whoName(who)} · ${PREF_KINDS[op.kind].label.toLowerCase()}: ${item}`); }
+      else if(prefAdd(who,op.kind,item,"claude",true)) applied.push(`+ ${_whoName(who)} · ${PREF_KINDS[op.kind].label.toLowerCase()}: ${item}`);
+    });
+    prefs.comments=[...(prefs.comments||[]),{at:todayISO(),text,reply:out.reply||""}].slice(-30);
+    _pendingComment="";
+    _askResultHtml=`<div class="ask-result"><div>${esc(out.reply||"Done.")}</div>${applied.length?`<ul>${applied.map(a=>`<li>${esc(a)}</li>`).join("")}</ul>`:`<div style="color:var(--muted);margin-top:4px">No list changed.</div>`}</div>`;
+    schedulePrefsSave();
+    renderPrefs();
+  }catch(e){
+    _askResultHtml=`<div class="ask-result err">Couldn't update: ${esc(e.message)}</div>`;
+    renderPrefs();
+  }
 }
 
 // ── GitHub API ─────────────────────────────────────────────────────────────────
@@ -1379,7 +1549,8 @@ function renderMenu(){
   const legend=document.getElementById("menu-legend");
   if(!weekMenu){ legend.textContent=""; wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("calendar")}</div><p>No meal plan yet. Run the workflow on Sunday.</p></div>`; return; }
   let nDiff=0; weekMenu.forEach(d=>d.meals.forEach(m=>{ if(Object.keys(mealDifferences(m)).length)nDiff++; }));
-  legend.innerHTML=nDiff?`One menu for everyone. <span class="diff-badge" style="display:inline;padding:1px 6px">↳ ${nDiff} meal${nDiff>1?"s":""}</span> have a different plate for someone.`:"One menu for everyone — same dishes, different portions.";
+  const ov=menuOverlap();
+  legend.innerHTML=nDiff?`One menu for everyone — <strong>${ov.pct}% same plate</strong>. <span class="diff-badge" style="display:inline;padding:1px 6px">↳ ${nDiff} meal${nDiff>1?"s":""}</span> ${nDiff>1?"have":"has"} a different plate for someone.`:"One menu for everyone — same dishes, different portions.";
   wrap.innerHTML=weekMenu.map((day,i)=>{
     const totals=day.day_totals||{};
     const dLabel=new Date(day.date+"T12:00:00").toLocaleDateString("en-LU",{timeZone:"Europe/Luxembourg",weekday:"long",day:"numeric",month:"short"});
@@ -1843,6 +2014,7 @@ ${menuText}
 
 ## FOOD PREFERENCES (the household set these — they are the rules for every plate)
 ${prefsSummaryText()}
+Middle ground (maximise the shared plate — build on it, give extras as add-ons): ${JSON.stringify(middleGround())}
 
 ## ROLE
 - Evidence-based only (EFSA/WHO). Sustainable loss 0.25–0.75 kg/wk; never below 1200 kcal/day.
