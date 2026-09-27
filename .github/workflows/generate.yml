@@ -2,8 +2,9 @@ name: "NutriPrep — Generate Weekly Meal Plan"
 
 on:
   schedule:
-    # Every Sunday at 18:00 UTC = ~20:00 Luxembourg time (CEST)
-    - cron: "0 18 * * 0"
+    # Every Friday at 17:00 UTC = 19:00 Luxembourg (CEST) / 18:00 (CET): next week's
+    # plan lands before the weekend, leaving Saturday to shop and Sunday to prep.
+    - cron: "0 17 * * 5"
   workflow_dispatch:
     inputs:
       force:

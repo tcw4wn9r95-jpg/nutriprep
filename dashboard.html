@@ -569,7 +569,7 @@
     <div id="plan-action" style="margin-bottom:12px"></div>
     <div id="plan-paused-banner" style="display:none;background:var(--honey-pale);border:1px solid var(--honey);border-radius:var(--r-sm);padding:10px 14px;margin-bottom:12px;font-size:13px;color:var(--ink);align-items:center;gap:10px">
       <span style="font-size:18px">⏸</span>
-      <span>Auto-generation is <strong>paused</strong> — Sunday's plan run is skipped. Manual generate still works. <span style="color:var(--pine);cursor:pointer;text-decoration:underline" onclick="showTab('settings')">Resume in Settings</span></span>
+      <span>Auto-generation is <strong>paused</strong> — Friday's plan run is skipped. Manual generate still works. <span style="color:var(--pine);cursor:pointer;text-decoration:underline" onclick="showTab('settings')">Resume in Settings</span></span>
     </div>
     <div id="training-banner"></div>
     <div id="today-banner"></div>
@@ -685,11 +685,19 @@
       <div class="setting-row">
         <div>
           <div class="setting-label">Auto-generate weekly plan</div>
-          <div class="setting-sub">Runs every Sunday at 20:00 Luxembourg time. Turn off to save Claude credits.</div>
+          <div class="setting-sub">Runs every Friday evening (~19:00 Luxembourg) for the next week — shop Saturday, prep Sunday. Turn off to save Claude credits.</div>
         </div>
         <button class="toggle on" id="plan-gen-toggle" onclick="togglePlanPause()"></button>
       </div>
       <div id="plan-gen-status" style="font-size:12px;color:var(--muted);margin-top:6px"></div>
+    </div>
+    <div class="card">
+      <div class="row-between" style="margin-bottom:8px">
+        <div class="card-title" style="margin:0">🚴 Training app</div>
+        <button class="btn btn-sm" id="training-sync-btn" onclick="syncTraining()">↻ Sync now from training app</button>
+      </div>
+      <div id="training-card-body"></div>
+      <div id="training-sync-status" style="font-size:12px;color:var(--muted);margin-top:6px"></div>
     </div>
     <div class="card">
       <div class="card-title">Notifications</div>
@@ -714,7 +722,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v38 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v39 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -738,7 +746,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 38; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 39; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -874,7 +882,7 @@ function ytSearchBtn(name){ return recipeVideoLinks(name); }
 function cfg(k){ return localStorage.getItem("nutriprep_"+k) || ""; }
 function setCfg(k,v){ localStorage.setItem("nutriprep_"+k, v); }
 function saveSettings(){ setCfg("anthropic_key", document.getElementById("s-anthropic-key").value); setCfg("gh_token", document.getElementById("s-gh-token").value); }
-function loadSettingsUI(){ document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderPrefsGlance(); renderGoals(); renderMacrosCard(); loadPlanConfig(); }
+function loadSettingsUI(){ renderTrainingCard(); document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderPrefsGlance(); renderGoals(); renderMacrosCard(); loadPlanConfig(); }
 
 // ── Plan pause ────────────────────────────────────────────────────────────────
 let planConfig = {paused: false};
@@ -890,7 +898,7 @@ function _applyPlanPauseUI(){
   const status = document.getElementById("plan-gen-status");
   const banner = document.getElementById("plan-paused-banner");
   if(toggle){ toggle.classList.toggle("on", !paused); }
-  if(status){ status.textContent = paused ? "Paused — Sunday auto-run will be skipped." : "Active — plan regenerates every Sunday automatically."; }
+  if(status){ status.textContent = paused ? "Paused — Friday auto-run will be skipped." : "Active — next week's plan is built every Friday evening."; }
   if(banner){ banner.style.display = paused ? "flex" : "none"; }
 }
 
@@ -1313,12 +1321,7 @@ async function loadSharedData(){
   // Cross-app reads from the training app (AthleteIQ) at the repo root
   try{ trainingPlan=await (await fetch(`${RAW_ROOT}/weekly_plan.json?t=${Date.now()}`)).json(); }catch(_){ trainingPlan=null; }
   try{ sleepData=await (await fetch(`${RAW_ROOT}/sleep.json?t=${Date.now()}`)).json(); }catch(_){ sleepData=null; }
-}
-function trainingForDate(d){
-  // Prefer the training info baked into the menu; fall back to the live training plan.
-  if(weekMenu){ const day=weekMenu.find(x=>x.date===d); if(day&&day.training)return day.training; }
-  if(trainingPlan&&Array.isArray(trainingPlan)){ const s=trainingPlan.find(x=>x.date===d); if(s)return {name:s.name,sport:s.sport,tss:s.planned_tss,duration_min:Math.round((s.total_duration_secs||0)/60),extra_kcal:Math.min(700,Math.round((s.planned_tss||0)*7))}; }
-  return null;
+  await loadTrainingData();
 }
 // Per-person data (goals, weigh-ins, meal ticks, macros) for everyone in the household.
 async function loadUserData(){
@@ -1491,13 +1494,101 @@ function renderHomeStats(){
       <div class="medals">${medals}</div></div>`;
   }).join("");
 }
+// ── Training app (AthleteIQ) — fuel only COMPLETED workouts ─────────────────────
+// Planned sessions (weekly_plan.json) are shown for information; calories are added
+// only for a workout that actually happened (workouts.json, synced from Garmin).
+// Same rule as training_link.workout_fuel.
+const ATHLETE="diego", TRAINING_REPO="tcw4wn9r95-jpg/training-ai";
+let completedWorkouts=null, trainingSync=null, _trainingSyncing=false;
+function workoutFuel(w){ const tss=+w.tss||0; if(tss>0) return Math.min(700,Math.round(tss*7)); const cal=+w.calories||0; return cal>0?Math.min(700,Math.round(cal*0.7)):0; }
+function completedForDate(d){
+  const src=Array.isArray(completedWorkouts)?completedWorkouts:((trainingSync&&trainingSync.workouts)||[]);
+  const ws=src.filter(w=>String(w.date||"").slice(0,10)===d);
+  const extra=ws.reduce((a,w)=>a+workoutFuel(w),0);
+  return ws.length?{member:ATHLETE, workouts:ws, extra_kcal:extra, carbs_g:Math.round(extra*0.6/4), protein_g:Math.round(extra*0.2/4), fat_g:Math.round(extra*0.2/9)}:null;
+}
+function plannedForDate(d){
+  if(weekMenu){ const day=weekMenu.find(x=>x.date===d); if(day&&day.planned_training) return day.planned_training; }
+  if(Array.isArray(trainingPlan)){ const s=trainingPlan.find(x=>x.date===d); if(s) return {member:ATHLETE,name:s.name,sport:s.sport,duration_min:Math.round((s.total_duration_secs||0)/60)}; }
+  return null;
+}
+function workoutLabel(w){ const sp=String(w.sport||"workout").replace(/_/g," "); return `${sp}${w.duration_min?` ${Math.round(w.duration_min)} min`:""}${w.tss?` · ${Math.round(w.tss)} TSS`:""}`; }
+// Quick add-ons for the boost, filtered against the athlete's own restrictions.
+const FUEL_OPTIONS=[
+  {text:"Banana + 250 ml milk", kcal:230},{text:"Banana + 250 ml soy drink", kcal:210},
+  {text:"Extra 60 g (dry) rice or pasta with dinner", kcal:215},{text:"50 g oats cooked with milk + fruit", kcal:320},
+  {text:"Greek yogurt 170 g + 1 tbsp honey", kcal:190},{text:"2 rice cakes + 1 tbsp peanut butter", kcal:190},
+  {text:"Wholegrain toast + 2 eggs", kcal:280},{text:"Hummus 60 g + a wholemeal pita", kcal:260},
+  {text:"Handful of dates + 20 g almonds", kcal:230},{text:"Extra 200 g potatoes with lunch or dinner", kcal:160},
+];
+function fuelOptionsFor(m, kcal){
+  const rules=restrictionsFor(m);
+  const ok=FUEL_OPTIONS.filter(o=>!rules.some(r=>termMatches(o.text,r.terms)));
+  return ok.sort((a,b)=>Math.abs(a.kcal-kcal/2)-Math.abs(b.kcal-kcal/2)).slice(0,3);
+}
+function lastSyncLabel(){
+  const t=trainingSync&&trainingSync.synced_at; if(!t) return "never synced";
+  return "synced "+new Date(t).toLocaleString("en-GB",{timeZone:"Europe/Luxembourg",weekday:"short",hour:"2-digit",minute:"2-digit"});
+}
 function renderTrainingBanner(){
   const el=document.getElementById("training-banner"); el.innerHTML="";
-  const t=trainingForDate(todayISO());
-  // Fuelling adjustment applies to the athlete (Diego) only.
-  if(!t || !(t.extra_kcal>0)) return;
-  const who=personName(t.member||"diego");
-  el.innerHTML=`<div class="action-banner" style="background:linear-gradient(135deg,#C26B4E,#CFA24C)"><span class="ic">🚴</span><div><h2>${esc(who)}'s training day</h2><p>${esc(t.name)} · ${t.tss} TSS · +${t.extra_kcal} kcal (extra carbs). ${esc(who)}'s portions are sized up today.</p></div></div>`;
+  const d=todayISO(), done=completedForDate(d), plan=plannedForDate(d), who=esc(personName(ATHLETE));
+  const syncBtn=`<button class="btn btn-outline btn-sm" style="margin-top:8px;background:rgba(255,255,255,.9)" onclick="syncTraining()" ${_trainingSyncing?"disabled":""}>${_trainingSyncing?"Syncing…":"↻ Sync from training app"}</button> <span style="font-size:11px;opacity:.85">${esc(lastSyncLabel())}</span>`;
+  if(done && done.extra_kcal>0){
+    const opts=fuelOptionsFor(ATHLETE, done.extra_kcal);
+    el.innerHTML=`<div class="action-banner" style="background:linear-gradient(135deg,#C26B4E,#CFA24C)"><span class="ic">🚴</span><div><h2>${who} trained — +${done.extra_kcal} kcal today</h2>
+      <p>Completed: ${done.workouts.map(w=>esc(workoutLabel(w))).join(", ")}. Add ≈${done.carbs_g} g carbs + ${done.protein_g} g protein to ${who}'s plate${opts.length?`, e.g. ${opts.map(o=>`${esc(o.text)} (~${o.kcal})`).join(" · ")}`:""}.</p>${syncBtn}</div></div>`;
+  } else if(plan){
+    el.innerHTML=`<div class="action-banner" style="background:linear-gradient(135deg,#5E7F73,#9DB3A6)"><span class="ic">🗓️</span><div><h2>${who} has ${esc(plan.name||"a workout")} planned</h2>
+      <p>Portions stay at the base target. Extra fuel is added only once the workout is completed and synced.</p>${syncBtn}</div></div>`;
+  }
+}
+async function fetchTrainingFile(name){
+  const token=cfg("gh_token");
+  if(token){
+    try{ const r=await fetch(`https://api.github.com/repos/${TRAINING_REPO}/contents/${name}?t=${Date.now()}`,{cache:"no-store",headers:{Authorization:`Bearer ${token}`,Accept:"application/vnd.github.raw+json"}});
+      if(r.ok) return await r.json(); }catch(_){}
+  }
+  const r=await fetch(`${RAW_ROOT}/${name}?t=${Date.now()}`,{cache:"no-store"}); if(!r.ok) throw new Error(`${r.status} ${name}`); return r.json();
+}
+async function loadTrainingData(){
+  try{ trainingSync=await ghFetch("training_sync.json"); }catch(_){ trainingSync=null; }
+  try{ const w=await fetchTrainingFile("workouts.json"); if(Array.isArray(w)) completedWorkouts=w; }catch(_){}
+}
+function _setTrainingStatus(t){ const el=document.getElementById("training-sync-status"); if(el) el.textContent=t; }
+// Manual fetch: ask AthleteIQ to pull fresh activities from Garmin (its
+// sync_activities workflow), wait for workouts.json to change, then record the
+// completed workouts here. Falls back to re-reading if the dispatch isn't allowed.
+async function syncTraining(){
+  if(_trainingSyncing) return; _trainingSyncing=true; renderTrainingBanner(); renderTrainingCard();
+  const before=JSON.stringify(completedWorkouts||[]); let dispatched=false, note="";
+  try{
+    const token=cfg("gh_token");
+    if(token){
+      _setTrainingStatus("Asking the training app to sync from Garmin…");
+      try{ const r=await fetch(`https://api.github.com/repos/${TRAINING_REPO}/actions/workflows/sync_activities.yml/dispatches`,{method:"POST",headers:{Authorization:`Bearer ${token}`,Accept:"application/vnd.github+json","Content-Type":"application/json"},body:JSON.stringify({ref:"main"})});
+        dispatched=r.status===204; if(!dispatched) note=` (couldn't start the Garmin sync: HTTP ${r.status} — the token needs Actions access to training-ai; read the latest data instead)`; }catch(e){ note=` (couldn't start the Garmin sync: ${e.message})`; }
+    } else note=" (no GitHub token — read the latest data only)";
+    let tries=dispatched?24:1;   // ~6 min while Garmin syncs, else a single read
+    for(let i=0;i<tries;i++){
+      if(dispatched){ _setTrainingStatus(`Syncing from Garmin… ${i*15}s`); await new Promise(r=>setTimeout(r, i===0?20000:15000)); }
+      try{ const w=await fetchTrainingFile("workouts.json"); if(Array.isArray(w)) completedWorkouts=w; }catch(_){}
+      if(JSON.stringify(completedWorkouts||[])!==before) break;
+    }
+    const cutoff=new Date(Date.now()-21*86400000).toISOString().slice(0,10);
+    const recent=(completedWorkouts||[]).filter(w=>String(w.date||"")>=cutoff).map(w=>({date:String(w.date).slice(0,10),sport:w.sport,duration_min:w.duration_min,tss:w.tss,calories:w.calories,extra_kcal:workoutFuel(w)}));
+    trainingSync={synced_at:new Date().toISOString(), source:`${TRAINING_REPO}/workouts.json`, garmin_sync_triggered:dispatched, workouts:recent};
+    try{ await ghWrite("training_sync.json", trainingSync, "Sync completed workouts from AthleteIQ"); }catch(_){}
+    const today=completedForDate(todayISO());
+    _setTrainingStatus(`✓ ${recent.length} completed workout${recent.length===1?"":"s"} in the last 3 weeks${today?` — today +${today.extra_kcal} kcal for ${personName(ATHLETE)}`:" — none today"}${note}.`);
+  } finally { _trainingSyncing=false; renderToday(); renderTrainingCard(); try{renderMenu();}catch(_){} }
+}
+function renderTrainingCard(){
+  const el=document.getElementById("training-card-body"); if(!el) return;
+  const btn=document.getElementById("training-sync-btn"); if(btn){ btn.disabled=_trainingSyncing; btn.textContent=_trainingSyncing?"Syncing…":"↻ Sync now from training app"; }
+  const days=weekMenu?weekMenu.map(d=>({d, c:completedForDate(d.date), p:plannedForDate(d.date)})).filter(x=>x.c||x.p):[];
+  el.innerHTML=`<div style="font-size:12.5px;color:var(--muted);margin-bottom:8px">${esc(personName(ATHLETE))}'s extra calories come only from workouts that were actually completed (Garmin via AthleteIQ) — planned sessions add nothing. ${esc(lastSyncLabel())}.</div>`
+    +(days.length?days.map(x=>`<div class="stat-row"><span class="stat-label">${esc(x.d.day)} ${esc(x.d.date.slice(5))}</span><span class="stat-val">${x.c?`✓ ${x.c.workouts.map(w=>esc(workoutLabel(w))).join(", ")} · +${x.c.extra_kcal} kcal`:`planned: ${esc(x.p.name||"workout")} · +0 until done`}</span></div>`).join(""):`<div style="font-size:12.5px;color:var(--faint)">No planned or completed workouts in this menu yet.</div>`);
 }
 function renderNextAction(dayData){
   const banner=document.getElementById("today-banner");
@@ -1535,10 +1626,12 @@ function renderMacroRing(dayData){
   const totals=dayData?(dayData.day_totals||{}):{};
   if(!dayData||!MEMBERS.some(m=>(totals[m]||{}).kcal)){ card.style.display="none"; return; }
   card.style.display="block";
-  document.getElementById("macro-people").innerHTML=MEMBERS.map(m=>{ const t=totals[m]||{};
+  const fuel=completedForDate(dayData.date);
+  const withFuel=m=>{ const t={...(totals[m]||{})}; if(fuel&&fuel.member===m&&t.kcal){ t.kcal+=fuel.extra_kcal; t.carbs_g=(t.carbs_g||0)+fuel.carbs_g; t.protein_g=(t.protein_g||0)+fuel.protein_g; t.fat_g=(t.fat_g||0)+fuel.fat_g; t._fuel=fuel.extra_kcal; } return t; };
+  document.getElementById("macro-people").innerHTML=MEMBERS.map(m=>{ const t=withFuel(m);
     return `<div class="macro-person"><div class="mp-name">${whoLabel(m)}</div><canvas id="ring-${m}" width="90" height="90"></canvas>
-      <div class="mp-k">${t.kcal||"—"}</div><div class="mp-m">kcal · P${t.protein_g||0} C${t.carbs_g||0} F${t.fat_g||0}</div></div>`; }).join("");
-  MEMBERS.forEach(m=>{ const t=totals[m]||{}; const el=document.getElementById("ring-"+m); if(!el||typeof Chart==="undefined")return;
+      <div class="mp-k">${t.kcal||"—"}</div><div class="mp-m">kcal · P${t.protein_g||0} C${t.carbs_g||0} F${t.fat_g||0}${t._fuel?`<br><span style="color:var(--clay);font-weight:600">incl. +${t._fuel} workout</span>`:""}</div></div>`; }).join("");
+  MEMBERS.forEach(m=>{ const t=withFuel(m); const el=document.getElementById("ring-"+m); if(!el||typeof Chart==="undefined")return;
     if(macroRingCharts[m])macroRingCharts[m].destroy();
     macroRingCharts[m]=new Chart(el.getContext("2d"),{type:"doughnut",data:{datasets:[{data:[(t.protein_g||0)*4,(t.carbs_g||0)*4,(t.fat_g||0)*9],backgroundColor:["#2C5A4E","#CFA24C","#C26B4E"],borderWidth:0}]},options:{cutout:"70%",plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:400}}}); });
 }
@@ -1547,14 +1640,16 @@ function renderMacroRing(dayData){
 function renderMenu(){
   const wrap=document.getElementById("menu-days");
   const legend=document.getElementById("menu-legend");
-  if(!weekMenu){ legend.textContent=""; wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("calendar")}</div><p>No meal plan yet. Run the workflow on Sunday.</p></div>`; return; }
+  if(!weekMenu){ legend.textContent=""; wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("calendar")}</div><p>No meal plan yet. It's built every Friday.</p></div>`; return; }
   let nDiff=0; weekMenu.forEach(d=>d.meals.forEach(m=>{ if(Object.keys(mealDifferences(m)).length)nDiff++; }));
   const ov=menuOverlap();
   legend.innerHTML=nDiff?`One menu for everyone — <strong>${ov.pct}% same plate</strong>. <span class="diff-badge" style="display:inline;padding:1px 6px">↳ ${nDiff} meal${nDiff>1?"s":""}</span> ${nDiff>1?"have":"has"} a different plate for someone.`:"One menu for everyone — same dishes, different portions.";
   wrap.innerHTML=weekMenu.map((day,i)=>{
     const totals=day.day_totals||{};
     const dLabel=new Date(day.date+"T12:00:00").toLocaleDateString("en-LU",{timeZone:"Europe/Luxembourg",weekday:"long",day:"numeric",month:"short"});
-    const kcal=MEMBERS.map(m=>(totals[m]||{}).kcal?`${esc(personName(m))} ${(totals[m]||{}).kcal}`:null).filter(Boolean).join(" · ");
+    const fuel=completedForDate(day.date), plan=plannedForDate(day.date);
+    const kcal=MEMBERS.map(m=>(totals[m]||{}).kcal?`${esc(personName(m))} ${(totals[m]||{}).kcal}${fuel&&fuel.member===m?` <span style="color:var(--clay)">+${fuel.extra_kcal}🚴</span>`:""}`:null).filter(Boolean).join(" · ");
+    const tag=day.carried_over?` <span class="chip" style="font-size:10px">this week</span>`:(plan&&!fuel?` <span class="chip" style="font-size:10px;background:var(--honey-pale);color:#7a5a14">🗓️ ${esc(personName(ATHLETE))} planned</span>`:"");
     const meals=day.meals.map(meal=>{
       const{icon,label}=SLOT_LABELS[meal.slot]||{icon:"🍴",label:meal.slot};
       const eaten=MEMBERS.filter(m=>isAte(m,day.date,meal.slot)).map(personName);
@@ -1569,7 +1664,7 @@ function renderMenu(){
         ${eaten.length?`<span class="chip">✓ ${esc(eaten.join(", "))}</span>`:""}
       </div>`;
     }).join("");
-    return `<div class="day-card"><div class="day-header" onclick="toggleDay(${i})"><h3>${dLabel}</h3><div class="day-kcal">${kcal?kcal+" kcal":""}</div></div><div class="day-meals" id="day-meals-${i}">${meals}</div></div>`;
+    return `<div class="day-card"><div class="day-header" onclick="toggleDay(${i})"><h3>${dLabel}${tag}</h3><div class="day-kcal">${kcal?kcal+" kcal":""}</div></div><div class="day-meals" id="day-meals-${i}">${meals}</div></div>`;
   }).join("");
   const todayIdx=weekMenu.findIndex(d=>d.date===todayISO());
   if(todayIdx>=0)toggleDay(todayIdx);
@@ -1993,8 +2088,8 @@ async function sendCoach(){
   const menuText=weekMenu?weekMenu.map(d=>{ const tag=d.date<_td?" [PAST — do not change]":d.date===_td?" [TODAY]":""; return `${d.day} ${d.date}${tag}: ${d.meals.map(m=>{ const df=mealDifferences(m); const dt=Object.entries(df).map(([k,v])=>`${k}: ${v}`).join("; "); return m.slot+"="+m.name+(dt?` {different plate — ${dt}}`:""); }).join("; ")}`; }).join("\n"):"no menu";
   const _wkRange=weekMenu&&weekMenu.length?`${weekMenu[0].date} to ${weekMenu[weekMenu.length-1].date}`:"none loaded";
   // Cross-app context (training day + recent sleep) — fuelling is Diego-only
-  const tToday=trainingForDate(todayISO());
-  const trainingLine=tToday?`Diego's training today: ${tToday.name} (${tToday.tss} TSS) → +${tToday.extra_kcal} kcal for Diego, extra carbs.`:"No training scheduled for Diego today (rest-day calories).";
+  const tDone=completedForDate(todayISO()), tPlan=plannedForDate(todayISO());
+  const trainingLine=tDone?`Diego COMPLETED today: ${tDone.workouts.map(workoutLabel).join(", ")} → +${tDone.extra_kcal} kcal for Diego today (mostly carbs, as an add-on). Only completed workouts add calories.`:(tPlan?`Diego has ${tPlan.name||"a workout"} PLANNED today — not completed/synced yet, so no extra calories. Only completed workouts add calories.`:"No workout for Diego today (base calories).");
   let sleepLine="";
   if(sleepData&&sleepData.length){ const last=sleepData[sleepData.length-1]; const scored=sleepData.filter(s=>s.score).slice(-7); const avg=scored.length?Math.round(scored.reduce((a,s)=>a+s.score,0)/scored.length):null; sleepLine=`Diego's sleep: last night ${last.score||"?"}/100 (${last.duration_h||"?"}h)${avg?", 7-day avg "+avg:""}.`; }
   const system=`You are Coach Léa, a warm registered-dietitian coach for a household in Luxembourg. You are talking to the household admin, who does all the cooking for everyone.
@@ -2136,7 +2231,8 @@ async function applyMenuChange(date,slot,newMeal){
 async function regenerateShopping(){
   // Re-aggregate household ingredients from the menu, subtract pantry, write shopping_list.json
   const agg={}; // key -> {parsed, name_en}
-  weekMenu.forEach(day=>day.meals.forEach(meal=>{ ["diego","diana"].forEach(mem=>{ const ings=((meal.portions||{})[mem]||{}).ingredients||[]; ings.forEach(ing=>{ const key=(ing.item||"").trim().toLowerCase(); if(!key)return; const q=parseQty(ing.qty); if(!agg[key]){ agg[key]={name_en:ing.item, parsed:q}; } else { const a=agg[key].parsed; if(a.kind===q.kind&&a.unit===q.unit&&a.kind!=="unknown"){ a.amount=(a.amount||0)+(q.amount||0); } } }); }); }));
+  // Days carried over from the current week were already shopped for.
+  weekMenu.filter(day=>!day.carried_over).forEach(day=>day.meals.forEach(meal=>{ ["diego","diana"].forEach(mem=>{ const ings=((meal.portions||{})[mem]||{}).ingredients||[]; ings.forEach(ing=>{ const key=(ing.item||"").trim().toLowerCase(); if(!key)return; const q=parseQty(ing.qty); if(!agg[key]){ agg[key]={name_en:ing.item, parsed:q}; } else { const a=agg[key].parsed; if(a.kind===q.kind&&a.unit===q.unit&&a.kind!=="unknown"){ a.amount=(a.amount||0)+(q.amount||0); } } }); }); }));
   // existing maps for fr/aisle/stores
   const meta={}; if(shoppingList&&shoppingList.items)shoppingList.items.forEach(it=>meta[(it.name_en||"").toLowerCase()]=it); if(inventory&&inventory.items)inventory.items.forEach(it=>{ if(!meta[(it.name_en||"").toLowerCase()])meta[(it.name_en||"").toLowerCase()]=it; });
   const invIdx={}; if(inventory&&inventory.items)inventory.items.forEach(it=>invIdx[(it.name_en||"").toLowerCase()]=it);

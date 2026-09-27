@@ -388,3 +388,20 @@ Diana" picker: every screen shows the whole household, and people only differ wh
   current lists to `claude-opus-5` with a JSON-schema structured output of `{operations[], reply}`, applies each
   valid add/remove with source "claude" (visible in Recent changes) and keeps the comment in
   `preferences.json → comments`.
+
+### Friday planning & completed-workout fuelling (build 39)
+
+- `generate.yml` runs **Friday 17:00 UTC** (~19:00 Luxembourg) for the next Monday–Sunday, leaving Saturday
+  to shop and Sunday to prep. The run schedules a **shopping reminder (Saturday 10:00, `schedule.shop_time`)**
+  and the **prep reminder (Sunday, `prep_start_time`)** for the coming weekend. The current week's remaining
+  days stay at the top of `weekly_menu.json` (`carried_over: true`, excluded from shopping rebuilds), and its
+  still-pending reminders are kept in `notif_schedule.json`.
+- **Only completed workouts add calories.** `generate.py` plans Diego at his base target every day; planned
+  AthleteIQ sessions (`weekly_plan.json`) are info only (`day.planned_training`) and just make sure quick
+  add-ons are stocked. The app reads AthleteIQ's `workouts.json` (completed, from Garmin) and adds
+  `training_link.workout_fuel` (TSS × 7, or 70% of active kcal, max 700 per workout) to that day's total,
+  with add-on suggestions filtered against his restrictions.
+- **Manual fetch:** "↻ Sync from training app" (Home banner and Settings → Training app) dispatches
+  AthleteIQ's `sync_activities.yml` (needs a token with Actions access to `training-ai`), waits for
+  `workouts.json` to change, and records the result in `training_sync.json`. Without that permission it just
+  re-reads the latest `workouts.json`.

@@ -9,6 +9,11 @@ training app reads it back over the same channel.
 All reads are best-effort: if the training app's data is missing or the network
 hiccups, every helper returns an empty/neutral result and meal generation
 proceeds unchanged.
+
+Fuelling rule: calories are only ever added for a workout that was actually
+COMPLETED (AthleteIQ's workouts.json, synced from Garmin). Planned sessions
+(weekly_plan.json) are information only — they never raise a target. The app
+applies the boost day-of, after a sync; see workout_fuel().
 """
 import json
 import urllib.request
@@ -50,10 +55,39 @@ def split_bump_macros(extra_kcal: int) -> dict:
     }
 
 
+def workout_fuel(w: dict) -> int:
+    """Extra kcal for one COMPLETED workout: from its training stress, or — when
+    the device gave no TSS — from ~70% of the active calories it recorded."""
+    tss = w.get("tss") or 0
+    if tss > 0:
+        return training_calorie_bump(tss)
+    cal = w.get("calories") or 0
+    return int(min(BUMP_CAP_KCAL, round(cal * 0.7))) if cal > 0 else 0
+
+
+def load_completed(dates=None, base: str = CHANNEL) -> dict:
+    """{iso_date: {"workouts": [...], "extra_kcal": n}} from workouts.json —
+    only sessions that actually happened. `dates` limits the result."""
+    raw = _load(base, "workouts.json", [])
+    wanted = set(dates) if dates else None
+    out: dict = {}
+    for w in raw if isinstance(raw, list) else []:
+        d = str(w.get("date") or "")[:10]
+        if not d or (wanted is not None and d not in wanted):
+            continue
+        entry = out.setdefault(d, {"workouts": [], "extra_kcal": 0})
+        fuel = workout_fuel(w)
+        entry["workouts"].append({"sport": w.get("sport", ""), "duration_min": w.get("duration_min", 0),
+                                  "tss": w.get("tss", 0), "calories": w.get("calories", 0), "extra_kcal": fuel})
+        entry["extra_kcal"] += fuel
+    return out
+
+
 def load_training_week(week_dates: dict, base: str = CHANNEL) -> dict:
     """
     Return {iso_date: {name, sport, tss, duration_min, extra_kcal}} for any
-    training session whose date falls within the upcoming menu week.
+    PLANNED training session in the upcoming menu week. Informational only:
+    `extra_kcal` is what it would add IF completed — nothing is added up front.
     """
     plan = _load(base, "weekly_plan.json", [])
     wanted = set(week_dates.values())

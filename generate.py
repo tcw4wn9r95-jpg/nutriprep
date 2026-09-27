@@ -94,6 +94,23 @@ for member in MEMBERS:
             u[fname] = [] if fname in ("weight_log", "checkins") else {}
     users[member] = u
 
+# The plan runs on Friday for the NEXT week, so this week's remaining days
+# (Fri–Sun) must survive: keep them from the current menu and reminders.
+_previous_menu: list = []
+if (BASE / "weekly_menu.json").exists():
+    try:
+        with open(BASE / "weekly_menu.json") as f:
+            _previous_menu = json.load(f) or []
+    except Exception:
+        _previous_menu = []
+_previous_events: list = []
+if (BASE / "notif_schedule.json").exists():
+    try:
+        with open(BASE / "notif_schedule.json") as f:
+            _previous_events = (json.load(f) or {}).get("events", [])
+    except Exception:
+        _previous_events = []
+
 # ── Compute next Monday ───────────────────────────────────────────────────────
 today = date.today()
 days_until_mon = (7 - today.weekday()) % 7 or 7
@@ -246,25 +263,16 @@ schedule_block = "\n".join(f"  {slot.replace('_', ' ').title()}: {t}" for slot, 
 if eat_out_days:
     schedule_block += f"\n  Eat out: {', '.join(eat_out_days)} (still include a light home meal for those days)"
 
-# ── Training fuelling (Diego only) — per-day adjusted calorie targets ──────────
+# ── Training (Diego only) — PLANNED sessions are information, not calories ────
+# Calories are added only for a workout that was actually completed, by the app on
+# the day (after a sync from AthleteIQ). The plan therefore targets his BASE intake
+# every day; planned sessions only make sure quick post-workout add-ons are stocked.
 diego_base_kcal = (users["diego"].get("macro_targets") or {}).get("kcal", 0) or 0
-training_lines = []
-diego_day_targets = {}  # iso_date -> adjusted kcal
-for name in DAY_NAMES:
-    d = week_dates[name]
-    t = training_week.get(d)
-    if t and t["extra_kcal"] > 0:
-        adj = diego_base_kcal + t["extra_kcal"]
-        diego_day_targets[d] = adj
-        training_lines.append(
-            f"  {name} {d}: 🚴 {t['name']} ({t['sport']}, {t['tss']} TSS, {t['duration_min']} min) "
-            f"→ fuel +{t['extra_kcal']} kcal → Diego target ≈ {adj} kcal (add carbs)"
-        )
-    else:
-        training_lines.append(f"  {name} {d}: rest / no logged session → Diego base {diego_base_kcal} kcal")
-training_block = "\n".join(training_lines) if diego_base_kcal else "  (no athlete calorie base available)"
-if not training_week:
-    training_block = "  No training sessions found for this week (AthleteIQ plan not generated yet) — use base targets."
+training_lines = [
+    f"  {name} {week_dates[name]}: planned {t['name']} ({t['sport']}, ~{t['duration_min']} min)"
+    for name in DAY_NAMES if (t := training_week.get(week_dates[name]))
+]
+training_block = "\n".join(training_lines) if training_lines else "  No sessions planned in AthleteIQ for this week."
 
 athlete_block = ""
 if athlete.get("name") or athlete.get("training_goal"):
@@ -381,9 +389,13 @@ Max weekday cooking time: {max_cook} min
 ## NUTRITIONIST GUIDELINES (macros, meal structure & the AVOID list are authority; the specific example foods are inspiration — favour variety)
 {nutrition_block}
 
-## TRAINING FUELLING — DIEGO ONLY (shared from his AthleteIQ training plan)
+## TRAINING — DIEGO ONLY (from his AthleteIQ plan; PLANNED, not yet done)
 {athlete_block}
-Diego's calorie need changes day to day with training. On training days, raise his portions/snacks to hit the adjusted target below (carbs especially — pre/post workout fuel). Diana's targets do NOT change. Same dish for both; just bigger or an extra component for Diego on hard days.
+Plan Diego at his BASE target every day, including planned training days. Extra calories are added by the app only
+after a workout is actually COMPLETED (post-workout add-on on that day), so do NOT raise his portions for planned
+sessions. Do stock the week with a few quick carb/protein add-ons that suit his preferences (e.g. oats, bananas,
+rice cakes, yogurt or a plant alternative) so a completed workout can be fuelled without extra shopping.
+Planned sessions:
 {training_block}
 
 ## SLEEP & RECOVERY (shared from AthleteIQ / Garmin)
@@ -423,7 +435,7 @@ Diego's calorie need changes day to day with training. On training days, raise h
 10. Assign each prep batch a `food_category` from: poultry, red_meat, fish_seafood, eggs_cooked, rice, grains_pasta, legumes, vegetables_cooked, vegetables_raw_prepped, soup_stew, sauce_dairy, dairy, baked_goods, generic.
 11. **Recipe split**: every meal MUST have `prep_steps` (what to batch-cook/pre-portion on Sunday — empty list `[]` if nothing) AND `day_of_steps` (detailed, numbered, beginner-friendly actions performed on the day, including reheating instructions and quantities). Keep `video_url` as an empty string "" (the user attaches videos later).
 12. **Image prompt**: every meal MUST have an `image_prompt` — a short, vivid description of a finished plate of that meal for an AI image generator (mention key ingredients, plating, natural light; no text/words in image).
-13. **Fuel Diego's training days**: match Diego's `day_totals` to the per-day adjusted target in the TRAINING FUELLING table (extra mostly as carbohydrate around the session). On rest days use his base target. Diana's `day_totals` always track her own base target.
+13. **Training days**: Diego's `day_totals` track his BASE target every day — completed workouts are fuelled later by the app, not in this plan. Diana's `day_totals` always track her own base target.
 14. **Adapt to sleep**: after poor-sleep nights, favour easy-to-digest, blood-sugar-stable meals, adequate protein, and avoid heavy late dinners.
 15. **CONSOLIDATE FRESH ITEMS ONLY — pantry staples are cheap, last for weeks, and DON'T count against you.**
    - Minimise DISTINCT FRESH / PERISHABLE products only: meat, fish, fresh vegetables, fresh herbs, dairy, bread. This is the weekly shop — keep it tight (~**12–16 fresh items**) by reusing the same proteins and vegetables across many dishes.
@@ -666,10 +678,11 @@ for i, day_data in enumerate(menu_json):
         day_data["day"] = DAY_NAMES[i]
     if iso:
         day_data["date"] = iso
-    # Attach the day's training session (for Diego) so the app can show fuelling
+    # Planned session (Diego) — shown as info; calories only come from COMPLETED workouts.
+    day_data.pop("training", None)
     t = training_week.get(day_data.get("date"))
     if t:
-        day_data["training"] = {"member": ATHLETE_MEMBER, **t}
+        day_data["planned_training"] = {"member": ATHLETE_MEMBER, **t}
 
 # ── Allergen safety check ─────────────────────────────────────────────────────
 allergen_list = [a.lower() for a in allergens]
@@ -1014,7 +1027,7 @@ for day_data in menu_json:
         continue
     day_name = day_data.get("day", "")
 
-    # Sunday: weigh-in + prep reminders
+    # Sunday: weigh-in (prep for the FOLLOWING week is scheduled by next Friday's run)
     if day_name == "Sunday":
         events.append({
             "id": f"weighin-{day_date.isoformat()}",
@@ -1023,16 +1036,6 @@ for day_data in menu_json:
             "at": to_lux_dt(day_date, "08:00"),
             "title": "Sunday weigh-in ⚖️",
             "body": "Log your weight to track your progress this week.",
-            "sent": False,
-        })
-        prep_start = schedule.get("prep_start_time", "15:00")
-        events.append({
-            "id": f"prep-{day_date.isoformat()}",
-            "type": "prep",
-            "audience": MEMBERS,
-            "at": to_lux_dt(day_date, prep_start),
-            "title": "Meal prep time 🥗",
-            "body": f"~{prep_total_min // 60}h{prep_total_min % 60:02d} of prep sets up your whole week. Tap for the steps.",
             "sent": False,
         })
 
@@ -1069,6 +1072,33 @@ for day_data in menu_json:
                 "body": f"{meal_name} — {cook_min} min. Tap for recipe.",
                 "sent": False,
             })
+
+# The weekend before the new week: shop on Saturday, batch-prep on Sunday.
+_sat, _sun = next_monday - timedelta(days=2), next_monday - timedelta(days=1)
+events.append({
+    "id": f"shop-{_sat.isoformat()}", "type": "shop", "audience": MEMBERS,
+    "at": to_lux_dt(_sat, schedule.get("shop_time", "10:00")),
+    "title": "Shopping list ready 🛒",
+    "body": f"Next week's menu is planned — {len(shopping_json)} items to buy. Tap for the list.",
+    "sent": False,
+})
+events.append({
+    "id": f"prep-{_sun.isoformat()}", "type": "prep", "audience": MEMBERS,
+    "at": to_lux_dt(_sun, schedule.get("prep_start_time", "15:00")),
+    "title": "Meal prep time 🥗",
+    "body": f"~{prep_total_min // 60}h{prep_total_min % 60:02d} of prep sets up your whole week. Tap for the steps.",
+    "sent": False,
+})
+# Keep this week's still-pending reminders (Fri–Sun meals, snacks, weigh-in).
+_now = datetime.now(LUX)
+_new_ids = {e["id"] for e in events}
+for e in _previous_events:
+    try:
+        at = datetime.fromisoformat(e["at"])
+    except Exception:
+        continue
+    if not e.get("sent") and _now <= at < datetime.combine(next_monday, datetime.min.time(), LUX) and e.get("id") not in _new_ids:
+        events.append(e)
 
 # Sort events chronologically
 events.sort(key=lambda e: e["at"])
@@ -1107,8 +1137,12 @@ with open(BASE / "weekly_menu.md", "w") as f:
     f.write(f"**Diana:** {users['diana'].get('macro_targets', {}).get('kcal','?')} kcal/day  \n\n---\n\n")
     f.write(build_menu_md())
 
+# Days of the current week that haven't happened yet stay on the menu (already
+# shopped for and prepped), ahead of the new week.
+_carry = [dict(d, carried_over=True) for d in _previous_menu
+          if isinstance(d, dict) and today.isoformat() <= str(d.get("date", "")) < next_monday.isoformat()]
 with open(BASE / "weekly_menu.json", "w") as f:
-    json.dump(menu_json, f, indent=2)
+    json.dump(_carry + menu_json, f, indent=2)
 
 with open(BASE / "shopping_list.json", "w") as f:
     json.dump(shopping_out, f, indent=2)
