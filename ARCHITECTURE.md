@@ -425,3 +425,11 @@ Diana" picker: every screen shows the whole household, and people only differ wh
   recomputes only those days' `day_totals`, updates the batches, and puts any newly needed ingredient on the
   list (`by_swap`). No plan regeneration. Without an API key, or if the call fails, it falls back to a local
   name swap and says calories weren't recalculated.
+
+### Two apps, one owner per fact (build 42)
+
+See `SHARED_DATA.md` (identical in both repos). NutriPrep owns Diego's macro targets, the menu and weight;
+Coach Claudio owns training fuel (published as `fuel.json` on every Garmin sync, completed sessions only),
+the food diary and diet compliance. NutriPrep shows Claudio's fuel instead of computing its own
+(`training_link.load_fuel`, `completedForDate` in the app); Claudio shows NutriPrep's dishes as Diego's
+planned meals and uses NutriPrep's macros as his targets.

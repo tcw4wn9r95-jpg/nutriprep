@@ -10,26 +10,23 @@ import training_link as tl  # noqa: E402
 
 
 class FuelTests(unittest.TestCase):
-    def test_fuel_from_tss_then_calories(self):
-        self.assertEqual(tl.workout_fuel({"tss": 60}), 420)
-        self.assertEqual(tl.workout_fuel({"tss": 200}), 700)          # capped
-        self.assertEqual(tl.workout_fuel({"tss": 0, "calories": 500}), 350)
-        self.assertEqual(tl.workout_fuel({}), 0)
-
-    def test_only_completed_workouts_count(self):
+    def test_reads_claudios_fuel_for_completed_days_only(self):
         with tempfile.TemporaryDirectory() as d:
-            Path(d, "workouts.json").write_text(json.dumps([
-                {"date": "2026-10-05", "sport": "cycling", "duration_min": 90, "tss": 80, "calories": 900},
-                {"date": "2026-10-05", "sport": "running", "duration_min": 30, "tss": 0, "calories": 300},
-                {"date": "2026-09-20", "sport": "running", "tss": 50}]))
+            Path(d, "fuel.json").write_text(json.dumps({"version": 1, "days": {
+                "2026-10-05": {"session_kcal": 880, "src": "measured", "sessions": ["cycling"],
+                               "add": {"kcal": 590, "carbs_g": 132, "protein_g": 10, "fat_g": 1, "water_ml": 900}}}}))
             Path(d, "weekly_plan.json").write_text(json.dumps([
                 {"date": "2026-10-06", "name": "Intervals", "sport": "cycling", "planned_tss": 90}]))
             base = Path(d).as_uri()
-            done = tl.load_completed(["2026-10-05", "2026-10-06"], base=base)
-            self.assertEqual(list(done), ["2026-10-05"])               # planned day adds nothing
-            self.assertEqual(done["2026-10-05"]["extra_kcal"], 560 + 210)
+            fuel = tl.load_fuel(["2026-10-05", "2026-10-06"], base=base)
+            self.assertEqual(list(fuel), ["2026-10-05"])               # planned day adds nothing
+            self.assertEqual(fuel["2026-10-05"]["add"]["kcal"], 590)
             planned = tl.load_training_week({"Tuesday": "2026-10-06"}, base=base)
             self.assertEqual(planned["2026-10-06"]["name"], "Intervals")
+
+    def test_missing_file_is_empty(self):
+        with tempfile.TemporaryDirectory() as d:
+            self.assertEqual(tl.load_fuel(base=Path(d).as_uri()), {})
 
 
 if __name__ == "__main__":
