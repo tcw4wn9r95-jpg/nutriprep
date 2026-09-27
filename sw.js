@@ -1,4 +1,4 @@
-const CACHE = "nutriprep-standalone-v23";
+const CACHE = "nutriprep-standalone-v24";
 const ASSETS = ["./dashboard.html"];
 
 self.addEventListener("install", e => {

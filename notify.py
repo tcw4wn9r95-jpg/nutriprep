@@ -1,8 +1,12 @@
 """
 NutriPrep — push notification dispatcher.
 Runs every 15 min via GitHub Actions cron. Finds events in notif_schedule.json
-that are due (within the last 15 min, not yet sent) and pushes them to each
-member's devices via web push (pywebpush). Prunes expired subscriptions.
+that are due (within the last 15 min, not yet sent) and pushes them to the
+household's devices via web push (pywebpush). Prunes expired subscriptions.
+
+The app is run by one household admin, so devices subscribe to the shared
+push_subscriptions.json. Older per-member files (users/<m>/push_subscriptions.json)
+are still honoured; each device gets an event at most once.
 """
 import os, json, tempfile
 from datetime import datetime, timezone
@@ -17,17 +21,25 @@ VAPID_PRIVATE_KEY_PEM = os.environ.get("VAPID_PRIVATE_KEY", "")
 VAPID_CLAIMS = {"sub": "mailto:nutri@nutriprep.local"}
 
 
-def load_subs(member: str) -> list[dict]:
-    path = BASE / "users" / member / "push_subscriptions.json"
+HOUSEHOLD = "household"
+
+
+def _subs_path(owner: str) -> Path:
+    if owner == HOUSEHOLD:
+        return BASE / "push_subscriptions.json"
+    return BASE / "users" / owner / "push_subscriptions.json"
+
+
+def load_subs(owner: str) -> list[dict]:
+    path = _subs_path(owner)
     if not path.exists():
         return []
     with open(path) as f:
         return json.load(f)
 
 
-def save_subs(member: str, subs: list[dict]) -> None:
-    path = BASE / "users" / member / "push_subscriptions.json"
-    with open(path, "w") as f:
+def save_subs(owner: str, subs: list[dict]) -> None:
+    with open(_subs_path(owner), "w") as f:
         json.dump(subs, f, indent=2)
 
 
@@ -72,10 +84,11 @@ def main():
             audience = event.get("audience", MEMBERS)
             payload = json.dumps({"title": event["title"], "body": event["body"]})
 
-            for member in audience:
-                if member not in MEMBERS:
-                    continue
-                subs = load_subs(member)
+            sent_to: set[str] = set()
+            owners = [HOUSEHOLD] + [m for m in audience if m in MEMBERS]
+            for member in owners:
+                subs = [s for s in load_subs(member) if s.get("endpoint") not in sent_to]
+                sent_to.update(s.get("endpoint") for s in subs)
                 expired_endpoints: set[str] = set()
 
                 for sub in subs:
@@ -97,8 +110,7 @@ def main():
 
                 # Prune expired subscriptions
                 if expired_endpoints:
-                    subs = [s for s in subs if s["endpoint"] not in expired_endpoints]
-                    save_subs(member, subs)
+                    save_subs(member, [s for s in load_subs(member) if s["endpoint"] not in expired_endpoints])
 
             # Mark event as sent
             event["sent"] = True

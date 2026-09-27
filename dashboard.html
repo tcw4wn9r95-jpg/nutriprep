@@ -226,9 +226,6 @@
   .toggle.on { background: var(--pine); }
   .toggle::after { content: ''; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: transform .2s; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
   .toggle.on::after { transform: translateX(20px); }
-  .identity-picker { display: flex; gap: 10px; }
-  .identity-btn { flex: 1; padding: 12px; border: 2px solid var(--hair); border-radius: var(--r-sm); background: none; font-size: 14px; font-weight: 600; color: var(--ink); cursor: pointer; }
-  .identity-btn.active { border-color: var(--pine); color: var(--pine); background: var(--sage-pale); }
   .upload-area { border: 2px dashed var(--hair); border-radius: var(--r-sm); padding: 26px; text-align: center; cursor: pointer; margin-top: 8px; }
   .upload-area .ic { font-size: 32px; margin-bottom: 6px; }
   .upload-area p { color: var(--muted); font-size: 13px; }
@@ -239,10 +236,74 @@
   .modal-box { background: var(--surface); border-radius: 28px; padding: 30px 24px; max-width: 360px; width: 100%; text-align: center; box-shadow: var(--shadow-lg); }
   .modal-box h2 { font-family: var(--serif); font-size: 24px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
   .modal-box p { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.5; }
-  .identity-choice-row { display: flex; gap: 12px; margin-bottom: 16px; }
-  .identity-choice { flex: 1; padding: 20px 10px; border: 2px solid var(--hair); border-radius: 18px; background: none; cursor: pointer; font-size: 15px; font-weight: 700; color: var(--ink); display: flex; flex-direction: column; align-items: center; gap: 8px; }
-  .identity-choice .big-ic { font-size: 38px; }
-  .identity-choice.selected { border-color: var(--pine); background: var(--sage-pale); color: var(--pine); }
+
+  /* Household: one cook, per-person plates */
+  .person-row { display: flex; align-items: center; gap: 10px; background: var(--surface); border-radius: var(--r-sm); padding: 11px 13px; box-shadow: var(--shadow); margin-bottom: 8px; }
+  .person-row .who { font-weight: 700; font-size: 14px; color: var(--ink); min-width: 74px; }
+  .person-row .figs { display: flex; gap: 14px; flex: 1; flex-wrap: wrap; font-size: 12px; color: var(--muted); }
+  .person-row .figs b { font-family: var(--serif); font-size: 17px; color: var(--pine); font-weight: 600; margin-right: 2px; }
+  .person-row .medals { font-size: 15px; letter-spacing: 1px; }
+  .seg { display: flex; gap: 6px; background: var(--sage-pale); border-radius: 999px; padding: 4px; margin-bottom: 14px; }
+  .seg button { flex: 1; border: none; background: none; border-radius: 999px; padding: 8px 6px; font-size: 13px; font-weight: 700; color: var(--pine); cursor: pointer; }
+  .seg button.active { background: var(--surface); box-shadow: var(--shadow); }
+  .ate-group { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+  .ate-pill { border: 1.5px solid var(--hair); background: none; border-radius: 999px; padding: 3px 8px; font-size: 11px; font-weight: 700; color: var(--faint); cursor: pointer; white-space: nowrap; }
+  .ate-pill.ate { background: var(--pine); border-color: var(--pine); color: #fff; }
+  .per-kcal { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .diff-badge { display: block; font-size: 11.5px; line-height: 1.35; background: var(--honey-pale); color: #7a5a14; border-radius: 8px; padding: 4px 8px; margin-top: 5px; font-weight: 600; }
+  .warn-badge { display: block; font-size: 11.5px; line-height: 1.35; background: #F6E4DE; color: #9b4a31; border-radius: 8px; padding: 4px 8px; margin-top: 5px; font-weight: 600; }
+  .plates { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .plate { border: 1px solid var(--hair); border-radius: 14px; padding: 10px; min-width: 0; }
+  .plate.differs { border-color: var(--honey); background: linear-gradient(180deg, var(--honey-pale), var(--surface) 70%); }
+  .plate h4 { font-size: 13px; margin-bottom: 2px; color: var(--ink); }
+  .plate .pk { font-size: 11.5px; color: var(--muted); margin-bottom: 6px; }
+  .plate .pi { font-size: 12.5px; padding: 3px 0; border-bottom: 1px solid var(--hair); display: flex; justify-content: space-between; gap: 6px; }
+  .plate .pi span:first-child { overflow-wrap: anywhere; }
+  .plate .pv { font-size: 12px; font-weight: 600; color: #7a5a14; margin-bottom: 6px; line-height: 1.35; }
+  .plate .acts { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .plate .acts button { flex: 1; border: 1.5px solid var(--hair); background: none; border-radius: 10px; padding: 6px 4px; font-size: 12px; cursor: pointer; color: var(--ink); }
+  .plate .batch-step { font-size: 12.5px; }
+  .plate .acts button.on { background: var(--pine); border-color: var(--pine); color: #fff; }
+  .macro-people { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .macro-person { text-align: center; }
+  .macro-person canvas { max-width: 90px; max-height: 90px; margin: 4px auto; display: block; }
+  .macro-person .mp-name { font-weight: 700; font-size: 13px; }
+  .macro-person .mp-k { font-family: var(--serif); font-size: 20px; color: var(--pine); }
+  .macro-person .mp-m { font-size: 11px; color: var(--muted); }
+  .water-person { margin-top: 10px; }
+  .water-person .wp-head { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .water-person .wp-btns { display: flex; gap: 6px; }
+  .water-person .wp-btns button { border: 1.5px solid var(--hair); background: none; border-radius: 999px; width: 30px; height: 30px; font-size: 15px; cursor: pointer; color: var(--pine); }
+
+  /* Food preferences editor */
+  #prefs-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px; }
+  .pref-sec { background: var(--surface); border-radius: var(--r-sm); padding: 12px 13px; margin-bottom: 12px; box-shadow: var(--shadow); }
+  .pref-sec h3 { font-size: 14px; margin-bottom: 2px; }
+  .pref-sec .hint { font-size: 11.5px; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
+  .pchips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .pchip { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; border-radius: 999px; padding: 5px 6px 5px 11px; background: var(--sage-pale); color: var(--pine); }
+  .pchip button { border: none; background: rgba(0,0,0,.08); color: inherit; width: 20px; height: 20px; border-radius: 50%; cursor: pointer; font-size: 11px; line-height: 1; }
+  .pchip.k-allergies { background: #F6E4DE; color: #9b4a31; }
+  .pchip.k-intolerances { background: var(--honey-pale); color: #7a5a14; }
+  .pchip.k-avoid { background: #ECE7DF; color: #5b544b; }
+  .pchip.k-notes { background: #EEF0F4; color: #45506a; border-radius: 10px; }
+  .pchip .from { font-size: 10px; font-weight: 600; opacity: .7; }
+  .padd { display: flex; gap: 6px; }
+  .padd input { flex: 1; min-width: 0; border: 1.5px solid var(--hair); border-radius: 999px; padding: 8px 13px; font-size: 14px; background: var(--bg); color: var(--ink); }
+  .padd input:focus { outline: none; border-color: var(--pine); }
+  .padd button { border: none; background: var(--pine); color: #fff; border-radius: 999px; padding: 0 14px; font-weight: 700; cursor: pointer; }
+  .psugg { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+  .psugg button { border: 1px dashed var(--sage); background: none; color: var(--muted); border-radius: 999px; padding: 3px 9px; font-size: 12px; cursor: pointer; }
+  .diet-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .diet-row button { border: 1.5px solid var(--hair); background: none; border-radius: 999px; padding: 6px 11px; font-size: 12.5px; font-weight: 600; color: var(--ink); cursor: pointer; text-transform: capitalize; }
+  .diet-row button.active { background: var(--pine); border-color: var(--pine); color: #fff; }
+  .glance { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .glance td { padding: 6px 4px; border-bottom: 1px solid var(--hair); vertical-align: top; }
+  .glance td:first-child { font-weight: 700; white-space: nowrap; width: 1%; padding-right: 10px; }
+  .glance .none { color: var(--faint); }
+  .phist { font-size: 12px; color: var(--muted); padding: 5px 0; border-bottom: 1px solid var(--hair); display: flex; gap: 8px; }
+  .phist .d { color: var(--faint); white-space: nowrap; }
+  #prefs-status { font-size: 12px; color: var(--muted); padding: 6px 14px calc(10px + var(--safe-b)); background: var(--surface); border-top: 1px solid var(--hair); text-align: center; }
 
   /* Meal sheet */
   .meal-overlay { position: fixed; inset: 0; background: rgba(35,33,30,.45); z-index: 150; display: flex; align-items: flex-end; -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); }
@@ -436,17 +497,14 @@
   </div>
 </div>
 
-<div class="modal-overlay" id="identity-modal">
-  <div class="modal-box">
-    <div style="font-size:40px;margin-bottom:10px">🥗</div>
-    <h2>Welcome to NutriPrep</h2>
-    <p>Who are you? Your meals are shared, but your goals, coach and progress are personal.</p>
-    <div class="identity-choice-row">
-      <button class="identity-choice" onclick="pickIdentity('diego', this)"><span class="big-ic">👨</span>Diego</button>
-      <button class="identity-choice" onclick="pickIdentity('diana', this)"><span class="big-ic">👩</span>Diana</button>
-    </div>
-    <button class="btn btn-block" onclick="confirmIdentity()">Let's go →</button>
+<div class="setup-overlay hidden" id="prefs-overlay">
+  <div class="setup-header">
+    <div class="setup-logo">🥕</div>
+    <div><div class="setup-title">Food preferences</div><div class="setup-sub">Who eats what — the menu is tailored from this</div></div>
+    <button class="setup-close" onclick="closePrefs()">✕</button>
   </div>
+  <div id="prefs-body"></div>
+  <div id="prefs-status">Changes save automatically and shape the next generated week.</div>
 </div>
 
 <div class="meal-overlay hidden" id="meal-overlay">
@@ -481,15 +539,14 @@
 
 <header>
   <h1><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>NutriPrep</h1>
-  <span class="hdr-user" id="hdr-user-chip" onclick="showTab('settings')">—</span>
+  <span class="hdr-user" id="hdr-user-chip" onclick="openPrefs()">🏠 Household</span>
   <span class="hdr-gear" onclick="showTab('settings')" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="21" y1="5" x2="10" y2="5"/><line x1="6" y1="5" x2="3" y2="5"/><line x1="21" y1="12" x2="13" y2="12"/><line x1="9" y1="12" x2="3" y2="12"/><line x1="21" y1="19" x2="16" y2="19"/><line x1="12" y1="19" x2="3" y2="19"/><circle cx="8" cy="5" r="2"/><circle cx="11" cy="12" r="2"/><circle cx="14" cy="19" r="2"/></svg></span>
 </header>
 
 <div class="content">
   <!-- TODAY -->
   <div class="tab-pane active" id="pane-today">
-    <div class="stats-strip" id="home-stats"></div>
-    <div class="milestones" id="home-milestones"></div>
+    <div id="home-stats"></div>
     <div id="plan-action" style="margin-bottom:12px"></div>
     <div id="plan-paused-banner" style="display:none;background:var(--honey-pale);border:1px solid var(--honey);border-radius:var(--r-sm);padding:10px 14px;margin-bottom:12px;font-size:13px;color:var(--ink);align-items:center;gap:10px">
       <span style="font-size:18px">⏸</span>
@@ -498,33 +555,29 @@
     <div id="training-banner"></div>
     <div id="today-banner"></div>
     <div class="card" id="today-macro-card" style="display:none">
-      <div class="card-title">Your day — <span id="today-date-label"></span></div>
-      <div class="macro-ring-wrap">
-        <canvas id="macro-ring-chart" width="100" height="100"></canvas>
-        <div class="macro-legend" id="macro-legend"></div>
-      </div>
+      <div class="card-title">Planned today — <span id="today-date-label"></span></div>
+      <div class="macro-people" id="macro-people"></div>
     </div>
     <div class="card" id="hydration-card" style="display:none">
       <div class="hydration-head">
         <div class="card-title" style="margin:0">💧 Hydration</div>
-        <div class="hydration-amount"><span id="water-cur">0</span> / <span id="water-target">2.0</span> L</div>
+        <div class="hydration-amount">target <span id="water-target">2.0</span> L each</div>
       </div>
-      <div class="water-bar"><div class="water-fill" id="water-fill"></div></div>
-      <div class="water-glasses" id="water-glasses"></div>
-      <div class="water-actions">
-        <button class="btn btn-outline btn-sm" onclick="addWater(-250)">− Glass</button>
-        <button class="btn btn-sm" onclick="addWater(250)">+ Glass (250 ml)</button>
-      </div>
+      <div id="water-people"></div>
     </div>
     <div class="card">
-      <div class="card-title">Today's meals — tap ✓ when eaten</div>
+      <div class="card-title">Today's meals — tick who ate it</div>
       <div id="today-slots"></div>
     </div>
   </div>
 
   <!-- MENU -->
   <div class="tab-pane" id="pane-menu">
-    <div class="section-title">This week's menu</div>
+    <div class="row-between" style="margin-bottom:10px">
+      <div class="section-title" style="margin-bottom:0">This week's menu</div>
+      <button class="btn btn-outline btn-sm" onclick="openPrefs()">🥕 Preferences</button>
+    </div>
+    <div id="menu-legend" style="font-size:12px;color:var(--muted);margin:-2px 0 10px"></div>
     <div id="menu-days"></div>
   </div>
 
@@ -561,9 +614,10 @@
 
   <!-- PROGRESS -->
   <div class="tab-pane" id="pane-progress">
-    <div class="section-title">Your progress</div>
+    <div class="section-title">Progress</div>
+    <div class="seg" id="progress-seg"></div>
     <div class="card">
-      <div class="card-title">Log this week's weight</div>
+      <div class="card-title">Log this week's weight — <span id="progress-who"></span></div>
       <div class="weight-form">
         <input type="number" id="weight-input" placeholder="82.5" step="0.1" min="30" max="300">
         <button class="btn" onclick="logWeight()">Log</button>
@@ -580,7 +634,7 @@
   <div class="tab-pane" id="pane-coach">
     <div class="card" style="padding:10px 12px;margin-bottom:0;border-radius:16px 16px 0 0">
       <div style="font-size:13px;font-weight:600;color:var(--green)">Coach Léa 🌿</div>
-      <div style="font-size:12px;color:var(--muted)">Ask anything. Menu changes apply to the whole household.</div>
+      <div style="font-size:12px;color:var(--muted)">Household coach. Say who a request is for ("Diana doesn't eat mushrooms") and Léa tailors that person's plate.</div>
     </div>
     <div class="coach-msgs" id="coach-msgs"></div>
     <div style="height:80px"></div>
@@ -590,8 +644,11 @@
   <div class="tab-pane" id="pane-settings">
     <div class="section-title">Settings</div>
     <div class="card">
-      <div class="card-title">Identity</div>
-      <div class="identity-picker" id="settings-identity-picker"></div>
+      <div class="row-between" style="margin-bottom:8px">
+        <div class="card-title" style="margin:0">Food preferences</div>
+        <button class="btn btn-sm" onclick="openPrefs()">Edit</button>
+      </div>
+      <div id="prefs-glance"></div>
     </div>
     <div class="card">
       <div class="card-title">API Keys</div>
@@ -632,13 +689,13 @@
       <input type="file" id="plan-upload-input" accept="image/*,.pdf" style="display:none" onchange="uploadPlan(this)">
       <div id="upload-status" style="font-size:13px;color:var(--muted);margin-top:8px"></div>
     </div>
-    <div class="card" id="macros-card"></div>
+    <div id="macros-card"></div>
     <div class="card">
-      <div class="card-title">Your plan & goals</div>
+      <div class="card-title">Goals</div>
       <div id="goals-display"></div>
-      <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review my plan with Coach Léa</button>
+      <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v36 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v37 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -662,7 +719,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 36; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 37; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -705,13 +762,22 @@ function emptyIcon(name){
 }
 
 // ── State ─────────────────────────────────────────────────────────────────────
-let identity = localStorage.getItem("nutriprep_identity") || null;
+// One household, one admin who cooks. Everyone's plate comes from the same menu;
+// only restrictions (preferences.json) and portions differ per person.
+const MEMBERS = ["diego","diana"];
+const MEMBER_EMOJI = { diego: "👨", diana: "👩" };
+function blankPerson(){ return { goals:{}, weightLog:[], checkins:[], mealLogs:[], macros:{} }; }
+const people = Object.fromEntries(MEMBERS.map(m=>[m, blankPerson()]));
+function personName(m){ const n=((people[m]||{}).goals||{}).name; return n || (m.charAt(0).toUpperCase()+m.slice(1)); }
+function whoLabel(m){ return `${MEMBER_EMOJI[m]||"🙂"} ${personName(m)}`; }
+function esc(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
+let progressPerson = MEMBERS[0];
 let weekMenu = null, shoppingList = null, prepPlan = null, planStatus = null, inventory = null, trainingPlan = null, sleepData = null;
 let householdData = null, priceBook = null, nutritionPlan = null, learnedPrefs = {avoid:[],prefer:[],notes:[]};
 const SUPERMARKETS = ["Cactus","Auchan","Delhaize","Aldi","Lidl","Match","Grand Frais","Indian Supermarket","Asian Supermarket"];
 const PRICE_UNITS = ["kg","L","item"];
 let shopFilter = "all"; // active supermarket filter on the Shopping tab
-let userGoals = {}, userWeightLog = [], userCheckins = [], userMealLogs = [], userMacros = {};
+let prefs = null;            // normalised preferences.json (see tailoring.py for the shape)
 let coachHistory = [], setupHistory = [];
 // After a local plan edit (coach swap/add), trust the in-memory plan for a few minutes so a
 // stale raw.githubusercontent CDN copy can't clobber the change on the next tab switch.
@@ -719,8 +785,8 @@ let menuDirtyUntil = 0;
 function markMenuDirty(){ menuDirtyUntil = Date.now() + 180000; }
 function refreshMenuViews(){ try{renderToday();}catch(_){} try{renderMenu();}catch(_){} try{renderShopping();}catch(_){} try{renderPrep();}catch(_){} }
 let checkedItems = JSON.parse(localStorage.getItem("nutriprep_checked") || "{}");
-let waterLog = JSON.parse(localStorage.getItem("nutriprep_water") || "{}"); // { identity: { "YYYY-MM-DD": ml } }
-let macroRingChart = null, weightChart = null;
+let waterLog = JSON.parse(localStorage.getItem("nutriprep_water") || "{}"); // { member: { "YYYY-MM-DD": ml } }
+let macroRingCharts = {}, weightChart = null;
 let pendingIdentity = null;
 
 // ── Unit parser (mirrors units.py) ──────────────────────────────────────────────
@@ -789,7 +855,7 @@ function ytSearchBtn(name){ return recipeVideoLinks(name); }
 function cfg(k){ return localStorage.getItem("nutriprep_"+k) || ""; }
 function setCfg(k,v){ localStorage.setItem("nutriprep_"+k, v); }
 function saveSettings(){ setCfg("anthropic_key", document.getElementById("s-anthropic-key").value); setCfg("gh_token", document.getElementById("s-gh-token").value); }
-function loadSettingsUI(){ document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderIdentityPicker(); renderGoals(); renderMacrosCard(); loadPlanConfig(); }
+function loadSettingsUI(){ document.getElementById("s-anthropic-key").value=cfg("anthropic_key"); document.getElementById("s-gh-token").value=cfg("gh_token"); renderPrefsGlance(); renderGoals(); renderMacrosCard(); loadPlanConfig(); }
 
 // ── Plan pause ────────────────────────────────────────────────────────────────
 let planConfig = {paused: false};
@@ -826,11 +892,187 @@ async function togglePlanPause(){
   }
 }
 
-// ── Identity ──────────────────────────────────────────────────────────────────
-function pickIdentity(who, el){ pendingIdentity=who; document.querySelectorAll(".identity-choice").forEach(b=>b.classList.remove("selected")); if(el)el.classList.add("selected"); }
-function confirmIdentity(){ if(!pendingIdentity){ alert("Please choose who you are."); return; } identity=pendingIdentity; localStorage.setItem("nutriprep_identity", identity); document.getElementById("identity-modal").classList.add("hidden"); init(); }
-function renderIdentityPicker(){ const wrap=document.getElementById("settings-identity-picker"); wrap.innerHTML=""; ["diego","diana"].forEach(who=>{ const btn=document.createElement("button"); btn.className="identity-btn"+(identity===who?" active":""); btn.innerHTML=(who==="diego"?"👨 ":"👩 ")+who.charAt(0).toUpperCase()+who.slice(1); btn.onclick=()=>{ identity=who; localStorage.setItem("nutriprep_identity",who); renderIdentityPicker(); renderUserChip(); loadUserData().then(()=>{renderToday(); renderGoals(); renderMacrosCard();}); }; wrap.appendChild(btn); }); }
-function renderUserChip(){ document.getElementById("hdr-user-chip").textContent = identity?(identity==="diego"?"👨 Diego":"👩 Diana"):"—"; }
+// ── Food preferences (preferences.json) ─────────────────────────────────────────
+// Who eats what. "everyone" entries apply to the whole household; each person has
+// their own lists + diet style. Anyone's ALLERGY is kept out of the whole kitchen;
+// everything else only changes that person's plate. Mirrors tailoring.py — keep the
+// keyword lists and matching rules in step with it.
+const PREF_LIST_KINDS=["allergies","intolerances","avoid","love","notes"];
+const DIET_STYLES=["omnivore","flexitarian","pescatarian","vegetarian","vegan"];
+const PREF_KINDS={
+  allergies:   {label:"Allergies",   icon:"🚫", hint:"Kept out of every dish — shared pans, no cross-contact.", sugg:["peanuts","tree nuts","shellfish","fish","eggs","milk","gluten","soy","sesame","celery","mustard"]},
+  intolerances:{label:"Intolerances",icon:"⚠️", hint:"Never on this person's plate; the others can still have it.", sugg:["lactose","gluten","fructose","FODMAPs","histamine","caffeine"]},
+  avoid:       {label:"Won't eat",   icon:"👎", hint:"Never on this person's plate. One word per food works best.", sugg:["mushrooms","olives","coriander","liver","blue cheese","aubergine","beetroot","tofu","spicy food","raw onion","pork","red meat"]},
+  love:        {label:"Loves",       icon:"💚", hint:"Planned more often. Foods, dishes or cuisines.", sugg:["salmon","beef","chickpea curry","Mediterranean","Japanese","Mexican","roast vegetables","Greek yogurt","eggs","pasta"]},
+  notes:       {label:"Notes",       icon:"📝", hint:"Anything else the planner should know.", sugg:["lighter dinners","no fish on weekdays","big breakfasts","quick lunches"]},
+};
+const _MEAT=["chicken","turkey","beef","pork","lamb","veal","duck","bacon","ham","sausage","chorizo","salami","prosciutto","mince","steak","meatball","poulet","dinde","boeuf","bœuf","porc","agneau","jambon","lardons"];
+const _FISH=["fish","salmon","tuna","cod","hake","mackerel","sardine","anchovy","trout","tilapia","sea bass","seabass","haddock","pollock","herring","saumon","thon","cabillaud","poisson"];
+const _SHELLFISH=["shrimp","prawn","crab","lobster","mussel","clam","oyster","scallop","squid","calamari","octopus","crevette","moule","langoustine"];
+const _DAIRY=["milk","cheese","yogurt","yoghurt","cream","butter","kefir","feta","mozzarella","parmesan","ricotta","cottage cheese","skyr","quark","ghee","halloumi","buttermilk","lait","fromage","yaourt","crème","beurre"];
+const _EGG=["egg","oeuf","œuf","mayonnaise","mayo"];
+const _GLUTEN=["wheat","bread","pasta","spaghetti","penne","couscous","barley","rye","flour","bulgur","seitan","farro","spelt","semolina","tortilla","wrap","pita","noodle","baguette","croissant","cracker","breadcrumb","blé","pain","pâtes","farine"];
+const _NUTS=["almond","walnut","cashew","hazelnut","pecan","pistachio","macadamia","brazil nut","pine nut","amande","noix","noisette","pistache"];
+const _SOY=["soy","soja","tofu","tempeh","edamame","miso"];
+const EXPANSIONS={lactose:_DAIRY,dairy:_DAIRY,milk:_DAIRY,gluten:_GLUTEN,wheat:_GLUTEN,coeliac:_GLUTEN,celiac:_GLUTEN,egg:_EGG,eggs:_EGG,
+  shellfish:_SHELLFISH,crustaceans:_SHELLFISH,seafood:[..._FISH,..._SHELLFISH],fish:_FISH,"tree nuts":_NUTS,nuts:[..._NUTS,"peanut"],
+  peanut:["peanut","cacahuète","arachide"],peanuts:["peanut","cacahuète","arachide"],soy:_SOY,soya:_SOY,sesame:["sesame","sésame","tahini","tahina"],
+  "red meat":["beef","pork","lamb","veal","boeuf","bœuf","porc","agneau"],meat:_MEAT,pork:["pork","bacon","ham","chorizo","salami","prosciutto","porc","jambon","lardons"]};
+const DIET_EXCLUDES={omnivore:[],flexitarian:[],pescatarian:_MEAT,vegetarian:[..._MEAT,..._FISH,..._SHELLFISH,"gelatin","gélatine"],
+  vegan:[..._MEAT,..._FISH,..._SHELLFISH,..._DAIRY,..._EGG,"honey","miel","gelatin","gélatine"]};
+const _FREE_OF=/\b(lactose|gluten|dairy|egg|nut|soy|sugar)[- ]free\b|\bsans (lactose|gluten)\b/g;
+const _PLANT_DAIRY=/\b(oat|almond|soy|soya|rice|coconut|cashew|pea|plant|vegan|avoine|amande|soja|coco)[- ](milk|cream|yogh?urt|butter|drink|lait|crème|yaourt|boisson)\b|\b(peanut|almond|cashew|nut|seed)[- ]butter\b|\bcocoa butter\b|\bbutter ?beans?\b|\bcream of tartar\b|\bcoconut\b/g;
+
+function _cleanList(v){ const out=[], seen=new Set(); (Array.isArray(v)?v:[]).forEach(x=>{ const s=String(x==null?"":x).trim(); if(s&&!seen.has(s.toLowerCase())){ seen.add(s.toLowerCase()); out.push(s); } }); return out; }
+function normalizePrefs(p){
+  p=p||{}; const hh=p.household||{};
+  const out={migrated_legacy:!!p.migrated_legacy, household:{}, people:{}, history:Array.isArray(p.history)?p.history.slice(-200):[]};
+  PREF_LIST_KINDS.forEach(k=>out.household[k]=_cleanList(hh[k]));
+  MEMBERS.forEach(m=>{ const src=(p.people||{})[m]||{}; const o={}; PREF_LIST_KINDS.forEach(k=>o[k]=_cleanList(src[k]));
+    const st=String(src.diet_style||"").trim().toLowerCase(); o.diet_style=DIET_STYLES.includes(st)?st:""; out.people[m]=o; });
+  return out;
+}
+// Until the app first saves preferences.json, fold in the older household-wide fields.
+function loadPreferences(pf, household, learned){
+  const P=normalizePrefs(pf); if(P.migrated_legacy) return P;
+  const h=household||{}, l=learned||{}, hh=P.household;
+  hh.allergies=_cleanList([...hh.allergies,...(h.allergies||[])]);
+  hh.intolerances=_cleanList([...hh.intolerances,...(h.intolerances||[])]);
+  hh.avoid=_cleanList([...hh.avoid,...(h.dislikes||[]),...(l.avoid||[])]);
+  hh.love=_cleanList([...hh.love,...(l.prefer||[])]);
+  hh.notes=_cleanList([...hh.notes,...(l.notes||[])]);
+  const st=String(h.diet_style||"").toLowerCase();
+  if(DIET_STYLES.includes(st)) MEMBERS.forEach(m=>{ if(!P.people[m].diet_style) P.people[m].diet_style=st; });
+  return P;
+}
+function termsFor(item){
+  const s=String(item||"").trim().toLowerCase().replace(/^(no|not|never|avoid|without|hates?|dislikes?|less|any|all)\s+/,"").replace(/^[\s.!]+|[\s.!]+$/g,"");
+  if(!s) return [];
+  if(EXPANSIONS[s]) return [...new Set([...EXPANSIONS[s],s])];
+  for(const k of Object.keys(EXPANSIONS)){ if(new RegExp(`\\b${k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")}\\b`).test(s)) return [...new Set([...EXPANSIONS[k],k])]; }
+  return [s];
+}
+function _sing(w){ if(w.length<=3)return w; if(w.endsWith("ies"))return w.slice(0,-3)+"y"; if(/(oes|ches|shes|xes|sses)$/.test(w))return w.slice(0,-2); if(w.endsWith("s")&&!/(ss|us)$/.test(w))return w.slice(0,-1); return w; }
+function _words(t){ return " "+(String(t).toLowerCase().match(/[a-zà-ÿœæ]+/g)||[]).map(_sing).join(" ")+" "; }
+function termMatches(itemText, terms){
+  let text=String(itemText||"").toLowerCase(); if(!text) return null;
+  for(const fm of text.matchAll(_FREE_OF)){ if(terms.includes(fm[1]||fm[2])) return null; }
+  text=text.replace(_FREE_OF," ");
+  if(terms.some(t=>_DAIRY.includes(t))) text=text.replace(_PLANT_DAIRY," ");
+  const hay=_words(text);
+  for(const t of terms){ const n=_words(t); if(n.trim()&&hay.includes(n)) return t; }
+  return null;
+}
+function kitchenAllergens(){ const P=prefs||normalizePrefs({}); return _cleanList([...P.household.allergies,...MEMBERS.flatMap(m=>P.people[m].allergies)]); }
+function restrictionsFor(m){
+  const P=prefs||normalizePrefs({}); const p=P.people[m]; if(!p) return [];
+  const rules=kitchenAllergens().map(a=>({label:a,kind:"allergies",terms:termsFor(a)}));
+  ["intolerances","avoid"].forEach(k=>_cleanList([...P.household[k],...p[k]]).forEach(x=>{ const t=termsFor(x); if(t.length) rules.push({label:x,kind:k,terms:t}); }));
+  if(p.diet_style && (DIET_EXCLUDES[p.diet_style]||[]).length) rules.push({label:p.diet_style,kind:"diet",terms:DIET_EXCLUDES[p.diet_style]});
+  return rules;
+}
+function prefsSummaryText(){
+  const P=prefs||normalizePrefs({}); const hh=P.household; const L=[];
+  const al=kitchenAllergens(); L.push("- Kitchen-wide allergies (never in ANY dish): "+(al.length?al.join(", "):"none"));
+  const ev=[]; if(hh.intolerances.length||hh.avoid.length) ev.push("avoid "+_cleanList([...hh.intolerances,...hh.avoid]).join(", ")); if(hh.love.length) ev.push("loves "+hh.love.join(", ")); if(hh.notes.length) ev.push("notes: "+hh.notes.slice(-8).join("; "));
+  L.push("- Everyone: "+(ev.length?ev.join(" · "):"—"));
+  MEMBERS.forEach(m=>{ const p=P.people[m]; const b=[];
+    if(p.diet_style&&p.diet_style!=="omnivore") b.push("diet "+p.diet_style);
+    if(p.allergies.length) b.push("allergies "+p.allergies.join(", "));
+    if(p.intolerances.length) b.push("intolerances "+p.intolerances.join(", "));
+    if(p.avoid.length) b.push("won't eat "+p.avoid.join(", "));
+    if(p.love.length) b.push("loves "+p.love.join(", "));
+    if(p.notes.length) b.push("notes: "+p.notes.slice(-6).join("; "));
+    L.push(`- ${personName(m)} (id "${m}"): `+(b.length?b.join(" · "):"no personal restrictions")); });
+  return L.join("\n");
+}
+
+// Editing — every change is logged to history so it can be tracked over time.
+let _prefsSaveTimer=null, prefsWho="everyone";
+function _prefBucket(who){ if(!prefs) prefs=normalizePrefs({}); return who==="everyone"?prefs.household:prefs.people[who]; }
+function _prefLog(who,kind,item,action,source){ prefs.history.push({at:todayISO(),who,kind,item,action,source:source||"app"}); prefs.history=prefs.history.slice(-200); }
+function prefAdd(who,kind,text,source,noSave){
+  const b=_prefBucket(who); if(!b||!PREF_KINDS[kind]) return;
+  const items=String(text||"").split(kind==="notes"?/\n/:/[,;\n]/).map(x=>x.trim()).filter(Boolean);
+  let changed=false;
+  items.forEach(v=>{ if(!b[kind].some(x=>x.toLowerCase()===v.toLowerCase())){ b[kind].push(v); _prefLog(who,kind,v,"added",source); changed=true; } });
+  if(changed && !noSave) schedulePrefsSave();
+  return changed;
+}
+function prefRemove(who,kind,text){
+  const b=_prefBucket(who); if(!b) return; const i=b[kind].findIndex(x=>x.toLowerCase()===String(text).toLowerCase());
+  if(i<0) return; const [v]=b[kind].splice(i,1); _prefLog(who,kind,v,"removed","app"); schedulePrefsSave();
+}
+function prefSetDiet(m,style,source,noSave){
+  const b=_prefBucket(m); if(!b||m==="everyone") return; const st=String(style||"").trim().toLowerCase();
+  const next=DIET_STYLES.includes(st)?st:""; if(b.diet_style===next) return;
+  b.diet_style=next; _prefLog(m,"diet",next||"(none)","set",source); if(!noSave) schedulePrefsSave();
+}
+function _setPrefsStatus(t){ const el=document.getElementById("prefs-status"); if(el) el.textContent=t; }
+function schedulePrefsSave(){
+  if(_prefsSaveTimer) clearTimeout(_prefsSaveTimer);
+  _setPrefsStatus("Saving…");
+  _prefsSaveTimer=setTimeout(()=>{ flushPrefs().catch(e=>_setPrefsStatus("⚠ Not saved: "+e.message)); },900);
+  if(!document.getElementById("prefs-overlay").classList.contains("hidden")) renderPrefs();
+  try{ renderPrefsGlance(); }catch(_){}
+  try{ refreshMenuViews(); }catch(_){}
+}
+async function flushPrefs(){
+  if(_prefsSaveTimer){ clearTimeout(_prefsSaveTimer); }
+  _prefsSaveTimer=true; // keep loadSharedData from clobbering the edit while we write
+  try{
+    prefs.migrated_legacy=true; prefs.updated=todayISO();
+    await ghWrite("preferences.json", prefs, "Food preferences updated");
+    _setPrefsStatus("✓ Saved — the next generated week is tailored to this.");
+  } finally { _prefsSaveTimer=null; }
+}
+function openPrefs(who){ if(who) prefsWho=who; if(!prefs) prefs=normalizePrefs({}); document.getElementById("prefs-overlay").classList.remove("hidden"); renderPrefs(); }
+function closePrefs(){ document.getElementById("prefs-overlay").classList.add("hidden"); renderPrefsGlance(); }
+function prefsAddFromInput(kind){ const el=document.getElementById("padd-"+kind); if(!el) return; const v=el.value; el.value=""; if(prefAdd(prefsWho,kind,v)===false) _setPrefsStatus("Already on the list."); setTimeout(()=>{ const e2=document.getElementById("padd-"+kind); if(e2) e2.focus(); },0); }
+function _chip(who,kind,v,from){ return `<span class="pchip k-${kind}">${esc(v)}${from?` <span class="from">${esc(from)}</span>`:""}${from?"":`<button onclick="prefRemove('${who}','${kind}',decodeURIComponent('${encodeURIComponent(v).replace(/'/g,"%27")}'))" aria-label="Remove ${esc(v)}">✕</button>`}</span>`; }
+function renderPrefsGlanceHtml(){
+  const P=prefs||normalizePrefs({});
+  const row=(label,bucket,diet)=>{
+    const parts=[];
+    if(diet&&diet!=="omnivore") parts.push(`<span class="pchip k-love">${esc(diet)}</span>`);
+    ["allergies","intolerances","avoid"].forEach(k=>bucket[k].forEach(v=>parts.push(`<span class="pchip k-${k}" title="${PREF_KINDS[k].label}">${PREF_KINDS[k].icon} ${esc(v)}</span>`)));
+    bucket.love.slice(0,6).forEach(v=>parts.push(`<span class="pchip k-love">💚 ${esc(v)}</span>`));
+    return `<tr><td>${label}</td><td>${parts.length?`<div class="pchips" style="margin:0">${parts.join("")}</div>`:'<span class="none">nothing set</span>'}</td></tr>`;
+  };
+  return `<table class="glance">${row("🏠 Everyone",P.household,"")}${MEMBERS.map(m=>row(whoLabel(m),P.people[m],P.people[m].diet_style)).join("")}</table>`;
+}
+function renderPrefsGlance(){ const el=document.getElementById("prefs-glance"); if(el) el.innerHTML=renderPrefsGlanceHtml()+`<div style="font-size:11.5px;color:var(--muted);margin-top:8px">🚫 allergy · ⚠️ intolerance · 👎 won't eat · 💚 loves. Tap Edit (or 🏠 at the top) to change.</div>`; }
+function renderPrefs(){
+  const body=document.getElementById("prefs-body"); if(!body) return;
+  const P=prefs; const who=prefsWho; const b=_prefBucket(who);
+  const seg=`<div class="seg">${["everyone",...MEMBERS].map(w=>`<button class="${w===who?"active":""}" onclick="prefsWho='${w}';renderPrefs()">${w==="everyone"?"🏠 Everyone":whoLabel(w)}</button>`).join("")}</div>`;
+  const glance=`<div class="pref-sec"><h3>At a glance</h3><div class="hint">What each plate has to respect. Differences show on the menu as “↳ Name: …”.</div>${renderPrefsGlanceHtml()}</div>`;
+  const diet=who==="everyone"?"":`<div class="pref-sec"><h3>🍽️ ${esc(personName(who))}'s diet</h3><div class="hint">Anything outside it is swapped out on ${esc(personName(who))}'s plate only.</div>
+    <div class="diet-row">${DIET_STYLES.map(st=>`<button class="${b.diet_style===st?"active":""}" onclick="prefSetDiet('${who}','${st}')">${st}</button>`).join("")}${b.diet_style?`<button onclick="prefSetDiet('${who}','')">clear</button>`:""}</div></div>`;
+  const inherited=(k)=>who==="everyone"?"":P.household[k].map(v=>_chip(who,k,v,"everyone")).join("");
+  const secs=PREF_LIST_KINDS.map(k=>{
+    const K=PREF_KINDS[k]; const have=new Set([...b[k],...(who==="everyone"?[]:P.household[k])].map(x=>x.toLowerCase()));
+    const sugg=K.sugg.filter(x=>!have.has(x.toLowerCase())).slice(0,10);
+    const forWho=who==="everyone"?"everyone":personName(who);
+    const hint=k==="allergies"?K.hint:(who==="everyone"?K.hint.replace("this person's plate","anyone's plate").replace("the others can still have it","applies to all"):K.hint.replace("this person's",personName(who)+"'s"));
+    return `<div class="pref-sec"><h3>${K.icon} ${K.label}</h3><div class="hint">${esc(hint)}</div>
+      <div class="pchips">${inherited(k)}${b[k].map(v=>_chip(who,k,v)).join("")||(inherited(k)?"":'<span style="font-size:12px;color:var(--faint)">None yet</span>')}</div>
+      <div class="padd"><input id="padd-${k}" placeholder="${k==="notes"?"Add a note…":"Add for "+esc(forWho)+" — commas for several"}" onkeydown="if(event.key==='Enter')prefsAddFromInput('${k}')"><button onclick="prefsAddFromInput('${k}')">Add</button></div>
+      ${sugg.length?`<div class="psugg">${sugg.map(x=>`<button onclick="prefAdd('${who}','${k}','${x.replace(/'/g,"\\'")}')">+ ${esc(x)}</button>`).join("")}</div>`:""}
+    </div>`;
+  }).join("");
+  const hist=(P.history||[]).slice(-25).reverse();
+  const histHtml=`<div class="pref-sec"><h3>🕘 Recent changes</h3><div class="hint">Everything added or removed, and where it came from (app, meal 👍/👎, Coach Léa, setup).</div>
+    ${hist.length?hist.map(h=>`<div class="phist"><span class="d">${esc(h.at||"")}</span><span>${h.action==="removed"?"−":h.action==="set"?"→":"+"} <strong>${esc(h.item)}</strong> · ${esc(h.kind==="diet"?"diet":(PREF_KINDS[h.kind]||{label:h.kind}).label.toLowerCase())} · ${h.who==="everyone"?"everyone":esc(personName(h.who))} <span style="color:var(--faint)">(${esc(h.source||"app")})</span></span></div>`).join(""):'<div style="font-size:12px;color:var(--faint)">No changes yet.</div>'}
+    <button class="btn btn-outline btn-block btn-sm" style="margin-top:10px" onclick="applyPrefsThisWeek()">Adapt this week's remaining meals with Coach Léa</button></div>`;
+  body.innerHTML=seg+glance+diet+secs+histHtml;
+}
+function applyPrefsThisWeek(){
+  closePrefs(); showTab("coach");
+  const inp=document.getElementById("coach-input");
+  inp.value="Please check this week's remaining meals against everyone's food preferences and adapt any plate that doesn't fit (only that person's portion).";
+  inp.focus();
+}
 
 // ── GitHub API ─────────────────────────────────────────────────────────────────
 // Read via the GitHub Contents API when we have a token — it is STRONGLY CONSISTENT
@@ -895,6 +1137,8 @@ async function loadSharedData(){
   try{ householdData=await ghFetch("household.json"); }catch(_){ householdData=null; }
   try{ nutritionPlan=await ghFetch("nutrition_plan.json"); }catch(_){ nutritionPlan=null; }
   try{ learnedPrefs=await ghFetch("learned_preferences.json"); }catch(_){ learnedPrefs={avoid:[],prefer:[],notes:[]}; }
+  // Don't clobber preferences mid-edit (the editor saves on a short debounce).
+  if(!_prefsSaveTimer){ let pf=null; try{ pf=await ghFetch("preferences.json"); }catch(_){ pf=null; } prefs=loadPreferences(pf, householdData, learnedPrefs); }
   try{ priceBook=await ghFetch("price_book.json"); }catch(_){ priceBook={products:{}}; }
   // Cross-app reads from the training app (AthleteIQ) at the repo root
   try{ trainingPlan=await (await fetch(`${RAW_ROOT}/weekly_plan.json?t=${Date.now()}`)).json(); }catch(_){ trainingPlan=null; }
@@ -906,14 +1150,16 @@ function trainingForDate(d){
   if(trainingPlan&&Array.isArray(trainingPlan)){ const s=trainingPlan.find(x=>x.date===d); if(s)return {name:s.name,sport:s.sport,tss:s.planned_tss,duration_min:Math.round((s.total_duration_secs||0)/60),extra_kcal:Math.min(700,Math.round((s.planned_tss||0)*7))}; }
   return null;
 }
+// Per-person data (goals, weigh-ins, meal ticks, macros) for everyone in the household.
 async function loadUserData(){
-  if(!identity)return;
-  try{ userGoals=await ghFetch(`users/${identity}/goals.json`); }catch(_){ userGoals={}; }
-  try{ userWeightLog=await ghFetch(`users/${identity}/weight_log.json`); }catch(_){ userWeightLog=[]; }
-  try{ userCheckins=await ghFetch(`users/${identity}/checkins.json`); }catch(_){ userCheckins=[]; }
-  try{ userMealLogs=await ghFetch(`users/${identity}/meal_logs.json`); }catch(_){ userMealLogs=[]; }
-  try{ userMacros=await ghFetch(`users/${identity}/macro_targets.json`); }catch(_){ userMacros={}; }
-  try{ coachHistory=await ghFetch(`users/${identity}/coach_history.json`); }catch(_){ coachHistory=[]; }
+  const get=async(path,fallback)=>{ try{ const v=await ghFetch(path); return v==null?fallback:v; }catch(_){ return fallback; } };
+  await Promise.all(MEMBERS.map(async m=>{
+    const [goals,weightLog,checkins,mealLogs,macros]=await Promise.all([
+      get(`users/${m}/goals.json`,{}), get(`users/${m}/weight_log.json`,[]), get(`users/${m}/checkins.json`,[]),
+      get(`users/${m}/meal_logs.json`,[]), get(`users/${m}/macro_targets.json`,{})]);
+    people[m]={goals,weightLog,checkins,mealLogs,macros};
+  }));
+  coachHistory=await get("coach_history.json",[]);
 }
 function todayISO(){ return new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Luxembourg"}); }
 // Minutes since midnight in Luxembourg local time (DST-correct, independent of device tz)
@@ -923,62 +1169,62 @@ function luxMinutes(){
   return h*60+m;
 }
 
-// ── Hydration tracker ───────────────────────────────────────────────────────────
+// ── Hydration tracker (per person, this device) ────────────────────────────────
 const GLASS_ML = 250;
 function waterTargetMl(){ const l=(nutritionPlan&&nutritionPlan.hydration_l)?nutritionPlan.hydration_l:2.0; return Math.round(l*1000); }
-function waterTodayMl(){ return ((waterLog[identity]||{})[todayISO()])||0; }
-function setWaterMl(ml){
+function waterTodayMl(m){ return ((waterLog[m]||{})[todayISO()])||0; }
+function setWaterMl(m, ml){
   const d=todayISO(), target=waterTargetMl();
   ml=Math.max(0, Math.min(ml, target+GLASS_ML*4)); // allow some headroom past target
-  if(!waterLog[identity]) waterLog[identity]={};
-  waterLog[identity][d]=ml;
+  if(!waterLog[m]) waterLog[m]={};
+  waterLog[m][d]=ml;
   localStorage.setItem("nutriprep_water", JSON.stringify(waterLog));
   renderHydration();
 }
-function addWater(ml){ setWaterMl(waterTodayMl()+ml); }
+function addWater(m, ml){ setWaterMl(m, waterTodayMl(m)+ml); }
 function renderHydration(){
   const card=document.getElementById("hydration-card");
   if(!card) return;
-  if(!identity){ card.style.display="none"; return; }
   card.style.display="block";
-  const target=waterTargetMl(), cur=waterTodayMl();
-  const pct=target>0?Math.min(100,Math.round(cur/target*100)):0;
-  document.getElementById("water-cur").textContent=(cur/1000).toFixed(2).replace(/\.?0+$/,"");
+  const target=waterTargetMl();
   document.getElementById("water-target").textContent=(target/1000).toFixed(1);
-  document.getElementById("water-fill").style.width=pct+"%";
   const glasses=Math.max(1, Math.round(target/GLASS_ML));
-  const filled=Math.round(cur/GLASS_ML);
-  let html="";
-  for(let i=0;i<glasses;i++){
-    const full=i<filled;
-    html+=`<span class="water-glass${full?" full":""}" onclick="setWaterMl(${(i+1)*GLASS_ML===cur?i:(i+1)}*${GLASS_ML})" title="${(i+1)*GLASS_ML} ml">💧</span>`;
-  }
-  document.getElementById("water-glasses").innerHTML=html;
+  document.getElementById("water-people").innerHTML=MEMBERS.map(m=>{
+    const cur=waterTodayMl(m), filled=Math.round(cur/GLASS_ML);
+    const pct=target>0?Math.min(100,Math.round(cur/target*100)):0;
+    let g=""; for(let i=0;i<glasses;i++){ g+=`<span class="water-glass${i<filled?" full":""}" onclick="setWaterMl('${m}',${(i+1)*GLASS_ML===cur?i:(i+1)}*${GLASS_ML})">💧</span>`; }
+    return `<div class="water-person">
+      <div class="wp-head"><span>${whoLabel(m)} · ${(cur/1000).toFixed(2).replace(/\.?0+$/,"")||0} L</span>
+        <span class="wp-btns"><button onclick="addWater('${m}',-${GLASS_ML})" aria-label="Remove a glass">−</button><button onclick="addWater('${m}',${GLASS_ML})" aria-label="Add a glass">+</button></span></div>
+      <div class="water-bar"><div class="water-fill" style="width:${pct}%"></div></div>
+      <div class="water-glasses">${g}</div></div>`;
+  }).join("");
 }
 
-// ── Meal confirmation / compliance ──────────────────────────────────────────────
-function isAte(date, slot){ return userMealLogs.some(l=>l.date===date && l.slot===slot && l.ate); }
-async function toggleAte(date, slot, mealName){
-  const idx=userMealLogs.findIndex(l=>l.date===date && l.slot===slot);
-  if(idx>=0 && userMealLogs[idx].ate){ userMealLogs.splice(idx,1); }
-  else if(idx>=0){ userMealLogs[idx].ate=true; userMealLogs[idx].logged_at=new Date().toISOString(); }
-  else { userMealLogs.push({date, slot, meal_name:mealName, ate:true, logged_at:new Date().toISOString()}); }
+// ── Meal confirmation / compliance (per person) ─────────────────────────────────
+function isAte(m, date, slot){ return ((people[m]||{}).mealLogs||[]).some(l=>l.date===date && l.slot===slot && l.ate); }
+async function toggleAte(m, date, slot, mealName){
+  const logs=people[m].mealLogs;
+  const idx=logs.findIndex(l=>l.date===date && l.slot===slot);
+  if(idx>=0 && logs[idx].ate){ logs.splice(idx,1); }
+  else if(idx>=0){ logs[idx].ate=true; logs[idx].logged_at=new Date().toISOString(); }
+  else { logs.push({date, slot, meal_name:mealName, ate:true, logged_at:new Date().toISOString()}); }
   renderToday();
-  try{ await ghWrite(`users/${identity}/meal_logs.json`, userMealLogs, `Meal log ${date} ${slot} (${identity})`); }
+  if(currentMeal && currentMealDate===date && currentMeal.slot===slot && !document.getElementById("meal-overlay").classList.contains("hidden")) openMeal(currentMeal, currentMealDate);
+  try{ await ghWrite(`users/${m}/meal_logs.json`, logs, `Meal log ${date} ${slot} (${m})`); }
   catch(e){ alert("Couldn't save: "+e.message); }
 }
-function computeCompliance(){
+function computeCompliance(m){
   // This week's scheduled meals up to today vs confirmed
   if(!weekMenu) return { pct: null, scheduled: 0, eaten: 0 };
   const today=todayISO(); let scheduled=0, eaten=0;
-  weekMenu.forEach(day=>{ if(day.date<=today){ day.meals.forEach(m=>{ scheduled++; if(isAte(day.date,m.slot))eaten++; }); } });
+  weekMenu.forEach(day=>{ if(day.date<=today){ day.meals.forEach(meal=>{ scheduled++; if(isAte(m,day.date,meal.slot))eaten++; }); } });
   return { pct: scheduled?Math.round(eaten/scheduled*100):null, scheduled, eaten };
 }
-function computeStreak(){
+function computeStreak(m){
   // Compliant day = >=4 confirmed meals that date. Walk back from today.
-  const byDate={}; userMealLogs.forEach(l=>{ if(l.ate){ byDate[l.date]=(byDate[l.date]||0)+1; } });
+  const byDate={}; people[m].mealLogs.forEach(l=>{ if(l.ate){ byDate[l.date]=(byDate[l.date]||0)+1; } });
   let streak=0; let d=new Date();
-  // allow today to not count yet if no logs; start from today, step back
   for(let i=0;i<400;i++){
     const ds=d.toLocaleDateString("en-CA",{timeZone:"Europe/Luxembourg"});
     const compliant=(byDate[ds]||0)>=4;
@@ -989,13 +1235,62 @@ function computeStreak(){
   }
   return streak;
 }
-function computeBestStreak(){
-  const dates=[...new Set(userMealLogs.filter(l=>l.ate).map(l=>l.date))].sort();
-  const dayCount={}; userMealLogs.forEach(l=>{ if(l.ate)dayCount[l.date]=(dayCount[l.date]||0)+1; });
+function computeBestStreak(m){
+  const logs=people[m].mealLogs;
+  const dates=[...new Set(logs.filter(l=>l.ate).map(l=>l.date))].sort();
+  const dayCount={}; logs.forEach(l=>{ if(l.ate)dayCount[l.date]=(dayCount[l.date]||0)+1; });
   const compliantDays=dates.filter(d=>dayCount[d]>=4);
   let best=0,cur=0,prev=null;
   compliantDays.forEach(ds=>{ if(prev){ const diff=(new Date(ds)-new Date(prev))/86400000; cur=diff===1?cur+1:1; } else cur=1; best=Math.max(best,cur); prev=ds; });
   return best;
+}
+function lastWeight(m){ const p=people[m]; return p.weightLog.length?p.weightLog[p.weightLog.length-1].weight_kg:(p.goals.start_weight_kg||null); }
+
+// ── Per-person plates: what differs, and what clashes with someone's restrictions ──
+function ingNames(portion){ return ((portion||{}).ingredients||[]).map(i=>(i&&typeof i==="object")?(i.item||""):String(i)).filter(x=>x.trim()); }
+function _normItem(n){ return String(n).toLowerCase().replace(/\(.*?\)/g,"").replace(/[^a-zà-ÿ ]/g," ").replace(/\s+/g," ").trim().replace(/(es|s)$/,""); }
+// { member: "what's different on their plate" } — a variant from the planner wins,
+// otherwise it's derived from the ingredient lists (portion SIZE differences don't count).
+function mealDifferences(meal){
+  const portions=(meal&&meal.portions)||{}; const present=MEMBERS.filter(m=>portions[m]);
+  const sets={}; present.forEach(m=>sets[m]=new Set(ingNames(portions[m]).map(_normItem)));
+  const out={}, explicit=new Set(), missingBy={};
+  present.forEach(m=>{
+    const v=(portions[m]||{}).variant;
+    if(v && typeof v==="object" && (v.changes||v.name)){ out[m]=(v.changes||("Gets "+v.name))+(v.reason?` (${v.reason})`:""); explicit.add(m); return; }
+    const others=present.filter(o=>o!==m).map(o=>sets[o]); if(!others.length||!sets[m].size) return;
+    const shared=[...others[0]].filter(x=>others.every(s=>s.has(x)));
+    const union=new Set(others.flatMap(s=>[...s]));
+    const missing=shared.filter(x=>!sets[m].has(x)).sort(), extra=[...sets[m]].filter(x=>!union.has(x)).sort();
+    missingBy[m]=missing;
+    if(extra.length&&missing.length) out[m]=`${extra.join(", ")} instead of ${missing.join(", ")}`;
+    else if(missing.length) out[m]=`without ${missing.join(", ")}`;
+    else if(extra.length) out[m]=`adds ${extra.join(", ")}`;
+  });
+  // A difference shows up from both sides ("without X" / "adds X"); keep it only on
+  // the plate that was actually adapted. Same rule as tailoring._attribute.
+  const pick=o=>Object.fromEntries(Object.entries(out).filter(([m])=>o(m)));
+  if(explicit.size) return pick(m=>explicit.has(m));
+  if(Object.keys(out).length<2) return out;
+  const lacking=pick(m=>(missingBy[m]||[]).length);
+  if(Object.keys(lacking).length===1) return lacking;
+  const pool=Object.keys(lacking).length?lacking:out;
+  const P=prefs||normalizePrefs({});
+  const restricted=Object.fromEntries(Object.entries(pool).filter(([m])=>{ const p=P.people[m]||{}; return (p.allergies||[]).length||(p.intolerances||[]).length||(p.avoid||[]).length||!["","omnivore","flexitarian"].includes(p.diet_style||""); }));
+  return Object.keys(restricted).length===1?restricted:pool;
+}
+function mealConflicts(meal){
+  const out=[]; const portions=(meal&&meal.portions)||{};
+  MEMBERS.forEach(m=>{ const rules=restrictionsFor(m); ingNames(portions[m]).forEach(n=>{ const r=rules.find(r=>termMatches(n,r.terms)); if(r) out.push({member:m, text:`${personName(m)}: “${n}” clashes with ${r.kind==="diet"?"diet":r.kind==="allergies"?"allergy":r.kind==="intolerances"?"intolerance":"won't eat"} — ${r.label}`}); }); });
+  return out;
+}
+function diffBadges(meal){
+  const d=mealDifferences(meal), c=mealConflicts(meal);
+  return Object.entries(d).map(([m,t])=>`<span class="diff-badge">↳ ${esc(personName(m))}: ${esc(t)}</span>`).join("")
+       + c.map(x=>`<span class="warn-badge">⚠ ${esc(x.text)}</span>`).join("");
+}
+function kcalLine(meal){
+  return MEMBERS.map(m=>{ const k=((((meal.portions||{})[m])||{}).macros||{}).kcal; return k?`${esc(personName(m))} ${k}`:null; }).filter(Boolean).join(" · ")+" kcal";
 }
 
 // ── TODAY / HOME ────────────────────────────────────────────────────────────────
@@ -1012,35 +1307,36 @@ function renderToday(){
   document.getElementById("today-date-label").textContent=new Date().toLocaleDateString("en-LU",{timeZone:"Europe/Luxembourg",weekday:"long",day:"numeric",month:"long"});
 }
 function renderHomeStats(){
-  const c=computeCompliance(); const streak=computeStreak();
-  const start=userGoals.start_weight_kg||0, target=userGoals.target_weight_kg||0;
-  const last=userWeightLog.length?userWeightLog[userWeightLog.length-1].weight_kg:start;
-  const totalToLose=Math.abs(start-target), done=Math.abs(start-last);
-  const wpct=totalToLose>0?Math.min(100,Math.round(done/totalToLose*100)):0;
-  document.getElementById("home-stats").innerHTML=`
-    <div class="stat-tile"><div class="big">${c.pct==null?"—":c.pct+"%"}</div><div class="lbl">Compliance</div><div class="sub">${c.eaten}/${c.scheduled} meals</div></div>
-    <div class="stat-tile"><div class="big flame">${streak}🔥</div><div class="lbl">Day streak</div><div class="sub">${streak>0?"keep it up!":"start today"}</div></div>
-    <div class="stat-tile"><div class="big">${last||"—"}<span style="font-size:13px">kg</span></div><div class="lbl">Weight</div><div class="sub">${target?"goal "+target+"kg ("+wpct+"%)":"set a goal"}</div></div>`;
-  const best=Math.max(streak, computeBestStreak());
-  document.getElementById("home-milestones").innerHTML=MILESTONES.map(m=>`
-    <div class="milestone${best>=m.days?" earned":""}"><div class="m-ic">${m.icon}</div><div class="m-lbl">${m.label}${best>=m.days?" ✓":""}</div></div>`).join("");
+  document.getElementById("home-stats").innerHTML=MEMBERS.map(m=>{
+    const c=computeCompliance(m), streak=computeStreak(m), best=Math.max(streak, computeBestStreak(m));
+    const g=people[m].goals, last=lastWeight(m), target=g.target_weight_kg;
+    const medals=MILESTONES.filter(x=>best>=x.days).map(x=>x.icon).join("");
+    return `<div class="person-row" onclick="progressPerson='${m}';showTab('progress')">
+      <div class="who">${whoLabel(m)}</div>
+      <div class="figs">
+        <span><b>${c.pct==null?"—":c.pct+"%"}</b>eaten</span>
+        <span><b>${streak}🔥</b>streak</span>
+        <span><b>${last||"—"}</b>kg${target?` → ${target}`:""}</span>
+      </div>
+      <div class="medals">${medals}</div></div>`;
+  }).join("");
 }
 function renderTrainingBanner(){
   const el=document.getElementById("training-banner"); el.innerHTML="";
   const t=trainingForDate(todayISO());
   // Fuelling adjustment applies to the athlete (Diego) only.
-  if(!t || identity!=="diego"){ return; }
-  if(t.extra_kcal>0){
-    el.innerHTML=`<div class="action-banner" style="background:linear-gradient(135deg,#C26B4E,#CFA24C)"><span class="ic">🚴</span><div><h2>Training day — eat to fuel it</h2><p>${t.name} · ${t.tss} TSS · +${t.extra_kcal} kcal today (extra carbs). Your portions are sized up.</p></div></div>`;
-  }
+  if(!t || !(t.extra_kcal>0)) return;
+  const who=personName(t.member||"diego");
+  el.innerHTML=`<div class="action-banner" style="background:linear-gradient(135deg,#C26B4E,#CFA24C)"><span class="ic">🚴</span><div><h2>${esc(who)}'s training day</h2><p>${esc(t.name)} · ${t.tss} TSS · +${t.extra_kcal} kcal (extra carbs). ${esc(who)}'s portions are sized up today.</p></div></div>`;
 }
 function renderNextAction(dayData){
   const banner=document.getElementById("today-banner");
-  if(!dayData){ banner.innerHTML=`<div class="action-banner"><span class="ic" style="display:flex;color:rgba(255,255,255,.92)">${ic("clipboard",30,1.6)}</span><div><h2>No plan yet</h2><p>Tap "Generate this week's plan" above to build your menu.</p></div></div>`; return; }
+  if(!dayData){ banner.innerHTML=`<div class="action-banner"><span class="ic" style="display:flex;color:rgba(255,255,255,.92)">${ic("clipboard",30,1.6)}</span><div><h2>No plan yet</h2><p>Tap "Generate this week's plan" above to build the household menu.</p></div></div>`; return; }
   const mins=luxMinutes();
   const upcoming=dayData.meals.map(m=>{const[h,mm]=m.time.split(":").map(Number);return{...m,mins:h*60+mm};}).filter(m=>m.mins>mins).sort((a,b)=>a.mins-b.mins)[0];
-  if(upcoming){ const{icon,label}=SLOT_LABELS[upcoming.slot]||{}; const portion=(upcoming.portions||{})[identity]||{}; const kcal=(portion.macros||{}).kcal; const minsUntil=upcoming.mins-mins;
-    banner.innerHTML=`<div class="action-banner"><span class="ic">${icon||"🕐"}</span><div><h2>${label||upcoming.slot} in ${minsUntil} min</h2><p>${upcoming.name}${kcal?` — ${kcal} kcal`:""}</p></div></div>`;
+  if(upcoming){ const{icon,label}=SLOT_LABELS[upcoming.slot]||{}; const minsUntil=upcoming.mins-mins;
+    const d=mealDifferences(upcoming); const diffTxt=Object.keys(d).length?` · different plate for ${Object.keys(d).map(personName).join(" & ")}`:"";
+    banner.innerHTML=`<div class="action-banner"><span class="ic">${icon||"🕐"}</span><div><h2>${label||upcoming.slot} in ${minsUntil} min</h2><p>${esc(upcoming.name)} — ${kcalLine(upcoming)}${esc(diffTxt)}</p></div></div>`;
   } else { banner.innerHTML=`<div class="action-banner"><span class="ic" style="display:flex;color:rgba(255,255,255,.95)">${ic("check",30,1.7)}</span><div><h2>All done for today!</h2><p>Great job. Tomorrow's plan is ready.</p></div></div>`; }
 }
 function renderTodaySlots(dayData){
@@ -1048,62 +1344,61 @@ function renderTodaySlots(dayData){
   if(!dayData){ wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("calendar")}</div><p>No plan for today.</p></div>`; return; }
   const currMins=luxMinutes();
   wrap.innerHTML=dayData.meals.map(meal=>{
-    const{icon,label}=SLOT_LABELS[meal.slot]||{icon:"🍴",label:meal.slot};
-    const portion=(meal.portions||{})[identity]||{}; const macros=portion.macros||{};
+    const{icon}=SLOT_LABELS[meal.slot]||{icon:"🍴"};
     const[mh,mm]=meal.time.split(":").map(Number); const current=Math.abs((mh*60+mm)-currMins)<60;
-    const ate=isAte(dayData.date, meal.slot);
+    const pills=MEMBERS.map(m=>{ const ate=isAte(m,dayData.date,meal.slot); return `<button class="ate-pill${ate?" ate":""}" onclick='toggleAte("${m}","${dayData.date}","${meal.slot}",${JSON.stringify(meal.name).replace(/'/g,"&#39;")})'>${ate?"✓ ":""}${esc(personName(m))}</button>`; }).join("");
     return `<div class="slot-row${current?" current":""}">
       <div class="slot-time">${meal.time}</div>
       <div class="slot-icon">${icon}</div>
-      <div class="slot-info" onclick='openMeal(${JSON.stringify(meal).replace(/'/g,"&#39;")}, "${dayData.date}")'>
-        <div class="slot-name">${meal.name}</div>
-        <div class="slot-macro">${macros.kcal?`${macros.kcal} kcal · ${macros.protein_g}g protein`:""}</div>
+      <div class="slot-info" onclick='openMealAt("${dayData.date}","${meal.slot}")'>
+        <div class="slot-name">${esc(meal.name)}</div>
+        <div class="slot-macro">${kcalLine(meal)}</div>
         ${meal.prep_ahead?'<span class="slot-badge">✓ Batch-prepped</span>':""}
+        ${diffBadges(meal)}
       </div>
-      <button class="ate-btn${ate?" ate":""}" onclick='toggleAte("${dayData.date}","${meal.slot}",${JSON.stringify(meal.name)})'>${ate?"✓":""}</button>
+      <div class="ate-group">${pills}</div>
     </div>`;
   }).join("");
 }
 function renderMacroRing(dayData){
   const card=document.getElementById("today-macro-card");
-  if(!dayData||!identity){ card.style.display="none"; return; }
-  const totals=(dayData.day_totals||{})[identity]||{};
-  if(!totals.kcal){ card.style.display="none"; return; }
+  const totals=dayData?(dayData.day_totals||{}):{};
+  if(!dayData||!MEMBERS.some(m=>(totals[m]||{}).kcal)){ card.style.display="none"; return; }
   card.style.display="block";
-  const p=totals.protein_g||0,c=totals.carbs_g||0,f=totals.fat_g||0;
-  document.getElementById("macro-legend").innerHTML=`
-    <div class="kcal-big">${totals.kcal}</div><div class="kcal-label">kcal planned today</div>
-    <div style="margin-top:10px">
-      <div class="macro-legend-row"><span><span class="macro-legend-dot" style="background:#2C5A4E"></span>Protein</span><span>${p}g</span></div>
-      <div class="macro-legend-row"><span><span class="macro-legend-dot" style="background:#CFA24C"></span>Carbs</span><span>${c}g</span></div>
-      <div class="macro-legend-row"><span><span class="macro-legend-dot" style="background:#C26B4E"></span>Fat</span><span>${f}g</span></div>
-    </div>`;
-  const ctx=document.getElementById("macro-ring-chart").getContext("2d");
-  if(macroRingChart)macroRingChart.destroy();
-  macroRingChart=new Chart(ctx,{type:"doughnut",data:{datasets:[{data:[p*4,c*4,f*9],backgroundColor:["#2C5A4E","#CFA24C","#C26B4E"],borderWidth:0}]},options:{cutout:"70%",plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:400}}});
+  document.getElementById("macro-people").innerHTML=MEMBERS.map(m=>{ const t=totals[m]||{};
+    return `<div class="macro-person"><div class="mp-name">${whoLabel(m)}</div><canvas id="ring-${m}" width="90" height="90"></canvas>
+      <div class="mp-k">${t.kcal||"—"}</div><div class="mp-m">kcal · P${t.protein_g||0} C${t.carbs_g||0} F${t.fat_g||0}</div></div>`; }).join("");
+  MEMBERS.forEach(m=>{ const t=totals[m]||{}; const el=document.getElementById("ring-"+m); if(!el||typeof Chart==="undefined")return;
+    if(macroRingCharts[m])macroRingCharts[m].destroy();
+    macroRingCharts[m]=new Chart(el.getContext("2d"),{type:"doughnut",data:{datasets:[{data:[(t.protein_g||0)*4,(t.carbs_g||0)*4,(t.fat_g||0)*9],backgroundColor:["#2C5A4E","#CFA24C","#C26B4E"],borderWidth:0}]},options:{cutout:"70%",plugins:{legend:{display:false},tooltip:{enabled:false}},animation:{duration:400}}}); });
 }
 
 // ── MENU ──────────────────────────────────────────────────────────────────────
 function renderMenu(){
   const wrap=document.getElementById("menu-days");
-  if(!weekMenu){ wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("calendar")}</div><p>No meal plan yet. Run the workflow on Sunday.</p></div>`; return; }
+  const legend=document.getElementById("menu-legend");
+  if(!weekMenu){ legend.textContent=""; wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("calendar")}</div><p>No meal plan yet. Run the workflow on Sunday.</p></div>`; return; }
+  let nDiff=0; weekMenu.forEach(d=>d.meals.forEach(m=>{ if(Object.keys(mealDifferences(m)).length)nDiff++; }));
+  legend.innerHTML=nDiff?`One menu for everyone. <span class="diff-badge" style="display:inline;padding:1px 6px">↳ ${nDiff} meal${nDiff>1?"s":""}</span> have a different plate for someone.`:"One menu for everyone — same dishes, different portions.";
   wrap.innerHTML=weekMenu.map((day,i)=>{
-    const totals=(day.day_totals||{})[identity]||{};
+    const totals=day.day_totals||{};
     const dLabel=new Date(day.date+"T12:00:00").toLocaleDateString("en-LU",{timeZone:"Europe/Luxembourg",weekday:"long",day:"numeric",month:"short"});
+    const kcal=MEMBERS.map(m=>(totals[m]||{}).kcal?`${esc(personName(m))} ${(totals[m]||{}).kcal}`:null).filter(Boolean).join(" · ");
     const meals=day.meals.map(meal=>{
       const{icon,label}=SLOT_LABELS[meal.slot]||{icon:"🍴",label:meal.slot};
-      const portion=(meal.portions||{})[identity]||{}; const macros=portion.macros||{};
-      return `<div class="meal-detail" onclick='openMeal(${JSON.stringify(meal).replace(/'/g,"&#39;")}, "${day.date}")'>
+      const eaten=MEMBERS.filter(m=>isAte(m,day.date,meal.slot)).map(personName);
+      return `<div class="meal-detail" onclick='openMealAt("${day.date}","${meal.slot}")'>
         ${mealImgTag(meal,"meal-thumb")}
         <div class="md-info">
           <div class="meal-slot-label">${icon} ${label}</div>
-          <div class="meal-name">${meal.name}</div>
-          <div class="meal-macros">${macros.kcal?`${macros.kcal} kcal · P${macros.protein_g} C${macros.carbs_g} F${macros.fat_g}`:""}</div>
+          <div class="meal-name">${esc(meal.name)}</div>
+          <div class="meal-macros">${kcalLine(meal)}</div>
+          ${diffBadges(meal)}
         </div>
-        ${isAte(day.date,meal.slot)?'<span class="chip">✓ eaten</span>':""}
+        ${eaten.length?`<span class="chip">✓ ${esc(eaten.join(", "))}</span>`:""}
       </div>`;
     }).join("");
-    return `<div class="day-card"><div class="day-header" onclick="toggleDay(${i})"><h3>${dLabel}</h3><div class="day-kcal">${totals.kcal?`${totals.kcal} kcal`:""}</div></div><div class="day-meals" id="day-meals-${i}">${meals}</div></div>`;
+    return `<div class="day-card"><div class="day-header" onclick="toggleDay(${i})"><h3>${dLabel}</h3><div class="day-kcal">${kcal?kcal+" kcal":""}</div></div><div class="day-meals" id="day-meals-${i}">${meals}</div></div>`;
   }).join("");
   const todayIdx=weekMenu.findIndex(d=>d.date===todayISO());
   if(todayIdx>=0)toggleDay(todayIdx);
@@ -1112,22 +1407,45 @@ function toggleDay(i){ document.getElementById(`day-meals-${i}`).classList.toggl
 
 // ── MEAL DETAIL SHEET ───────────────────────────────────────────────────────────
 let currentMeal=null, currentMealDate=null;
+function openMealAt(date, slot){ const d=weekMenu&&weekMenu.find(x=>x.date===date); const m=d&&d.meals.find(x=>x.slot===slot); if(m) openMeal(m, date); }
+function mealFeedback(m, kind){
+  if(!currentMeal) return;
+  if(kind==="love") prefAdd(m,"love",currentMeal.name,"meal");
+  else prefAdd(m,"notes",`Didn't enjoy “${currentMeal.name}”`,"meal");
+  openMeal(currentMeal, currentMealDate);
+}
 function openMeal(meal, dayDate){
   currentMeal=meal; currentMealDate=dayDate;
   const overlay=document.getElementById("meal-overlay"); overlay.classList.remove("hidden");
   const{icon,label}=SLOT_LABELS[meal.slot]||{icon:"🍴",label:meal.slot};
-  const myPortion=(meal.portions||{})[identity]||{}; const m=myPortion.macros||{};
-  const ingredients=myPortion.ingredients||[];
-  const partner=identity==="diego"?"diana":"diego";
-  const partnerKcal=(((meal.portions||{})[partner]||{}).macros||{}).kcal;
   const prepSteps=meal.prep_steps||[]; const dayOf=meal.day_of_steps||meal.recipe||[];
-  const ate=isAte(dayDate, meal.slot);
-
-  const ingList=ingredients.map(ing=>`<div style="font-size:14px;padding:4px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between"><span>${ing.item}</span><strong>${ing.qty}</strong></div>`).join("");
+  const diffs=mealDifferences(meal), conflicts=mealConflicts(meal);
+  const P=prefs||normalizePrefs({});
+  const plates=MEMBERS.map(m=>{
+    const por=(meal.portions||{})[m]||{}; const mac=por.macros||{}; const v=por.variant||null;
+    const ate=isAte(m, dayDate, meal.slot);
+    const loved=(P.people[m]||{}).love.some(x=>x.toLowerCase()===String(meal.name).toLowerCase());
+    const ings=(por.ingredients||[]).map(ing=>`<div class="pi"><span>${esc(ing.item||ing)}</span><strong>${esc(ing.qty||"")}</strong></div>`).join("");
+    const vsteps=(v&&Array.isArray(v.steps)&&v.steps.length)?`<div class="pv">For ${esc(personName(m))}:</div>${v.steps.map((s,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${esc(s)}</div>`).join("")}`:"";
+    return `<div class="plate${diffs[m]?" differs":""}">
+      <h4>${whoLabel(m)}</h4>
+      <div class="pk">${mac.kcal?`${mac.kcal} kcal · P${mac.protein_g??"–"} C${mac.carbs_g??"–"} F${mac.fat_g??"–"}`:"no portion"}</div>
+      ${diffs[m]?`<div class="pv">↳ ${v&&v.name?esc(v.name)+": ":""}${esc(diffs[m])}</div>`:""}
+      ${ings}${vsteps}
+      <div class="acts">
+        <button class="${ate?"on":""}" onclick='toggleAte("${m}","${dayDate}","${meal.slot}",${JSON.stringify(meal.name).replace(/'/g,"&#39;")})'>${ate?"✓ Eaten":"Eaten?"}</button>
+        <button class="${loved?"on":""}" title="Loved it — plan more like this" onclick="mealFeedback('${m}','love')">👍</button>
+        <button title="Didn't enjoy it — plan less like this" onclick="mealFeedback('${m}','nope')">👎</button>
+      </div></div>`;
+  }).join("");
   const prepHtml=prepSteps.length?`<div class="recipe-section-title">🧊 Meal prep (Sunday)</div>${prepSteps.map((s,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${s}</div>`).join("")}`:"";
   const dayHtml=dayOf.length?`<div class="recipe-section-title">🍳 On the day${meal.cook_minutes_day_of?` · ${meal.cook_minutes_day_of} min`:""}</div>${dayOf.map((s,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${s}</div>`).join("")}`:"";
   const vid=meal.video_url?videoHtml(meal.video_url):recipeVideoLinks(meal.name);
-  const attach=`<div class="attach-row"><input id="meal-video-input" placeholder="Paste recipe video link (YouTube/IG/TikTok)" value="${meal.video_url||""}"><button class="btn" onclick="attachMealVideo()">Save</button></div>`;
+  const attach=`<div class="attach-row"><input id="meal-video-input" placeholder="Paste recipe video link (YouTube/IG/TikTok)" value="${esc(meal.video_url||"")}"><button class="btn" onclick="attachMealVideo()">Save</button></div>`;
+  const diffBox=Object.keys(diffs).length
+    ? `<div style="font-size:12.5px;color:#7a5a14;background:var(--honey-pale);border:1px solid var(--honey);border-radius:10px;padding:8px 10px;margin:8px 0;line-height:1.45"><strong>Different plates:</strong><br>${Object.entries(diffs).map(([m,t])=>`${esc(personName(m))} — ${esc(t)}`).join("<br>")}</div>`
+    : `<div style="font-size:12px;color:var(--muted);margin:6px 0">Same dish for everyone — only the portions differ.</div>`;
+  const warnBox=conflicts.length?`<div style="font-size:12.5px;color:#9b4a31;background:#F6E4DE;border-radius:10px;padding:8px 10px;margin:8px 0;line-height:1.45">⚠ ${conflicts.map(c=>esc(c.text)).join("<br>⚠ ")}<br><span style="font-size:11.5px">Ask Coach Léa to adapt this plate, or edit preferences.</span></div>`:"";
 
   document.getElementById("meal-sheet-content").innerHTML=`
     <button class="sheet-close" onclick="closeMealSheet()" aria-label="Close">✕</button>
@@ -1136,18 +1454,11 @@ function openMeal(meal, dayDate){
     </div>
     <div class="sheet-body">
       <div style="font-size:12px;color:var(--muted)">${icon} ${label} · ${meal.time}${meal.prep_ahead?' · <span style="color:var(--green)">batch-prepped</span>':(meal.cook_fresh_for_safety?' · <span style="color:#b26a00">cook fresh today</span>':"")}</div>
-      <h2>${meal.name}</h2>
+      <h2>${esc(meal.name)}</h2>
       ${meal.safety_note?`<div style="font-size:12.5px;color:#8a5200;background:#fff4e0;border:1px solid #f3d39b;border-radius:10px;padding:8px 10px;margin:8px 0;line-height:1.4">${meal.safety_note}</div>`:""}
-      <div class="macro-pills">
-        ${m.kcal?`<div class="macro-pill"><div class="mp-v">${m.kcal}</div><div class="mp-l">kcal</div></div>`:""}
-        ${m.protein_g!=null?`<div class="macro-pill"><div class="mp-v">${m.protein_g}g</div><div class="mp-l">protein</div></div>`:""}
-        ${m.carbs_g!=null?`<div class="macro-pill"><div class="mp-v">${m.carbs_g}g</div><div class="mp-l">carbs</div></div>`:""}
-        ${m.fat_g!=null?`<div class="macro-pill"><div class="mp-v">${m.fat_g}g</div><div class="mp-l">fat</div></div>`:""}
-        ${m.fiber_g!=null?`<div class="macro-pill"><div class="mp-v">${m.fiber_g}g</div><div class="mp-l">fibre</div></div>`:""}
-      </div>
-      ${partnerKcal?`<div style="font-size:12px;color:var(--muted);margin-bottom:6px">${partner.charAt(0).toUpperCase()+partner.slice(1)}'s portion: ${partnerKcal} kcal</div>`:""}
-      <button class="btn btn-block ${ate?"btn-outline":""}" onclick='toggleAte("${dayDate}","${meal.slot}",${JSON.stringify(meal.name)}); closeMealSheet();'>${ate?"✓ Eaten — tap to undo":"Mark as eaten ✓"}</button>
-      ${ingList?`<div class="recipe-section-title">🛒 Your ingredients</div>${ingList}`:""}
+      ${diffBox}${warnBox}
+      <div class="recipe-section-title">🍽️ Plates</div>
+      <div class="plates">${plates}</div>
       ${prepHtml}
       ${dayHtml}
       <div class="recipe-section-title">📷 Real photos of this dish</div>
@@ -1311,7 +1622,7 @@ async function saveProduct(btn){
   priceBook.products[k]={...prev, name_en:name_en||k, name_fr:name_fr||"", aisle:aisle||"", supermarket:sm, price_eur:(price!=null&&!isNaN(price))?price:null, price_unit:unit, net_weight:net, updated:todayISO()};
   priceBook.updated=todayISO();
   btn.disabled=true; const old=btn.textContent; btn.textContent="…";
-  try{ await ghWrite("price_book.json", priceBook, `Price: ${name_en||k} (${identity})`); btn.classList.remove("dirty"); btn.textContent="✓"; setTimeout(()=>{btn.textContent="Save"; btn.disabled=false;},1200); renderShopping(); }
+  try{ await ghWrite("price_book.json", priceBook, `Price: ${name_en||k}`); btn.classList.remove("dirty"); btn.textContent="✓"; setTimeout(()=>{btn.textContent="Save"; btn.disabled=false;},1200); renderShopping(); }
   catch(e){ btn.disabled=false; btn.textContent=old; alert("Couldn't save: "+e.message); }
 }
 function toggleCheck(key,btn){ checkedItems[key]=!checkedItems[key]; localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems)); btn.classList.toggle("checked"); btn.textContent=checkedItems[key]?"✓":""; }
@@ -1336,7 +1647,7 @@ async function markAllBought(){
   });
   inv.updated=todayISO();
   localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems));
-  try{ await ghWrite("inventory.json", inv, `Add bought to fridge (${identity})`); inventory=inv; alert("✓ Added to your fridge."); showTab("fridge"); }
+  try{ await ghWrite("inventory.json", inv, `Add bought to fridge`); inventory=inv; alert("✓ Added to your fridge."); showTab("fridge"); }
   catch(e){ alert("Couldn't update fridge: "+e.message); }
 }
 
@@ -1367,7 +1678,7 @@ async function deleteFridgeItem(key){
   if(inventory.items.length===before)return;
   inventory.updated=todayISO();
   renderFridge(); // optimistic
-  try{ await ghWrite("inventory.json", inventory, `Remove ${key} from fridge (${identity})`); }
+  try{ await ghWrite("inventory.json", inventory, `Remove ${key} from fridge`); }
   catch(e){ alert("Couldn't update fridge: "+e.message); await loadSharedData(); renderFridge(); }
 }
 
@@ -1422,43 +1733,51 @@ async function attachPrepVideo(bi){
   catch(e){ alert("Couldn't save: "+e.message); }
 }
 
-// ── PROGRESS ────────────────────────────────────────────────────────────────────
+// ── PROGRESS (pick the person) ────────────────────────────────────────────────────
 function renderProgress(){
+  const m=progressPerson; const P=people[m]; const g=P.goals;
+  document.getElementById("progress-seg").innerHTML=MEMBERS.map(x=>`<button class="${x===m?"active":""}" onclick="progressPerson='${x}';renderProgress()">${whoLabel(x)}</button>`).join("");
+  document.getElementById("progress-who").textContent=personName(m);
   const statsCard=document.getElementById("progress-stats-card");
-  if(!userGoals.goal_type){ statsCard.innerHTML=`<div class="card-title">Your goal</div><div style="font-size:14px;color:var(--muted)">Set your goals in Settings.</div>`; }
+  if(!g.goal_type){ statsCard.innerHTML=`<div class="card-title">${esc(personName(m))}'s goal</div><div style="font-size:14px;color:var(--muted)">No goal yet — set it up with Coach Léa in Settings.</div>`; }
   else{
-    const start=userGoals.start_weight_kg||0,target=userGoals.target_weight_kg||0;
-    const last=userWeightLog.length?userWeightLog[userWeightLog.length-1].weight_kg:start;
+    const start=g.start_weight_kg||0,target=g.target_weight_kg||0;
+    const last=lastWeight(m)||start;
     const total=Math.abs(start-target),done=Math.abs(start-last);
     const pct=total>0?Math.min(100,Math.round(done/total*100)):0;
-    statsCard.innerHTML=`<div class="card-title">Your goal</div>
-      <div class="stat-row"><span class="stat-label">Goal</span><span class="stat-val">${userGoals.goal_type.replace("_"," ")}</span></div>
+    statsCard.innerHTML=`<div class="card-title">${esc(personName(m))}'s goal</div>
+      <div class="stat-row"><span class="stat-label">Goal</span><span class="stat-val">${g.goal_type.replace("_"," ")}</span></div>
       <div class="stat-row"><span class="stat-label">Start</span><span class="stat-val">${start} kg</span></div>
       <div class="stat-row"><span class="stat-label">Current</span><span class="stat-val">${last} kg</span></div>
       <div class="stat-row"><span class="stat-label">Target</span><span class="stat-val">${target} kg</span></div>
-      <div class="stat-row"><span class="stat-label">Rate</span><span class="stat-val">−${userGoals.target_rate_kg_per_week} kg/wk</span></div>
+      <div class="stat-row"><span class="stat-label">Rate</span><span class="stat-val">−${g.target_rate_kg_per_week} kg/wk</span></div>
       <div style="margin-top:10px"><div style="font-size:12px;color:var(--muted);margin-bottom:4px">Progress: ${done.toFixed(1)} / ${total.toFixed(1)} kg (${pct}%)</div><div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div></div>`;
   }
   renderWeightChart();
 }
+async function saveWeight(m, date, val){
+  const log=people[m].weightLog; const i=log.findIndex(e=>e.date===date); const entry={date,weight_kg:val};
+  if(i>=0)log[i]=entry; else log.push(entry);
+  log.sort((a,b)=>a.date.localeCompare(b.date));
+  await ghWrite(`users/${m}/weight_log.json`, log, `Weight ${date} (${m})`);
+}
 async function logWeight(){
   const input=document.getElementById("weight-input"); const val=parseFloat(input.value);
   if(!val||val<30||val>300){ alert("Enter a valid weight (30–300 kg)."); return; }
-  const today=todayISO(); const existing=userWeightLog.findIndex(e=>e.date===today); const entry={date:today,weight_kg:val};
-  if(existing>=0)userWeightLog[existing]=entry; else userWeightLog.push(entry);
-  userWeightLog.sort((a,b)=>a.date.localeCompare(b.date));
-  try{ await ghWrite(`users/${identity}/weight_log.json`, userWeightLog, `Weight ${today} (${identity})`); input.value=""; renderProgress(); renderHomeStats(); alert(`✓ Logged ${val} kg`); }
+  const m=progressPerson;
+  try{ await saveWeight(m, todayISO(), val); input.value=""; renderProgress(); renderHomeStats(); alert(`✓ Logged ${val} kg for ${personName(m)}`); }
   catch(e){ alert("Failed to save: "+e.message); }
 }
 function renderWeightChart(){
   const ctx=document.getElementById("weight-chart").getContext("2d");
-  if(weightChart)weightChart.destroy(); if(!userWeightLog.length)return;
-  const logs=userWeightLog.slice(-12); const labels=logs.map(e=>e.date.slice(5)); const vals=logs.map(e=>e.weight_kg); const target=userGoals.target_weight_kg;
-  weightChart=new Chart(ctx,{type:"line",data:{labels,datasets:[{label:"Weight (kg)",data:vals,borderColor:"#2C5A4E",backgroundColor:"rgba(44,90,78,.10)",tension:.3,pointRadius:5,pointBackgroundColor:"#2C5A4E",fill:true},...(target?[{label:"Target",data:labels.map(()=>target),borderColor:"#C26B4E",borderDash:[5,5],pointRadius:0}]:[])]},options:{plugins:{legend:{position:"bottom",labels:{font:{size:12},color:"#6E665C"}}},scales:{y:{beginAtZero:false}},animation:{duration:400}}});
+  const P=people[progressPerson];
+  if(weightChart)weightChart.destroy(); if(!P.weightLog.length)return;
+  const logs=P.weightLog.slice(-12); const labels=logs.map(e=>e.date.slice(5)); const vals=logs.map(e=>e.weight_kg); const target=P.goals.target_weight_kg;
+  weightChart=new Chart(ctx,{type:"line",data:{labels,datasets:[{label:`${personName(progressPerson)} (kg)`,data:vals,borderColor:"#2C5A4E",backgroundColor:"rgba(44,90,78,.10)",tension:.3,pointRadius:5,pointBackgroundColor:"#2C5A4E",fill:true},...(target?[{label:"Target",data:labels.map(()=>target),borderColor:"#C26B4E",borderDash:[5,5],pointRadius:0}]:[])]},options:{plugins:{legend:{position:"bottom",labels:{font:{size:12},color:"#6E665C"}}},scales:{y:{beginAtZero:false}},animation:{duration:400}}});
 }
 
-// ── COACH ──────────────────────────────────────────────────────────────────────
-function renderCoach(){ const wrap=document.getElementById("coach-msgs"); if(!wrap.children.length){ addCoachMsg("coach",`Hi ${identity?identity.charAt(0).toUpperCase()+identity.slice(1):"there"}! I'm Coach Léa 🌿 Ask me to swap a meal, explain a recipe, log how you feel, or check your progress. Menu changes apply to the whole household.`); } }
+// ── COACH (household) ────────────────────────────────────────────────────────────
+function renderCoach(){ const wrap=document.getElementById("coach-msgs"); if(!wrap.children.length){ addCoachMsg("coach",`Hi! I'm Coach Léa 🌿 I plan for the whole household — ${MEMBERS.map(personName).join(" and ")}. Ask me to swap a meal, adapt someone's plate ("make Diana's lunches dairy-free"), note a preference, log a weigh-in, or explain a recipe.`); } }
 function coachScrollBottom(){ const c=document.querySelector('.content'); if(c) c.scrollTop=c.scrollHeight; }
 // Render a safe subset of Markdown (bold/italic/code/links/bullets) so chat replies
 // don't show literal ** or * around words.
@@ -1493,40 +1812,37 @@ async function sendCoach(){
   const key=cfg("anthropic_key"); if(!key){ alert("Add your Anthropic API key in Settings."); showTab("settings"); return; }
   input.value=""; addCoachMsg("user",text);
   const typing=document.createElement("div"); typing.className="msg coach"; typing.innerHTML="<em>Coach Léa is thinking…</em>"; document.getElementById("coach-msgs").appendChild(typing); coachScrollBottom();
-  const goals=userGoals; const wlog=userWeightLog.slice(-4);
-  const trend=wlog.length>=2?(wlog[wlog.length-1].weight_kg-wlog[0].weight_kg).toFixed(1)+" kg over "+wlog.length+" weigh-ins":"no data yet";
-  const c=computeCompliance();
-  const todayMenu=weekMenu?(weekMenu.find(d=>d.date===todayISO())||{}):{};
+  const peopleLines=MEMBERS.map(m=>{
+    const g=people[m].goals||{}; const wlog=people[m].weightLog.slice(-4);
+    const trend=wlog.length>=2?(wlog[wlog.length-1].weight_kg-wlog[0].weight_kg).toFixed(1)+" kg over "+wlog.length+" weigh-ins":"no data yet";
+    const c=computeCompliance(m); const t=(people[m].macros||{}).kcal;
+    return `- ${personName(m)} (id "${m}"): goal ${g.goal_type||"?"} → ${g.target_weight_kg||"?"} kg · trend ${trend} · ${t?t+" kcal/day target · ":""}this week ${c.pct==null?"n/a":c.pct+"%"} of meals eaten (${c.eaten}/${c.scheduled})`;
+  }).join("\n");
   const _td=todayISO();
-  const menuText=weekMenu?weekMenu.map(d=>{ const tag=d.date<_td?" [PAST — do not change]":d.date===_td?" [TODAY]":""; return `${d.day} ${d.date}${tag}: ${d.meals.map(m=>m.slot+"="+m.name).join("; ")}`; }).join("\n"):"no menu";
+  const menuText=weekMenu?weekMenu.map(d=>{ const tag=d.date<_td?" [PAST — do not change]":d.date===_td?" [TODAY]":""; return `${d.day} ${d.date}${tag}: ${d.meals.map(m=>{ const df=mealDifferences(m); const dt=Object.entries(df).map(([k,v])=>`${k}: ${v}`).join("; "); return m.slot+"="+m.name+(dt?` {different plate — ${dt}}`:""); }).join("; ")}`; }).join("\n"):"no menu";
   const _wkRange=weekMenu&&weekMenu.length?`${weekMenu[0].date} to ${weekMenu[weekMenu.length-1].date}`:"none loaded";
   // Cross-app context (training day + recent sleep) — fuelling is Diego-only
   const tToday=trainingForDate(todayISO());
-  const trainingLine=(identity==="diego"&&tToday)?`Training today: ${tToday.name} (${tToday.tss} TSS) → +${tToday.extra_kcal} kcal, extra carbs.`:(identity==="diego"?"No training scheduled today (rest-day calories).":"");
+  const trainingLine=tToday?`Diego's training today: ${tToday.name} (${tToday.tss} TSS) → +${tToday.extra_kcal} kcal for Diego, extra carbs.`:"No training scheduled for Diego today (rest-day calories).";
   let sleepLine="";
-  if(sleepData&&sleepData.length){ const last=sleepData[sleepData.length-1]; const scored=sleepData.filter(s=>s.score).slice(-7); const avg=scored.length?Math.round(scored.reduce((a,s)=>a+s.score,0)/scored.length):null; sleepLine=`Sleep: last night ${last.score||"?"}/100 (${last.duration_h||"?"}h)${avg?", 7-day avg "+avg:""}.`; }
-  const system=`You are Coach Léa, a warm registered-dietitian coach for ${identity} in Luxembourg.
+  if(sleepData&&sleepData.length){ const last=sleepData[sleepData.length-1]; const scored=sleepData.filter(s=>s.score).slice(-7); const avg=scored.length?Math.round(scored.reduce((a,s)=>a+s.score,0)/scored.length):null; sleepLine=`Diego's sleep: last night ${last.score||"?"}/100 (${last.duration_h||"?"}h)${avg?", 7-day avg "+avg:""}.`; }
+  const system=`You are Coach Léa, a warm registered-dietitian coach for a household in Luxembourg. You are talking to the household admin, who does all the cooking for everyone.
 
 ## DATES (critical for swaps)
 Today is ${_td} (${new Date(_td+"T12:00:00").toLocaleDateString("en-GB",{weekday:"long"})}). The current menu covers ${_wkRange}.
 When the user names a day (e.g. "Monday", "next Monday", "tomorrow"), map it to the matching date shown in the SHARED HOUSEHOLD MENU below and use that EXACT ISO date in swap_meal. Never invent a date that isn't in the menu, and never change a day marked [PAST].
 
-## USER
-Name: ${identity} | Goal: ${goals.goal_type||"?"} | Target: ${goals.target_weight_kg||"?"}kg | Weight trend: ${trend}
-This week compliance: ${c.pct==null?"n/a":c.pct+"%"} (${c.eaten}/${c.scheduled} meals confirmed)
+## PEOPLE
+${peopleLines}
 ${trainingLine}
 ${sleepLine}
+Diego also uses the AthleteIQ training app — fuel his training days and adapt to his sleep/recovery. Diana is not on the training app.
 
-## CROSS-APP NOTE
-Weight is single-sourced here; ${identity==="diego"?"Diego also uses the AthleteIQ training app — fuel his training days and adapt to his sleep/recovery":"Diana is not on the training app"}.
-
-## SHARED HOUSEHOLD MENU (Diego + Diana eat the same dishes, different portions)
+## SHARED HOUSEHOLD MENU (one menu; same dishes, per-person portions; {different plate} marks a tailored portion)
 ${menuText}
 
-## WHAT THE HOUSEHOLD HAS TAUGHT YOU (respect this; learned from past chats)
-- Avoid: ${(learnedPrefs.avoid&&learnedPrefs.avoid.length)?learnedPrefs.avoid.join(", "):"—"}
-- Loves: ${(learnedPrefs.prefer&&learnedPrefs.prefer.length)?learnedPrefs.prefer.join(", "):"—"}
-- Notes from past manual changes: ${(learnedPrefs.notes&&learnedPrefs.notes.length)?learnedPrefs.notes.slice(-8).join("; "):"—"}
+## FOOD PREFERENCES (the household set these — they are the rules for every plate)
+${prefsSummaryText()}
 
 ## ROLE
 - Evidence-based only (EFSA/WHO). Sustainable loss 0.25–0.75 kg/wk; never below 1200 kcal/day.
@@ -1534,18 +1850,18 @@ ${menuText}
    • Change a specific dish on a day → swap_meal. The date MUST be an exact ISO date from the menu above. To change the same thing across several days, call swap_meal once per day in this same turn.
    • ONLY for ADDING a new component to a slot (e.g. "a 250ml kefir smoothie with every breakfast") → add_item_to_meals (you provide its macros so totals stay correct). Do NOT use this to change a protein.
    • Rebalance proteins (e.g. "more beef, less chicken") or remove/replace a recurring dish ("no more smoked mackerel") → use swap_meal for EACH affected lunch/dinner, replacing it with a complete new dish that uses the wanted protein. Look at the menu above, pick the chicken/mackerel days, and swap them one by one in this same turn (at least 2–3). If there are too many to do at once, swap the soonest few now, say so, and offer to continue.
-  Only change the meals asked about; never rebuild the whole week. Swaps apply to BOTH members (keep diego & diana portions, prep_steps, day_of_steps, image_prompt, food_category).
-- remember_preference is ONLY for shaping FUTURE auto-generated weeks (e.g. "use more beef and less chicken from now on"). If a request ALSO affects the current week, apply it now with the tools above AND record the preference — never substitute a preference for a change the user wants now.
-- LEARN FROM CORRECTIONS: when the user says they dislike/avoid a food call remember_preference(kind:"avoid"); when they love something call remember_preference(kind:"prefer").
-- Use log_checkin when they report mood/energy/adherence; log_weight when they state a weight.
+  Only change the meals asked about; never rebuild the whole week. A swapped meal always carries BOTH portions (diego & diana, plus prep_steps, day_of_steps, image_prompt, food_category).
+- TAILOR PER PERSON: the dish is shared, but a person's plate must respect THEIR preferences. If a request is only about one person ("Diana can't have dairy on Tuesday"), keep the dish and change only that person's portion: their ingredients show what they actually eat, plus portions.<id>.variant = {name, changes, reason, steps}. Leave the other person's portion unchanged. Anyone's allergy stays out of the whole dish.
+- remember_preference shapes FUTURE auto-generated weeks and is shown in the preferences screen. ALWAYS say who it is for: who="diego", "diana" or "everyone". Kinds: allergy (kept out of the whole kitchen), intolerance, avoid (won't eat), love, note, diet (text = omnivore/flexitarian/pescatarian/vegetarian/vegan). If the user doesn't say who, ask before saving. If a request ALSO affects the current week, apply it now with the tools above AND record the preference.
+- Use log_checkin when someone reports mood/energy/adherence; log_weight when someone states a weight. Both need who it is for.
 - ALWAYS reply with a short, warm sentence in plain text — even when you use tools. NEVER respond with tool calls and no words; tell the user what you just did in a friendly way.
 - Be concise (2–4 sentences). You are not a doctor — defer clinical issues to their nutritionist.`;
   const tools=[
-    {name:"log_checkin",description:"Log how the user feels.",input_schema:{type:"object",properties:{note:{type:"string"},mood:{type:"string",enum:["great","good","ok","low","poor"]},energy:{type:"string",enum:["high","medium","low"]},adherence:{type:"string",enum:["full","mostly","partial","off"]}},required:["note"]}},
-    {name:"log_weight",description:"Log a weight measurement.",input_schema:{type:"object",properties:{weight_kg:{type:"number"},date:{type:"string"}},required:["weight_kg"]}},
-    {name:"swap_meal",description:"Replace one meal in the shared weekly menu. Applies to the whole household.",input_schema:{type:"object",properties:{date:{type:"string",description:"ISO date of the day"},slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},meal:{type:"object",description:"Full replacement meal object with name, time, prep_ahead, cook_minutes_day_of, image_prompt, video_url, prep_steps, day_of_steps, food_category, and portions.diego/diana each with ingredients[] and macros"}},required:["date","slot","meal"]}},
+    {name:"log_checkin",description:"Log how one person feels.",input_schema:{type:"object",properties:{member:{type:"string",enum:MEMBERS},note:{type:"string"},mood:{type:"string",enum:["great","good","ok","low","poor"]},energy:{type:"string",enum:["high","medium","low"]},adherence:{type:"string",enum:["full","mostly","partial","off"]}},required:["member","note"]}},
+    {name:"log_weight",description:"Log one person's weight measurement.",input_schema:{type:"object",properties:{member:{type:"string",enum:MEMBERS},weight_kg:{type:"number"},date:{type:"string"}},required:["member","weight_kg"]}},
+    {name:"swap_meal",description:"Replace one meal in the shared weekly menu (use it also to tailor ONE person's plate: keep the dish, change only their portion and set its variant).",input_schema:{type:"object",properties:{date:{type:"string",description:"ISO date of the day"},slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},meal:{type:"object",description:"Full replacement meal object with name, time, prep_ahead, cook_minutes_day_of, image_prompt, video_url, prep_steps, day_of_steps, food_category, and portions.diego/diana each with ingredients[], macros and variant (null, or {name, changes, reason, steps[]} when that person's plate differs)"}},required:["date","slot","meal"]}},
     {name:"attach_video",description:"Attach a recipe video URL to a meal.",input_schema:{type:"object",properties:{date:{type:"string"},slot:{type:"string"},video_url:{type:"string"}},required:["date","slot","video_url"]}},
-    {name:"remember_preference",description:"Record a lasting food preference so future weekly plans respect the household's taste. Use whenever the user likes/dislikes/avoids a food, or after a swap because they didn't like a dish.",input_schema:{type:"object",properties:{kind:{type:"string",enum:["avoid","prefer","note"],description:"avoid = never serve again; prefer = they love it; note = general guidance"},text:{type:"string",description:"Concise, e.g. 'no salmon', 'loves chickpea curries', 'prefers lighter dinners'"}},required:["kind","text"]}},
+    {name:"remember_preference",description:"Record a lasting food preference for one person or everyone, so future weekly plans are tailored. Use whenever someone likes/dislikes/can't eat a food, or after a swap because they didn't like a dish.",input_schema:{type:"object",properties:{who:{type:"string",enum:["everyone",...MEMBERS]},kind:{type:"string",enum:["allergy","intolerance","avoid","love","note","diet"],description:"allergy = kept out of the whole kitchen; intolerance/avoid = never on that person's plate; love = plan more of it; note = general guidance; diet = omnivore|flexitarian|pescatarian|vegetarian|vegan"},text:{type:"string",description:"Concise food or dish, e.g. 'mushrooms', 'lactose', 'chickpea curries', 'lighter dinners'"}},required:["who","kind","text"]}},
     {name:"add_item_to_meals",description:"Add a recurring ingredient/component (e.g. a 250ml kefir smoothie with fruit) to a meal slot across days of the CURRENT plan, updating macros and the shopping list. Use for 'add X to my breakfasts every day' style requests. Applies to today + future days only.",input_schema:{type:"object",properties:{slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},item:{type:"string",description:"e.g. 'Kefir smoothie with mixed fruit'"},qty:{type:"string",description:"e.g. '250 ml'"},macros:{type:"object",description:"Per-serving macros to ADD to each meal",properties:{kcal:{type:"number"},protein_g:{type:"number"},carbs_g:{type:"number"},fat_g:{type:"number"},fiber_g:{type:"number"}}},days:{type:"string",description:"'all' (default) or comma-separated ISO dates from the menu"},applies_to:{type:"string",enum:["both","diego","diana"],description:"default both"}},required:["slot","item","macros"]}},
   ];
   const msgs=[...coachHistory.slice(-10).map(h=>({role:h.role,content:histText(h.content)})),{role:"user",content:text}];
@@ -1567,17 +1883,19 @@ ${menuText}
     }
     if(reply)addCoachMsg("coach",reply);
     coachHistory.push({role:"user",content:text},{role:"assistant",content:histText(data.content)}); coachHistory=coachHistory.slice(-20);
-    try{ await ghWrite(`users/${identity}/coach_history.json`,coachHistory,`Coach history ${todayISO()}`); }catch(_){}
+    try{ await ghWrite("coach_history.json",coachHistory,`Coach history ${todayISO()}`); }catch(_){}
   }catch(e){ typing.remove(); addCoachMsg("coach",`Connection error: ${e.message}`); }
 }
 async function handleCoachTool(name,input){
   if(name==="log_checkin"){
-    userCheckins.push({date:todayISO(),...input}); userCheckins=userCheckins.slice(-30);
-    try{ await ghWrite(`users/${identity}/checkins.json`,userCheckins,`Checkin ${todayISO()}`); addCoachMsg("coach",`✓ Logged: "${input.note}"`); }catch(e){ addCoachMsg("coach",`Couldn't save check-in: ${e.message}`); }
+    const m=input.member; if(!MEMBERS.includes(m)){ addCoachMsg("coach","Who was that check-in for?"); return; }
+    const {member, ...rest}=input; const P=people[m];
+    P.checkins.push({date:todayISO(),...rest}); P.checkins=P.checkins.slice(-30);
+    try{ await ghWrite(`users/${m}/checkins.json`,P.checkins,`Checkin ${todayISO()} (${m})`); addCoachMsg("coach",`✓ Logged for ${personName(m)}: "${input.note}"`); }catch(e){ addCoachMsg("coach",`Couldn't save check-in: ${e.message}`); }
   } else if(name==="log_weight"){
-    const date=input.date||todayISO(); const entry={date,weight_kg:input.weight_kg}; const i=userWeightLog.findIndex(e=>e.date===date);
-    if(i>=0)userWeightLog[i]=entry; else userWeightLog.push(entry); userWeightLog.sort((a,b)=>a.date.localeCompare(b.date));
-    try{ await ghWrite(`users/${identity}/weight_log.json`,userWeightLog,`Weight ${date}`); addCoachMsg("coach",`✓ Logged ${input.weight_kg} kg.`); renderHomeStats(); }catch(e){ addCoachMsg("coach",`Couldn't save weight: ${e.message}`); }
+    const m=input.member; if(!MEMBERS.includes(m)){ addCoachMsg("coach","Whose weight was that?"); return; }
+    const date=input.date||todayISO();
+    try{ await saveWeight(m, date, input.weight_kg); addCoachMsg("coach",`✓ Logged ${input.weight_kg} kg for ${personName(m)}.`); renderHomeStats(); }catch(e){ addCoachMsg("coach",`Couldn't save weight: ${e.message}`); }
   } else if(name==="swap_meal"){
     // Targeted change — only this one slot/date is touched. Resolve the date robustly so a
     // mis-guessed ISO date doesn't hit the wrong (or a passed) day.
@@ -1586,9 +1904,13 @@ async function handleCoachTool(name,input){
     if(tgt<todayISO()){ const dn=weekMenu.find(d=>d.date===tgt); addCoachMsg("coach",`${dn?dn.day+" ("+tgt+")":tgt} has already passed, so I didn't change it. Want me to update an upcoming day instead?`); return; }
     const od=weekMenu.find(d=>d.date===tgt); const old=od&&od.meals.find(m=>m.slot===input.slot); const oldName=old?old.name:null;
     await applyMenuChange(tgt,input.slot,input.meal); addCoachMsg("coach",`✓ Swapped ${input.slot} on ${od?od.day+" "+tgt:tgt} to "${input.meal.name}" for the household. Shopping list updated.`);
-    if(oldName && oldName!==input.meal.name) await savePreference("note",`Swapped "${oldName}" → "${input.meal.name}" (${input.slot})`);
+    if(oldName && oldName!==input.meal.name) prefAdd("everyone","notes",`Swapped "${oldName}" → "${input.meal.name}" (${input.slot})`,"coach");
   } else if(name==="remember_preference"){
-    await savePreference(input.kind,input.text); addCoachMsg("coach",`✓ Noted for next time: ${input.text}`);
+    const who=(input.who==="everyone"||MEMBERS.includes(input.who))?input.who:"everyone";
+    const kind={allergy:"allergies",intolerance:"intolerances",avoid:"avoid",love:"love",prefer:"love",note:"notes",diet:"diet"}[input.kind]||"notes";
+    if(kind==="diet"){ if(who==="everyone") MEMBERS.forEach(m=>prefSetDiet(m,input.text,"coach")); else prefSetDiet(who,input.text,"coach"); }
+    else prefAdd(who,kind,input.text,"coach");
+    addCoachMsg("coach",`✓ Saved to preferences — ${who==="everyone"?"everyone":personName(who)}: ${input.text} (${PREF_KINDS[kind]?PREF_KINDS[kind].label.toLowerCase():input.kind})`);
   } else if(name==="add_item_to_meals"){
     if(!weekMenu){ addCoachMsg("coach","There's no menu loaded to update."); return; }
     const slot=input.slot, mac=input.macros||{}, item=input.item||"item", qty=input.qty||"";
@@ -1609,22 +1931,12 @@ async function handleCoachTool(name,input){
       count++;
     });
     if(!count){ addCoachMsg("coach",`I couldn't find any upcoming ${slot} to add that to.`); return; }
-    try{ await ghWrite("weekly_menu.json",weekMenu,`Add ${item} to ${slot} (${identity})`); await regenerateShopping(); markMenuDirty(); refreshMenuViews(); addCoachMsg("coach",`✓ Added ${item} to ${count} ${slot}${count>1?"s":""}. Shopping list updated.`); }
+    try{ await ghWrite("weekly_menu.json",weekMenu,`Add ${item} to ${slot}`); await regenerateShopping(); markMenuDirty(); refreshMenuViews(); addCoachMsg("coach",`✓ Added ${item} to ${count} ${slot}${count>1?"s":""}. Shopping list updated.`); }
     catch(e){ addCoachMsg("coach",`Couldn't save that change: ${e.message}`); }
   } else if(name==="attach_video"){
     const day=weekMenu.find(d=>d.date===resolveMenuDate(input.date)); const meal=day?day.meals.find(m=>m.slot===input.slot):null;
     if(meal){ meal.video_url=input.video_url; try{ await ghWrite("weekly_menu.json",weekMenu,`Attach video`); addCoachMsg("coach",`✓ Video attached.`); }catch(e){ addCoachMsg("coach",`Couldn't save: ${e.message}`); } }
   }
-}
-// Persist a taste preference the generator reads next week. Shared (household-level).
-async function savePreference(kind,text){
-  if(!learnedPrefs||typeof learnedPrefs!=="object") learnedPrefs={avoid:[],prefer:[],notes:[]};
-  const bucket=kind==="avoid"?"avoid":kind==="prefer"?"prefer":"notes";
-  if(!Array.isArray(learnedPrefs[bucket])) learnedPrefs[bucket]=[];
-  const v=(text||"").trim(); if(!v)return;
-  if(!learnedPrefs[bucket].includes(v)) learnedPrefs[bucket].push(v);
-  learnedPrefs[bucket]=learnedPrefs[bucket].slice(-40);
-  try{ await ghWrite("learned_preferences.json",learnedPrefs,`Learn ${kind}: ${v}`); }catch(_){}
 }
 // Map a coach-supplied date to a real date in the current menu. Exact match wins;
 // otherwise match by weekday (so a mis-guessed "Monday" still lands on the menu's
@@ -1645,7 +1957,7 @@ async function applyMenuChange(date,slot,newMeal){
   if(idx>=0)day.meals[idx]=newMeal; else day.meals.push(newMeal);
   // recompute day_totals for both members
   ["diego","diana"].forEach(mem=>{ let t={kcal:0,protein_g:0,carbs_g:0,fat_g:0}; day.meals.forEach(m=>{ const mac=((m.portions||{})[mem]||{}).macros||{}; t.kcal+=mac.kcal||0; t.protein_g+=mac.protein_g||0; t.carbs_g+=mac.carbs_g||0; t.fat_g+=mac.fat_g||0; }); (day.day_totals=day.day_totals||{})[mem]=t; });
-  await ghWrite("weekly_menu.json",weekMenu,`Swap ${slot} ${date} (${identity})`);
+  await ghWrite("weekly_menu.json",weekMenu,`Swap ${slot} ${date}`);
   await regenerateShopping();
   markMenuDirty(); refreshMenuViews();
 }
@@ -1664,7 +1976,7 @@ async function regenerateShopping(){
   });
   items.sort((x,y)=>(x.aisle||"").localeCompare(y.aisle||""));
   const out={week_of:(shoppingList&&shoppingList.week_of)||todayISO(), currency:"EUR", est_total_eur:(shoppingList&&shoppingList.est_total_eur)||null, items};
-  await ghWrite("shopping_list.json", out, `Regenerate shopping (${identity})`); shoppingList=out;
+  await ghWrite("shopping_list.json", out, `Regenerate shopping`); shoppingList=out;
 }
 
 // ── NOTIFICATIONS ────────────────────────────────────────────────────────────────
@@ -1677,9 +1989,11 @@ async function toggleNotifications(){
   try{
     const reg=await navigator.serviceWorker.ready;
     const sub=await reg.pushManager.subscribe({userVisibleOnly:true,applicationServerKey:urlBase64ToUint8Array(VAPID_PUBLIC_KEY)});
-    let subs=[]; try{ subs=await ghFetch(`users/${identity}/push_subscriptions.json`); }catch(_){}
+    // One household device list — notify.py sends each reminder to every device once.
+    let subs=[]; try{ subs=await ghFetch("push_subscriptions.json"); }catch(_){}
+    if(!Array.isArray(subs)) subs=[];
     subs=subs.filter(s=>s.endpoint!==sub.endpoint); subs.push(sub.toJSON());
-    await ghWrite(`users/${identity}/push_subscriptions.json`,subs,`Push sub ${identity}`);
+    await ghWrite("push_subscriptions.json",subs,"Push subscription (household device)");
     btn.classList.add("on"); setCfg("notif_enabled","1"); document.getElementById("notif-status").textContent="✓ Notifications enabled on this device.";
   }catch(e){ document.getElementById("notif-status").textContent="Failed: "+e.message; }
 }
@@ -1727,7 +2041,7 @@ function startPlanParsePoll(){
     await loadUserData();
     const got=nutritionPlan&&nutritionPlan.source==="nutritionist_upload"&&nutritionPlan.parsed_on!==before;
     if(got){ clearInterval(_parsePollTimer); _parsePollTimer=null; renderMacrosCard(); renderGoals();
-      document.getElementById("upload-status").textContent="✓ Plan read! Your macros and meal structure are below."; }
+      document.getElementById("upload-status").textContent="✓ Plan read! Everyone's macros and the meal structure are below."; }
     else if(tries>=20){ clearInterval(_parsePollTimer); _parsePollTimer=null;
       document.getElementById("upload-status").textContent="Still processing — check the Actions tab, or reopen Settings shortly."; }
   }, 15000);
@@ -1736,24 +2050,25 @@ function startPlanParsePoll(){
 // ── GOALS DISPLAY ───────────────────────────────────────────────────────────────
 function renderGoals(){
   const el=document.getElementById("goals-display");
-  if(!userGoals.goal_type){ el.innerHTML=`<div style="font-size:13px;color:var(--muted)">Goals will load once data is available.</div>`; return; }
-  el.innerHTML=`<div class="stat-row"><span class="stat-label">Type</span><span class="stat-val">${userGoals.goal_type.replace("_"," ")}</span></div>
-    <div class="stat-row"><span class="stat-label">Start weight</span><span class="stat-val">${userGoals.start_weight_kg} kg</span></div>
-    <div class="stat-row"><span class="stat-label">Target weight</span><span class="stat-val">${userGoals.target_weight_kg} kg</span></div>
-    <div class="stat-row"><span class="stat-label">Rate</span><span class="stat-val">−${userGoals.target_rate_kg_per_week} kg/wk</span></div>
-    <div class="stat-row"><span class="stat-label">Target date</span><span class="stat-val">${userGoals.target_date||"—"}</span></div>`;
+  el.innerHTML=MEMBERS.map(m=>{ const g=people[m].goals||{};
+    if(!g.goal_type) return `<div class="sub-title">${whoLabel(m)}</div><div style="font-size:13px;color:var(--muted)">No goal on file yet.</div>`;
+    return `<div class="sub-title">${whoLabel(m)}</div>
+    <div class="stat-row"><span class="stat-label">Type</span><span class="stat-val">${g.goal_type.replace("_"," ")}</span></div>
+    <div class="stat-row"><span class="stat-label">Start → target</span><span class="stat-val">${g.start_weight_kg??"?"} → ${g.target_weight_kg??"?"} kg</span></div>
+    <div class="stat-row"><span class="stat-label">Rate</span><span class="stat-val">−${g.target_rate_kg_per_week??"?"} kg/wk</span></div>
+    <div class="stat-row"><span class="stat-label">Target date</span><span class="stat-val">${g.target_date||"—"}</span></div>`; }).join("");
 }
 
 // ── DETAILED MACROS CARD (from the nutritionist plan) ───────────────────────────
 function renderMacrosCard(){
   const el=document.getElementById("macros-card"); if(!el)return;
-  const esc=s=>String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-  const m=userMacros||{};
-  const name=identity?identity.charAt(0).toUpperCase()+identity.slice(1):"You";
+  el.innerHTML=MEMBERS.map((who,i)=>`<div class="card">${macrosCardHtml(who, i===MEMBERS.length-1)}</div>`).join("");
+}
+function macrosCardHtml(who, withStructure){
+  const m=people[who].macros||{};
   if(!m.kcal){
-    el.innerHTML=`<div class="card-title">${name}'s nutrition targets</div>
-      <div style="font-size:13px;color:var(--muted)">No targets yet. Upload your nutritionist's plan above — Coach Léa reads it (translating if needed) and your detailed macros appear here.</div>`;
-    return;
+    return `<div class="card-title">${whoLabel(who)} — nutrition targets</div>
+      <div style="font-size:13px;color:var(--muted)">No targets yet. Upload the nutritionist's plan above — Coach Léa reads it (translating if needed) and the detailed macros appear here.</div>`;
   }
   const src=m.source||"estimate";
   const badge = src.startsWith("nutritionist (estimated")
@@ -1764,13 +2079,13 @@ function renderMacrosCard(){
       ? {cls:"derived", txt:"Derived from goals"}
       : {cls:"derived", txt:esc(src)};
   const kcal=m.kcal, P=m.protein_g||0, C=m.carbs_g||0, F=m.fat_g||0, Fib=m.fiber_g||0;
-  const wt=(userWeightLog.length?userWeightLog[userWeightLog.length-1].weight_kg:userGoals.start_weight_kg)||null;
+  const wt=lastWeight(who);
   const pctK=g4=>kcal?Math.round(g4/kcal*100):0;
   const perKg=g=>wt?(g/wt).toFixed(1)+" g/kg":"";
   const row=(color,nm,g,kcalG,extra)=>`<div class="macro-detail"><span class="dot" style="background:${color}"></span>
     <span class="nm">${nm}</span><span class="gr">${g} g</span><span class="pct">${kcalG!=null?pctK(kcalG)+"%":(extra||"")}</span></div>`;
   let html=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
-      <div class="card-title" style="margin:0">${name}'s nutrition targets</div>
+      <div class="card-title" style="margin:0">${whoLabel(who)} — nutrition targets</div>
       <span class="src-badge ${badge.cls}">${badge.txt}</span></div>`;
   if(m.client_name) html+=`<div style="font-size:11px;color:var(--faint);margin-bottom:6px">Plan for ${esc(m.client_name)}</div>`;
   html+=`<div class="kcal-hero">
@@ -1786,10 +2101,10 @@ function renderMacrosCard(){
   if(presc.length){ html+=`<div class="sub-title">Eat regularly</div><div style="display:flex;flex-wrap:wrap;gap:6px">${presc.map(f=>`<span class="chip">${esc(f)}</span>`).join("")}</div>`; }
   if(avoid.length){ html+=`<div class="sub-title">Avoid</div><div style="display:flex;flex-wrap:wrap;gap:6px">${avoid.map(f=>`<span class="chip" style="background:#F6E4DE;color:#B25A3E">${esc(f)}</span>`).join("")}</div>`; }
   // Full meal-by-meal exchange structure from the shared parsed plan
-  const meals=(nutritionPlan&&nutritionPlan.meals)||[];
+  const meals=withStructure?((nutritionPlan&&nutritionPlan.meals)||[]):[];
   if(meals.length){
     html+=`<div class="sub-title">Daily meal structure</div>`;
-    html+=`<div style="font-size:11.5px;color:var(--faint);line-height:1.45;margin:-2px 0 8px">Your nutritionist's reference for portions &amp; structure. Your weekly menu is generated with variety around these macros — it won't repeat these exact items.</div>`;
+    html+=`<div style="font-size:11.5px;color:var(--faint);line-height:1.45;margin:-2px 0 8px">The nutritionist's reference for portions &amp; structure. Your weekly menu is generated with variety around these macros — it won't repeat these exact items.</div>`;
     html+=meals.map(meal=>{
       const comps=(meal.components||[]).map(c=>{
         const txt=c.portion||(c.options||[]).join(" / ");
@@ -1802,19 +2117,35 @@ function renderMacrosCard(){
   }
   if(m.nutritionist_notes) html+=`<div class="sub-title">Notes</div><div style="font-size:12.5px;color:var(--muted);line-height:1.45">${esc(m.nutritionist_notes)}</div>`;
   if(m.updated_on) html+=`<div style="font-size:10px;color:var(--faint);text-align:right;margin-top:12px">Updated ${esc(m.updated_on)}</div>`;
-  el.innerHTML=html;
+  return html;
 }
 
 // ── COACH LÉA SETUP CONVERSATION (onboarding) ───────────────────────────────────
+const _GOALS_SCHEMA={type:"object",properties:{
+  goal_type:{type:"string",enum:["weight_loss","maintain","muscle_gain","recomp"]},
+  start_weight_kg:{type:"number"},
+  target_weight_kg:{type:"number"},
+  target_rate_kg_per_week:{type:"number",description:"Sustainable 0.25–0.75"},
+  target_date:{type:"string",description:"YYYY-MM-DD or empty"},
+  age:{type:"number"},
+  height_cm:{type:"number"},
+  sex:{type:"string",enum:["male","female"],description:"Biological sex — for accurate calorie/protein needs"},
+  activity_level:{type:"string",enum:["sedentary","light","moderate","active"]},
+  notes:{type:"string"}
+}};
+const _PERSON_SCHEMA={type:"object",properties:{
+  goals:_GOALS_SCHEMA,
+  diet_style:{type:"string",enum:["omnivore","flexitarian","pescatarian","vegetarian","vegan"]},
+  allergies:{type:"array",items:{type:"string"},description:"This person's allergens — kept out of the whole kitchen. Lowercase."},
+  intolerances:{type:"array",items:{type:"string"},description:"e.g. ['lactose'] — never on this person's plate"},
+  avoid:{type:"array",items:{type:"string"},description:"Foods this person won't eat"},
+  love:{type:"array",items:{type:"string"},description:"Foods/dishes this person loves"}
+}};
 const SETUP_TOOL={
   name:"save_setup",
-  description:"Save the shared household preferences and this person's personal goals once you've gathered enough detail. Include `household` only if you collected or changed any household preference; always include `goals` for the current person. Do not leave fields blank if the user gave the info.",
+  description:"Save the household set-up once you've gathered enough detail. Include `household` for shared kitchen facts, and `people.<id>` for whatever you learned about each person (goals and their own food preferences). Only include what the user actually told you.",
   input_schema:{type:"object",properties:{
-    household:{type:"object",description:"Shared by both members (they eat the same dishes).",properties:{
-      allergies:{type:"array",items:{type:"string"},description:"Allergens for EITHER person — never served. Lowercase, e.g. ['peanuts','shellfish']"},
-      intolerances:{type:"array",items:{type:"string"},description:"e.g. ['lactose','gluten']"},
-      dislikes:{type:"array",items:{type:"string"},description:"Foods either person dislikes"},
-      diet_style:{type:"string",enum:["omnivore","vegetarian","vegan","pescatarian","flexitarian"]},
+    household:{type:"object",description:"Shared kitchen facts (one cook, one shopping list).",properties:{
       cuisines_loved:{type:"array",items:{type:"string"}},
       spice_tolerance:{type:"string",enum:["mild","medium","hot"]},
       budget_eur_per_week:{type:"number"},
@@ -1823,19 +2154,8 @@ const SETUP_TOOL={
       max_cook_minutes_weekday:{type:"number"},
       kitchen_equipment:{type:"array",items:{type:"string"}}
     }},
-    goals:{type:"object",description:"Personal to the current user only.",properties:{
-      goal_type:{type:"string",enum:["weight_loss","maintain","muscle_gain","recomp"]},
-      start_weight_kg:{type:"number"},
-      target_weight_kg:{type:"number"},
-      target_rate_kg_per_week:{type:"number",description:"Sustainable 0.25–0.75"},
-      target_date:{type:"string",description:"YYYY-MM-DD or empty"},
-      age:{type:"number"},
-      height_cm:{type:"number"},
-      sex:{type:"string",enum:["male","female"],description:"Biological sex — for accurate calorie/protein needs"},
-      activity_level:{type:"string",enum:["sedentary","light","moderate","active"]},
-      notes:{type:"string"}
-    },required:["goal_type","start_weight_kg"]}
-  },required:["goals"]}
+    people:{type:"object",properties:Object.fromEntries(MEMBERS.map(m=>[m,_PERSON_SCHEMA]))}
+  }}
 };
 
 function setupMsg(role,text){ const c=document.getElementById("setup-msgs"); const d=document.createElement("div"); d.className="msg "+(role==="user"?"user":"coach"); d.innerHTML=mdFmt(text); c.appendChild(d); d.scrollIntoView({behavior:"smooth"}); }
@@ -1847,8 +2167,7 @@ function startSetup(){
   setupHistory=[];
   const key=cfg("anthropic_key");
   if(!key){ setupMsg("coach","First, pop your Anthropic API key into Settings ⚙ so we can chat — then come back and tap this again 💚"); return; }
-  const who=identity?identity.charAt(0).toUpperCase()+identity.slice(1):"there";
-  setupHistory.push({role:"user",content:`[System: ${who} just opened setup. Warmly greet them by name as Coach Léa and start gently learning what you need to build their plan. Ask your first question.]`});
+  setupHistory.push({role:"user",content:`[System: The household admin (who cooks for ${MEMBERS.map(personName).join(" and ")}) just opened setup. Warmly greet them as Coach Léa and start gently learning what you need to build the household plan. Ask your first question.]`});
   runSetupTurn();
 }
 function closeSetup(){ document.getElementById("setup-overlay").classList.add("hidden"); }
@@ -1859,48 +2178,43 @@ function sendSetup(){
 }
 
 function householdSummary(){
-  const h=householdData; if(!h)return "Nothing on file yet.";
+  const h=householdData||{};
   const bits=[];
-  if(h.allergies&&h.allergies.length)bits.push("allergies: "+h.allergies.join(", "));
-  if(h.intolerances&&h.intolerances.length)bits.push("intolerances: "+h.intolerances.join(", "));
-  if(h.dislikes&&h.dislikes.length)bits.push("dislikes: "+h.dislikes.join(", "));
-  if(h.diet_style)bits.push("diet: "+h.diet_style);
   if(h.cuisines_loved&&h.cuisines_loved.length)bits.push("loves: "+h.cuisines_loved.join(", "));
   if(h.spice_tolerance)bits.push("spice: "+h.spice_tolerance);
   if(h.budget_eur_per_week)bits.push("budget €"+h.budget_eur_per_week+"/wk");
   if(h.cooking_skill)bits.push("cooking: "+h.cooking_skill);
-  return bits.length?bits.join("; "):"Nothing on file yet.";
+  return (bits.length?"Kitchen: "+bits.join("; "):"Kitchen: nothing on file yet.")+"\nFood preferences:\n"+prefsSummaryText();
 }
 
 async function runSetupTurn(){
   const key=cfg("anthropic_key"); const send=document.querySelector(".setup-input-bar .send-btn");
   if(send){ send.disabled=true; send.style.opacity="0.5"; }
-  const who=identity?identity.charAt(0).toUpperCase()+identity.slice(1):"there";
-  const partner=identity==="diego"?"Diana":"Diego";
-  const goalsKnown=userGoals&&userGoals.goal_type?`On file for ${who}: ${userGoals.goal_type}, ${userGoals.start_weight_kg||"?"}→${userGoals.target_weight_kg||"?"}kg.`:`No personal goals on file for ${who} yet.`;
-  const system=`You are Coach Léa, a warm, caring registered dietitian helping ${who} in Luxembourg set up a shared mindful-eating plan with their partner ${partner}. You are deeply empathetic, relatable and encouraging — like a trusted friend who happens to be a brilliant nutritionist. You never judge, you celebrate small wins, and you make people feel completely safe talking about food, weight and habits.
+  const names=MEMBERS.map(personName).join(" and ");
+  const goalsKnown=MEMBERS.map(m=>{ const g=people[m].goals||{}; return g.goal_type?`${personName(m)} (id "${m}"): ${g.goal_type}, ${g.start_weight_kg||"?"}→${g.target_weight_kg||"?"}kg.`:`${personName(m)} (id "${m}"): no goals on file yet.`; }).join(" ");
+  const system=`You are Coach Léa, a warm, caring registered dietitian helping a household in Luxembourg set up NutriPrep. You are talking to the household admin, who does ALL the cooking for ${names}. You are deeply empathetic, relatable and encouraging — like a trusted friend who happens to be a brilliant nutritionist. You never judge, you celebrate small wins, and you make people feel completely safe talking about food, weight and habits.
 
 Your job: have a natural, warm conversation to learn what you need, then call save_setup. Ask ONE friendly question at a time — never a list, never an interrogation. Acknowledge each answer with genuine warmth before the next question.
 
+How the app works: ONE shared menu for the household. Everyone eats the same dishes in their own portion size, and a person's plate is adapted only where their own restrictions require it (e.g. tofu instead of chicken for a vegetarian). Allergies are kept out of the whole kitchen.
+
 Gather, gently and conversationally:
-HOUSEHOLD (shared — ${who} and ${partner} eat the same dishes, only portions differ):
-- any food allergies for EITHER of them (handle with care — these are never, ever served)
-- intolerances (e.g. lactose) and any strong dislikes
-- diet style (omnivore / vegetarian / vegan / pescatarian)
-- cuisines they love, and spice tolerance
-- their weekly grocery budget in euros
-- how confident they are cooking, how much time they'll give to Sunday meal-prep, and the max they want to cook on a weekday
+KITCHEN (shared):
+- cuisines the household loves, and spice tolerance
+- the weekly grocery budget in euros
+- how confident the cook is, how much time they'll give to Sunday meal-prep, and the max they want to cook on a weekday
 - what kitchen equipment they have (oven, air fryer, instant pot, etc.)
 
-PERSONAL — just for ${who} (${partner} sets their own goals on their own phone, so don't ask about ${partner}'s body or targets):
-- current weight and the weight they'd love to reach
-- how fast they'd like to get there, and any target date
-- their age, height and biological sex — explain gently that this lets you calculate their calorie and protein needs accurately
+FOR EACH PERSON (${names}) — always be clear WHO each answer is about:
+- allergies (handle with care — never, ever served to anyone), intolerances, foods they won't eat, foods they love, diet style
+- current weight, the weight they'd love to reach, how fast, any target date
+- age, height and biological sex — explain gently that this lets you calculate calorie and protein needs accurately
 - how active they are day to day (sedentary / light / moderate / very active)
 
-Already on file (confirm or update — don't blindly re-ask): ${householdSummary()} ${goalsKnown}
+Already on file (confirm or update — don't blindly re-ask): ${householdSummary()}
+${goalsKnown}
 
-Always be evidence-based (EFSA/WHO). Reassure that healthy loss is a gentle 0.25–0.75 kg/week and you'll never crash-diet them. Keep every message short and human. When you have what you need, call save_setup with everything you learned, then give a warm sign-off inviting them to tap the "Generate my plan" button that will appear.`;
+Always be evidence-based (EFSA/WHO). Reassure that healthy loss is a gentle 0.25–0.75 kg/week and you'll never crash-diet anyone. Keep every message short and human. You may call save_setup more than once (e.g. after finishing each person). When you have what you need, call save_setup, then give a warm sign-off inviting them to tap the "Generate my plan" button that will appear.`;
   try{
     const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",
       headers:{"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"},
@@ -1916,7 +2230,7 @@ Always be evidence-based (EFSA/WHO). Reassure that healthy loss is a gentle 0.25
       setupHistory.push({role:"user",content:[{type:"tool_result",tool_use_id:toolUse.id,content:ok?"Saved.":"Save failed — GitHub token missing."}]});
       if(ok){
         renderGoals();
-        localStorage.setItem("nutriprep_setup_done_"+identity,"1");
+        localStorage.setItem("nutriprep_setup_done","1");
         document.getElementById("setup-generate-wrap").style.display="block";
         document.getElementById("setup-sub").textContent="All set — generate your plan below";
       }
@@ -1946,20 +2260,28 @@ async function saveSetup(input){
   const token=cfg("gh_token");
   if(!token){ setupMsg("coach","I'd love to save this, but I need your GitHub token first (Settings ⚙). Add it, then tell me to continue 💚"); return false; }
   let ok=true;
-  if(input.household){
-    const merged=Object.assign({members:["diego","diana"],tz:"Europe/Luxembourg"}, householdData||{}, input.household);
-    merged.members=["diego","diana"]; merged.tz="Europe/Luxembourg";
-    try{ await ghWrite("household.json",merged,`Household setup via Coach Léa (${identity})`); householdData=merged; }
+  if(input.household && Object.keys(input.household).length){
+    const merged=Object.assign({tz:"Europe/Luxembourg"}, householdData||{}, input.household);
+    merged.members=[...MEMBERS]; merged.tz="Europe/Luxembourg";
+    try{ await ghWrite("household.json",merged,"Household setup via Coach Léa"); householdData=merged; }
     catch(e){ ok=false; setupMsg("coach","Couldn't save household prefs: "+e.message); }
   }
-  if(input.goals){
-    const g=Object.assign({}, userGoals||{}, input.goals);
-    g.name=identity.charAt(0).toUpperCase()+identity.slice(1); g.set_on=todayISO();
-    try{ await ghWrite(`users/${identity}/goals.json`,g,`Goals via Coach Léa (${identity})`); userGoals=g; }
-    catch(e){ ok=false; setupMsg("coach","Couldn't save your goals: "+e.message); }
-    const macros=deriveMacros(g);
-    if(macros){ try{ await ghWrite(`users/${identity}/macro_targets.json`,macros,`Derived macros (${identity})`); }catch(_){} }
+  const ppl=input.people||{};
+  for(const m of MEMBERS){
+    const p=ppl[m]; if(!p) continue;
+    // Food preferences → preferences.json (the same place the preferences screen edits)
+    ["allergies","intolerances","avoid","love"].forEach(k=>(p[k]||[]).forEach(v=>prefAdd(m,k,v,"setup",true)));
+    if(p.diet_style) prefSetDiet(m,p.diet_style,"setup",true);
+    if(p.goals && Object.keys(p.goals).length){
+      const g=Object.assign({}, people[m].goals||{}, p.goals);
+      g.name=personName(m); g.set_on=todayISO();
+      try{ await ghWrite(`users/${m}/goals.json`,g,`Goals via Coach Léa (${m})`); people[m].goals=g; }
+      catch(e){ ok=false; setupMsg("coach",`Couldn't save ${personName(m)}'s goals: `+e.message); }
+      const macros=deriveMacros(g);
+      if(macros){ try{ await ghWrite(`users/${m}/macro_targets.json`,macros,`Derived macros (${m})`); people[m].macros=macros; }catch(_){} }
+    }
   }
+  try{ await flushPrefs(); }catch(e){ ok=false; setupMsg("coach","Couldn't save food preferences: "+e.message); }
   return ok;
 }
 
@@ -2047,21 +2369,21 @@ async function showTab(tab){
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
 async function init(){
-  renderUserChip();
   document.getElementById("notif-toggle").classList.toggle("on",!!cfg("notif_enabled"));
   await Promise.all([loadSharedData(), loadUserData(), loadPlanConfig()]);
   renderToday();
   document.getElementById("build-label").textContent=`NutriPrep · build v${APP_BUILD} · nutriprep`;
   if("serviceWorker" in navigator){ navigator.serviceWorker.register("./sw.js").then(reg=>{ try{reg.update();}catch(_){} }).catch(e=>console.warn("SW:",e)); }
   checkForUpdate();
-  // First run on this device for this identity → meet Coach Léa to set up the plan
-  if(!localStorage.getItem("nutriprep_setup_done_"+identity) && cfg("anthropic_key")){ startSetup(); }
+  // First run on this device → meet Coach Léa to set up the household. A device that
+  // already did the old per-person setup counts as done.
+  const setupDone=localStorage.getItem("nutriprep_setup_done")||MEMBERS.some(m=>localStorage.getItem("nutriprep_setup_done_"+m));
+  if(!setupDone && cfg("anthropic_key")){ startSetup(); }
   // Scroll coach messages to bottom when the soft keyboard opens/closes
   if(window.visualViewport){ window.visualViewport.addEventListener("resize",()=>{ if(document.querySelector("#pane-coach.active")) coachScrollBottom(); }); }
 }
 
-if(!identity){ document.getElementById("identity-modal").classList.remove("hidden"); checkForUpdate(); }
-else { document.getElementById("identity-modal").classList.add("hidden"); init(); }
+init();
 
 // ── Auto-update ───────────────────────────────────────────────────────────────
 // Detect when a newer build is live and reload to it, so the installed PWA never
