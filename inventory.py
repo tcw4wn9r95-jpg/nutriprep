@@ -1,8 +1,9 @@
 """
 NutriPrep — daily fridge/pantry inventory update.
-Runs at ~21:00 Luxembourg (19:00 UTC) via cron. For every confirmed meal
-(meal_logs entry with ate=true that hasn't been applied to inventory yet),
-subtract that person's portion ingredients from inventory.json.
+Runs at ~21:00 Luxembourg (19:00 UTC) via cron. For every meal the cook marked
+"I made this" (cooked_log.json) that hasn't been applied yet, subtract EVERY
+member's portion ingredients from inventory.json. Older per-person ticks
+(users/<m>/meal_logs.json, ate=true) are still applied for that person's portion.
 
 The pantry reflects only what the household has actually bought (added via
 "Add bought to fridge" in the app). generate.py never seeds it. This job
@@ -48,49 +49,54 @@ def main():
     inv_index = {it["name_en"].strip().lower(): it for it in inventory["items"]}
 
     total_applied = 0
-    for member in MEMBERS:
-        logs_path = BASE / "users" / member / "meal_logs.json"
-        logs = load(logs_path, [])
-        changed = False
 
-        for entry in logs:
-            if not entry.get("ate") or entry.get("inv_applied"):
+    def deplete(portion: dict) -> None:
+        for ing in (portion or {}).get("ingredients", []):
+            name = ing.get("item", "").strip().lower()
+            inv_item = inv_index.get(name)
+            if not inv_item:
+                continue
+            used = units.parse_qty(ing.get("qty", ""))
+            have = {
+                "amount": inv_item.get("amount"),
+                "kind": inv_item.get("kind", "unknown"),
+                "unit": inv_item.get("unit", ""),
+            }
+            if have["kind"] == "unknown" or used["kind"] == "unknown":
+                continue
+            remaining = units.subtract_qty(have, used)
+            inv_item["amount"] = round(remaining["amount"], 2)
+            inv_item["display_qty"] = units.format_qty(
+                inv_item["amount"], inv_item["kind"], inv_item["unit"]
+            )
+
+    def apply(entries: list, members: list[str], path: Path, is_ready) -> None:
+        nonlocal total_applied
+        changed = False
+        for entry in entries:
+            if not is_ready(entry) or entry.get("inv_applied"):
                 continue
             meal = find_meal(menu, entry.get("date"), entry.get("slot"))
-            if not meal:
-                # Can't map to a meal (e.g. plan rotated) — mark applied to avoid retry
-                entry["inv_applied"] = True
-                changed = True
-                continue
-
-            portion = (meal.get("portions") or {}).get(member, {})
-            for ing in portion.get("ingredients", []):
-                name = ing.get("item", "").strip().lower()
-                inv_item = inv_index.get(name)
-                if not inv_item:
-                    continue
-                used = units.parse_qty(ing.get("qty", ""))
-                have = {
-                    "amount": inv_item.get("amount"),
-                    "kind": inv_item.get("kind", "unknown"),
-                    "unit": inv_item.get("unit", ""),
-                }
-                if have["kind"] == "unknown" or used["kind"] == "unknown":
-                    continue
-                remaining = units.subtract_qty(have, used)
-                inv_item["amount"] = round(remaining["amount"], 2)
-                inv_item["display_qty"] = units.format_qty(
-                    inv_item["amount"], inv_item["kind"], inv_item["unit"]
-                )
-
+            if meal:
+                for member in members:
+                    deplete((meal.get("portions") or {}).get(member, {}))
+                total_applied += 1
+            # Unmappable (plan rotated) entries are marked too, so they aren't retried.
             entry["inv_applied"] = True
             entry["inv_applied_on"] = date.today().isoformat()
             changed = True
-            total_applied += 1
-
         if changed:
-            with open(logs_path, "w") as f:
-                json.dump(logs, f, indent=2)
+            with open(path, "w") as f:
+                json.dump(entries, f, indent=2)
+
+    # Household "I made this" log — the cook made the meal for everyone.
+    cooked_path = BASE / "cooked_log.json"
+    apply(load(cooked_path, []), MEMBERS, cooked_path, lambda e: True)
+    # Legacy per-person ticks from before household mode.
+    for member in MEMBERS:
+        logs_path = BASE / "users" / member / "meal_logs.json"
+        if logs_path.exists():
+            apply(load(logs_path, []), [member], logs_path, lambda e: e.get("ate"))
 
     # Drop items that are fully depleted (amount ~0) for parseable kinds
     kept = []
@@ -104,7 +110,7 @@ def main():
     with open(BASE / "inventory.json", "w") as f:
         json.dump(inventory, f, indent=2)
 
-    print(f"Inventory updated: applied {total_applied} confirmed meal(s); {len(kept)} items remain.")
+    print(f"Inventory updated: applied {total_applied} made meal(s); {len(kept)} items remain.")
 
 
 if __name__ == "__main__":

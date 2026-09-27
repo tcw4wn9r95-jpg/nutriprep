@@ -186,16 +186,6 @@
   .btn-block { width: 100%; }
   .btn-outline { background: none; border: 1.5px solid var(--pine); color: var(--pine); }
   .btn-sm { padding: 9px 16px; font-size: 13px; }
-  .hydration-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 12px; }
-  .hydration-amount { font-family: var(--serif); font-size: 18px; font-weight: 600; color: var(--hydro, #3B82C4); }
-  .water-bar { background: var(--hair); border-radius: 99px; height: 10px; overflow: hidden; margin-bottom: 12px; }
-  .water-fill { height: 100%; width: 0; background: linear-gradient(90deg, #6FB3E0, #3B82C4); border-radius: 99px; transition: width .25s ease; }
-  .water-glasses { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-  .water-glass { font-size: 22px; line-height: 1; cursor: pointer; opacity: .25; filter: grayscale(1); transition: opacity .15s, filter .15s, transform .1s; }
-  .water-glass.full { opacity: 1; filter: none; }
-  .water-glass:active { transform: scale(.85); }
-  .water-actions { display: flex; gap: 8px; }
-  .water-actions .btn { flex: 1; }
   .btn-ic { display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
   .stat-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--hair); font-size: 14px; }
   .stat-row:last-child { border-bottom: none; }
@@ -248,7 +238,11 @@
   .seg button.active { background: var(--surface); box-shadow: var(--shadow); }
   .ate-group { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
   .ate-pill { border: 1.5px solid var(--hair); background: none; border-radius: 999px; padding: 3px 8px; font-size: 11px; font-weight: 700; color: var(--faint); cursor: pointer; white-space: nowrap; }
+  .shop-swap { border: 1.5px solid var(--hair); background: none; border-radius: 50%; width: 30px; height: 30px; flex-shrink: 0; cursor: pointer; color: var(--muted); font-size: 14px; margin-left: 6px; }
+  .swap-form { background: var(--honey-pale); border-radius: 12px; padding: 10px; margin: -2px 0 10px; }
   .ate-pill.ate { background: var(--pine); border-color: var(--pine); color: #fff; }
+  .made-btn { border: 1.5px solid var(--hair); background: none; border-radius: 999px; padding: 5px 10px; font-size: 11.5px; font-weight: 700; color: var(--muted); cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+  .made-btn.made { background: var(--pine); border-color: var(--pine); color: #fff; }
   .per-kcal { font-size: 12px; color: var(--muted); margin-top: 2px; }
   .diff-badge { display: block; font-size: 11.5px; line-height: 1.35; background: var(--honey-pale); color: #7a5a14; border-radius: 8px; padding: 4px 8px; margin-top: 5px; font-weight: 600; }
   .warn-badge { display: block; font-size: 11.5px; line-height: 1.35; background: #F6E4DE; color: #9b4a31; border-radius: 8px; padding: 4px 8px; margin-top: 5px; font-weight: 600; }
@@ -270,10 +264,6 @@
   .macro-person .mp-name { font-weight: 700; font-size: 13px; }
   .macro-person .mp-k { font-family: var(--serif); font-size: 20px; color: var(--pine); }
   .macro-person .mp-m { font-size: 11px; color: var(--muted); }
-  .water-person { margin-top: 10px; }
-  .water-person .wp-head { display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px; }
-  .water-person .wp-btns { display: flex; gap: 6px; }
-  .water-person .wp-btns button { border: 1.5px solid var(--hair); background: none; border-radius: 999px; width: 30px; height: 30px; font-size: 15px; cursor: pointer; color: var(--pine); }
 
   /* Food preferences editor */
   #prefs-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 14px; }
@@ -353,9 +343,7 @@
   .src-badge.derived { background: var(--hair); color: var(--muted); }
   .kcal-hero { display: flex; gap: 10px; margin: 10px 0 14px; }
   .kcal-hero .box { flex: 1; background: var(--sage-pale); border-radius: 12px; padding: 12px; text-align: center; }
-  .kcal-hero .box.water { background: #E8F1F8; }
   .kcal-hero .num { font-family: var(--serif); font-size: 24px; font-weight: 600; color: var(--pine); line-height: 1; }
-  .kcal-hero .box.water .num { color: #3B82C4; }
   .kcal-hero .cap { font-size: 10px; color: var(--muted); margin-top: 5px; text-transform: uppercase; letter-spacing: .4px; font-weight: 600; }
   .macro-detail { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--hair); }
   .macro-detail:last-child { border-bottom: none; }
@@ -565,7 +553,6 @@
 <div class="content">
   <!-- TODAY -->
   <div class="tab-pane active" id="pane-today">
-    <div id="home-stats"></div>
     <div id="plan-action" style="margin-bottom:12px"></div>
     <div id="plan-paused-banner" style="display:none;background:var(--honey-pale);border:1px solid var(--honey);border-radius:var(--r-sm);padding:10px 14px;margin-bottom:12px;font-size:13px;color:var(--ink);align-items:center;gap:10px">
       <span style="font-size:18px">⏸</span>
@@ -577,15 +564,8 @@
       <div class="card-title">Planned today — <span id="today-date-label"></span></div>
       <div class="macro-people" id="macro-people"></div>
     </div>
-    <div class="card" id="hydration-card" style="display:none">
-      <div class="hydration-head">
-        <div class="card-title" style="margin:0">💧 Hydration</div>
-        <div class="hydration-amount">target <span id="water-target">2.0</span> L each</div>
-      </div>
-      <div id="water-people"></div>
-    </div>
     <div class="card">
-      <div class="card-title">Today's meals — tick who ate it</div>
+      <div class="card-title">Today's meals — tap “I made this” to update the fridge</div>
       <div id="today-slots"></div>
     </div>
   </div>
@@ -606,6 +586,7 @@
       <div class="section-title" style="margin-bottom:0">Shopping list</div>
     </div>
     <div id="budget-card"></div>
+    <div id="store-box"></div>
     <div style="display:flex;gap:8px;margin-bottom:12px">
       <button class="btn btn-outline btn-ic" style="flex:1" onclick="openLibrary()"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>Product library</button>
       <button class="btn btn-ic" style="flex:1" onclick="markAllBought()">✓ Add bought to fridge</button>
@@ -722,7 +703,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v39 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v40 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -746,7 +727,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 39; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 40; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -760,11 +741,6 @@ const SLOT_LABELS = {
   pm_snack:  { icon: "🥜", label: "Afternoon snack" },
   dinner:    { icon: "🍽️", label: "Dinner" },
 };
-const MILESTONES = [
-  { days: 7, icon: "🥉", label: "1 week" },
-  { days: 14, icon: "🥈", label: "2 weeks" },
-  { days: 30, icon: "🥇", label: "1 month" },
-];
 
 // Inline line-icons (match the chrome's stroke style) — used in buttons/banners
 // so structural UI no longer relies on clashing full-colour emoji.
@@ -793,7 +769,7 @@ function emptyIcon(name){
 // only restrictions (preferences.json) and portions differ per person.
 const MEMBERS = ["diego","diana"];
 const MEMBER_EMOJI = { diego: "👨", diana: "👩" };
-function blankPerson(){ return { goals:{}, weightLog:[], checkins:[], mealLogs:[], macros:{} }; }
+function blankPerson(){ return { goals:{}, weightLog:[], checkins:[], macros:{} }; }
 const people = Object.fromEntries(MEMBERS.map(m=>[m, blankPerson()]));
 function personName(m){ const n=((people[m]||{}).goals||{}).name; return n || (m.charAt(0).toUpperCase()+m.slice(1)); }
 function whoLabel(m){ return `${MEMBER_EMOJI[m]||"🙂"} ${personName(m)}`; }
@@ -812,7 +788,6 @@ let menuDirtyUntil = 0;
 function markMenuDirty(){ menuDirtyUntil = Date.now() + 180000; }
 function refreshMenuViews(){ try{renderToday();}catch(_){} try{renderMenu();}catch(_){} try{renderShopping();}catch(_){} try{renderPrep();}catch(_){} }
 let checkedItems = JSON.parse(localStorage.getItem("nutriprep_checked") || "{}");
-let waterLog = JSON.parse(localStorage.getItem("nutriprep_water") || "{}"); // { member: { "YYYY-MM-DD": ml } }
 let macroRingCharts = {}, weightChart = null;
 let pendingIdentity = null;
 
@@ -1327,12 +1302,13 @@ async function loadSharedData(){
 async function loadUserData(){
   const get=async(path,fallback)=>{ try{ const v=await ghFetch(path); return v==null?fallback:v; }catch(_){ return fallback; } };
   await Promise.all(MEMBERS.map(async m=>{
-    const [goals,weightLog,checkins,mealLogs,macros]=await Promise.all([
+    const [goals,weightLog,checkins,macros]=await Promise.all([
       get(`users/${m}/goals.json`,{}), get(`users/${m}/weight_log.json`,[]), get(`users/${m}/checkins.json`,[]),
-      get(`users/${m}/meal_logs.json`,[]), get(`users/${m}/macro_targets.json`,{})]);
-    people[m]={goals,weightLog,checkins,mealLogs,macros};
+      get(`users/${m}/macro_targets.json`,{})]);
+    people[m]={goals,weightLog,checkins,macros};
   }));
   coachHistory=await get("coach_history.json",[]);
+  cookedLog=await get("cooked_log.json",[]); if(!Array.isArray(cookedLog)) cookedLog=[];
 }
 function todayISO(){ return new Date().toLocaleDateString("en-CA",{timeZone:"Europe/Luxembourg"}); }
 // Minutes since midnight in Luxembourg local time (DST-correct, independent of device tz)
@@ -1342,80 +1318,27 @@ function luxMinutes(){
   return h*60+m;
 }
 
-// ── Hydration tracker (per person, this device) ────────────────────────────────
-const GLASS_ML = 250;
-function waterTargetMl(){ const l=(nutritionPlan&&nutritionPlan.hydration_l)?nutritionPlan.hydration_l:2.0; return Math.round(l*1000); }
-function waterTodayMl(m){ return ((waterLog[m]||{})[todayISO()])||0; }
-function setWaterMl(m, ml){
-  const d=todayISO(), target=waterTargetMl();
-  ml=Math.max(0, Math.min(ml, target+GLASS_ML*4)); // allow some headroom past target
-  if(!waterLog[m]) waterLog[m]={};
-  waterLog[m][d]=ml;
-  localStorage.setItem("nutriprep_water", JSON.stringify(waterLog));
-  renderHydration();
-}
-function addWater(m, ml){ setWaterMl(m, waterTodayMl(m)+ml); }
-function renderHydration(){
-  const card=document.getElementById("hydration-card");
-  if(!card) return;
-  card.style.display="block";
-  const target=waterTargetMl();
-  document.getElementById("water-target").textContent=(target/1000).toFixed(1);
-  const glasses=Math.max(1, Math.round(target/GLASS_ML));
-  document.getElementById("water-people").innerHTML=MEMBERS.map(m=>{
-    const cur=waterTodayMl(m), filled=Math.round(cur/GLASS_ML);
-    const pct=target>0?Math.min(100,Math.round(cur/target*100)):0;
-    let g=""; for(let i=0;i<glasses;i++){ g+=`<span class="water-glass${i<filled?" full":""}" onclick="setWaterMl('${m}',${(i+1)*GLASS_ML===cur?i:(i+1)}*${GLASS_ML})">💧</span>`; }
-    return `<div class="water-person">
-      <div class="wp-head"><span>${whoLabel(m)} · ${(cur/1000).toFixed(2).replace(/\.?0+$/,"")||0} L</span>
-        <span class="wp-btns"><button onclick="addWater('${m}',-${GLASS_ML})" aria-label="Remove a glass">−</button><button onclick="addWater('${m}',${GLASS_ML})" aria-label="Add a glass">+</button></span></div>
-      <div class="water-bar"><div class="water-fill" style="width:${pct}%"></div></div>
-      <div class="water-glasses">${g}</div></div>`;
-  }).join("");
-}
-
-// ── Meal confirmation / compliance (per person) ─────────────────────────────────
-function isAte(m, date, slot){ return ((people[m]||{}).mealLogs||[]).some(l=>l.date===date && l.slot===slot && l.ate); }
-async function toggleAte(m, date, slot, mealName){
-  const logs=people[m].mealLogs;
-  const idx=logs.findIndex(l=>l.date===date && l.slot===slot);
-  if(idx>=0 && logs[idx].ate){ logs.splice(idx,1); }
-  else if(idx>=0){ logs[idx].ate=true; logs[idx].logged_at=new Date().toISOString(); }
-  else { logs.push({date, slot, meal_name:mealName, ate:true, logged_at:new Date().toISOString()}); }
-  renderToday();
+// ── "I made this" — household cooking log (cooked_log.json) ─────────────────────
+// Only feeds the fridge/pantry: inventory.py subtracts every portion of a meal
+// marked as made (nightly). Diet compliance lives in Coach Claudio, not here.
+let cookedLog=[];
+function isMade(date, slot){ return cookedLog.some(l=>l.date===date && l.slot===slot); }
+function madeEntry(date, slot){ return cookedLog.find(l=>l.date===date && l.slot===slot)||null; }
+async function toggleMade(date, slot, mealName){
+  const i=cookedLog.findIndex(l=>l.date===date && l.slot===slot);
+  if(i>=0){
+    if(cookedLog[i].inv_applied){ alert("This meal was already taken out of the fridge & pantry, so it stays marked as made."); return; }
+    cookedLog.splice(i,1);
+  } else cookedLog.push({date, slot, meal_name:mealName, made_at:new Date().toISOString()});
+  cookedLog=cookedLog.slice(-300);
+  renderToday(); try{ renderMenu(); }catch(_){}
   if(currentMeal && currentMealDate===date && currentMeal.slot===slot && !document.getElementById("meal-overlay").classList.contains("hidden")) openMeal(currentMeal, currentMealDate);
-  try{ await ghWrite(`users/${m}/meal_logs.json`, logs, `Meal log ${date} ${slot} (${m})`); }
+  try{ await ghWrite("cooked_log.json", cookedLog, `Made ${slot} ${date}`); }
   catch(e){ alert("Couldn't save: "+e.message); }
 }
-function computeCompliance(m){
-  // This week's scheduled meals up to today vs confirmed
-  if(!weekMenu) return { pct: null, scheduled: 0, eaten: 0 };
-  const today=todayISO(); let scheduled=0, eaten=0;
-  weekMenu.forEach(day=>{ if(day.date<=today){ day.meals.forEach(meal=>{ scheduled++; if(isAte(m,day.date,meal.slot))eaten++; }); } });
-  return { pct: scheduled?Math.round(eaten/scheduled*100):null, scheduled, eaten };
-}
-function computeStreak(m){
-  // Compliant day = >=4 confirmed meals that date. Walk back from today.
-  const byDate={}; people[m].mealLogs.forEach(l=>{ if(l.ate){ byDate[l.date]=(byDate[l.date]||0)+1; } });
-  let streak=0; let d=new Date();
-  for(let i=0;i<400;i++){
-    const ds=d.toLocaleDateString("en-CA",{timeZone:"Europe/Luxembourg"});
-    const compliant=(byDate[ds]||0)>=4;
-    if(compliant){ streak++; }
-    else if(i===0){ /* today incomplete — don't break, check yesterday */ }
-    else { break; }
-    d.setDate(d.getDate()-1);
-  }
-  return streak;
-}
-function computeBestStreak(m){
-  const logs=people[m].mealLogs;
-  const dates=[...new Set(logs.filter(l=>l.ate).map(l=>l.date))].sort();
-  const dayCount={}; logs.forEach(l=>{ if(l.ate)dayCount[l.date]=(dayCount[l.date]||0)+1; });
-  const compliantDays=dates.filter(d=>dayCount[d]>=4);
-  let best=0,cur=0,prev=null;
-  compliantDays.forEach(ds=>{ if(prev){ const diff=(new Date(ds)-new Date(prev))/86400000; cur=diff===1?cur+1:1; } else cur=1; best=Math.max(best,cur); prev=ds; });
-  return best;
+function madeButton(date, meal, cls){
+  const e=madeEntry(date, meal.slot);
+  return `<button class="${cls}${e?" made":""}" onclick='toggleMade("${date}","${meal.slot}",${JSON.stringify(meal.name).replace(/'/g,"&#39;")})' title="Takes this meal's ingredients out of the fridge & pantry">${e?(e.inv_applied?"✓ Made · fridge updated":"✓ Made"):"🍳 I made this"}</button>`;
 }
 function lastWeight(m){ const p=people[m]; return p.weightLog.length?p.weightLog[p.weightLog.length-1].weight_kg:(p.goals.start_weight_kg||null); }
 
@@ -1470,29 +1393,12 @@ function kcalLine(meal){
 function renderToday(){
   const today=todayISO();
   const dayData=weekMenu?weekMenu.find(d=>d.date===today):null;
-  renderHomeStats();
   renderPlanAction();
   renderTrainingBanner();
   renderNextAction(dayData);
   renderTodaySlots(dayData);
   renderMacroRing(dayData);
-  renderHydration();
   document.getElementById("today-date-label").textContent=new Date().toLocaleDateString("en-LU",{timeZone:"Europe/Luxembourg",weekday:"long",day:"numeric",month:"long"});
-}
-function renderHomeStats(){
-  document.getElementById("home-stats").innerHTML=MEMBERS.map(m=>{
-    const c=computeCompliance(m), streak=computeStreak(m), best=Math.max(streak, computeBestStreak(m));
-    const g=people[m].goals, last=lastWeight(m), target=g.target_weight_kg;
-    const medals=MILESTONES.filter(x=>best>=x.days).map(x=>x.icon).join("");
-    return `<div class="person-row" onclick="progressPerson='${m}';showTab('progress')">
-      <div class="who">${whoLabel(m)}</div>
-      <div class="figs">
-        <span><b>${c.pct==null?"—":c.pct+"%"}</b>eaten</span>
-        <span><b>${streak}🔥</b>streak</span>
-        <span><b>${last||"—"}</b>kg${target?` → ${target}`:""}</span>
-      </div>
-      <div class="medals">${medals}</div></div>`;
-  }).join("");
 }
 // ── Training app (AthleteIQ) — fuel only COMPLETED workouts ─────────────────────
 // Planned sessions (weekly_plan.json) are shown for information; calories are added
@@ -1607,7 +1513,6 @@ function renderTodaySlots(dayData){
   wrap.innerHTML=dayData.meals.map(meal=>{
     const{icon}=SLOT_LABELS[meal.slot]||{icon:"🍴"};
     const[mh,mm]=meal.time.split(":").map(Number); const current=Math.abs((mh*60+mm)-currMins)<60;
-    const pills=MEMBERS.map(m=>{ const ate=isAte(m,dayData.date,meal.slot); return `<button class="ate-pill${ate?" ate":""}" onclick='toggleAte("${m}","${dayData.date}","${meal.slot}",${JSON.stringify(meal.name).replace(/'/g,"&#39;")})'>${ate?"✓ ":""}${esc(personName(m))}</button>`; }).join("");
     return `<div class="slot-row${current?" current":""}">
       <div class="slot-time">${meal.time}</div>
       <div class="slot-icon">${icon}</div>
@@ -1617,7 +1522,7 @@ function renderTodaySlots(dayData){
         ${meal.prep_ahead?'<span class="slot-badge">✓ Batch-prepped</span>':""}
         ${diffBadges(meal)}
       </div>
-      <div class="ate-group">${pills}</div>
+      ${madeButton(dayData.date, meal, "made-btn")}
     </div>`;
   }).join("");
 }
@@ -1652,7 +1557,6 @@ function renderMenu(){
     const tag=day.carried_over?` <span class="chip" style="font-size:10px">this week</span>`:(plan&&!fuel?` <span class="chip" style="font-size:10px;background:var(--honey-pale);color:#7a5a14">🗓️ ${esc(personName(ATHLETE))} planned</span>`:"");
     const meals=day.meals.map(meal=>{
       const{icon,label}=SLOT_LABELS[meal.slot]||{icon:"🍴",label:meal.slot};
-      const eaten=MEMBERS.filter(m=>isAte(m,day.date,meal.slot)).map(personName);
       return `<div class="meal-detail" onclick='openMealAt("${day.date}","${meal.slot}")'>
         ${mealImgTag(meal,"meal-thumb")}
         <div class="md-info">
@@ -1661,7 +1565,7 @@ function renderMenu(){
           <div class="meal-macros">${kcalLine(meal)}</div>
           ${diffBadges(meal)}
         </div>
-        ${eaten.length?`<span class="chip">✓ ${esc(eaten.join(", "))}</span>`:""}
+        ${isMade(day.date,meal.slot)?`<span class="chip">✓ made</span>`:""}
       </div>`;
     }).join("");
     return `<div class="day-card"><div class="day-header" onclick="toggleDay(${i})"><h3>${dLabel}${tag}</h3><div class="day-kcal">${kcal?kcal+" kcal":""}</div></div><div class="day-meals" id="day-meals-${i}">${meals}</div></div>`;
@@ -1689,7 +1593,6 @@ function openMeal(meal, dayDate){
   const P=prefs||normalizePrefs({});
   const plates=MEMBERS.map(m=>{
     const por=(meal.portions||{})[m]||{}; const mac=por.macros||{}; const v=por.variant||null;
-    const ate=isAte(m, dayDate, meal.slot);
     const loved=(P.people[m]||{}).love.some(x=>x.toLowerCase()===String(meal.name).toLowerCase());
     const ings=(por.ingredients||[]).map(ing=>`<div class="pi"><span>${esc(ing.item||ing)}</span><strong>${esc(ing.qty||"")}</strong></div>`).join("");
     const vsteps=(v&&Array.isArray(v.steps)&&v.steps.length)?`<div class="pv">For ${esc(personName(m))}:</div>${v.steps.map((s,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${esc(s)}</div>`).join("")}`:"";
@@ -1699,7 +1602,6 @@ function openMeal(meal, dayDate){
       ${diffs[m]?`<div class="pv">↳ ${v&&v.name?esc(v.name)+": ":""}${esc(diffs[m])}</div>`:""}
       ${ings}${vsteps}
       <div class="acts">
-        <button class="${ate?"on":""}" onclick='toggleAte("${m}","${dayDate}","${meal.slot}",${JSON.stringify(meal.name).replace(/'/g,"&#39;")})'>${ate?"✓ Eaten":"Eaten?"}</button>
         <button class="${loved?"on":""}" title="Loved it — plan more like this" onclick="mealFeedback('${m}','love')">👍</button>
         <button title="Didn't enjoy it — plan less like this" onclick="mealFeedback('${m}','nope')">👎</button>
       </div></div>`;
@@ -1723,6 +1625,8 @@ function openMeal(meal, dayDate){
       <h2>${esc(meal.name)}</h2>
       ${meal.safety_note?`<div style="font-size:12.5px;color:#8a5200;background:#fff4e0;border:1px solid #f3d39b;border-radius:10px;padding:8px 10px;margin:8px 0;line-height:1.4">${meal.safety_note}</div>`:""}
       ${diffBox}${warnBox}
+      <div style="margin:10px 0 2px">${madeButton(dayDate, meal, "btn btn-block made-sheet")}</div>
+      <div style="font-size:11.5px;color:var(--muted);text-align:center">Takes everyone's portions out of the fridge & pantry (updated nightly).</div>
       <div class="recipe-section-title">🍽️ Plates</div>
       <div class="plates">${plates}</div>
       ${prepHtml}
@@ -1774,19 +1678,112 @@ function itemCost(it){
   return lineCostJS(it.qty, e.price_eur, e.price_unit||"item", it.have_at_home);
 }
 
+// ── In the store: add extras, or swap something you couldn't find ───────────────
+// A swap is a local, deterministic edit: only the meals/prep steps that use the old
+// ingredient are rewritten — no plan regeneration, no Claude call.
+let _swapOpen=null;
+function _reEsc(x){ return x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
+function _matchCase(src, rep){ return src && src[0]===src[0].toUpperCase() && src[0]!==src[0].toLowerCase() ? rep.charAt(0).toUpperCase()+rep.slice(1) : rep.charAt(0).toLowerCase()+rep.slice(1); }
+// Text pairs to rewrite: the full name, plus the one differing word when the rest
+// matches ("Turkey breast" → "Chicken breast" also turns "turkey" into "chicken").
+function swapPairs(oldN, newN){
+  const pairs=[[oldN.trim(), newN.trim()]];
+  const ow=oldN.trim().split(/\s+/), nw=newN.trim().split(/\s+/);
+  if(ow.length===nw.length){ const d=ow.map((w,i)=>[w,nw[i]]).filter(([a,b])=>a.toLowerCase()!==b.toLowerCase()); if(d.length===1) pairs.push(d[0]); }
+  else if(nw.length===1 && ow.length>1 && ow[0].toLowerCase()!==nw[0].toLowerCase()) pairs.push([ow[0], nw[0]]);
+  return pairs;
+}
+function swapText(t, pairs){
+  if(typeof t!=="string"||!t) return t;
+  pairs.forEach(([a,b])=>{ t=t.replace(new RegExp(`(^|[^A-Za-zÀ-ÿ])(${_reEsc(a)})(?![A-Za-zÀ-ÿ])`,"gi"),(m,pre,hit)=>pre+_matchCase(hit,b)); });
+  return t;
+}
+function replaceIngredient(oldName, newName){
+  const oldKey=_normItem(oldName), pairs=swapPairs(oldName,newName), touched=[];
+  const today=todayISO();
+  (weekMenu||[]).filter(d=>!d.carried_over && d.date>=today).forEach(day=>day.meals.forEach(meal=>{
+    let hit=false;
+    MEMBERS.forEach(m=>{ const por=(meal.portions||{})[m]; if(!por) return;
+      (por.ingredients||[]).forEach(ing=>{ if(ing&&typeof ing==="object"&&_normItem(ing.item||"")===oldKey){ ing.item=newName; hit=true; } });
+      if(hit&&por.variant&&typeof por.variant==="object"){ ["name","changes"].forEach(k=>por.variant[k]=swapText(por.variant[k],pairs)); if(Array.isArray(por.variant.steps)) por.variant.steps=por.variant.steps.map(x=>swapText(x,pairs)); }
+    });
+    if(!hit) return;
+    meal.name=swapText(meal.name,pairs); meal.image_prompt=swapText(meal.image_prompt,pairs);
+    ["prep_steps","day_of_steps","recipe"].forEach(k=>{ if(Array.isArray(meal[k])) meal[k]=meal[k].map(x=>swapText(x,pairs)); });
+    meal.swapped=[...(meal.swapped||[]),{from:oldName,to:newName,on:today}];
+    touched.push({day, meal});
+  }));
+  let prepChanged=false;
+  if(prepPlan&&Array.isArray(prepPlan.batches)) prepPlan.batches.forEach(b=>{
+    const before=JSON.stringify(b);
+    b.title=swapText(b.title,pairs); ["steps","yields"].forEach(k=>{ if(Array.isArray(b[k])) b[k]=b[k].map(x=>swapText(x,pairs)); });
+    if(b.day_of_assembly&&typeof b.day_of_assembly==="object") Object.keys(b.day_of_assembly).forEach(k=>b.day_of_assembly[k]=swapText(b.day_of_assembly[k],pairs));
+    if(JSON.stringify(b)!==before) prepChanged=true;
+  });
+  return {touched, prepChanged};
+}
+async function swapShopItem(oldName){
+  const nameEl=document.getElementById("swap-name"), qtyEl=document.getElementById("swap-qty");
+  const newName=(nameEl&&nameEl.value||"").trim(), newQty=(qtyEl&&qtyEl.value||"").trim();
+  if(!newName){ nameEl&&nameEl.focus(); return; }
+  const it=(shoppingList.items||[]).find(x=>x.name_en===oldName); if(!it) return;
+  const {touched, prepChanged}=replaceIngredient(oldName, newName);
+  Object.assign(it,{replaced_from:it.replaced_from||oldName, name_en:newName, name_fr:"", qty:newQty||it.qty, line_cost_eur:null, unit_price_eur:null, have_at_home:false});
+  delete checkedItems[oldName]; checkedItems[newName]=true; localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems));
+  shoppingList.swaps=[...(shoppingList.swaps||[]),{at:new Date().toISOString(),from:oldName,to:newName,meals:touched.length}];
+  _swapOpen=null; markMenuDirty();
+  try{
+    await ghWrite("shopping_list.json", shoppingList, `Swap in store: ${oldName} → ${newName}`);
+    if(touched.length) await ghWrite("weekly_menu.json", weekMenu, `Swap ${oldName} → ${newName} in ${touched.length} meal(s)`);
+    if(prepChanged) await ghWrite("prep_plan.json", prepPlan, `Swap ${oldName} → ${newName} in prep`);
+  }catch(e){ alert("Couldn't save the swap: "+e.message); }
+  refreshMenuViews();
+  const where=touched.map(x=>`${x.day.day} ${(SLOT_LABELS[x.meal.slot]||{label:x.meal.slot}).label.toLowerCase()}`);
+  const clashes=touched.flatMap(x=>mealConflicts(x.meal).map(c=>c.text));
+  showShopNote(`✓ ${oldName} → ${newName}. ${touched.length?`Updated ${touched.length} meal${touched.length>1?"s":""} (${where.join(", ")})${prepChanged?" and the prep plan":""}; portions and macros kept as planned.`:"It wasn't used by name in any upcoming meal, so only the list changed."}${clashes.length?` ⚠ Check: ${clashes.join("; ")}`:""}`, !!clashes.length);
+}
+async function addShopItem(){
+  const n=document.getElementById("shop-add-name"), q=document.getElementById("shop-add-qty");
+  const name=(n.value||"").trim(), qty=(q.value||"").trim(); if(!name){ n.focus(); return; }
+  if(!shoppingList) shoppingList={items:[]};
+  shoppingList.items=shoppingList.items||[];
+  shoppingList.items.push({name_en:name, name_fr:"", qty, aisle:"Added in store", stores:[], added:true, added_on:todayISO(), have_at_home:false});
+  checkedItems[name]=true; localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems)); // you're holding it — ticked as bought
+  n.value=""; q.value="";
+  renderShopping();
+  try{ await ghWrite("shopping_list.json", shoppingList, `Added in store: ${name}`); showShopNote(`✓ Added ${name}${qty?` (${qty})`:""} — ticked as bought, goes to the fridge with the rest.`); }
+  catch(e){ alert("Couldn't save: "+e.message); }
+}
+async function removeAddedItem(name){
+  shoppingList.items=(shoppingList.items||[]).filter(x=>!(x.added&&x.name_en===name)); delete checkedItems[name];
+  localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems)); renderShopping();
+  try{ await ghWrite("shopping_list.json", shoppingList, `Removed ${name}`); }catch(e){ alert("Couldn't save: "+e.message); }
+}
+function openSwap(name){ _swapOpen=_swapOpen===name?null:name; renderShopping(); setTimeout(()=>{ const e=document.getElementById("swap-name"); if(e) e.focus(); },0); }
+function showShopNote(t, warn){ const el=document.getElementById("shop-note"); if(!el) return; el.innerHTML=`<div class="ask-result${warn?" err":""}" style="margin:0 0 12px">${esc(t)}</div>`; }
+function storeBoxHtml(){
+  return `<div class="card" style="padding:12px 14px;margin-bottom:12px"><div class="card-title" style="margin-bottom:6px">🛒 In the store</div>
+    <div class="padd"><input id="shop-add-name" placeholder="Add something…" onkeydown="if(event.key==='Enter')addShopItem()"><input id="shop-add-qty" placeholder="qty" style="flex:0 0 72px" onkeydown="if(event.key==='Enter')addShopItem()"><button onclick="addShopItem()">Add</button></div>
+    <div style="font-size:11.5px;color:var(--muted);margin-top:6px">Couldn't find something? Tap ⇄ on it and say what you bought instead — only the meals that use it are updated.</div></div><div id="shop-note"></div>`;
+}
+
 function shopItemRow(it){
   const key=it.name_en||""; const checked=checkedItems[key]?" checked":""; const inPantry=it.have_at_home; const c=itemCost(it);
   const price=inPantry?`<span class="shop-price pantry">in pantry</span>`:(c!=null?`<span class="shop-price">${eur(c)}</span>`:`<span class="shop-price none" onclick="openLibrary('${key.replace(/'/g,"\\'")}')">+ price</span>`);
   return `<div class="shop-item${inPantry?" in-pantry":""}">
     <button class="shop-check${checked}" onclick="toggleCheck('${key.replace(/'/g,"\\'")}',this)">${checked?"✓":""}</button>
-    <div class="shop-names"><div class="shop-en">${it.name_en||""}</div><div class="shop-fr">${it.name_fr||""}</div></div>
-    <div class="shop-right"><div class="shop-qty">${it.qty||""}</div>${price}</div>
-  </div>`;
+    <div class="shop-names"><div class="shop-en">${esc(it.name_en||"")}</div><div class="shop-fr">${it.replaced_from?`instead of ${esc(it.replaced_from)}`:(it.added?"added in store":esc(it.name_fr||""))}</div></div>
+    <div class="shop-right"><div class="shop-qty">${esc(it.qty||"")}</div>${price}</div>
+    ${it.added?`<button class="shop-swap" onclick="removeAddedItem(decodeURIComponent('${encodeURIComponent(key).replace(/'/g,"%27")}'))" aria-label="Remove">✕</button>`
+      :`<button class="shop-swap" onclick="openSwap(decodeURIComponent('${encodeURIComponent(key).replace(/'/g,"%27")}'))" aria-label="Bought something else instead" title="Bought something else instead">⇄</button>`}
+  </div>${_swapOpen===key?`<div class="swap-form"><div style="font-size:12px;color:var(--muted);margin-bottom:6px">Couldn't find <strong>${esc(key)}</strong>? What did you buy instead?</div>
+    <div class="padd"><input id="swap-name" placeholder="e.g. Chicken breast" onkeydown="if(event.key==='Enter')swapShopItem(decodeURIComponent('${encodeURIComponent(key).replace(/'/g,"%27")}'))"><input id="swap-qty" placeholder="${esc(it.qty||"qty")}" style="flex:0 0 80px"><button onclick="swapShopItem(decodeURIComponent('${encodeURIComponent(key).replace(/'/g,"%27")}'))">Swap</button></div></div>`:""}`;
 }
 function renderShopping(){
   const wrap=document.getElementById("shopping-list-content");
   const fr=document.getElementById("shop-filter");
   const bc=document.getElementById("budget-card");
+  const sb=document.getElementById("store-box"); if(sb && !sb.innerHTML) sb.innerHTML=storeBoxHtml();
   if(!shoppingList||!shoppingList.items){ if(bc)bc.innerHTML=""; if(fr)fr.innerHTML=""; wrap.innerHTML=`<div class="empty"><div class="ic">${emptyIcon("bag")}</div><p>No shopping list yet.</p></div>`; return; }
   // Fresh = the weekly perishable shop. Staples (rice/spices/oils/sauces) are bought
   // occasionally and last for weeks, so they go in a separate, collapsed section.
@@ -2031,7 +2028,7 @@ async function logWeight(){
   const input=document.getElementById("weight-input"); const val=parseFloat(input.value);
   if(!val||val<30||val>300){ alert("Enter a valid weight (30–300 kg)."); return; }
   const m=progressPerson;
-  try{ await saveWeight(m, todayISO(), val); input.value=""; renderProgress(); renderHomeStats(); alert(`✓ Logged ${val} kg for ${personName(m)}`); }
+  try{ await saveWeight(m, todayISO(), val); input.value=""; renderProgress(); alert(`✓ Logged ${val} kg for ${personName(m)}`); }
   catch(e){ alert("Failed to save: "+e.message); }
 }
 function renderWeightChart(){
@@ -2081,8 +2078,8 @@ async function sendCoach(){
   const peopleLines=MEMBERS.map(m=>{
     const g=people[m].goals||{}; const wlog=people[m].weightLog.slice(-4);
     const trend=wlog.length>=2?(wlog[wlog.length-1].weight_kg-wlog[0].weight_kg).toFixed(1)+" kg over "+wlog.length+" weigh-ins":"no data yet";
-    const c=computeCompliance(m); const t=(people[m].macros||{}).kcal;
-    return `- ${personName(m)} (id "${m}"): goal ${g.goal_type||"?"} → ${g.target_weight_kg||"?"} kg · trend ${trend} · ${t?t+" kcal/day target · ":""}this week ${c.pct==null?"n/a":c.pct+"%"} of meals eaten (${c.eaten}/${c.scheduled})`;
+    const t=(people[m].macros||{}).kcal;
+    return `- ${personName(m)} (id "${m}"): goal ${g.goal_type||"?"} → ${g.target_weight_kg||"?"} kg · trend ${trend} · ${t?t+" kcal/day target":""}`;
   }).join("\n");
   const _td=todayISO();
   const menuText=weekMenu?weekMenu.map(d=>{ const tag=d.date<_td?" [PAST — do not change]":d.date===_td?" [TODAY]":""; return `${d.day} ${d.date}${tag}: ${d.meals.map(m=>{ const df=mealDifferences(m); const dt=Object.entries(df).map(([k,v])=>`${k}: ${v}`).join("; "); return m.slot+"="+m.name+(dt?` {different plate — ${dt}}`:""); }).join("; ")}`; }).join("\n"):"no menu";
@@ -2120,11 +2117,11 @@ Middle ground (maximise the shared plate — build on it, give extras as add-ons
   Only change the meals asked about; never rebuild the whole week. A swapped meal always carries BOTH portions (diego & diana, plus prep_steps, day_of_steps, image_prompt, food_category).
 - TAILOR PER PERSON: the dish is shared, but a person's plate must respect THEIR preferences. If a request is only about one person ("Diana can't have dairy on Tuesday"), keep the dish and change only that person's portion: their ingredients show what they actually eat, plus portions.<id>.variant = {name, changes, reason, steps}. Leave the other person's portion unchanged. Anyone's allergy stays out of the whole dish.
 - remember_preference shapes FUTURE auto-generated weeks and is shown in the preferences screen. ALWAYS say who it is for: who="diego", "diana" or "everyone". Kinds: allergy (kept out of the whole kitchen), intolerance, avoid (won't eat), love, note, diet (text = omnivore/flexitarian/pescatarian/vegetarian/vegan). If the user doesn't say who, ask before saving. If a request ALSO affects the current week, apply it now with the tools above AND record the preference.
-- Use log_checkin when someone reports mood/energy/adherence; log_weight when someone states a weight. Both need who it is for.
+- Use log_checkin when someone reports mood/energy; log_weight when someone states a weight. Both need who it is for. Diet adherence/compliance is tracked in Coach Claudio (the training app), not here — don't score it.
 - ALWAYS reply with a short, warm sentence in plain text — even when you use tools. NEVER respond with tool calls and no words; tell the user what you just did in a friendly way.
 - Be concise (2–4 sentences). You are not a doctor — defer clinical issues to their nutritionist.`;
   const tools=[
-    {name:"log_checkin",description:"Log how one person feels.",input_schema:{type:"object",properties:{member:{type:"string",enum:MEMBERS},note:{type:"string"},mood:{type:"string",enum:["great","good","ok","low","poor"]},energy:{type:"string",enum:["high","medium","low"]},adherence:{type:"string",enum:["full","mostly","partial","off"]}},required:["member","note"]}},
+    {name:"log_checkin",description:"Log how one person feels.",input_schema:{type:"object",properties:{member:{type:"string",enum:MEMBERS},note:{type:"string"},mood:{type:"string",enum:["great","good","ok","low","poor"]},energy:{type:"string",enum:["high","medium","low"]}},required:["member","note"]}},
     {name:"log_weight",description:"Log one person's weight measurement.",input_schema:{type:"object",properties:{member:{type:"string",enum:MEMBERS},weight_kg:{type:"number"},date:{type:"string"}},required:["member","weight_kg"]}},
     {name:"swap_meal",description:"Replace one meal in the shared weekly menu (use it also to tailor ONE person's plate: keep the dish, change only their portion and set its variant).",input_schema:{type:"object",properties:{date:{type:"string",description:"ISO date of the day"},slot:{type:"string",enum:["breakfast","am_snack","lunch","pm_snack","dinner"]},meal:{type:"object",description:"Full replacement meal object with name, time, prep_ahead, cook_minutes_day_of, image_prompt, video_url, prep_steps, day_of_steps, food_category, and portions.diego/diana each with ingredients[], macros and variant (null, or {name, changes, reason, steps[]} when that person's plate differs)"}},required:["date","slot","meal"]}},
     {name:"attach_video",description:"Attach a recipe video URL to a meal.",input_schema:{type:"object",properties:{date:{type:"string"},slot:{type:"string"},video_url:{type:"string"}},required:["date","slot","video_url"]}},
@@ -2162,7 +2159,7 @@ async function handleCoachTool(name,input){
   } else if(name==="log_weight"){
     const m=input.member; if(!MEMBERS.includes(m)){ addCoachMsg("coach","Whose weight was that?"); return; }
     const date=input.date||todayISO();
-    try{ await saveWeight(m, date, input.weight_kg); addCoachMsg("coach",`✓ Logged ${input.weight_kg} kg for ${personName(m)}.`); renderHomeStats(); }catch(e){ addCoachMsg("coach",`Couldn't save weight: ${e.message}`); }
+    try{ await saveWeight(m, date, input.weight_kg); addCoachMsg("coach",`✓ Logged ${input.weight_kg} kg for ${personName(m)}.`); }catch(e){ addCoachMsg("coach",`Couldn't save weight: ${e.message}`); }
   } else if(name==="swap_meal"){
     // Targeted change — only this one slot/date is touched. Resolve the date robustly so a
     // mis-guessed ISO date doesn't hit the wrong (or a passed) day.
@@ -2242,8 +2239,10 @@ async function regenerateShopping(){
     else qtyStr=a.parsed.kind!=="unknown"?formatQty(a.parsed.amount,a.parsed.kind,a.parsed.unit):(a.parsed.raw||"");
     return {name_en:a.name_en, name_fr:m.name_fr||a.name_en, qty:qtyStr, aisle:m.aisle||"General", stores:m.stores||["Cactus","Auchan","Delhaize"], have_at_home};
   });
+  // Keep what was added in the store — it isn't part of any meal.
+  ((shoppingList&&shoppingList.items)||[]).filter(it=>it.added&&!agg[(it.name_en||"").toLowerCase()]).forEach(it=>items.push(it));
   items.sort((x,y)=>(x.aisle||"").localeCompare(y.aisle||""));
-  const out={week_of:(shoppingList&&shoppingList.week_of)||todayISO(), currency:"EUR", est_total_eur:(shoppingList&&shoppingList.est_total_eur)||null, items};
+  const out={swaps:(shoppingList&&shoppingList.swaps)||[], week_of:(shoppingList&&shoppingList.week_of)||todayISO(), currency:"EUR", est_total_eur:(shoppingList&&shoppingList.est_total_eur)||null, items};
   await ghWrite("shopping_list.json", out, `Regenerate shopping`); shoppingList=out;
 }
 
@@ -2358,7 +2357,7 @@ function macrosCardHtml(who, withStructure){
   if(m.client_name) html+=`<div style="font-size:11px;color:var(--faint);margin-bottom:6px">Plan for ${esc(m.client_name)}</div>`;
   html+=`<div class="kcal-hero">
       <div class="box"><div class="num">${kcal}</div><div class="cap">kcal / day</div></div>
-      <div class="box water"><div class="num">${m.hydration_l!=null?m.hydration_l:2.0} L</div><div class="cap">water / day</div></div></div>`;
+</div>`;
   html+=row("#2C5A4E","Protein",P,P*4)
        +row("#CFA24C","Carbs",C,C*4)
        +row("#C26B4E","Fat",F,F*9)
@@ -2378,7 +2377,7 @@ function macrosCardHtml(who, withStructure){
         const txt=c.portion||(c.options||[]).join(" / ");
         return `<div class="ms-comp"><span class="ms-cat">${esc(c.category||"")}:</span> ${esc(txt)}</div>`;
       }).join("");
-      const w=meal.water_ml?` · 💧 ${meal.water_ml} ml`:"";
+      const w="";
       return `<div class="ms-meal"><div class="ms-head"><span class="ms-name">${esc(meal.label||meal.slot||"")}</span>
         <span class="ms-time">${esc(meal.time||"")}${w}</span></div>${comps}</div>`;
     }).join("");

@@ -405,3 +405,18 @@ Diana" picker: every screen shows the whole household, and people only differ wh
   AthleteIQ's `sync_activities.yml` (needs a token with Actions access to `training-ai`), waits for
   `workouts.json` to change, and records the result in `training_sync.json`. Without that permission it just
   re-reads the latest `workouts.json`.
+
+### Leaner app: no gamification, cooking log, in-store swaps (build 40)
+
+- **Removed:** compliance %, streaks, milestone badges and the hydration tracker (and the plan's water figures in
+  the app). Diet compliance is tracked in Coach Claudio (AthleteIQ); the coach no longer scores adherence.
+  Weight and goals stay (Progress tab).
+- **"I made this"** — one household button per meal (Home and the meal sheet) writing `cooked_log.json`. It only
+  feeds the fridge/pantry: `inventory.py` (nightly) subtracts every member's portion of each made meal once
+  (`inv_applied`). Old per-person `users/<m>/meal_logs.json` ticks are still applied; nothing new is written there.
+- **Shopping list, in the store:** "Add something…" appends an extra item (`added: true`, ticked as bought, kept
+  when the list is rebuilt). ⇄ on any item records "bought X instead": the list entry is renamed
+  (`replaced_from`), and only the upcoming meals whose ingredients use it are rewritten — ingredient names, dish
+  name, steps, image prompt, variants — plus matching prep-plan text. Portions/macros are kept; any new clash
+  with someone's preferences is flagged. No regeneration and no Claude call. Swaps are logged in
+  `shopping_list.json → swaps`.

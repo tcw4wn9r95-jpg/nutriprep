@@ -28,6 +28,7 @@ jobs:
           git config user.email "lea@nutriprep.local"
           git add \
             inventory.json \
+            cooked_log.json \
             users/diego/meal_logs.json \
             users/diana/meal_logs.json
           git diff --staged --quiet && echo "No inventory changes." && exit 0
