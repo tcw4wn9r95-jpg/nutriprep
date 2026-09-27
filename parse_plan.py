@@ -2,10 +2,11 @@
 NutriPrep — nutritionist plan parser.
 Reads a photo (JPEG/PNG) or text-based PDF of the nutritionist's meal plan,
 sends it to Claude vision, and extracts:
-  - per-member daily calorie & macro targets
-  - meal structure, prescribed and restricted foods
+  - per-member daily calorie & macro targets (as stated, or estimated from portions)
+  - meal structure, prescribed and restricted foods, sugar guidance
   - hydration target
-Writes nutrition_plan.json (shared) and fans targets into users/<m>/macro_targets.json.
+Writes nutrition_plan.json (shared), then targets.py derives EVERY member's daily
+targets from it plus their own goals (users/<m>/macro_targets.json).
 """
 import os, json, base64, sys
 from pathlib import Path
@@ -104,6 +105,7 @@ Return ONLY a JSON object (no prose, no markdown fences) with this exact schema:
   "prescribed_foods": [],
   "restricted_foods": [],
   "hydration_l": 2.0,
+  "sugar_guidance": {{"free_sugar_max_g": null, "free_sugar_max_pct_energy": null, "notes": ""}},
   "nutritionist_notes": ""
 }}
 
@@ -122,6 +124,9 @@ Rules:
 - `prescribed_foods`: foods/groups the plan tells the client to eat regularly.
 - `restricted_foods`: the "avoid / limit" list (e.g. Spanish "Evitar Consumir"), translated.
 - `hydration_l`: total daily water in litres. If per-meal water amounts are given, SUM them.
+- `sugar_guidance`: what the plan says about sugar. `free_sugar_max_g` / `free_sugar_max_pct_energy` ONLY if
+  the document states a number (else null). `notes`: the plan's sugar rules in plain English (e.g. "no added
+  sugar or sweets; fruit only whole, max 2 pieces/day"), translated; empty if the plan says nothing about sugar.
 - `nutritionist_notes`: any other clinical notes, verbatim then translated (max 600 chars).
 - `per_member_targets`: daily calorie & macro targets.
     • If the document states explicit kcal/macro numbers, use them exactly and set
@@ -135,38 +140,6 @@ Rules:
 - `confidence`: 0.0 (very unsure) to 1.0 (clearly legible and complete).
 - Return ONLY valid JSON. No prose. No markdown.
 """
-
-
-def derive_macros_from_goals(member: str) -> dict:
-    """Derive macro targets using Mifflin-St Jeor if not provided by nutritionist."""
-    goals_path = BASE / "users" / member / "goals.json"
-    if not goals_path.exists():
-        return {}
-    with open(goals_path) as f:
-        goals = json.load(f)
-    weight = goals.get("start_weight_kg", 75)
-    goal_type = goals.get("goal_type", "maintain")
-    # Simple Mifflin-St Jeor approximation (sedentary baseline)
-    # BMR ≈ 10*w + 6.25*h - 5*a ± s  — we don't have height/age, use weight-only proxy
-    bmr = 10 * weight + 500  # rough proxy without height/age
-    tdee = bmr * 1.4  # light activity
-    if goal_type == "weight_loss":
-        kcal = round(tdee - 400)
-    elif goal_type == "muscle_gain":
-        kcal = round(tdee + 200)
-    else:
-        kcal = round(tdee)
-    protein_g = round(weight * 1.8)
-    fat_g = round(kcal * 0.28 / 9)
-    carbs_g = round((kcal - protein_g * 4 - fat_g * 9) / 4)
-    return {
-        "kcal": kcal,
-        "protein_g": protein_g,
-        "carbs_g": max(carbs_g, 50),
-        "fat_g": fat_g,
-        "fiber_g": 28,
-        "source": "derived",
-    }
 
 
 def main():
@@ -233,40 +206,15 @@ def main():
         json.dump(plan, f, indent=2)
     print(f"Saved {plan_path}")
 
-    # Shared plan context surfaced on every member's macro card (and to generate.py).
-    estimated = bool(plan.get("targets_estimated"))
-    shared_ctx = {
-        "hydration_l": plan.get("hydration_l", 2.0),
-        "methodology": plan.get("methodology", ""),
-        "prescribed_foods": plan.get("prescribed_foods", []),
-        "restricted_foods": plan.get("restricted_foods", []),
-        "client_name": plan.get("client_name", ""),
-        "nutritionist_notes": plan.get("nutritionist_notes", ""),
-        "updated_on": date.today().isoformat(),
-    }
-
-    # Fan targets into per-user macro_targets.json
-    for member in MEMBERS:
-        targets = (plan.get("per_member_targets") or {}).get(member)
-        if not targets or all(v is None for v in targets.values()):
-            print(f"  {member}: targets not in plan — deriving from goals...")
-            targets = derive_macros_from_goals(member)
-        else:
-            targets = {k: v for k, v in targets.items() if v is not None}
-            targets["source"] = "nutritionist (estimated from plan)" if estimated else "nutritionist"
-            # The detailed nutritionist plan applies to the named client only.
-            targets.update(shared_ctx)
-
-        if targets:
-            out = BASE / "users" / member / "macro_targets.json"
-            with open(out, "w") as f:
-                json.dump(targets, f, indent=2)
-            print(f"  Saved {out} ({targets.get('kcal')} kcal · source: {targets.get('source')})")
+    # Every member's daily targets come from this plan + their own goals.
+    import targets
+    for member, t in targets.derive_all().items():
+        print(f"  {member}: {t['kcal']} kcal · free sugar ≤{t['free_sugar_g']} g · {t['basis']}")
 
     if confidence < 0.6:
         print(
             "\n⚠ LOW CONFIDENCE (< 60%). Some values may be missing or unclear."
-            "\nPlease review nutrition_plan.json and update users/<m>/macro_targets.json if needed."
+            "\nPlease review nutrition_plan.json (targets are recalculated from it by targets.py)."
         )
 
     # Remove upload after parse to avoid re-parse on next run

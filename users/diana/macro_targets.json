@@ -1,8 +1,65 @@
 {
-  "kcal": 1550,
-  "protein_g": 110,
-  "carbs_g": 155,
-  "fat_g": 50,
-  "fiber_g": 28,
-  "source": "placeholder"
+  "kcal": 1600,
+  "protein_g": 121,
+  "fat_g": 57,
+  "fiber_g": 26,
+  "carbs_g": 152,
+  "free_sugar_g": 20,
+  "water_ml": 2000,
+  "source": "nutritionist + goals",
+  "sources": {
+    "kcal": "goals: weight loss at ~0.3 kg/week",
+    "protein_g": "nutritionist plan's split",
+    "fat_g": "nutritionist plan's split",
+    "fiber_g": "nutritionist plan's split",
+    "carbs_g": "nutritionist plan's split",
+    "free_sugar_g": "plan limits sugar \u2192 WHO 5% of energy",
+    "water_ml": "reference (EFSA, drinks)"
+  },
+  "basis": "Energy from goals: weight loss at ~0.3 kg/week; macro split from the nutritionist plan",
+  "body": {
+    "weight_kg": 65.0,
+    "height_cm": 165,
+    "age": 40,
+    "sex": null,
+    "activity_factor": 1.375
+  },
+  "missing_body": [
+    "height_cm",
+    "age",
+    "sex",
+    "activity_level"
+  ],
+  "goal": {
+    "goal_type": "weight_loss",
+    "target_weight_kg": 60.0,
+    "target_rate_kg_per_week": 0.3,
+    "target_date": "2026-10-01"
+  },
+  "sugar": {
+    "free_sugar_max_g": 20,
+    "rule": "plan limits sugar \u2192 WHO 5% of energy",
+    "total_sugar": "no target \u2014 fruit, milk and plain yogurt sugars are fine"
+  },
+  "updated_on": "2026-09-27",
+  "methodology": "Glucose Goddess \u2014 structure meals to blunt blood-glucose spikes: eat vegetables/fibre first, keep breakfast savoury and protein-rich, add a little vinegar or fat to carbs, and move gently after eating.",
+  "prescribed_foods": [
+    "vegetables/fibre first at each meal (Glucose Goddess)",
+    "savoury, protein-rich breakfast",
+    "lean proteins: chicken, fish, turkey, pork loin, beef",
+    "legumes: lentils, chickpeas, hummus",
+    "whole grains and sourdough over refined starches",
+    "nuts: almonds, walnuts, cashews, pistachios",
+    "Greek yogurt and kefir"
+  ],
+  "restricted_foods": [
+    "juices",
+    "soups",
+    "fried or breaded foods",
+    "chocolate or sweets",
+    "alcoholic beverages"
+  ],
+  "client_name": "Diego Casares",
+  "nutritionist_notes": "Portion/exchange-based plan following the Glucose Goddess approach. Daily calorie and macro figures are estimated from a mid-range choice in each meal exchange; the food categories, portions and allowed alternatives are the authority. 500 ml of water with each of the four meals (~2 L/day). Original document in Spanish (clinic: Alvear 1).",
+  "plan_client": false
 }

@@ -733,7 +733,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v43 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v44 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -757,7 +757,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 43; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 44; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1516,7 +1516,8 @@ function renderJourney(){
 function dishPayload(day, meal){
   const budget=Object.fromEntries(MEMBERS.map(m=>{ const target=(people[m].macros||{}).kcal||null;
     const others=day.meals.filter(x=>x!==meal).reduce((a,x)=>a+(+((((x.portions||{})[m]||{}).macros||{}).kcal)||0),0);
-    return [m,{daily_target_kcal:target, other_meals_that_day_kcal:others}]; }));
+    const fsOthers=day.meals.filter(x=>x!==meal).reduce((a,x)=>a+(+((((x.portions||{})[m]||{}).macros||{}).free_sugar_g)||0),0);
+    return [m,{daily_target_kcal:target, other_meals_that_day_kcal:others, free_sugar_max_g:(people[m].macros||{}).free_sugar_g??null, free_sugar_other_meals_g:fsOthers}]; }));
   return {ref:`${day.date}|${meal.slot}`, day:day.day, date:day.date, slot:meal.slot, time:meal.time, name:meal.name,
     food_category:meal.food_category||"", prep_ahead:!!meal.prep_ahead, cook_minutes_day_of:meal.cook_minutes_day_of||0,
     image_prompt:meal.image_prompt||"", prep_steps:meal.prep_steps||[], day_of_steps:meal.day_of_steps||meal.recipe||[], portions:meal.portions||{}, day_budget:budget};
@@ -1533,7 +1534,7 @@ async function anotherDish(){
 Design a DIFFERENT dish for the same meal slot that:
 - fits the slot and time, and isn't already on this week's menu;
 - reuses ingredients that are already on the shopping list where it can, so the shop barely changes;
-- sizes each person's portion so their day lands near daily_target_kcal given other_meals_that_day_kcal, with realistic macros per portion;
+- sizes each person's portion so their day lands near daily_target_kcal given other_meals_that_day_kcal, with realistic macros per portion (sugar_g = all sugars, free_sugar_g = added sugar/honey/syrups/juice), keeping their day's free sugar under free_sugar_max_g;
 - respects everyone's preferences below (never a kitchen allergen; give a person a variant if the shared dish breaks their rules; aim for the same plate for everyone);
 - is safe for its day: poultry/red meat batch-prepped Sunday keep 3 days (Monday = day 1), fish 2, cooked rice 1 — otherwise prep_ahead false and cook it on the day.
 Return exactly one dish with the given ref, prep_batches [] and a one-sentence summary.
@@ -1910,13 +1911,13 @@ function prepBatchesMentioning(name){
   return ((prepPlan&&prepPlan.batches)||[]).filter(b=>mentions([b.title,...(b.steps||[]),...(b.yields||[])].join("\n"), name));
 }
 function recomputeDayTotals(day){
-  MEMBERS.forEach(mem=>{ const t={kcal:0,protein_g:0,carbs_g:0,fat_g:0,fiber_g:0}; day.meals.forEach(m=>{ const mac=((m.portions||{})[mem]||{}).macros||{}; Object.keys(t).forEach(k=>t[k]+=Math.round(+mac[k]||0)); }); (day.day_totals=day.day_totals||{})[mem]=t; });
+  MEMBERS.forEach(mem=>{ const t={kcal:0,protein_g:0,carbs_g:0,fat_g:0,fiber_g:0,sugar_g:0,free_sugar_g:0}; day.meals.forEach(m=>{ const mac=((m.portions||{})[mem]||{}).macros||{}; Object.keys(t).forEach(k=>t[k]+=Math.round(+mac[k]||0)); }); (day.day_totals=day.day_totals||{})[mem]=t; });
 }
 function _swapSchema(){
   const num={type:"number"};
   const portion={type:"object",additionalProperties:false,required:["ingredients","macros","variant"],properties:{
     ingredients:{type:"array",items:{type:"object",additionalProperties:false,required:["item","qty"],properties:{item:{type:"string"},qty:{type:"string"}}}},
-    macros:{type:"object",additionalProperties:false,required:["kcal","protein_g","carbs_g","fat_g","fiber_g"],properties:{kcal:num,protein_g:num,carbs_g:num,fat_g:num,fiber_g:num}},
+    macros:{type:"object",additionalProperties:false,required:["kcal","protein_g","carbs_g","fat_g","fiber_g","sugar_g","free_sugar_g"],properties:{kcal:num,protein_g:num,carbs_g:num,fat_g:num,fiber_g:num,sugar_g:num,free_sugar_g:num}},
     variant:{anyOf:[{type:"null"},{type:"object",additionalProperties:false,required:["name","changes","reason","steps"],properties:{name:{type:"string"},changes:{type:"string"},reason:{type:"string"},steps:{type:"array",items:{type:"string"}}}}]}}};
   const strs={type:"array",items:{type:"string"}};
   return {type:"object",additionalProperties:false,required:["meals","prep_batches","summary"],properties:{
@@ -1933,7 +1934,8 @@ async function claudeSwap(oldName, newName, boughtQty, targets, batches){
   const dishes=targets.map(({day,meal})=>{
     const budget=Object.fromEntries(MEMBERS.map(m=>{ const target=(people[m].macros||{}).kcal||null;
       const others=day.meals.filter(x=>x!==meal).reduce((a,x)=>a+(+((((x.portions||{})[m]||{}).macros||{}).kcal)||0),0);
-      return [m,{daily_target_kcal:target, other_meals_that_day_kcal:others}]; }));
+      const fsOthers=day.meals.filter(x=>x!==meal).reduce((a,x)=>a+(+((((x.portions||{})[m]||{}).macros||{}).free_sugar_g)||0),0);
+      return [m,{daily_target_kcal:target, other_meals_that_day_kcal:others, free_sugar_max_g:(people[m].macros||{}).free_sugar_g??null, free_sugar_other_meals_g:fsOthers}]; }));
     return {ref:`${day.date}|${meal.slot}`, day:day.day, date:day.date, slot:meal.slot, time:meal.time,
       name:meal.name, food_category:meal.food_category||"", prep_ahead:!!meal.prep_ahead, cook_minutes_day_of:meal.cook_minutes_day_of||0,
       image_prompt:meal.image_prompt||"", prep_steps:meal.prep_steps||[], day_of_steps:meal.day_of_steps||meal.recipe||[], portions:meal.portions||{}, day_budget:budget};
@@ -1944,7 +1946,7 @@ Only the dishes and prep batches given to you use the missing ingredient — rew
 For every dish:
 - Replace the old ingredient with the new one in every portion that had it. Keep the dish concept, but update the name, steps, cooking times/temperatures and image prompt so the recipe is right for the new ingredient.
 - Keep the other ingredients. Only add a new one if the recipe genuinely needs it (e.g. a different marinade base).
-- Recalculate each portion's macros (kcal, protein, carbs, fat, fibre) from its ingredients. Adjust quantities so each person's day stays close to daily_target_kcal given other_meals_that_day_kcal — mainly by resizing the swapped ingredient.
+- Recalculate each portion's macros (kcal, protein, carbs, fat, fibre, sugar_g = all sugars, free_sugar_g = added sugar/honey/syrups/juice, not whole fruit or milk) from its ingredients, keeping each person's day of free sugar under free_sugar_max_g. Adjust quantities so each person's day stays close to daily_target_kcal given other_meals_that_day_kcal — mainly by resizing the swapped ingredient.
 - Respect everyone's food preferences below. If the new ingredient breaks a person's rules, keep it off their plate and give them a variant (name, changes, reason, steps). Otherwise variant stays as given (null if none). Never include a kitchen allergen.
 - Food safety for Sunday batch-prep, counting Monday as day 1: poultry and red meat keep 3 days, fish 2, cooked rice 1. If the new ingredient can't be batch-prepped for that day, set prep_ahead false and cook it on the day.
 - Return every dish with the same ref.
@@ -2610,18 +2612,20 @@ function renderMacrosCard(){
 }
 function macrosCardHtml(who, withStructure){
   const m=people[who].macros||{};
-  const sharedNote=who===ATHLETE?`<div style="font-size:11.5px;color:var(--muted);margin-top:8px">🔗 Coach Claudio uses these as ${esc(personName(who))}'s daily targets and adds training fuel on top for completed workouts.</div>`:"";
+  const sharedNote=who===ATHLETE?`<div style="font-size:11.5px;color:var(--muted);margin-top:8px">🔗 Coach Claudio reads these (sugar and water included) plus the plan's rules as ${esc(personName(who))}'s daily targets, and adds training fuel on top for completed workouts.</div>`:"";
   if(!m.kcal){
     return `<div class="card-title">${whoLabel(who)} — nutrition targets</div>
       <div style="font-size:13px;color:var(--muted)">No targets yet. Upload the nutritionist's plan above — Coach Léa reads it (translating if needed) and the detailed macros appear here.</div>`;
   }
   const src=m.source||"estimate";
-  const badge = src.startsWith("nutritionist (estimated")
+  const badge = src==="nutritionist + goals"
+      ? {cls:"plan", txt:"Nutritionist + goals"}
+    : src.startsWith("nutritionist (estimated")
       ? {cls:"est", txt:"Estimated from plan"}
     : src.startsWith("nutritionist")
       ? {cls:"plan", txt:"From nutritionist"}
-    : src==="derived"
-      ? {cls:"derived", txt:"Derived from goals"}
+    : src==="derived"||src==="derived from goals"
+      ? {cls:"derived", txt:"From goals"}
       : {cls:"derived", txt:esc(src)};
   const kcal=m.kcal, P=m.protein_g||0, C=m.carbs_g||0, F=m.fat_g||0, Fib=m.fiber_g||0;
   const wt=lastWeight(who);
@@ -2639,8 +2643,11 @@ function macrosCardHtml(who, withStructure){
   html+=row("#2C5A4E","Protein",P,P*4)
        +row("#CFA24C","Carbs",C,C*4)
        +row("#C26B4E","Fat",F,F*9)
-       +row("#7E9B70","Fibre",Fib,null,Fib?"goal":"");
+       +row("#7E9B70","Fibre",Fib,null,Fib?"goal":"")
+       +(m.free_sugar_g!=null?row("#B25A3E","Free sugar",`≤ ${m.free_sugar_g}`,null,"max"):"");
   if(wt) html+=`<div style="font-size:11px;color:var(--faint);margin-top:8px">≈ ${perKg(P)} protein at ${wt} kg · % = share of daily calories</div>`;
+  if(m.basis) html+=`<div style="font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.45">${esc(m.basis)}.${m.sugar&&m.sugar.rule?` Free sugar: ${esc(m.sugar.rule)}; total sugar has no target (whole fruit, milk and plain yogurt are fine).`:""}</div>`;
+  if((m.missing_body||[]).length) html+=`<div class="warn-badge" style="margin-top:8px">${esc(personName(who))}'s ${esc(m.missing_body.map(x=>x.replace("_cm","").replace("_level","").replace("_"," ")).join(", "))} ${m.missing_body.length>1?"are":"is"} missing, so the energy estimate uses defaults. <span class="link-muted" onclick="startSetup()">Tell Coach Léa</span></div>`;
   if(m.methodology) html+=`<div class="sub-title">Method</div><div style="font-size:13px;color:var(--ink);line-height:1.45">${esc(m.methodology)}</div>`;
   const presc=m.prescribed_foods||[], avoid=m.restricted_foods||[];
   if(presc.length){ html+=`<div class="sub-title">Eat regularly</div><div style="display:flex;flex-wrap:wrap;gap:6px">${presc.map(f=>`<span class="chip">${esc(f)}</span>`).join("")}</div>`; }
@@ -2784,22 +2791,6 @@ Always be evidence-based (EFSA/WHO). Reassure that healthy loss is a gentle 0.25
   finally{ if(send){ send.disabled=false; send.style.opacity="1"; } }
 }
 
-function deriveMacros(g){
-  const w=g.start_weight_kg, h=g.height_cm, age=g.age, sex=g.sex;
-  if(!w||!h||!age||!sex)return null;
-  const bmr=10*w+6.25*h-5*age+(sex==="male"?5:-161);
-  const af={sedentary:1.2,light:1.375,moderate:1.55,active:1.725}[g.activity_level||"light"]||1.375;
-  const tdee=bmr*af;
-  let kcal=tdee;
-  if(g.goal_type==="weight_loss")kcal=tdee-(g.target_rate_kg_per_week||0.5)*1100;
-  else if(g.goal_type==="muscle_gain")kcal=tdee+250;
-  const floor=sex==="male"?1500:1200;
-  kcal=Math.max(floor,Math.round(kcal/10)*10);
-  const tw=g.target_weight_kg||w;
-  const protein=Math.round(1.8*tw), fat=Math.round(0.8*tw);
-  let carbs=Math.round((kcal-protein*4-fat*9)/4); if(carbs<50)carbs=50;
-  return {kcal:Math.round(kcal),protein_g:protein,carbs_g:carbs,fat_g:fat,fiber_g:30,source:"derived"};
-}
 
 async function saveSetup(input){
   const token=cfg("gh_token");
@@ -2811,7 +2802,7 @@ async function saveSetup(input){
     try{ await ghWrite("household.json",merged,"Household setup via Coach Léa"); householdData=merged; }
     catch(e){ ok=false; setupMsg("coach","Couldn't save household prefs: "+e.message); }
   }
-  const ppl=input.people||{};
+  const ppl=input.people||{}; let goalsChanged=false;
   for(const m of MEMBERS){
     const p=ppl[m]; if(!p) continue;
     // Food preferences → preferences.json (the same place the preferences screen edits)
@@ -2822,12 +2813,34 @@ async function saveSetup(input){
       g.name=personName(m); g.set_on=todayISO();
       try{ await ghWrite(`users/${m}/goals.json`,g,`Goals via Coach Léa (${m})`); people[m].goals=g; }
       catch(e){ ok=false; setupMsg("coach",`Couldn't save ${personName(m)}'s goals: `+e.message); }
-      const macros=deriveMacros(g);
-      if(macros){ try{ await ghWrite(`users/${m}/macro_targets.json`,macros,`Derived macros (${m})`); people[m].macros=macros; }catch(_){} }
+      goalsChanged=true;
     }
   }
   try{ await flushPrefs(); }catch(e){ ok=false; setupMsg("coach","Couldn't save food preferences: "+e.message); }
+  // Targets are always nutritionist plan + goals, worked out in one place (targets.py).
+  if(goalsChanged){ const r=await dispatchTargets(); if(r.ok){ setupMsg("coach","🧮 Recalculating everyone's daily targets from the nutritionist's plan and your goals — they'll show in Settings in a minute."); startTargetsPoll(); } }
   return ok;
+}
+
+// Recalculate every member's targets (nutritionist plan + goals) — targets.yml.
+async function dispatchTargets(){
+  const token=cfg("gh_token"); if(!token) return {ok:false, error:"no_token"};
+  try{
+    const r=await fetch(`https://api.github.com/repos/${GITHUB_REPO}/actions/workflows/targets.yml/dispatches`,{
+      method:"POST",headers:{Authorization:`Bearer ${token}`,Accept:"application/vnd.github+json","Content-Type":"application/json"},
+      body:JSON.stringify({ref:GITHUB_BRANCH})});
+    if(r.status===204) return {ok:true};
+    const d=await r.json().catch(()=>({})); return {ok:false, error:d.message||("HTTP "+r.status)};
+  }catch(e){ return {ok:false, error:e.message}; }
+}
+let _targetsPollTimer=null;
+function startTargetsPoll(){
+  if(_targetsPollTimer) clearInterval(_targetsPollTimer);
+  const before=MEMBERS.map(m=>JSON.stringify(people[m].macros||{})).join("|"); let tries=0;
+  _targetsPollTimer=setInterval(async()=>{
+    tries++; await loadUserData();
+    if(MEMBERS.map(m=>JSON.stringify(people[m].macros||{})).join("|")!==before || tries>=16){ clearInterval(_targetsPollTimer); _targetsPollTimer=null; try{ renderMacrosCard(); renderGoals(); }catch(_){} }
+  }, 15000);
 }
 
 // Dispatch the generate workflow. Returns {ok:true} or {ok:false, error}.

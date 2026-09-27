@@ -1,0 +1,31 @@
+name: "NutriPrep — Recalculate daily targets"
+
+# Dispatched by the app whenever someone's goals change (Coach Léa setup), and
+# runnable by hand. targets.py = nutritionist plan + each member's goals.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  targets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Recalculate targets
+        run: python targets.py
+      - name: Commit targets
+        run: |
+          git config user.name "Coach Léa"
+          git config user.email "lea@nutriprep.local"
+          git add users/*/macro_targets.json
+          git diff --staged --quiet && echo "Targets unchanged." && exit 0
+          git commit -m "Recalculate daily targets $(date +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase origin main && git push && break; sleep 3; done

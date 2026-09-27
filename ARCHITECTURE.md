@@ -453,3 +453,17 @@ weekday; the plan controls shrink to a one-line "Plan · week of … · Refresh 
 - **Reminders open the right screen:** every event carries a `tab` (shop→shopping, prep→prep, cook/snack→today,
   weigh_in→progress, plan_ready→menu); `notify.py` sends it, `sw.js` opens `dashboard.html?tab=…` or tells an open
   window to switch. `generate.py` adds a "Next week's menu is ready" reminder when the Friday plan lands.
+
+### NutriPrep owns the plan — targets from the nutritionist plan + each person's goals (build 44)
+
+- `parse_plan.py` reads the nutritionist's plan (now also its `sugar_guidance`) and hands off to `targets.py`.
+- `targets.py` derives EVERY member's `users/<m>/macro_targets.json`: energy = the plan's stated number for its
+  client, otherwise the member's goals (Mifflin-St Jeor × activity; loss at the chosen rate, ≤25% deficit,
+  floors); macros = the plan's split applied to that energy (protein kept within 1.2–2.2 g/kg), else reference;
+  free sugar = the plan's own limit, else WHO 5% when the plan restricts sugar, else 10%; water = plan hydration
+  for its client, else EFSA. Each file carries `sources`, `basis`, `body`, `missing_body`, `sugar` and the plan's
+  rules. It runs after a plan upload, via `targets.yml` when goals change (Léa's setup no longer computes its own
+  numbers), and at the start of every Friday `generate.py` run.
+- Sugar is planned: portion macros carry `sugar_g`/`free_sugar_g`, each person's day stays under their ceiling
+  (`plan_status.sugar_warnings`), and Claude swaps / "Another dish" respect it too.
+- Coach Claudio reads the plan, targets (sugar and water included), rules, meal structure and body from here.

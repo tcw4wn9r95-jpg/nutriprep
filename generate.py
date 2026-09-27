@@ -80,6 +80,15 @@ if (BASE / "preferences.json").exists():
             _prefs_file = None
 prefs = tailoring.load_preferences(_prefs_file, household, learned_prefs, MEMBERS)
 
+# ── Daily targets: nutritionist plan + each member's goals (targets.py) ────────
+# Recalculated every run so new goals and weigh-ins are always reflected.
+import targets as _targets
+try:
+    for _m, _t in _targets.derive_all(BASE, MEMBERS).items():
+        print(f"Targets {_m}: {_t['kcal']} kcal · free sugar ≤{_t['free_sugar_g']} g · {_t['basis']}")
+except Exception as _e:
+    print(f"  ! Targets not recalculated ({_e}); using the saved ones.")
+
 # ── Load per-user data ────────────────────────────────────────────────────────
 users: dict = {}
 for member in MEMBERS:
@@ -175,19 +184,14 @@ for member in MEMBERS:
             for c in recent_ci[-5:]
         )
 
-    # Get macro targets from nutrition plan if available
-    plan_targets = (nutrition_plan.get("per_member_targets") or {}).get(member) or {}
-    if plan_targets and plan_targets.get("kcal"):
-        macro_src = "nutritionist plan"
-        mt = {**mt, **{k: v for k, v in plan_targets.items() if v is not None}}
-    else:
-        macro_src = mt.get("source", "estimate")
+    # macro_targets.json is already the nutritionist plan + this member's goals (targets.py).
+    macro_src = mt.get("basis") or mt.get("source", "estimate")
 
     member_blocks.append(f"""
 ### {member.capitalize()}
 Goal: {goal_type.replace('_', ' ').title()} · Target: {target_w} kg at −{rate} kg/wk
 Weight: {trend}
-Daily targets ({macro_src}): {mt.get('kcal','?')} kcal · {mt.get('protein_g','?')}g protein · {mt.get('carbs_g','?')}g carbs · {mt.get('fat_g','?')}g fat · {mt.get('fiber_g','?')}g fibre{ci_text}""")
+Daily targets ({macro_src}): {mt.get('kcal','?')} kcal · {mt.get('protein_g','?')}g protein · {mt.get('carbs_g','?')}g carbs · {mt.get('fat_g','?')}g fat · {mt.get('fiber_g','?')}g fibre · FREE SUGAR at most {mt.get('free_sugar_g','?')}g ({(mt.get('sugar') or {}).get('rule', 'WHO')}){ci_text}""")
 
 # ── Nutritionist guidelines ───────────────────────────────────────────────────
 plan_notes = []
@@ -217,6 +221,8 @@ if nutrition_plan.get("meals"):
             opts = c.get("portion") or " / ".join(c.get("options", []))
             struct.append(f"    - {c.get('category', '')} (e.g. {opts})")
     plan_notes.append("\n".join(struct))
+if (nutrition_plan.get("sugar_guidance") or {}).get("notes"):
+    plan_notes.append("Sugar rules from the nutritionist (hard rule): " + nutrition_plan["sugar_guidance"]["notes"])
 if nutrition_plan.get("nutritionist_notes"):
     plan_notes.append("Notes: " + nutrition_plan["nutritionist_notes"])
 nutrition_block = "\n".join(plan_notes) if plan_notes else "No nutritionist plan uploaded yet — use individual macro targets as authority."
@@ -425,6 +431,7 @@ Planned sessions:
 5. **Luxembourg ingredients only**: all items must be available in Luxembourg supermarkets (Cactus, Auchan, Delhaize, Aldi, Lidl). Provide French name in parentheses on first mention.
 6. **Evidence-based**: align with EFSA Dietary Reference Values and WHO guidelines. Sustainable weight loss ≈ 0.25–0.75 kg/week; no crash diets, detoxes, or unproven supplements.
 7. **Hit each member's daily macro targets** (±10% tolerance). Use `day_totals` to verify.
+   **Sugar is part of the plan:** every portion's macros carry `sugar_g` (all sugars, as a label prints them) and `free_sugar_g` (added sugar + honey, syrups, juice — NOT the sugar naturally in whole fruit, milk or plain yogurt). Each person's day of `free_sugar_g` must stay under THEIR free-sugar ceiling above; follow the nutritionist's sugar rules.
 8. Each week: include oily fish at least twice; legumes on at least 3 days; ≥ 5 portions of veg per day per person.
 9. **BUILD EVERY DISH FROM THE LOCKED FRESH PALETTE ABOVE. This is a HARD limit, not a guideline.**
    - Use ONLY the fresh proteins and fresh vegetables/fruits listed in the LOCKED FRESH PALETTE section. Do NOT introduce any fresh protein or fresh vegetable that isn't on those lists. If a dish idea needs something off-list, redesign it to use the palette.
@@ -494,20 +501,20 @@ Output a ```json-menu block. Schema (FOLLOW EXACTLY):
         "portions": {{
           "diego": {{
             "ingredients": [{{"item": "Greek yogurt", "qty": "200 g"}}, {{"item": "Mixed berries", "qty": "100 g"}}],
-            "macros": {{"kcal": 380, "protein_g": 28, "carbs_g": 40, "fat_g": 12, "fiber_g": 4}},
+            "macros": {{"kcal": 380, "protein_g": 28, "carbs_g": 40, "fat_g": 12, "fiber_g": 4, "sugar_g": 14, "free_sugar_g": 0}},
             "variant": null
           }},
           "diana": {{
             "ingredients": [{{"item": "Greek yogurt", "qty": "150 g"}}, {{"item": "Mixed berries", "qty": "80 g"}}],
-            "macros": {{"kcal": 300, "protein_g": 22, "carbs_g": 32, "fat_g": 9, "fiber_g": 3}},
+            "macros": {{"kcal": 300, "protein_g": 22, "carbs_g": 32, "fat_g": 9, "fiber_g": 3, "sugar_g": 11, "free_sugar_g": 0}},
             "variant": null
           }}
         }}
       }}
     ],
     "day_totals": {{
-      "diego": {{"kcal": {diego_kcal}, "protein_g": 0, "carbs_g": 0, "fat_g": 0}},
-      "diana": {{"kcal": {diana_kcal}, "protein_g": 0, "carbs_g": 0, "fat_g": 0}}
+      "diego": {{"kcal": {diego_kcal}, "protein_g": 0, "carbs_g": 0, "fat_g": 0, "free_sugar_g": 0}},
+      "diana": {{"kcal": {diana_kcal}, "protein_g": 0, "carbs_g": 0, "fat_g": 0, "free_sugar_g": 0}}
     }}
   }}
 ]
@@ -709,6 +716,18 @@ preference_warnings = tailoring.check_portions(menu_json, prefs, MEMBERS)
 for _w in preference_warnings:
     print(f"  ⚠ {_w['day']} {_w['slot']} '{_w['meal']}': {_w['member']}'s '{_w['ingredient']}' vs {_w['rule']}")
 tailored_meals = tailoring.annotate_differences(menu_json, MEMBERS, prefs)
+# Free sugar over a person's ceiling on any day: flag it (the app shows the day).
+sugar_warnings = []
+for _d in menu_json:
+    for _m in MEMBERS:
+        _cap = (users[_m].get("macro_targets") or {}).get("free_sugar_g")
+        _fs = sum(float((((_meal.get("portions") or {}).get(_m) or {}).get("macros") or {}).get("free_sugar_g") or 0)
+                  for _meal in _d.get("meals", []))
+        (_d.setdefault("day_totals", {}).setdefault(_m, {}))["free_sugar_g"] = round(_fs)
+        if _cap and _fs > _cap:
+            sugar_warnings.append({"date": _d.get("date"), "member": _m, "free_sugar_g": round(_fs), "ceiling": _cap})
+if sugar_warnings:
+    print(f"  ⚠ Free sugar over the ceiling on {len(sugar_warnings)} person-day(s).")
 overlap = tailoring.overlap_stats(menu_json)
 print(f"Tailoring: {tailored_meals} meal(s) differ per person ({overlap['same_plate_pct']}% same plate), "
       f"{len(preference_warnings)} preference warning(s).")
@@ -1187,6 +1206,7 @@ plan_status = {
     "locked_palette": palette or None,
     "tailored_meals": tailored_meals,
     "overlap": overlap,
+    "sugar_warnings": sugar_warnings,
     "middle_ground": tailoring.middle_ground(prefs, MEMBERS),
     "preference_warnings": preference_warnings,
 }
