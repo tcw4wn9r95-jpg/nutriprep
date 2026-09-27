@@ -416,7 +416,12 @@ Diana" picker: every screen shows the whole household, and people only differ wh
   (`inv_applied`). Old per-person `users/<m>/meal_logs.json` ticks are still applied; nothing new is written there.
 - **Shopping list, in the store:** "Add something…" appends an extra item (`added: true`, ticked as bought, kept
   when the list is rebuilt). ⇄ on any item records "bought X instead": the list entry is renamed
-  (`replaced_from`), and only the upcoming meals whose ingredients use it are rewritten — ingredient names, dish
-  name, steps, image prompt, variants — plus matching prep-plan text. Portions/macros are kept; any new clash
-  with someone's preferences is flagged. No regeneration and no Claude call. Swaps are logged in
+  (`replaced_from`), and only the upcoming meals whose ingredients use it change. Swaps are logged in
   `shopping_list.json → swaps`.
+- **Swaps go through Claude, scoped to the affected dishes (build 41):** the app sends `claude-opus-5` (structured
+  JSON output) ONLY the dishes that use the old ingredient, each with every person's portion and that day's
+  calorie budget (daily target + the other meals' kcal), plus the prep batches that mention it. Claude rewrites
+  those dishes (name, steps, times, ingredients, variants) and recalculates each portion's macros; the app
+  recomputes only those days' `day_totals`, updates the batches, and puts any newly needed ingredient on the
+  list (`by_swap`). No plan regeneration. Without an API key, or if the call fails, it falls back to a local
+  name swap and says calories weren't recalculated.

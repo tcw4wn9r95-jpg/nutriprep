@@ -703,7 +703,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v40 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v41 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -727,7 +727,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 40; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 41; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1169,11 +1169,11 @@ const PREF_OPS_SCHEMA={type:"object",additionalProperties:false,required:["opera
     action:{type:"string",enum:["add","remove"]},
     item:{type:"string"}}}},
   reply:{type:"string"}}};
-async function callClaudeJSON(system, userText, schema){
+async function callClaudeJSON(system, userText, schema, opts={}){
   const key=cfg("anthropic_key"); if(!key) throw new Error("Add your Anthropic API key in Settings first.");
   const headers={"Content-Type":"application/json","x-api-key":key,"anthropic-version":"2023-06-01","anthropic-dangerous-direct-browser-access":"true"};
-  const body={model:"claude-opus-5",max_tokens:4000,system,messages:[{role:"user",content:userText}],
-    output_config:{effort:"low",format:{type:"json_schema",schema}}};
+  const body={model:"claude-opus-5",max_tokens:opts.maxTokens||4000,system,messages:[{role:"user",content:userText}],
+    output_config:{effort:opts.effort||"low",format:{type:"json_schema",schema}}};
   // Server-side fallback re-runs a declined request on another model within the same call.
   let res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{...headers,"anthropic-beta":"server-side-fallback-2026-07-01"},body:JSON.stringify({...body,fallbacks:"default"})});
   let data=await res.json().catch(()=>({}));
@@ -1679,8 +1679,10 @@ function itemCost(it){
 }
 
 // ── In the store: add extras, or swap something you couldn't find ───────────────
-// A swap is a local, deterministic edit: only the meals/prep steps that use the old
-// ingredient are rewritten — no plan regeneration, no Claude call.
+// A swap never regenerates the plan: Claude gets ONLY the dishes (and prep batches)
+// that use the old ingredient, rewrites them and recalculates their calories; only
+// those days' totals are recomputed. Without a key (or if the call fails) it falls
+// back to a local name swap (replaceIngredient).
 let _swapOpen=null;
 function _reEsc(x){ return x.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"); }
 function _matchCase(src, rep){ return src && src[0]===src[0].toUpperCase() && src[0]!==src[0].toLowerCase() ? rep.charAt(0).toUpperCase()+rep.slice(1) : rep.charAt(0).toLowerCase()+rep.slice(1); }
@@ -1700,8 +1702,7 @@ function swapText(t, pairs){
 }
 function replaceIngredient(oldName, newName){
   const oldKey=_normItem(oldName), pairs=swapPairs(oldName,newName), touched=[];
-  const today=todayISO();
-  (weekMenu||[]).filter(d=>!d.carried_over && d.date>=today).forEach(day=>day.meals.forEach(meal=>{
+  mealsUsing(oldName).forEach(({day, meal})=>{
     let hit=false;
     MEMBERS.forEach(m=>{ const por=(meal.portions||{})[m]; if(!por) return;
       (por.ingredients||[]).forEach(ing=>{ if(ing&&typeof ing==="object"&&_normItem(ing.item||"")===oldKey){ ing.item=newName; hit=true; } });
@@ -1710,9 +1711,9 @@ function replaceIngredient(oldName, newName){
     if(!hit) return;
     meal.name=swapText(meal.name,pairs); meal.image_prompt=swapText(meal.image_prompt,pairs);
     ["prep_steps","day_of_steps","recipe"].forEach(k=>{ if(Array.isArray(meal[k])) meal[k]=meal[k].map(x=>swapText(x,pairs)); });
-    meal.swapped=[...(meal.swapped||[]),{from:oldName,to:newName,on:today}];
+    meal.swapped=[...(meal.swapped||[]),{from:oldName,to:newName,on:todayISO(),by:"local"}];
     touched.push({day, meal});
-  }));
+  });
   let prepChanged=false;
   if(prepPlan&&Array.isArray(prepPlan.batches)) prepPlan.batches.forEach(b=>{
     const before=JSON.stringify(b);
@@ -1722,25 +1723,126 @@ function replaceIngredient(oldName, newName){
   });
   return {touched, prepChanged};
 }
+// Upcoming meals (this plan, not carried-over days) that use an ingredient.
+function mealsUsing(name){
+  const key=_normItem(name), today=todayISO(), out=[];
+  (weekMenu||[]).filter(d=>!d.carried_over && d.date>=today).forEach(day=>day.meals.forEach(meal=>{
+    if(MEMBERS.some(m=>ingNames((meal.portions||{})[m]).some(n=>_normItem(n)===key))) out.push({day, meal});
+  }));
+  return out;
+}
+function mentions(text, name){ return new RegExp(`(^|[^A-Za-zÀ-ÿ])${_reEsc(name.trim())}(?![A-Za-zÀ-ÿ])`,"i").test(text||""); }
+function prepBatchesMentioning(name){
+  return ((prepPlan&&prepPlan.batches)||[]).filter(b=>mentions([b.title,...(b.steps||[]),...(b.yields||[])].join("\n"), name));
+}
+function recomputeDayTotals(day){
+  MEMBERS.forEach(mem=>{ const t={kcal:0,protein_g:0,carbs_g:0,fat_g:0,fiber_g:0}; day.meals.forEach(m=>{ const mac=((m.portions||{})[mem]||{}).macros||{}; Object.keys(t).forEach(k=>t[k]+=Math.round(+mac[k]||0)); }); (day.day_totals=day.day_totals||{})[mem]=t; });
+}
+function _swapSchema(){
+  const num={type:"number"};
+  const portion={type:"object",additionalProperties:false,required:["ingredients","macros","variant"],properties:{
+    ingredients:{type:"array",items:{type:"object",additionalProperties:false,required:["item","qty"],properties:{item:{type:"string"},qty:{type:"string"}}}},
+    macros:{type:"object",additionalProperties:false,required:["kcal","protein_g","carbs_g","fat_g","fiber_g"],properties:{kcal:num,protein_g:num,carbs_g:num,fat_g:num,fiber_g:num}},
+    variant:{anyOf:[{type:"null"},{type:"object",additionalProperties:false,required:["name","changes","reason","steps"],properties:{name:{type:"string"},changes:{type:"string"},reason:{type:"string"},steps:{type:"array",items:{type:"string"}}}}]}}};
+  const strs={type:"array",items:{type:"string"}};
+  return {type:"object",additionalProperties:false,required:["meals","prep_batches","summary"],properties:{
+    meals:{type:"array",items:{type:"object",additionalProperties:false,
+      required:["ref","name","image_prompt","food_category","prep_ahead","cook_minutes_day_of","prep_steps","day_of_steps","portions"],
+      properties:{ref:{type:"string"},name:{type:"string"},image_prompt:{type:"string"},food_category:{type:"string"},prep_ahead:{type:"boolean"},cook_minutes_day_of:num,prep_steps:strs,day_of_steps:strs,
+        portions:{type:"object",additionalProperties:false,required:MEMBERS,properties:Object.fromEntries(MEMBERS.map(m=>[m,portion]))}}}},
+    prep_batches:{type:"array",items:{type:"object",additionalProperties:false,required:["id","title","steps","yields"],properties:{id:{type:"string"},title:{type:"string"},steps:strs,yields:strs}}},
+    summary:{type:"string"}}};
+}
+// Claude rewrites ONLY the dishes that used the old ingredient (and the prep batches
+// that mention it), recalculating each portion's macros against that day's budget.
+async function claudeSwap(oldName, newName, boughtQty, targets, batches){
+  const dishes=targets.map(({day,meal})=>{
+    const budget=Object.fromEntries(MEMBERS.map(m=>{ const target=(people[m].macros||{}).kcal||null;
+      const others=day.meals.filter(x=>x!==meal).reduce((a,x)=>a+(+((((x.portions||{})[m]||{}).macros||{}).kcal)||0),0);
+      return [m,{daily_target_kcal:target, other_meals_that_day_kcal:others}]; }));
+    return {ref:`${day.date}|${meal.slot}`, day:day.day, date:day.date, slot:meal.slot, time:meal.time,
+      name:meal.name, food_category:meal.food_category||"", prep_ahead:!!meal.prep_ahead, cook_minutes_day_of:meal.cook_minutes_day_of||0,
+      image_prompt:meal.image_prompt||"", prep_steps:meal.prep_steps||[], day_of_steps:meal.day_of_steps||meal.recipe||[], portions:meal.portions||{}, day_budget:budget};
+  });
+  const system=`You adapt a household's weekly meal plan after a supermarket substitution. One person cooks for everyone; each person has their own portion.
+Only the dishes and prep batches given to you use the missing ingredient — rewrite exactly those, nothing else.
+
+For every dish:
+- Replace the old ingredient with the new one in every portion that had it. Keep the dish concept, but update the name, steps, cooking times/temperatures and image prompt so the recipe is right for the new ingredient.
+- Keep the other ingredients. Only add a new one if the recipe genuinely needs it (e.g. a different marinade base).
+- Recalculate each portion's macros (kcal, protein, carbs, fat, fibre) from its ingredients. Adjust quantities so each person's day stays close to daily_target_kcal given other_meals_that_day_kcal — mainly by resizing the swapped ingredient.
+- Respect everyone's food preferences below. If the new ingredient breaks a person's rules, keep it off their plate and give them a variant (name, changes, reason, steps). Otherwise variant stays as given (null if none). Never include a kitchen allergen.
+- Food safety for Sunday batch-prep, counting Monday as day 1: poultry and red meat keep 3 days, fish 2, cooked rice 1. If the new ingredient can't be batch-prepped for that day, set prep_ahead false and cook it on the day.
+- Return every dish with the same ref.
+For every prep batch: update its title, steps and yields for the new ingredient.
+summary: one short sentence on what changed, including notable calorie changes per person.
+
+Food preferences:
+${prefsSummaryText()}`;
+  const payload={old_ingredient:oldName, new_ingredient:newName, bought_qty:boughtQty||null, people:MEMBERS.map(m=>({id:m,name:personName(m)})),
+    dishes, prep_batches:batches.map(b=>({id:b.id,title:b.title,steps:b.steps||[],yields:b.yields||[]}))};
+  return callClaudeJSON(system, JSON.stringify(payload), _swapSchema(), {maxTokens:16000, effort:"medium"});
+}
+function applyClaudeSwap(out, targets, batches, oldName, newName){
+  const byRef=Object.fromEntries((out.meals||[]).map(m=>[m.ref,m]));
+  const changes=[];
+  targets.forEach(({day,meal})=>{
+    const r=byRef[`${day.date}|${meal.slot}`]; if(!r) return;
+    const before=Object.fromEntries(MEMBERS.map(m=>[m,+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0]));
+    ["name","image_prompt","food_category","prep_ahead","cook_minutes_day_of","prep_steps","day_of_steps"].forEach(k=>{ if(r[k]!==undefined) meal[k]=r[k]; });
+    MEMBERS.forEach(m=>{ const p=(r.portions||{})[m]; if(p&&Array.isArray(p.ingredients)) meal.portions[m]={ingredients:p.ingredients, macros:p.macros, variant:p.variant||null}; });
+    meal.swapped=[...(meal.swapped||[]),{from:oldName,to:newName,on:todayISO(),by:"claude"}];
+    const after=Object.fromEntries(MEMBERS.map(m=>[m,+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0]));
+    changes.push({day, meal, before, after});
+  });
+  const pairs=swapPairs(oldName,newName);
+  (out.prep_batches||[]).forEach(r=>{ const b=batches.find(x=>x.id===r.id); if(!b) return; b.title=r.title; b.steps=r.steps; b.yields=r.yields;
+    if(b.day_of_assembly&&typeof b.day_of_assembly==="object") Object.keys(b.day_of_assembly).forEach(k=>b.day_of_assembly[k]=swapText(b.day_of_assembly[k],pairs)); });
+  return changes;
+}
+// Anything the rewritten dishes now need that isn't on the list, in the pantry or
+// elsewhere on the menu goes on the list (not ticked).
+function addMissingIngredients(meals, newName){
+  const known=new Set([...(shoppingList.items||[]).map(i=>_normItem(i.name_en||"")), ...((inventory&&inventory.items)||[]).map(i=>_normItem(i.name_en||"")), _normItem(newName)]);
+  (weekMenu||[]).forEach(d=>d.meals.forEach(m=>{ if(!meals.includes(m)) MEMBERS.forEach(p=>ingNames((m.portions||{})[p]).forEach(n=>known.add(_normItem(n)))); }));
+  const added=[];
+  meals.forEach(m=>MEMBERS.forEach(p=>(((m.portions||{})[p]||{}).ingredients||[]).forEach(ing=>{ const k=_normItem(ing.item||""); if(k&&!known.has(k)){ known.add(k); added.push(ing.item); shoppingList.items.push({name_en:ing.item,name_fr:"",qty:ing.qty||"",aisle:"Added by swap",stores:[],added:true,by_swap:true,have_at_home:false}); } })));
+  return added;
+}
 async function swapShopItem(oldName){
   const nameEl=document.getElementById("swap-name"), qtyEl=document.getElementById("swap-qty");
   const newName=(nameEl&&nameEl.value||"").trim(), newQty=(qtyEl&&qtyEl.value||"").trim();
   if(!newName){ nameEl&&nameEl.focus(); return; }
   const it=(shoppingList.items||[]).find(x=>x.name_en===oldName); if(!it) return;
-  const {touched, prepChanged}=replaceIngredient(oldName, newName);
+  const targets=mealsUsing(oldName), batches=prepBatchesMentioning(oldName);
+  _swapOpen=null; renderShopping();
+  let changes=null, localNote="", added=[], summary="";
+  if(targets.length && cfg("anthropic_key")){
+    showShopNote(`Claude is updating ${targets.length} dish${targets.length>1?"es":""} that use ${oldName}…`);
+    try{ const out=await claudeSwap(oldName,newName,newQty,targets,batches); summary=out.summary||""; changes=applyClaudeSwap(out,targets,batches,oldName,newName); }
+    catch(e){ localNote=` Claude couldn't update them (${e.message}), so only the names were swapped — calories not recalculated.`; }
+  } else if(targets.length) localNote=" Names swapped only — add your Anthropic key in Settings to have Claude adapt the recipes and recalculate calories.";
+  let prepChanged=!!(changes&&batches.length);
+  if(!changes && targets.length){ const r=replaceIngredient(oldName,newName); prepChanged=r.prepChanged; }
+  if(changes){ changes.forEach(c=>recomputeDayTotals(c.day)); added=addMissingIngredients(changes.map(c=>c.meal), newName); }
   Object.assign(it,{replaced_from:it.replaced_from||oldName, name_en:newName, name_fr:"", qty:newQty||it.qty, line_cost_eur:null, unit_price_eur:null, have_at_home:false});
   delete checkedItems[oldName]; checkedItems[newName]=true; localStorage.setItem("nutriprep_checked",JSON.stringify(checkedItems));
-  shoppingList.swaps=[...(shoppingList.swaps||[]),{at:new Date().toISOString(),from:oldName,to:newName,meals:touched.length}];
-  _swapOpen=null; markMenuDirty();
+  shoppingList.swaps=[...(shoppingList.swaps||[]),{at:new Date().toISOString(),from:oldName,to:newName,meals:targets.length,by:changes?"claude":"local"}];
+  markMenuDirty();
   try{
     await ghWrite("shopping_list.json", shoppingList, `Swap in store: ${oldName} → ${newName}`);
-    if(touched.length) await ghWrite("weekly_menu.json", weekMenu, `Swap ${oldName} → ${newName} in ${touched.length} meal(s)`);
+    if(targets.length) await ghWrite("weekly_menu.json", weekMenu, `Swap ${oldName} → ${newName} in ${targets.length} dish(es)`);
     if(prepChanged) await ghWrite("prep_plan.json", prepPlan, `Swap ${oldName} → ${newName} in prep`);
   }catch(e){ alert("Couldn't save the swap: "+e.message); }
   refreshMenuViews();
-  const where=touched.map(x=>`${x.day.day} ${(SLOT_LABELS[x.meal.slot]||{label:x.meal.slot}).label.toLowerCase()}`);
-  const clashes=touched.flatMap(x=>mealConflicts(x.meal).map(c=>c.text));
-  showShopNote(`✓ ${oldName} → ${newName}. ${touched.length?`Updated ${touched.length} meal${touched.length>1?"s":""} (${where.join(", ")})${prepChanged?" and the prep plan":""}; portions and macros kept as planned.`:"It wasn't used by name in any upcoming meal, so only the list changed."}${clashes.length?` ⚠ Check: ${clashes.join("; ")}`:""}`, !!clashes.length);
+  const slotName=m=>(SLOT_LABELS[m.slot]||{label:m.slot}).label.toLowerCase();
+  const where=targets.map(x=>`${x.day.day} ${slotName(x.meal)}`);
+  const kcal=changes?changes.map(c=>`${c.day.day} ${slotName(c.meal)}: ${MEMBERS.map(m=>`${personName(m)} ${c.before[m]}→${c.after[m]}`).join(", ")} kcal`).join("; "):"";
+  const clashes=targets.flatMap(x=>mealConflicts(x.meal).map(c=>c.text));
+  showShopNote(`✓ ${oldName} → ${newName}. `+(targets.length
+      ? (changes?`Claude updated ${changes.length} dish${changes.length>1?"es":""} (${where.join(", ")})${prepChanged?" and the prep plan":""}. ${summary} ${kcal}.${added.length?` Added to the list: ${added.join(", ")}.`:""}`:`Updated ${where.join(", ")}.`)+localNote
+      : "It isn't used by name in any upcoming dish, so only the list changed.")
+    +(clashes.length?` ⚠ Check: ${clashes.join("; ")}`:""), !!clashes.length);
 }
 async function addShopItem(){
   const n=document.getElementById("shop-add-name"), q=document.getElementById("shop-add-qty");
@@ -1764,7 +1866,7 @@ function showShopNote(t, warn){ const el=document.getElementById("shop-note"); i
 function storeBoxHtml(){
   return `<div class="card" style="padding:12px 14px;margin-bottom:12px"><div class="card-title" style="margin-bottom:6px">🛒 In the store</div>
     <div class="padd"><input id="shop-add-name" placeholder="Add something…" onkeydown="if(event.key==='Enter')addShopItem()"><input id="shop-add-qty" placeholder="qty" style="flex:0 0 72px" onkeydown="if(event.key==='Enter')addShopItem()"><button onclick="addShopItem()">Add</button></div>
-    <div style="font-size:11.5px;color:var(--muted);margin-top:6px">Couldn't find something? Tap ⇄ on it and say what you bought instead — only the meals that use it are updated.</div></div><div id="shop-note"></div>`;
+    <div style="font-size:11.5px;color:var(--muted);margin-top:6px">Couldn't find something? Tap ⇄ on it and say what you bought instead — Claude adapts only the dishes that use it and recalculates their calories.</div></div><div id="shop-note"></div>`;
 }
 
 function shopItemRow(it){
@@ -2219,8 +2321,7 @@ async function applyMenuChange(date,slot,newMeal){
   const idx=day.meals.findIndex(m=>m.slot===slot);
   if(!newMeal.slot)newMeal.slot=slot; if(!newMeal.time && idx>=0)newMeal.time=day.meals[idx].time;
   if(idx>=0)day.meals[idx]=newMeal; else day.meals.push(newMeal);
-  // recompute day_totals for both members
-  ["diego","diana"].forEach(mem=>{ let t={kcal:0,protein_g:0,carbs_g:0,fat_g:0}; day.meals.forEach(m=>{ const mac=((m.portions||{})[mem]||{}).macros||{}; t.kcal+=mac.kcal||0; t.protein_g+=mac.protein_g||0; t.carbs_g+=mac.carbs_g||0; t.fat_g+=mac.fat_g||0; }); (day.day_totals=day.day_totals||{})[mem]=t; });
+  recomputeDayTotals(day);
   await ghWrite("weekly_menu.json",weekMenu,`Swap ${slot} ${date}`);
   await regenerateShopping();
   markMenuDirty(); refreshMenuViews();
