@@ -68,6 +68,18 @@ if (BASE / "learned_preferences.json").exists():
         except Exception:
             learned_prefs = {}
 
+# The household's food preferences: kitchen-wide allergies plus each person's own
+# intolerances / won't-eat list / diet style / loves (tailoring.py documents the shape).
+import tailoring
+_prefs_file = None
+if (BASE / "preferences.json").exists():
+    with open(BASE / "preferences.json") as f:
+        try:
+            _prefs_file = json.load(f) or None
+        except Exception:
+            _prefs_file = None
+prefs = tailoring.load_preferences(_prefs_file, household, learned_prefs, MEMBERS)
+
 # ── Load per-user data ────────────────────────────────────────────────────────
 users: dict = {}
 for member in MEMBERS:
@@ -203,17 +215,13 @@ else:
     history_block = "  No history yet — first week, prioritise variety and simplicity."
 
 # ── Allergens & preferences ───────────────────────────────────────────────────
-allergens = household.get("allergies", []) + household.get("intolerances", [])
-dislikes = list(household.get("dislikes", [])) + list(learned_prefs.get("avoid", []))
+# Allergies (anyone's) stay out of the whole kitchen. Everything else is personal and
+# only changes that person's plate — see tailoring.prompt_block.
+allergens = tailoring.kitchen_allergens(prefs)
+dislikes = tailoring._clean_list(prefs["household"]["intolerances"] + prefs["household"]["avoid"])
 cuisines = household.get("cuisines_loved", [])
-
-# Free-form things learned from chat: foods they love, manual swaps, general notes.
-_pref_lines = []
-if learned_prefs.get("prefer"):
-    _pref_lines.append("Foods/styles they have told Coach Léa they LOVE — lean into these: " + ", ".join(learned_prefs["prefer"]))
-if learned_prefs.get("notes"):
-    _pref_lines.append("Notes from past manual changes (respect the spirit — don't re-suggest dishes they swapped away): " + "; ".join(learned_prefs["notes"]))
-learned_block = "\n".join(f"  {l}" for l in _pref_lines) if _pref_lines else "  Nothing learned from chat yet."
+preferences_block = tailoring.prompt_block(prefs, MEMBERS)
+middle_ground_block = tailoring.middle_ground_block(prefs, MEMBERS)
 
 # Fridge-safety windows, sourced from food_safety.py so the prompt never drifts from
 # the deterministic enforcement that runs afterwards.
@@ -281,9 +289,12 @@ Your ONLY job right now is to choose a SMALL shared FRESH-INGREDIENT PALETTE tha
 
 Hard constraints:
 - Allergies (NEVER include): {', '.join(allergens) if allergens else 'none'}
-- Dislikes / avoid (never include): {', '.join(dislikes) if dislikes else 'none'}
+- Everyone avoids (never include): {', '.join(dislikes) if dislikes else 'none'}
 - Preferred cuisines: {', '.join(cuisines) if cuisines else 'varied'}
-{('- The household has ASKED FOR these — honour them in the palette (e.g. if they want more beef and less chicken, pick beef as a protein and do NOT pick chicken; if they love tilapia/salmon, include them): ' + '; '.join(learned_prefs.get('prefer', []))) if learned_prefs.get('prefer') else ''}
+- Each person's preferences (honour loves in the palette — e.g. if they want more beef and less chicken, pick beef and NOT chicken). Where one person can't eat something the other can, the palette must ALSO hold the swap-in they need (e.g. one plant protein for a vegetarian, a lactose-free dairy for a lactose intolerance), so their plate can be adapted with minimal extra cooking:
+{preferences_block}
+- Middle ground — pick the palette so most dishes can be shared as-is:
+{middle_ground_block}
 - The palette must be able to deliver: oily fish twice/week, legumes on ≥3 days, ≥5 veg portions/day each, and hit ~{diego_kcal} kcal (Diego) / ~{diana_kcal} kcal (Diana).
 {('- Nutritionist guidance to respect: ' + nutrition_block) if nutrition_block and nutrition_block.strip() else ''}
 
@@ -353,9 +364,12 @@ prompt = f"""You are Coach Léa, a registered dietitian coach for a household in
 Generate a complete, evidence-based weekly meal plan for the week of {next_monday.strftime('%d %B %Y')} (Monday–Sunday).
 
 ## HOUSEHOLD
-Two people: Diego and Diana. They eat the SAME dishes, just different portion sizes.
-Allergies (ABSOLUTE — never include): {', '.join(allergens) if allergens else 'none'}
-Dislikes (avoid): {', '.join(dislikes) if dislikes else 'none'}
+Two people: Diego and Diana. ONE cook (the household admin) makes everything, so plan ONE shared menu.
+By default both eat the SAME dish in different portion sizes. A person's plate differs ONLY where their own
+restrictions below require it — then give them a minimal adaptation of the same dish (swap one component,
+set their portion aside before adding the ingredient), never a whole second recipe unless unavoidable.
+Allergies (ABSOLUTE — never include in ANY portion): {', '.join(allergens) if allergens else 'none'}
+Everyone avoids: {', '.join(dislikes) if dislikes else 'none'}
 Preferred cuisines: {', '.join(cuisines) if cuisines else 'varied'}
 Weekly food budget: €{budget} (shopping for both)
 Max Sunday batch-prep time: {max_prep} min active
@@ -381,14 +395,18 @@ Diego's calorie need changes day to day with training. On training days, raise h
 ## PAST WEEKS (avoid repeating the same dishes)
 {history_block}
 
-## LEARNED FROM CHAT (the household corrected the plan — honour this)
-{learned_block}
+## FOOD PREFERENCES — PER PERSON (the household set these; honour them exactly)
+{preferences_block}
+
+## MIDDLE GROUND — MAXIMISE THE SHARED PLATE
+{middle_ground_block}
 
 ## LOCKED FRESH PALETTE (chosen first — the whole week MUST be built from this)
 {palette_block}
 
 ## YOUR RULES
-1. **One menu for the household, two sets of portions.** Each meal has a `portions.diego` and `portions.diana` with their own ingredient quantities and macros. The dish is the same; only amounts differ.
+1. **One menu for the household, two sets of portions.** Each meal has a `portions.diego` and `portions.diana` with their own ingredient quantities and macros. The dish is the same; normally only amounts differ.
+   - **Tailor per person where their preferences require it.** Never put an ingredient on a person's plate that is on their intolerance / won't-eat list or breaks their diet style. When the shared dish conflicts, adapt ONLY that person's portion: their `ingredients` list must show what they actually eat, and add `"variant": {{"name": "their dish name", "changes": "Tofu instead of chicken", "reason": "Diana is vegetarian", "steps": ["extra/different day-of step for their plate"]}}`. Leave `"variant": null` when the plate is the same dish. Follow the MIDDLE GROUND section: build the shared dish on the common base and give a person their extra (e.g. meat for a non-vegetarian, cheese for the one who isn't lactose-intolerant) as an add-on — so variants stay rare, small and cheap to cook.
 2. **All 5 slots every day**: breakfast, am_snack, lunch, pm_snack, dinner — no exceptions.
 3. **Snacks must be genuinely healthy**: whole foods (fruit, veg, nuts, yogurt, hummus), never ultra-processed.
 4. **Maximise Sunday batch-prep**: set `prep_ahead: true` for anything that can be cooked Sunday. Keep `cook_minutes_day_of` ≤ {max_cook} for all main meals (assembly/reheating only on weekdays).
@@ -464,11 +482,13 @@ Output a ```json-menu block. Schema (FOLLOW EXACTLY):
         "portions": {{
           "diego": {{
             "ingredients": [{{"item": "Greek yogurt", "qty": "200 g"}}, {{"item": "Mixed berries", "qty": "100 g"}}],
-            "macros": {{"kcal": 380, "protein_g": 28, "carbs_g": 40, "fat_g": 12, "fiber_g": 4}}
+            "macros": {{"kcal": 380, "protein_g": 28, "carbs_g": 40, "fat_g": 12, "fiber_g": 4}},
+            "variant": null
           }},
           "diana": {{
             "ingredients": [{{"item": "Greek yogurt", "qty": "150 g"}}, {{"item": "Mixed berries", "qty": "80 g"}}],
-            "macros": {{"kcal": 300, "protein_g": 22, "carbs_g": 32, "fat_g": 9, "fiber_g": 3}}
+            "macros": {{"kcal": 300, "protein_g": 22, "carbs_g": 32, "fat_g": 9, "fiber_g": 3}},
+            "variant": null
           }}
         }}
       }}
@@ -482,7 +502,7 @@ Output a ```json-menu block. Schema (FOLLOW EXACTLY):
 ```
 
 ### SECTION 2: SHOPPING JSON
-Output a ```json-shopping block. Pre-aggregate ALL ingredients for BOTH members across ALL 7 days. Each item = total household quantity needed for the week. Include French name.
+Output a ```json-shopping block. Pre-aggregate ALL ingredients for BOTH members across ALL 7 days (including any per-person variant ingredients). Each item = total household quantity needed for the week. Include French name.
 
 ```json-shopping
 [
@@ -517,7 +537,7 @@ Output a ```json-prep block. List Sunday batch steps in logical cooking order (g
 ```
 Keep each prep batch's `video_url` as "" (empty). Make `steps` detailed and beginner-friendly.
 
-Generate all 7 days. Be specific and realistic. Verify that each person's `day_totals` sum to within ±10% of their kcal target.
+Generate all 7 days. Be specific and realistic. Verify that each person's `day_totals` sum to within ±10% of their kcal target, and that no portion contains anything on that person's restriction list.
 """
 
 print("Stage 2: building the week from the locked palette...")
@@ -661,7 +681,24 @@ for item in shopping_json:
             _write_error("NutriPrep plan generation FAILED: allergen safety check.", msg)
             sys.exit(msg)
 
+# Every portion too — anyone's allergy is kept out of the whole kitchen.
+_allergen_hits = tailoring.find_allergen_hits(menu_json, prefs, MEMBERS)
+if _allergen_hits:
+    msg = "SAFETY VIOLATION: allergen in the menu! Aborting.\n" + "\n".join(_allergen_hits)
+    _write_error("NutriPrep plan generation FAILED: allergen safety check.", msg)
+    sys.exit(msg)
+
 print("Allergen check passed.")
+
+# Personal restrictions (intolerances, won't-eat, diet style): flag, don't abort — the
+# app shows a warning on the meal so the cook can adjust that person's plate.
+preference_warnings = tailoring.check_portions(menu_json, prefs, MEMBERS)
+for _w in preference_warnings:
+    print(f"  ⚠ {_w['day']} {_w['slot']} '{_w['meal']}': {_w['member']}'s '{_w['ingredient']}' vs {_w['rule']}")
+tailored_meals = tailoring.annotate_differences(menu_json, MEMBERS, prefs)
+overlap = tailoring.overlap_stats(menu_json)
+print(f"Tailoring: {tailored_meals} meal(s) differ per person ({overlap['same_plate_pct']}% same plate), "
+      f"{len(preference_warnings)} preference warning(s).")
 
 # ── Post-process shopping list (enrich + inventory-aware) ────────────────────
 from lux_products import enrich_item
@@ -1053,6 +1090,8 @@ def build_menu_md() -> str:
                 f"- {em} **{meal.get('name','')}** ({meal.get('time','')}) — "
                 f"Diego {dg.get('kcal','?')} kcal · Diana {dn.get('kcal','?')} kcal"
             )
+            for _m, _txt in (meal.get("differences") or {}).items():
+                lines.append(f"  - ↳ *Different for {_m.capitalize()}:* {_txt}")
         tot = day.get("day_totals", {})
         td, tn = tot.get("diego", {}), tot.get("diana", {})
         lines.append(f"  - **Day totals** — Diego {td.get('kcal','?')} kcal, Diana {tn.get('kcal','?')} kcal")
@@ -1096,6 +1135,10 @@ plan_status = {
     "fresh_shop_items": sum(1 for it in shopping_sorted if not it.get("staple")),
     "pantry_staple_items": sum(1 for it in shopping_sorted if it.get("staple")),
     "locked_palette": palette or None,
+    "tailored_meals": tailored_meals,
+    "overlap": overlap,
+    "middle_ground": tailoring.middle_ground(prefs, MEMBERS),
+    "preference_warnings": preference_warnings,
 }
 with open(BASE / "plan_status.json", "w") as f:
     json.dump(plan_status, f, indent=2)

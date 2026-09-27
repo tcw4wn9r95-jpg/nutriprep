@@ -33,6 +33,7 @@ jobs:
           git config user.email "lea@nutriprep.local"
           git add \
             notif_schedule.json \
+            push_subscriptions.json \
             users/diego/push_subscriptions.json \
             users/diana/push_subscriptions.json
           git diff --staged --quiet && exit 0

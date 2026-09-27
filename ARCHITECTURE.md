@@ -343,3 +343,48 @@ Tabs:
 - Storing uploaded plan images in a public repo — consider a private repo or stripping the image after parse.
 - `lux_products.py` / `food_safety.py` start curated-but-small; grow over weeks. Nutritionist plan remains
   the clinical authority — the app never overrides it, only operationalises it.
+
+## v3: household mode (one cook, per-person plates)
+
+NutriPrep is now run by **one household admin who cooks for everyone**. There is no "I'm Diego / I'm
+Diana" picker: every screen shows the whole household, and people only differ where it matters —
+**food restrictions** and **portions**.
+
+- **Preferences** live in `preferences.json` (shape documented in `tailoring.py`): an "everyone" section
+  plus, per person, `allergies`, `intolerances`, `avoid` (won't eat), `love`, `notes` and a `diet_style`,
+  and a `history` log of every add/remove with its source (app, meal 👍/👎, Coach Léa, setup). Until the app
+  first saves it, the older household-wide fields (`household.json` allergies/intolerances/dislikes/diet_style
+  and `learned_preferences.json`) are folded into "everyone" so nothing is lost. The app edits it from the
+  🥕 **Food preferences** screen (header 🏠 chip, Menu tab, Settings): chips, comma-separated quick add,
+  one-tap suggestions, diet style per person, an at-a-glance table and the change history.
+- **Rules.** Anyone's *allergy* is kept out of the whole kitchen (shared pans, cross-contact) and aborts
+  generation if it appears in any portion. Intolerances, won't-eat items and diet style only change *that
+  person's* plate.
+- **Tailored menus.** `generate.py` still plans ONE shared menu, but each `portions.<m>` may carry a
+  `variant` `{name, changes, reason, steps}` when that person's plate is adapted. After generation,
+  `tailoring.check_portions` flags any portion that breaks its owner's restrictions (`meal.warnings`,
+  `plan_status.preference_warnings`) and `tailoring.annotate_differences` records `differs_for` /
+  `differences` (portion *size* alone is not a difference). The app recomputes both live, so coach swaps
+  are covered too, and shows "↳ Diana: tofu instead of chicken" on Home and Menu, plus side-by-side plates
+  in the meal sheet.
+- **Per-person data stays per person**: `users/<m>/goals.json`, `macro_targets.json`, `weight_log.json`
+  (still read by AthleteIQ), `meal_logs.json`, `checkins.json`. Home shows everyone; meals are ticked per
+  person; Progress has a person switcher; hydration is tracked per person on the device.
+- **Shared now**: `coach_history.json` (one household coach; tools take `member` / `who`) and
+  `push_subscriptions.json` (household devices; `notify.py` still honours the old per-member files and sends
+  each device an event once).
+- Tests: `python -m unittest discover -s tests`.
+
+### Middle ground & "Tell Claude" (build 38)
+
+- The preferences screen edits one person at a time (colour-coded tabs, "Editing 👩 Diana — changes Diana's
+  plate only", section titles like "Diana won't eat"), with a side-by-side comparison table.
+- **Middle ground** (`tailoring.middle_ground`, mirrored in the app): the strictest diet becomes the shared base
+  and the others get their extra protein as an add-on; personal intolerances / won't-eat items are kept out of
+  the shared pot; a love that clashes with someone else's rules is served on the side; loves everyone shares, and
+  favourites nobody objects to, are built into shared dishes. `generate.py` puts these rules in both prompts and
+  records `plan_status.overlap` (share of meals that are the same plate); the Menu tab shows the same %.
+- **Tell Claude**: a free-text box at the bottom of the preferences screen. The app sends the comment plus the
+  current lists to `claude-opus-5` with a JSON-schema structured output of `{operations[], reply}`, applies each
+  valid add/remove with source "claude" (visible in Recent changes) and keeps the comment in
+  `preferences.json → comments`.
