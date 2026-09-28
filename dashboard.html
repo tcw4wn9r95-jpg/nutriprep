@@ -787,7 +787,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 45; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 46; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1697,6 +1697,102 @@ async function changeDish(){
   if(res.ok){ openMeal(d.meals.find(m=>m.slot===currentMeal.slot), currentMealDate); const s=document.getElementById("adapt-status"); if(s) s.textContent=res.message; }
   else { st.textContent=res.message; if(btn) btn.disabled=false; }
 }
+// ── Food safety for Sunday prep — mirror of food_safety.py (keep the two in step) ──
+const _FS=(m,c,cool,days,freeze,reheat,note)=>({method:m, container:c, fridge_c:"≤ 4", cool_within_hours:cool, use_within_days:days, freeze_option_days:freeze, reheat_c:reheat, safety_note:note});
+const FOOD_SAFETY={
+  poultry:_FS("refrigerate","airtight container",2,3,60,74,"Cool quickly; never leave poultry at room temp > 2 h. Reheat to 74 °C through."),
+  red_meat:_FS("refrigerate","airtight container",2,3,90,74,"Store in coldest part of fridge. Reheat to 74 °C before serving."),
+  fish_seafood:_FS("refrigerate","airtight container on ice or coldest shelf",1,2,30,74,"Fish spoils fast. Use within 2 days; 1 day is safer. Reheat to 74 °C."),
+  eggs_cooked:_FS("refrigerate","covered container",2,4,null,74,"Hard-boiled eggs: 1 week in shell, 5 days peeled in water. Scrambled/cooked dishes: 3–4 days."),
+  rice:_FS("refrigerate","airtight container — cool within 1 hour",1,1,30,74,"⚠ HIGH RISK: Bacillus cereus spores survive cooking. Cool rice within 1 h, refrigerate, use within 1 day. Never reheat more than once."),
+  grains_pasta:_FS("refrigerate","airtight container",2,3,60,74,"Add a splash of water before reheating to restore moisture. Use within 3 days."),
+  legumes:_FS("refrigerate","airtight container",2,5,90,74,"Cooked beans and lentils keep well. Freeze in portions for quick meals."),
+  vegetables_cooked:_FS("refrigerate","airtight container",2,4,90,74,"Cooked vegetables store well. Roasted veg can be eaten cold in salads."),
+  vegetables_raw_prepped:_FS("refrigerate","airtight container or zip bag",null,4,null,null,"Pre-cut vegetables: store dry, use within 3–4 days. Wash just before eating."),
+  soup_stew:_FS("refrigerate","airtight container",2,4,90,74,"Bring to a rolling boil when reheating. Excellent for freezing in individual portions."),
+  sauce_dairy:_FS("refrigerate","airtight container",2,3,null,74,"Cream-based sauces can separate when frozen; use within 3 days refrigerated."),
+  dairy:_FS("refrigerate","sealed original packaging or airtight container",null,5,null,null,"Check use-by date on packaging. Opened yogurt: 5–7 days."),
+  baked_goods:_FS("store at room temp or refrigerate","airtight container",null,3,60,null,"Most baked goods: 2–3 days at room temp, 1 week refrigerated. Freeze for longer."),
+  generic:_FS("refrigerate","airtight container",2,3,60,74,"Cool within 2 h of cooking, refrigerate, use within 3 days, reheat to 74 °C."),
+};
+const FOOD_ALIASES={chicken:"poultry",turkey:"poultry",duck:"poultry",beef:"red_meat",lamb:"red_meat",pork:"red_meat",meat:"red_meat",
+  fish:"fish_seafood",salmon:"fish_seafood",tuna:"fish_seafood",seafood:"fish_seafood",shrimp:"fish_seafood",eggs:"eggs_cooked",egg:"eggs_cooked",
+  rice:"rice",pasta:"grains_pasta",grains:"grains_pasta",quinoa:"grains_pasta",couscous:"grains_pasta",oats:"grains_pasta",
+  beans:"legumes",lentils:"legumes",chickpeas:"legumes",legume:"legumes",vegetables:"vegetables_cooked",veggies:"vegetables_cooked",
+  roasted_veg:"vegetables_cooked",raw_veg:"vegetables_raw_prepped",soup:"soup_stew",stew:"soup_stew",curry:"soup_stew",
+  sauce:"sauce_dairy",cream_sauce:"sauce_dairy",dairy:"dairy",yogurt:"dairy",cheese:"dairy",bread:"baked_goods",muffin:"baked_goods",cake:"baked_goods"};
+function foodStorage(cat){ let k=String(cat||"generic").toLowerCase().trim().replace(/ /g,"_"); k=FOOD_ALIASES[k]||k; return {...(FOOD_SAFETY[k]||FOOD_SAFETY.generic)}; }
+function _addDays(iso, n){ const d=new Date(iso+"T12:00:00Z"); d.setUTCDate(d.getUTCDate()+n); return d.toISOString().slice(0,10); }
+function _daysBetween(a, b){ return Math.round((new Date(b+"T12:00:00Z")-new Date(a+"T12:00:00Z"))/86400000); }
+// The Sunday before the planned week (prep day), and whether a dish can still use it.
+function prepDateISO(){
+  const wk=(prepPlan&&prepPlan.week_of)||((weekMenu||[]).find(d=>!d.carried_over)||{}).date;
+  return wk?_addDays(wk,-1):null;
+}
+function weekendPrepOpen(day){ const pd=prepDateISO(); return !!pd && !day.carried_over && todayISO()<=pd && day.date>pd; }
+// Existing batches the dish in this slot uses: its storage_ref, or an assembly line for its day naming it.
+function relatedPrepBatches(day, meal){
+  return ((prepPlan&&prepPlan.batches)||[]).filter(b=>(b.id&&b.id===meal.storage_ref) || mentions(((b.day_of_assembly||{})[day.day])||"", meal.name));
+}
+// Merge the Sunday prep Claude returned for one adapted dish into prep_plan.json:
+// related batches are rewritten or dropped, new ones appended; storage and the
+// fridge window come from the rules above, never from the model.
+function applyAdaptPrep(day, meal, returned, related, open){
+  const dayName=day.day, relIds=new Set(related.map(b=>b.id)), notes=[];
+  if(!prepPlan||!Array.isArray(prepPlan.batches)){
+    if(!open||!returned.some(b=>(b.steps||[]).length)) return {changed:false, notes};
+    prepPlan={week_of:_addDays(prepDateISO(),1), prep_day:"Sunday", prep_start_time:"15:00", total_active_minutes:0, batches:[]};
+  }
+  const batches=prepPlan.batches, byId=id=>batches.find(b=>b.id===id);
+  const drop=b=>{ const i=batches.indexOf(b); if(i>=0){ batches.splice(i,1); notes.push(`− ${b.title}`); } };
+  let changed=false;
+  // The old dish no longer uses a related batch Claude didn't return: unhook this day, drop it if nothing else needs it.
+  related.forEach(b=>{ if(returned.some(r=>r.id===b.id)) return;
+    const asm=b.day_of_assembly||{}; if(asm[dayName]!==undefined){ delete asm[dayName]; changed=true; }
+    if(open && !Object.keys(asm).length){ drop(b); changed=true; } });
+  meal.storage_ref=null; delete meal.cook_fresh_for_safety; delete meal.safety_note;
+  if(!open){ meal.prep_ahead=false; return {changed, notes}; }
+  const used=[];
+  returned.forEach(r=>{
+    const existing=relIds.has(r.id)?byId(r.id):null;
+    if(!(r.steps||[]).length){ if(existing){ drop(existing); changed=true; } return; }
+    const b=existing||{id:"", order:0, video_url:"", day_of_assembly:{}};
+    if(!existing){
+      // Never reuse an id a dropped batch or another meal's storage_ref still carries.
+      const taken=new Set([...batches.map(x=>x.id), ...relIds, ...(weekMenu||[]).flatMap(d=>d.meals.map(m=>m.storage_ref))]);
+      let n=batches.length+1; while(taken.has("prep_batch_"+n)) n++;
+      b.id="prep_batch_"+n; b.order=Math.max(batches.length,...batches.map(x=>+x.order||0))+1; batches.push(b); notes.push(`+ ${r.title} (~${Math.round(+r.active_minutes||0)} min)`);
+    } else notes.push(`✎ ${r.title}`);
+    Object.assign(b,{title:r.title, food_category:r.food_category||"generic", active_minutes:Math.round(+r.active_minutes||0), steps:r.steps, yields:r.yields||[]});
+    b.day_of_assembly=b.day_of_assembly||{}; b.day_of_assembly[dayName]=r.day_of_assembly||`${(SLOT_LABELS[meal.slot]||{}).label||meal.slot} — ${meal.name}`;
+    b.storage=foodStorage(b.food_category);
+    used.push(b); changed=true;
+  });
+  // Deterministic fridge window (as enforce_food_safety): past it, cook the dish fresh on the day.
+  const daysAfter=_daysBetween(prepDateISO(), day.date);
+  const unsafe=used.filter(b=>daysAfter>b.storage.use_within_days);
+  unsafe.forEach(b=>{ const cat=b.food_category.replace(/_/g," "), lim=b.storage.use_within_days;
+    // A new batch only this dish would use is pointless if it can't keep that long — don't add it.
+    if(!relIds.has(b.id) && Object.keys(b.day_of_assembly).length===1){ batches.splice(batches.indexOf(b),1); const i=notes.findIndex(n=>n.startsWith(`+ ${b.title} `)); if(i>=0) notes.splice(i,1); return; }
+    b.day_of_assembly[dayName]=`⚠ Cook fresh today — do NOT use the Sunday batch (${cat} is only safe ~${lim} day(s); this is day ${daysAfter}).`; });
+  const safe=used.filter(b=>!unsafe.includes(b));
+  if(safe.length){ meal.prep_ahead=true; meal.storage_ref=safe[0].id; }
+  if(unsafe.length){ const b=unsafe[0], cat=b.food_category.replace(/_/g," "), lim=b.storage.use_within_days;
+    const note=`🥘 Cook this fresh today — food safety: a Sunday batch of ${cat} only keeps ~${lim} day(s), and this is day ${daysAfter}. (The dish is unchanged — just cooked the same day.)`;
+    meal.cook_fresh_for_safety=true; meal.safety_note=note; if(!safe.length) meal.prep_ahead=false;
+    if(!meal.cook_minutes_day_of) meal.cook_minutes_day_of=20;
+    meal.day_of_steps=[note, ...(meal.day_of_steps||[])]; notes.push(`⚠ ${cat} must be cooked fresh on ${dayName}`); }
+  if(!used.length) meal.prep_ahead=false;
+  prepPlan.total_active_minutes=batches.reduce((a,b)=>a+(+b.active_minutes||0),0);
+  return {changed, notes};
+}
+function _adaptSchema(){
+  const s=_swapSchema(), strs={type:"array",items:{type:"string"}};
+  s.properties.prep_batches={type:"array",items:{type:"object",additionalProperties:false,
+    required:["id","title","food_category","active_minutes","steps","yields","day_of_assembly"],
+    properties:{id:{type:"string"},title:{type:"string"},food_category:{type:"string"},active_minutes:{type:"number"},steps:strs,yields:strs,day_of_assembly:{type:"string"}}}};
+  return s;
+}
 // One dish, adapted by Claude: from a library recipe (swap) or to a request (change).
 async function adaptDish(date, slot, {recipe, instruction}){
   const day=(weekMenu||[]).find(d=>d.date===date), meal=day&&day.meals.find(m=>m.slot===slot);
@@ -1705,23 +1801,34 @@ async function adaptDish(date, slot, {recipe, instruction}){
   const task=recipe
     ? `The cook picked a REAL recipe to replace this dish. Adapt THAT recipe — keep its identity (main ingredients, method, flavour); don't invent a different dish. Name it after the recipe (a short note of the adaptation is fine).`
     : `The cook wants to change this dish: "${instruction}". Change exactly that and keep the rest of the dish.`;
+  const open=weekendPrepOpen(day), related=relatedPrepBatches(day, meal), prepDate=prepDateISO();
+  const slotLabel=(SLOT_LABELS[meal.slot]||{}).label||meal.slot;
+  const prepRule=open
+    ? `Weekend prep: the cook batch-preps on Sunday ${prepDate}; this dish is eaten ${day.day} ${day.date} (day ${_daysBetween(prepDate, day.date)} after prep).
+- Return in prep_batches the Sunday prep this dish genuinely benefits from (marinate, batch-cook the protein/grain/sauce/legumes, roast or chop veg, make a dressing), or [] if it's best made entirely on the day. Set prep_ahead true and prep_steps to what's done on Sunday when there is a batch; day_of_steps then start from the batch.
+- Each batch: title, food_category (one of poultry, red_meat, fish_seafood, eggs_cooked, rice, grains_pasta, legumes, vegetables_cooked, vegetables_raw_prepped, soup_stew, sauce_dairy, dairy, baked_goods, generic), active_minutes, detailed beginner-friendly steps with quantities for the whole household, yields, and day_of_assembly = ONE line for ${day.day}: "${slotLabel} — <new dish name>: how to finish it from the batch".
+- Fridge limits from Sunday (Monday = day 1): poultry/red meat 3 days, fish 2, cooked rice 1, cooked grains 3, cooked veg/soups 4, legumes 5. Past the limit, don't batch-cook it — only prep what keeps (a marinade base, chopped hardy veg, a dressing) or cook on the day.
+- related_prep_batches are the existing Sunday batches the OLD dish used. To rewrite one, return it with the same id; if it also serves other days (used_on_other_days), keep everything those days need and only change this dish's part. To remove one only the old dish used, return it with steps []. New batches get a new id like "new_1".`
+    : `Weekend prep: ${day.carried_over?"this day is from the current week":"Sunday's prep ("+(prepDate||"?")+") has already happened"}, so there is nothing to batch-prep — return prep_batches [], prep_ahead false and cook everything on the day.`;
   const system=`You adapt ONE dish in a household's weekly meal plan. One person cooks for everyone; each person has their own portion (and a variant when their preferences need one).
 ${task}
 Then fit it to the household:
 - size each person's portion so their day lands near daily_target_kcal given other_meals_that_day_kcal; realistic macros per portion (sugar_g = all sugars, free_sugar_g = added sugar/honey/syrups/juice), keeping their day's free sugar under free_sugar_max_g;
 - respect everyone's preferences below (never a kitchen allergen; give a person a variant if the dish breaks their rules; aim for the same plate for everyone);
 - reuse ingredients already on the shopping list where it makes no difference to the dish;
-- food safety: poultry/red meat batch-prepped Sunday keep 3 days (Monday = day 1), fish 2, cooked rice 1 — otherwise prep_ahead false and cook it on the day;
 - prep_steps / day_of_steps: short, clear, beginner-friendly.
-Return exactly one dish with the given ref, prep_batches [] and a one-sentence summary.
+${prepRule}
+Return exactly one dish with the given ref, its prep_batches and a one-sentence summary.
 
 Food preferences and middle ground:
 ${prefsSummaryText()}
 Middle ground: ${JSON.stringify(middleGround())}`;
   const payload={dish:dishPayload(day,meal), recipe:recipe||null, change_request:instruction||null,
-    shopping_list:((shoppingList&&shoppingList.items)||[]).map(i=>i.name_en), people:MEMBERS.map(m=>({id:m,name:personName(m)}))};
+    shopping_list:((shoppingList&&shoppingList.items)||[]).map(i=>i.name_en), people:MEMBERS.map(m=>({id:m,name:personName(m)})),
+    related_prep_batches:related.map(b=>({id:b.id, title:b.title, food_category:b.food_category||"", active_minutes:b.active_minutes||0, steps:b.steps||[], yields:b.yields||[],
+      this_day_assembly:(b.day_of_assembly||{})[day.day]||"", used_on_other_days:Object.fromEntries(Object.entries(b.day_of_assembly||{}).filter(([d])=>d!==day.day))}))};
   try{
-    const out=await callClaudeJSON(system, JSON.stringify(payload), _swapSchema(), {maxTokens:8000, effort:"medium"});
+    const out=await callClaudeJSON(system, JSON.stringify(payload), _adaptSchema(), {maxTokens:12000, effort:"medium"});
     const r=(out.meals||[]).find(x=>x.ref===`${day.date}|${meal.slot}`)||(out.meals||[])[0];
     if(!r) throw new Error("no dish came back");
     const oldName=meal.name, before=Object.fromEntries(MEMBERS.map(m=>[m,+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0]));
@@ -1731,14 +1838,17 @@ Middle ground: ${JSON.stringify(middleGround())}`;
       meal.recipe_source=lib?{library_id:lib.id, name:lib.name, cuisine:lib.cuisine, source_url:recipeLink(lib), image:lib.image}:{name:recipe.name, past:true};
       meal.video_url=(lib&&lib.video_url)||""; }
     meal.edits=[...(meal.edits||[]),{on:todayISO(), from:oldName, ...(recipe?{recipe:recipe.name}:{change:instruction})}];
+    const prep=applyAdaptPrep(day, meal, out.prep_batches||[], related, open);
     recomputeDayTotals(day);
     if(recipe) prefAdd("everyone","notes",`Swapped “${oldName}” → “${meal.name}” from the library`,"review");
     markMenuDirty();
     await ghWrite("weekly_menu.json", weekMenu, recipe?`Swap from library: ${oldName} → ${meal.name}`:`Change dish: ${meal.name}`);
+    if(prep.changed) await ghWrite("prep_plan.json", prepPlan, `Sunday prep for ${day.day}: ${meal.name}`);
     await regenerateShopping();
     refreshMenuViews();
     const after=Object.fromEntries(MEMBERS.map(m=>[m,+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0]));
-    return {ok:true, message:`✓ ${recipe?`${oldName} → ${meal.name}`:`Changed: ${meal.name}`}. ${out.summary||""} ${MEMBERS.map(m=>`${personName(m)} ${before[m]}→${after[m]}`).join(", ")} kcal. Shopping list updated.`};
+    const prepMsg=!open?" Cook it on the day (Sunday prep is past).":prep.notes.length?` Sunday prep: ${prep.notes.join(", ")}.`:" No Sunday prep needed.";
+    return {ok:true, message:`✓ ${recipe?`${oldName} → ${meal.name}`:`Changed: ${meal.name}`}. ${out.summary||""} ${MEMBERS.map(m=>`${personName(m)} ${before[m]}→${after[m]}`).join(", ")} kcal.${prepMsg} Shopping list updated.`};
   }catch(e){ return {ok:false, message:"Couldn't adapt the dish: "+e.message}; }
 }
 

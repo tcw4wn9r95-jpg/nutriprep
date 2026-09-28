@@ -486,3 +486,12 @@ weekday; the plan controls shrink to a one-line "Plan · week of … · Refresh 
   - **✎ Change** → a text box; Claude changes exactly that and re-fits both people's macros.
   - Either way only that dish is sent, the day is recomputed, the shopping list rebuilt, and the dish shows
     "📖 Based on <recipe>" with the source link (and uses the recipe's real photo).
+- **Weekend prep for swapped/changed dishes (build 46):** until the Sunday prep day (`prep_plan.week_of` − 1),
+  Claude also returns the Sunday batch-prep the new dish benefits from (marinade, batch-cooked protein/grain/sauce,
+  chopped veg), plus a day-of-assembly line. It sees the batches the old dish used (`storage_ref`, or that day's
+  assembly naming it) and rewrites them, drops ones only the old dish needed, or keeps what other days still use.
+  The app merges the result into `prep_plan.json`: new batches get a fresh `prep_batch_N` id and order, `storage`
+  comes from a JS mirror of `food_safety.py` (`FOOD_SAFETY` in dashboard.html — keep the two in step), and the
+  same fridge-window rule as `enforce_food_safety` applies: past `use_within_days` from Sunday the dish is cooked
+  fresh (a new batch that couldn't be used is not added). After Sunday, or on the current week's days, no prep is
+  added and the dish is cooked on the day. The dish links to its batch via `storage_ref`; total prep time is recomputed.
