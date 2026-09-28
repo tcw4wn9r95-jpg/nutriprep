@@ -6,5 +6,13 @@
   {
     "role": "assistant",
     "content": "I'd love to help with overnight oats portions! However, overnight oats aren't currently on the menu for any day this week, so I'm just giving you a **macro-guided guideline** rather than updating the plan.\n\n---\n\n## 🌙 Overnight Oats — Portions by Person\n\n| Ingredient | Diego (2090 kcal, weight loss) | Diana (1600 kcal, weight loss) |\n|---|---|---|\n| **Rolled oats** | 80 g | 55 g |\n| **Coconut milk** (canned, full-fat) | 80 ml | 60 ml |\n| **Chia seeds** | 15 g | 10 g |\n\n### Estimated macros per serving\n\n| | Diego | Diana |\n|---|---|---|\n| **kcal** | ~460 kcal | ~320 kcal |\n| **Carbs** | ~58 g | ~40 g |\n| **Protein** | ~13 g | ~9 g |\n| **Fat** | ~19 g | ~13 g |\n| **Fiber** | ~9 g | ~6 g |\n\n---\n\n### 💡 A few tips:\n- **Add a protein boost** — a scoop of plain Greek yogurt or a soft-boiled egg on the side would round out Diego's breakfast protein nicely (he needs more to support his weight-loss + training goals).\n- **Toppings** — fresh raspberries or blueberries fit perfectly with what you already love and add fiber with minimal calories.\n- **Coconut milk** is calorie-dense; if you want a lighter version, swap half for unsweetened almond or oat milk.\n\nWould you like me to swap any breakfast this week for overnight oats? Just say which day and I'll update the plan right away! 🥣"
+  },
+  {
+    "role": "user",
+    "content": "I tried making it and it’s too pasty, like it needs"
+  },
+  {
+    "role": "assistant",
+    "content": "It sounds like you got cut off there! 😄 Go ahead and finish your thought — did you mean it needs **more liquid**, a different texture, or something else? I want to make sure I give you the right fix!"
   }
 ]
