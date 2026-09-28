@@ -15,7 +15,7 @@
         "day_of_steps": [
           "1. Pour 250 ml plain kefir into a blender with 80 g raspberries (Diego) / 60 g raspberries (Diana) and half a banana (Diego) / one-third banana (Diana). Blend 30 seconds. Pour into glasses.",
           "2. Toast 40 g sourdough (Diego) / 30 g sourdough (Diana) in the toaster.",
-          "3. Heat a non-stick pan over medium heat with a few drops of olive oil. Crack 2 eggs per person into the pan. Fry sunny-side up 3\u20134 minutes until whites are set.",
+          "3. Heat a non-stick pan over medium heat with a few drops of olive oil. Crack 2 eggs per person into the pan. Fry sunny-side up 3–4 minutes until whites are set.",
           "4. Spread 1 tbsp (15 g) hummus or olive tapenade (from pantry) on each toast slice as avocado-style spread. Slide eggs on top.",
           "5. Serve smoothie alongside. Drink 500 ml water."
         ],
@@ -25,7 +25,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -34,10 +34,10 @@
               },
               {
                 "item": "Banana (banane)",
-                "qty": "60 g (\u00bd medium)"
+                "qty": "60 g (½ medium)"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -68,7 +68,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -77,19 +77,19 @@
               },
               {
                 "item": "Banana (banane)",
-                "qty": "40 g (\u2153 medium)"
+                "qty": "40 g (⅓ medium)"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
                 "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g (\u00be slice)"
+                "qty": "30 g (¾ slice)"
               },
               {
                 "item": "Olive oil (huile d'olive)",
-                "qty": "3 ml (\u00bd tsp)"
+                "qty": "3 ml (½ tsp)"
               },
               {
                 "item": "Greek yogurt (yaourt grec)",
@@ -121,7 +121,7 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Rinse and slice 1 apple per person into wedges.",
-          "2. Weigh out walnuts \u2014 25 g for Diego, 20 g for Diana.",
+          "2. Weigh out walnuts — 25 g for Diego, 20 g for Diana.",
           "3. Serve together with 500 ml water."
         ],
         "storage_ref": "",
@@ -182,7 +182,7 @@
           "Sunday: Brown 700 g ground beef with garlic, cumin, paprika, tomato passata. Cool and store."
         ],
         "day_of_steps": [
-          "1. Reheat 150 g cooked ground beef (Diego) / 110 g (Diana) in a pan over medium heat 3\u20134 min.",
+          "1. Reheat 150 g cooked ground beef (Diego) / 110 g (Diana) in a pan over medium heat 3–4 min.",
           "2. Reheat 100 g cooked quinoa (Diego) / 75 g (Diana) and 80 g lentils (Diego) / 60 g (Diana) alongside in a second pan or microwave.",
           "3. Reheat 100 g roasted bell peppers (Diego) / 80 g (Diana).",
           "4. Add 5 cherry tomatoes halved (both) to each bowl.",
@@ -195,7 +195,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Cooked ground beef (b\u0153uf hach\u00e9 cuit)",
+                "item": "Cooked ground beef (bœuf haché cuit)",
                 "qty": "150 g"
               },
               {
@@ -207,7 +207,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
+                "item": "Roasted bell peppers (poivrons rôtis)",
                 "qty": "100 g"
               },
               {
@@ -238,7 +238,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Cooked ground beef (b\u0153uf hach\u00e9 cuit)",
+                "item": "Cooked ground beef (bœuf haché cuit)",
                 "qty": "110 g"
               },
               {
@@ -250,7 +250,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
+                "item": "Roasted bell peppers (poivrons rôtis)",
                 "qty": "80 g"
               },
               {
@@ -290,8 +290,8 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Spoon Greek yogurt into a bowl \u2014 150 g for Diego, 100 g for Diana.",
-          "2. Top with blueberries \u2014 80 g for Diego, 60 g for Diana.",
+          "1. Spoon Greek yogurt into a bowl — 150 g for Diego, 100 g for Diana.",
+          "2. Top with blueberries — 80 g for Diego, 60 g for Diana.",
           "3. Add 20 g almonds (Diego) / 15 g almonds (Diana) on top.",
           "4. Serve with 500 ml water."
         ],
@@ -356,13 +356,13 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven to 200 \u00b0C. Line a baking tray with parchment.",
-          "2. Mix 2 tbsp soy sauce, 1 tsp sesame oil, \u00bd tsp ground ginger, 1 tsp garlic powder in a bowl.",
-          "3. Place salmon fillets on tray \u2014 160 g raw for Diego, 120 g raw for Diana. Spoon marinade over each. Bake 14\u201316 min until cooked through.",
-          "4. Meanwhile heat 1 tsp olive oil in a pan. Add 1 crushed garlic clove, sliced zucchini \u2014 120 g (Diego) / 100 g (Diana). Stir-fry 3 min.",
-          "5. Add 60 g spinach per person, splash soy sauce. Toss 1\u20132 min until wilted.",
-          "6. Toast sourdough \u2014 40 g (Diego) / 30 g (Diana).",
-          "7. Plate: veg first, salmon alongside, toast on side. Drizzle \u00bd tsp sesame oil. Serve with 500 ml water.",
+          "1. Preheat oven to 200 °C. Line a baking tray with parchment.",
+          "2. Mix 2 tbsp soy sauce, 1 tsp sesame oil, ½ tsp ground ginger, 1 tsp garlic powder in a bowl.",
+          "3. Place salmon fillets on tray — 160 g raw for Diego, 120 g raw for Diana. Spoon marinade over each. Bake 14–16 min until cooked through.",
+          "4. Meanwhile heat 1 tsp olive oil in a pan. Add 1 crushed garlic clove, sliced zucchini — 120 g (Diego) / 100 g (Diana). Stir-fry 3 min.",
+          "5. Add 60 g spinach per person, splash soy sauce. Toss 1–2 min until wilted.",
+          "6. Toast sourdough — 40 g (Diego) / 30 g (Diana).",
+          "7. Plate: veg first, salmon alongside, toast on side. Drizzle ½ tsp sesame oil. Serve with 500 ml water.",
           "8. Eat vegetables first (Glucose Goddess order)."
         ],
         "storage_ref": "",
@@ -379,7 +379,7 @@
                 "qty": "120 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -391,7 +391,7 @@
                 "qty": "15 ml"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "8 ml (1.5 tsp)"
               },
               {
@@ -400,7 +400,7 @@
               },
               {
                 "item": "Ground ginger (gingembre en poudre)",
-                "qty": "1 g (\u00bc tsp)"
+                "qty": "1 g (¼ tsp)"
               },
               {
                 "item": "Garlic powder (ail en poudre)",
@@ -426,7 +426,7 @@
                 "qty": "100 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -438,12 +438,12 @@
                 "qty": "10 ml"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "5 ml (1 tsp)"
               },
               {
                 "item": "Olive oil (huile d'olive)",
-                "qty": "3 ml (\u00bd tsp)"
+                "qty": "3 ml (½ tsp)"
               },
               {
                 "item": "Ground ginger (gingembre en poudre)",
@@ -489,26 +489,50 @@
       {
         "slot": "breakfast",
         "time": "07:30",
-        "name": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta",
+        "name": "Kefir & Blueberry Smoothie + Chia Coconut Overnight Oats with Raspberries & Almonds",
         "prep_ahead": false,
-        "cook_minutes_day_of": 10,
-        "image_prompt": "two fried eggs on golden toasted sourdough with crumbled white feta, a tall glass of blueberry kefir smoothie, blueberries on the side, bright morning light on a light marble surface",
+        "cook_minutes_day_of": 15,
+        "image_prompt": "a glass jar of creamy chia coconut overnight oats topped with fresh raspberries, blueberries and sliced almonds, a tall glass of purple blueberry kefir smoothie beside it, bright morning light on a light marble surface",
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Blend 250 ml plain kefir + 80 g blueberries (Diego) / 60 g blueberries (Diana) + \u00bd banana (Diego) / \u2153 banana (Diana). Pour into glasses.",
-          "2. Toast sourdough \u2014 40 g (Diego) / 30 g (Diana).",
-          "3. Fry 2 eggs per person in a non-stick pan with \u00bd tsp olive oil, 3\u20134 min sunny-side up.",
-          "4. Crumble 25 g feta (Diego) / 20 g feta (Diana) over the eggs on toast.",
-          "5. Serve with 500 ml water."
+          "1. In each person's jar or bowl, stir together the rolled oats, chia seeds, Greek yogurt and coconut milk drink until no dry pockets remain (Diego: 45 g oats, 10 g chia, 60 g yogurt, 150 ml coconut drink / Diana: 30 g oats, 8 g chia, 40 g yogurt, 120 ml coconut drink).",
+          "2. Cover and leave in the fridge for 10–15 minutes to thicken while you make the smoothies (no overnight soak needed — chia swells fast).",
+          "3. Blend 250 ml plain kefir + blueberries (80 g Diego / 60 g Diana) + banana (60 g Diego / 40 g Diana) until smooth. Pour into glasses.",
+          "4. Stir the oats once more; loosen with a splash more coconut drink if too thick.",
+          "5. Top each jar with raspberries (40 g Diego / 30 g Diana) and chopped almonds (7 g Diego / 5 g Diana). Serve with 500 ml water."
         ],
-        "storage_ref": "",
-        "food_category": "eggs_cooked",
+        "storage_ref": null,
+        "food_category": "oats_porridge",
         "portions": {
           "diego": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Rolled oats (flocons d'avoine) — ADD to shopping list",
+                "qty": "45 g"
+              },
+              {
+                "item": "Chia seeds (graines de chia) — ADD to shopping list",
+                "qty": "10 g"
+              },
+              {
+                "item": "Unsweetened coconut milk drink (boisson à la noix de coco) — ADD to shopping list",
+                "qty": "150 ml"
+              },
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "60 g"
+              },
+              {
+                "item": "Raspberries (framboises)",
+                "qty": "40 g"
+              },
+              {
+                "item": "Almonds (amandes), chopped",
+                "qty": "7 g"
+              },
+              {
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -517,41 +541,48 @@
               },
               {
                 "item": "Banana (banane)",
-                "qty": "60 g (\u00bd medium)"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "2 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "40 g"
-              },
-              {
-                "item": "Feta cheese (fromage feta)",
-                "qty": "25 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "5 ml (1 tsp)"
-              },
-              {
-                "item": "Orange (orange)",
-                "qty": "1 medium"
+                "qty": "60 g (½ medium)"
               }
             ],
             "macros": {
-              "kcal": 545,
-              "protein_g": 34,
-              "carbs_g": 55,
-              "fat_g": 19,
-              "fiber_g": 6
-            }
+              "kcal": 595,
+              "protein_g": 26,
+              "carbs_g": 75,
+              "fat_g": 20.5,
+              "fiber_g": 14,
+              "sugar_g": 31,
+              "free_sugar_g": 0
+            },
+            "variant": null
           },
           "diana": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Rolled oats (flocons d'avoine) — ADD to shopping list",
+                "qty": "30 g"
+              },
+              {
+                "item": "Chia seeds (graines de chia) — ADD to shopping list",
+                "qty": "8 g"
+              },
+              {
+                "item": "Unsweetened coconut milk drink (boisson à la noix de coco) — ADD to shopping list",
+                "qty": "120 ml"
+              },
+              {
+                "item": "Greek yogurt (yaourt grec)",
+                "qty": "40 g"
+              },
+              {
+                "item": "Raspberries (framboises)",
+                "qty": "30 g"
+              },
+              {
+                "item": "Almonds (amandes), chopped",
+                "qty": "5 g"
+              },
+              {
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -560,38 +591,28 @@
               },
               {
                 "item": "Banana (banane)",
-                "qty": "40 g (\u2153 medium)"
-              },
-              {
-                "item": "Eggs (\u0153ufs)",
-                "qty": "2 large"
-              },
-              {
-                "item": "Sourdough bread (pain au levain)",
-                "qty": "30 g"
-              },
-              {
-                "item": "Feta cheese (fromage feta)",
-                "qty": "20 g"
-              },
-              {
-                "item": "Olive oil (huile d'olive)",
-                "qty": "3 ml (\u00bd tsp)"
-              },
-              {
-                "item": "Orange (orange)",
-                "qty": "1 small"
+                "qty": "40 g (⅓ medium)"
               }
             ],
             "macros": {
-              "kcal": 415,
-              "protein_g": 26,
-              "carbs_g": 41,
-              "fat_g": 14,
-              "fiber_g": 5
-            }
+              "kcal": 440,
+              "protein_g": 19,
+              "carbs_g": 56,
+              "fat_g": 14.5,
+              "fiber_g": 10,
+              "sugar_g": 26,
+              "free_sugar_g": 0
+            },
+            "variant": null
           }
-        }
+        },
+        "edits": [
+          {
+            "on": "2026-09-28",
+            "from": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta",
+            "change": "Change to overnight oats with chia, coconut milk drink and oats. Suggest anything missing to add"
+          }
+        ]
       },
       {
         "slot": "am_snack",
@@ -604,7 +625,7 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Peel 1 banana each.",
-          "2. Weigh almonds \u2014 25 g Diego, 20 g Diana.",
+          "2. Weigh almonds — 25 g Diego, 20 g Diana.",
           "3. Serve with 500 ml water."
         ],
         "storage_ref": "",
@@ -659,13 +680,13 @@
         "image_prompt": "overhead bowl with soy-glazed tilapia fillet over brown rice, bright green broccoli florets and orange carrot slices, sesame oil drizzle, cherry tomatoes, on a dark ceramic bowl, natural light",
         "video_url": "",
         "prep_steps": [
-          "Sunday: Roast broccoli florets and sliced carrots with olive oil, soy sauce, garlic \u2014 store in fridge.",
-          "Sunday: Cook brown rice in batch only if eaten day 1 \u2014 NOT batched for Tuesday (cook fresh)."
+          "Sunday: Roast broccoli florets and sliced carrots with olive oil, soy sauce, garlic — store in fridge.",
+          "Sunday: Cook brown rice in batch only if eaten day 1 — NOT batched for Tuesday (cook fresh)."
         ],
         "day_of_steps": [
           "1. Cook brown rice fresh: bring 300 ml (Diego) / 220 ml (Diana) salted water to boil, add 130 g (Diego) / 95 g (Diana) dry brown rice, simmer 25 min. (Start this first.)",
-          "2. Mix 2 tbsp soy sauce, 1 tsp sesame oil, \u00bd tsp ground ginger, \u00bd tsp garlic powder for marinade.",
-          "3. Lay 170 g (Diego) / 130 g (Diana) tilapia fillets in a hot oiled pan. Cook 3\u20134 min per side. Spoon marinade over while cooking.",
+          "2. Mix 2 tbsp soy sauce, 1 tsp sesame oil, ½ tsp ground ginger, ½ tsp garlic powder for marinade.",
+          "3. Lay 170 g (Diego) / 130 g (Diana) tilapia fillets in a hot oiled pan. Cook 3–4 min per side. Spoon marinade over while cooking.",
           "4. Reheat 100 g pre-roasted broccoli+carrots (Diego) / 80 g (Diana) in pan 2 min with a splash of soy sauce.",
           "5. Plate: rice base, stir-fried veg, tilapia. Drizzle 1 tsp sesame oil. Serve with 500 ml water and a piece of fruit.",
           "6. Eat vegetables first."
@@ -700,7 +721,7 @@
                 "qty": "15 ml"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "10 ml (2 tsp)"
               },
               {
@@ -747,7 +768,7 @@
                 "qty": "10 ml"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "5 ml (1 tsp)"
               },
               {
@@ -835,12 +856,12 @@
         "image_prompt": "two corn tortillas filled with spiced ground beef, black beans, roasted yellow and red bell peppers, zucchini strips, lime squeeze, on a slate board with cherry tomatoes on the side, warm evening light",
         "video_url": "",
         "prep_steps": [
-          "Sunday: Brown 700 g ground beef \u2014 separate batch from Monday's (see prep_batch_1). Season with cumin, smoked paprika, chilli flakes, garlic. Store.",
+          "Sunday: Brown 700 g ground beef — separate batch from Monday's (see prep_batch_1). Season with cumin, smoked paprika, chilli flakes, garlic. Store.",
           "Sunday: Drain 2 cans black beans. Season with cumin. Store.",
           "Sunday: Roast sliced bell peppers and zucchini with olive oil and smoked paprika. Store."
         ],
         "day_of_steps": [
-          "1. Warm corn tortillas \u2014 2 for Diego, 2 for Diana \u2014 in a dry pan 30 sec each side.",
+          "1. Warm corn tortillas — 2 for Diego, 2 for Diana — in a dry pan 30 sec each side.",
           "2. Reheat 120 g ground beef (Diego) / 90 g (Diana) and 70 g black beans (Diego) / 55 g (Diana) in a pan with splash of water and cumin, 4 min.",
           "3. Reheat 80 g roasted peppers+zucchini (Diego) / 60 g (Diana).",
           "4. Layer tortillas: veg first, then beef and beans.",
@@ -853,11 +874,11 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Corn tortillas (tortillas de ma\u00efs)",
+                "item": "Corn tortillas (tortillas de maïs)",
                 "qty": "2 (60 g)"
               },
               {
-                "item": "Cooked ground beef (b\u0153uf hach\u00e9 cuit)",
+                "item": "Cooked ground beef (bœuf haché cuit)",
                 "qty": "120 g"
               },
               {
@@ -865,11 +886,11 @@
                 "qty": "70 g drained"
               },
               {
-                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
+                "item": "Roasted bell peppers (poivrons rôtis)",
                 "qty": "60 g"
               },
               {
-                "item": "Roasted zucchini (courgette r\u00f4tie)",
+                "item": "Roasted zucchini (courgette rôtie)",
                 "qty": "60 g"
               },
               {
@@ -896,11 +917,11 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Corn tortillas (tortillas de ma\u00efs)",
+                "item": "Corn tortillas (tortillas de maïs)",
                 "qty": "2 (60 g)"
               },
               {
-                "item": "Cooked ground beef (b\u0153uf hach\u00e9 cuit)",
+                "item": "Cooked ground beef (bœuf haché cuit)",
                 "qty": "90 g"
               },
               {
@@ -908,11 +929,11 @@
                 "qty": "55 g drained"
               },
               {
-                "item": "Roasted bell peppers (poivrons r\u00f4tis)",
+                "item": "Roasted bell peppers (poivrons rôtis)",
                 "qty": "50 g"
               },
               {
-                "item": "Roasted zucchini (courgette r\u00f4tie)",
+                "item": "Roasted zucchini (courgette rôtie)",
                 "qty": "50 g"
               },
               {
@@ -941,18 +962,22 @@
     ],
     "day_totals": {
       "diego": {
-        "kcal": 2040,
-        "protein_g": 136,
-        "carbs_g": 211,
-        "fat_g": 68,
-        "fiber_g": 33
+        "kcal": 2090,
+        "protein_g": 128,
+        "carbs_g": 231,
+        "fat_g": 70,
+        "fiber_g": 41,
+        "sugar_g": 31,
+        "free_sugar_g": 0
       },
       "diana": {
-        "kcal": 1575,
-        "protein_g": 102,
-        "carbs_g": 168,
-        "fat_g": 50,
-        "fiber_g": 26
+        "kcal": 1600,
+        "protein_g": 95,
+        "carbs_g": 183,
+        "fat_g": 51,
+        "fiber_g": 31,
+        "sugar_g": 26,
+        "free_sugar_g": 0
       }
     }
   },
@@ -970,9 +995,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Blend 250 ml kefir + 80 g raspberries + \u00bd banana (Diego) / 60 g raspberries + \u2153 banana (Diana). Pour into glasses.",
-          "2. Toast sourdough slices \u2014 40 g (Diego) / 30 g (Diana).",
-          "3. Fry 2 eggs per person with \u00bd tsp olive oil, 3\u20134 min.",
+          "1. Blend 250 ml kefir + 80 g raspberries + ½ banana (Diego) / 60 g raspberries + ⅓ banana (Diana). Pour into glasses.",
+          "2. Toast sourdough slices — 40 g (Diego) / 30 g (Diana).",
+          "3. Fry 2 eggs per person with ½ tsp olive oil, 3–4 min.",
           "4. Crumble feta 25 g (Diego) / 20 g (Diana) over eggs. Place on toast.",
           "5. Serve with 500 ml water."
         ],
@@ -982,7 +1007,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -994,7 +1019,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1025,7 +1050,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -1037,7 +1062,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1078,7 +1103,7 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Slice apple into wedges.",
-          "2. Weigh walnuts \u2014 25 g Diego, 20 g Diana.",
+          "2. Weigh walnuts — 25 g Diego, 20 g Diana.",
           "3. Serve with 500 ml water."
         ],
         "storage_ref": "",
@@ -1133,16 +1158,16 @@
         "image_prompt": "opened parchment parcel revealing a tilapia fillet with roasted carrots and green beans, herbed with dried thyme and a drizzle of olive oil, quinoa on the side, white plate, natural lunch light",
         "video_url": "",
         "prep_steps": [
-          "Sunday: Cook 300 g dry quinoa \u2014 use shared batch from prep_batch_1.",
+          "Sunday: Cook 300 g dry quinoa — use shared batch from prep_batch_1.",
           "Sunday: Blanch green beans 3 min; store in fridge.",
           "Sunday: Slice carrots; store raw in fridge for Wednesday."
         ],
         "day_of_steps": [
-          "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 3. (The dish is unchanged \u2014 just cooked the same day.)",
-          "1. Preheat oven to 200 \u00b0C. Cut two large pieces of parchment paper.",
-          "2. Place tilapia fillets on parchment \u2014 170 g (Diego) / 130 g (Diana). Season with dried thyme, dried oregano, garlic powder, salt, pepper.",
+          "🥘 Cook this fresh today — food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 3. (The dish is unchanged — just cooked the same day.)",
+          "1. Preheat oven to 200 °C. Cut two large pieces of parchment paper.",
+          "2. Place tilapia fillets on parchment — 170 g (Diego) / 130 g (Diana). Season with dried thyme, dried oregano, garlic powder, salt, pepper.",
           "3. Add 60 g blanched green beans + 60 g sliced carrots around each fillet. Drizzle 2 tsp olive oil + splash of white wine vinegar per parcel. Fold and seal parcels.",
-          "4. Bake 16\u201318 min until fish flakes.",
+          "4. Bake 16–18 min until fish flakes.",
           "5. Reheat 100 g cooked quinoa (Diego) / 75 g (Diana) in microwave 90 sec.",
           "6. Serve parcels opened alongside quinoa and 5 cherry tomatoes each. Drizzle extra olive oil. 500 ml water.",
           "7. Eat vegetables and quinoa first, then fish."
@@ -1180,11 +1205,11 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Dried thyme (thym s\u00e9ch\u00e9)",
+                "item": "Dried thyme (thym séché)",
                 "qty": "1 g"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "1 g"
               },
               {
@@ -1231,16 +1256,16 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Dried thyme (thym s\u00e9ch\u00e9)",
+                "item": "Dried thyme (thym séché)",
                 "qty": "1 g"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "1 g"
               },
               {
                 "item": "Banana (banane)",
-                "qty": "\u00bd medium (fruit)"
+                "qty": "½ medium (fruit)"
               }
             ],
             "macros": {
@@ -1253,7 +1278,7 @@
           }
         },
         "cook_fresh_for_safety": true,
-        "safety_note": "\ud83e\udd58 Cook this fresh today \u2014 food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 3. (The dish is unchanged \u2014 just cooked the same day.)"
+        "safety_note": "🥘 Cook this fresh today — food safety: a Sunday batch of fish seafood only keeps ~2 day(s), and this is day 3. (The dish is unchanged — just cooked the same day.)"
       },
       {
         "slot": "pm_snack",
@@ -1330,13 +1355,13 @@
         "image_prompt": "cast iron skillet with spiced ground beef, golden chickpeas, burst cherry tomatoes and wilted spinach, a slice of rustic sourdough on the side, herbs and olive oil, warm evening candlelight",
         "video_url": "",
         "prep_steps": [
-          "Sunday: Cook beef batch (prep_batch_1) \u2014 shared with Monday.",
+          "Sunday: Cook beef batch (prep_batch_1) — shared with Monday.",
           "Sunday: Drain and rinse 2 cans chickpeas; season with cumin, olive oil. Store."
         ],
         "day_of_steps": [
           "1. Heat 1 tsp olive oil in a pan over medium heat. Add 70 g chickpeas (Diego) / 55 g (Diana). Fry 3 min until slightly crispy.",
           "2. Add 120 g cooked ground beef (Diego) / 90 g (Diana). Stir in. Season with smoked paprika, oregano, chilli flakes.",
-          "3. Add 80 g cherry tomatoes halved \u2014 cook 3 min until they burst. Add 60 g spinach. Toss 1 min to wilt.",
+          "3. Add 80 g cherry tomatoes halved — cook 3 min until they burst. Add 60 g spinach. Toss 1 min to wilt.",
           "4. Drizzle balsamic vinegar 1 tsp. Taste and season.",
           "5. Toast sourdough 40 g (Diego) / 30 g (Diana). Rub with garlic.",
           "6. Serve skillet with sourdough on side. 500 ml water.",
@@ -1348,7 +1373,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Cooked ground beef (b\u0153uf hach\u00e9 cuit)",
+                "item": "Cooked ground beef (bœuf haché cuit)",
                 "qty": "120 g"
               },
               {
@@ -1360,7 +1385,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -1376,11 +1401,11 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "1 g"
               }
             ],
@@ -1395,7 +1420,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Cooked ground beef (b\u0153uf hach\u00e9 cuit)",
+                "item": "Cooked ground beef (bœuf haché cuit)",
                 "qty": "90 g"
               },
               {
@@ -1407,7 +1432,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -1423,11 +1448,11 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "1 g"
               }
             ],
@@ -1473,9 +1498,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Blend 250 ml kefir + 80 g blueberries + \u00bd banana (Diego) / 60 g blueberries + \u2153 banana (Diana). Pour.",
+          "1. Blend 250 ml kefir + 80 g blueberries + ½ banana (Diego) / 60 g blueberries + ⅓ banana (Diana). Pour.",
           "2. Toast sourdough 40 g (Diego) / 30 g (Diana).",
-          "3. Fry 2 eggs each with \u00bd tsp olive oil, 3\u20134 min.",
+          "3. Fry 2 eggs each with ½ tsp olive oil, 3–4 min.",
           "4. Spread 1 tbsp olive tapenade or hummus (pantry) on toast. Add eggs on top.",
           "5. Serve alongside 1 orange each. 500 ml water."
         ],
@@ -1485,7 +1510,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -1497,7 +1522,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1528,7 +1553,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -1540,7 +1565,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1642,7 +1667,7 @@
           "3. Heat 1 tsp olive oil in a pan. Brown chicken 4 min per side. Remove and slice.",
           "4. In same pan add 150 ml tomato passata + 2 tbsp Greek yogurt + pinch of chilli flakes. Stir to make creamy sauce. Simmer 3 min.",
           "5. Add sliced chicken back. Add 60 g spinach per person. Toss until wilted.",
-          "6. Serve over pasta. Add mixed leaf salad on the side \u2014 40 g each with white wine vinegar dressing.",
+          "6. Serve over pasta. Add mixed leaf salad on the side — 40 g each with white wine vinegar dressing.",
           "7. 500 ml water. Eat salad and spinach first."
         ],
         "storage_ref": "",
@@ -1651,11 +1676,11 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Chicken thighs boneless (cuisses de poulet d\u00e9soss\u00e9es)",
+                "item": "Chicken thighs boneless (cuisses de poulet désossées)",
                 "qty": "160 g raw"
               },
               {
-                "item": "Wholewheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Wholewheat pasta (pâtes complètes)",
                 "qty": "80 g dry"
               },
               {
@@ -1667,11 +1692,11 @@
                 "qty": "30 ml (2 tbsp)"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
-                "item": "Mixed leaf salad (salade m\u00e9lang\u00e9e)",
+                "item": "Mixed leaf salad (salade mélangée)",
                 "qty": "40 g"
               },
               {
@@ -1698,11 +1723,11 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Chicken thighs boneless (cuisses de poulet d\u00e9soss\u00e9es)",
+                "item": "Chicken thighs boneless (cuisses de poulet désossées)",
                 "qty": "120 g raw"
               },
               {
-                "item": "Wholewheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Wholewheat pasta (pâtes complètes)",
                 "qty": "60 g dry"
               },
               {
@@ -1714,11 +1739,11 @@
                 "qty": "20 ml (1 tbsp)"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
-                "item": "Mixed leaf salad (salade m\u00e9lang\u00e9e)",
+                "item": "Mixed leaf salad (salade mélangée)",
                 "qty": "40 g"
               },
               {
@@ -1811,9 +1836,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Peel and cube sweet potato \u2014 200 g (Diego) / 150 g (Diana). Boil 15 min until tender. Drain, mash with 1 tsp olive oil, pinch of garlic powder, salt.",
-          "2. Meanwhile preheat oven 200 \u00b0C. Toss broccoli florets (100 g per person) with olive oil, smoked paprika. Roast 15 min.",
-          "3. Pat salmon dry \u2014 150 g (Diego) / 120 g (Diana). Season with cumin, paprika, garlic powder, salt. Pan-fry skin-side up in 1 tsp olive oil, 3\u20134 min per side.",
+          "1. Peel and cube sweet potato — 200 g (Diego) / 150 g (Diana). Boil 15 min until tender. Drain, mash with 1 tsp olive oil, pinch of garlic powder, salt.",
+          "2. Meanwhile preheat oven 200 °C. Toss broccoli florets (100 g per person) with olive oil, smoked paprika. Roast 15 min.",
+          "3. Pat salmon dry — 150 g (Diego) / 120 g (Diana). Season with cumin, paprika, garlic powder, salt. Pan-fry skin-side up in 1 tsp olive oil, 3–4 min per side.",
           "4. Plate: sweet potato mash first, broccoli alongside, salmon on top. Squeeze lime juice over salmon.",
           "5. 500 ml water. Eat broccoli and mash first."
         ],
@@ -1843,7 +1868,7 @@
                 "qty": "2 g"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
@@ -1882,7 +1907,7 @@
                 "qty": "2 g"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
@@ -1932,9 +1957,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Blend 250 ml kefir + \u00bd banana + 60 g blueberries (Diego) / 250 ml kefir + \u2153 banana + 50 g blueberries (Diana). Pour.",
+          "1. Blend 250 ml kefir + ½ banana + 60 g blueberries (Diego) / 250 ml kefir + ⅓ banana + 50 g blueberries (Diana). Pour.",
           "2. Toast sourdough 40 g (Diego) / 30 g (Diana).",
-          "3. Fry 2 eggs each, sunny-side up, 3\u20134 min.",
+          "3. Fry 2 eggs each, sunny-side up, 3–4 min.",
           "4. Crumble 25 g feta (Diego) / 20 g (Diana) on eggs and toast.",
           "5. Serve with 1 apple each and 500 ml water."
         ],
@@ -1944,7 +1969,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -1956,7 +1981,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -1987,7 +2012,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -1999,7 +2024,7 @@
                 "qty": "50 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2108,7 +2133,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Ground beef (b\u0153uf hach\u00e9)",
+                "item": "Ground beef (bœuf haché)",
                 "qty": "140 g raw"
               },
               {
@@ -2136,7 +2161,7 @@
                 "qty": "2 g"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
@@ -2159,7 +2184,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Ground beef (b\u0153uf hach\u00e9)",
+                "item": "Ground beef (bœuf haché)",
                 "qty": "100 g raw"
               },
               {
@@ -2187,7 +2212,7 @@
                 "qty": "2 g"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
@@ -2285,9 +2310,9 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Drain and rinse 60 g (Diego) / 45 g (Diana) canned lentils.",
-          "2. Slice tilapia into strips \u2014 150 g (Diego) / 110 g (Diana). Season with soy sauce, ground ginger, garlic powder.",
+          "2. Slice tilapia into strips — 150 g (Diego) / 110 g (Diana). Season with soy sauce, ground ginger, garlic powder.",
           "3. Heat 1 tsp sesame oil in a wok or large pan. Add 80 g green beans + 80 g zucchini sliced (Diego) / 60 g + 60 g (Diana). Stir-fry 4 min.",
-          "4. Add lentils, stir 1 min. Push veg to side, add tilapia strips. Cook 3\u20134 min, stirring gently.",
+          "4. Add lentils, stir 1 min. Push veg to side, add tilapia strips. Cook 3–4 min, stirring gently.",
           "5. Splash soy sauce + lime juice over everything. Toss.",
           "6. Toast sourdough 40 g (Diego) / 30 g (Diana) and serve alongside.",
           "7. 500 ml water. Eat vegetables and lentils first."
@@ -2322,7 +2347,7 @@
                 "qty": "15 ml"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "8 ml"
               },
               {
@@ -2369,7 +2394,7 @@
                 "qty": "10 ml"
               },
               {
-                "item": "Sesame oil (huile de s\u00e9same)",
+                "item": "Sesame oil (huile de sésame)",
                 "qty": "5 ml"
               },
               {
@@ -2423,9 +2448,9 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Blend 250 ml kefir + 80 g blueberries + \u00bd banana (Diego) / 60 g blueberries + \u2153 banana (Diana).",
+          "1. Blend 250 ml kefir + 80 g blueberries + ½ banana (Diego) / 60 g blueberries + ⅓ banana (Diana).",
           "2. Toast sourdough 40 g (Diego) / 30 g (Diana). Spread olive tapenade or hummus.",
-          "3. Fry 2 eggs each with \u00bd tsp olive oil, 3\u20134 min.",
+          "3. Fry 2 eggs each with ½ tsp olive oil, 3–4 min.",
           "4. Place eggs on toast. Serve with 1 orange each and 500 ml water."
         ],
         "storage_ref": "",
@@ -2434,7 +2459,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -2446,7 +2471,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2477,7 +2502,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -2489,7 +2514,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2585,10 +2610,10 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Preheat oven 200 \u00b0C. Cook quinoa: 100 g dry (Diego) / 75 g (Diana) in salted water 15 min. Drain.",
+          "1. Preheat oven 200 °C. Cook quinoa: 100 g dry (Diego) / 75 g (Diana) in salted water 15 min. Drain.",
           "2. Line a large tray. Toss 80 g drained chickpeas (Diego) / 60 g (Diana) + 80 g sliced zucchini + 80 g sliced bell pepper with 2 tsp olive oil, cumin, paprika, garlic powder.",
-          "3. Roast veg+chickpeas 15 min. Push to edges, place salmon fillets \u2014 160 g (Diego) / 120 g (Diana) \u2014 in centre. Season with dried oregano, garlic powder, drizzle olive oil.",
-          "4. Roast 12\u201314 min until salmon cooked through.",
+          "3. Roast veg+chickpeas 15 min. Push to edges, place salmon fillets — 160 g (Diego) / 120 g (Diana) — in centre. Season with dried oregano, garlic powder, drizzle olive oil.",
+          "4. Roast 12–14 min until salmon cooked through.",
           "5. Serve quinoa in bowls topped with traybake contents. Balsamic drizzle over quinoa.",
           "6. 500 ml water + 1 banana (fruit). Eat vegetables first."
         ],
@@ -2626,7 +2651,7 @@
                 "qty": "2 g"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
@@ -2677,7 +2702,7 @@
                 "qty": "2 g"
               },
               {
-                "item": "Smoked paprika (paprika fum\u00e9)",
+                "item": "Smoked paprika (paprika fumé)",
                 "qty": "1 g"
               },
               {
@@ -2686,7 +2711,7 @@
               },
               {
                 "item": "Banana (banane)",
-                "qty": "\u00bd medium (fruit)"
+                "qty": "½ medium (fruit)"
               }
             ],
             "macros": {
@@ -2774,7 +2799,7 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Cube 180 g sweet potato (Diego) / 130 g (Diana), toss with olive oil, cumin, coriander. Roast 200 \u00b0C, 20 min.",
+          "1. Cube 180 g sweet potato (Diego) / 130 g (Diana), toss with olive oil, cumin, coriander. Roast 200 °C, 20 min.",
           "2. Meanwhile slice 80 g carrots per person, roast on same tray last 15 min.",
           "3. In a pan, brown 140 g (Diego) / 100 g (Diana) ground beef with garlic powder, ground coriander, cumin, chilli flakes. Add 70 g (Diego) / 55 g (Diana) drained lentils. Stir 3 min.",
           "4. Add 150 ml tomato passata. Simmer 5 min.",
@@ -2788,7 +2813,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Ground beef (b\u0153uf hach\u00e9)",
+                "item": "Ground beef (bœuf haché)",
                 "qty": "140 g raw"
               },
               {
@@ -2804,7 +2829,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -2835,7 +2860,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Ground beef (b\u0153uf hach\u00e9)",
+                "item": "Ground beef (bœuf haché)",
                 "qty": "100 g raw"
               },
               {
@@ -2851,7 +2876,7 @@
                 "qty": "80 g"
               },
               {
-                "item": "Spinach (\u00e9pinards)",
+                "item": "Spinach (épinards)",
                 "qty": "60 g"
               },
               {
@@ -2913,8 +2938,8 @@
         "video_url": "",
         "prep_steps": [],
         "day_of_steps": [
-          "1. Blend 250 ml kefir + 80 g raspberries + \u00bd banana (Diego) / 60 g raspberries + \u2153 banana (Diana).",
-          "2. Toast sourdough 40 g (Diego) / 30 g (Diana). Fry 2 eggs each with \u00bd tsp olive oil.",
+          "1. Blend 250 ml kefir + 80 g raspberries + ½ banana (Diego) / 60 g raspberries + ⅓ banana (Diana).",
+          "2. Toast sourdough 40 g (Diego) / 30 g (Diana). Fry 2 eggs each with ½ tsp olive oil.",
           "3. Crumble 25 g feta (Diego) / 20 g (Diana) on toast with eggs.",
           "4. Serve with 1 orange each and 500 ml water."
         ],
@@ -2924,7 +2949,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -2936,7 +2961,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -2967,7 +2992,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Plain kefir (k\u00e9fir nature)",
+                "item": "Plain kefir (kéfir nature)",
                 "qty": "250 ml"
               },
               {
@@ -2979,7 +3004,7 @@
                 "qty": "40 g"
               },
               {
-                "item": "Eggs (\u0153ufs)",
+                "item": "Eggs (œufs)",
                 "qty": "2 large"
               },
               {
@@ -3080,7 +3105,7 @@
           "3. Add 80 g sliced zucchini and 70 g cherry tomatoes halved per person. Cook 5 min.",
           "4. Stir in 1 tsp balsamic vinegar.",
           "5. Toast sourdough 40 g (Diego) / 30 g (Diana) to serve on side. Add mixed leaf salad 40 g each with white wine vinegar drizzle.",
-          "6. 500 ml water + 1 banana (Diego) / \u00bd banana (Diana). Eat salad first."
+          "6. 500 ml water + 1 banana (Diego) / ½ banana (Diana). Eat salad first."
         ],
         "storage_ref": "",
         "food_category": "red_meat",
@@ -3088,7 +3113,7 @@
           "diego": {
             "ingredients": [
               {
-                "item": "Ground beef (b\u0153uf hach\u00e9)",
+                "item": "Ground beef (bœuf haché)",
                 "qty": "140 g raw"
               },
               {
@@ -3108,7 +3133,7 @@
                 "qty": "70 g"
               },
               {
-                "item": "Mixed leaf salad (salade m\u00e9lang\u00e9e)",
+                "item": "Mixed leaf salad (salade mélangée)",
                 "qty": "40 g"
               },
               {
@@ -3139,7 +3164,7 @@
           "diana": {
             "ingredients": [
               {
-                "item": "Ground beef (b\u0153uf hach\u00e9)",
+                "item": "Ground beef (bœuf haché)",
                 "qty": "100 g raw"
               },
               {
@@ -3159,7 +3184,7 @@
                 "qty": "60 g"
               },
               {
-                "item": "Mixed leaf salad (salade m\u00e9lang\u00e9e)",
+                "item": "Mixed leaf salad (salade mélangée)",
                 "qty": "40 g"
               },
               {
@@ -3176,7 +3201,7 @@
               },
               {
                 "item": "Banana (banane)",
-                "qty": "\u00bd medium"
+                "qty": "½ medium"
               }
             ],
             "macros": {
@@ -3265,8 +3290,8 @@
         "prep_steps": [],
         "day_of_steps": [
           "1. Cook 80 g dry wholewheat pasta (Diego) / 60 g (Diana) in salted boiling water ~10 min. Drain. Toss with 1 tsp olive oil.",
-          "2. Meanwhile roast sliced bell pepper 80 g + green beans 60 g per person at 200 \u00b0C for 12 min with olive oil, dried thyme.",
-          "3. Season tilapia 160 g (Diego) / 120 g (Diana) with garlic powder, dried basil, dried oregano, salt. Pan-fry in 1 tsp olive oil, 3\u20134 min per side.",
+          "2. Meanwhile roast sliced bell pepper 80 g + green beans 60 g per person at 200 °C for 12 min with olive oil, dried thyme.",
+          "3. Season tilapia 160 g (Diego) / 120 g (Diana) with garlic powder, dried basil, dried oregano, salt. Pan-fry in 1 tsp olive oil, 3–4 min per side.",
           "4. Plate pasta, top with roasted veg, tilapia fillet. Drizzle white wine vinegar + olive oil. Squeeze lime.",
           "5. 500 ml water. Eat vegetables first."
         ],
@@ -3280,7 +3305,7 @@
                 "qty": "160 g raw"
               },
               {
-                "item": "Wholewheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Wholewheat pasta (pâtes complètes)",
                 "qty": "80 g dry"
               },
               {
@@ -3300,11 +3325,11 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Dried basil (basilic s\u00e9ch\u00e9)",
+                "item": "Dried basil (basilic séché)",
                 "qty": "1 g"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "1 g"
               },
               {
@@ -3331,7 +3356,7 @@
                 "qty": "120 g raw"
               },
               {
-                "item": "Wholewheat pasta (p\u00e2tes compl\u00e8tes)",
+                "item": "Wholewheat pasta (pâtes complètes)",
                 "qty": "60 g dry"
               },
               {
@@ -3351,11 +3376,11 @@
                 "qty": "5 ml"
               },
               {
-                "item": "Dried basil (basilic s\u00e9ch\u00e9)",
+                "item": "Dried basil (basilic séché)",
                 "qty": "1 g"
               },
               {
-                "item": "Dried oregano (origan s\u00e9ch\u00e9)",
+                "item": "Dried oregano (origan séché)",
                 "qty": "1 g"
               },
               {
