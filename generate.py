@@ -244,6 +244,19 @@ allergens = tailoring.kitchen_allergens(prefs)
 dislikes = tailoring._clean_list(prefs["household"]["intolerances"] + prefs["household"]["avoid"])
 cuisines = household.get("cuisines_loved", [])
 preferences_block = tailoring.prompt_block(prefs, MEMBERS)
+
+# Real recipes from the library (recipes.py / recipes.json): a shortlist that
+# fits everyone's allergies and leans towards what they love. The menu should be
+# built on these — Claude adapts them, it doesn't invent the week from scratch.
+import recipes as _recipes
+_library = _recipes.load()
+_recent = {n for h in menu_history[-2:] for n in h.get("meal_names", [])}
+library_pick = _recipes.shortlist(_library, prefs, MEMBERS, n=30, avoid_names=_recent)
+library_by_id = {r["id"]: r for r in _library}
+library_block = "\n".join(
+    f"  {r['id']} · {r['name']} ({r['cuisine']}; {', '.join(r['proteins'])}): "
+    + ", ".join(i["item"] for i in r["ingredients"][:10])
+    for r in library_pick) or "  (library empty)"
 middle_ground_block = tailoring.middle_ground_block(prefs, MEMBERS)
 
 # Fridge-safety windows, sourced from food_safety.py so the prompt never drifts from
@@ -419,6 +432,12 @@ Planned sessions:
 ## MIDDLE GROUND — MAXIMISE THE SHARED PLATE
 {middle_ground_block}
 
+## RECIPE LIBRARY — REAL RECIPES TO BUILD ON (id · name (cuisine; protein): main ingredients)
+Base most lunches and dinners on these real recipes: keep the dish recognisable, swap components to fit the
+locked palette and each person's preferences, resize to the macros. Put the recipe's id in `recipe_source`
+(e.g. {{"library_id": "mdb-52772"}}); use `recipe_source: null` only for simple assemblies (breakfasts, snacks).
+{library_block}
+
 ## LOCKED FRESH PALETTE (chosen first — the whole week MUST be built from this)
 {palette_block}
 
@@ -497,6 +516,7 @@ Output a ```json-menu block. Schema (FOLLOW EXACTLY):
         "prep_steps": ["What to batch-cook or pre-portion on Sunday for this meal (empty list if nothing)"],
         "day_of_steps": ["Detailed step-by-step done on the day, e.g. 'Spoon 200g yogurt into a bowl', 'Top with 100g berries', 'Sprinkle granola'"],
         "storage_ref": "prep_batch_1",
+        "recipe_source": null,
         "food_category": "dairy",
         "portions": {{
           "diego": {{
@@ -673,6 +693,15 @@ if not menu_json:
     _write_error("NutriPrep plan generation FAILED: no usable menu JSON parsed.",
                  "Parse errors:\n" + "\n".join(errors))
     sys.exit("Plan generation failed.")
+
+# Link each dish to the library recipe it was built on (only ids that exist).
+for _d in menu_json:
+    for _meal in _d.get("meals", []):
+        _rs = _meal.get("recipe_source") if isinstance(_meal.get("recipe_source"), dict) else None
+        _rec = library_by_id.get((_rs or {}).get("library_id"))
+        _meal["recipe_source"] = ({"library_id": _rec["id"], "name": _rec["name"], "cuisine": _rec["cuisine"],
+                                   "source_url": _rec["source_url"] or f"https://www.themealdb.com/meal/{_rec['id'][4:]}",
+                                   "image": _rec["image"]} if _rec else None)
 
 # Enforce correct dates (LLM drifts: wrong/missing dates, day-name casing, extra days)
 _week_by_lc = {name.lower(): iso for name, iso in week_dates.items()}
@@ -1178,6 +1207,8 @@ _carry = [dict(d, carried_over=True) for d in _previous_menu
           if isinstance(d, dict) and today.isoformat() <= str(d.get("date", "")) < next_monday.isoformat()]
 with open(BASE / "weekly_menu.json", "w") as f:
     json.dump(_carry + menu_json, f, indent=2)
+# Every dish that was on a menu can come back from the library ("Liked before").
+_recipes.archive_dishes(menu_json, BASE / "dish_archive.json")
 
 with open(BASE / "shopping_list.json", "w") as f:
     json.dump(shopping_out, f, indent=2)
@@ -1206,6 +1237,7 @@ plan_status = {
     "locked_palette": palette or None,
     "tailored_meals": tailored_meals,
     "overlap": overlap,
+    "library_dishes": sum(1 for _d in menu_json for _m in _d.get("meals", []) if _m.get("recipe_source")),
     "sugar_warnings": sugar_warnings,
     "middle_ground": tailoring.middle_ground(prefs, MEMBERS),
     "preference_warnings": preference_warnings,

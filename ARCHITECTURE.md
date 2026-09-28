@@ -467,3 +467,22 @@ weekday; the plan controls shrink to a one-line "Plan · week of … · Refresh 
 - Sugar is planned: portion macros carry `sugar_g`/`free_sugar_g`, each person's day stays under their ceiling
   (`plan_status.sugar_warnings`), and Claude swaps / "Another dish" respect it too.
 - Coach Claudio reads the plan, targets (sugar and water included), rules, meal structure and body from here.
+
+### Recipe library of real recipes (build 45)
+
+- `recipes.py` builds `recipes.json` from **TheMealDB** (free public recipe database; ~620 recipes, desserts left
+  out, each with cuisine, protein groups, ingredients, method, photo and its original source link — or its
+  TheMealDB page when it has none). Rebuild with `python recipes.py`.
+- **Friday generation builds on it:** `generate.py` gives Claude a 30-recipe shortlist (no kitchen allergens or
+  household won't-eats, loved foods first, last two weeks' dishes left out) and asks it to base most lunches and
+  dinners on those recipes, citing `recipe_source.library_id`; unknown ids are dropped. Every menu's dishes are
+  kept in `dish_archive.json` (name → last full dish, first/last seen).
+- **Swap / Change on any upcoming dish (meal sheet):**
+  - **⇄ Swap** opens the library for that dish: search, filter by protein and by style (cuisine), and
+    **❤️ Liked before** — dishes from past menus or the library that someone 👍'd, each with who liked it and when
+    (from the preferences history). Recipes with a kitchen allergen are hidden; ones that clash with a person's
+    rules say they'll get a variant. Picking one → Claude ADAPTS that real recipe (keeps its identity) to both
+    people's day budgets, preferences and sugar ceilings.
+  - **✎ Change** → a text box; Claude changes exactly that and re-fits both people's macros.
+  - Either way only that dish is sent, the day is recomputed, the shopping list rebuilt, and the dish shows
+    "📖 Based on <recipe>" with the source link (and uses the recipe's real photo).

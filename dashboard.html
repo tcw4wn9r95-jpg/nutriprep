@@ -340,6 +340,28 @@
   .rate-btn.on { background: var(--sage-pale); border-color: var(--pine); }
   .another { display: flex; gap: 6px; margin-top: 12px; }
   .another input { flex: 1; min-width: 0; border: 1.5px solid var(--hair); border-radius: 999px; padding: 8px 12px; font-size: 13px; background: var(--bg); color: var(--ink); }
+  #recipes-body { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 12px 14px 24px; }
+  .lib-search { width: 100%; border: 1.5px solid var(--hair); border-radius: 999px; padding: 10px 14px; font-size: 14px; background: var(--surface); color: var(--ink); margin-bottom: 8px; }
+  .lib-frow { margin-bottom: 4px; }
+  .lib-flabel { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); margin: 6px 2px 4px; }
+  .lib-count { font-size: 12px; color: var(--muted); margin: 8px 2px; }
+  .lib-card { display: flex; gap: 12px; background: var(--surface); border-radius: var(--r-sm); padding: 10px; margin-bottom: 8px; box-shadow: var(--shadow); cursor: pointer; }
+  .lib-card img, .lib-ph { width: 64px; height: 64px; border-radius: 12px; object-fit: cover; flex-shrink: 0; background: var(--sage-pale); display: flex; align-items: center; justify-content: center; font-size: 26px; }
+  .lib-info { min-width: 0; flex: 1; }
+  .lib-name { font-size: 14px; font-weight: 700; }
+  .lib-meta { font-size: 12px; color: var(--muted); margin: 2px 0 4px; }
+  .like-chip { display: inline-block; font-size: 11px; font-weight: 600; background: #F6E4EA; color: #9b3a5a; border-radius: 999px; padding: 2px 8px; margin: 2px 4px 2px 0; }
+  .lib-credit { font-size: 11px; color: var(--faint); text-align: center; margin-top: 10px; }
+  .lib-hero { width: 100%; border-radius: 16px; max-height: 220px; object-fit: cover; }
+  .lib-title { font-family: var(--serif); font-size: 22px; margin: 10px 0 2px; }
+  .pi-row { font-size: 13.5px; padding: 5px 0; border-bottom: 1px solid var(--hair); display: flex; justify-content: space-between; gap: 8px; }
+  .adapt-row { display: flex; gap: 8px; margin-top: 12px; }
+  .adapt-row .btn { flex: 1; }
+  #change-box { margin-top: 8px; }
+  #change-box.hidden { display: none; }
+  #change-box textarea { width: 100%; border: 1.5px solid var(--hair); border-radius: 12px; padding: 9px 12px; font: inherit; font-size: 13.5px; background: var(--bg); color: var(--ink); margin-bottom: 6px; }
+  .recipe-src { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+  .recipe-src a { color: var(--pine); }
   #prefs-status { font-size: 12px; color: var(--muted); padding: 6px 14px calc(10px + var(--safe-b)); background: var(--surface); border-top: 1px solid var(--hair); text-align: center; }
 
   /* Meal sheet */
@@ -532,6 +554,14 @@
   </div>
 </div>
 
+<div class="setup-overlay hidden" id="recipes-overlay">
+  <div class="setup-header">
+    <div class="setup-logo">📚</div>
+    <div><div class="setup-title">Recipe library</div><div class="setup-sub" id="recipes-sub">Real recipes</div></div>
+    <button class="setup-close" onclick="closeRecipeLib()">✕</button>
+  </div>
+  <div id="recipes-body"></div>
+</div>
 <div class="setup-overlay hidden" id="prefs-overlay">
   <div class="setup-header">
     <div class="setup-logo">🥕</div>
@@ -604,7 +634,7 @@
   <div class="tab-pane" id="pane-menu">
     <div class="row-between" style="margin-bottom:10px">
       <div class="section-title" style="margin-bottom:0">This week's menu</div>
-      <button class="btn btn-outline btn-sm" onclick="openPrefs()">🥕 Preferences</button>
+      <div style="display:flex;gap:6px"><button class="btn btn-outline btn-sm" onclick="openRecipes()">📚 Recipes</button><button class="btn btn-outline btn-sm" onclick="openPrefs()">🥕 Preferences</button></div>
     </div>
     <div id="menu-legend" style="font-size:12px;color:var(--muted);margin:-2px 0 10px"></div>
     <div id="menu-days"></div>
@@ -733,7 +763,7 @@
       <div id="goals-display"></div>
       <button class="btn btn-outline btn-block" style="margin-top:12px" onclick="startSetup()">🌿 Set up / review the household with Coach Léa</button>
     </div>
-    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v44 · nutriprep</div>
+    <div id="build-label" style="text-align:center;font-size:11px;color:var(--faint);padding:8px 0 4px">NutriPrep · build v45 · nutriprep</div>
     <div style="height:20px"></div>
   </div>
 </div>
@@ -757,7 +787,7 @@
 
 <script>
 // ── Config ────────────────────────────────────────────────────────────────────
-const APP_BUILD = 44; // bump on every release; must match version.json — drives auto-update
+const APP_BUILD = 45; // bump on every release; must match version.json — drives auto-update
 const GITHUB_REPO = "tcw4wn9r95-jpg/nutriprep";
 const GITHUB_BRANCH = "main";
 const RAW = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -840,6 +870,8 @@ function placeholderImg(meal){
   return "data:image/svg+xml;utf8,"+encodeURIComponent(svg);
 }
 function mealImageUrl(meal){
+  // A dish built on a library recipe has a real photo of that recipe.
+  if(meal && meal.recipe_source && meal.recipe_source.image) return meal.recipe_source.image;
   const prompt = meal.image_prompt || ((meal.name||"") + " healthy meal, food photography");
   return aiImageUrl(prompt, hashSeed(meal.name||prompt), "flux");
 }
@@ -1323,6 +1355,7 @@ async function loadSharedData(){
   // Don't clobber preferences mid-edit (the editor saves on a short debounce).
   if(!_prefsSaveTimer){ let pf=null; try{ pf=await ghFetch("preferences.json"); }catch(_){ pf=null; } prefs=loadPreferences(pf, householdData, learnedPrefs); }
   try{ priceBook=await ghFetch("price_book.json"); }catch(_){ priceBook={products:{}}; }
+  try{ dishArchive=await ghFetch("dish_archive.json"); }catch(_){ dishArchive=null; }
   // Cross-app reads from the training app (AthleteIQ) at the repo root
   try{ trainingPlan=await (await fetch(`${RAW_ROOT}/weekly_plan.json?t=${Date.now()}`)).json(); }catch(_){ trainingPlan=null; }
   try{ sleepData=await (await fetch(`${RAW_ROOT}/sleep.json?t=${Date.now()}`)).json(); }catch(_){ sleepData=null; }
@@ -1499,7 +1532,7 @@ function renderJourney(){
     } else {
       const next=(weekMenu||[]).filter(d=>!d.carried_over && d.date>=wk);
       const dishes=new Set(next.flatMap(d=>d.meals.map(m=>m.name))).size, ov=menuOverlap();
-      el.innerHTML=journeyCard("🥗","Next week's menu is ready",`${dishes} dishes${ov?` · ${ov.pct}% the same plate for everyone`:""}. Anything you don't fancy? Open it and tap “↻ Another dish” before Saturday's shop.`,"Review the menu","showTab('menu')");
+      el.innerHTML=journeyCard("🥗","Next week's menu is ready",`${dishes} dishes${ov?` · ${ov.pct}% the same plate for everyone`:""}. Anything you don't fancy? Open it and tap ⇄ Swap (pick a real recipe) or ✎ Change before Saturday's shop.`,"Review the menu","showTab('menu')");
     }
     return;
   }
@@ -1512,7 +1545,6 @@ function renderJourney(){
   }
 }
 
-// ── "↻ Another dish": Claude replaces ONE dish (review before shopping) ─────────
 function dishPayload(day, meal){
   const budget=Object.fromEntries(MEMBERS.map(m=>{ const target=(people[m].macros||{}).kcal||null;
     const others=day.meals.filter(x=>x!==meal).reduce((a,x)=>a+(+((((x.portions||{})[m]||{}).macros||{}).kcal)||0),0);
@@ -1522,27 +1554,171 @@ function dishPayload(day, meal){
     food_category:meal.food_category||"", prep_ahead:!!meal.prep_ahead, cook_minutes_day_of:meal.cook_minutes_day_of||0,
     image_prompt:meal.image_prompt||"", prep_steps:meal.prep_steps||[], day_of_steps:meal.day_of_steps||meal.recipe||[], portions:meal.portions||{}, day_budget:budget};
 }
-async function anotherDish(){
-  const day=(weekMenu||[]).find(d=>d.date===currentMealDate), meal=day&&day.meals.find(m=>m.slot===currentMeal.slot);
-  const st=document.getElementById("another-status"), btn=document.getElementById("another-btn");
-  if(!day||!meal) return;
-  if(!cfg("anthropic_key")){ st.textContent="Add your Anthropic key in Settings first."; return; }
-  const why=((document.getElementById("another-why")||{}).value||"").trim();
-  st.textContent="Claude is finding another dish…"; if(btn) btn.disabled=true;
-  const weekDishes=[...new Set((weekMenu||[]).filter(d=>!d.carried_over).flatMap(d=>d.meals.map(m=>m.name)))].filter(n=>n!==meal.name);
-  const system=`You are replacing ONE dish in a household's weekly meal plan. One person cooks for everyone; each person has their own portion (and a variant when their preferences need one).
-Design a DIFFERENT dish for the same meal slot that:
-- fits the slot and time, and isn't already on this week's menu;
-- reuses ingredients that are already on the shopping list where it can, so the shop barely changes;
-- sizes each person's portion so their day lands near daily_target_kcal given other_meals_that_day_kcal, with realistic macros per portion (sugar_g = all sugars, free_sugar_g = added sugar/honey/syrups/juice), keeping their day's free sugar under free_sugar_max_g;
-- respects everyone's preferences below (never a kitchen allergen; give a person a variant if the shared dish breaks their rules; aim for the same plate for everyone);
-- is safe for its day: poultry/red meat batch-prepped Sunday keep 3 days (Monday = day 1), fish 2, cooked rice 1 — otherwise prep_ahead false and cook it on the day.
+// ── Recipe library: REAL recipes (recipes.json, from TheMealDB) + dishes we liked ──
+// ⇄ Swap opens it for one dish; picking a recipe asks Claude to ADAPT that recipe to
+// both people's macros (it never invents the recipe). ✎ Change adapts the current
+// dish to a request. Browsing from the Menu tab shows recipes with their sources.
+let recipeLib=null, dishArchive=null, libTarget=null, libOpenId=null, libLimit=40;
+const libFilters={q:"", proteins:new Set(), cuisines:new Set(), liked:false};
+const LIB_PROTEINS=[["chicken","Chicken"],["turkey","Turkey"],["beef","Beef"],["pork","Pork"],["lamb","Lamb"],["fish","Fish"],["seafood","Seafood"],["eggs","Eggs"],["legumes","Legumes"],["tofu","Tofu"],["vegetarian","Vegetarian"],["vegan","Vegan"]];
+async function loadRecipeLib(){
+  if(recipeLib) return recipeLib;
+  try{ const r=await fetch("./recipes.json",{cache:"no-store"}); if(r.ok) recipeLib=(await r.json()).recipes||[]; }catch(_){}
+  if(!recipeLib){ try{ recipeLib=((await ghFetch("recipes.json"))||{}).recipes||[]; }catch(_){ recipeLib=[]; } }
+  return recipeLib;
+}
+function _fmtDay(iso){ try{ return new Date(iso+"T12:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short"}); }catch(_){ return iso; } }
+// Who liked a dish, and when (from the preferences history: 👍 in the meal sheet or the weekly review).
+function likesFor(name){
+  const P=prefs||normalizePrefs({}), lc=String(name||"").toLowerCase(), out=[];
+  MEMBERS.forEach(m=>{ if(!(P.people[m].love||[]).some(x=>x.toLowerCase()===lc)) return;
+    const h=(P.history||[]).filter(e=>e.who===m&&e.kind==="love"&&e.action==="added"&&String(e.item).toLowerCase()===lc).pop();
+    out.push({member:m, at:h&&h.at}); });
+  if((P.household.love||[]).some(x=>x.toLowerCase()===lc)){ const h=(P.history||[]).filter(e=>e.who==="everyone"&&e.kind==="love"&&String(e.item).toLowerCase()===lc).pop(); out.push({member:"everyone", at:h&&h.at}); }
+  return out;
+}
+function likeChips(name){ return likesFor(name).map(l=>`<span class="like-chip">❤️ ${esc(l.member==="everyone"?"Everyone":personName(l.member))}${l.at?` · ${esc(_fmtDay(l.at))}`:""}</span>`).join(""); }
+// Dishes that have been on a menu before (archive + this plan), as library entries.
+function pastDishes(){
+  const out={};
+  Object.values((dishArchive&&dishArchive.dishes)||{}).forEach(d=>{ out[d.name.toLowerCase()]={id:"past:"+d.name, past:true, name:d.name, cuisine:"From our menus", proteins:[], meal_types:[d.slot==="breakfast"?"breakfast":"dinner"], last_seen:d.last_seen, meal:d.meal}; });
+  (weekMenu||[]).forEach(day=>day.meals.forEach(m=>{ if(["am_snack","pm_snack"].includes(m.slot)) return; const k=(m.name||"").toLowerCase(); if(k&&!out[k]) out[k]={id:"past:"+m.name, past:true, name:m.name, cuisine:"From our menus", proteins:[], meal_types:[m.slot==="breakfast"?"breakfast":"dinner"], last_seen:day.date, meal:m}; }));
+  return Object.values(out);
+}
+function entryIngredients(e){ return e.past ? MEMBERS.flatMap(m=>ingNames(((e.meal||{}).portions||{})[m])) : (e.ingredients||[]).map(i=>i.item); }
+function libEntries(){
+  const lib=(recipeLib||[]), liked=new Set();
+  const past=pastDishes().filter(d=>likesFor(d.name).length);
+  lib.forEach(r=>{ if(likesFor(r.name).length) liked.add(r.id); });
+  return {lib, past, liked};
+}
+function libClash(e){
+  const ings=entryIngredients(e);
+  const allergens=kitchenAllergens().map(termsFor);
+  if(ings.some(i=>allergens.some(t=>termMatches(i,t)))) return {blocked:true};
+  const needs=[];
+  MEMBERS.forEach(m=>{ const r=restrictionsFor(m).filter(x=>x.kind!=="allergies").find(rule=>ings.some(i=>termMatches(i,rule.terms))); if(r) needs.push(`${personName(m)}: ${r.label}`); });
+  return {blocked:false, needs};
+}
+function openRecipes(date, slot){
+  libTarget=(date&&slot)?{date, slot}:null; libOpenId=null; libLimit=40;
+  document.getElementById("recipes-overlay").classList.remove("hidden");
+  document.getElementById("recipes-body").innerHTML=`<div class="empty"><p>Loading the recipe library…</p></div>`;
+  loadRecipeLib().then(renderLibraryOverlay);
+}
+function closeRecipeLib(){ document.getElementById("recipes-overlay").classList.add("hidden"); }
+function toggleLibFilter(kind, v){
+  if(kind==="liked") libFilters.liked=!libFilters.liked;
+  else { const s=libFilters[kind]; if(s.has(v)) s.delete(v); else s.add(v); }
+  libLimit=40; renderLibraryOverlay();
+}
+function proteinLabel(list){ return (list||[]).map(p=>p.charAt(0).toUpperCase()+p.slice(1)).join(", "); }
+function libSlotType(){ if(!libTarget) return null; return libTarget.slot==="breakfast"?"breakfast":["am_snack","pm_snack"].includes(libTarget.slot)?"snack":"dinner"; }
+function renderLibraryOverlay(){
+  const body=document.getElementById("recipes-body"); if(!body) return;
+  if(libOpenId) return renderRecipeDetail();
+  const {lib, past, liked}=libEntries(), f=libFilters, type=libSlotType();
+  const tgtDay=libTarget&&(weekMenu||[]).find(d=>d.date===libTarget.date), tgtMeal=tgtDay&&tgtDay.meals.find(m=>m.slot===libTarget.slot);
+  document.getElementById("recipes-sub").textContent=libTarget&&tgtMeal?`Swap ${tgtDay.day} ${((SLOT_LABELS[tgtMeal.slot]||{}).label||tgtMeal.slot).toLowerCase()}: ${tgtMeal.name}`:`${lib.length} real recipes · tap one to see it`;
+  let pool=(f.liked?[...past, ...lib.filter(r=>liked.has(r.id))]:lib);
+  if(type) pool=pool.filter(e=>(e.meal_types||[]).includes(type)||(type==="snack"&&(e.meal_types||[]).includes("lunch")));
+  if(f.proteins.size) pool=pool.filter(e=>e.past||(e.proteins||[]).some(p=>f.proteins.has(p)));
+  if(f.cuisines.size) pool=pool.filter(e=>e.past||f.cuisines.has(e.cuisine));
+  const q=f.q.trim().toLowerCase();
+  if(q) pool=pool.filter(e=>(e.name+" "+e.cuisine+" "+entryIngredients(e).join(" ")).toLowerCase().includes(q));
+  let hidden=0; pool=pool.filter(e=>{ const c=libClash(e); if(c.blocked){ hidden++; return false; } return true; });
+  // Liked dishes first, then by name.
+  pool.sort((a,b)=>(likesFor(b.name).length-likesFor(a.name).length)||a.name.localeCompare(b.name));
+  // Selected styles first so a choice never scrolls out of sight, then by how many recipes they have.
+  const cuisines=Object.entries(lib.reduce((a,r)=>{ a[r.cuisine]=(a[r.cuisine]||0)+1; return a; },{})).sort((a,b)=>(f.cuisines.has(b[0])-f.cuisines.has(a[0]))||(b[1]-a[1])).map(x=>x[0]);
+  const chip=(on,label,js)=>`<button class="filter-chip${on?" active":""}" onclick="${js}">${label}</button>`;
+  body.innerHTML=`
+    <input class="lib-search" id="lib-q" placeholder="Search recipes or ingredients…" value="${esc(f.q)}" oninput="libFilters.q=this.value;libLimit=40;renderLibraryResults()">
+    <div class="lib-frow">${chip(f.liked,`❤️ Liked before (${past.length+liked.size})`,"toggleLibFilter('liked')")}</div>
+    <div class="lib-flabel">Protein</div><div class="filter-row">${[...LIB_PROTEINS].sort((a,b)=>f.proteins.has(b[0])-f.proteins.has(a[0])).map(([k,l])=>chip(f.proteins.has(k),l,`toggleLibFilter('proteins','${k}')`)).join("")}</div>
+    <div class="lib-flabel">Style</div><div class="filter-row">${cuisines.map(c=>chip(f.cuisines.has(c),esc(c),`toggleLibFilter('cuisines',decodeURIComponent('${encodeURIComponent(c).replace(/'/g,"%27")}'))`)).join("")}</div>
+    <div id="lib-results"></div>`;
+  window._libPool=pool; window._libHidden=hidden;
+  renderLibraryResults(true);
+}
+function renderLibraryResults(fromFull){
+  if(!fromFull){ const q=document.getElementById("lib-q"); const pos=q&&q.selectionStart; renderLibraryOverlay(); const q2=document.getElementById("lib-q"); if(q2){ q2.focus(); try{q2.setSelectionRange(pos,pos);}catch(_){} } return; }
+  const pool=window._libPool||[], el=document.getElementById("lib-results");
+  el.innerHTML=`<div class="lib-count">${pool.length} recipe${pool.length===1?"":"s"}${window._libHidden?` · ${window._libHidden} hidden (kitchen allergy)`:""}</div>`+
+    pool.slice(0,libLimit).map(e=>{ const c=libClash(e);
+      return `<div class="lib-card" onclick="openRecipe(decodeURIComponent('${encodeURIComponent(e.id).replace(/'/g,"%27")}'))">
+        ${e.image?`<img src="${esc(e.image)}/preview" loading="lazy" alt="" onerror="this.outerHTML='<div class=&quot;lib-ph&quot;>📖</div>'">`:`<div class="lib-ph">${e.past?"🍽️":"📖"}</div>`}
+        <div class="lib-info"><div class="lib-name">${esc(e.name)}</div>
+          <div class="lib-meta">${esc(e.past?`From our menus · last ${_fmtDay(e.last_seen)}`:`${e.cuisine} · ${proteinLabel(e.proteins)}`)}</div>
+          ${likeChips(e.name)}${(c.needs||[]).map(n=>`<span class="diff-badge" style="display:inline-block">↳ ${esc(n)} — gets a variant</span>`).join("")}
+        </div></div>`; }).join("")+
+    (pool.length>libLimit?`<button class="btn btn-outline btn-block" onclick="libLimit+=40;renderLibraryResults(true)">Show more</button>`:"")+
+    `<div class="lib-credit">Recipes from TheMealDB — each links to its original source.</div>`;
+}
+// Where a recipe comes from: its original page, else its TheMealDB page.
+function recipeLink(e){ return (e&&e.source_url)||((e&&String(e.id||"").startsWith("mdb-"))?`https://www.themealdb.com/meal/${String(e.id).slice(4)}`:""); }
+function findEntry(id){ if(String(id).startsWith("past:")) return pastDishes().find(d=>d.id===id); return (recipeLib||[]).find(r=>r.id===id); }
+function openRecipe(id){ libOpenId=id; renderLibraryOverlay(); document.getElementById("recipes-body").scrollTop=0; }
+function renderRecipeDetail(){
+  const e=findEntry(libOpenId), body=document.getElementById("recipes-body"); if(!e){ libOpenId=null; return renderLibraryOverlay(); }
+  const tgtDay=libTarget&&(weekMenu||[]).find(d=>d.date===libTarget.date), tgtMeal=tgtDay&&tgtDay.meals.find(m=>m.slot===libTarget.slot);
+  const ings=e.past? (((e.meal||{}).portions||{})[MEMBERS[0]]||{}).ingredients||[] : e.ingredients||[];
+  const steps=e.past? ((e.meal||{}).day_of_steps||[]) : e.instructions||[];
+  const c=libClash(e);
+  body.innerHTML=`<button class="link-muted" style="margin-bottom:10px" onclick="libOpenId=null;renderLibraryOverlay()">← Back to the list</button>
+    ${e.image?`<img class="lib-hero" src="${esc(e.image)}" alt="">`:""}
+    <h2 class="lib-title">${esc(e.name)}</h2>
+    <div class="lib-meta">${esc(e.past?`From our menus · last ${_fmtDay(e.last_seen)}`:`${e.cuisine} · ${proteinLabel(e.proteins)}`)}</div>${likeChips(e.name)}
+    ${(c.needs||[]).map(n=>`<span class="diff-badge">↳ ${esc(n)} — Claude gives them a variant</span>`).join("")}
+    ${libTarget&&tgtMeal?`<button class="btn btn-block" id="use-recipe-btn" style="margin:12px 0" onclick="useRecipe()">Use for ${esc(tgtDay.day)} ${esc(((SLOT_LABELS[tgtMeal.slot]||{}).label||"").toLowerCase())} — adapt to ${esc(MEMBERS.map(personName).join(" & "))}'s macros</button><div id="use-recipe-status" style="font-size:12.5px;color:var(--muted)"></div>`:""}
+    <div class="recipe-section-title">🛒 Ingredients${e.past?` (${esc(personName(MEMBERS[0]))}'s portion)`:" (original recipe)"}</div>
+    ${ings.map(i=>`<div class="pi-row"><span>${esc(i.item||i)}</span><strong>${esc(i.qty||"")}</strong></div>`).join("")}
+    <div class="recipe-section-title">🍳 Method</div>
+    ${steps.map((s,i)=>`<div class="batch-step"><span class="batch-step-num">${i+1}</span>${esc(s)}</div>`).join("")}
+    ${recipeLink(e)?`<a class="btn btn-outline btn-block" style="margin-top:12px" href="${esc(recipeLink(e))}" target="_blank" rel="noopener">Original recipe ↗</a>`:""}`;
+}
+async function useRecipe(){
+  const e=findEntry(libOpenId); if(!e||!libTarget) return;
+  const st=document.getElementById("use-recipe-status"), btn=document.getElementById("use-recipe-btn");
+  if(btn) btn.disabled=true; st.textContent=`Claude is adapting ${e.name} to both of your macros…`;
+  const recipe=e.past? {name:e.name, from:"a dish from our own past menus", previous_version:e.meal}
+    : {name:e.name, cuisine:e.cuisine, ingredients:e.ingredients, method:e.instructions.slice(0,14), source_url:recipeLink(e)};
+  const res=await adaptDish(libTarget.date, libTarget.slot, {recipe});
+  if(res.ok){ closeRecipeLib(); const d=(weekMenu||[]).find(x=>x.date===libTarget.date); openMeal(d.meals.find(m=>m.slot===libTarget.slot), libTarget.date); const s=document.getElementById("adapt-status"); if(s) s.textContent=res.message; }
+  else { st.textContent=res.message; if(btn) btn.disabled=false; }
+}
+function toggleChangeBox(){ const b=document.getElementById("change-box"); if(b){ b.classList.toggle("hidden"); const t=document.getElementById("change-text"); if(t&&!b.classList.contains("hidden")) t.focus(); } }
+async function changeDish(){
+  const t=document.getElementById("change-text"), text=(t&&t.value||"").trim(); if(!text){ t&&t.focus(); return; }
+  const st=document.getElementById("adapt-status"), btn=document.getElementById("change-btn"); if(btn) btn.disabled=true;
+  st.textContent="Claude is changing the dish and re-fitting both of your macros…";
+  const res=await adaptDish(currentMealDate, currentMeal.slot, {instruction:text});
+  const d=(weekMenu||[]).find(x=>x.date===currentMealDate);
+  if(res.ok){ openMeal(d.meals.find(m=>m.slot===currentMeal.slot), currentMealDate); const s=document.getElementById("adapt-status"); if(s) s.textContent=res.message; }
+  else { st.textContent=res.message; if(btn) btn.disabled=false; }
+}
+// One dish, adapted by Claude: from a library recipe (swap) or to a request (change).
+async function adaptDish(date, slot, {recipe, instruction}){
+  const day=(weekMenu||[]).find(d=>d.date===date), meal=day&&day.meals.find(m=>m.slot===slot);
+  if(!day||!meal) return {ok:false, message:"That dish isn't on the menu any more."};
+  if(!cfg("anthropic_key")) return {ok:false, message:"Add your Anthropic key in Settings first."};
+  const task=recipe
+    ? `The cook picked a REAL recipe to replace this dish. Adapt THAT recipe — keep its identity (main ingredients, method, flavour); don't invent a different dish. Name it after the recipe (a short note of the adaptation is fine).`
+    : `The cook wants to change this dish: "${instruction}". Change exactly that and keep the rest of the dish.`;
+  const system=`You adapt ONE dish in a household's weekly meal plan. One person cooks for everyone; each person has their own portion (and a variant when their preferences need one).
+${task}
+Then fit it to the household:
+- size each person's portion so their day lands near daily_target_kcal given other_meals_that_day_kcal; realistic macros per portion (sugar_g = all sugars, free_sugar_g = added sugar/honey/syrups/juice), keeping their day's free sugar under free_sugar_max_g;
+- respect everyone's preferences below (never a kitchen allergen; give a person a variant if the dish breaks their rules; aim for the same plate for everyone);
+- reuse ingredients already on the shopping list where it makes no difference to the dish;
+- food safety: poultry/red meat batch-prepped Sunday keep 3 days (Monday = day 1), fish 2, cooked rice 1 — otherwise prep_ahead false and cook it on the day;
+- prep_steps / day_of_steps: short, clear, beginner-friendly.
 Return exactly one dish with the given ref, prep_batches [] and a one-sentence summary.
 
 Food preferences and middle ground:
 ${prefsSummaryText()}
 Middle ground: ${JSON.stringify(middleGround())}`;
-  const payload={dish:dishPayload(day,meal), why:why||null, already_on_menu:weekDishes,
+  const payload={dish:dishPayload(day,meal), recipe:recipe||null, change_request:instruction||null,
     shopping_list:((shoppingList&&shoppingList.items)||[]).map(i=>i.name_en), people:MEMBERS.map(m=>({id:m,name:personName(m)}))};
   try{
     const out=await callClaudeJSON(system, JSON.stringify(payload), _swapSchema(), {maxTokens:8000, effort:"medium"});
@@ -1551,16 +1727,19 @@ Middle ground: ${JSON.stringify(middleGround())}`;
     const oldName=meal.name, before=Object.fromEntries(MEMBERS.map(m=>[m,+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0]));
     ["name","image_prompt","food_category","prep_ahead","cook_minutes_day_of","prep_steps","day_of_steps"].forEach(k=>{ if(r[k]!==undefined) meal[k]=r[k]; });
     MEMBERS.forEach(m=>{ const p=(r.portions||{})[m]; if(p&&Array.isArray(p.ingredients)) meal.portions[m]={ingredients:p.ingredients, macros:p.macros, variant:p.variant||null}; });
-    meal.video_url=""; meal.replaced=[...(meal.replaced||[]),{from:oldName,on:todayISO(),why:why||""}];
+    if(recipe){ const lib=(recipeLib||[]).find(x=>x.name===recipe.name);
+      meal.recipe_source=lib?{library_id:lib.id, name:lib.name, cuisine:lib.cuisine, source_url:recipeLink(lib), image:lib.image}:{name:recipe.name, past:true};
+      meal.video_url=(lib&&lib.video_url)||""; }
+    meal.edits=[...(meal.edits||[]),{on:todayISO(), from:oldName, ...(recipe?{recipe:recipe.name}:{change:instruction})}];
     recomputeDayTotals(day);
-    prefAdd("everyone","notes",`Swapped “${oldName}” → “${meal.name}”${why?` (${why})`:""}`,"review");
+    if(recipe) prefAdd("everyone","notes",`Swapped “${oldName}” → “${meal.name}” from the library`,"review");
     markMenuDirty();
-    await ghWrite("weekly_menu.json", weekMenu, `Another dish: ${oldName} → ${meal.name}`);
+    await ghWrite("weekly_menu.json", weekMenu, recipe?`Swap from library: ${oldName} → ${meal.name}`:`Change dish: ${meal.name}`);
     await regenerateShopping();
-    refreshMenuViews(); openMeal(meal, day.date);
-    const s2=document.getElementById("another-status");
-    if(s2) s2.textContent=`✓ ${oldName} → ${meal.name}. ${out.summary||""} ${MEMBERS.map(m=>`${personName(m)} ${before[m]}→${+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0}`).join(", ")} kcal. Shopping list updated.`;
-  }catch(e){ st.textContent="Couldn't get another dish: "+e.message; if(btn) btn.disabled=false; }
+    refreshMenuViews();
+    const after=Object.fromEntries(MEMBERS.map(m=>[m,+((((meal.portions||{})[m]||{}).macros||{}).kcal)||0]));
+    return {ok:true, message:`✓ ${recipe?`${oldName} → ${meal.name}`:`Changed: ${meal.name}`}. ${out.summary||""} ${MEMBERS.map(m=>`${personName(m)} ${before[m]}→${after[m]}`).join(", ")} kcal. Shopping list updated.`};
+  }catch(e){ return {ok:false, message:"Couldn't adapt the dish: "+e.message}; }
 }
 
 // ── TODAY / HOME ────────────────────────────────────────────────────────────────
@@ -1801,7 +1980,10 @@ function openMeal(meal, dayDate){
       ${diffBox}${warnBox}
       <div style="margin:10px 0 2px">${madeButton(dayDate, meal, "btn btn-block made-sheet")}</div>
       <div style="font-size:11.5px;color:var(--muted);text-align:center">Takes everyone's portions out of the fridge & pantry (updated nightly).</div>
-      ${dayDate>=todayISO()?`<div class="another"><input id="another-why" placeholder="Want something else? Why (optional) — e.g. lighter, no fish"><button class="btn btn-outline btn-sm" id="another-btn" onclick="anotherDish()">↻ Another dish</button></div><div id="another-status" style="font-size:12px;color:var(--muted);margin-top:6px"></div>`:""}
+      ${dayDate>=todayISO()?`<div class="adapt-row"><button class="btn btn-outline" onclick='openRecipes("${dayDate}","${meal.slot}")'>⇄ Swap</button><button class="btn btn-outline" onclick="toggleChangeBox()">✎ Change</button></div>
+        <div id="change-box" class="hidden"><textarea id="change-text" rows="2" placeholder="What should change? e.g. make it spicier, use salmon instead, no oven — Claude re-fits both of your macros"></textarea><button class="btn btn-block btn-sm" id="change-btn" onclick="changeDish()">Change this dish</button></div>
+        <div id="adapt-status" style="font-size:12.5px;color:var(--muted);margin-top:6px"></div>`:""}
+      ${meal.recipe_source&&meal.recipe_source.name?`<div class="recipe-src">📖 Based on ${meal.recipe_source.source_url?`<a href="${esc(meal.recipe_source.source_url)}" target="_blank" rel="noopener">${esc(meal.recipe_source.name)}</a>`:esc(meal.recipe_source.name)}${meal.recipe_source.cuisine?` · ${esc(meal.recipe_source.cuisine)}`:""}</div>`:""}
       <div class="recipe-section-title">🍽️ Plates</div>
       <div class="plates">${plates}</div>
       ${prepHtml}
