@@ -22,5 +22,13 @@
   {
     "role": "assistant",
     "content": "Got it! Here's the quick fix — just add more liquid gradually until you hit the texture you like:\n\n---\n\n## 💧 Liquid Adjustment for Overnight Oats\n\n- **Diego:** Add **40–60 ml more** coconut milk (or water/almond milk if you want to keep calories in check)\n- **Diana:** Add **30–40 ml more** coconut milk (same idea)\n\n---\n\n### 💡 Tips for a less pasty result next time:\n- **Ratio to aim for:** ~1:2 oats to liquid (so 80g oats → ~160ml liquid for Diego, 55g oats → ~110ml for Diana)\n- **Stir well before adding more** — sometimes it just needs a good mix after sitting overnight\n- **Thinner but still creamy?** Try half coconut milk, half water — you keep the flavour without the heaviness\n- **Chia seeds absorb a lot** — if you reduce chia slightly (e.g. 10g for Diego, 8g for Diana), it'll naturally loosen up too\n\nWould you like me to swap a breakfast this week for overnight oats with these adjusted ratios? 🥣"
+  },
+  {
+    "role": "user",
+    "content": "It’s low fat coconut drink"
+  },
+  {
+    "role": "assistant",
+    "content": "Good to know! That changes the calorie picture a bit — low-fat coconut drink (like a carton coconut beverage) is much lighter than canned coconut milk, so here's the updated breakdown:\n\n---\n\n## 🥥 Revised Overnight Oats — Low-Fat Coconut Drink\n\n| Ingredient | Diego | Diana |\n|---|---|---|\n| **Rolled oats** | 80 g | 55 g |\n| **Low-fat coconut drink** | 160 ml | 110 ml |\n| **Chia seeds** | 15 g | 10 g |\n\n### Updated estimated macros\n\n| | Diego | Diana |\n|---|---|---|\n| **kcal** | ~390 kcal | ~270 kcal |\n| **Carbs** | ~60 g | ~41 g |\n| **Protein** | ~12 g | ~8 g |\n| **Fat** | ~9 g | ~6 g |\n| **Fiber** | ~9 g | ~6 g |\n\n---\n\n### 💡 Things to note:\n- Since low-fat coconut drink has **less fat**, it's also **less filling** — a handful of walnuts or almonds on top would help satiety for both\n- The **lower calories** actually give a bit of room to add a protein topping like Greek yogurt for Diego especially\n- Great news for **Diana's 1600 kcal target** — leaves plenty of room for the rest of the day!\n\nWant me to swap a breakfast this week for this version? 🥣"
   }
 ]
