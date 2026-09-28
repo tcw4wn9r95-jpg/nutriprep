@@ -14,5 +14,13 @@
   {
     "role": "assistant",
     "content": "It sounds like you got cut off there! 😄 Go ahead and finish your thought — did you mean it needs **more liquid**, a different texture, or something else? I want to make sure I give you the right fix!"
+  },
+  {
+    "role": "user",
+    "content": "More liquid"
+  },
+  {
+    "role": "assistant",
+    "content": "Got it! Here's the quick fix — just add more liquid gradually until you hit the texture you like:\n\n---\n\n## 💧 Liquid Adjustment for Overnight Oats\n\n- **Diego:** Add **40–60 ml more** coconut milk (or water/almond milk if you want to keep calories in check)\n- **Diana:** Add **30–40 ml more** coconut milk (same idea)\n\n---\n\n### 💡 Tips for a less pasty result next time:\n- **Ratio to aim for:** ~1:2 oats to liquid (so 80g oats → ~160ml liquid for Diego, 55g oats → ~110ml for Diana)\n- **Stir well before adding more** — sometimes it just needs a good mix after sitting overnight\n- **Thinner but still creamy?** Try half coconut milk, half water — you keep the flavour without the heaviness\n- **Chia seeds absorb a lot** — if you reduce chia slightly (e.g. 10g for Diego, 8g for Diana), it'll naturally loosen up too\n\nWould you like me to swap a breakfast this week for overnight oats with these adjusted ratios? 🥣"
   }
 ]
