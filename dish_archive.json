@@ -2208,7 +2208,2201 @@
     },
     "recipe_source": null
    }
+  },
+  "kefir & blueberry smoothie + fried eggs on sourdough with rocket & cherry tomatoes": {
+   "first_seen": "2026-10-05",
+   "name": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes",
+   "last_seen": "2026-10-05",
+   "slot": "breakfast",
+   "meal": {
+    "name": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes",
+    "food_category": "eggs_cooked",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Pour 250 ml kefir into a blender, add 80 g blueberries for Diego / 60 g for Diana, blend until smooth, pour into glasses.",
+     "2. Toast 40 g sourdough for Diego / 30 g for Diana.",
+     "3. Heat 1 tsp olive oil in a non-stick pan over medium heat; fry 2 eggs for Diego / 2 eggs for Diana sunny-side up, seasoning with black pepper and sea salt.",
+     "4. Plate eggs on sourdough, top with a handful of rocket and 4–5 halved cherry tomatoes per person.",
+     "5. Serve smoothie alongside."
+    ],
+    "image_prompt": "savoury breakfast plate with two fried eggs on toasted sourdough, fresh rocket leaves, halved cherry tomatoes, beside a glass of purple blueberry kefir smoothie, natural morning light, wooden table",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Blueberries (myrtilles)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "20 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 430,
+       "protein_g": 26,
+       "carbs_g": 40,
+       "fat_g": 16,
+       "fiber_g": 4,
+       "sugar_g": 14,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Blueberries (myrtilles)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "15 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 340,
+       "protein_g": 21,
+       "carbs_g": 29,
+       "fat_g": 13,
+       "fiber_g": 3,
+       "sugar_g": 11,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "mediterranean beef & chickpea bowl with roasted bell peppers & couscous": {
+   "first_seen": "2026-10-05",
+   "name": "Mediterranean Beef & Chickpea Bowl with Roasted Bell Peppers & Couscous",
+   "last_seen": "2026-10-05",
+   "slot": "lunch",
+   "meal": {
+    "name": "Mediterranean Beef & Chickpea Bowl with Roasted Bell Peppers & Couscous",
+    "food_category": "red_meat",
+    "prep_steps": [
+     "Sunday: Brown 600 g ground beef in a pan with 1 tsp cumin, 1 tsp smoked paprika, 1 tsp garlic powder, salt, pepper; store in airtight container.",
+     "Sunday: Roast 2 red + 1 yellow bell pepper (sliced) with 1 tbsp olive oil at 200°C for 25 min; store in airtight container.",
+     "Sunday: Drain and rinse 400 g canned chickpeas, portion into containers."
+    ],
+    "day_of_steps": [
+     "1. Pour boiling water over couscous (80 g Diego / 55 g Diana) in a bowl, add a pinch of salt and 0.5 tsp olive oil; cover 5 min, fluff with fork.",
+     "2. Reheat beef portion in a pan over medium heat 3–4 min (Diego 180 g cooked / Diana 130 g cooked).",
+     "3. Reheat roasted peppers in the same pan 1–2 min.",
+     "4. Serve couscous in bowl, top with beef, peppers, chickpeas (Diego 80 g / Diana 60 g).",
+     "5. Drizzle 1 tsp olive oil each, add a dash of red wine vinegar.",
+     "6. Serve with 1 orange per person on the side."
+    ],
+    "image_prompt": "overhead bowl of golden couscous topped with spiced ground beef, roasted red and yellow bell peppers, golden chickpeas, drizzle of olive oil, in natural daylight on a linen cloth",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Ground beef (bœuf haché)",
+        "qty": "180 g cooked"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "80 g dry"
+       },
+       {
+        "item": "Canned chickpeas (pois chiches en boîte)",
+        "qty": "80 g drained"
+       },
+       {
+        "item": "Roasted bell peppers (poivrons rôtis)",
+        "qty": "120 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Red wine vinegar (vinaigre de vin rouge)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 620,
+       "protein_g": 45,
+       "carbs_g": 65,
+       "fat_g": 18,
+       "fiber_g": 10,
+       "sugar_g": 14,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Ground beef (bœuf haché)",
+        "qty": "130 g cooked"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "55 g dry"
+       },
+       {
+        "item": "Canned chickpeas (pois chiches en boîte)",
+        "qty": "60 g drained"
+       },
+       {
+        "item": "Roasted bell peppers (poivrons rôtis)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Red wine vinegar (vinaigre de vin rouge)",
+        "qty": "0.5 tsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 470,
+       "protein_g": 33,
+       "carbs_g": 50,
+       "fat_g": 13,
+       "fiber_g": 8,
+       "sugar_g": 12,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "soy-sesame baked salmon with stir-fried spinach & carrots on sweet potato mash": {
+   "first_seen": "2026-10-05",
+   "name": "Soy-Sesame Baked Salmon with Stir-Fried Spinach & Carrots on Sweet Potato Mash",
+   "last_seen": "2026-10-05",
+   "slot": "dinner",
+   "meal": {
+    "name": "Soy-Sesame Baked Salmon with Stir-Fried Spinach & Carrots on Sweet Potato Mash",
+    "food_category": "fish_seafood",
+    "prep_steps": [
+     "Sunday: Bake sweet potatoes (600 g total, peeled, cubed) in 200°C oven 25 min, mash with a little olive oil, salt; store in container — use Mon & Tue only (within 4-day roasted veg window).",
+     "Sunday: Mix soy sauce 3 tbsp + sesame oil 2 tsp + garlic powder 1 tsp + ground ginger 1 tsp as marinade; store in small jar."
+    ],
+    "day_of_steps": [
+     "1. Preheat oven to 200°C.",
+     "2. Place salmon fillets (Diego 200 g / Diana 140 g) on a lined tray, spoon over half the soy-sesame marinade.",
+     "3. Bake 12–15 min until just flaking.",
+     "4. Meanwhile, heat 1 tsp sesame oil in a wok; stir-fry 100 g spinach + 80 g julienned carrots for Diego (70 g spinach + 60 g carrots for Diana) 3–4 min; add a splash of soy sauce.",
+     "5. Reheat sweet potato mash in microwave 2 min, stirring once (Diego 200 g / Diana 140 g).",
+     "6. Plate mash, top with stir-fried veg then salmon. Drizzle remaining marinade."
+    ],
+    "image_prompt": "glazed baked salmon fillet on a bed of orange sweet potato mash with wilted spinach and julienned carrots in sesame soy glaze, overhead shot, natural warm light, dark ceramic plate",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Salmon fillet (filet de saumon)",
+        "qty": "200 g raw"
+       },
+       {
+        "item": "Sweet potato mash (purée de patate douce)",
+        "qty": "200 g cooked"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Carrots (carottes)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "1 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 590,
+       "protein_g": 42,
+       "carbs_g": 45,
+       "fat_g": 22,
+       "fiber_g": 8,
+       "sugar_g": 8,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Salmon fillet (filet de saumon)",
+        "qty": "140 g raw"
+       },
+       {
+        "item": "Sweet potato mash (purée de patate douce)",
+        "qty": "140 g cooked"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "70 g"
+       },
+       {
+        "item": "Carrots (carottes)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "0.5 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 420,
+       "protein_g": 31,
+       "carbs_g": 32,
+       "fat_g": 16,
+       "fiber_g": 6,
+       "sugar_g": 6,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": {
+     "library_id": "mdb-52959",
+     "name": "Baked salmon with fennel & tomatoes",
+     "cuisine": "British",
+     "source_url": "https://www.bbcgoodfood.com/recipes/7745/baked-salmon-with-fennel-and-tomatoes",
+     "image": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
+    }
+   }
+  },
+  "kefir & raspberry smoothie + fried eggs on sourdough with avocado-style olive spread & cherry tomatoes": {
+   "first_seen": "2026-10-06",
+   "name": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Olive Spread & Cherry Tomatoes",
+   "last_seen": "2026-10-06",
+   "slot": "breakfast",
+   "meal": {
+    "name": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Olive Spread & Cherry Tomatoes",
+    "food_category": "eggs_cooked",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Blend 250 ml kefir + 80 g raspberries for Diego / 60 g raspberries for Diana until smooth.",
+     "2. Toast 40 g sourdough (Diego) / 30 g sourdough (Diana).",
+     "3. Fry 2 eggs per person in 0.5 tsp olive oil each, sunny-side up.",
+     "4. Spread 1 tbsp hummus or mashed walnuts on toast as olive-style spread; top with eggs and sliced cherry tomatoes."
+    ],
+    "image_prompt": "fried eggs on toasted sourdough with green olive spread and sliced cherry tomatoes, alongside a pink raspberry kefir smoothie in a tall glass, morning light, rustic wooden board",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Raspberries (framboises)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Unsalted walnuts (noix non salées)",
+        "qty": "10 g"
+       }
+      ],
+      "macros": {
+       "kcal": 420,
+       "protein_g": 25,
+       "carbs_g": 38,
+       "fat_g": 17,
+       "fiber_g": 4,
+       "sugar_g": 12,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Raspberries (framboises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Unsalted walnuts (noix non salées)",
+        "qty": "8 g"
+       }
+      ],
+      "macros": {
+       "kcal": 340,
+       "protein_g": 20,
+       "carbs_g": 28,
+       "fat_g": 14,
+       "fiber_g": 3,
+       "sugar_g": 10,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "asian beef & broccoli stir-fry with brown rice": {
+   "first_seen": "2026-10-06",
+   "name": "Asian Beef & Broccoli Stir-Fry with Brown Rice",
+   "last_seen": "2026-10-06",
+   "slot": "lunch",
+   "meal": {
+    "name": "Asian Beef & Broccoli Stir-Fry with Brown Rice",
+    "food_category": "red_meat",
+    "prep_steps": [
+     "Sunday: Slice 500 g beef sirloin or stewing beef thinly against the grain; marinate in 2 tbsp soy sauce + 1 tsp sesame oil + 1 tsp ground ginger in a sealed bag in the fridge — cook fresh Monday or Tuesday."
+    ],
+    "day_of_steps": [
+     "1. Cook brown rice fresh: rinse 80 g (Diego) / 60 g (Diana) rice, simmer in salted water 25 min — start first.",
+     "2. Heat 1 tsp sesame oil in a wok over high heat; stir-fry marinated beef slices (Diego 180 g / Diana 130 g) 3–4 min until browned; remove.",
+     "3. In same wok add 1 tsp olive oil; stir-fry 120 g broccoli florets + 60 g sliced carrots (Diego) / 90 g broccoli + 40 g carrots (Diana) 4–5 min.",
+     "4. Return beef, add 1 tbsp soy sauce + 1 tsp garlic powder, toss 1 min.",
+     "5. Serve beef & veg over rice. Finish with a dash of red wine vinegar.",
+     "6. Add 1 orange per person on the side."
+    ],
+    "image_prompt": "stir-fried beef strips and bright green broccoli florets in dark glossy soy-ginger sauce over brown rice in a white bowl, chopsticks on the side, natural light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Beef sirloin/steak (bifteck de surlonge)",
+        "qty": "180 g raw"
+       },
+       {
+        "item": "Brown rice (riz complet)",
+        "qty": "80 g dry"
+       },
+       {
+        "item": "Broccoli (brocoli)",
+        "qty": "120 g"
+       },
+       {
+        "item": "Carrots (carottes)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "1 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 610,
+       "protein_g": 46,
+       "carbs_g": 68,
+       "fat_g": 16,
+       "fiber_g": 9,
+       "sugar_g": 12,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Beef sirloin/steak (bifteck de surlonge)",
+        "qty": "130 g raw"
+       },
+       {
+        "item": "Brown rice (riz complet)",
+        "qty": "60 g dry"
+       },
+       {
+        "item": "Broccoli (brocoli)",
+        "qty": "90 g"
+       },
+       {
+        "item": "Carrots (carottes)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "0.5 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "0.5 tsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 460,
+       "protein_g": 34,
+       "carbs_g": 52,
+       "fat_g": 12,
+       "fiber_g": 7,
+       "sugar_g": 10,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": {
+     "library_id": "mdb-53366",
+     "name": "Beef and Broccoli Stir-Fry",
+     "cuisine": "Chinese",
+     "source_url": "https://www.simplyrecipes.com/recipes/broccoli_beef/",
+     "image": "https://www.themealdb.com/images/media/meals/m0p0j81765568742.jpg"
+    }
+   }
+  },
+  "french-style baked tilapia with roasted courgette & spinach on sourdough": {
+   "first_seen": "2026-10-06",
+   "name": "French-Style Baked Tilapia with Roasted Courgette & Spinach on Sourdough",
+   "last_seen": "2026-10-06",
+   "slot": "dinner",
+   "meal": {
+    "name": "French-Style Baked Tilapia with Roasted Courgette & Spinach on Sourdough",
+    "food_category": "fish_seafood",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Preheat oven to 200°C. Slice courgettes into rounds; toss with 1 tsp olive oil, smoked paprika, salt, black pepper on a baking tray.",
+     "2. Place tilapia fillets (Diego 200 g / Diana 140 g) on the same tray, rub with 1 tsp olive oil, dried oregano, garlic powder, black pepper.",
+     "3. Roast 18–20 min until tilapia flakes and courgettes are golden.",
+     "4. Wilt 80 g spinach for Diego / 60 g for Diana in a dry pan 2 min; season with black pepper.",
+     "5. Toast sourdough (40 g Diego / 30 g Diana).",
+     "6. Plate spinach first, then tilapia and courgette, sourdough on side. Drizzle with balsamic vinegar."
+    ],
+    "image_prompt": "golden baked tilapia fillet with herbes de Provence on a plate with roasted courgette rounds and wilted spinach, slice of sourdough on the side, natural light, French bistro feel",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Tilapia fillet (filet de tilapia)",
+        "qty": "200 g raw"
+       },
+       {
+        "item": "Courgette (courgette)",
+        "qty": "150 g"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "2 tsp"
+       },
+       {
+        "item": "Balsamic vinegar (vinaigre balsamique)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 415,
+       "protein_g": 45,
+       "carbs_g": 25,
+       "fat_g": 13,
+       "fiber_g": 5,
+       "sugar_g": 4,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Tilapia fillet (filet de tilapia)",
+        "qty": "140 g raw"
+       },
+       {
+        "item": "Courgette (courgette)",
+        "qty": "120 g"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1.5 tsp"
+       },
+       {
+        "item": "Balsamic vinegar (vinaigre balsamique)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 310,
+       "protein_g": 33,
+       "carbs_g": 19,
+       "fat_g": 10,
+       "fiber_g": 4,
+       "sugar_g": 3,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "kefir & orange smoothie + fried eggs on sourdough with spinach & cherry tomatoes": {
+   "first_seen": "2026-10-07",
+   "name": "Kefir & Orange Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes",
+   "last_seen": "2026-10-07",
+   "slot": "breakfast",
+   "meal": {
+    "name": "Kefir & Orange Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes",
+    "food_category": "eggs_cooked",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Squeeze juice of 1 orange per person; blend with 250 ml kefir each (or use segments, blend whole).",
+     "2. Wilt 30 g spinach per person in a dry pan 1 min; season with black pepper.",
+     "3. Toast 40 g sourdough (Diego) / 30 g (Diana).",
+     "4. Fry 2 eggs per person in 0.5 tsp olive oil, sunny-side up.",
+     "5. Plate eggs on toast with wilted spinach and sliced cherry tomatoes."
+    ],
+    "image_prompt": "fried eggs on sourdough toast with sautéed spinach and cherry tomatoes, beside a bright orange kefir smoothie, morning light, white ceramic plate",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 430,
+       "protein_g": 26,
+       "carbs_g": 42,
+       "fat_g": 15,
+       "fiber_g": 4,
+       "sugar_g": 18,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 355,
+       "protein_g": 21,
+       "carbs_g": 33,
+       "fat_g": 14,
+       "fiber_g": 3,
+       "sugar_g": 16,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "mexican black bean & beef tacos with roasted bell peppers & courgette": {
+   "first_seen": "2026-10-07",
+   "name": "Mexican Black Bean & Beef Tacos with Roasted Bell Peppers & Courgette",
+   "last_seen": "2026-10-07",
+   "slot": "lunch",
+   "meal": {
+    "name": "Mexican Black Bean & Beef Tacos with Roasted Bell Peppers & Courgette",
+    "food_category": "red_meat",
+    "prep_steps": [
+     "Sunday: Cook 500 g ground beef with cumin 1.5 tsp, smoked paprika 1 tsp, garlic powder 1 tsp, black pepper, tomato paste 2 tbsp — store in container (use Mon–Wed, within 3-day beef window).",
+     "Sunday: Roast 300 g courgette + 200 g bell peppers (sliced) with olive oil, cumin, black pepper at 200°C 20 min — store (use Mon–Thu, within 4-day roasted veg window).",
+     "Sunday: Drain and rinse canned black beans 400 g, portion into container."
+    ],
+    "day_of_steps": [
+     "1. Warm corn tortillas (2 for Diego / 2 for Diana) in a dry pan 30 sec each side.",
+     "2. Reheat beef in a pan over medium heat 3 min (Diego 160 g cooked / Diana 110 g cooked).",
+     "3. Reheat roasted courgette and peppers 2 min in same pan.",
+     "4. Warm black beans 1 min in microwave or small pan (Diego 80 g / Diana 60 g).",
+     "5. Fill tortillas with spinach leaves first, then beef, beans, roasted veg.",
+     "6. Finish with a dash of red wine vinegar and 1 tsp olive oil drizzle.",
+     "7. Serve with banana on side."
+    ],
+    "image_prompt": "two corn tortillas filled with spiced ground beef, black beans, roasted red peppers and courgette strips, served on a wooden board with lime wedge, overhead, bright natural light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Corn tortillas (tortillas de maïs)",
+        "qty": "2 (60 g)"
+       },
+       {
+        "item": "Ground beef cooked (bœuf haché cuit)",
+        "qty": "160 g"
+       },
+       {
+        "item": "Canned black beans (haricots noirs en boîte)",
+        "qty": "80 g drained"
+       },
+       {
+        "item": "Roasted courgette & peppers (courgette et poivrons rôtis)",
+        "qty": "120 g"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Banana (banane)",
+        "qty": "1 small (100 g)"
+       }
+      ],
+      "macros": {
+       "kcal": 610,
+       "protein_g": 44,
+       "carbs_g": 64,
+       "fat_g": 18,
+       "fiber_g": 11,
+       "sugar_g": 14,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Corn tortillas (tortillas de maïs)",
+        "qty": "2 (60 g)"
+       },
+       {
+        "item": "Ground beef cooked (bœuf haché cuit)",
+        "qty": "110 g"
+       },
+       {
+        "item": "Canned black beans (haricots noirs en boîte)",
+        "qty": "60 g drained"
+       },
+       {
+        "item": "Roasted courgette & peppers (courgette et poivrons rôtis)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Banana (banane)",
+        "qty": "1 small (100 g)"
+       }
+      ],
+      "macros": {
+       "kcal": 465,
+       "protein_g": 32,
+       "carbs_g": 55,
+       "fat_g": 13,
+       "fiber_g": 9,
+       "sugar_g": 13,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "beef mechado-style stew with potatoes, carrots & celery": {
+   "first_seen": "2026-10-07",
+   "name": "Beef Mechado-Style Stew with Potatoes, Carrots & Celery",
+   "last_seen": "2026-10-07",
+   "slot": "dinner",
+   "meal": {
+    "name": "Beef Mechado-Style Stew with Potatoes, Carrots & Celery",
+    "food_category": "soup_stew",
+    "prep_steps": [
+     "Sunday: Brown 800 g beef chuck in 1 tbsp olive oil; add 400 g canned tomatoes, 2 tbsp soy sauce, 2 tbsp red wine vinegar, 1 tsp garlic powder, 1 tsp smoked paprika, 300 ml vegetable stock; simmer 60 min. Add 300 g diced potatoes + 200 g sliced carrots + 100 g sliced celery last 25 min. Cool, store in airtight container — safe Mon–Thu (4-day soup/stew window)."
+    ],
+    "day_of_steps": [
+     "1. Scoop beef stew into a pot — Diego: 400 g stew / Diana: 280 g stew.",
+     "2. Reheat over medium heat 8–10 min, stirring occasionally.",
+     "3. Taste and adjust seasoning with black pepper.",
+     "4. Serve in deep bowls with rocket on the side."
+    ],
+    "image_prompt": "rustic stew of braised beef chunks, potato cubes, sliced carrots and celery in rich tomato-soy broth, served in a wide bowl, dark dramatic lighting, Mediterranean feel",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Beef chuck stew (ragoût de bœuf)",
+        "qty": "400 g (incl. veg)"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "20 g"
+       }
+      ],
+      "macros": {
+       "kcal": 450,
+       "protein_g": 38,
+       "carbs_g": 28,
+       "fat_g": 18,
+       "fiber_g": 6,
+       "sugar_g": 5,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Beef chuck stew (ragoût de bœuf)",
+        "qty": "280 g (incl. veg)"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "15 g"
+       }
+      ],
+      "macros": {
+       "kcal": 320,
+       "protein_g": 27,
+       "carbs_g": 20,
+       "fat_g": 13,
+       "fiber_g": 4,
+       "sugar_g": 4,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": {
+     "library_id": "mdb-53068",
+     "name": "Beef Mechado",
+     "cuisine": "Filipino",
+     "source_url": "https://panlasangpinoy.com/filipino-pinoy-food-tomato-sauce-beef-mechado-recipe/",
+     "image": "https://www.themealdb.com/images/media/meals/cgl60b1683206581.jpg"
+    }
+   }
+  },
+  "kefir & blueberry smoothie + fried eggs on sourdough with rocket & roasted cherry tomatoes": {
+   "first_seen": "2026-10-08",
+   "name": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Roasted Cherry Tomatoes",
+   "last_seen": "2026-10-08",
+   "slot": "breakfast",
+   "meal": {
+    "name": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Roasted Cherry Tomatoes",
+    "food_category": "eggs_cooked",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Blend 250 ml kefir + 80 g blueberries (Diego) / 60 g blueberries (Diana) until smooth.",
+     "2. Halve 60 g cherry tomatoes, roast in a small pan with a drizzle of olive oil 5 min.",
+     "3. Toast sourdough 40 g (Diego) / 30 g (Diana).",
+     "4. Fry 2 eggs per person in 0.5 tsp olive oil each.",
+     "5. Top toast with rocket, eggs, roasted cherry tomatoes. Serve smoothie alongside."
+    ],
+    "image_prompt": "two fried eggs on thick sourdough toast with peppery rocket leaves and roasted cherry tomatoes, glass of deep purple blueberry kefir smoothie, warm morning light, slate surface",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Blueberries (myrtilles)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "20 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 430,
+       "protein_g": 26,
+       "carbs_g": 40,
+       "fat_g": 16,
+       "fiber_g": 4,
+       "sugar_g": 14,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Blueberries (myrtilles)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "15 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 345,
+       "protein_g": 21,
+       "carbs_g": 30,
+       "fat_g": 13,
+       "fiber_g": 3,
+       "sugar_g": 11,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "algerian-style beef kefta with roasted courgette, bell peppers & lentils on couscous": {
+   "first_seen": "2026-10-08",
+   "name": "Algerian-Style Beef Kefta with Roasted Courgette, Bell Peppers & Lentils on Couscous",
+   "last_seen": "2026-10-08",
+   "slot": "lunch",
+   "meal": {
+    "name": "Algerian-Style Beef Kefta with Roasted Courgette, Bell Peppers & Lentils on Couscous",
+    "food_category": "red_meat",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Mix 300 g (Diego) / 210 g (Diana) ground beef with 1 tsp cumin, 1 tsp garlic powder, 0.5 tsp smoked paprika, salt, pepper; shape into oval kefta balls.",
+     "2. Slice 100 g courgette + 80 g bell pepper; toss with 1 tsp olive oil and roast on a tray at 200°C 15 min alongside the kefta (place kefta on same tray).",
+     "3. Meanwhile, pour boiling water over couscous — 70 g (Diego) / 50 g (Diana); cover 5 min, fluff.",
+     "4. Warm drained canned lentils — 80 g (Diego) / 60 g (Diana) — in microwave 1 min.",
+     "5. Build bowl: couscous base, lentils, roasted veg, kefta on top.",
+     "6. Drizzle 1 tsp olive oil + dash red wine vinegar. Add an orange on the side."
+    ],
+    "image_prompt": "spiced oval beef meatballs on a bed of fluffy couscous with canned lentils, roasted courgette and yellow bell pepper, drizzle of olive oil, overhead, warm light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Ground beef (bœuf haché)",
+        "qty": "180 g raw"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "70 g dry"
+       },
+       {
+        "item": "Canned lentils (lentilles en boîte)",
+        "qty": "80 g drained"
+       },
+       {
+        "item": "Courgette (courgette)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Bell pepper (poivron)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "2 tsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 620,
+       "protein_g": 46,
+       "carbs_g": 63,
+       "fat_g": 18,
+       "fiber_g": 11,
+       "sugar_g": 12,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Ground beef (bœuf haché)",
+        "qty": "130 g raw"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "50 g dry"
+       },
+       {
+        "item": "Canned lentils (lentilles en boîte)",
+        "qty": "60 g drained"
+       },
+       {
+        "item": "Courgette (courgette)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Bell pepper (poivron)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1.5 tsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 470,
+       "protein_g": 33,
+       "carbs_g": 49,
+       "fat_g": 13,
+       "fiber_g": 8,
+       "sugar_g": 10,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": {
+     "library_id": "mdb-53281",
+     "name": "Algerian Kefta (Meatballs)",
+     "cuisine": "Algerian",
+     "source_url": "https://www.allrecipes.com/recipe/153790/algerian-kefta-meatballs/",
+     "image": "https://www.themealdb.com/images/media/meals/8rfd4q1764112993.jpg"
+    }
+   }
+  },
+  "beef mechado stew (leftover) with roasted broccoli": {
+   "first_seen": "2026-10-08",
+   "name": "Beef Mechado Stew (Leftover) with Roasted Broccoli",
+   "last_seen": "2026-10-08",
+   "slot": "dinner",
+   "meal": {
+    "name": "Beef Mechado Stew (Leftover) with Roasted Broccoli",
+    "food_category": "soup_stew",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Preheat oven to 200°C; toss broccoli florets 120 g (Diego) / 90 g (Diana) with 1 tsp olive oil, garlic powder, black pepper; roast 12 min.",
+     "2. Reheat beef stew — Diego: 370 g / Diana: 260 g — in a pot over medium heat 8 min.",
+     "3. Plate stew in bowls; serve roasted broccoli alongside."
+    ],
+    "image_prompt": "reheated braised beef stew with potatoes, carrots and celery in tomato broth in a white shallow bowl, beside oven-roasted dark-edged broccoli florets, natural light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Beef chuck stew (ragoût de bœuf)",
+        "qty": "370 g"
+       },
+       {
+        "item": "Broccoli (brocoli)",
+        "qty": "120 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 430,
+       "protein_g": 37,
+       "carbs_g": 26,
+       "fat_g": 17,
+       "fiber_g": 7,
+       "sugar_g": 5,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Beef chuck stew (ragoût de bœuf)",
+        "qty": "260 g"
+       },
+       {
+        "item": "Broccoli (brocoli)",
+        "qty": "90 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 308,
+       "protein_g": 26,
+       "carbs_g": 19,
+       "fat_g": 12,
+       "fiber_g": 5,
+       "sugar_g": 4,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": {
+     "library_id": "mdb-53068",
+     "name": "Beef Mechado",
+     "cuisine": "Filipino",
+     "source_url": "https://panlasangpinoy.com/filipino-pinoy-food-tomato-sauce-beef-mechado-recipe/",
+     "image": "https://www.themealdb.com/images/media/meals/cgl60b1683206581.jpg"
+    }
+   }
+  },
+  "kefir & apple smoothie + fried eggs on sourdough with spinach & cherry tomatoes": {
+   "first_seen": "2026-10-09",
+   "name": "Kefir & Apple Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes",
+   "last_seen": "2026-10-09",
+   "slot": "breakfast",
+   "meal": {
+    "name": "Kefir & Apple Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes",
+    "food_category": "eggs_cooked",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Core and quarter 1 apple per person; blend with 250 ml kefir each until smooth.",
+     "2. Wilt 30 g spinach per person in a dry pan 1 min.",
+     "3. Toast sourdough 40 g (Diego) / 30 g (Diana).",
+     "4. Fry 2 eggs per person in 0.5 tsp olive oil, sunny-side up.",
+     "5. Plate eggs on toast with spinach and halved cherry tomatoes."
+    ],
+    "image_prompt": "sunny-side-up eggs on sourdough with wilted spinach and cherry tomatoes, creamy apple kefir smoothie in a mason jar, bright morning light, linen napkin",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Apple (pomme)",
+        "qty": "1 medium (150 g)"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 440,
+       "protein_g": 26,
+       "carbs_g": 44,
+       "fat_g": 15,
+       "fiber_g": 5,
+       "sugar_g": 20,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Apple (pomme)",
+        "qty": "1 medium (150 g)"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 360,
+       "protein_g": 21,
+       "carbs_g": 35,
+       "fat_g": 13,
+       "fiber_g": 4,
+       "sugar_g": 18,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "baked salmon with fennel-style roasted celery, cherry tomatoes & chickpeas on wholewheat pasta": {
+   "first_seen": "2026-10-09",
+   "name": "Baked Salmon with Fennel-Style Roasted Celery, Cherry Tomatoes & Chickpeas on Wholewheat Pasta",
+   "last_seen": "2026-10-09",
+   "slot": "lunch",
+   "meal": {
+    "name": "Baked Salmon with Fennel-Style Roasted Celery, Cherry Tomatoes & Chickpeas on Wholewheat Pasta",
+    "food_category": "fish_seafood",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Preheat oven to 200°C. On a lined tray, place salmon (Diego 200 g / Diana 140 g), scatter 80 g sliced celery, 80 g cherry tomatoes; drizzle 1 tsp olive oil, dried oregano, black pepper. Bake 15 min.",
+     "2. Cook wholewheat pasta — 70 g (Diego) / 50 g (Diana) — in salted boiling water per packet (approx 10 min); drain, toss with 1 tsp olive oil.",
+     "3. Warm chickpeas 70 g (Diego) / 50 g (Diana) from can in microwave 1 min.",
+     "4. Flake salmon; toss salmon, celery, tomatoes, chickpeas into pasta.",
+     "5. Drizzle balsamic vinegar, black pepper. Serve warm.",
+     "6. Add 1 banana on the side per person."
+    ],
+    "image_prompt": "baked salmon flakes with roasted celery, burst cherry tomatoes and golden chickpeas tossed through wholewheat pasta, drizzle of olive oil, bright natural light, white pasta bowl",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Salmon fillet (filet de saumon)",
+        "qty": "200 g raw"
+       },
+       {
+        "item": "Wholewheat pasta (pâtes complètes)",
+        "qty": "70 g dry"
+       },
+       {
+        "item": "Canned chickpeas (pois chiches en boîte)",
+        "qty": "70 g drained"
+       },
+       {
+        "item": "Celery (céleri)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "2 tsp"
+       },
+       {
+        "item": "Banana (banane)",
+        "qty": "1 small (100 g)"
+       }
+      ],
+      "macros": {
+       "kcal": 630,
+       "protein_g": 47,
+       "carbs_g": 66,
+       "fat_g": 19,
+       "fiber_g": 9,
+       "sugar_g": 14,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Salmon fillet (filet de saumon)",
+        "qty": "140 g raw"
+       },
+       {
+        "item": "Wholewheat pasta (pâtes complètes)",
+        "qty": "50 g dry"
+       },
+       {
+        "item": "Canned chickpeas (pois chiches en boîte)",
+        "qty": "50 g drained"
+       },
+       {
+        "item": "Celery (céleri)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1.5 tsp"
+       },
+       {
+        "item": "Banana (banane)",
+        "qty": "1 small (100 g)"
+       }
+      ],
+      "macros": {
+       "kcal": 465,
+       "protein_g": 34,
+       "carbs_g": 50,
+       "fat_g": 14,
+       "fiber_g": 7,
+       "sugar_g": 12,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": {
+     "library_id": "mdb-52959",
+     "name": "Baked salmon with fennel & tomatoes",
+     "cuisine": "British",
+     "source_url": "https://www.bbcgoodfood.com/recipes/7745/baked-salmon-with-fennel-and-tomatoes",
+     "image": "https://www.themealdb.com/images/media/meals/1548772327.jpg"
+    }
+   }
+  },
+  "creamy tomato chicken thighs with wilted spinach & wholewheat penne": {
+   "first_seen": "2026-10-09",
+   "name": "Creamy Tomato Chicken Thighs with Wilted Spinach & Wholewheat Penne",
+   "last_seen": "2026-10-09",
+   "slot": "dinner",
+   "meal": {
+    "name": "Creamy Tomato Chicken Thighs with Wilted Spinach & Wholewheat Penne",
+    "food_category": "poultry",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Cook wholewheat penne — 70 g (Diego) / 50 g (Diana) — in salted boiling water per packet; drain.",
+     "2. Season 2 chicken thighs (skinless, ~260 g) for Diego and 1.5 thighs (~180 g) for Diana with garlic powder, smoked paprika, black pepper.",
+     "3. Heat 1 tsp olive oil in a wide pan; brown chicken thighs 4 min per side over medium-high heat.",
+     "4. Add 200 g canned tomatoes, 2 tbsp Greek yogurt, 100 ml vegetable stock, 1 tsp dried oregano; stir and simmer 10 min until chicken is cooked through (75°C internal).",
+     "5. Add 80 g spinach (Diego) / 60 g (Diana); stir until wilted 1 min.",
+     "6. Serve sauce & chicken over penne."
+    ],
+    "image_prompt": "chicken thighs in rich roasted-tomato cream sauce over wholewheat penne with wilted spinach, grated cheese on top, white deep plate, warm candlelit light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Chicken thighs skinless (cuisses de poulet sans peau)",
+        "qty": "260 g raw"
+       },
+       {
+        "item": "Wholewheat penne (penne complètes)",
+        "qty": "70 g dry"
+       },
+       {
+        "item": "Canned tomatoes (tomates concassées)",
+        "qty": "130 g"
+       },
+       {
+        "item": "Greek yogurt (yaourt grec)",
+        "qty": "1 tbsp"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Vegetable stock (bouillon de légumes)",
+        "qty": "70 ml"
+       }
+      ],
+      "macros": {
+       "kcal": 560,
+       "protein_g": 50,
+       "carbs_g": 50,
+       "fat_g": 16,
+       "fiber_g": 7,
+       "sugar_g": 5,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Chicken thighs skinless (cuisses de poulet sans peau)",
+        "qty": "180 g raw"
+       },
+       {
+        "item": "Wholewheat penne (penne complètes)",
+        "qty": "50 g dry"
+       },
+       {
+        "item": "Canned tomatoes (tomates concassées)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Greek yogurt (yaourt grec)",
+        "qty": "1 tbsp"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Vegetable stock (bouillon de légumes)",
+        "qty": "50 ml"
+       }
+      ],
+      "macros": {
+       "kcal": 410,
+       "protein_g": 37,
+       "carbs_g": 38,
+       "fat_g": 12,
+       "fiber_g": 5,
+       "sugar_g": 4,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "kefir & raspberry smoothie + fried eggs on sourdough with rocket & cherry tomatoes": {
+   "first_seen": "2026-10-10",
+   "name": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes",
+   "last_seen": "2026-10-10",
+   "slot": "breakfast",
+   "meal": {
+    "name": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes",
+    "food_category": "eggs_cooked",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Blend 250 ml kefir + 80 g raspberries (Diego) / 60 g raspberries (Diana).",
+     "2. Toast sourdough 40 g (Diego) / 30 g (Diana).",
+     "3. Fry 2 eggs per person in 0.5 tsp olive oil, sunny-side up.",
+     "4. Top toast with rocket, eggs, halved cherry tomatoes. Serve smoothie alongside."
+    ],
+    "image_prompt": "two fried eggs on rustic sourdough with peppery rocket and cherry tomato halves, pink raspberry kefir smoothie in a glass, natural morning light, linen tablecloth",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Raspberries (framboises)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "20 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 415,
+       "protein_g": 25,
+       "carbs_g": 38,
+       "fat_g": 15,
+       "fiber_g": 4,
+       "sugar_g": 12,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Raspberries (framboises)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "15 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 335,
+       "protein_g": 20,
+       "carbs_g": 29,
+       "fat_g": 13,
+       "fiber_g": 3,
+       "sugar_g": 10,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "vietnamese-style beef banh mi bowl with pickled carrots, spinach & brown rice": {
+   "first_seen": "2026-10-10",
+   "name": "Vietnamese-Style Beef Banh Mi Bowl with Pickled Carrots, Spinach & Brown Rice",
+   "last_seen": "2026-10-10",
+   "slot": "lunch",
+   "meal": {
+    "name": "Vietnamese-Style Beef Banh Mi Bowl with Pickled Carrots, Spinach & Brown Rice",
+    "food_category": "red_meat",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Quick-pickle 80 g julienned carrots in 2 tbsp red wine vinegar + pinch salt for 10 min in a bowl.",
+     "2. Cook brown rice fresh — rinse 80 g (Diego) / 60 g (Diana); simmer 25 min in salted water; drain.",
+     "3. Season 180 g (Diego) / 130 g (Diana) beef sirloin slices with 1 tbsp soy sauce, 1 tsp sesame oil, 1 tsp garlic powder; pan-fry in 1 tsp olive oil over high heat 4–5 min.",
+     "4. Place spinach 60 g (Diego) / 40 g (Diana) as base in bowl.",
+     "5. Add rice, beef, pickled carrots.",
+     "6. Drizzle remaining soy sauce and sesame oil, squeeze lime or dash balsamic vinegar.",
+     "7. Serve with 1 orange per person on side."
+    ],
+    "image_prompt": "Vietnamese bowl with brown rice, sliced soy-ginger beef, quick-pickled carrot strips, fresh spinach and sesame seeds, overhead shot, vibrant colours, natural light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Beef sirloin/steak (bifteck de surlonge)",
+        "qty": "180 g raw"
+       },
+       {
+        "item": "Brown rice (riz complet)",
+        "qty": "80 g dry"
+       },
+       {
+        "item": "Carrots (carottes)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "1 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "1 tsp"
+       },
+       {
+        "item": "Red wine vinegar (vinaigre de vin rouge)",
+        "qty": "2 tbsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 610,
+       "protein_g": 45,
+       "carbs_g": 66,
+       "fat_g": 16,
+       "fiber_g": 8,
+       "sugar_g": 12,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Beef sirloin/steak (bifteck de surlonge)",
+        "qty": "130 g raw"
+       },
+       {
+        "item": "Brown rice (riz complet)",
+        "qty": "60 g dry"
+       },
+       {
+        "item": "Carrots (carottes)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Spinach (épinards)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "0.5 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "0.5 tsp"
+       },
+       {
+        "item": "Red wine vinegar (vinaigre de vin rouge)",
+        "qty": "1 tbsp"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       }
+      ],
+      "macros": {
+       "kcal": 460,
+       "protein_g": 33,
+       "carbs_g": 52,
+       "fat_g": 12,
+       "fiber_g": 6,
+       "sugar_g": 10,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": {
+     "library_id": "mdb-52997",
+     "name": "Beef Banh Mi Bowls with Sriracha Mayo, Carrot & Pickled Cucumber",
+     "cuisine": "Vietnamese",
+     "source_url": "https://www.themealdb.com/meal/52997",
+     "image": "https://www.themealdb.com/images/media/meals/z0ageb1583189517.jpg"
+    }
+   }
+  },
+  "tilapia en papillote with bell peppers, cherry tomatoes & couscous": {
+   "first_seen": "2026-10-10",
+   "name": "Tilapia en Papillote with Bell Peppers, Cherry Tomatoes & Couscous",
+   "last_seen": "2026-10-10",
+   "slot": "dinner",
+   "meal": {
+    "name": "Tilapia en Papillote with Bell Peppers, Cherry Tomatoes & Couscous",
+    "food_category": "fish_seafood",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Preheat oven to 200°C. Tear two large sheets of baking paper.",
+     "2. Place tilapia fillet (Diego 200 g / Diana 140 g) in centre of each sheet.",
+     "3. Scatter sliced bell pepper 70 g + cherry tomatoes 50 g over each fillet; season with dried oregano, dried thyme, garlic powder, black pepper, drizzle 1 tsp olive oil per person.",
+     "4. Fold and crimp paper tightly to form sealed parcel; bake 18 min.",
+     "5. Pour boiling water over couscous 70 g (Diego) / 50 g (Diana) in bowls; cover 5 min; fluff with fork; stir in 0.5 tsp olive oil.",
+     "6. Open parcels at table; serve fish and veg juices over couscous."
+    ],
+    "image_prompt": "tilapia fillet in parchment parcel opened to reveal steamed bell peppers, cherry tomatoes in herbed broth, served beside fluffy couscous on a white plate, warm kitchen light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Tilapia fillet (filet de tilapia)",
+        "qty": "200 g raw"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "70 g dry"
+       },
+       {
+        "item": "Bell pepper (poivron)",
+        "qty": "70 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "50 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 490,
+       "protein_g": 46,
+       "carbs_g": 50,
+       "fat_g": 12,
+       "fiber_g": 5,
+       "sugar_g": 5,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Tilapia fillet (filet de tilapia)",
+        "qty": "140 g raw"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "50 g dry"
+       },
+       {
+        "item": "Bell pepper (poivron)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Cherry tomatoes (tomates cerises)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 360,
+       "protein_g": 33,
+       "carbs_g": 38,
+       "fat_g": 9,
+       "fiber_g": 4,
+       "sugar_g": 4,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "kefir & blueberry smoothie + fried eggs on sourdough with rocket & orange": {
+   "first_seen": "2026-10-11",
+   "name": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Orange",
+   "last_seen": "2026-10-11",
+   "slot": "breakfast",
+   "meal": {
+    "name": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Orange",
+    "food_category": "eggs_cooked",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Blend 250 ml kefir + 80 g blueberries (Diego) / 60 g (Diana).",
+     "2. Toast sourdough 40 g (Diego) / 30 g (Diana).",
+     "3. Fry 2 eggs per person in 0.5 tsp olive oil, sunny-side up.",
+     "4. Plate on toast with rocket. Peel and segment 1 orange per person to serve alongside."
+    ],
+    "image_prompt": "fried eggs on thick sourdough toast with fresh rocket, orange segments on the side, tall glass of blueberry kefir smoothie, bright Sunday morning light, white plate",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Blueberries (myrtilles)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "40 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "20 g"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 450,
+       "protein_g": 26,
+       "carbs_g": 48,
+       "fat_g": 15,
+       "fiber_g": 5,
+       "sugar_g": 22,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Kefir (kéfir de lait)",
+        "qty": "250 ml"
+       },
+       {
+        "item": "Blueberries (myrtilles)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Sourdough bread (pain au levain)",
+        "qty": "30 g"
+       },
+       {
+        "item": "Eggs (œufs)",
+        "qty": "2 large"
+       },
+       {
+        "item": "Rocket (roquette)",
+        "qty": "15 g"
+       },
+       {
+        "item": "Orange (orange)",
+        "qty": "1 medium"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 365,
+       "protein_g": 21,
+       "carbs_g": 38,
+       "fat_g": 13,
+       "fiber_g": 4,
+       "sugar_g": 18,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "spanish-style aubergine & chickpea skillet with roasted bell peppers & couscous": {
+   "first_seen": "2026-10-11",
+   "name": "Spanish-Style Aubergine & Chickpea Skillet with Roasted Bell Peppers & Couscous",
+   "last_seen": "2026-10-11",
+   "slot": "lunch",
+   "meal": {
+    "name": "Spanish-Style Aubergine & Chickpea Skillet with Roasted Bell Peppers & Couscous",
+    "food_category": "legumes",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Slice 150 g courgette (used in place of aubergine for palette compliance); toss with 1 tsp olive oil + smoked paprika + garlic powder; roast at 200°C 15 min.",
+     "2. In a pan, heat 1 tsp olive oil; add 200 g canned tomatoes + 1 tsp cumin + 1 tsp smoked paprika + 100 ml vegetable stock; simmer 5 min.",
+     "3. Add drained chickpeas — 100 g (Diego) / 75 g (Diana) — simmer 5 min.",
+     "4. Pour boiling water over couscous 70 g (Diego) / 50 g (Diana); cover 5 min; fluff.",
+     "5. Serve couscous, top with chickpea-tomato sauce and roasted courgette/peppers.",
+     "6. Drizzle balsamic vinegar, add 1 banana per person on side.",
+     "7. Note: This is the vegetarian lunch before Sunday batch-cook afternoon."
+    ],
+    "image_prompt": "golden chickpeas and roasted aubergine slices with bell peppers in tomato-paprika sauce over couscous, overhead, terracotta bowl, Mediterranean light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Canned chickpeas (pois chiches en boîte)",
+        "qty": "100 g drained"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "70 g dry"
+       },
+       {
+        "item": "Courgette (courgette)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Bell pepper (poivron)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Canned tomatoes (tomates concassées)",
+        "qty": "130 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "2 tsp"
+       },
+       {
+        "item": "Vegetable stock (bouillon de légumes)",
+        "qty": "70 ml"
+       },
+       {
+        "item": "Banana (banane)",
+        "qty": "1 small (100 g)"
+       }
+      ],
+      "macros": {
+       "kcal": 520,
+       "protein_g": 20,
+       "carbs_g": 82,
+       "fat_g": 12,
+       "fiber_g": 13,
+       "sugar_g": 16,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Canned chickpeas (pois chiches en boîte)",
+        "qty": "75 g drained"
+       },
+       {
+        "item": "Couscous (couscous)",
+        "qty": "50 g dry"
+       },
+       {
+        "item": "Courgette (courgette)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Bell pepper (poivron)",
+        "qty": "60 g"
+       },
+       {
+        "item": "Canned tomatoes (tomates concassées)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Olive oil (huile d'olive)",
+        "qty": "1.5 tsp"
+       },
+       {
+        "item": "Vegetable stock (bouillon de légumes)",
+        "qty": "50 ml"
+       },
+       {
+        "item": "Banana (banane)",
+        "qty": "1 small (100 g)"
+       }
+      ],
+      "macros": {
+       "kcal": 390,
+       "protein_g": 14,
+       "carbs_g": 63,
+       "fat_g": 9,
+       "fiber_g": 10,
+       "sugar_g": 14,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
+  },
+  "soy-ginger baked tilapia with stir-fried mushrooms & broccoli on brown rice": {
+   "first_seen": "2026-10-11",
+   "name": "Soy-Ginger Baked Tilapia with Stir-Fried Mushrooms & Broccoli on Brown Rice",
+   "last_seen": "2026-10-11",
+   "slot": "dinner",
+   "meal": {
+    "name": "Soy-Ginger Baked Tilapia with Stir-Fried Mushrooms & Broccoli on Brown Rice",
+    "food_category": "fish_seafood",
+    "prep_steps": [],
+    "day_of_steps": [
+     "1. Cook brown rice — rinse 70 g (Diego) / 50 g (Diana); simmer 25 min in salted water; drain.",
+     "2. Preheat oven to 200°C. Place tilapia (Diego 200 g / Diana 140 g) on lined tray; mix 1.5 tbsp soy sauce + 1 tsp sesame oil + 1 tsp ground ginger; spoon over fillets; bake 15 min.",
+     "3. Stir-fry 100 g sliced mushrooms + 100 g broccoli (Diego) / 80 g mushrooms + 80 g broccoli (Diana) in 1 tsp sesame oil in a wok 4 min; add dash soy sauce.",
+     "4. Plate rice, top with stir-fried veg then tilapia. Drizzle with remaining soy-ginger glaze."
+    ],
+    "image_prompt": "soy-ginger glazed tilapia fillets on a bed of brown rice with stir-fried mushrooms and broccoli, sesame drizzle, white oval plate, warm evening light",
+    "portions": {
+     "diego": {
+      "ingredients": [
+       {
+        "item": "Tilapia fillet (filet de tilapia)",
+        "qty": "200 g raw"
+       },
+       {
+        "item": "Brown rice (riz complet)",
+        "qty": "70 g dry"
+       },
+       {
+        "item": "Mushrooms (champignons)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Broccoli (brocoli)",
+        "qty": "100 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "1.5 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "1 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 510,
+       "protein_g": 47,
+       "carbs_g": 55,
+       "fat_g": 12,
+       "fiber_g": 8,
+       "sugar_g": 3,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     },
+     "diana": {
+      "ingredients": [
+       {
+        "item": "Tilapia fillet (filet de tilapia)",
+        "qty": "140 g raw"
+       },
+       {
+        "item": "Brown rice (riz complet)",
+        "qty": "50 g dry"
+       },
+       {
+        "item": "Mushrooms (champignons)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Broccoli (brocoli)",
+        "qty": "80 g"
+       },
+       {
+        "item": "Soy sauce (sauce soja)",
+        "qty": "1 tbsp"
+       },
+       {
+        "item": "Sesame oil (huile de sésame)",
+        "qty": "0.5 tsp"
+       }
+      ],
+      "macros": {
+       "kcal": 375,
+       "protein_g": 34,
+       "carbs_g": 42,
+       "fat_g": 9,
+       "fiber_g": 6,
+       "sugar_g": 2,
+       "free_sugar_g": 0
+      },
+      "variant": null
+     }
+    },
+    "recipe_source": null
+   }
   }
  },
- "updated": "2026-09-28"
+ "updated": "2026-10-02"
 }

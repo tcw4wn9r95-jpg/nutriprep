@@ -1,7 +1,44 @@
 {
-  "week_of": "2026-09-28",
+  "week_of": "2026-10-05",
   "prep_day": "Sunday",
   "prep_start_time": "15:00",
-  "total_active_minutes": 0,
-  "batches": []
+  "total_active_minutes": 25,
+  "batches": [
+    {
+      "id": "prep_batch_1",
+      "title": "Spiced Ground Beef (Mediterranean) + Roasted Bell Peppers + Chickpeas",
+      "order": 1,
+      "active_minutes": 25,
+      "steps": [
+        "1. Weigh out 600 g ground beef. Heat a large non-stick pan over medium-high heat with 1 tsp olive oil.",
+        "2. Add beef and break up with a wooden spoon. Cook 5\u20137 min until fully browned with no pink remaining.",
+        "3. Season with 1 tsp cumin, 1 tsp smoked paprika, 1 tsp garlic powder, 2 tbsp tomato paste, salt and pepper. Stir 1 min.",
+        "4. Remove from heat, cool completely, and transfer to a labelled airtight container. Refrigerate \u2014 use by Wednesday (3-day beef window).",
+        "5. Slice 2 red bell peppers and 1 yellow bell pepper into 1 cm strips. Toss on a baking tray with 1 tbsp olive oil, salt, pepper.",
+        "6. Roast at 200\u00b0C for 25 min until softened and slightly charred at edges. Cool, store in a separate airtight container. Refrigerate \u2014 use by Thursday (4-day roasted veg window).",
+        "7. Drain and rinse 400 g canned chickpeas. Portion into a small container. Refrigerate."
+      ],
+      "yields": [
+        "~500 g cooked seasoned ground beef",
+        "~400 g roasted mixed bell peppers",
+        "~400 g rinsed chickpeas"
+      ],
+      "food_category": "red_meat",
+      "video_url": "",
+      "day_of_assembly": {
+        "Monday": "Lunch \u2014 Mediterranean Beef & Chickpea Bowl: reheat beef portion + chickpeas in pan 3\u20134 min; reheat roasted peppers 1\u20132 min; serve over freshly made couscous with olive oil and red wine vinegar drizzle.",
+        "Wednesday": "Lunch \u2014 Mexican Black Bean & Beef Tacos: reheat beef (last of batch) with black beans; serve in warmed corn tortillas with reheated roasted courgette-pepper mix (prep_batch_4) and spinach."
+      },
+      "storage": {
+        "method": "refrigerate",
+        "container": "airtight container",
+        "fridge_c": "\u2264 4",
+        "cool_within_hours": 2,
+        "use_within_days": 3,
+        "freeze_option_days": 90,
+        "reheat_c": 74,
+        "safety_note": "Store in coldest part of fridge. Reheat to 74 \u00b0C before serving."
+      }
+    }
+  ]
 }
