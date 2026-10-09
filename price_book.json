@@ -3462,7 +3462,7 @@
     },
     "eggs (large)": {
       "name_en": "Eggs (large)",
-      "name_fr": "Œufs (gros calibre)",
+      "name_fr": "Œufs (gros)",
       "aisle": "Dairy / Crèmerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4422,7 +4422,7 @@
     },
     "lean beef mince": {
       "name_en": "Lean beef mince",
-      "name_fr": "Bœuf haché maigre",
+      "name_fr": "Viande de bœuf hachée maigre",
       "aisle": "Meat / Boucherie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4812,7 +4812,7 @@
     },
     "tilapia fillets (fresh or frozen)": {
       "name_en": "Tilapia fillets (fresh or frozen)",
-      "name_fr": "Filets de tilapia",
+      "name_fr": "Filets de tilapia (frais ou surgelés)",
       "aisle": "Fish / Poissonnerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -4822,7 +4822,7 @@
     },
     "salmon fillets (fresh or frozen)": {
       "name_en": "Salmon fillets (fresh or frozen)",
-      "name_fr": "Filets de saumon",
+      "name_fr": "Filets de saumon (frais ou surgelés)",
       "aisle": "Fish / Poissonnerie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -5042,7 +5042,7 @@
     },
     "skinless chicken thighs": {
       "name_en": "Skinless chicken thighs",
-      "name_fr": "Cuisses de poulet désossées sans peau",
+      "name_fr": "Cuisses de poulet sans peau",
       "aisle": "Meat / Boucherie",
       "supermarket": "Cactus",
       "price_eur": null,
@@ -6499,7 +6499,57 @@
       "price_unit": "kg",
       "net_weight": null,
       "updated": "2026-10-02"
+    },
+    "kefir plain unsweetened": {
+      "name_en": "Kefir plain unsweetened",
+      "name_fr": "Kéfir nature non sucré",
+      "aisle": "Dairy / Crèmerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "L",
+      "net_weight": null,
+      "updated": "2026-10-09"
+    },
+    "greek yogurt plain": {
+      "name_en": "Greek yogurt plain",
+      "name_fr": "Yaourt grec nature",
+      "aisle": "Dairy / Crèmerie",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-10-09"
+    },
+    "strawberries (fresh or frozen)": {
+      "name_en": "Strawberries (fresh or frozen)",
+      "name_fr": "Fraises (fraîches ou surgelées)",
+      "aisle": "Produce / Fruits & Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-10-09"
+    },
+    "bell peppers mixed red and yellow": {
+      "name_en": "Bell peppers mixed red and yellow",
+      "name_fr": "Poivrons mélangés rouge et jaune",
+      "aisle": "Produce / Fruits & Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-10-09"
+    },
+    "courgettes": {
+      "name_en": "Courgettes",
+      "name_fr": "Courgettes",
+      "aisle": "Produce / Fruits & Légumes",
+      "supermarket": "Cactus",
+      "price_eur": null,
+      "price_unit": "kg",
+      "net_weight": null,
+      "updated": "2026-10-09"
     }
   },
-  "updated": "2026-10-02"
+  "updated": "2026-10-09"
 }

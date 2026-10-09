@@ -1,85 +1,90 @@
 {
   "status": "published",
-  "generated": "2026-10-02",
-  "week_of": "2026-10-05",
+  "generated": "2026-10-09",
+  "week_of": "2026-10-12",
   "meal_count": 35,
-  "shopping_items": 52,
-  "prep_batches": 1,
-  "prep_minutes": 25,
+  "shopping_items": 19,
+  "prep_batches": 0,
+  "prep_minutes": 0,
   "notification_events": 41,
-  "fresh_shop_items": 26,
-  "pantry_staple_items": 26,
+  "fresh_shop_items": 14,
+  "pantry_staple_items": 5,
   "locked_palette": {
     "proteins": [
-      "tilapia",
-      "salmon",
-      "beef (chuck/stewing cuts)",
-      "eggs"
+      "tilapia fillets",
+      "salmon fillets",
+      "beef (chuck/stewing cuts for sauces, lean mince)",
+      "eggs (fried, boiled, baked)"
     ],
     "vegetables": [
-      "cherry tomatoes",
-      "bell peppers (red/yellow)",
-      "spinach",
-      "carrots",
-      "courgettes",
-      "broccoli",
       "garlic",
+      "shallots",
       "ginger",
-      "celery",
-      "mushrooms"
+      "cherry tomatoes",
+      "bell peppers (red, yellow)",
+      "spinach (fresh, for wilting)",
+      "carrots",
+      "broccoli",
+      "courgettes",
+      "celery"
     ],
     "fruits": [
+      "strawberries",
       "blueberries",
       "raspberries",
       "apples",
-      "oranges",
       "bananas"
     ],
     "breads_greens": [
-      "sourdough",
-      "rocket"
+      "sourdough bread (wholegrain)",
+      "rocket (arugula)"
     ],
     "carbs_staples": [
       "brown rice",
-      "wholewheat pasta",
+      "wholemeal penne",
+      "couscous",
       "sweet potatoes",
-      "potatoes",
+      "potatoes with skin",
+      "corn tortillas (small, whole grain if available)",
       "canned chickpeas",
-      "canned lentils",
-      "canned black beans",
-      "corn tortillas",
-      "couscous"
+      "canned lentils (brown or green)",
+      "canned white beans (cannellini)"
     ],
     "spices_sauces_staples": [
-      "olive oil",
+      "extra-virgin olive oil",
       "sesame oil",
-      "soy sauce",
       "balsamic vinegar",
       "red wine vinegar",
+      "soy sauce",
+      "fish sauce",
+      "tomato passata (tinned)",
+      "tomato paste",
       "cumin",
       "smoked paprika",
+      "paprika",
       "dried oregano",
       "dried thyme",
-      "garlic powder",
-      "ground ginger",
+      "bay leaf",
       "black pepper",
       "sea salt",
-      "tomato paste",
-      "canned tomatoes",
-      "low-sodium vegetable stock",
-      "Greek yogurt",
-      "kefir",
-      "unsalted almonds",
-      "unsalted walnuts"
+      "garlic powder",
+      "onion powder",
+      "dried chilli flakes",
+      "ginger powder",
+      "ground coriander",
+      "lime juice (or lemons, fresh)",
+      "Greek yogurt (plain)",
+      "kefir (plain, unsweetened)",
+      "low-sodium stock (vegetable or beef, for cooking)"
     ]
   },
-  "tailored_meals": 0,
+  "tailored_meals": 1,
   "overlap": {
     "meals": 35,
-    "same_plate": 35,
-    "same_plate_pct": 100
+    "same_plate": 34,
+    "same_plate_pct": 97
   },
-  "library_dishes": 7,
+  "library_dishes": 9,
   "sugar_warnings": [],
   "middle_ground": {
     "base_diet": "omnivore",
@@ -102,7 +107,7 @@
       "kind": "avoid",
       "day": "Monday",
       "slot": "breakfast",
-      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes"
+      "meal": "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes"
     },
     {
       "member": "diana",
@@ -111,6 +116,78 @@
       "kind": "avoid",
       "day": "Monday",
       "slot": "breakfast",
+      "meal": "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes"
+    },
+    {
+      "member": "diego",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Tuesday",
+      "slot": "breakfast",
+      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Hummus & Cherry Tomatoes"
+    },
+    {
+      "member": "diana",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Tuesday",
+      "slot": "breakfast",
+      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Hummus & Cherry Tomatoes"
+    },
+    {
+      "member": "diego",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Wednesday",
+      "slot": "breakfast",
+      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
+    },
+    {
+      "member": "diana",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Wednesday",
+      "slot": "breakfast",
+      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
+    },
+    {
+      "member": "diego",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Thursday",
+      "slot": "breakfast",
+      "meal": "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket & Shallot"
+    },
+    {
+      "member": "diana",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Thursday",
+      "slot": "breakfast",
+      "meal": "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket & Shallot"
+    },
+    {
+      "member": "diego",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Friday",
+      "slot": "breakfast",
+      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes"
+    },
+    {
+      "member": "diana",
+      "ingredient": "Eggs (\u0153ufs)",
+      "rule": "scrambled eggs",
+      "kind": "avoid",
+      "day": "Friday",
+      "slot": "breakfast",
       "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes"
     },
     {
@@ -118,81 +195,9 @@
       "ingredient": "Eggs (\u0153ufs)",
       "rule": "scrambled eggs",
       "kind": "avoid",
-      "day": "Tuesday",
-      "slot": "breakfast",
-      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Olive Spread & Cherry Tomatoes"
-    },
-    {
-      "member": "diana",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
-      "day": "Tuesday",
-      "slot": "breakfast",
-      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Olive Spread & Cherry Tomatoes"
-    },
-    {
-      "member": "diego",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
-      "day": "Wednesday",
-      "slot": "breakfast",
-      "meal": "Kefir & Orange Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
-    },
-    {
-      "member": "diana",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
-      "day": "Wednesday",
-      "slot": "breakfast",
-      "meal": "Kefir & Orange Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
-    },
-    {
-      "member": "diego",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
-      "day": "Thursday",
-      "slot": "breakfast",
-      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Roasted Cherry Tomatoes"
-    },
-    {
-      "member": "diana",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
-      "day": "Thursday",
-      "slot": "breakfast",
-      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Roasted Cherry Tomatoes"
-    },
-    {
-      "member": "diego",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
-      "day": "Friday",
-      "slot": "breakfast",
-      "meal": "Kefir & Apple Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
-    },
-    {
-      "member": "diana",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
-      "day": "Friday",
-      "slot": "breakfast",
-      "meal": "Kefir & Apple Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
-    },
-    {
-      "member": "diego",
-      "ingredient": "Eggs (\u0153ufs)",
-      "rule": "scrambled eggs",
-      "kind": "avoid",
       "day": "Saturday",
       "slot": "breakfast",
-      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes"
+      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
     },
     {
       "member": "diana",
@@ -201,7 +206,7 @@
       "kind": "avoid",
       "day": "Saturday",
       "slot": "breakfast",
-      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes"
+      "meal": "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes"
     },
     {
       "member": "diego",
@@ -210,7 +215,7 @@
       "kind": "avoid",
       "day": "Sunday",
       "slot": "breakfast",
-      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Orange"
+      "meal": "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket, Cherry Tomatoes & Hummus"
     },
     {
       "member": "diana",
@@ -219,7 +224,7 @@
       "kind": "avoid",
       "day": "Sunday",
       "slot": "breakfast",
-      "meal": "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Rocket & Orange"
+      "meal": "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket, Cherry Tomatoes & Hummus"
     }
   ]
 }

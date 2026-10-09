@@ -1,27 +1,5 @@
 [
   {
-    "week_of": "2026-06-15",
-    "generated": "2026-06-13",
-    "meal_names": [
-      "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
-      "Mexican Beef & Lentil Bowl with Roasted Peppers, Corn Tortillas & Lime",
-      "Baked Salmon with Garlic-Lemon Spinach & Sweet Potato Wedges",
-      "Kefir Smoothie with Strawberries & Banana + Fried Eggs on Sourdough with Feta",
-      "Asian Sesame Tilapia Bowl with Stir-Fried Zucchini, Carrots & Brown Rice",
-      "Mediterranean Beef & Chickpea Skillet with Roasted Cherry Tomatoes & Sourdough",
-      "Kefir Smoothie with Blueberries & Orange + Boiled Eggs on Sourdough",
-      "French-Style Beef & Leek Pasta with Wholemeal Penne & Spinach",
-      "Tilapia Tacos with Roasted Bell Peppers, Spinach & Lime in Corn Tortillas",
-      "Kefir Smoothie with Banana & Strawberries + Boiled Eggs on Sourdough"
-    ],
-    "shopping_items": 52,
-    "prep_minutes": 27,
-    "day_kcal": {
-      "diego": 1991,
-      "diana": 1484
-    }
-  },
-  {
     "week_of": "2026-06-22",
     "generated": "2026-06-21",
     "meal_names": [
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1969,
       "diana": 1527
+    }
+  },
+  {
+    "week_of": "2026-10-12",
+    "generated": "2026-10-09",
+    "meal_names": [
+      "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket & Cherry Tomatoes",
+      "Mediterranean Beef Meatballs with Chickpeas, Roasted Bell Peppers & Couscous",
+      "Soy-Ginger Baked Tilapia with Stir-Fried Broccoli & Carrots on Brown Rice",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Hummus & Cherry Tomatoes",
+      "Beef & Broccoli Stir-Fry with Canned Lentils & Brown Rice",
+      "Mexican-Spiced Beef & Black Bean Tacos with Roasted Courgette & Bell Pepper",
+      "Kefir & Raspberry Smoothie + Fried Eggs on Sourdough with Spinach & Cherry Tomatoes",
+      "French-Style Salmon en Papillote with Roasted Cherry Tomatoes & Spinach on Wholemeal Penne",
+      "Creamy Tomato Chicken Thighs with Wilted Spinach & Wholemeal Penne",
+      "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Rocket & Shallot"
+    ],
+    "shopping_items": 19,
+    "prep_minutes": 0,
+    "day_kcal": {
+      "diego": 1921,
+      "diana": 1424
     }
   }
 ]
