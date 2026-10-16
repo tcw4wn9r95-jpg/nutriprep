@@ -1,27 +1,5 @@
 [
   {
-    "week_of": "2026-06-22",
-    "generated": "2026-06-21",
-    "meal_names": [
-      "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough",
-      "Mexican Beef & Lentil Bowl with Roasted Peppers, Sweet Potato & Lime",
-      "Asian Ginger-Soy Tilapia with Stir-Fried Zucchini, Spinach & Brown Rice",
-      "Kefir Smoothie with Strawberry & Banana + Fried Eggs on Sourdough with Feta",
-      "Mediterranean Baked Salmon with Roasted Eggplant, Chickpeas & Quinoa",
-      "Beef Stir-Fry with Broccoli, Carrots & Wholewheat Noodles in Soy-Ginger Sauce",
-      "Kefir Smoothie with Blueberry & Orange + Fried Eggs on Sourdough",
-      "French-Style Beef & White Bean Skillet with Roasted Zucchini & Sourdough",
-      "Mediterranean Baked Salmon with Roasted Cherry Tomatoes, Spinach & Lentils",
-      "Kefir Smoothie with Banana & Blueberries + Fried Eggs on Sourdough"
-    ],
-    "shopping_items": 53,
-    "prep_minutes": 100,
-    "day_kcal": {
-      "diego": 2003,
-      "diana": 1537
-    }
-  },
-  {
     "week_of": "2026-06-29",
     "generated": "2026-06-28",
     "meal_names": [
@@ -261,6 +239,28 @@
     "day_kcal": {
       "diego": 1921,
       "diana": 1424
+    }
+  },
+  {
+    "week_of": "2026-10-19",
+    "generated": "2026-10-16",
+    "meal_names": [
+      "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Feta & Rocket",
+      "Mediterranean Beef & Lentil Stew with Roasted Bell Peppers on Wholewheat Couscous",
+      "Soy-Sesame Baked Tilapia with Stir-Fried Broccoli & Carrots on Brown Rice",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Avocado-Style Tahini Spread & Cherry Tomatoes",
+      "Mediterranean Beef & Lentil Stew with Roasted Bell Peppers on Sweet Potato",
+      "French-Style Baked Salmon with Roasted Zucchini & Spinach on Wholemeal Penne",
+      "Kefir & Strawberry Smoothie + Fried Eggs on Sourdough with Gruy\u00e8re & Rocket",
+      "Mexican Spiced Beef Mince & Chickpea Bowl with Roasted Bell Peppers & Brown Rice",
+      "Cumin-Spiced Baked Tilapia with Spinach & Mushroom Saut\u00e9 on Wholemeal Penne",
+      "Kefir & Blueberry Smoothie + Fried Eggs on Sourdough with Feta & Cherry Tomatoes"
+    ],
+    "shopping_items": 50,
+    "prep_minutes": 0,
+    "day_kcal": {
+      "diego": 2091,
+      "diana": 1542
     }
   }
 ]
